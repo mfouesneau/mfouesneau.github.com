@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<data>
+
+<news>
+<title>pIM Website is now officially opened</title>
+<date value="1214799514" />
+<text>
+	This website has been created in order to officialy share worldwide pIM.
+	I worked on multiple versions of this IDL program since
+	october 2007. I tried first to create an application which allows me
+	to moved over spectrum plots with zoom and move features. But things
+	going on, I added features such as managing multiple curves, legends and
+	so on. Finally it became a complete graphical application managing all I
+	want in my Figures.::N::  
+	This application is useful for creating complex figures under IDL
+	with just a few commands.
+	Thanks to my beta users and their comments, pIM has gained in design and
+	functionalities such as managing multiple plots, multiple axis and also
+	shared axis. Color system has also been improved so that any hexadecimal
+	definition will be exactly exported to Postscript files.::N::
+	::N::
+	::I::Great Thanks to F. Renaud, aka &quot;Tonton&quot;, for all his help in order to
+	create this not so &quot;simple&quot; website.::/I::
+</text>
+</news>
+
+</data>

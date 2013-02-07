@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>Morgan Fouesneau- pIM</title>
+<meta http-equiv="Content-type" content="text/html;charset=iso-8859-1" />
+<meta name="language" content="en" />
+<meta http-equiv="Content-Language" content="en" />
+<meta name="keywords" content="" />
+<link rel="stylesheet" media="screen" type="text/css" title="Design" href="style.css" />
+</head>
+
+<body>
+
+<div id="top">
+<p id="top_title">Welcome</p>
+<hr>
+</div>
+
+<h1><span class="caps">p</span>lot <span class="caps">IM</span>proved <span class="end">for IDL</span></h1>
+
+<?php include("_menu.php"); ?>
+
+<img src="pics/main.png" alt="" />
+
+<p style="font-size:14pt;">
+What is pIM?
+</p>
+<p>
+pIM is an IDL application designed to provide a new dummy way to create 
+very nice and fancy graphics with IDL.
+</p>
+<p style="font-style:italic;">
+Have you ever thought to generate multiple plots with shared axis within IDL?<br>
+What about changing the range of a graphics without running your script again?<br>
+And exporting to PostScript your plot(s) with only one command?
+</p>
+<p style="text-align:right;">
+pIM is the solution.
+</p>
+
+
+
+<?php include("_bottom.php"); ?>
