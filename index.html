@@ -1,384 +1,735 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Morgan Fouesneau CV</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/normalize.css" rel="stylesheet" type="text/css">
-    <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
-    <link type="text/css" rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css">
-    <link href="css/frame.css" rel="stylesheet" type="text/css">
+    <meta name="description" content="PHAT website">
+    <meta name="author" content="PHAT">
 
-    <style id="custom-css">
-	#jumbo {
-	  background-color: #212121; 
-	  color: #fff;
-	}
-	#jumbo p {
-	  font-size: 16px;
-	}
-	#try-header {
-	  margin: 30px 0px;
-	}
-	#try-more {
-	  margin: 30px 0px;
-	  font-style: italic;
-	}
-        .verticalLine {
-          border-left: 3px solid #a1a1a1;
-	  padding:1px 1px 5px 40px;
-	  margin-left: 0px;
-        }
-	ul {
-	  padding: 4px 1px 5px 0px;
-	  margin: 15px;
-	}
+    <title>Morgan Fouesneau</title>
 
-	h2 {
-	  color: #428bca;
-	}
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
-    </style>
+    <!-- Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,300italic,100,100italic,300,500,700,500italic,700italic' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,100italic,300italic,400italic,700italic' rel='stylesheet' type='text/css' />
 
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
-    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/js/bootstrap.min.js"></script>
-
-    <script> 
-	 
-	$(document).ready(function(){
-               $('#publicationList').load('publist.html');
-           });
-
-    </script> 
+    <!-- Custom Theme CSS -->
+    <link href="css/grayscale.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet" type="text/css">
 
 </head>
 
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
 
-<body class="design">
+    <nav class="navbar navbar-custom navbar-fixed-top darken-bg-40" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#page-top">
+                    <i class="fa fa-chevron-circle-up"></i>
+                    &nbsp;&nbsp;
+                    <span class="light">
+                        Morgan L. M. Fouesneau
+			<!-- &nbsp;&nbsp;&#8857;&#8853; -->
+                    </span>
+                </a>
+            </div>
 
-<div id="jumbo" class="jumbotron">
-    <div class="container">
-    <div class="row">
-    <div class="col-md-8">
-    <h1> Morgan Fouesneau</h1>
-    <h3>Postdoctoral at University of Washington</h3>
-    </div>
-    <div class="col-md-4">
-    <img src="cvcloud_b.png" width="100%" class="pull-right">
-    <p class="text-right" style="font-size:11px" >
-    	08/30/2013 - github.com/mfouesneau/adsstat
-    </p>
-    </div>
-    </div>
-    </div>
-</div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#research">Research</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#publications">Publications</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#cv">CV</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#contact">contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<div class="container">
-  <!-- Example row of columns -->
-  <div class="row">
-    <div class="col-md-3">
-      <p class="text-right" style="padding:8px 0px 3px 0px;"> 
-	Morgan L. M.  Fouesneau <br>
-        mfouesn [at] uw.edu<br>
-        <br>
-	<b>Office address</b><br>
-        Univ. of Washington<br>
-	Dept. of Astronomy<br>
-	Physics & Astronomy Bldg - C321<br>
-	Seattle, WA 98195<br>
-      </p>
-    </div>
-    <div class="col-md-9">
-      <div class=verticalLine>
-        <h2>About Me</h2>
-          <p align="justify">
-	  I'm a Postdoctoral fellow at Max-Planck Institute for Astronomy
-	  (MPIA, Heidelberg).  My current research is mostly oriented towards
-	  understanding star clusters in galaxies, and primarily focusing on
-	  low-mass clusters to eventually constrain the dissolution theory of
-	  star clusters. However, I also contribute to many data modeling,
-	  especially using probabilistic inferences in astronomy but also other
-	  domains of physics.  My current main project is the construction of
-	  Gaia hyrid catalogs, a project that will combine all ancillary data
-	  with the most up to date Gaia measurements to infer the most precise
-	  information from each object in the Gaia Mission Survey.
-          </p>
-      
-         <a href="http://twitter.com/mfouesneau"><i class="icon-twitter"></i> mfouesneau</a>
-         <a href="https://github.com/mfouesneau"><i class="icon-github-alt"></i> mfouesneau</a>
-       </div>
-    </div>
-  </div>
+    <!-- Intro -->
+    <section id="intro" class="full-page intro">
+        <div class="section-body">
+	    <div class="container" style="padding-top:100px;">
+                <div class="row" >
+                    <div class="col-lg-8 col-lg-offset-2 light">
+                        <p class="intro-text">
+                            <a href="https://github.com/mfouesneau"><i class="fa fa-github fa-3x"></i></a>
+                            <a href="https://twitter.com/mfouesneau"><i class="fa fa-twitter fa-3x"></i></a>
+                            <a href="http://arxiv.org/find/all/1/au:+fouesneau/0/1/0/all/0/1"><i class="fa fa-pencil fa-3x"></i></a>
+                        </p>
+                    </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="page-scroll">
+                            <a href="#about" class="btn btn-circle">
+                                <i class="fa fa-angle-double-down"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!--
-  <h2> Field of Research Interest </h2>
+    <!-- about -->
+    <section id="about" class="full-page about">
+        <div class="section-body">
+	    <div class="container" style="padding-top:100px;">
+                <div class="row darken-bg-50" >
+                    <div class="col-lg-8 col-lg-offset-2 light">
+                        <h2 class="italic">About Me</h2>
+                        <hr width="25%" />
+		    </div>
+                    <div class="col-lg-7 col-lg-offset-2 light">
+			<p>
+			I'm a Postdoctoral fellow at Max-Planck Institute for
+			Astronomy (MPIA, Heidelberg). My current research is
+			mostly oriented towards understanding star clusters in
+			galaxies, and primarily focusing on low-mass clusters to
+			eventually constrain the dissolution theory of star
+			clusters. However, I also contribute to many data
+			modeling, especially using probabilistic inferences in
+			astronomy but also other domains of physics. 
+			</p>
+			<p>
+			My current main project is the construction of Gaia
+			hyrid catalogs, a project that will combine all
+			ancillary data with the most up to date Gaia
+			measurements to infer the most precise information of
+			objects in the Gaia Mission Survey and ultimately the to
+			understand our own galaxy.
+			</p>
+		    </div>
+                    <div class="col-lg-3 light">
+			<img class="right" width="100%" src="img/cvcloud_alpha.png" alt="">
+			<!--
+                        <p class="intro-text">
+                            <a href="https://github.com/mfouesneau"><i class="fa fa-github fa-3x"></i></a>
+                            <a href="https://twitter.com/mfouesneau"><i class="fa fa-twitter fa-3x"></i></a>
+                            <a href="http://arxiv.org/find/all/1/au:+fouesneau/0/1/0/all/0/1"><i class="fa fa-pencil fa-3x"></i></a>
+                        </p>
+			-->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="page-scroll">
+                            <a href="#research" class="btn btn-circle">
+                                <i class="fa fa-angle-double-down"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- science  
+    <section id="science" class="full-page science">
+        <div class="section-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <h2 class="italic">Primary Science Projects</h2>
+                        <hr width="25%" />
+                        <div id="science-goals"></div>
+			<p>
+			Star cluster populations in galaxies<br />
+			Star and cluster formation<br />
+			Stellar evolution<br />
+			Population synthesis modeling <br/>
+			Resolved and unresolved stellar populations <br/>
+			Multi-wavelength cross-identification and analysis of sources<br />
+			</p>
+			<img class="right" width="50%" src="img/cvcloud_alpha.png" alt="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="page-scroll">
+                            <a href="#survey" class="btn btn-circle">
+                                <i class="fa fa-angle-double-down"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+-->
 
-	Stellar Cluster populations in Galaxies,
-	Dynamics of Star Clusters,
-	Spectral Analysis,
-	Population Synthesis,
-	Initial Stellar Mass Function,
-	Star Formation,
-	Galaxy Evolution,
-	Probabilistic Modeling and Analysis,
-	Data Mining Machine Learning
-	-->
+    <!-- friends -->
+    <section id="research" class="full-page research">
+        <div class="section-body">
+            <div class="container">
+                <div class="row darken-bg-50">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <h2 class="italic">Research</h2>
+                        <hr width="25%" />
+			<p>
+			(Under construction)
+			</p>
+			<p>
+			A small selection of current projects and research.
+			</p>
+                    </div>
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <a class="btn btn-default" id="select-PHAT"
+				row="research-phat">PHAT</a>
+                        <a class="btn btn-default" id="select-clusters"
+				row="friends-clusters">Star Clusters</a>
+                        <a class="btn btn-default" id="select-gas"
+				row="friends-gas">Gas</a>
+                        <a class="btn btn-default" id="select-herschel"
+				row="friends-herschel">Herschel</a>
+                        <!-- <hr width="25%" /> -->
+                    </div>
+                </div>
+                <!-- -->
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="page-scroll">
+                            <a href="#publications" class="btn btn-circle">
+                                <i class="fa fa-angle-double-down"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-
-  <h2> Education</h2>
-
-  <div class=container>
-    <div class="row">
-
-      <div class="col-md-2" align="right" > <h4> 2014 -&nbsp; present</h4> </div>
-      <div class="col-md-10">
-        <h4 >Postdoctoral at Max-Planck Institute for Astronomy (Heidelberg, Germany)</h4>
-        <p> Gaia enabling science products - Hybrid catalogs </p>
-      </div>
-
-      <div class="col-md-2" align="right" > <h4> 2011 -&nbsp; 2014</h4> </div>
-      <div class="col-md-10">
-        <h4 >Postdoctoral at University of Washington (Seattle, WA)</h4>
-        <p> The Panchromatic Hubble Andromeda Treasury (PHAT)</p>
-      </div>
-
-      <div class="col-md-2" align="right" > <h4> 2007 -&nbsp; 2011</h4> </div>
-      <div class="col-md-10">
-        <h4 >Ph.D. in Astronomy at University of Strasbourg (Strasbourg, France) </h4>
-        <p> ”Study of stellar cluster populations in galaxies: a Bayesian approach” under the supervision of Ariane Lancon.</p>
-      </div>
-
-      <div class="col-md-2" align="right" > <h4> 2006 -&nbsp; 2007</h4> </div>
-      <div class="col-md-10">
-	<h4 > Master degree at University of Strasbourg (Strasbourg, France) </h4>
-	<p> Compact objects and high energy, inverse methods, galactic evolution, and ”big data”.</p>
-      </div>
-
-      <div class="col-md-2" align="right" > <h4> 2004 -&nbsp; 2007</h4> </div>
-      <div class="col-md-10">
-	<h4 > Engineer degree (ENSPS/Superior and National School of Physics of Strasbourg) </h4>
-	<p> Fundamental physics, signal processing, data processing and databases.</p>
-      </div>
-
-    </div>
-  </div>
-
-  <h2> Main current research projects </h2>
-  <div class=container>
-    <div class="row">
-      <div class="col-md-2" align="right" > <h4> 2013 -&nbsp; present</h4> </div>
-      <div class="col-md-10">
-        <h4> Automated detection of  star cluster in surveys </h4> 
-	<p> Algorithm combining of photometric and velocity measurements with density profiles.
-	<br> (Fouesneau et al, in prep)
-	</p>
-      </div>
-
-      <div class="col-md-2" align="right" > <h4> 2013 -&nbsp; present</h4> </div>
-      <div class="col-md-10">
-        <h4> Star cluster disruption from the photometric end-point </h4> 
-	<p>  Statistical modeling and measurement of cluster disruption effect
-	on present day cluster populations.
-	<br> (Fouesneau et al, in prep)
-	</p>
-      </div>
-
-      <div class="col-md-2" align="right" > <h4> 2012 -&nbsp; present</h4> </div>
-      <div class="col-md-10">
-        <h4> Stellar object characterization from spectro-photometric measurements </h4> 
-	<p> Calibrating spectra with photometry in order to derive more reliable stellar parameters
-	<br> (Weisz et al, in prep)
-	</p>
-      </div>
-
-      <div class="col-md-2" align="right" > <h4> 2012 -&nbsp; present</h4> </div>
-      <div class="col-md-10">
-        <h4> Bayesian extinction and stellar parameters fitting code </h4>
-	<p> Determination of stellar parameters and dust properties using individual stars
-	<br> (Gordon et al, in prep)
-	</p>
-      </div>
-
-    </div>
-  </div>
-
-  <h2> Participation in Other Reasearch Projects</h2>
-
-  <div class=container>
-    <div class="row">
-
-      <div class="col-md-2" align="right" > <h4> 2013 -&nbsp; present</h4> </div>
-      <div class="col-md-10">
-	<h4 > Characterization of Nuclear Deformations with AGATA</h4>
-	<p> 
-	Statistical analysis of gamma detections and probabilistic modeling of
-	uncertainties. <br>
-	Collaboration with Damian Ralet (PhD student, GSI)</p>
-      </div>
-
-      <div class="col-md-2" align="right" > <h4> 2012 -&nbsp; present</h4> </div>
-      <div class="col-md-10">
-	<h4 > Percolation in Carbon Nanotube Networks </h4>
-	<p> 
-	Statistical analysis of Carbon Nanotube Networks in the percolation
-	context. <br>
-	Collaboration with Yann Leroy (iCube).</p>
-      </div>
-
-      <div class="col-md-2" align="right" > <h4> 2007 -&nbsp; 2008</h4> </div>
-      <div class="col-md-10">
-	<h4 > Photometry and Temporal analysis in the IRAC-CF </h4>
-	<p> 
-	Master project at  Harvard Smithonian Center for Astrophysics
-	(Cambridge, MA) <br> Photometry and temporal analysis in the photometric
-	campaign of the Spitzer’s IRAC dark calibration field (IRACCF).<br>
-	Collaboration with  Matthew Ashby (CfA) and Joseph Hora (CfA).</p>
-      </div>
-
-      <div class="col-md-2" align="right" > <h4> 2007 -&nbsp; 2008</h4> </div>
-      <div class="col-md-10">
-	<h4 > Automation of synoptic maps construction of the solar activity </h4>
-	<p> 
-	Collaboration with Dr. Isabelle Scholl (ISU) and Dr. Jean Aboudarham, (LESIA/Paris Observatory)</p>
-      </div>
-
-    </div>
-  </div>
-
-  <h2> Mentoring, Teaching &amp; Outreach</h2>
-
-  <div class=container>
-    <div class="row">
-      <div class="col-md-2" align="right" > <h4> 2012 </h4> </div>
-      <div class="col-md-10">
-	<h4 > "Introduction to python and object oriented programming"
-		(University of Washington, Seattle, WA, USA) </h4>
-        <p> Workshop introducing python to astronomers and in particular basics
-	of object oriented programming for science applications</p>
-      </div>
-	    
-      <div class="col-md-2" align="right" > <h4> 2012 </h4> </div>
-      <div class="col-md-10">
-	<h4 > "Python for Astronomers and Curious" (Strasbourg, France) </h4>
-        <p> Workshop introducing python to engineers, scientists from the observatory and university </p>
-      </div>
-
-      <div class="col-md-2"> <h4 align="right" > 2008 -&nbsp; 2010</h4> </div>
-      <div class="col-md-10">
-	<h4 > Lecturer at University of Strasbourg (Strasbourg, France) </h4>
-        <p> ”Introduction to data reduction”, lectures to master of astrophysics students </p>
-      </div>
-
-      <div class="col-md-2"> <h4 align="right" > 2008 -&nbsp; 2010</h4> </div>
-      <div class="col-md-10">
-	<h4 > "Spectra of Stars to Stellar evolution in Layman's term" </h4>
-        <p> Public talk reviewing our knowledge of stellar physics based on observations</p>
-      </div>
-
-    </div>
-  </div>
-
-  <h2> Selected Publications </h2>
-  <!-- 
+    <!-- Publications -->
+    <section id="publications" class="full-page publications">
+ <!-- 
 http://adsabs.harvard.edu/cgi-bin/nph-abs_connect?db_key=AST&db_key=PHY&db_key=PRE&qform=AST&arxiv_sel=astro-ph&arxiv_sel=cond-mat&arxiv_sel=cs&arxiv_sel=gr-qc&arxiv_sel=hep-ex&arxiv_sel=hep-lat&arxiv_sel=hep-ph&arxiv_sel=hep-th&arxiv_sel=math&arxiv_sel=math-ph&arxiv_sel=nlin&arxiv_sel=nucl-ex&arxiv_sel=nucl-th&arxiv_sel=physics&arxiv_sel=quant-ph&arxiv_sel=q-bio&sim_query=YES&ned_query=YES&adsobj_query=YES&aut_logic=OR&obj_logic=OR&author=fouesneau&object=&start_mon=&start_year=&end_mon=&end_year=&ttl_logic=OR&title=&txt_logic=OR&text=&nr_to_return=200000&start_nr=1&jou_pick=NO&ref_stems=&data_and=ALL&group_and=ALL&start_entry_day=&start_entry_mon=&start_entry_year=&end_entry_day=&end_entry_mon=&end_entry_year=&min_score=&sort=NDATE&data_type=SHORT&aut_syn=YES&ttl_syn=YES&txt_syn=YES&aut_wt=1.0&obj_wt=1.0&ttl_wt=0.3&txt_wt=3.0&aut_wgt=YES&obj_wgt=YES&ttl_wgt=YES&txt_wgt=YES&ttl_sco=YES&txt_sco=YES&version=1
   ADS custom format
   <li> <b>%t</b> <br> %G, %Y, %J, %V, %p [%c citations] <br>%U</li>
   -->
-  <div class=container>
-    <div class="row">
-      <div class="col-md-2" align="right" >  </div>
-      <div class="col-md-10">
-	<ul> 
-		<div id='publicationList'> External file </div> 
-	</ul>
-      </div>
-    </div>
-  </div>
+        <div class="section-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h2 class="italic">Selected Publications</h2>
+                        <hr width="60%" />
+			<p>
+<a
+	href="http://adsabs.harvard.edu/cgi-bin/nph-abs_connect?db_key=AST&amp;db_key=PRE&amp;qform=AST&amp;arxiv_sel=astro-ph&amp;arxiv_sel=cond-mat&amp;arxiv_sel=cs&amp;arxiv_sel=gr-qc&amp;arxiv_sel=hep-ex&amp;arxiv_sel=hep-lat&amp;arxiv_sel=hep-ph&amp;arxiv_sel=hep-th&amp;arxiv_sel=math&amp;arxiv_sel=math-ph&amp;arxiv_sel=nlin&amp;arxiv_sel=nucl-ex&amp;arxiv_sel=nucl-th&amp;arxiv_sel=physics&amp;arxiv_sel=quant-ph&amp;arxiv_sel=q-bio&amp;sim_query=YES&amp;ned_query=YES&amp;adsobj_query=YES&amp;aut_logic=OR&amp;obj_logic=OR&amp;author=fouesneau&amp;object=&amp;start_mon=&amp;start_year=&amp;end_mon=&amp;end_year=&amp;ttl_logic=OR&amp;title=&amp;txt_logic=OR&amp;text=&amp;nr_to_return=200&amp;start_nr=1&amp;jou_pick=ALL&amp;ref_stems=&amp;data_and=ALL&amp;group_and=ALL&amp;start_entry_day=&amp;start_entry_mon=&amp;start_entry_year=&amp;end_entry_day=&amp;end_entry_mon=&amp;end_entry_year=&amp;min_score=&amp;sort=SCORE&amp;data_type=SHORT&amp;aut_syn=YES&amp;ttl_syn=YES&amp;txt_syn=YES&amp;aut_wt=1.0&amp;obj_wt=1.0&amp;ttl_wt=0.3&amp;txt_wt=3.0&amp;aut_wgt=YES&amp;obj_wgt=YES&amp;ttl_wgt=YES&amp;txt_wgt=YES&amp;ttl_sco=YES&amp;txt_sco=YES&amp;version=1" class="btn btn-default btn-lg">ADS search</a>
+
+<a href=" http://arxiv.org/find/all/1/au:+fouesneau/0/1/0/all/0/1" class="btn btn-default btn-lg">arXiv search</a>
+			</p>
+		    </div>
+		    <div class="col-lg-8 col-lg-offset-2 publications">
+			<li> <b>The Survey of Lines in M31 (SLIM): Investigating the Origins of [C II] 
+			Emission</b> <br> Kapala, M. J., Sandstrom, K., Groves, B., Croxall, K., Kreckel, 
+			K., Dalcanton, J., Leroy, A., Schinnerer, E., Walter, F., Fouesneau, M.,  
+			2015,  The Astrophysical Journal,  798,  24 [0 citations] 
+			<br><a href="http://adsabs.harvard.edu/abs/2015ApJ...798...24K">2015ApJ...798...24K</a></li> 
+
+			<li> <b>The Supernova Progenitor Mass Distributions of M31 and M33: Further 
+			Evidence for an Upper Mass Limit</b> <br> Jennings, Z. G., Williams, B. F., 
+			Murphy, J. W., Dalcanton, J. J., Gilbert, K. M., Dolphin, A. E., Weisz, D. 
+			R., Fouesneau, M.,  2014,  The Astrophysical Journal,  795,  170 [1 
+			citations] <br><a href="http://adsabs.harvard.edu/abs/2014ApJ...795..170J">2014ApJ...795..170J</a></li> 
+
+			<li> <b>Panchromatic Hubble Andromeda Treasury. IX. A Photometric Survey of 
+			Planetary Nebulae in M31</b> <br> Veyette, M. J., Williams, B. F., Dalcanton, J. 
+			J., Balick, B., Caldwell, N., Fouesneau, M., Girardi, L., Gordon, K. D., 
+			Kalirai, J., Rosenfield, P., Seth, A. C.,  2014,  The Astrophysical 
+			Journal,  792,  121 [0 citations] <br><a href="http://adsabs.harvard.edu/abs/2014ApJ...792..121V">2014ApJ...792..121V</a></li> 
+
+			<li> <b>The age distribution of stellar clusters in M83</b> <br> Silva-Villa, E., 
+			Adamo, A., Bastian, N., Fouesneau, M., Zackrisson, E.,  2014,  Monthly 
+			Notices of the Royal Astronomical Society,  440,  L116 [5 citations] 
+			<br><a href="http://adsabs.harvard.edu/abs/2014MNRAS.440L.116S">2014MNRAS.440L.116S</a></li> 
+
+			<li> <b>The Panchromatic Hubble Andromeda Treasury. V. Ages and Masses of the 
+			Year 1 Stellar Clusters</b> <br> Fouesneau, M., Johnson, L. C., Weisz, D. R., 
+			Dalcanton, J. J., Bell, E. F., Bianchi, L., Caldwell, N., Gouliermis, D. 
+			A., Guhathakurta, P., Kalirai, J., Larsen, S. S., Rix, H.-W., Seth, A. C., 
+			Skillman, E. D., Williams, B. F.,  2014,  The Astrophysical Journal,  786,  
+			117 [7 citations] <br><a href="http://adsabs.harvard.edu/abs/2014ApJ...786..117F">2014ApJ...786..117F</a></li> 
+
+			<li> <b>The Panchromatic Hubble Andromeda Treasury. VII. The Steep 
+			Mid-ultraviolet to Near-infrared Extinction Curve in the Central 200 pc of 
+			the M31 Bulge</b> <br> Dong, H., Li, Z., Wang, Q. D., Lauer, T. R., Olsen, K., 
+			Saha, A., Dalcanton, J., Gordon, K., Fouesneau, M., Bell, E., Bianchi, L.,  
+			2014,  The Astrophysical Journal,  785,  136 [4 citations] 
+			<br><a href="http://adsabs.harvard.edu/abs/2014ApJ...785..136D">2014ApJ...785..136D</a></li> 
+
+			<li> <b>The Panchromatic Hubble Andromeda Treasury. IV. A Probabilistic Approach 
+			to Inferring the High-mass Stellar Initial Mass Function and Other 
+			Power-law Functions</b> <br> Weisz, D. R., Fouesneau, M., Hogg, D. W., Rix, 
+			H.-W., Dolphin, A. E., Dalcanton, J. J., Foreman-Mackey, D. T., Lang, D., 
+			Johnson, L. C., Beerman, L. C., Bell, E. F., Gordon, K. D., Gouliermis, D., 
+			Kalirai, J. S., Skillman, E. D., Williams, B. F.,  2013,  The Astrophysical 
+			Journal,  762,  123 [14 citations] <br><a href="http://adsabs.harvard.edu/abs/2013ApJ...762..123W">2013ApJ...762..123W</a></li> 
+
+			<li> <b>Supernova Remnant Progenitor Masses in M31</b> <br> Jennings, Z. G., Williams, 
+			B. F., Murphy, J. W., Dalcanton, J. J., Gilbert, K. M., Dolphin, A. E., 
+			Fouesneau, M., Weisz, D. R.,  2012,  The Astrophysical Journal,  761,  26 
+			[10 citations] <br><a href="http://adsabs.harvard.edu/abs/2012ApJ...761...26J">2012ApJ...761...26J</a></li> 
+
+			<li> <b>The Panchromatic Hubble Andromeda Treasury. III. Measuring Ages and 
+			Masses of Partially Resolved Stellar Clusters</b> <br> Beerman, L. C., Johnson, 
+			L. C., Fouesneau, M., Dalcanton, J. J., Weisz, D. R., Seth, A. C., 
+			Williams, B. F., Bell, E. F., Bianchi, L. C., Caldwell, N., Dolphin, A. E., 
+			Gouliermis, D. A., Kalirai, J. S., Larsen, S. S., Melbourne, J. L., Rix, 
+			H.-W., Skillman, E. D.,  2012,  The Astrophysical Journal,  760,  104 [6 
+			citations] <br><a href="http://adsabs.harvard.edu/abs/2012ApJ...760..104B">2012ApJ...760..104B</a></li> 
+
+			<li> <b>PHAT Stellar Cluster Survey. I. Year 1 Catalog and Integrated 
+			Photometry</b> <br> Johnson, L. C., Seth, A. C., Dalcanton, J. J., Caldwell, N., 
+			Fouesneau, M., Gouliermis, D. A., Hodge, P. W., Larsen, S. S., Olsen, K. A. 
+			G., San Roman, I., Sarajedini, A., Weisz, D. R., Williams, B. F., Beerman, 
+			L. C., Bianchi, L., Dolphin, A. E., Girardi, L., Guhathakurta, P., Kalirai, 
+			J., Lang, D., Monachesi, A., Nanda, S., Rix, H.-W., Skillman, E. D.,  2012,  
+			The Astrophysical Journal,  752,  95 [19 citations] <br><a href="http://adsabs.harvard.edu/abs/2012ApJ...752...95J">2012ApJ...752...95J</a></li> 
+
+			<li> <b>The ACS Nearby Galaxy Survey Treasury. X. Quantifying the Star Cluster 
+			Formation Efficiency of nearby Dwarf Galaxies</b> <br> Cook, D. O., Seth, A. C., 
+			Dale, D. A., Johnson, L. C., Weisz, D. R., Fouesneau, M., Olsen, K. A. G., 
+			Engelbracht, C. W., Dalcanton, J. J.,  2012,  The Astrophysical Journal,  
+			751,  100 [17 citations] <br><a href="http://adsabs.harvard.edu/abs/2012ApJ...751..100C">2012ApJ...751..100C</a></li> 
+
+			<li> <b>Analyzing Star Cluster Populations with Stochastic Models: The Hubble 
+			Space Telescope/Wide Field Camera 3 Sample of Clusters in M83</b> <br> Fouesneau, 
+			M., Lan&ccedil;on, A., Chandar, R., Whitmore, B. C.,  2012,  The Astrophysical 
+			Journal,  750,  60 [21 citations] <br><a href="http://adsabs.harvard.edu/abs/2012ApJ...750...60F">2012ApJ...750...60F</a></li> 
+
+			<li> <b>Spectroscopic constraints on the form of the stellar cluster mass 
+			function</b> <br> Bastian, N., Konstantopoulos, I. S., Trancho, G., Weisz, D. R., 
+			Larsen, S. S., Fouesneau, M., Kaschinski, C. B., Gieles, M.,  2012,  
+			Astronomy and Astrophysics,  541,  AA25 [6 citations] <br><a href="http://adsabs.harvard.edu/abs/2012A%26A...541A..25B">2012A&amp;A...541A..25B</a></li> 
+
+			<li> <b>Accounting for stochastic fluctuations when analysing the integrated 
+			light of star clusters. I. First systematics</b> <br> Fouesneau, M., Lan&ccedil;on, A.,  
+			2010,  Astronomy and Astrophysics,  521,  AA22 [51 citations] 
+			<br><a href="http://adsabs.harvard.edu/abs/2010A%26A...521A..22F">2010A&amp;A...521A..22F</a></li> 
+
+			<li> <b>Automatic detection and tracking of filaments for a solar feature 
+			database</b> <br> Aboudarham, J., Scholl, I., Fuller, N., Fouesneau, M., 
+			Galametz, M., Gonon, F., Maire, A., Leroy, Y.,  2008,  Annales Geophysicae,  
+			26,  243 [7 citations] <br><a href="http://adsabs.harvard.edu/abs/2008AnGeo..26..243A">2008AnGeo..26..243A</a></li> 
+
+                    </div>
+	        </div>
+                <div class="row">
+                    <div class="col-sm-8 col-md-offset-2">
+                        <div class="page-scroll">
+                            <a href="#cv" class="btn btn-circle">
+                                <i class="fa fa-angle-double-down"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- CV -->
+    <section id="cv" class="full-page cv">
+        <div class="section-body">
+            <div class="container">
+                <div class="row darken-bg-50">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <h2 class="italic">Academic CV</h2>
+                        <hr width="25%" />
+                        <div id="CV"></div>
+                    </div>
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <a class="btn btn-default" id="select-cv-education"
+				row="cv-education">Education</a>
+                        <a class="btn btn-default" id="select-cv-current"
+				row="cv-current">Current Projects</a>
+                        <a class="btn btn-default" id="select-cv-other"
+				row="cv-other">Other projects</a>
+                        <a class="btn btn-default" id="select-cv-teaching"
+				row="cv-teaching">Teaching</a>
+                    </div>
+                </div>
+                <!-- -->
+                <div class="row darken-bg-50" id="cv-education">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <a href="education.html" class="topic">Education</a> <hr width="60%" />
+			<div class=container>
+
+			<table class="tg">
+			  <tr>
+			    <td class="tg-bold-right">2014 - present</td>
+			    <td class="tg-bold">Postdoctoral at Max-Planck Institute for Astronomy (Heidelberg, Germany)</th>
+			  </tr>
+			  <tr>
+			    <td></td>
+			    <td class="tg-desc">Gaia enabling science products - Hybrid catalogs</td>
+			  </tr>
+			  <tr>
+			    <td class="tg-bold-right">2011 - 2014</td>
+			    <td class="tg-bold">Postdoctoral at University of Washington (Seattle, WA)</td>
+			  </tr>
+			  <tr>
+			    <td></td>
+			    <td class="tg-desc">The Panchromatic Hubble Andromeda Treasury (PHAT)</td>
+			  </tr>
+			  <tr>
+			    <td class="tg-bold-right">2007 - 2011</td>
+			    <td class="tg-bold">Ph.D. in Astronomy at University of Strasbourg (Strasbourg, France)</td>
+			  </tr>
+			  <tr>
+			    <td></td>
+			    <td class="tg-desc">”Study of stellar cluster populations in galaxies: a Bayesian approach” under the supervision of Ariane Lancon.</td>
+			  </tr>
+			  <tr>
+			    <td class="tg-bold-right">2006 - 2007</td>
+			    <td class="tg-bold">Master degree at University of Strasbourg (Strasbourg, France)</td>
+			  </tr>
+			  <tr>
+			    <td></td>
+			    <td class="tg-desc">Compact objects and high energy, inverse methods, galactic evolution, and ”big data”.</td>
+			  </tr>
+			  <tr>
+			    <td class="tg-bold-right">2004 - 2007</td>
+			    <td class="tg-bold">Engineer degree (ENSPS/Superior and National School of Physics of Strasbourg)</td>
+			  </tr>
+			  <tr>
+			    <td></td>
+			    <td class="tg-desc">Fundamental physics, signal processing, data processing and databases.</td>
+			  </tr>
+			</table>
+
+			</div>
+                    </div>
+                </div>
+                <!-- -->
+                <div class="row darken-bg-50" id="cv-current">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <a href="current.html" class="topic">Main projects</a> <hr width="60%" />
+			<table class="tg">
+			<tr>
+				<td class="tg-bold-right"></td>
+				<td class="tg-bold"> Automated detection of star cluster in surveys </td>
+			</tr>
+			<tr>
+				<td></td>
+				<td class="tg-desc">Algorithm combining of photometric and velocity measurements
+					with density profiles.  (Fouesneau et al, in prep)</td>
+			</tr>
+			<tr>
+				<td class="tg-bold-right"></td>
+				<td class="tg-bold"> Star cluster disruption from the photometric end-point </td>
+			</tr>
+			<tr>
+				<td></td>
+				<td class="tg-desc">
+					Statistical modeling and measurement of cluster disruption effect on present day cluster populations.  
+					(Fouesneau et al, in prep) <td>
+			</tr>
+			<tr>
+				<td class="tg-bold-right"></td>
+				<td class="tg-bold"> Stellar object characterization from spectro-photometric measurements </td>
+			</tr>
+			<tr>
+				<td></td>
+				<td class="tg-desc">
+					Calibrating spectra with photometry in order to derive more reliable stellar parameters 
+					(Weisz et al, in prep)
+
+			</tr>
+			<tr>
+				<td class="tg-bold-right"></td>
+				<td class="tg-bold"> Bayesian extinction and stellar parameters fitting code (BEAST) </td>
+			</tr>
+			<tr>
+				<td></td>
+				<td class="tg-desc">
+					Determination of stellar parameters and dust properties using individual stars 
+					(Gordon et al, in prep)
+			</tr>
+			</table>
+		    </div>
+
+                </div>
+                <!-- -->
+                <div class="row darken-bg-50" id="cv-other">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <a href="other.html" class="topic">Other projects</a> <hr width="60%" />
+			<table class="tg">
+			<tr>
+				<td class="tg-bold-right"></td>
+				<td class="tg-bold"> Characterization of Nuclear Deformations with AGATA </td>
+			</tr>
+			<tr>
+				<td></td>
+				<td class="tg-desc">
+				Statistical analysis of gamma detections and probabilistic modeling of uncertainties. 
+				Collaboration with Damian Ralet (PhD student, GSI)</td>
+			</tr>
+			<tr>
+				<td class="tg-bold-right"></td>
+				<td class="tg-bold"> Percolation in Carbon Nanotube Networks </td>
+			</tr>
+			<tr>
+				<td></td>
+				<td class="tg-desc">
+					Statistical analysis of Carbon Nanotube Networks in the percolation context. 
+					Collaboration with Yann Leroy (iCube).
+					<a
+						href="http://dx.doi.org/10.1088/0957-4484/22/34/345703">paper</a></td>
+			</tr>
+			<tr>
+				<td class="tg-bold-right"></td>
+				<td class="tg-bold"> Photometry and Temporal analysis in the IRAC-CF</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td class="tg-desc">
+					Master project at Harvard Smithonian Center for Astrophysics (Cambridge, MA) 
+					Photometry and temporal analysis in the photometric campaign of the Spitzer’s IRAC dark calibration field (IRACCF).
+					Collaboration with Matthew Ashby (CfA)
+					and Joseph Hora (CfA).</td>
+
+			</tr>
+			<tr>
+				<td class="tg-bold-right"></td>
+				<td class="tg-bold"> Automation of synoptic maps construction of the solar activity </td>
+			</tr>
+			<tr>
+				<td></td>
+				<td class="tg-desc">
+					Detecting and tracking solar features (spots, filaments, faculae) using multiwavelength imaging.
+					Collaboration with Dr. Isabelle Scholl (ISU) and Dr. Jean Aboudarham, (LESIA/Paris Observatory)
+					<a href="http://adsabs.harvard.edu/abs/2008AnGeo..26..243A">2008AnGeo..26..243A</a>
+			</tr>
+			</table>
+		    </div>
+                </div>
+                <!-- -->
+                <div class="row darken-bg-50" id="cv-teaching">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <a href="other.html" class="topic">Teaching & Outreach</a> <hr width="60%" />
+			<table class="tg">
+			<tr>
+				<td class="tg-bold-right"></td>
+				<td class="tg-bold"> "Introduction to Bayesian statistics"</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td class="tg-desc">
+				Lectures to Master student level, introducting the basics of statistical analysis in the most pragmatic way (if possible).
+				<a href="">online materials (soon)</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="tg-bold-right"></td>
+				<td class="tg-bold"> "Introduction to python and object oriented programming"</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td class="tg-desc">
+				Part of a workshop introducing python to astronomers and in particular basics of object oriented programming for science applications
+				<a href="https://github.com/jakevdp/2013_fall_ASTR599">online materials</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="tg-bold-right"></td>
+				<td class="tg-bold"> "Python for Astronomers and Curious"</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td class="tg-desc">
+					Workshop introducing python to engineers, scientists from the observatory and university </td>
+			</tr>
+			<tr>
+				<td class="tg-bold-right"></td>
+				<td class="tg-bold"> "Introduction to data reduction"</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td class="tg-desc">
+					lectures to master of astrophysics students</td>
+			</tr>
+			<tr>
+				<td class="tg-bold-right"></td>
+				<td class="tg-bold"> "Spectra of Stars to Stellar evolution in Layman's term" </td>
+			</tr>
+			<tr>
+				<td></td>
+				<td class="tg-desc">
+					Public talk reviewing our knowledge of stellar physics based on observations</td>
+			</tr>
+			</table>
+		    </div>
+                </div>
+                <!-- -->
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="page-scroll">
+                            <a href="#contact" class="btn btn-circle">
+                                <i class="fa fa-angle-double-down"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </section>
+    <!-- People -->
 
 
-  <h2> Talks and presentations </h2>
+    <!-- Contact -->
+    <section id="contact" class="full-page contact">
+        <div class="section-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <h2 class="italic">Contact</h2>
+                        <hr width="25%" />
+                        <p>
+                            <a id='email'><i class="fa fa-envelope h-spacer-16"></i>fouesneau@mpia</a>
+                        </p>
+                        <p>
+			Max-Planck-Institut für Astronomie<br/>
+			Königstuhl 17<br/>
+			D-69117 Heidelberg, Germany
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div class=container>
-    <div class="row">
-      <div class="col-md-2" align="right" > <h4> 2013 </h4> </div>
-      <div class="col-md-10">
-	<ul>
-          <li> Aspen Center for Physics, June - "Observational constraints on star and cluster formation" </li>
-	  <li> Strasbourg, France, March - "Uncertainties when inferring the stellar mass function" </li>
-	  <li> STScI, Baltimore, BA, January - "Clues in Environmental influence in cluster disruption in PHAT" </li>
-	  <li> AAS, Long Beach, CA, January -  "Star Clusters in PHAT, Early Science Review", M31 Special Session </li>
-	</ul>
-      </div>
-      <div class="col-md-2" align="right" > <h4> 2012 </h4> </div>
-      <div class="col-md-10">
-	<ul>
-	  <li> Sesto, Italy, July -  "Star Clusters Populations in M31" </li>
-	  <li> MPIA, Heidelberg, Germany, July - "Clusters Disruption from early science in PHAT" </li>
-	  <li> AAS, Austin, TX, January  - "Characterizing Cluster Populations in a Stochastic Regime" </li>
-	</ul>
-      </div>
-      <div class="col-md-2" align="right" > <h4> 2011 </h4> </div>
-      <div class="col-md-10">
-	<ul>
-	<li> Strasbourg, France, December - "PHAT an HST large survey of M31" </li> 
-	<li> Strasbourg, France, March - "Python for Astronomers" tutorial    </li> 
-	</ul>
-      </div>
+    <!-- Core JavaScript Files -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
 
-      <div class="col-md-2" align="right" > <h4> 2010 </h4> </div>
-      <div class="col-md-10">
-	<ul>
-	<li>  STScI, Baltimore, BA, May  - "Estimating Cluster Properties in a Stochastic Context" </li>
-	</ul>
-      </div>
+    <!-- Custom Theme JavaScript -->
+    <script src="js/grayscale.js"></script>
 
-      <div class="col-md-2" align="right" > <h4> 2009 </h4> </div>
-      <div class="col-md-10">
-	<ul>
-	<li> Stockholm, November - "Unresolved Star Clusters Properties"</li> 
-	<li> Next Generation Virgo Cluster Survey (NGVS), Paris, France, October - "Star cluster ages and masses analysis"</li> 
-	<li> Johnson City, TN, July - "Bayesian Approach for Star cluster property determinations"</li> 
-	<li> AAS, Passadena, CA, May - "Infrared-variable Objects in the IRAC-CF"</li> 
-	<li> KITP, Santa Barbara, CA, January - "Stochastic fluctuations in cluster property analysis" </li> 
-	</ul>
-      </div>
+    <!-- My JS stuff -->
+    <script src="js/writing.js"></script>
+    <script src="js/utils.js"></script>
 
-      <div class="col-md-2" align="right" > <h4> 2008 </h4> </div>
-      <div class="col-md-10">
-	<ul>
-	<li> Sheffield, United Kingdom, July "Stochastic Population Synthesis"</li>
-	<li> Illkirch, France, April Stellar evolution in Layman’s term</li>
-	<li> Geneva, Switzerland, February Spectra of populations dominated by supergiants</li>
-	</ul>
-      </div>
+    <script type="text/javascript">
 
-    </div>
-  </div>
+        function setupCVSections() {
+            // highlight initially selected survey topic
+            $("#cv .row .btn").each(function(j,elem) {
+                rowID = $(elem).attr("row");
+                $("#" + rowID).hide();
+            });
 
-  <h2> Professional Service & Activities </h2>
-  <div class=container>
-    <div class="row">
-      <div class="col-md-2" align="right" > <h4> 2009 - present </h4> </div>
-      <div class="col-md-10">
-	<ul>
-	<li> American Astronomical Society - Full Member</li>
-	<li> Active Referee - A&A, ApJ, MNRAS, AJ </li>
-	</ul>
-      </div>
+            // Default selection
+            $("#select-cv-education").addClass("btn-filled");
+            rowID = $("#select-cv-education").attr("row");
+            $("#" + rowID).show(400);
 
-      <div class="col-md-2" align="right" > <h4> 2009 </h4> </div>
-      <div class="col-md-10">
-	<ul>
-	<li> Local organizing commitee (LOC) for "Intermediate Mass Stars &#8596; Massive Stars" workshop</li>
-	</ul>
-      </div>
+            $("#cv .row .btn").click(function() {
+                if ($(this).hasClass("btn-filled"))
+                    return;
 
-    </div>
-  </div>
-  </h2>
-  
-  </div>
-  </body>
-  </html>
+                // trigger all stops
+                $(".fa-stop").trigger("click");
+                $("#cv .row .btn").each(function(j,elem) {
+                    if ($(elem).hasClass("btn-filled")) {
+                        $(elem).removeClass("btn-filled");
+                        rowID = $(elem).attr("row");
+                        $("#" + rowID).hide(400);
+                    }
+                });
+
+                $(this).addClass("btn-filled");
+                rowID = $(this).attr("row");
+                $("#" + rowID).show(400);
+            });
+
+        }
+
+        function setupFriendsSections() {
+            // highlight initially selected topic
+            $("#friends .row .btn").each(function(j,elem) {
+                rowID = $(elem).attr("row");
+                $("#" + rowID).hide();
+            });
+
+            // Default selection
+            $("#select-spectroscopy").addClass("btn-filled");
+            rowID = $("#select-spectroscopy").attr("row");
+            $("#" + rowID).show(400);
+
+            $("#friends .row .btn").click(function() {
+                if ($(this).hasClass("btn-filled"))
+                    return;
+
+                // trigger all stops
+                $(".fa-stop").trigger("click");
+                $("#friends .row .btn").each(function(j,elem) {
+                    if ($(elem).hasClass("btn-filled")) {
+                        $(elem).removeClass("btn-filled");
+                        rowID = $(elem).attr("row");
+                        $("#" + rowID).hide(400);
+                    }
+                });
+
+                $(this).addClass("btn-filled");
+                rowID = $(this).attr("row");
+                $("#" + rowID).show(400);
+            });
+
+        }
+
+        $(document).ready(function() {
+            $(".full-page").height(window.innerHeight);
+            $(".canvas-container").height(window.innerHeight/1.5*0.9);
+
+            if (window.matchMedia('(min-width: 767px)').matches) {
+                // browser is at least 767px wide
+                $(".canvas-container").width(window.innerWidth/2*0.95);
+            } else {
+                // the width of browser is less then 767px
+                $(".canvas-container").width(window.innerWidth*0.9);
+                $(".photos .flickr-panel").height(window.innerHeight/2.*0.9);
+                $(".photos .instagram-panel").height(window.innerHeight/2.*0.9);
+            }
+
+            setupWriting();
+            setupCVSections();
+            setupFriendsSections();
+
+            var name = "fouesneau",
+                address = "mpia.de";
+            $("#email").click(function() {
+                window.location.href = "mailto:" + name + "@" + address;
+            })
+
+        });
+
+    </script>
+
+ </body>
+
+</html>
