@@ -145,7 +145,6 @@ hr {
 
 /* About */
 .about {
-    background: url(../img/hole.png) no-repeat center center scroll;
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
