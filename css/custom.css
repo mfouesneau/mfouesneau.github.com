@@ -92,7 +92,7 @@ hr {
 
 /* Intro */
 .intro {
-    background: url(../img/crater_lake.jpg) no-repeat bottom center scroll;
+    background: url(../img/crater_lake_lowres.jpg) no-repeat bottom center scroll;
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
