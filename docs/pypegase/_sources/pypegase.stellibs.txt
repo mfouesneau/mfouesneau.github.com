@@ -1,0 +1,54 @@
+pypegase.stellibs package
+=========================
+
+Submodules
+----------
+
+pypegase.stellibs.basel module
+------------------------------
+
+.. automodule:: pypegase.stellibs.basel
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypegase.stellibs.common module
+-------------------------------
+
+.. automodule:: pypegase.stellibs.common
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypegase.stellibs.elodie module
+-------------------------------
+
+.. automodule:: pypegase.stellibs.elodie
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypegase.stellibs.interpolator module
+-------------------------------------
+
+.. automodule:: pypegase.stellibs.interpolator
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypegase.stellibs.stellib module
+--------------------------------
+
+.. automodule:: pypegase.stellibs.stellib
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: pypegase.stellibs
+    :members:
+    :undoc-members:
+    :show-inheritance:

@@ -1,0 +1,866 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pypegase.stellibs.stellib &mdash; pyPegase 1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'../../../',
+        VERSION:'1.0',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+    <script type="text/javascript">
+        jQuery(function () {
+            SphinxRtdTheme.StickyNav.enable();
+        });
+    </script>
+  
+
+  
+    <link rel="top" title="pyPegase 1.0 documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../../index.html" class="fa fa-home"> pyPegase</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro.html">pyPegase</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../intro.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../intro.html#simple-stellar-population-ssp">Simple stellar population (SSP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../intro.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../readme.html">pyPEGASE v1.0</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#contents-of-the-directory">Contents of the directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#quick-start">Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#quick-start-by-example-3-steps-to-build-one-continuous-population">Quick start by example : 3 steps to build one &#8220;continuous&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#quick-start-by-example-3-steps-to-build-one-discrete-population">Quick start by example: 3 steps to build one &#8220;discrete&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#quick-start-by-example-3-steps-to-build-one-fast-discrete-population">Quick start by example: 3 steps to build one &#8220;fast-discrete&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#customize-your-runs">Customize your runs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#produce-large-collections-of-simulations">Produce large collections of simulations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#compute-colors">Compute colors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#for-those-who-wish-to-read-edit-the-codes">For those who wish to read/edit the codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#required-acknowledgements">Required acknowledgements</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">pyPegase</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      
+    <li>pypegase.stellibs.stellib</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <h1>Source code for pypegase.stellibs.stellib</h1><div class="highlight"><pre>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Stellar library class</span>
+
+<span class="sd">Intent to implement a generic module to manage stellar library from various</span>
+<span class="sd">sources.</span>
+
+<span class="sd">The interpolation is implemented from the pegase.2 fortran converted algorithm.</span>
+<span class="sd">(this may not be super pythonic though)</span>
+
+<span class="sd">.. note::</span>
+
+<span class="sd">    a cython version is available for speed up and should be used transparently when available</span>
+<span class="sd">    (run make once)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">..tools.compatibility</span> <span class="kn">import</span> <span class="nb">range</span>
+<span class="kn">from</span> <span class="nn">..helpers</span> <span class="kn">import</span> <span class="n">nbytes</span><span class="p">,</span> <span class="n">isNestedInstance</span>
+<span class="kn">from</span> <span class="nn">..tools.future</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">..config</span> <span class="kn">import</span> <span class="n">__NTHREADS__</span>
+<span class="kn">from</span> <span class="nn">.interpolator</span> <span class="kn">import</span> <span class="n">interpMany</span><span class="p">,</span> <span class="n">interp</span>
+
+
+<span class="n">lsun</span> <span class="o">=</span> <span class="mf">3.839e+26</span>   <span class="c"># in W (Watts)</span>
+<span class="n">sig_stephan</span> <span class="o">=</span> <span class="mf">5.67037321</span> <span class="o">*</span> <span class="mf">1e-8</span>  <span class="c"># W * m**-2 * K**-4</span>
+<span class="n">rsun</span> <span class="o">=</span> <span class="mf">6.955e8</span>  <span class="c"># in meters</span>
+
+
+<div class="viewcode-block" id="Stellib"><a class="viewcode-back" href="../../../pypegase.stellibs.html#pypegase.stellibs.stellib.Stellib">[docs]</a><span class="k">class</span> <span class="nc">Stellib</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Basic stellar library class &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Contructor &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">_load_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+    <span class="nd">@property</span>
+<div class="viewcode-block" id="Stellib.nbytes"><a class="viewcode-back" href="../../../pypegase.stellibs.html#pypegase.stellibs.stellib.Stellib.nbytes">[docs]</a>    <span class="k">def</span> <span class="nf">nbytes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; return the number of bytes of the object &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">nbytes</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Stellib.interp"><a class="viewcode-back" href="../../../pypegase.stellibs.html#pypegase.stellibs.stellib.Stellib.interp">[docs]</a>    <span class="k">def</span> <span class="nf">interp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T0</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">Z0</span><span class="p">,</span> <span class="n">L0</span><span class="p">,</span> <span class="n">dT_max</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Interpolation of the T,g grid</span>
+
+<span class="sd">        Interpolate on the grid and returns star indices and</span>
+<span class="sd">        associated weights, and Z.</span>
+<span class="sd">        3 to 12 stars are returned.</span>
+<span class="sd">        It calls _interp_, but reduce the output to the relevant stars.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        T0: float</span>
+<span class="sd">            log(Teff) to obtain</span>
+
+<span class="sd">        g0: float</span>
+<span class="sd">            log(g) to obtain</span>
+
+<span class="sd">        Z0: float</span>
+<span class="sd">            metallicity to obtain</span>
+
+<span class="sd">        L0: float</span>
+<span class="sd">            bolometric luminosity to get</span>
+
+<span class="sd">        T: float</span>
+<span class="sd">            log(Teff) of the grid</span>
+
+<span class="sd">        g: float</span>
+<span class="sd">            log(g) of the grid</span>
+
+<span class="sd">        dT_max: float, optional</span>
+<span class="sd">            If, T2 (resp. T1) is too far from T compared to T1 (resp. T2), i2</span>
+<span class="sd">            (resp. i1) is not used.  (see below for namings)</span>
+
+<span class="sd">        eps: float</span>
+<span class="sd">            temperature sensitivity under which points are considered to have</span>
+<span class="sd">            the same temperature</span>
+
+<span class="sd">        weight: float, optional</span>
+<span class="sd">            weight to apply to the selected star</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        --------</span>
+<span class="sd">        idx:  ndarray(dtype=float)</span>
+<span class="sd">            3 to 12 star indexes in the library</span>
+
+<span class="sd">        val: ndarray</span>
+<span class="sd">            associated weights</span>
+
+<span class="sd">        :todo: compute new weights accounting for Z</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">_Z</span>    <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Z</span>
+        <span class="c"># _Zv   = np.unique(_Z)</span>
+        <span class="n">_T</span>    <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">[</span><span class="s">&#39;Teff&#39;</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">double</span><span class="p">)</span>
+        <span class="n">_g</span>    <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">[</span><span class="s">&#39;logG&#39;</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">double</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">interp</span><span class="p">(</span><span class="n">T0</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">Z0</span><span class="p">,</span> <span class="n">L0</span><span class="p">,</span> <span class="n">_T</span><span class="p">,</span> <span class="n">_g</span><span class="p">,</span> <span class="n">_Z</span><span class="p">,</span> <span class="n">dT_max</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Stellib.interpMany"><a class="viewcode-back" href="../../../pypegase.stellibs.html#pypegase.stellibs.stellib.Stellib.interpMany">[docs]</a>    <span class="k">def</span> <span class="nf">interpMany</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T0</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">Z0</span><span class="p">,</span> <span class="n">L0</span><span class="p">,</span> <span class="n">dT_max</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                   <span class="n">pool</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">nthreads</span><span class="o">=</span><span class="n">__NTHREADS__</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; run interp on a list of inputs and returns reduced results</span>
+
+<span class="sd">        Interpolation of the T,g grid at Z0 metallicity</span>
+
+<span class="sd">        Interpolate on the grid and returns star indices and</span>
+<span class="sd">        associated weights, and Z.</span>
+<span class="sd">        3 to 12 stars are returned.</span>
+<span class="sd">        It calls _interp_, but reduce the output to the relevant stars.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        T0  ndarray(float)</span>
+<span class="sd">            log(Teff) to obtain</span>
+
+<span class="sd">        g0  ndarray(float)</span>
+<span class="sd">            log(g) to obtain</span>
+
+<span class="sd">        Z0 ndarray(float)</span>
+<span class="sd">            metallicity values</span>
+
+<span class="sd">        L0 ndarray(float)</span>
+<span class="sd">            luminosity values</span>
+
+<span class="sd">        dT_max: float, optional</span>
+<span class="sd">            If, T2 (resp. T1) is too far from T compared to T1 (resp. T2),</span>
+<span class="sd">            i2 (resp. i1) is not used.</span>
+<span class="sd">            (see below for namings)</span>
+
+<span class="sd">        eps: float</span>
+<span class="sd">            temperature sensitivity under which points are considered to have</span>
+<span class="sd">            the same temperature</span>
+
+<span class="sd">        weights: ndarray(float)</span>
+<span class="sd">            luminosity weigths to apply after interpolation</span>
+
+<span class="sd">        pool: Pool-like object</span>
+<span class="sd">            specify a multiprocessing pool for parallel processing</span>
+
+<span class="sd">        nthreads: int</span>
+<span class="sd">            number of processes to use by default</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        r: ndarray, ndim=2</span>
+<span class="sd">            Returns 3 to 12 star indexes and associated weights</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">_t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">T0</span><span class="p">)</span>
+        <span class="n">_g</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">g0</span><span class="p">)</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">interpMany</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_t</span><span class="p">,</span> <span class="n">_g</span><span class="p">,</span> <span class="n">Z0</span><span class="p">,</span> <span class="n">L0</span><span class="p">,</span> <span class="n">dT_max</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="n">eps</span><span class="p">,</span>
+                       <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">,</span> <span class="n">pool</span><span class="o">=</span><span class="n">pool</span><span class="p">,</span> <span class="n">nthreads</span><span class="o">=</span><span class="n">nthreads</span><span class="p">)</span>
+        <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">r</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+
+        <span class="c"># init values</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">idxk</span> <span class="ow">in</span> <span class="n">idx</span><span class="p">:</span>
+            <span class="n">d</span><span class="p">[</span><span class="n">idxk</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)):</span>
+            <span class="n">d</span><span class="p">[</span> <span class="n">r</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="p">]</span> <span class="o">+=</span> <span class="n">r</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="k">del</span> <span class="n">r</span><span class="p">,</span> <span class="n">idx</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+</div>
+<div class="viewcode-block" id="Stellib.points_inside"><a class="viewcode-back" href="../../../pypegase.stellibs.html#pypegase.stellibs.stellib.Stellib.points_inside">[docs]</a>    <span class="k">def</span> <span class="nf">points_inside</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xypoints</span><span class="p">,</span> <span class="n">dlogT</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">dlogg</span><span class="o">=</span><span class="mf">0.3</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns if a point is inside the polygon defined by the boundary of the library</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        xypoints: sequence</span>
+<span class="sd">            a sequence of N logg, logT pairs.</span>
+
+<span class="sd">        dlogT: float</span>
+<span class="sd">            margin in logT</span>
+
+<span class="sd">        dlogg: float</span>
+<span class="sd">            margin in logg</span>
+
+<span class="sd">        returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        r: ndarray(dtype=bool)</span>
+<span class="sd">            a boolean ndarray, True for points inside the polygon.</span>
+<span class="sd">            A point on the boundary may be treated as inside or outside.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_boundaries</span><span class="p">(</span><span class="n">dlogT</span><span class="o">=</span><span class="n">dlogT</span><span class="p">,</span> <span class="n">dlogg</span><span class="o">=</span><span class="n">dlogg</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">p</span><span class="o">.</span><span class="n">contains_points</span><span class="p">(</span><span class="n">xypoints</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Stellib.get_radius"><a class="viewcode-back" href="../../../pypegase.stellibs.html#pypegase.stellibs.stellib.Stellib.get_radius">[docs]</a>    <span class="k">def</span> <span class="nf">get_radius</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">logl</span><span class="p">,</span> <span class="n">logt</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Returns the radius of a star given its luminosity and temperature</span>
+
+<span class="sd">        Assuming a black body, it comes:</span>
+
+<span class="sd">        .. math::</span>
+
+<span class="sd">                R ^ 2 = L / ( 4 \pi \sigma T ^ 4 ),</span>
+
+<span class="sd">        with:</span>
+
+<span class="sd">            * L, luminosity in W,</span>
+<span class="sd">            * pi, 3.141592...</span>
+<span class="sd">            * sig, Stephan constant in  W * m**-2 * K**-4</span>
+<span class="sd">            * T, temperature in K</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        logl: ndarray[float, ndim=1]</span>
+<span class="sd">            log luminosities from the isochrones, in Lsun</span>
+
+<span class="sd">        logt: ndarray[float, ndim=1]</span>
+<span class="sd">            log temperatures from the isochrones, in K</span>
+
+<span class="sd">        returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        radii: ndarray[float, ndim=1]</span>
+<span class="sd">            array of radii in m (SI units)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="p">(</span><span class="mi">10</span> <span class="o">**</span> <span class="n">logl</span><span class="p">)</span> <span class="o">*</span> <span class="n">lsun</span> <span class="o">/</span> <span class="p">(</span><span class="mf">4.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">sig_stephan</span> <span class="o">*</span> <span class="p">((</span><span class="mi">10</span> <span class="o">**</span> <span class="n">logt</span><span class="p">)</span> <span class="o">**</span> <span class="mi">4</span><span class="p">))</span> <span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Stellib.get_boundaries"><a class="viewcode-back" href="../../../pypegase.stellibs.html#pypegase.stellibs.stellib.Stellib.get_boundaries">[docs]</a>    <span class="k">def</span> <span class="nf">get_boundaries</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dlogT</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">dlogg</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Returns the closed boundary polygon around the stellar library with</span>
+<span class="sd">        given margins</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        s: Stellib</span>
+<span class="sd">            Stellar library object</span>
+
+<span class="sd">        dlogT: float</span>
+<span class="sd">            margin in logT</span>
+
+<span class="sd">        dlogg: float</span>
+<span class="sd">            margin in logg</span>
+
+<span class="sd">        returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        b: ndarray[float, ndim=2]</span>
+<span class="sd">            closed boundary edge points: [logT, logg]</span>
+
+<span class="sd">        .. note::</span>
+
+<span class="sd">            as computing the boundary could take time, it is saved in the object</span>
+<span class="sd">            and only recomputed when parameters are updated</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c"># if bbox is defined then assumes it is more precise and use it instead.</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;bbox&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="p">(</span><span class="n">dlogT</span><span class="p">,</span> <span class="n">dlogg</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;_bound&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="c"># check if recomputing is needed</span>
+            <span class="k">if</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">_bound</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">dlogT</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-3</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_bound</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">dlogg</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-3</span><span class="p">):</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bound</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="n">leftb</span>   <span class="o">=</span> <span class="p">[(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">logT</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">logg</span> <span class="o">==</span> <span class="n">k</span><span class="p">])</span> <span class="o">+</span> <span class="n">dlogT</span><span class="p">,</span> <span class="n">k</span> <span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">logg</span><span class="p">)]</span>
+        <span class="n">leftb</span>  <span class="o">+=</span> <span class="p">[(</span><span class="n">leftb</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">leftb</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">dlogg</span><span class="p">)]</span>
+        <span class="n">leftb</span>   <span class="o">=</span> <span class="p">[(</span><span class="n">leftb</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">leftb</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">dlogg</span><span class="p">)]</span> <span class="o">+</span> <span class="n">leftb</span>
+
+        <span class="n">rightb</span>  <span class="o">=</span> <span class="p">[(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">logT</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">logg</span> <span class="o">==</span> <span class="n">k</span><span class="p">])</span> <span class="o">-</span> <span class="n">dlogT</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">logg</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+        <span class="n">rightb</span> <span class="o">+=</span> <span class="p">[(</span><span class="n">rightb</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">rightb</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">dlogg</span><span class="p">)]</span>
+        <span class="n">rightb</span>  <span class="o">=</span> <span class="p">[(</span><span class="n">rightb</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">rightb</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">dlogg</span><span class="p">)]</span> <span class="o">+</span> <span class="n">rightb</span>
+
+        <span class="n">b</span> <span class="o">=</span> <span class="n">leftb</span> <span class="o">+</span> <span class="n">rightb</span>
+        <span class="n">b</span> <span class="o">+=</span> <span class="p">[</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_bound</span> <span class="o">=</span> <span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">b</span><span class="p">)),</span> <span class="n">dlogT</span><span class="p">,</span> <span class="n">dlogg</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bound</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</div>
+<div class="viewcode-block" id="Stellib.genQ"><a class="viewcode-back" href="../../../pypegase.stellibs.html#pypegase.stellibs.stellib.Stellib.genQ">[docs]</a>    <span class="k">def</span> <span class="nf">genQ</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qname</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate a composite value from a previously calculated interpolation</span>
+<span class="sd">        Works on 1 desired star or a population of stars</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        qname: str</span>
+<span class="sd">            quantity name from self.grid</span>
+
+<span class="sd">        r: tuple</span>
+<span class="sd">            the result from a previous interpolation</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        output: float</span>
+<span class="sd">            Q value from the interpolation</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">[</span><span class="n">qname</span><span class="p">][</span><span class="n">r</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)]</span> <span class="o">*</span> <span class="n">r</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="Stellib.genSpectrum"><a class="viewcode-back" href="../../../pypegase.stellibs.html#pypegase.stellibs.stellib.Stellib.genSpectrum">[docs]</a>    <span class="k">def</span> <span class="nf">genSpectrum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T0</span><span class="p">,</span> <span class="n">g0</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">Z0</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Generate a composite sprectrum</span>
+
+<span class="sd">        Does the interpolation or uses a previously calculated</span>
+<span class="sd">        interpolation</span>
+<span class="sd">        Works on 1 desired star or a population of stars</span>
+
+<span class="sd">        if T0 and g0 are iterable, it calls interpMany</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        T0: float or sequence</span>
+<span class="sd">            log(Teff) of each star or a 2d-array containing the result from a</span>
+<span class="sd">            previous interpolation</span>
+
+<span class="sd">        g0: float or sequence</span>
+<span class="sd">            log(g) of each stars</span>
+
+<span class="sd">        Z0: float or sequence</span>
+<span class="sd">            metallicity</span>
+
+<span class="sd">        weights: float or sequence</span>
+<span class="sd">            individual weights of each star</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        s: ndarray</span>
+<span class="sd">            an array containing the composite spectrum</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">Z0</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">T0</span><span class="p">,</span> <span class="s">&#39;__iter__&#39;</span><span class="p">):</span>
+                <span class="n">_r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interpMany</span><span class="p">(</span><span class="n">T0</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">Z0</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">T0</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">Z0</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">weights</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">assert</span><span class="p">(</span> <span class="n">T0</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">2</span><span class="p">),</span> <span class="s">&#39;error expecting 2d-array&#39;</span>
+            <span class="n">_r</span> <span class="o">=</span> <span class="n">T0</span>
+        <span class="k">return</span> <span class="p">(</span> <span class="p">(</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">spectra</span><span class="p">[</span><span class="n">_r</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)]</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="o">*</span> <span class="n">_r</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span> <span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Stellib.plot_boundary"><a class="viewcode-back" href="../../../pypegase.stellibs.html#pypegase.stellibs.stellib.Stellib.plot_boundary">[docs]</a>    <span class="k">def</span> <span class="nf">plot_boundary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dlogT</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">dlogg</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+
+<span class="sd">        dlogT: float</span>
+<span class="sd">            margin in logT (see get_boundaries)</span>
+
+<span class="sd">        dlogg: float</span>
+<span class="sd">            margin in logg (see get_boundaries)</span>
+
+<span class="sd">        .. see also::</span>
+<span class="sd">            :func:`matplotlib.plot`</span>
+<span class="sd">                For additional kwargs</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="kn">as</span> <span class="nn">patches</span>
+        <span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="n">gca</span>
+        <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">ax</span> <span class="o">=</span> <span class="n">gca</span><span class="p">()</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_boundaries</span><span class="p">(</span><span class="n">dlogT</span><span class="o">=</span><span class="n">dlogT</span><span class="p">,</span> <span class="n">dlogg</span><span class="o">=</span><span class="n">dlogg</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">patches</span><span class="o">.</span><span class="n">PathPatch</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">p</span>
+</div>
+    <span class="k">def</span> <span class="nf">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">isNestedInstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Stellib</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&#39;expecting a Stellib object, got {0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)))</span>
+
+        <span class="k">return</span> <span class="n">CompositeStellib</span><span class="p">([</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;{0:s}, ({1:s})</span><span class="se">\n</span><span class="s">{2:s}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">nbytes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pprint</span><span class="o">=</span><span class="bp">True</span><span class="p">),</span> <span class="nb">object</span><span class="o">.</span><span class="n">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+
+</div>
+<div class="viewcode-block" id="CompositeStellib"><a class="viewcode-back" href="../../../pypegase.stellibs.html#pypegase.stellibs.stellib.CompositeStellib">[docs]</a><span class="k">class</span> <span class="nc">CompositeStellib</span><span class="p">(</span><span class="n">Stellib</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Generates an object from the union of multiple individual libraries &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">osllist</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_olist</span> <span class="o">=</span> <span class="n">osllist</span>
+
+    <span class="k">def</span> <span class="nf">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">isNestedInstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Stellib</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&#39;expecting a Stellib object, got {0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)))</span>
+
+        <span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_olist</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">other</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">CompositeStellib</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__radd__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">isNestedInstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Stellib</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&#39;expecting a Stellib object, got {0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)))</span>
+
+        <span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="n">other</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_olist</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">CompositeStellib</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+<div class="viewcode-block" id="CompositeStellib.wavelength"><a class="viewcode-back" href="../../../pypegase.stellibs.html#pypegase.stellibs.stellib.CompositeStellib.wavelength">[docs]</a>    <span class="k">def</span> <span class="nf">wavelength</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; return a common wavelength sampling to all libraries. This can be</span>
+<span class="sd">        used to reinterpolate any spectrum onto a common definition &quot;&quot;&quot;</span>
+
+        <span class="n">lambs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span> <span class="n">osl</span><span class="o">.</span><span class="n">wavelength</span><span class="p">[:]</span> <span class="k">for</span> <span class="n">osl</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_olist</span> <span class="p">]))</span>
+        <span class="k">return</span> <span class="n">lambs</span>
+</div>
+    <span class="nd">@property</span>
+<div class="viewcode-block" id="CompositeStellib.source"><a class="viewcode-back" href="../../../pypegase.stellibs.html#pypegase.stellibs.stellib.CompositeStellib.source">[docs]</a>    <span class="k">def</span> <span class="nf">source</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39; + &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">k</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_olist</span><span class="p">])</span>
+</div>
+<div class="viewcode-block" id="CompositeStellib.which_osl"><a class="viewcode-back" href="../../../pypegase.stellibs.html#pypegase.stellibs.stellib.CompositeStellib.which_osl">[docs]</a>    <span class="k">def</span> <span class="nf">which_osl</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xypoints</span><span class="p">,</span> <span class="n">dlogT</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">dlogg</span><span class="o">=</span><span class="mf">0.</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the library indice that contains each point in xypoints</span>
+
+<span class="sd">        The decision is made from a two step search:</span>
+
+<span class="sd">            * first, each point is checked against the strict boundary of each</span>
+<span class="sd">              library (i.e., dlogT = 0, dlogg = 0).</span>
+<span class="sd">            * second, if points are not found in strict mode, the boundary is</span>
+<span class="sd">              relaxed and a new search is made.</span>
+
+<span class="sd">        Each point is associated to the first library matching the above conditions.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        xypoints: sequence</span>
+<span class="sd">            a sequence of N logg, logT pairs.</span>
+
+<span class="sd">        dlogT: float</span>
+<span class="sd">            margin in logT</span>
+
+<span class="sd">        dlogg: float</span>
+<span class="sd">            margin in logg</span>
+
+<span class="sd">        returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        res: ndarray(dtype=int)</span>
+<span class="sd">            a ndarray, 0 meaning no library covers the point, and 1, ... n, for the n-th library</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">xypoints</span><span class="p">)</span>
+
+        <span class="c"># check that all points are in the full boundary area</span>
+        <span class="c"># MF: testing why points_inside does not agree on all computers...</span>
+        <span class="c"># as we do not keep individual results, no need to store then all</span>
+        <span class="c"># first, collapse directly</span>
+
+        <span class="c"># res_temp = np.zeros((len(xy),len(self._olist)))</span>
+        <span class="c"># for ek,ok in enumerate(self._olist):</span>
+        <span class="c">#    res_temp[:, ek] = ok.points_inside(xy, dlogT=dlogT, dlogg=dlogg).astype(int)</span>
+        <span class="n">res_temp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">xy</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">ek</span><span class="p">,</span> <span class="n">ok</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_olist</span><span class="p">):</span>
+            <span class="n">res_temp</span> <span class="o">+=</span> <span class="n">ok</span><span class="o">.</span><span class="n">points_inside</span><span class="p">(</span><span class="n">xy</span><span class="p">,</span> <span class="n">dlogT</span><span class="o">=</span><span class="n">dlogT</span><span class="p">,</span> <span class="n">dlogg</span><span class="o">=</span><span class="n">dlogg</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+        <span class="n">ind</span> <span class="o">=</span> <span class="n">res_temp</span> <span class="o">&gt;</span> <span class="mi">0</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">xy</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+        <span class="n">res</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">-</span> <span class="mi">1</span>
+
+        <span class="c"># res = self.points_inside(xy, dlogT=dlogT, dlogg=dlogg).astype(int) - 1</span>
+        <span class="c"># if res == -1: invalid point, res == 0: proceed</span>
+
+        <span class="k">if</span> <span class="nb">max</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c"># DEBUG: should generate an exeception in further functions</span>
+            <span class="c"># TODO: get rid and replace</span>
+            <span class="k">return</span>
+            <span class="c"># return res</span>
+
+        <span class="c"># Strict mode</span>
+        <span class="c"># ===========</span>
+        <span class="c"># Not extrapolation allowed &gt;&gt; dlogT = 0, dlogg = 0</span>
+        <span class="c"># 0 is used to flag points without a matching library yet</span>
+        <span class="c"># libraries are then indexed from 1 to n</span>
+        <span class="c"># -1 means point outside the compound library</span>
+        <span class="k">for</span> <span class="n">ek</span><span class="p">,</span> <span class="n">ok</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_olist</span><span class="p">):</span>
+            <span class="k">if</span> <span class="mi">0</span> <span class="ow">in</span> <span class="n">res</span><span class="p">:</span>
+                <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">res</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)))</span>
+                <span class="n">r</span> <span class="o">=</span> <span class="n">ok</span><span class="o">.</span><span class="n">points_inside</span><span class="p">(</span><span class="n">xy</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">dlogT</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">dlogg</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
+                <span class="n">res</span><span class="p">[</span><span class="n">ind</span><span class="p">[</span><span class="n">r</span><span class="p">]]</span> <span class="o">=</span> <span class="n">ek</span> <span class="o">+</span> <span class="mi">1</span>
+
+        <span class="c"># Relaxed mode</span>
+        <span class="c"># ============</span>
+        <span class="c"># In this case we accept some flexibility in the boundary limits,</span>
+        <span class="c"># which allows limited extrapolation ranges.</span>
+        <span class="c"># this only affects points not already matched</span>
+        <span class="k">if</span> <span class="mi">0</span> <span class="ow">in</span> <span class="n">res</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">ek</span><span class="p">,</span> <span class="n">ok</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_olist</span><span class="p">):</span>
+                <span class="k">if</span> <span class="mi">0</span> <span class="ow">in</span> <span class="n">res</span><span class="p">:</span>
+                    <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">res</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)))</span>
+                    <span class="n">r</span> <span class="o">=</span> <span class="n">ok</span><span class="o">.</span><span class="n">points_inside</span><span class="p">(</span><span class="n">xy</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">dlogT</span><span class="o">=</span><span class="n">dlogT</span><span class="p">,</span> <span class="n">dlogg</span><span class="o">=</span><span class="n">dlogg</span><span class="p">)</span>
+                    <span class="n">res</span><span class="p">[</span><span class="n">ind</span><span class="p">[</span><span class="n">r</span><span class="p">]]</span> <span class="o">=</span> <span class="n">ek</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">res</span>
+</div>
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;CompositeStellib, {0}</span><span class="se">\n</span><span class="s">{1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">object</span><span class="o">.</span><span class="n">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="p">[</span><span class="n">k</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_olist</span><span class="p">])</span>
+
+<div class="viewcode-block" id="CompositeStellib.get_boundaries"><a class="viewcode-back" href="../../../pypegase.stellibs.html#pypegase.stellibs.stellib.CompositeStellib.get_boundaries">[docs]</a>    <span class="k">def</span> <span class="nf">get_boundaries</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dlogT</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">dlogg</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Returns the closed boundary polygon around the stellar library with</span>
+<span class="sd">        given margins</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        s: Stellib</span>
+<span class="sd">            Stellar library object</span>
+
+<span class="sd">        dlogT: float</span>
+<span class="sd">            margin in logT</span>
+
+<span class="sd">        dlogg: float</span>
+<span class="sd">            margin in logg</span>
+
+<span class="sd">        returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        b: ndarray[float, ndim=2]</span>
+<span class="sd">            (closed) boundary points: [logg, Teff] (or [Teff, logg] is swap is True)</span>
+
+<span class="sd">        .. note::</span>
+
+<span class="sd">            as computing the boundary could take time, it is saved in the object</span>
+<span class="sd">            and only recomputed when parameters are updated</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;_bound&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">_bound</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">dlogT</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-3</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_bound</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">dlogg</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-3</span><span class="p">):</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bound</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="n">osl</span><span class="o">.</span><span class="n">get_boundaries</span><span class="p">(</span><span class="n">dlogT</span><span class="o">=</span><span class="n">dlogT</span><span class="p">,</span> <span class="n">dlogg</span><span class="o">=</span><span class="n">dlogg</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="k">for</span> <span class="n">osl</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_olist</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_bound</span> <span class="o">=</span> <span class="p">(</span><span class="n">Path</span><span class="o">.</span><span class="n">make_compound_path</span><span class="p">(</span><span class="o">*</span><span class="n">b</span><span class="p">),</span> <span class="n">dlogT</span><span class="p">,</span> <span class="n">dlogg</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bound</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</div>
+<div class="viewcode-block" id="CompositeStellib.interp"><a class="viewcode-back" href="../../../pypegase.stellibs.html#pypegase.stellibs.stellib.CompositeStellib.interp">[docs]</a>    <span class="k">def</span> <span class="nf">interp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T0</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">Z0</span><span class="p">,</span> <span class="n">L0</span><span class="p">,</span> <span class="n">dT_max</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="p">{}):</span>
+        <span class="sd">&quot;&quot;&quot; Interpolation of the T,g grid</span>
+
+<span class="sd">        Interpolate on the grid and returns star indices and</span>
+<span class="sd">        associated weights, and Z.</span>
+
+<span class="sd">        3 to 12 stars are returned.</span>
+
+<span class="sd">        It calls :func:`_interp_`, but reduce the output to the relevant stars.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        T0: double</span>
+<span class="sd">            log(Teff) to obtain</span>
+
+<span class="sd">        g0: double</span>
+<span class="sd">            log(g) to obtain</span>
+
+<span class="sd">        T:  double</span>
+<span class="sd">            log(Teff) of the grid</span>
+
+<span class="sd">        g:  double</span>
+<span class="sd">            log(g) of the grid</span>
+
+<span class="sd">        dT_max: float</span>
+<span class="sd">            If, T2 (resp. T1) is too far from T compared to T1 (resp. T2),</span>
+<span class="sd">            i2 (resp. i1) is not used.</span>
+<span class="sd">            (see below for namings)</span>
+
+<span class="sd">        eps: foat</span>
+<span class="sd">            temperature sensitivity under which points are considered to</span>
+<span class="sd">            have the same temperature</span>
+
+<span class="sd">        bounds: dict</span>
+<span class="sd">        sensitivity to extrapolation (see `:func: Stellib.get_boundaries`)</span>
+<span class="sd">            default: {dlogT:0.1, dlogg:0.3}</span>
+
+<span class="sd">        returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        (osl, r): tuple</span>
+<span class="sd">            osl: is the library index starting from 1. 0 means no coverage.</span>
+<span class="sd">            r: is the result from interp call on the corresponding library. a 3 to 12 star indexes and associated weights</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">dlogT</span> <span class="o">=</span> <span class="n">bounds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;dlogT&#39;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+        <span class="n">dlogg</span> <span class="o">=</span> <span class="n">bounds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;dlogg&#39;</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">)</span>
+
+        <span class="n">osl_index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">which_osl</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">([</span><span class="n">T0</span><span class="p">,</span> <span class="n">g0</span><span class="p">]),</span> <span class="n">dlogT</span><span class="o">=</span><span class="n">dlogT</span><span class="p">,</span> <span class="n">dlogg</span><span class="o">=</span><span class="n">dlogg</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">osl_index</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">osl_index</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_olist</span><span class="p">[</span><span class="n">osl_index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T0</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">Z0</span><span class="p">,</span> <span class="n">L0</span><span class="p">,</span> <span class="n">dT_max</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">None</span><span class="p">)]</span>
+</div>
+<div class="viewcode-block" id="CompositeStellib.interpMany"><a class="viewcode-back" href="../../../pypegase.stellibs.html#pypegase.stellibs.stellib.CompositeStellib.interpMany">[docs]</a>    <span class="k">def</span> <span class="nf">interpMany</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T0</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">Z0</span><span class="p">,</span> <span class="n">L0</span><span class="p">,</span> <span class="n">dT_max</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                   <span class="n">bounds</span><span class="o">=</span><span class="p">{},</span> <span class="n">pool</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">nthreads</span><span class="o">=</span><span class="n">__NTHREADS__</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; run interp on a list of inputs and returns reduced results</span>
+
+<span class="sd">        Interpolation of the T,g grid at Z0 metallicity</span>
+
+<span class="sd">        Interpolate on the grid and returns star indices and</span>
+<span class="sd">        associated weights, and Z.</span>
+<span class="sd">        3 to 12 stars are returned.</span>
+<span class="sd">        It calls _interp_, but reduce the output to the relevant stars.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        T0: ndarray(float)</span>
+<span class="sd">            log(Teff) to obtain</span>
+
+<span class="sd">        g0: ndarray(float)</span>
+<span class="sd">            log(g) to obtain</span>
+
+<span class="sd">        Z0: ndarray(float)</span>
+<span class="sd">            metallicity values</span>
+
+<span class="sd">        L0: ndarray(float)</span>
+<span class="sd">            luminosity values</span>
+
+<span class="sd">        dT_max: float</span>
+<span class="sd">            If, T2 (resp. T1) is too far from T compared to T1 (resp. T2),</span>
+<span class="sd">            i2 (resp. i1) is not used.</span>
+<span class="sd">            (see below for namings)</span>
+
+<span class="sd">        eps: foat</span>
+<span class="sd">            temperature sensitivity under which points are considered to</span>
+<span class="sd">            have the same temperature</span>
+
+<span class="sd">        weights: ndarray(float)</span>
+<span class="sd">            luminosity weigths to apply after interpolation</span>
+
+<span class="sd">        bounds: dict</span>
+<span class="sd">            sensitivity to extrapolation (see `:func: Stellib.get_boundaries`)</span>
+<span class="sd">            default: {dlogT:0.1, dlogg:0.3}</span>
+
+<span class="sd">        pool: Pool-like object</span>
+<span class="sd">            specify a multiprocessing pool for parallel processing</span>
+
+<span class="sd">        nthreads: int</span>
+<span class="sd">            number of processes to use by default</span>
+
+<span class="sd">        returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        (osl, r): tuple</span>
+<span class="sd">            osl: is the library index starting from 1. 0 means no coverage.</span>
+<span class="sd">            r: is the result from interp call on the corresponding library. A 3</span>
+<span class="sd">            to 12 star indexes and associated weights</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">dlogT</span> <span class="o">=</span> <span class="n">bounds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;dlogT&#39;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+        <span class="n">dlogg</span> <span class="o">=</span> <span class="n">bounds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;dlogg&#39;</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">)</span>
+
+        <span class="n">osl_index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">which_osl</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">T0</span><span class="p">,</span> <span class="n">g0</span><span class="p">),</span> <span class="n">dlogT</span><span class="o">=</span><span class="n">dlogT</span><span class="p">,</span> <span class="n">dlogg</span><span class="o">=</span><span class="n">dlogg</span><span class="p">)</span>
+
+        <span class="n">g</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">oslk</span><span class="p">,</span> <span class="n">osl</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_olist</span><span class="p">):</span>
+            <span class="c"># make a generator to avoid keeping all in memory</span>
+            <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">osl_index</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">==</span> <span class="n">oslk</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span><span class="o">.</span><span class="n">size</span> <span class="ow">is</span> <span class="ow">not</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">g</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="p">[</span><span class="n">oslk</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">osl</span><span class="o">.</span><span class="n">interpMany</span><span class="p">(</span><span class="n">T0</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">g0</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">Z0</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span>
+                                                    <span class="n">L0</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">dT_max</span><span class="o">=</span><span class="n">dT_max</span><span class="p">,</span>
+                                                    <span class="n">eps</span><span class="o">=</span><span class="n">eps</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">,</span>
+                                                    <span class="n">pool</span><span class="o">=</span><span class="n">pool</span><span class="p">,</span>
+                                                    <span class="n">nthreads</span><span class="o">=</span><span class="n">nthreads</span><span class="p">)]</span> <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">g</span>
+</div>
+<div class="viewcode-block" id="CompositeStellib.genQ"><a class="viewcode-back" href="../../../pypegase.stellibs.html#pypegase.stellibs.stellib.CompositeStellib.genQ">[docs]</a>    <span class="k">def</span> <span class="nf">genQ</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qname</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate a composite value from a previously calculated interpolation</span>
+<span class="sd">        Works on 1 desired star or a population of stars</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        qname: str</span>
+<span class="sd">            quantity name from self.grid</span>
+
+<span class="sd">        r: (osl, r) tuple</span>
+<span class="sd">            osl: is the library index starting from 1. 0 means no coverage.</span>
+<span class="sd">            r: is the result from interp call on the corresponding library.</span>
+
+<span class="sd">        returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        q: float</span>
+<span class="sd">            value (from weighted sum)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">vals</span> <span class="o">=</span> <span class="mf">0.</span>
+        <span class="k">for</span> <span class="n">_osl</span><span class="p">,</span> <span class="n">_r</span> <span class="ow">in</span> <span class="n">r</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">_osl</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">vals</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_olist</span><span class="p">[</span><span class="n">_osl</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">genQ</span><span class="p">(</span><span class="n">qname</span><span class="p">,</span> <span class="n">_r</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">vals</span>
+</div>
+<div class="viewcode-block" id="CompositeStellib.genSpectrum"><a class="viewcode-back" href="../../../pypegase.stellibs.html#pypegase.stellibs.stellib.CompositeStellib.genSpectrum">[docs]</a>    <span class="k">def</span> <span class="nf">genSpectrum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T0</span><span class="p">,</span> <span class="n">g0</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">Z0</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Generate a composite sprectrum</span>
+<span class="sd">            Does the interpolation or uses a previously calculated interpolation</span>
+<span class="sd">            Works on 1 desired star or a population of stars</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        T0: ndarray(float)</span>
+<span class="sd">            log(Teff) to obtain</span>
+
+<span class="sd">        g0: ndarray(float)</span>
+<span class="sd">            log(g) to obtain</span>
+
+<span class="sd">        Z0: ndarray(float)</span>
+<span class="sd">            metallicity values</span>
+
+<span class="sd">        weights: ndarray(float)</span>
+<span class="sd">            individual weights of each star</span>
+
+<span class="sd">        **kwargs forwarded to interp(Many)</span>
+
+
+<span class="sd">        returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        s: ndarray</span>
+<span class="sd">            an array containing the composite spectrum reinterpolated onto self.wavelength</span>
+
+<span class="sd">        .. note::</span>
+
+<span class="sd">            if T0 and g0 are iterable, it calls interpMany</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">Z0</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">T0</span><span class="p">,</span> <span class="s">&#39;__iter__&#39;</span><span class="p">):</span>
+                <span class="n">_r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interpMany</span><span class="p">(</span><span class="n">T0</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">Z0</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">T0</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">Z0</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">weights</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">_r</span> <span class="o">=</span> <span class="n">T0</span>
+
+        <span class="n">l0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">l0</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">osl</span><span class="p">,</span> <span class="n">_rk</span> <span class="ow">in</span> <span class="n">_r</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">osl</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">sp</span> <span class="o">=</span> <span class="p">(((</span><span class="bp">self</span><span class="o">.</span><span class="n">_olist</span><span class="p">[</span><span class="n">osl</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">spectra</span><span class="p">[</span><span class="n">_r</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)]</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="o">*</span> <span class="n">_r</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span> <span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">lamb</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_olist</span><span class="p">[</span><span class="n">osl</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">wavelength</span>
+                <span class="n">s</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">l0</span><span class="p">,</span> <span class="n">lamb</span><span class="p">,</span> <span class="n">sp</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">s</span></div></div>
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Morgan Fouesneau, Ariane Lancon, and Michel Fioc.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

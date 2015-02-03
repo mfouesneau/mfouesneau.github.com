@@ -1,0 +1,469 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pypegase.extinctions.extinction &mdash; pyPegase 1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'../../../',
+        VERSION:'1.0',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+    <script type="text/javascript">
+        jQuery(function () {
+            SphinxRtdTheme.StickyNav.enable();
+        });
+    </script>
+  
+
+  
+    <link rel="top" title="pyPegase 1.0 documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../../index.html" class="fa fa-home"> pyPegase</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro.html">pyPegase</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../intro.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../intro.html#simple-stellar-population-ssp">Simple stellar population (SSP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../intro.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../readme.html">pyPEGASE v1.0</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#contents-of-the-directory">Contents of the directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#quick-start">Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#quick-start-by-example-3-steps-to-build-one-continuous-population">Quick start by example : 3 steps to build one &#8220;continuous&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#quick-start-by-example-3-steps-to-build-one-discrete-population">Quick start by example: 3 steps to build one &#8220;discrete&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#quick-start-by-example-3-steps-to-build-one-fast-discrete-population">Quick start by example: 3 steps to build one &#8220;fast-discrete&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#customize-your-runs">Customize your runs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#produce-large-collections-of-simulations">Produce large collections of simulations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#compute-colors">Compute colors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#for-those-who-wish-to-read-edit-the-codes">For those who wish to read/edit the codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#required-acknowledgements">Required acknowledgements</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">pyPegase</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      
+    <li>pypegase.extinctions.extinction</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <h1>Source code for pypegase.extinctions.extinction</h1><div class="highlight"><pre>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Dust Extinction laws</span>
+<span class="sd">--------------------</span>
+
+
+<span class="sd">.. note::</span>
+
+<span class="sd">    This module is able to handle values with units</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">phot</span>
+<span class="kn">from</span> <span class="nn">..helpers</span> <span class="kn">import</span> <span class="n">val_in_unit</span>
+
+<span class="n">__version__</span> <span class="o">=</span> <span class="s">&#39;1.0&#39;</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;ExtinctionLaw&#39;</span><span class="p">,</span> <span class="s">&#39;MixtureLaw&#39;</span><span class="p">,</span> <span class="s">&#39;RvFbumpLaw&#39;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="ExtinctionLaw"><a class="viewcode-back" href="../../../pypegase.extinctions.html#pypegase.extinctions.extinction.ExtinctionLaw">[docs]</a><span class="k">class</span> <span class="nc">ExtinctionLaw</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Template class &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#39;None&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;{0:s}</span><span class="se">\n</span><span class="s">{1:s}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="nb">object</span><span class="o">.</span><span class="n">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+
+<div class="viewcode-block" id="ExtinctionLaw.function"><a class="viewcode-back" href="../../../pypegase.extinctions.html#pypegase.extinctions.extinction.ExtinctionLaw.function">[docs]</a>    <span class="k">def</span> <span class="nf">function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lamb</span><span class="p">,</span> <span class="o">*</span><span class="n">arg</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; expected to contain a function of lambda that return the</span>
+<span class="sd">        extinction values</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        lamb: ndarray</span>
+<span class="sd">            wavelength</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        val: ndarray</span>
+<span class="sd">            expected values of the law evaluated at lamb</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+</div>
+<div class="viewcode-block" id="ExtinctionLaw.inFilter"><a class="viewcode-back" href="../../../pypegase.extinctions.html#pypegase.extinctions.extinction.ExtinctionLaw.inFilter">[docs]</a>    <span class="k">def</span> <span class="nf">inFilter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">names</span><span class="p">,</span> <span class="n">filterLib</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        returns the extinction value for a given filter band or filter color</span>
+<span class="sd">        colors (e.g. U, U-B ...)</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        names: str or list(str) or list(filters)</span>
+<span class="sd">            filter names or filter instances to evaluate. a name can be a color such as &#39;U-B&#39;</span>
+
+<span class="sd">        filterLib: filepath</span>
+<span class="sd">            path to the filter library hd5 file (default is the internal library)</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        r: float or ndarray(dtype=float)</span>
+<span class="sd">            attenuation value or array of values</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">names</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">if</span> <span class="s">&#39;-&#39;</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+                <span class="n">_filters</span> <span class="o">=</span> <span class="n">phot</span><span class="o">.</span><span class="n">load_filters</span><span class="p">(</span><span class="n">names</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39; &#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;-&#39;</span><span class="p">),</span>
+                                             <span class="n">interp</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">filterLib</span><span class="o">=</span><span class="n">filterLib</span><span class="p">)</span>
+                <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="n">_filters</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">cl</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-</span>
+                             <span class="bp">self</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="n">_filters</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">cl</span><span class="p">,</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">_filters</span> <span class="o">=</span> <span class="n">phot</span><span class="o">.</span><span class="n">load_filters</span><span class="p">([</span><span class="n">names</span><span class="p">],</span> <span class="n">interp</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+                                             <span class="n">filterLib</span><span class="o">=</span><span class="n">filterLib</span><span class="p">)</span>
+                <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="n">_filters</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">cl</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
+
+        <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="s">&#39;__iter__&#39;</span><span class="p">):</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">names</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">==</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="c"># assumes all entires are str</span>
+                <span class="n">lst</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="s">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">names</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;-&#39;</span><span class="p">,</span> <span class="s">&#39; &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+                <span class="n">_filters</span> <span class="o">=</span> <span class="n">phot</span><span class="o">.</span><span class="n">load_filters</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">interp</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+                                             <span class="n">filterLib</span><span class="o">=</span><span class="n">filterLib</span><span class="p">)</span>
+                <span class="c"># in case of python 2.6xx, explicit loop</span>
+                <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+                <span class="k">for</span> <span class="n">lk</span><span class="p">,</span> <span class="n">fk</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">_filters</span><span class="p">):</span>
+                    <span class="n">d</span><span class="p">[</span><span class="n">lk</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="n">fk</span><span class="o">.</span><span class="n">cl</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span> <span class="nb">float</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="n">lk</span><span class="p">,</span> <span class="n">d</span><span class="p">))</span> <span class="k">for</span> <span class="n">lk</span> <span class="ow">in</span> <span class="n">names</span> <span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c"># assumes list of Filter instances</span>
+                <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="n">fk</span><span class="o">.</span><span class="n">cl</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
+                                   <span class="k">for</span> <span class="n">fk</span> <span class="ow">in</span> <span class="n">names</span> <span class="p">])</span>
+</div>
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Make the extinction law callable object using :func:`self.function`&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<div class="viewcode-block" id="ExtinctionLaw.isvalid"><a class="viewcode-back" href="../../../pypegase.extinctions.html#pypegase.extinctions.extinction.ExtinctionLaw.isvalid">[docs]</a>    <span class="k">def</span> <span class="nf">isvalid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Check if the current arguments are in the validity domain of the law</span>
+<span class="sd">        Must be redefined if any restriction applies to the law</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">True</span>
+</div>
+    <span class="k">def</span> <span class="nf">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">MixtureLaw</span><span class="p">(</span><span class="n">A</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">B</span><span class="o">=</span><span class="n">other</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="MixtureLaw"><a class="viewcode-back" href="../../../pypegase.extinctions.html#pypegase.extinctions.extinction.MixtureLaw">[docs]</a><span class="k">class</span> <span class="nc">MixtureLaw</span><span class="p">(</span><span class="n">ExtinctionLaw</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Mixture of extinction laws allowing to vary for instance the bump amplitude</span>
+<span class="sd">    in the extinction law</span>
+
+<span class="sd">    .. math::</span>
+
+<span class="sd">        f_A \\times A(A_V, Rv_A) + (1 - f_A) \\times B(A_V, Rv_B)</span>
+
+<span class="sd">    example</span>
+<span class="sd">    -------</span>
+
+<span class="sd">        &gt;&gt;&gt; l = Fitzpatrick99() + Gordon03_SMCBar()</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">A</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">B</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Constructor</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        A: ExtinctionLaw</span>
+<span class="sd">            Component A</span>
+
+<span class="sd">        B: ExtinctionLaw</span>
+<span class="sd">            Component B</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">ExtinctionLaw</span><span class="p">)</span> <span class="o">&amp;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">ExtinctionLaw</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&#39;Expecting ExtinctionLaw instances&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">A</span> <span class="o">=</span> <span class="n">A</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">B</span> <span class="o">=</span> <span class="n">B</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span> <span class="ow">or</span> <span class="s">&#39;(&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s">&#39;, &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">B</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s">&#39;)&#39;</span>
+
+<div class="viewcode-block" id="MixtureLaw.function"><a class="viewcode-back" href="../../../pypegase.extinctions.html#pypegase.extinctions.extinction.MixtureLaw.function">[docs]</a>    <span class="k">def</span> <span class="nf">function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lamb</span><span class="p">,</span> <span class="n">Av</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">Rv_A</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">Alambda</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">f_A</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">Rv_B</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                 <span class="n">Rv</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Lamb as to be in Angstroms!!!</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        lamb: float or ndarray(dtype=float)</span>
+<span class="sd">            wavelength [in Angstroms] at which evaluate the law.</span>
+
+<span class="sd">        Av: float</span>
+<span class="sd">            desired A(V) (default 1.0)</span>
+
+<span class="sd">        Alambda: bool</span>
+<span class="sd">            if set returns +2.5*1./log(10.)*tau, tau otherwise</span>
+
+<span class="sd">        f_A: float</span>
+<span class="sd">            set the mixture ratio between the two laws (default 0.5)</span>
+
+<span class="sd">        Rv_A: float</span>
+<span class="sd">            extinction param. on the Law A</span>
+
+<span class="sd">        Rv_B: float</span>
+<span class="sd">            extinction param. on the bumpless component</span>
+
+<span class="sd">        Rv: float</span>
+<span class="sd">            effective R(V) according to the mixture</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        r: float or ndarray(dtype=float)</span>
+<span class="sd">            attenuation as a function of wavelength</span>
+<span class="sd">            depending on Alambda option +2.5*1./log(10.)*tau,  or tau</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">_lamb</span> <span class="o">=</span> <span class="n">val_in_unit</span><span class="p">(</span><span class="s">&#39;lamb&#39;</span><span class="p">,</span> <span class="n">lamb</span><span class="p">,</span> <span class="s">&#39;angstrom&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span>
+
+        <span class="k">if</span> <span class="n">Rv_A</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">Rv_A</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="s">&#39;Rv&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">Rv_B</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">Rv_B</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">B</span><span class="p">,</span> <span class="s">&#39;Rv&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">sum</span><span class="p">([</span><span class="n">Rv_A</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">,</span> <span class="n">Rv_B</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">,</span> <span class="n">Rv</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">])</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&#39;Must provide at least 2 Rv values&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">Rv_A</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">Rv_A</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_Rv_A</span><span class="p">(</span><span class="n">Rv</span><span class="p">,</span> <span class="n">f_A</span><span class="p">,</span> <span class="n">Rv_B</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">Rv_B</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">Rv_B</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_Rv_B</span><span class="p">(</span><span class="n">Rv</span><span class="p">,</span> <span class="n">Rv_A</span><span class="p">,</span> <span class="n">f_A</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="p">(</span><span class="n">f_A</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="n">_lamb</span><span class="p">,</span> <span class="n">Av</span><span class="o">=</span><span class="n">Av</span><span class="p">,</span> <span class="n">Rv</span><span class="o">=</span><span class="n">Rv_A</span><span class="p">,</span> <span class="n">Alambda</span><span class="o">=</span><span class="n">Alambda</span><span class="p">)</span>
+                <span class="o">+</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">-</span> <span class="n">f_A</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">B</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="n">_lamb</span><span class="p">,</span> <span class="n">Av</span><span class="o">=</span><span class="n">Av</span><span class="p">,</span> <span class="n">Alambda</span><span class="o">=</span><span class="n">Alambda</span><span class="p">,</span>
+                                               <span class="n">Rv</span><span class="o">=</span><span class="n">Rv_B</span><span class="p">)</span>
+                <span class="p">)</span>
+</div>
+<div class="viewcode-block" id="MixtureLaw.isvalid"><a class="viewcode-back" href="../../../pypegase.extinctions.html#pypegase.extinctions.extinction.MixtureLaw.isvalid">[docs]</a>    <span class="k">def</span> <span class="nf">isvalid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Av</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">Rv</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">f_A</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">Rv_A</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">Rv_B</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Test the validity of an extinction vector (Av, Rv, Rv_A, Rv_B, fbump)</span>
+
+<span class="sd">        .. math::</span>
+
+<span class="sd">            Law = f_A \\times A(\\lambda, Av=Av, Rv=Rv_A) + (1 - f_A) \\times B(\\lambda, Av=Av, Rv=Rv_B)</span>
+
+<span class="sd">        The validity impose :math:`R_V` ranges and  to be a fraction (i.e.,</span>
+<span class="sd">        between 0 and 1)</span>
+
+<span class="sd">        At least 2 out of the 3 :math:`R_V` values must be provided, the 3rd</span>
+<span class="sd">        will be computed if missing.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        Av: float</span>
+<span class="sd">            Av value (any value is allowed, even &lt;0)</span>
+
+<span class="sd">        Rv, Rv_A, Rv_B: float, float, float</span>
+<span class="sd">            effective Rv, A component and B component Rv values, respectively.</span>
+<span class="sd">            At least 2 must be provided.</span>
+
+<span class="sd">        f_A: float</span>
+<span class="sd">            Mixture ratio between the two components</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        r: bool</span>
+<span class="sd">            True, if the values a coherent with the definition.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">Rv_B</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">B</span><span class="p">,</span> <span class="s">&#39;Rv&#39;</span><span class="p">):</span>
+            <span class="n">Rv_B</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">B</span><span class="o">.</span><span class="n">Rv</span>
+
+        <span class="k">if</span> <span class="n">Rv_A</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="s">&#39;Rv&#39;</span><span class="p">):</span>
+            <span class="n">Rv_A</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="o">.</span><span class="n">Rv</span>
+
+        <span class="c"># if we do not have at least 2 of the 3 Rvs defined then it&#39;s invalid</span>
+        <span class="k">if</span> <span class="nb">sum</span><span class="p">([</span><span class="n">Rv_A</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">,</span> <span class="n">Rv_B</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">,</span> <span class="n">Rv</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">])</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span>
+
+        <span class="k">if</span> <span class="n">Rv_A</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">Rv_A</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_Rv_A</span><span class="p">(</span><span class="n">Rv</span><span class="p">,</span> <span class="n">f_A</span><span class="p">,</span> <span class="n">Rv_B</span><span class="o">=</span><span class="n">Rv_B</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">Rv</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">Rv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_Rv</span><span class="p">(</span><span class="n">Rv_A</span><span class="p">,</span> <span class="n">f_A</span><span class="p">,</span> <span class="n">Rv_B</span><span class="o">=</span><span class="n">Rv_B</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">Rv_B</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">Rv_B</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_Rv_B</span><span class="p">(</span><span class="n">Rv</span><span class="p">,</span> <span class="n">Rv_A</span><span class="p">,</span> <span class="n">f_A</span><span class="p">)</span>
+
+        <span class="c"># f_A is a fraction and any Rv is limited to [2.0, 6.0]</span>
+        <span class="k">return</span> <span class="p">((</span><span class="mf">0.</span> <span class="o">&lt;=</span> <span class="n">f_A</span> <span class="o">&lt;=</span> <span class="mf">1.</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">&lt;=</span> <span class="n">Rv_B</span> <span class="o">&lt;=</span> <span class="mf">6.0</span><span class="p">)</span> <span class="o">&amp;</span>
+                <span class="p">(</span><span class="mf">2.0</span> <span class="o">&lt;=</span> <span class="n">Rv_A</span> <span class="o">&lt;=</span> <span class="mf">6.0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">&lt;=</span> <span class="n">Rv</span> <span class="o">&lt;=</span> <span class="mf">6.0</span><span class="p">))</span>
+</div>
+<div class="viewcode-block" id="MixtureLaw.get_Rv_A"><a class="viewcode-back" href="../../../pypegase.extinctions.html#pypegase.extinctions.extinction.MixtureLaw.get_Rv_A">[docs]</a>    <span class="k">def</span> <span class="nf">get_Rv_A</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Rv</span><span class="p">,</span> <span class="n">f_A</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">Rv_B</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Returns the equivalent Rv to use in the bump component</span>
+
+<span class="sd">        .. math::</span>
+
+<span class="sd">            Law = f_A \\times A (lamb, Av=Av, Rv=Rv_A) + (1 - f_A) \\times B(lamb, Av=Av, Rv=Rv_B)</span>
+
+<span class="sd">        and Rv_A is such that:</span>
+
+<span class="sd">        .. math::</span>
+
+<span class="sd">                1 / Rv = f_A / Rv_A + (1 - f_A) / Rv_B</span>
+
+<span class="sd">                Rv_A = 1. / (1 / (Rv \\times f_A) - (1 - f_A) / (f_A \\times Rv_B))</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">Rv_B</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">B</span><span class="p">,</span> <span class="s">&#39;Rv&#39;</span><span class="p">):</span>
+            <span class="n">Rv_B</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">B</span><span class="o">.</span><span class="n">Rv</span>
+
+        <span class="k">return</span> <span class="mf">1.</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">/</span> <span class="p">(</span><span class="n">Rv</span> <span class="o">*</span> <span class="n">f_A</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">-</span> <span class="n">f_A</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">f_A</span> <span class="o">*</span> <span class="n">Rv_B</span><span class="p">))</span>
+</div>
+<div class="viewcode-block" id="MixtureLaw.get_Rv"><a class="viewcode-back" href="../../../pypegase.extinctions.html#pypegase.extinctions.extinction.MixtureLaw.get_Rv">[docs]</a>    <span class="k">def</span> <span class="nf">get_Rv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Rv_A</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">f_A</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">Rv_B</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Returns the equivalent effective Rv according to the mixture</span>
+
+<span class="sd">        .. math::</span>
+
+<span class="sd">            Law(\\lambda) = f_A \\times A (\\lambda, Av=Av, Rv=Rv_A) + (1. - f_A) \\times B(\\lambda, Av=Av, Rv=Rv_B)</span>
+
+<span class="sd">        and Rv is such that:</span>
+
+<span class="sd">        .. math::</span>
+
+<span class="sd">            1 / Rv = f_A / Rv_A + (1 - f_A) / Rv_B</span>
+
+<span class="sd">            Rv_A = 1 / (1. / (Rv \\times f_A) - (1 - f_A) / (f_A \\times Rv_B))</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">Rv_B</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">B</span><span class="p">,</span> <span class="s">&#39;Rv&#39;</span><span class="p">):</span>
+            <span class="n">Rv_B</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">B</span><span class="o">.</span><span class="n">Rv</span>
+
+        <span class="k">if</span> <span class="n">Rv_A</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="s">&#39;Rv&#39;</span><span class="p">):</span>
+            <span class="n">Rv_A</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="o">.</span><span class="n">Rv</span>
+
+        <span class="k">return</span> <span class="mf">1.</span> <span class="o">/</span> <span class="p">(</span><span class="n">f_A</span> <span class="o">/</span> <span class="n">Rv_A</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">f_A</span><span class="p">)</span> <span class="o">/</span> <span class="n">Rv_B</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="MixtureLaw.get_Rv_B"><a class="viewcode-back" href="../../../pypegase.extinctions.html#pypegase.extinctions.extinction.MixtureLaw.get_Rv_B">[docs]</a>    <span class="k">def</span> <span class="nf">get_Rv_B</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Rv</span><span class="p">,</span> <span class="n">Rv_A</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">f_A</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Returns the equivalent Rv to use in the bumpless component</span>
+
+<span class="sd">        .. math::</span>
+<span class="sd">            Law = f_A \\times A (lamb, Av=Av, Rv=Rv_A) + (1 - f_A) \\times B(lamb, Av=Av, Rv=Rv_B)</span>
+
+<span class="sd">        and Rv_B is such that</span>
+
+<span class="sd">        .. math::</span>
+
+<span class="sd">            1 / Rv = f_A / Rv_A + (1 - f_A) / Rv_B</span>
+
+<span class="sd">            Rv_A = 1. / (1 / (Rv \\times f_A) - (1 - f_A) / (f_A \\times Rv_B))</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">Rv_A</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="s">&#39;Rv&#39;</span><span class="p">):</span>
+            <span class="n">Rv_A</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="o">.</span><span class="n">Rv</span>
+
+        <span class="k">return</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">-</span> <span class="n">f_A</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">/</span> <span class="n">Rv</span> <span class="o">-</span> <span class="n">f_A</span> <span class="o">/</span> <span class="n">Rv_A</span><span class="p">)</span>
+
+
+<span class="c"># backward compatibility</span></div></div>
+<span class="n">RvFbumpLaw</span> <span class="o">=</span> <span class="n">MixtureLaw</span>
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Morgan Fouesneau, Ariane Lancon, and Michel Fioc.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

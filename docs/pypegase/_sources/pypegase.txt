@@ -1,0 +1,86 @@
+pypegase package
+================
+
+Subpackages
+-----------
+
+.. toctree::
+
+    pypegase.external
+    pypegase.extinctions
+    pypegase.imf
+    pypegase.include
+    pypegase.io
+    pypegase.isochrones
+    pypegase.stellibs
+    pypegase.tools
+    pypegase.units
+
+
+Submodules
+----------
+
+pypegase.config module
+----------------------
+
+.. automodule:: pypegase.config
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypegase.extinction module
+--------------------------
+
+.. automodule:: pypegase.extinctions
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypegase.helpers module
+-----------------------
+
+.. automodule:: pypegase.helpers
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypegase.nebular module
+-----------------------
+
+.. automodule:: pypegase.nebular
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypegase.phot module
+--------------------
+
+.. automodule:: pypegase.phot
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypegase.ssp module
+-------------------
+
+.. automodule:: pypegase.ssp
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypegase.vega module
+--------------------
+
+.. automodule:: pypegase.vega
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: pypegase
+    :members:
+    :undoc-members:
+    :show-inheritance:

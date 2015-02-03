@@ -1,0 +1,270 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pypegase.extinctions.gordon &mdash; pyPegase 1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'../../../',
+        VERSION:'1.0',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+    <script type="text/javascript">
+        jQuery(function () {
+            SphinxRtdTheme.StickyNav.enable();
+        });
+    </script>
+  
+
+  
+    <link rel="top" title="pyPegase 1.0 documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../../index.html" class="fa fa-home"> pyPegase</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro.html">pyPegase</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../intro.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../intro.html#simple-stellar-population-ssp">Simple stellar population (SSP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../intro.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../readme.html">pyPEGASE v1.0</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#contents-of-the-directory">Contents of the directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#quick-start">Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#quick-start-by-example-3-steps-to-build-one-continuous-population">Quick start by example : 3 steps to build one &#8220;continuous&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#quick-start-by-example-3-steps-to-build-one-discrete-population">Quick start by example: 3 steps to build one &#8220;discrete&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#quick-start-by-example-3-steps-to-build-one-fast-discrete-population">Quick start by example: 3 steps to build one &#8220;fast-discrete&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#customize-your-runs">Customize your runs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#produce-large-collections-of-simulations">Produce large collections of simulations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#compute-colors">Compute colors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#for-those-who-wish-to-read-edit-the-codes">For those who wish to read/edit the codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#required-acknowledgements">Required acknowledgements</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">pyPegase</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      
+    <li>pypegase.extinctions.gordon</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <h1>Source code for pypegase.extinctions.gordon</h1><div class="highlight"><pre>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">interpolate</span>
+
+<span class="kn">from</span> <span class="nn">..helpers</span> <span class="kn">import</span> <span class="n">val_in_unit</span>
+<span class="kn">from</span> <span class="nn">.extinction</span> <span class="kn">import</span> <span class="n">ExtinctionLaw</span>
+
+
+<div class="viewcode-block" id="Gordon03_SMCBar"><a class="viewcode-back" href="../../../pypegase.extinctions.html#pypegase.extinctions.gordon.Gordon03_SMCBar">[docs]</a><span class="k">class</span> <span class="nc">Gordon03_SMCBar</span><span class="p">(</span><span class="n">ExtinctionLaw</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Gordon et al. 2003 (ApJ, 594:279-293)</span>
+
+<span class="sd">    In principle, :math:`R_V` has no impact on this law: according to Gordon et al</span>
+<span class="sd">    (2003), the average value of :math:`R_V` is fixed to :math:`2.74 \pm 0.13`</span>
+<span class="sd">    In practice we offer to change this value, if one wants to explore the</span>
+<span class="sd">    uncertainties.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    Rv: float</span>
+<span class="sd">        desired default R(V), can be replaced during calling sequences</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Rv</span><span class="o">=</span><span class="mf">2.74</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        Rv: float</span>
+<span class="sd">            desired R(V) (default internal value given at initialization)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#39;Gordon03_SMCBar&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Rv</span> <span class="o">=</span> <span class="n">Rv</span>
+
+<div class="viewcode-block" id="Gordon03_SMCBar.function"><a class="viewcode-back" href="../../../pypegase.extinctions.html#pypegase.extinctions.gordon.Gordon03_SMCBar.function">[docs]</a>    <span class="k">def</span> <span class="nf">function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lamb</span><span class="p">,</span> <span class="n">Av</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">Rv</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">Alambda</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>  <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Lamb is input in Anstroms</span>
+<span class="sd">        Note that Rv is not given as a variable in the paper of reference</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        lamb: float or ndarray(dtype=float)</span>
+<span class="sd">            wavelength [in Angstroms] at which evaluate the law.</span>
+
+<span class="sd">        Av: float</span>
+<span class="sd">            desired A(V) (default 1.0)</span>
+
+<span class="sd">        Rv: float</span>
+<span class="sd">            desired R(V) (default internal value given at initialization)</span>
+
+<span class="sd">        Alambda: bool</span>
+<span class="sd">            if set returns +2.5*1./log(10.)*tau, tau otherwise</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        r: float or ndarray(dtype=float)</span>
+<span class="sd">            attenuation as a function of wavelength</span>
+<span class="sd">            depending on Alambda option +2.5*1./log(10.)*tau,  or tau</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">_lamb</span> <span class="o">=</span> <span class="n">val_in_unit</span><span class="p">(</span><span class="s">&#39;lamb&#39;</span><span class="p">,</span> <span class="n">lamb</span><span class="p">,</span> <span class="s">&#39;angstrom&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">_lamb</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">_lamb</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float_</span><span class="p">):</span>
+            <span class="n">_lamb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">lamb</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">_lamb</span> <span class="o">=</span> <span class="n">lamb</span><span class="p">[:]</span>
+
+        <span class="k">if</span> <span class="n">Rv</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">Rv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Rv</span>
+
+        <span class="n">c1</span> <span class="o">=</span> <span class="o">-</span><span class="mf">4.959</span> <span class="o">/</span> <span class="n">Rv</span>
+        <span class="n">c2</span> <span class="o">=</span> <span class="mf">2.264</span> <span class="o">/</span> <span class="n">Rv</span>
+        <span class="n">c3</span> <span class="o">=</span> <span class="mf">0.389</span> <span class="o">/</span> <span class="n">Rv</span>
+        <span class="n">c4</span> <span class="o">=</span> <span class="mf">0.461</span> <span class="o">/</span> <span class="n">Rv</span>
+        <span class="n">x0</span> <span class="o">=</span> <span class="mf">4.6</span>
+        <span class="n">gamma</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+        <span class="n">x</span> <span class="o">=</span> <span class="mf">1.e4</span> <span class="o">/</span> <span class="n">_lamb</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+        <span class="c"># UV part</span>
+        <span class="n">xcutuv</span> <span class="o">=</span> <span class="mf">10000.0</span> <span class="o">/</span> <span class="mf">2700.</span>
+        <span class="n">xspluv</span> <span class="o">=</span> <span class="mf">10000.0</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2700.</span><span class="p">,</span> <span class="mf">2600.</span><span class="p">])</span>
+
+        <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="n">xcutuv</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">k</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="n">c1</span> <span class="o">+</span> <span class="p">(</span><span class="n">c2</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="n">ind</span><span class="p">])</span> <span class="o">+</span> <span class="n">c3</span> <span class="o">*</span> <span class="p">((</span><span class="n">x</span><span class="p">[</span><span class="n">ind</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span> <span class="p">((</span><span class="n">x</span><span class="p">[</span><span class="n">ind</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="p">(</span><span class="n">x0</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">gamma</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">((</span><span class="n">x</span><span class="p">[</span><span class="n">ind</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span> <span class="p">))</span>
+            <span class="n">yspluv</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="n">c1</span> <span class="o">+</span> <span class="p">(</span><span class="n">c2</span> <span class="o">*</span> <span class="n">xspluv</span><span class="p">)</span> <span class="o">+</span> <span class="n">c3</span> <span class="o">*</span> <span class="p">((</span><span class="n">xspluv</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span> <span class="p">((</span><span class="n">xspluv</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="p">(</span><span class="n">x0</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">gamma</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">((</span><span class="n">xspluv</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="p">))</span>
+
+            <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mf">5.9</span><span class="p">)</span>
+            <span class="n">k</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">+=</span> <span class="n">c4</span> <span class="o">*</span> <span class="p">(</span><span class="mf">0.5392</span> <span class="o">*</span> <span class="p">((</span><span class="n">x</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">-</span> <span class="mf">5.9</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.05644</span> <span class="o">*</span> <span class="p">((</span><span class="n">x</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">-</span> <span class="mf">5.9</span><span class="p">)</span> <span class="o">**</span> <span class="mi">3</span><span class="p">))</span>
+
+        <span class="c"># Opt/NIR part</span>
+        <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">xcutuv</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">xsplopir</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+            <span class="n">xsplopir</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="n">xsplopir</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span> <span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2.198</span><span class="p">,</span> <span class="mf">1.65</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mf">0.81</span><span class="p">,</span> <span class="mf">0.65</span><span class="p">,</span> <span class="mf">0.55</span><span class="p">,</span> <span class="mf">0.44</span><span class="p">,</span> <span class="mf">0.37</span><span class="p">])</span>
+
+            <span class="c"># Values directly from Gordon et al. (2003)</span>
+            <span class="c"># ysplopir =  np.array([0.0,0.016,0.169,0.131,0.567,0.801,1.00,1.374,1.672])</span>
+            <span class="c"># K &amp; J values adjusted to provide a smooth, non-negative cubic spline interpolation</span>
+            <span class="n">ysplopir</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.11</span><span class="p">,</span> <span class="mf">0.169</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.567</span><span class="p">,</span> <span class="mf">0.801</span><span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="mf">1.374</span><span class="p">,</span> <span class="mf">1.672</span><span class="p">])</span>
+
+            <span class="n">tck</span> <span class="o">=</span> <span class="n">interpolate</span><span class="o">.</span><span class="n">splrep</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">xsplopir</span><span class="p">,</span> <span class="n">xspluv</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">ysplopir</span><span class="p">,</span> <span class="n">yspluv</span><span class="p">]),</span> <span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+            <span class="n">k</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span> <span class="n">interpolate</span><span class="o">.</span><span class="n">splev</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">tck</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">Alambda</span><span class="p">):</span>
+            <span class="k">return</span><span class="p">(</span><span class="n">k</span> <span class="o">*</span> <span class="n">Av</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span><span class="p">(</span><span class="n">k</span> <span class="o">*</span> <span class="n">Av</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mf">10.</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.4</span> <span class="p">))</span></div></div>
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Morgan Fouesneau, Ariane Lancon, and Michel Fioc.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

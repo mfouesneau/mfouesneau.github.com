@@ -1,0 +1,1408 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pypegase package &mdash; pyPegase 1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'./',
+        VERSION:'1.0',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+    <script type="text/javascript">
+        jQuery(function () {
+            SphinxRtdTheme.StickyNav.enable();
+        });
+    </script>
+  
+
+  
+    <link rel="top" title="pyPegase 1.0 documentation" href="index.html"/> 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> pyPegase</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">pyPegase</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#simple-stellar-population-ssp">Simple stellar population (SSP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="readme.html">pyPEGASE v1.0</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#contents-of-the-directory">Contents of the directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#quick-start">Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#quick-start-by-example-3-steps-to-build-one-continuous-population">Quick start by example : 3 steps to build one &#8220;continuous&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#quick-start-by-example-3-steps-to-build-one-discrete-population">Quick start by example: 3 steps to build one &#8220;discrete&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#quick-start-by-example-3-steps-to-build-one-fast-discrete-population">Quick start by example: 3 steps to build one &#8220;fast-discrete&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#customize-your-runs">Customize your runs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#produce-large-collections-of-simulations">Produce large collections of simulations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#compute-colors">Compute colors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#for-those-who-wish-to-read-edit-the-codes">For those who wish to read/edit the codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#required-acknowledgements">Required acknowledgements</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">pyPegase</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>pypegase package</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/pypegase.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="pypegase-package">
+<h1>pypegase package<a class="headerlink" href="#pypegase-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pypegase.external.html">pypegase.external package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.external.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.external.html#module-pypegase.external.pegase">pypegase.external.pegase module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.external.html#module-pypegase.external">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pypegase.extinctions.html">pypegase.extinctions package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.extinctions.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.extinctions.html#module-pypegase.extinctions.extinction">pypegase.extinctions.extinction module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pypegase.extinctions.html#dust-extinction-laws">Dust Extinction laws</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.extinctions.html#module-pypegase.extinctions.calzetti">pypegase.extinctions.calzetti module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.extinctions.html#module-pypegase.extinctions.cardelli">pypegase.extinctions.cardelli module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.extinctions.html#module-pypegase.extinctions.fitzpatrick">pypegase.extinctions.fitzpatrick module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.extinctions.html#module-pypegase.extinctions.gordon">pypegase.extinctions.gordon module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.extinctions.html#module-pypegase.extinctions">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pypegase.imf.html">pypegase.imf package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.imf.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.imf.html#module-pypegase.imf.common">pypegase.imf.common module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pypegase.imf.html#initial-mass-function-classes">(Initial) MASS FUNCTION CLASSES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.imf.html#module-pypegase.imf.imf">pypegase.imf.imf module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pypegase.imf.html#id1">(Initial) MASS FUNCTION CLASSES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.imf.html#module-pypegase.imf.tests">pypegase.imf.tests module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.imf.html#module-pypegase.imf">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pypegase.include.html">pypegase.include package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.include.html#module-pypegase.include">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pypegase.io.html">pypegase.io package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.io.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.io.html#module-pypegase.io.fits">pypegase.io.fits module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.io.html#module-pypegase.io.hdfstore">pypegase.io.hdfstore module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.io.html#module-pypegase.io.simpletable">pypegase.io.simpletable module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pypegase.io.html#requirements">Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.io.html#module-pypegase.io">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pypegase.isochrones.html">pypegase.isochrones package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.isochrones.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pypegase.isochrones.ezpadova.html">pypegase.isochrones.ezpadova package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pypegase.isochrones.ezpadova.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypegase.isochrones.ezpadova.html#module-pypegase.isochrones.ezpadova.cmd">pypegase.isochrones.ezpadova.cmd module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pypegase.isochrones.ezpadova.html#example-usage">EXAMPLE USAGE</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="pypegase.isochrones.ezpadova.html#module-pypegase.isochrones.ezpadova">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.isochrones.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.isochrones.html#module-pypegase.isochrones.isochrone">pypegase.isochrones.isochrone module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.isochrones.html#module-pypegase.isochrones.padova">pypegase.isochrones.padova module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.isochrones.html#module-pypegase.isochrones.pegase">pypegase.isochrones.pegase module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.isochrones.html#module-pypegase.isochrones.pegase_old">pypegase.isochrones.pegase_old module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.isochrones.html#module-pypegase.isochrones">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pypegase.stellibs.html">pypegase.stellibs package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.stellibs.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.stellibs.html#module-pypegase.stellibs.basel">pypegase.stellibs.basel module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.stellibs.html#module-pypegase.stellibs.common">pypegase.stellibs.common module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.stellibs.html#module-pypegase.stellibs.elodie">pypegase.stellibs.elodie module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.stellibs.html#module-pypegase.stellibs.interpolator">pypegase.stellibs.interpolator module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.stellibs.html#module-pypegase.stellibs.stellib">pypegase.stellibs.stellib module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.stellibs.html#module-pypegase.stellibs">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pypegase.tools.html">pypegase.tools package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.tools.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pypegase.tools.future.html">pypegase.tools.future package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pypegase.tools.future.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypegase.tools.future.html#module-pypegase.tools.future.path">pypegase.tools.future.path module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypegase.tools.future.html#module-pypegase.tools.future.tables_file">pypegase.tools.future.tables_file module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypegase.tools.future.html#module-pypegase.tools.future">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.tools.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.tools.html#module-pypegase.tools.common">pypegase.tools.common module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.tools.html#module-pypegase.tools.compatibility">pypegase.tools.compatibility module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pypegase.tools.html#make-py3k-migration-easier">Make Py3k migration easier</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.tools.html#module-pypegase.tools.decorators">pypegase.tools.decorators module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.tools.html#module-pypegase.tools.pbar">pypegase.tools.pbar module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pypegase.tools.html#simple-progressbar">Simple progressbar</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.tools.html#module-pypegase.tools">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pypegase.units.html">pypegase.units package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.units.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.units.html#module-pypegase.units.pint">pypegase.units.pint module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pypegase.units.html#pint">pint</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pypegase.units.html#module-pypegase.units">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pypegase.units.html#id1">pint</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-pypegase.config">
+<span id="pypegase-config-module"></span><h2>pypegase.config module<a class="headerlink" href="#module-pypegase.config" title="Permalink to this headline">¶</a></h2>
+<p>Configuration file</p>
+<p>Allow the users to update default behaviors of the code</p>
+<dl class="function">
+<dt id="pypegase.config.printConfig">
+<tt class="descclassname">pypegase.config.</tt><tt class="descname">printConfig</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pypegase/config.html#printConfig"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.config.printConfig" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-pypegase.extinctions">
+<span id="pypegase-extinction-module"></span><h2>pypegase.extinction module<a class="headerlink" href="#module-pypegase.extinctions" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-pypegase.helpers">
+<span id="pypegase-helpers-module"></span><h2>pypegase.helpers module<a class="headerlink" href="#module-pypegase.helpers" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="pypegase.helpers.deprecated">
+<tt class="descclassname">pypegase.helpers.</tt><tt class="descname">deprecated</tt><big>(</big><em>func</em><big>)</big><a class="reference internal" href="_modules/pypegase/helpers.html#deprecated"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.helpers.deprecated" title="Permalink to this definition">¶</a></dt>
+<dd><p>A dummy decorator that warns against using a deprecated function</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypegase.helpers.isNestedInstance">
+<tt class="descclassname">pypegase.helpers.</tt><tt class="descname">isNestedInstance</tt><big>(</big><em>obj</em>, <em>cl</em><big>)</big><a class="reference internal" href="_modules/pypegase/helpers.html#isNestedInstance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.helpers.isNestedInstance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test for sub-classes types
+I could not find a universal test</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>obj: object instance</strong></p>
+<blockquote>
+<div><p>object to test</p>
+</div></blockquote>
+<p><strong>cl: Class</strong></p>
+<blockquote>
+<div><p>top level class to test</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">r: bool</p>
+<blockquote class="last">
+<div><p>True if obj is indeed an instance or subclass instance of cl</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypegase.helpers.missing_units_warning">
+<tt class="descclassname">pypegase.helpers.</tt><tt class="descname">missing_units_warning</tt><big>(</big><em>name</em>, <em>defaultunit</em><big>)</big><a class="reference internal" href="_modules/pypegase/helpers.html#missing_units_warning"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.helpers.missing_units_warning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Warn if any unit is missing</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name: str</strong></p>
+<blockquote>
+<div><p>name of the variable</p>
+</div></blockquote>
+<p><strong>defaultunit: str</strong></p>
+<blockquote>
+<div><p>default unit definition</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><strong>warning: warnings.warn</strong></p>
+<blockquote class="last">
+<div><p>warn if units are assumed</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypegase.helpers.nbytes">
+<tt class="descclassname">pypegase.helpers.</tt><tt class="descname">nbytes</tt><big>(</big><em>obj</em>, <em>pprint=False</em><big>)</big><a class="reference internal" href="_modules/pypegase/helpers.html#nbytes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.helpers.nbytes" title="Permalink to this definition">¶</a></dt>
+<dd><p>return the number of bytes of the object, which includes size of nested
+structures</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>obj: object</strong></p>
+<blockquote>
+<div><p>object to find the size of</p>
+</div></blockquote>
+<p><strong>pprint: bool, optional (default=False)</strong></p>
+<blockquote>
+<div><p>if set, returns the result after calling pretty_size_print</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">num_bytes: int or str</p>
+<blockquote class="last">
+<div><p>total number of bytes or human readable corresponding string</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypegase.helpers.pretty_size_print">
+<tt class="descclassname">pypegase.helpers.</tt><tt class="descname">pretty_size_print</tt><big>(</big><em>num_bytes</em><big>)</big><a class="reference internal" href="_modules/pypegase/helpers.html#pretty_size_print"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.helpers.pretty_size_print" title="Permalink to this definition">¶</a></dt>
+<dd><p>Output number of bytes in a human readable format</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>num_bytes: int</strong></p>
+<blockquote>
+<div><p>number of bytes to convert</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">output: str</p>
+<blockquote class="last">
+<div><p>string representation of the size with appropriate unit scale</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypegase.helpers.type_checker">
+<tt class="descclassname">pypegase.helpers.</tt><tt class="descname">type_checker</tt><big>(</big><em>name</em>, <em>obj</em>, <em>tp</em><big>)</big><a class="reference internal" href="_modules/pypegase/helpers.html#type_checker"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.helpers.type_checker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check a given type and raise a type error if not correct</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name: str</strong></p>
+<blockquote>
+<div><p>name of the variable to show in the exception text</p>
+</div></blockquote>
+<p><strong>obj: object</strong></p>
+<blockquote>
+<div><p>object to check</p>
+</div></blockquote>
+<p><strong>tp: type</strong></p>
+<blockquote>
+<div><p>expected type of obj</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><strong>:exc:TypeError:</strong></p>
+<blockquote class="last">
+<div><p>raises a TypeError if object is not of the correct type of a subclass of it</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypegase.helpers.val_in_unit">
+<tt class="descclassname">pypegase.helpers.</tt><tt class="descname">val_in_unit</tt><big>(</big><em>varname</em>, <em>value</em>, <em>defaultunit</em><big>)</big><a class="reference internal" href="_modules/pypegase/helpers.html#val_in_unit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.helpers.val_in_unit" title="Permalink to this definition">¶</a></dt>
+<dd><p>check units and convert to defaultunit or create the unit information</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>varname: str</strong></p>
+<blockquote>
+<div><p>name of the variable</p>
+</div></blockquote>
+<p><strong>value: value</strong></p>
+<blockquote>
+<div><p>value of the variable, which may be unitless</p>
+</div></blockquote>
+<p><strong>defaultunit: str</strong></p>
+<blockquote>
+<div><p>default units is unitless</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">quantity: ezunits.Quantity</p>
+<blockquote>
+<div><p>value with units</p>
+</div></blockquote>
+<div class="code last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">val_in_unit</span><span class="p">(</span><span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="s">&#39;degree&#39;</span><span class="p">))</span>
+<span class="go"># UserWarning: Variable r does not have explicit units. Assuming `degree`</span>
+<span class="go">&lt;Quantity(0.5, &#39;degree&#39;)&gt;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;degree&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">val_in_unit</span><span class="p">(</span><span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="s">&#39;degree&#39;</span><span class="p">))</span>
+<span class="go">&lt;Quantity(0.5, &#39;degree&#39;)&gt;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypegase.helpers.warning_on_one_line">
+<tt class="descclassname">pypegase.helpers.</tt><tt class="descname">warning_on_one_line</tt><big>(</big><em>message</em>, <em>category</em>, <em>filename</em>, <em>lineno</em>, <em>file=None</em>, <em>line=None</em><big>)</big><a class="reference internal" href="_modules/pypegase/helpers.html#warning_on_one_line"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.helpers.warning_on_one_line" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-pypegase.nebular">
+<span id="pypegase-nebular-module"></span><h2>pypegase.nebular module<a class="headerlink" href="#module-pypegase.nebular" title="Permalink to this headline">¶</a></h2>
+<p>Everything nebular continuum + emission related</p>
+<p>nebular emission lines relative to the underlying stellar continuum indicating
+that the stars and gas that give rise to the lines and to the continuum see
+different amounts of dust. This interaction between stars and gas led to
+two-step model in which young stars which emit ionizing photons are likely to
+be still surrounded by the clouds of gas and dust from which they formed. In
+this model all stars are attenuated by &#8220;diffuse&#8221; dust in the same manner as
+equation 2. However young ( &lt; 10 Myr) stars undergo an additional &#8220;birth cloud&#8221;
+attenuation.</p>
+<p>In practice this means that the UV light and nebular emission lines associated
+with the short-lived massive stars are more obscured than the optical light
+dominated by the longer-lived stars, as observed in real galaxies</p>
+<p>Finally the integrated spectrum of a given SSP is the mixture of a stellar
+content interacting with dust and gas.</p>
+<dl class="class">
+<dt id="pypegase.nebular.NebularModel">
+<em class="property">class </em><tt class="descclassname">pypegase.nebular.</tt><tt class="descname">NebularModel</tt><big>(</big><em>name=''</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/pypegase/nebular.html#NebularModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.nebular.NebularModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">builtins.object</span></tt></p>
+<p>template Class</p>
+<dl class="method">
+<dt id="pypegase.nebular.NebularModel.add_emission">
+<tt class="descname">add_emission</tt><big>(</big><em>lamb</em>, <em>flux</em>, <em>NHI</em>, <em>frac</em>, <em>with_units=False</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/pypegase/nebular.html#NebularModel.add_emission"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.nebular.NebularModel.add_emission" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the nebular component and add its contribution</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>lamb: ndarray, dtype=float</strong></p>
+<blockquote>
+<div><p>initial wavelength of the spectrum
+in angstroms</p>
+</div></blockquote>
+<p><strong>flux: ndarray, dtype=float</strong></p>
+<blockquote>
+<div><p>initial flux of the spectrum</p>
+</div></blockquote>
+<p><strong>NHI: int</strong></p>
+<blockquote>
+<div><p>number of photons contributing to HI Lym_alpha</p>
+</div></blockquote>
+<p><strong>frac: float</strong></p>
+<blockquote>
+<div><p>fraction of ionizing photons</p>
+</div></blockquote>
+<p><strong>with_units: bool</strong></p>
+<blockquote>
+<div><p>if set, return results with units</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">l: ndarray, dtype=float</p>
+<blockquote>
+<div><p>wavelength values revised from the input array to include emission lines
+in angstroms</p>
+</div></blockquote>
+<p>f: ndarray, dtype=float</p>
+<blockquote>
+<div><p>final associated fluxes
+in units of input fluxes</p>
+</div></blockquote>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">kwargs forwarded to self.gen_spectra</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.nebular.NebularModel.add_emission_to_many">
+<tt class="descname">add_emission_to_many</tt><big>(</big><em>lamb</em>, <em>flux</em>, <em>NHI</em>, <em>frac</em>, <em>with_units=False</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/pypegase/nebular.html#NebularModel.add_emission_to_many"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.nebular.NebularModel.add_emission_to_many" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the nebular component and add its contribution</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>lamb: ndarray, dtype=float</strong></p>
+<blockquote>
+<div><p>initial wavelength of the spectrum
+in angstroms</p>
+</div></blockquote>
+<p><strong>flux: ndarray, dtype=float</strong></p>
+<blockquote>
+<div><p>initial flux of the spectrum</p>
+</div></blockquote>
+<p><strong>NHI: int</strong></p>
+<blockquote>
+<div><p>number of photons contributing to HI Lym_alpha</p>
+</div></blockquote>
+<p><strong>frac: float</strong></p>
+<blockquote>
+<div><p>fraction of ionizing photons</p>
+</div></blockquote>
+<p><strong>with_units: bool</strong></p>
+<blockquote>
+<div><p>if set, return results with units</p>
+</div></blockquote>
+<p><strong>.. note::</strong></p>
+<blockquote>
+<div><p>kwargs forwarded to self.gen_spectra</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">l: ndarray, dtype=float</p>
+<blockquote>
+<div><p>wavelength values revised from the input array to include emission lines
+in angstroms</p>
+</div></blockquote>
+<p>f: ndarray, dtype=float</p>
+<blockquote class="last">
+<div><p>final associated fluxes
+in units of input fluxes</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.nebular.NebularModel.gen_spectra">
+<tt class="descname">gen_spectra</tt><big>(</big><em>lamb</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/pypegase/nebular.html#NebularModel.gen_spectra"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.nebular.NebularModel.gen_spectra" title="Permalink to this definition">¶</a></dt>
+<dd><p>template</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pypegase.nebular.pegase">
+<em class="property">class </em><tt class="descclassname">pypegase.nebular.</tt><tt class="descname">pegase</tt><big>(</big><em>name=None</em><big>)</big><a class="reference internal" href="_modules/pypegase/nebular.html#pegase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.nebular.pegase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pypegase.nebular.NebularModel" title="pypegase.nebular.NebularModel"><tt class="xref py py-class docutils literal"><span class="pre">pypegase.nebular.NebularModel</span></tt></a></p>
+<p>Nebular model implemented in Pegase.2</p>
+<p>A simplified nebular emission model computed as in Guiderdoni et al. (1987)
+is linked to the number of ionizing photons in the specific galaxy model,
+furnishing line intensities and the nebular continuum in the same
+wavelength range as the stellar spectra. The models also include the
+effects of dust extinction using the average properties for the galaxy type
+and the chemical enrichment of the interstellar medium.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>requires local resources</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>libs/pegase.HII.cont.fits</li>
+<li>libs/pegase.HII.lines.fits</li>
+</ul>
+</div></blockquote>
+</div>
+<dl class="method">
+<dt id="pypegase.nebular.pegase.gen_spectra">
+<tt class="descname">gen_spectra</tt><big>(</big><em>lambin</em>, <em>with_units=False</em><big>)</big><a class="reference internal" href="_modules/pypegase/nebular.html#pegase.gen_spectra"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.nebular.pegase.gen_spectra" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a photon normalized nebular spectrum</p>
+<p>On top of adding the continuum component, for each emission line, we
+compute where it should lie on the continuum and spread the energy on a
+triplet of points, single point or a couple enclosing the position.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>lambin: ndarray, dtype=float</strong></p>
+<blockquote>
+<div><p>initial wavelengths to compute
+[in Angstroms]</p>
+</div></blockquote>
+<p><strong>with_units: bool</strong></p>
+<blockquote>
+<div><p>if set, return results with units</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">l: ndarray, dtype=float</p>
+<blockquote>
+<div><p>wavelength values revised from the input array to include emission lines
+in Angstroms</p>
+</div></blockquote>
+<p>f: ndarray, dtype=float</p>
+<blockquote class="last">
+<div><p>final associated fluxes
+[ in erg/s/AA/NHI ]</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pypegase.phot">
+<span id="pypegase-phot-module"></span><h2>pypegase.phot module<a class="headerlink" href="#module-pypegase.phot" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="photometric-package">
+<h3>Photometric package<a class="headerlink" href="#photometric-package" title="Permalink to this headline">¶</a></h3>
+<p>Defines a Filter class and associated functions to extract photometry.</p>
+<p>This also include functions to keep libraries up to date</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">integrations are done using <tt class="xref py py-func docutils literal"><span class="pre">trapz()</span></tt>
+Why not Simpsons? Simpsons principle is to take sequence of 3 points to
+make a quadratic interpolation. Which in the end, when filters have sharp
+edges, the error due to this &#8220;interpolation&#8221; are extremely large in
+comparison to the uncertainties induced by trapeze integration.</p>
+</div>
+<dl class="class">
+<dt id="pypegase.phot.Filter">
+<em class="property">class </em><tt class="descclassname">pypegase.phot.</tt><tt class="descname">Filter</tt><big>(</big><em>wavelength</em>, <em>transmit</em>, <em>name=''</em><big>)</big><a class="reference internal" href="_modules/pypegase/phot.html#Filter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.phot.Filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">builtins.object</span></tt></p>
+<p>Class filter
+Define a filter by its name, wavelength and transmission</p>
+<p class="rubric">Attributes</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>name: str</td>
+<td>name of the filter</td>
+</tr>
+<tr class="row-even"><td>cl: float</td>
+<td>central wavelength of the filter</td>
+</tr>
+<tr class="row-odd"><td>norm: float</td>
+<td>normalization factor of the filter</td>
+</tr>
+<tr class="row-even"><td>lpivot: float</td>
+<td>pivot wavelength of the filter</td>
+</tr>
+<tr class="row-odd"><td>wavelength: ndarray</td>
+<td>wavelength sequence defining the filter transmission curve</td>
+</tr>
+<tr class="row-even"><td>transmit: ndarray</td>
+<td>transmission curve of the filter</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="pypegase.phot.Filter.applyTo">
+<tt class="descname">applyTo</tt><big>(</big><em>slamb</em>, <em>sflux</em><big>)</big><a class="reference internal" href="_modules/pypegase/phot.html#Filter.applyTo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.phot.Filter.applyTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply filter to a spectrum</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>slamb: ndarray</strong></p>
+<blockquote>
+<div><p>spectrum wavelength definition domain</p>
+</div></blockquote>
+<p><strong>sflux: ndarray</strong></p>
+<blockquote>
+<div><p>associated flux</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">flux: float</p>
+<blockquote class="last">
+<div><p>new spectrum values accounting for the filter</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.phot.Filter.getFlux">
+<tt class="descname">getFlux</tt><big>(</big><em>slamb</em>, <em>sflux</em><big>)</big><a class="reference internal" href="_modules/pypegase/phot.html#Filter.getFlux"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.phot.Filter.getFlux" title="Permalink to this definition">¶</a></dt>
+<dd><p>Integrate the flux within the filter and return the integrated energy
+If you consider applying the filter to many spectra, you might want to
+consider extractSEDs.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>slamb: ndarray(dtype=float, ndim=1)</strong></p>
+<blockquote>
+<div><p>spectrum wavelength definition domain</p>
+</div></blockquote>
+<p><strong>sflux: ndarray(dtype=float, ndim=1)</strong></p>
+<blockquote>
+<div><p>associated flux</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">flux: float</p>
+<blockquote class="last">
+<div><p>Energy of the spectrum within the filter</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.phot.Filter.info">
+<tt class="descname">info</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pypegase/phot.html#Filter.info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.phot.Filter.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>display information about the current filter</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="pypegase.phot.appendVegaFilter">
+<tt class="descclassname">pypegase.phot.</tt><tt class="descname">appendVegaFilter</tt><big>(</big><em>filtInst</em>, <em>VegaLib='/home/morgan/Work/pypegase/examples/pypegase/libs/vega.hd5'</em><big>)</big><a class="reference internal" href="_modules/pypegase/phot.html#appendVegaFilter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.phot.appendVegaFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add filter properties to the Vega library</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filtInst: Filter instance</strong></p>
+<blockquote>
+<div><p>filter instance to get properties from and store information with Vega.</p>
+</div></blockquote>
+<p><strong>VegaLib: str</strong></p>
+<blockquote class="last">
+<div><p>Vega Library</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypegase.phot.append_filter">
+<tt class="descclassname">pypegase.phot.</tt><tt class="descname">append_filter</tt><big>(</big><em>lamb</em>, <em>flux</em>, <em>tablename</em>, <em>observatory</em>, <em>instrument</em>, <em>name</em>, <em>comment=None</em>, <em>filterLib='/home/morgan/Work/pypegase/examples/pypegase/libs/filters.hd5'</em>, <em>updateVegaLib=True</em><big>)</big><a class="reference internal" href="_modules/pypegase/phot.html#append_filter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.phot.append_filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Edit the filter catalog and append a new one given by its transfer function</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>lamb: ndarray(dtype=float)</strong></p>
+<blockquote>
+<div><p>wavelength of the filter definition</p>
+</div></blockquote>
+<p><strong>flux: ndarray(dtype=float)</strong></p>
+<blockquote>
+<div><p>transimission of the filter</p>
+</div></blockquote>
+<p><strong>tablename: str</strong></p>
+<blockquote>
+<div><p>table name in the library</p>
+</div></blockquote>
+<p><strong>observatory: str</strong></p>
+<blockquote>
+<div><p>observatory of the filter (Ground, HST, Spitzer, ...)</p>
+</div></blockquote>
+<p><strong>instrument: str</strong></p>
+<blockquote>
+<div><p>instrument associated with the filter</p>
+</div></blockquote>
+<p><strong>name: str</strong></p>
+<blockquote>
+<div><p>name of the filter</p>
+</div></blockquote>
+<p><strong>comment: str, optional</strong></p>
+<blockquote>
+<div><p>optinal comment to keep with the filter</p>
+</div></blockquote>
+<p><strong>filterLib: str, optional</strong></p>
+<blockquote>
+<div><p>filter library file to use</p>
+</div></blockquote>
+<p><strong>updateVegaLib: bool</strong></p>
+<blockquote class="last">
+<div><p>if set calls the update function to the vega library</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypegase.phot.extractPhotometry">
+<tt class="descclassname">pypegase.phot.</tt><tt class="descname">extractPhotometry</tt><big>(</big><em>lamb</em>, <em>spec</em>, <em>flist</em>, <em>absFlux=True</em><big>)</big><a class="reference internal" href="_modules/pypegase/phot.html#extractPhotometry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.phot.extractPhotometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract seds from a one single spectrum</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>lamb: ndarray[float,ndim=1]</strong></p>
+<blockquote>
+<div><p>wavelength of spec</p>
+</div></blockquote>
+<p><strong>spec: ndarray[float, ndim=1]</strong></p>
+<blockquote>
+<div><p>spectrum</p>
+</div></blockquote>
+<p><strong>flist: list[filter]</strong></p>
+<blockquote>
+<div><p>list of filter objects</p>
+</div></blockquote>
+<p><strong>absflux: bool</strong></p>
+<blockquote>
+<div><p>return SEDs in absolute fluxes if set</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">cls: ndarray[float, ndim=1]</p>
+<blockquote>
+<div><p>filters central wavelength</p>
+</div></blockquote>
+<p>seds: ndarray[float, ndim=1]</p>
+<blockquote class="last">
+<div><p>integrated sed</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypegase.phot.load_all_filters">
+<tt class="descclassname">pypegase.phot.</tt><tt class="descname">load_all_filters</tt><big>(</big><em>interp=True</em>, <em>lamb=None</em>, <em>filterLib='/home/morgan/Work/pypegase/examples/pypegase/libs/filters.hd5'</em><big>)</big><a class="reference internal" href="_modules/pypegase/phot.html#load_all_filters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.phot.load_all_filters" title="Permalink to this definition">¶</a></dt>
+<dd><p>load all filters from the library</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>interp: bool</strong></p>
+<blockquote>
+<div><p>reinterpolate the filters over given lambda points</p>
+</div></blockquote>
+<p><strong>lamb: ndarray[float, ndim=1]</strong></p>
+<blockquote>
+<div><p>desired wavelength definition of the filter</p>
+</div></blockquote>
+<p><strong>filterLib:  str</strong></p>
+<blockquote>
+<div><p>path to the filter library hd5 file</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">filters: list[filter]</p>
+<blockquote class="last">
+<div><p>list of filter objects</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypegase.phot.load_filters">
+<tt class="descclassname">pypegase.phot.</tt><tt class="descname">load_filters</tt><big>(</big><em>names</em>, <em>interp=True</em>, <em>lamb=None</em>, <em>filterLib='/home/morgan/Work/pypegase/examples/pypegase/libs/filters.hd5'</em><big>)</big><a class="reference internal" href="_modules/pypegase/phot.html#load_filters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.phot.load_filters" title="Permalink to this definition">¶</a></dt>
+<dd><p>load a limited set of filters</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>names: list[str]</strong></p>
+<blockquote>
+<div><p>normalized names according to filtersLib</p>
+</div></blockquote>
+<p><strong>interp: bool</strong></p>
+<blockquote>
+<div><p>reinterpolate the filters over given lambda points</p>
+</div></blockquote>
+<p><strong>lamb: ndarray[float, ndim=1]</strong></p>
+<blockquote>
+<div><p>desired wavelength definition of the filter</p>
+</div></blockquote>
+<p><strong>filterLib: path</strong></p>
+<blockquote>
+<div><p>path to the filter library hd5 file</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">filters: list[filter]</p>
+<blockquote class="last">
+<div><p>list of filter objects</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="module-pypegase.ssp">
+<span id="pypegase-ssp-module"></span><h2>pypegase.ssp module<a class="headerlink" href="#module-pypegase.ssp" title="Permalink to this headline">¶</a></h2>
+<p>Implements a Simple Stellar Population simulation functions
+aiming to provide easier interface to the related quantities</p>
+<dl class="function">
+<dt id="pypegase.ssp.continuous">
+<tt class="descclassname">pypegase.ssp.</tt><tt class="descname">continuous</tt><big>(</big><em>age</em>, <em>Z</em>, <em>imf</em>, <em>iso</em>, <em>sl</em>, <em>neb</em>, <em>fracNeb=0.0</em>, <em>inLsun=False</em>, <em>with_units=False</em>, <em>nthreads=1</em><big>)</big><a class="reference internal" href="_modules/pypegase/ssp.html#continuous"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.ssp.continuous" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate an SSP assuming a continuously sampled mass function</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>age: float</strong></p>
+<blockquote>
+<div><p>age of the population (in yr)</p>
+</div></blockquote>
+<p><strong>Z: float</strong></p>
+<blockquote>
+<div><p>metallicity</p>
+</div></blockquote>
+<p><strong>imf: imf.Imf instance</strong></p>
+<blockquote>
+<div><p>Initial Mass function</p>
+</div></blockquote>
+<p><strong>iso: isochrone.Isochrone instance</strong></p>
+<blockquote>
+<div><p>Isochrone library</p>
+</div></blockquote>
+<p><strong>sl: stellib.Stellib instance</strong></p>
+<blockquote>
+<div><p>stellar library</p>
+</div></blockquote>
+<p><strong>neb: nebular.Nebular instance</strong></p>
+<blockquote>
+<div><p>Nebular Model</p>
+</div></blockquote>
+<p><strong>fracNeb: float</strong></p>
+<blockquote>
+<div><p>Photon fraction tranformed into nebular component</p>
+</div></blockquote>
+<p><strong>inLsun: bool</strong></p>
+<blockquote>
+<div><p>return results units normalized to Lsun</p>
+</div></blockquote>
+<p><strong>with_units: bool</strong></p>
+<blockquote>
+<div><p>if set, return results with units</p>
+</div></blockquote>
+<p><strong>nthreads:  int</strong></p>
+<blockquote>
+<div><p>number of threads during interpolation</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">l: numpy.ndarray[float, ndim=1]</p>
+<blockquote>
+<div><p>wavelength in AA</p>
+</div></blockquote>
+<p>s: numpy.ndarray[float, ndim=1]</p>
+<blockquote>
+<div><p>Spectrum in ergs/s/AA or ergs/s/AA/Lsun</p>
+</div></blockquote>
+<p>p: dict</p>
+<blockquote class="last">
+<div><p>various intermediate results and population properties</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypegase.ssp.discrete">
+<tt class="descclassname">pypegase.ssp.</tt><tt class="descname">discrete</tt><big>(</big><em>nstars</em>, <em>age</em>, <em>Z</em>, <em>imf</em>, <em>iso</em>, <em>sl</em>, <em>neb</em>, <em>fracNeb=0.0</em>, <em>nsamp=20</em>, <em>inLsun=False</em>, <em>with_units=True</em>, <em>nthreads=1</em><big>)</big><a class="reference internal" href="_modules/pypegase/ssp.html#discrete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.ssp.discrete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a stochastic SSP assuming a discretely sampled mass function
+according to the number of stars.
+The number of samples is set by nsamp</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>nstars: int</strong></p>
+<blockquote>
+<div><p>total number of stars in the population</p>
+</div></blockquote>
+<p><strong>age: float</strong></p>
+<blockquote>
+<div><p>age of the population (in yr)</p>
+</div></blockquote>
+<p><strong>Z: float</strong></p>
+<blockquote>
+<div><p>metallicity</p>
+</div></blockquote>
+<p><strong>imf:   imf.Imf</strong></p>
+<blockquote>
+<div><p>Initial Mass function</p>
+</div></blockquote>
+<p><strong>iso: isochrone.Isochrone</strong></p>
+<blockquote>
+<div><p>Isochrone library</p>
+</div></blockquote>
+<p><strong>sl: stellib.Stellib</strong></p>
+<blockquote>
+<div><p>stellar library</p>
+</div></blockquote>
+<p><strong>neb: nebular.Nebular</strong></p>
+<blockquote>
+<div><p>Nebular Model</p>
+</div></blockquote>
+<p><strong>fracNeb: float</strong></p>
+<blockquote>
+<div><p>Photon fraction tranformed into nebular component</p>
+</div></blockquote>
+<p><strong>nsamp: int</strong></p>
+<blockquote>
+<div><p>number of mass sampling</p>
+</div></blockquote>
+<p><strong>inLsun: bool</strong></p>
+<blockquote>
+<div><p>return results units normalized to Lsun</p>
+</div></blockquote>
+<p><strong>with_units: bool</strong></p>
+<blockquote>
+<div><p>if set, return results with units</p>
+</div></blockquote>
+<p><strong>nthreads: int</strong></p>
+<blockquote>
+<div><p>number of threads during interpolation</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">l: numpy.ndarray[float, ndim=1]</p>
+<blockquote>
+<div><p>wavelength (in AA, by default)</p>
+</div></blockquote>
+<p>s: numpy.ndarray[float, ndim=1]</p>
+<blockquote>
+<div><p>Spectrum in ergs/s/AA or ergs/s/AA/Lsun</p>
+</div></blockquote>
+<p>p: dict</p>
+<blockquote>
+<div><p>various intermediate results and population properties</p>
+</div></blockquote>
+<div class="admonition-todo last admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">Could be optimized to compute only once the interpolation on the
+grid and apply variable weights ==&gt; lot more sampling for the same time</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypegase.ssp.fast_discrete">
+<tt class="descclassname">pypegase.ssp.</tt><tt class="descname">fast_discrete</tt><big>(</big><em>nstars</em>, <em>age</em>, <em>Z</em>, <em>imf</em>, <em>iso</em>, <em>sl</em>, <em>neb</em>, <em>fracNeb=0.0</em>, <em>dlogm=0.001</em>, <em>nsamp=20</em>, <em>inLsun=False</em>, <em>with_units=True</em>, <em>nthreads=1</em><big>)</big><a class="reference internal" href="_modules/pypegase/ssp.html#fast_discrete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.ssp.fast_discrete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate an SSP assuming a continuously sampled mass function and
+boostrap the mass binning according to the number of stars.
+The number of samples is set by nsamp</p>
+<p>The approximation we use in this modeling scheme is that stars are binned
+in mass to their continuous equivalent mass bins and represented by their
+central star spectrum.  This approximation is good enough as long as
+variations from on side of the mass bin to the other are negligeable.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>nstars: int</strong></p>
+<blockquote>
+<div><p>total number of stars in the population</p>
+</div></blockquote>
+<p><strong>age: float</strong></p>
+<blockquote>
+<div><p>age of the population (in yr)</p>
+</div></blockquote>
+<p><strong>Z: float</strong></p>
+<blockquote>
+<div><p>metallicity</p>
+</div></blockquote>
+<p><strong>imf: imf.Imf instance</strong></p>
+<blockquote>
+<div><p>Initial Mass function</p>
+</div></blockquote>
+<p><strong>iso: isochrone.Isochrone instance</strong></p>
+<blockquote>
+<div><p>Isochrone library</p>
+</div></blockquote>
+<p><strong>sl: stellib.Stellib instance</strong></p>
+<blockquote>
+<div><p>stellar library</p>
+</div></blockquote>
+<p><strong>neb: nebular.Nebular instance</strong></p>
+<blockquote>
+<div><p>Nebular Model</p>
+</div></blockquote>
+<p><strong>fracNeb: float</strong></p>
+<blockquote>
+<div><p>Photon fraction tranformed into nebular component</p>
+</div></blockquote>
+<p><strong>dlogm: float</strong></p>
+<blockquote>
+<div><p>log mass step used to sample the isochrone</p>
+</div></blockquote>
+<p><strong>dlogt: float</strong></p>
+<blockquote>
+<div><p>log temperature used to sample the isochrone</p>
+</div></blockquote>
+<p><strong>dlogl: float</strong></p>
+<blockquote>
+<div><p>log luminosity used to sample the isochrone</p>
+</div></blockquote>
+<p><strong>nsamp: int</strong></p>
+<blockquote>
+<div><p>number of mass sampling</p>
+</div></blockquote>
+<p><strong>inLsun: bool</strong></p>
+<blockquote>
+<div><p>return results units normalized to Lsun</p>
+</div></blockquote>
+<p><strong>with_units: bool</strong></p>
+<blockquote>
+<div><p>if set, return results with units</p>
+</div></blockquote>
+<p><strong>nthreads:  int</strong></p>
+<blockquote>
+<div><p>number of threads during interpolation</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">l: numpy.ndarray[float, ndim=1]</p>
+<blockquote>
+<div><p>wavelength in AA</p>
+</div></blockquote>
+<p>s: numpy.ndarray[float, ndim=1]</p>
+<blockquote>
+<div><p>Spectrum in ergs/s/AA or ergs/s/AA/Lsun</p>
+</div></blockquote>
+<p>p: dict</p>
+<blockquote>
+<div><p>various intermediate results and population properties</p>
+</div></blockquote>
+<div class="admonition-todo last admonition" id="index-1">
+<p class="first admonition-title">Todo</p>
+<p class="last">Could be optimized to compute only once the interpolation on the grid
+and apply variable weights ==&gt; lot more sampling for the same time</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypegase.ssp.fast_discrete1">
+<tt class="descclassname">pypegase.ssp.</tt><tt class="descname">fast_discrete1</tt><big>(</big><em>nstars</em>, <em>age</em>, <em>Z</em>, <em>imf</em>, <em>iso</em>, <em>sl</em>, <em>neb</em>, <em>fracNeb=0.0</em>, <em>dlogm=0.001</em>, <em>nsamp=20</em>, <em>inLsun=False</em>, <em>with_units=True</em>, <em>full_outputs=False</em>, <em>nthreads=1</em><big>)</big><a class="reference internal" href="_modules/pypegase/ssp.html#fast_discrete1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.ssp.fast_discrete1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate an SSP assuming a continuously sampled mass function and
+boostrap the mass binning according to the number of stars.
+The number of samples is set by nsamp</p>
+<p>The approximation we use in this modeling scheme is that stars are
+binned in mass to their continuous equivalent mass bins and represented
+by their central star spectrum.  This approximation is good enough as
+long as variations from on side of the mass bin to the other are
+negligeable.</p>
+<p>This function is optimized to make large collections of clusters at fixed
+isochrone.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>nstars: int</strong></p>
+<blockquote>
+<div><p>total number of stars in the population</p>
+</div></blockquote>
+<p><strong>age: float</strong></p>
+<blockquote>
+<div><p>age of the population (in yr)</p>
+</div></blockquote>
+<p><strong>Z: float</strong></p>
+<blockquote>
+<div><p>metallicity</p>
+</div></blockquote>
+<p><strong>imf: imf.Imf instance</strong></p>
+<blockquote>
+<div><p>Initial Mass function</p>
+</div></blockquote>
+<p><strong>iso: isochrone.Isochrone instance</strong></p>
+<blockquote>
+<div><p>Isochrone library</p>
+</div></blockquote>
+<p><strong>sl: stellib.Stellib instance</strong></p>
+<blockquote>
+<div><p>stellar library</p>
+</div></blockquote>
+<p><strong>neb: nebular.Nebular instance</strong></p>
+<blockquote>
+<div><p>Nebular Model</p>
+</div></blockquote>
+<p><strong>fracNeb: float</strong></p>
+<blockquote>
+<div><p>Photon fraction tranformed into nebular component</p>
+</div></blockquote>
+<p><strong>nsamp: int</strong></p>
+<blockquote>
+<div><p>number of mass sampling</p>
+</div></blockquote>
+<p><strong>inLsun: bool</strong></p>
+<blockquote>
+<div><p>return results units normalized to Lsun</p>
+</div></blockquote>
+<p><strong>with_units: bool</strong></p>
+<blockquote>
+<div><p>if set, return results with units</p>
+</div></blockquote>
+<p><strong>full_outputs: bool</strong></p>
+<blockquote>
+<div><p>if set, returns also the individual stars and their frequencies</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">l: numpy.ndarray[float, ndim=1]</p>
+<blockquote>
+<div><p>wavelength in AA</p>
+</div></blockquote>
+<p>s: numpy.ndarray[float, ndim=1]</p>
+<blockquote>
+<div><p>Spectrum in ergs/s/AA or ergs/s/AA/Lsun</p>
+</div></blockquote>
+<p>p: dict</p>
+<blockquote>
+<div><p>various population properties</p>
+</div></blockquote>
+<p>stars: Table</p>
+<blockquote>
+<div><p>table of stars describing the isochrone
+only if full_output is set</p>
+</div></blockquote>
+<p>specs: ndarray</p>
+<blockquote>
+<div><p>spectra associated to each star in stars
+only if full_output is set</p>
+</div></blockquote>
+<p>dN: ndarray</p>
+<blockquote class="last">
+<div><p>number of stars represented by each of the ones in stars
+only if full_output is set</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pypegase.vega">
+<span id="pypegase-vega-module"></span><h2>pypegase.vega module<a class="headerlink" href="#module-pypegase.vega" title="Permalink to this headline">¶</a></h2>
+<p>Handle vega spec/mags/fluxes manipulations</p>
+<dl class="class">
+<dt id="pypegase.vega.Vega">
+<em class="property">class </em><tt class="descclassname">pypegase.vega.</tt><tt class="descname">Vega</tt><big>(</big><em>source='/home/morgan/Work/pypegase/examples/pypegase/libs/vega.hd5'</em><big>)</big><a class="reference internal" href="_modules/pypegase/vega.html#Vega"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.vega.Vega" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">builtins.object</span></tt></p>
+<p>Handle vega spectrum manipulations
+and flux and zero point references within the filter library</p>
+<p>This class can be used also as a context manager</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">filters</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;HST_WFC3_F275W&#39;</span><span class="p">,</span> <span class="s">&#39;HST_WFC3_F336W&#39;</span><span class="p">,</span> <span class="s">&#39;HST_WFC3_F475W&#39;</span><span class="p">,</span>
+<span class="go">               &#39;HST_WFC3_F814W&#39;, &#39;HST_WFC3_F110W&#39;, &#39;HST_WFC3_F160W&#39;]</span>
+<span class="go">    with Vega() as v:</span>
+<span class="go">        vega_f, vega_mag, flamb = v.getSed(filters)</span>
+<span class="go">    print(vega_f, vega_mag, flamb)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="pypegase.vega.Vega.getFlux">
+<tt class="descname">getFlux</tt><big>(</big><em>filters</em><big>)</big><a class="reference internal" href="_modules/pypegase/vega.html#Vega.getFlux"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.vega.Vega.getFlux" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return vega abs. fluxes in filters</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.vega.Vega.getMag">
+<tt class="descname">getMag</tt><big>(</big><em>filters</em><big>)</big><a class="reference internal" href="_modules/pypegase/vega.html#Vega.getMag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.vega.Vega.getMag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return vega abs. magnitudes in filters</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="pypegase.vega.from_Vegamag_to_Flux">
+<tt class="descclassname">pypegase.vega.</tt><tt class="descname">from_Vegamag_to_Flux</tt><big>(</big><em>lamb</em>, <em>vega_mag</em><big>)</big><a class="reference internal" href="_modules/pypegase/vega.html#from_Vegamag_to_Flux"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.vega.from_Vegamag_to_Flux" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator allowing vega magnitude to flux conversion on the fly
+with very clean code</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>lamb: ndarray</strong></p>
+<blockquote>
+<div><p>wavelength of the outputs of the function</p>
+</div></blockquote>
+<p><strong>vega_mag: ndarray</strong></p>
+<blockquote class="last">
+<div><p>reference magnitude of vega in the output filters</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypegase.vega.testUnit">
+<tt class="descclassname">pypegase.vega.</tt><tt class="descname">testUnit</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pypegase/vega.html#testUnit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.vega.testUnit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-pypegase">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pypegase" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Morgan Fouesneau, Ariane Lancon, and Michel Fioc.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

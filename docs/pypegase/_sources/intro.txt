@@ -1,0 +1,201 @@
+pyPegase
+========
+
+Introduction
+------------
+
+The growing body of high quality photometric surveys of clusters and especially
+the increasing techniques and instrument sensitivity offer a very new study
+window for low and intermediate mass objects. It makes necessary to push the
+confidence level of our model to this kind of objects to produce reliable
+interpretations of their colors and luminosities. To derive intrinsic properties
+of unresolved stellar populations, one can either fit an integrated observed
+spectrum with a synthetic spectral energy distribution (SED) or adjust synthetic
+SEDs with the integrated photometry, which remains the path of choice for
+studying large samples.  Luminosities and colors of stellar populations are
+related to their ages, masses and metallicities, in a very complex relation.
+Various models (e.g. Fioc & Rocca-Volmerange 1997, Leitherer et al. 1999,
+Vazdekis & Arimoto 1999, Bruzual & Charlot 2003, Cordier et al. 2007) allow us
+to predict the evolution of their SEDs. They are based on assumptions for the
+stellar evolution (evolutionary tracks), and for formation history (initial mass
+function, star formation rate...). 
+
+Simple stellar population (SSP) synthesis is the atomic component of any SED
+prediction. Conceptually, all stars of an SSP are co-eval, at any given time,
+the stars composing an SSP describe the same isochrone.  A priori, we cannot
+tell all stellar groups, associations or star clusters are SSPs Regardless some
+clusters have been shown explicitly to host stellar populations of a composite
+nature (e.g.  NGC 2808, Piotto et al.  2007; see also Kalirai & Richer 2010;
+van Loon 2010, or :math:`\omega`-Centauri, Villanova et al.  2007), star clusters are
+often quoted as the reference in matter of SSP examples in nature. 
+
+One major issue when studying low and intermediate mass clusters is the
+fluctuations due to the random presence of a very few luminous stars dominating
+the energy distribution. Pioneering work has shown that the predicted luminosity
+and color distributions depend strongly on the total mass in the cluster, and
+can be far from Gaussian even for total mass above :math:`10^5M_\odot`
+\citep[e.g.][]{Lancon2000, Bruzual2002, Cervino2006}. A reliable interpretation
+of observed SEDs requires models able to predict these fluctuations. Because it
+remains on accounting for the presence of massive stars in a given population,
+this translate into considering the IMF to be discrete.  To address the question
+of producing {\em Discrete population synthesis models}, we adapted the last
+version of PEGASE.2 \citep{Fioc1999} to explicitly produce SEDs of discrete
+populations. 
+
+We develop a code, and focuses on its predicted colors and luminosities
+according to different assumptions.
+
+Simple stellar population (SSP)
+-------------------------------
+
+Stellar Population Synthesis (SPS) models are tools to help the interpretation
+of the integrated light (or colors, line indices, ...) that we observe from
+the galaxies. These tools follow a common recipes to predict the observations.
+Ideally, we want to determine what mix of stars and stellar physics give rise to
+the observations. The general problem is very broad and needs to account for
+stellar evolution, but also dynamical evolution of populations, while including
+also interactions with the interstellar medium (mass-loss, enrichment,
+ionization, galactic winds...).  
+
+
+A common recipe
+```````````````
+
+As a simplification, the common assumption is to consider a composite of
+multiple co-eval populations: single-age single-metallicity, so-called
+"simple" or "single" populations. 
+In one "Single Stellar Population" (SSP), :math:`N` stars are formed at the same
+time :math:`t`, with a mass distribution distribution driven by the chosen initial
+mass function (IMF), :math:`\phi(m)`, and with identical chemical composition :math:`Z`. The
+integrated spectrum of such population is given by: the summation of the spectrum
+:math:`f_\lambda` of the individual stars drawn from a given mass function,
+
+.. math::
+
+        \begin{eqnarray}
+          S_\lambda^N (t, Z) &=& \sum_{i=1}^{N} f_\lambda\, \left( m_i, t, Z \right)\, \\
+          \&~ {dN}/{dm} &=& \phi(m),
+          \label{eq:ssp}
+        \end{eqnarray}
+
+where the mass function, :math:`\phi(m)`, represents the probability of a mass :math:`m` to
+contribute to the observed light of the population.
+
+The true difficulty lies into the determination of the individual star
+distribution of energy of mass, :math:`M`, age, :math:`t`, and metallicity,
+:math:`Z`. Strictly, :math:`f_\lambda` is a complex function of stellar
+evolution physics and the mapping with time and chemical composition is not
+trivial. This first requires stellar evolutionary tracks or isochrone, which
+determine where a star of given stellar parameters (:math:`M,\,t,\,Z`) lies on
+the Hertzsprung-Russel (HR) diagram or :math:`\log(g) - T_{eff}` diagram.
+Second, it requires a spectral library, either from computation or empirical
+construction, with full coverage of :math:`\log(g)`, :math:`T_{eff}`, and
+:math:`Z` to predict what the resulting spectrum of such a star.  In practice,
+for a given parameter triplet (:math:`M,\,t,\,Z`), :math:`f_\lambda` is computed
+through (at least two) interpolations between isochrones and between reference
+stars in the spectral library of choice.
+
+Although the above equation summaries how to generate a spectrum of one SSP, it
+is also clear that the computation cost include a direct relation with the
+number :math:`N` of stars in the simulated population. 
+
+
+The continuous assumption
+`````````````````````````
+
+A common simplification in SSP models is to consider a continuum of stars
+instead of a discrete and finite number of them. In this context, each stellar
+mass bin will contribute to the integrated SED according to the mass function:
+
+.. math::
+
+        \begin{eqnarray}
+          S^\infty_\lambda (t, Z) &=& \int f_\lambda\, \left( m, t, Z \right)\, \phi(m) dm, 
+        \end{eqnarray}
+
+Note that :math:`S^\infty_\lambda (t, Z)` is normalized to :math:`1M_\odot` from
+the inclusion of the mass function. Hence the total mass of the population
+becomes a scaling factor.
+
+In practice, the computation this equation requires a discretization
+of the mass dimension in order to proceed to the integration.  However, the
+timescales of the different evolution phases varies over many orders of
+magnitudes.  As a result, a simple discretization leads to oscillations of the
+emitted light (Charlot & Bruzual 1991) unless rapid evolution phases can be
+resolved with a sufficient time resolution (Lancon & Rocca-Volmerange
+1996). To avoid that problem, one possibility is to discretize the mass
+dimension according to the evolution phases variations. In other words the
+isochrone is sampled such that every evolution phase is represented at least by
+one mass bin. It follows:
+
+.. math::
+        \begin{eqnarray}
+          S^\infty_\lambda (t, Z) &=& \sum_{i=1}^{N} f_\lambda\, \left( m_i, t, Z \right)\, \int_{m_{i}^{-}}^{m_{i}^{+}} \phi(m) dm,\\
+          N &=& N(t,\,Z)
+          \label{eq:conti_ssp}
+        \end{eqnarray}
+
+where :math:`[{m_{i}^{-}}, {m_{i}^{+}}]` is the mass range representative of the
+evolution phase :math:`i, M` the total mass of the population, and the number :math:`N` of
+masses implicitly becomes a function of time and metallicity: :math:`N(t,\,Z)`.
+
+It could be surprising at first glance, that the above equation provides a
+significant reduction of computing cost. However, by assuming a continuum of
+stars, the number of synthetic stars :math:`N(t,\,Z)` is fixed whatever the
+total mass of the simulated cluster. Hence, it becomes very handy for clusters
+of a few :math:`10^4` stars. In practice, :math:`N` can be generally kept under
+a few 1000 masses to conservatively sample any isochrone.
+
+Limitation of the continuous assumption
+```````````````````````````````````````
+Although the continuous approximation strength is to simplify the computations,
+its weakness is to forget about the discreteness of stellar populations.  
+
+Pseudo-discrete assumption
+``````````````````````````
+We propose another approximation which aims at offering the speed of the
+continuous assumption but at also including the discreteness of the population.
+As in the original model (Eq.\,\ref{eq:ssp}), the integrated spectrum is made of
+the summation of :math:`N` individual star spectrum :math:`\overline{f_{\lambda}}`,
+with respect to an initial mass function:
+
+.. math::
+
+        \begin{eqnarray}
+          S_\lambda^0 (t, Z) &=& \sum_{i=1}^{N} \overline{f_\lambda}\, \left( m_i, t, Z \right)\, \\
+          {dN}/{dm} &=& \phi(m).
+        \end{eqnarray}
+
+However, we replace the individual SEDs, :math:`f_\lambda`, by an approximation
+:math:`\overline{f_\lambda}`, such that 
+
+.. math::
+
+  \forall m_i\, \in\, \left[\,{m_{j}^{-}},\, {m_{j}^{+}}\,\right],
+  \overline{f_\lambda}\, \left( m_i, t, Z \right) = 
+  f_\lambda\, \left( m_j, t, Z \right) 
+
+where the :math:`m_j` are defined in a similar manner as in the continuous
+assumption.  However, the mass of the cluster is not just a scaling factor nor
+the prediction only an average in comparison to the continuous modeling.
+
+In this context, the stochastic and discrete nature of the stellar mass function
+is fully conserved.
+
+Limitations of the pseudo-discrete modeling
+````````````````````````````````````````````
+
+As in the continuous assumption, the gain at very low number of stars is only
+marginal or in favor of a fully discrete modeling (Eq.\,\ref{eq:ssp}). However
+the gain is that this assumption remains valid even in a low-number of stars,
+while the errors on the SED of each individual star remains limited to the
+sampling criteria on the evolution phases. We discuss this sampling and we
+compare the predictions of the pseudo-discrete with discrete modeling in
+Section XX.
+
+
+Examples
+--------
+.. literalinclude:: ../examples/demo_fastdiscrete.py
+   :language: python
+   :linenos:

@@ -1,0 +1,22 @@
+pypegase.isochrones.ezpadova package
+====================================
+
+Submodules
+----------
+
+pypegase.isochrones.ezpadova.cmd module
+---------------------------------------
+
+.. automodule:: pypegase.isochrones.ezpadova.cmd
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: pypegase.isochrones.ezpadova
+    :members:
+    :undoc-members:
+    :show-inheritance:

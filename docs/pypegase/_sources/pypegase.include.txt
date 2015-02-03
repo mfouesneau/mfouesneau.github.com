@@ -1,0 +1,21 @@
+pypegase.include package
+========================
+
+This module contains a few codes that are compiled with cython to provide some
+significant speed up.
+
+.. note::
+        
+        When codes do not compile properly, codes fallback into pure python
+        implementations
+
+        Configuration file could also force fallback to python
+
+
+Module contents
+---------------
+
+.. automodule:: pypegase.include
+    :members:
+    :undoc-members:
+    :show-inheritance:

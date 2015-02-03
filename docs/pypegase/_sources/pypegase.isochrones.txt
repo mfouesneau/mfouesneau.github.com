@@ -1,0 +1,53 @@
+pypegase.isochrones package
+===========================
+
+Subpackages
+-----------
+
+.. toctree::
+
+    pypegase.isochrones.ezpadova
+
+Submodules
+----------
+
+pypegase.isochrones.isochrone module
+------------------------------------
+
+.. automodule:: pypegase.isochrones.isochrone
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypegase.isochrones.padova module
+---------------------------------
+
+.. automodule:: pypegase.isochrones.padova
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypegase.isochrones.pegase module
+---------------------------------
+
+.. automodule:: pypegase.isochrones.pegase
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypegase.isochrones.pegase_old module
+-------------------------------------
+
+.. automodule:: pypegase.isochrones.pegase_old
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: pypegase.isochrones
+    :members:
+    :undoc-members:
+    :show-inheritance:

@@ -1,0 +1,565 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pypegase.imf package &mdash; pyPegase 1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'./',
+        VERSION:'1.0',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+    <script type="text/javascript">
+        jQuery(function () {
+            SphinxRtdTheme.StickyNav.enable();
+        });
+    </script>
+  
+
+  
+    <link rel="top" title="pyPegase 1.0 documentation" href="index.html"/> 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> pyPegase</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">pyPegase</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#simple-stellar-population-ssp">Simple stellar population (SSP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="readme.html">pyPEGASE v1.0</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#contents-of-the-directory">Contents of the directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#quick-start">Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#quick-start-by-example-3-steps-to-build-one-continuous-population">Quick start by example : 3 steps to build one &#8220;continuous&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#quick-start-by-example-3-steps-to-build-one-discrete-population">Quick start by example: 3 steps to build one &#8220;discrete&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#quick-start-by-example-3-steps-to-build-one-fast-discrete-population">Quick start by example: 3 steps to build one &#8220;fast-discrete&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#customize-your-runs">Customize your runs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#produce-large-collections-of-simulations">Produce large collections of simulations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#compute-colors">Compute colors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#for-those-who-wish-to-read-edit-the-codes">For those who wish to read/edit the codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#required-acknowledgements">Required acknowledgements</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">pyPegase</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>pypegase.imf package</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/pypegase.imf.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="pypegase-imf-package">
+<h1>pypegase.imf package<a class="headerlink" href="#pypegase-imf-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-pypegase.imf.common">
+<span id="pypegase-imf-common-module"></span><h2>pypegase.imf.common module<a class="headerlink" href="#module-pypegase.imf.common" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="initial-mass-function-classes">
+<h3>(Initial) MASS FUNCTION CLASSES<a class="headerlink" href="#initial-mass-function-classes" title="Permalink to this headline">¶</a></h3>
+<p>Some common IMF are already implemented in this module KENNICUTT, KROUPA93,
+SALPETER ...</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">author:</th><td class="field-body">Morgan Fouesneau</td>
+</tr>
+<tr class="field-even field"><th class="field-name">email:</th><td class="field-body"><a class="reference external" href="mailto:mfouesn&#37;&#52;&#48;uw&#46;edu">mfouesn<span>&#64;</span>uw<span>&#46;</span>edu</a></td>
+</tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="pypegase.imf.common.Kennicutt">
+<em class="property">class </em><tt class="descclassname">pypegase.imf.common.</tt><tt class="descname">Kennicutt</tt><a class="reference internal" href="_modules/pypegase/imf/common.html#Kennicutt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.imf.common.Kennicutt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pypegase.imf.imf.IMF" title="pypegase.imf.imf.IMF"><tt class="xref py py-class docutils literal"><span class="pre">pypegase.imf.imf.IMF</span></tt></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pypegase.imf.common.Kroupa2001">
+<em class="property">class </em><tt class="descclassname">pypegase.imf.common.</tt><tt class="descname">Kroupa2001</tt><a class="reference internal" href="_modules/pypegase/imf/common.html#Kroupa2001"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.imf.common.Kroupa2001" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pypegase.imf.imf.IMF" title="pypegase.imf.imf.IMF"><tt class="xref py py-class docutils literal"><span class="pre">pypegase.imf.imf.IMF</span></tt></a></p>
+<p>Kroupa (2001)
+&#8220;On the variation of the initial mass function&#8221;.
+MNRAS 322: 231. doi:10.1046/j.1365-8711.2001.04022.x.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pypegase.imf.common.Kroupa93">
+<em class="property">class </em><tt class="descclassname">pypegase.imf.common.</tt><tt class="descname">Kroupa93</tt><a class="reference internal" href="_modules/pypegase/imf/common.html#Kroupa93"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.imf.common.Kroupa93" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pypegase.imf.imf.IMF" title="pypegase.imf.imf.IMF"><tt class="xref py py-class docutils literal"><span class="pre">pypegase.imf.imf.IMF</span></tt></a></p>
+<p>Kroupa,Tout, &amp; Gilmore (1993)
+&#8220;The distribution of low-mass stars in the Galactic disc&#8221;
+MNRAS, 262, 545</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pypegase.imf.common.MillerScalo">
+<em class="property">class </em><tt class="descclassname">pypegase.imf.common.</tt><tt class="descname">MillerScalo</tt><a class="reference internal" href="_modules/pypegase/imf/common.html#MillerScalo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.imf.common.MillerScalo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pypegase.imf.imf.IMF" title="pypegase.imf.imf.IMF"><tt class="xref py py-class docutils literal"><span class="pre">pypegase.imf.imf.IMF</span></tt></a></p>
+<p>Miller &amp; Scalo (1979)
+&#8220;The initial mass function and stellar birthrate in the solar neighborhood&#8221;.
+ApJS 41: 513. doi:10.1086/190629.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pypegase.imf.common.Salpeter">
+<em class="property">class </em><tt class="descclassname">pypegase.imf.common.</tt><tt class="descname">Salpeter</tt><a class="reference internal" href="_modules/pypegase/imf/common.html#Salpeter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.imf.common.Salpeter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pypegase.imf.imf.IMF" title="pypegase.imf.imf.IMF"><tt class="xref py py-class docutils literal"><span class="pre">pypegase.imf.imf.IMF</span></tt></a></p>
+<p>Salpeter (1955).
+&#8220;The luminosity function and stellar evolution&#8221;,
+ApJ, 121, 161. doi:10.1086/145971</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pypegase.imf.common.Scalo86">
+<em class="property">class </em><tt class="descclassname">pypegase.imf.common.</tt><tt class="descname">Scalo86</tt><a class="reference internal" href="_modules/pypegase/imf/common.html#Scalo86"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.imf.common.Scalo86" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pypegase.imf.imf.IMF" title="pypegase.imf.imf.IMF"><tt class="xref py py-class docutils literal"><span class="pre">pypegase.imf.imf.IMF</span></tt></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pypegase.imf.common.Scalo98">
+<em class="property">class </em><tt class="descclassname">pypegase.imf.common.</tt><tt class="descname">Scalo98</tt><a class="reference internal" href="_modules/pypegase/imf/common.html#Scalo98"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.imf.common.Scalo98" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pypegase.imf.imf.IMF" title="pypegase.imf.imf.IMF"><tt class="xref py py-class docutils literal"><span class="pre">pypegase.imf.imf.IMF</span></tt></a></p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="module-pypegase.imf.imf">
+<span id="pypegase-imf-imf-module"></span><h2>pypegase.imf.imf module<a class="headerlink" href="#module-pypegase.imf.imf" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>(Initial) MASS FUNCTION CLASSES<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>This class implement a mass function object defined from multiple intervals and
+slopes. It computes the full function incl. continuity and normalization.  The
+resulting object can be used as a python function</p>
+<p>Some common IMF are already implemented in this module KENNICUTT, KROUPA93,
+SALPETER ...</p>
+<p>This python file implements <em>one</em> solution to the IMF class creation and using
+inheritance to define multiple functions from the literature.
+implementation considers the IMF as <span class="math">\(dN / dM\)</span>, in which Salpeter is -2.35
+(in opposition to <span class="math">\(dN / dlog(m)\)</span>)</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">the implementation is of course not unique.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">author:</th><td class="field-body">Morgan Fouesneau</td>
+</tr>
+<tr class="field-even field"><th class="field-name">email:</th><td class="field-body"><a class="reference external" href="mailto:fouesneau&#37;&#52;&#48;mpia&#46;de">fouesneau<span>&#64;</span>mpia<span>&#46;</span>de</a></td>
+</tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="pypegase.imf.imf.IMF">
+<em class="property">class </em><tt class="descclassname">pypegase.imf.imf.</tt><tt class="descname">IMF</tt><big>(</big><em>nI</em>, <em>x</em>, <em>a</em>, <em>massMin=0.1</em>, <em>massMax=120.0</em>, <em>name=None</em><big>)</big><a class="reference internal" href="_modules/pypegase/imf/imf.html#IMF"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.imf.imf.IMF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">builtins.object</span></tt></p>
+<p>Here is one possible implementation, which
+let you define an IMF as multiple power-laws</p>
+<dl class="method">
+<dt id="pypegase.imf.imf.IMF.cdf">
+<tt class="descname">cdf</tt><big>(</big><em>mass</em>, <em>massMin=None</em>, <em>massMax=None</em><big>)</big><a class="reference internal" href="_modules/pypegase/imf/imf.html#IMF.cdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.imf.imf.IMF.cdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cumulative distribution</p>
+<div class="math">
+\[\int_{Mmin}^{Mmax} IMF(m) dm = \int_{Mmin}^{Mmax} \frac{dN}{dm} dm\]</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>mass: float or sequence</strong></p>
+<blockquote>
+<div><p>masses at which evaluate the cumulative distribution
+in Msun</p>
+</div></blockquote>
+<p><strong>massMin: float, optional</strong></p>
+<blockquote>
+<div><p>set the mass range lower limit of the normalization
+in Msun
+(default is to use the IMF definition)</p>
+</div></blockquote>
+<p><strong>massMax: float, optional</strong></p>
+<blockquote>
+<div><p>set the mass range upper limit of the normalization
+in Msun
+(default is to use the IMF definition)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">values: float or ndarray</p>
+<blockquote class="last">
+<div><p>return the evaluation values as float or array of floats</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.imf.imf.IMF.getValue">
+<tt class="descname">getValue</tt><big>(</big><em>m</em><big>)</big><a class="reference internal" href="_modules/pypegase/imf/imf.html#IMF.getValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.imf.imf.IMF.getValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the value of the normalized IMF at a given mass m</p>
+<div class="math">
+\[IMF(m) = \frac{c}{norm} m ^ {\alpha}\]\[norm \times \int_{Mmin}^{Mmax} IMF(m) dm = 1\]</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>m: float or iterable of floats</strong></p>
+<blockquote>
+<div><p>masses at which evaluate the function</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">r: float or ndarray(dtype=float)</p>
+<blockquote class="last">
+<div><p>evaluation of the function (normalized imf)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.imf.imf.IMF.get_avg_mass">
+<tt class="descname">get_avg_mass</tt><big>(</big><em>Mmin</em>, <em>Mmax</em><big>)</big><a class="reference internal" href="_modules/pypegase/imf/imf.html#IMF.get_avg_mass"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.imf.imf.IMF.get_avg_mass" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the average mass over a given range</p>
+<div class="math">
+\[\langle M \rangle  = \frac{\int_{Mmin}^{Mmax}{IMF(m) m dm}}{\int_{Mmin}^{Mmax}{IMF(m) dm}}\]</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>Mmin: float</strong></p>
+<blockquote>
+<div><p>lower mass range
+in Msun</p>
+</div></blockquote>
+<p><strong>Mmax: float</strong></p>
+<blockquote>
+<div><p>upper mass range
+in Msun</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">M: float</p>
+<blockquote class="last">
+<div><p>average mass in [Mmin, Mmax]</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.imf.imf.IMF.get_enclosed_Nstar">
+<tt class="descname">get_enclosed_Nstar</tt><big>(</big><em>Mmin</em>, <em>Mmax</em><big>)</big><a class="reference internal" href="_modules/pypegase/imf/imf.html#IMF.get_enclosed_Nstar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.imf.imf.IMF.get_enclosed_Nstar" title="Permalink to this definition">¶</a></dt>
+<dd><p>get_enclosed_Nstar - Get the enclosed dN over a given mass range.</p>
+<div class="math">
+\[\int_{Mmin}^{Mmax} IMF(m) dm = \int_{Mmin}^{Mmax} \frac{dN}{dm} dm\]</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">no extrapolation outside the original mass range definition of the IMF.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>Mmin: float</strong></p>
+<blockquote>
+<div><p>lower limit of the mass range
+in Msun</p>
+</div></blockquote>
+<p><strong>Mmax: float</strong></p>
+<blockquote>
+<div><p>upper limit of the mass range
+in Msun</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">r: float</p>
+<blockquote class="last">
+<div><p>enclosed dN within [Mmin, Mmax]</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.imf.imf.IMF.get_enclosed_mass">
+<tt class="descname">get_enclosed_mass</tt><big>(</big><em>Mmin</em>, <em>Mmax</em><big>)</big><a class="reference internal" href="_modules/pypegase/imf/imf.html#IMF.get_enclosed_mass"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.imf.imf.IMF.get_enclosed_mass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the enclosed mass over a given mass range.</p>
+<div class="math">
+\[M = \int_{Mmin}^{Mmax} IMF(m) m dm = \int_{Mmin}^{Mmax} \frac{dN}{dm} m dm\]</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">no extrapolation outside the original mass range definition of the IMF.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>Mmin: float</strong></p>
+<blockquote>
+<div><p>lower mass range</p>
+</div></blockquote>
+<p><strong>Mmax: float</strong></p>
+<blockquote>
+<div><p>upper mass range</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">r: float</p>
+<blockquote class="last">
+<div><p>enclosed mass within [Mmin, Mmax]</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.imf.imf.IMF.info">
+<tt class="descname">info</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pypegase/imf/imf.html#IMF.info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.imf.imf.IMF.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>prints a quick summary of the functional object</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.imf.imf.IMF.nstars">
+<tt class="descname">nstars</tt><big>(</big><em>logm</em>, <em>dlogm=None</em>, <em>edges=None</em>, <em>logm_min=None</em>, <em>logm_max=None</em>, <em>ret_bins=False</em><big>)</big><a class="reference internal" href="_modules/pypegase/imf/imf.html#IMF.nstars"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.imf.imf.IMF.nstars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the expected number of stars, normalized to a total mass of
+M = 1 Msun, for a given list of masses and mass bins.</p>
+<p>If dlogm is not provided, it assumes m to be the centers of mass bins
+(must be sorted values)</p>
+<p>The mass intervals are given in log10 units and, if needed,
+dlogm.  If dlogm is provided, logm is not actually used in any manner.
+If dlogm is not provided, bin edges are defined as
+the midpoints between subsequent logm.</p>
+<div class="math">
+\[N = \int_{Mmin}^{Mmax} IMF(m) dm = \int_{Mmin}^{Mmax} \frac{dN}{dm} m d\log m\]</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">the default mass range is the smallest between the optional range
+given by logm_min, logm_max  and the mass function definition range</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>logm: ndarray (dtype=float, ndim=1)</strong></p>
+<blockquote>
+<div><p>list of log(masses)
+list must be sorted in increasing order</p>
+</div></blockquote>
+<p><strong>dlogm: ndarray, optional (dtype=float, ndim=1)</strong></p>
+<blockquote>
+<div><p>list of dlog(masses)</p>
+</div></blockquote>
+<p><strong>ret_bins: bool</strong></p>
+<blockquote>
+<div><p>if set returns the bins</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">dN:  ndarray[float, ndim=1]</p>
+<blockquote class="last">
+<div><p>mass fraction of star in the mass intervals</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.imf.imf.IMF.random">
+<tt class="descname">random</tt><big>(</big><em>N</em>, <em>massMin=None</em>, <em>massMax=None</em><big>)</big><a class="reference internal" href="_modules/pypegase/imf/imf.html#IMF.random"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.imf.imf.IMF.random" title="Permalink to this definition">¶</a></dt>
+<dd><p>random - Draw mass samples from this distribution
+Samples are distributed over the interval [massMin, massMax] Interval
+is truncated to the IMF range definition if it extents beyond it.
+(taken as is otherwise)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>N: int</strong></p>
+<blockquote>
+<div><p>size of the sample</p>
+</div></blockquote>
+<p><strong>massMin: float</strong></p>
+<blockquote>
+<div><p>lower mass (default self.massMin)</p>
+</div></blockquote>
+<p><strong>massMax: float</strong></p>
+<blockquote>
+<div><p>upper mass (default self.massMax)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">r: ndarray(dtype=float)</p>
+<blockquote class="last">
+<div><p>returns an array of random masses</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.imf.imf.IMF.rvs">
+<tt class="descname">rvs</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/pypegase/imf/imf.html#IMF.rvs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.imf.imf.IMF.rvs" title="Permalink to this definition">¶</a></dt>
+<dd><p>see <a class="reference internal" href="#pypegase.imf.imf.IMF.random" title="pypegase.imf.imf.IMF.random"><tt class="xref py py-func docutils literal"><span class="pre">random()</span></tt></a></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="module-pypegase.imf.tests">
+<span id="pypegase-imf-tests-module"></span><h2>pypegase.imf.tests module<a class="headerlink" href="#module-pypegase.imf.tests" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="pypegase.imf.tests.plot_all_definitions">
+<tt class="descclassname">pypegase.imf.tests.</tt><tt class="descname">plot_all_definitions</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pypegase/imf/tests.html#plot_all_definitions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.imf.tests.plot_all_definitions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pypegase.imf.tests.plot_imf_law">
+<tt class="descclassname">pypegase.imf.tests.</tt><tt class="descname">plot_imf_law</tt><big>(</big><em>l</em>, <em>ax=None</em><big>)</big><a class="reference internal" href="_modules/pypegase/imf/tests.html#plot_imf_law"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.imf.tests.plot_imf_law" title="Permalink to this definition">¶</a></dt>
+<dd><p>plot the representation of the distribution</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypegase.imf.tests.plot_rvs">
+<tt class="descclassname">pypegase.imf.tests.</tt><tt class="descname">plot_rvs</tt><big>(</big><em>l</em>, <em>N=10000.0</em>, <em>mc=10</em>, <em>dlogm=0.2</em>, <em>ax=None</em><big>)</big><a class="reference internal" href="_modules/pypegase/imf/tests.html#plot_rvs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.imf.tests.plot_rvs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pypegase.imf.tests.ppf_poisson">
+<tt class="descclassname">pypegase.imf.tests.</tt><tt class="descname">ppf_poisson</tt><big>(</big><em>mu</em>, <em>q</em><big>)</big><a class="reference internal" href="_modules/pypegase/imf/tests.html#ppf_poisson"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.imf.tests.ppf_poisson" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-pypegase.imf">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pypegase.imf" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Morgan Fouesneau, Ariane Lancon, and Michel Fioc.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

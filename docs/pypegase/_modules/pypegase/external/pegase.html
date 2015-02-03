@@ -1,0 +1,307 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pypegase.external.pegase &mdash; pyPegase 1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'../../../',
+        VERSION:'1.0',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+    <script type="text/javascript">
+        jQuery(function () {
+            SphinxRtdTheme.StickyNav.enable();
+        });
+    </script>
+  
+
+  
+    <link rel="top" title="pyPegase 1.0 documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../../index.html" class="fa fa-home"> pyPegase</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro.html">pyPegase</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../intro.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../intro.html#simple-stellar-population-ssp">Simple stellar population (SSP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../intro.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../readme.html">pyPEGASE v1.0</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#contents-of-the-directory">Contents of the directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#quick-start">Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#quick-start-by-example-3-steps-to-build-one-continuous-population">Quick start by example : 3 steps to build one &#8220;continuous&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#quick-start-by-example-3-steps-to-build-one-discrete-population">Quick start by example: 3 steps to build one &#8220;discrete&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#quick-start-by-example-3-steps-to-build-one-fast-discrete-population">Quick start by example: 3 steps to build one &#8220;fast-discrete&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#customize-your-runs">Customize your runs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#produce-large-collections-of-simulations">Produce large collections of simulations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#compute-colors">Compute colors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#for-those-who-wish-to-read-edit-the-codes">For those who wish to read/edit the codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#required-acknowledgements">Required acknowledgements</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">pyPegase</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      
+    <li>pypegase.external.pegase</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <h1>Source code for pypegase.external.pegase</h1><div class="highlight"><pre>
+<span class="sd">&quot;&quot;&quot; Tools for importing PEGASE files &quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">..io</span> <span class="kn">import</span> <span class="n">Table</span>
+<span class="kn">from</span> <span class="nn">..io.fits</span> <span class="kn">import</span> <span class="n">pyfits</span>
+
+
+<span class="k">def</span> <span class="nf">_readLine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">nlines</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">convert</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Read a given lines from a file stream</span>
+<span class="sd">    and optionaly convert field values into given format sequence</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    f: stream buffer</span>
+<span class="sd">        opened file or buffer to read from</span>
+
+<span class="sd">    nlines: int, optional</span>
+<span class="sd">        number of lines to read</span>
+
+<span class="sd">    cols: sequence(int), optional</span>
+<span class="sd">        columns to read in. (default: all)</span>
+
+<span class="sd">    convert: sequence, optional</span>
+<span class="sd">        sequence of types to read in the values</span>
+<span class="sd">        default str for all columns</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    vals: sequence</span>
+<span class="sd">        sequence of values read from the file</span>
+<span class="sd">        sequence of sequences if multiple lines were read.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">nlines</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">()</span>
+    <span class="k">if</span> <span class="n">convert</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">convert</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">cols</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">cols</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">convert</span><span class="p">))</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">cols</span><span class="p">:</span>
+        <span class="n">data</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">il</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nlines</span><span class="p">):</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">cols</span><span class="p">)):</span>
+            <span class="n">data</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="n">k</span><span class="p">])]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">convert</span><span class="p">[</span><span class="n">k</span><span class="p">](</span><span class="n">l</span><span class="p">[</span><span class="n">k</span><span class="p">]))</span>
+
+    <span class="k">if</span> <span class="n">nlines</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">tuple</span><span class="p">([</span> <span class="n">data</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)][</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">cols</span> <span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">tuple</span><span class="p">([</span> <span class="n">data</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">cols</span> <span class="p">])</span>
+
+
+<span class="k">def</span> <span class="nf">_readBlock</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">nvalues</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">convert</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Read a given number of values in a file stream</span>
+<span class="sd">    optionaly it can also convert it into a given format</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    f: stream buffer</span>
+<span class="sd">        opened file or buffer to read from</span>
+
+<span class="sd">    nvalues: int</span>
+<span class="sd">        number of values to read in</span>
+
+<span class="sd">    convert: type or callable, optional</span>
+<span class="sd">        type to read in the values</span>
+<span class="sd">        default str</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    vals: ndarray</span>
+<span class="sd">        array of values</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">nvalues</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">s</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>  <span class="c"># which here means 0!</span>
+
+    <span class="k">while</span> <span class="n">s</span> <span class="o">&lt;</span> <span class="n">nvalues</span><span class="p">:</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">data</span><span class="p">,</span><span class="n">l</span><span class="p">))</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">convert</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="n">convert</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">data</span> <span class="p">])</span>
+
+
+<div class="viewcode-block" id="read_pegase"><a class="viewcode-back" href="../../../pypegase.external.html#pypegase.external.pegase.read_pegase">[docs]</a><span class="k">def</span> <span class="nf">read_pegase</span><span class="p">():</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="s">&#39;stel_lib_dir/&#39;</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s">&#39;stellib_BaSeL_2.2_Rauch.fits&#39;</span>
+
+    <span class="n">f_wave</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">d</span> <span class="o">+</span> <span class="s">&#39;stellar_libraries_wavelengths.dat&#39;</span><span class="p">)</span>
+    <span class="n">nw</span>     <span class="o">=</span> <span class="n">_readLine</span><span class="p">(</span><span class="n">f_wave</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">convert</span><span class="o">=</span><span class="p">[</span><span class="nb">int</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">wave</span>   <span class="o">=</span> <span class="n">_readBlock</span><span class="p">(</span><span class="n">f_wave</span><span class="p">,</span> <span class="n">nw</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">f_wave</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="n">f_root</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">d</span> <span class="o">+</span> <span class="s">&#39;list_stellar_libraries.dat&#39;</span><span class="p">)</span>
+    <span class="n">nw</span>     <span class="o">=</span> <span class="n">_readLine</span><span class="p">(</span><span class="n">f_root</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">convert</span><span class="o">=</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">])</span>
+    <span class="n">l</span>      <span class="o">=</span> <span class="n">_readBlock</span><span class="p">(</span><span class="n">f_root</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="n">nw</span><span class="p">))</span>
+    <span class="n">f_root</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="n">nw</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">wave</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">extract</span><span class="p">(</span><span class="n">fk</span><span class="p">):</span>
+        <span class="n">f_fk</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">d</span> <span class="o">+</span> <span class="n">fk</span><span class="p">)</span>
+        <span class="n">ns</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">_readLine</span><span class="p">(</span><span class="n">f_fk</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">convert</span><span class="o">=</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">])</span>
+        <span class="c"># logT, logg, NHI, NHeI, NHeII</span>
+        <span class="n">tgz</span>   <span class="o">=</span> <span class="n">_readBlock</span><span class="p">(</span><span class="n">f_fk</span><span class="p">,</span> <span class="n">ns</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+        <span class="n">tgz</span>   <span class="o">=</span> <span class="n">tgz</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">ns</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+        <span class="n">tgz</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span> <span class="n">tgz</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span> <span class="n">z</span> <span class="p">]</span> <span class="o">*</span> <span class="n">ns</span><span class="p">)</span> <span class="p">])</span><span class="o">.</span><span class="n">T</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="n">_readBlock</span><span class="p">(</span><span class="n">f_fk</span><span class="p">,</span> <span class="n">nw</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ns</span><span class="p">)</span> <span class="p">]</span>
+        <span class="n">f_fk</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">tgz</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+    <span class="n">r</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">extract</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
+    <span class="n">tgz</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span> <span class="n">k</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">r</span> <span class="p">])</span>
+    <span class="n">specs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span> <span class="n">k</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">r</span> <span class="p">])</span>
+
+    <span class="n">pars</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Teff&#39;</span><span class="p">,</span> <span class="s">&#39;logG&#39;</span><span class="p">,</span> <span class="s">&#39;NHI&#39;</span><span class="p">,</span> <span class="s">&#39;NHeI&#39;</span><span class="p">,</span> <span class="s">&#39;NHeII&#39;</span><span class="p">,</span> <span class="s">&#39;Z&#39;</span><span class="p">]</span>
+    <span class="n">d</span>    <span class="o">=</span> <span class="p">{</span> <span class="n">pars</span><span class="p">[</span><span class="n">k</span><span class="p">]:</span><span class="n">tgz</span><span class="p">[:,</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pars</span><span class="p">))</span> <span class="p">}</span>
+
+    <span class="n">t1</span>    <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+    <span class="n">t1</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s">&#39;EXTNAME&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;TGZ&#39;</span>
+    <span class="n">t1</span><span class="o">.</span><span class="n">setUnit</span><span class="p">(</span><span class="s">&#39;Teff&#39;</span><span class="p">,</span> <span class="s">&#39;log(K)&#39;</span><span class="p">)</span>
+    <span class="n">t1</span><span class="o">.</span><span class="n">setUnit</span><span class="p">(</span><span class="s">&#39;logG&#39;</span><span class="p">,</span> <span class="s">&#39;log(g/s**2)&#39;</span><span class="p">)</span>
+    <span class="n">t1</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s">&#39;COMMENT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;Stellib. from Pegase.2x: BaSeL 2.2 + Rauch&#39;</span>
+
+    <span class="n">t2</span>    <span class="o">=</span> <span class="n">Table</span><span class="p">(</span> <span class="p">{</span><span class="s">&#39;BFIT&#39;</span><span class="p">:</span> <span class="n">wave</span><span class="p">}</span> <span class="p">)</span>
+    <span class="n">t2</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s">&#39;EXTNAME&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;WCA&#39;</span>
+    <span class="n">t2</span><span class="o">.</span><span class="n">setUnit</span><span class="p">(</span><span class="s">&#39;BFIT&#39;</span><span class="p">,</span> <span class="s">&#39;AA&#39;</span><span class="p">)</span>
+
+    <span class="n">pyfits</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">specs</span><span class="p">)</span>
+    <span class="n">t1</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">t2</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span></div>
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Morgan Fouesneau, Ariane Lancon, and Michel Fioc.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

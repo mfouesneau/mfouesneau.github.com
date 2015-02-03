@@ -1,0 +1,350 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pypegase.isochrones.ezpadova package &mdash; pyPegase 1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'./',
+        VERSION:'1.0',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+    <script type="text/javascript">
+        jQuery(function () {
+            SphinxRtdTheme.StickyNav.enable();
+        });
+    </script>
+  
+
+  
+    <link rel="top" title="pyPegase 1.0 documentation" href="index.html"/> 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> pyPegase</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">pyPegase</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#simple-stellar-population-ssp">Simple stellar population (SSP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="readme.html">pyPEGASE v1.0</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#contents-of-the-directory">Contents of the directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#quick-start">Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#quick-start-by-example-3-steps-to-build-one-continuous-population">Quick start by example : 3 steps to build one &#8220;continuous&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#quick-start-by-example-3-steps-to-build-one-discrete-population">Quick start by example: 3 steps to build one &#8220;discrete&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#quick-start-by-example-3-steps-to-build-one-fast-discrete-population">Quick start by example: 3 steps to build one &#8220;fast-discrete&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#customize-your-runs">Customize your runs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#produce-large-collections-of-simulations">Produce large collections of simulations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#compute-colors">Compute colors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#for-those-who-wish-to-read-edit-the-codes">For those who wish to read/edit the codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#required-acknowledgements">Required acknowledgements</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">pyPegase</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>pypegase.isochrones.ezpadova package</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/pypegase.isochrones.ezpadova.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="pypegase-isochrones-ezpadova-package">
+<h1>pypegase.isochrones.ezpadova package<a class="headerlink" href="#pypegase-isochrones-ezpadova-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-pypegase.isochrones.ezpadova.cmd">
+<span id="pypegase-isochrones-ezpadova-cmd-module"></span><h2>pypegase.isochrones.ezpadova.cmd module<a class="headerlink" href="#module-pypegase.isochrones.ezpadova.cmd" title="Permalink to this headline">¶</a></h2>
+<p>EZPADOVA &#8211; A python package that allows you to download PADOVA isochrones
+directly from their website</p>
+<p>This small package provides a direct interface to the PADOVA/PARSEC isochrone
+webpage (<a class="reference external" href="http://stev.oapd.inaf.it/cgi-bin/cmd">http://stev.oapd.inaf.it/cgi-bin/cmd</a>).  It compiles the URL needed to
+query the website and retrives the data into a python variable.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">version:</th><td class="field-body">1.0</td>
+</tr>
+<tr class="field-even field"><th class="field-name">author:</th><td class="field-body">MF</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<ul class="last simple">
+<li>test with parsec 1.1 (currently working with cmd2.3)</li>
+<li>make a full doc</li>
+<li>cleanup the mess</li>
+</ul>
+</div>
+<div class="section" id="example-usage">
+<h3>EXAMPLE USAGE<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h3>
+<p>#Basic example of downloading a sequence of isochrones, plotting, saving
+&gt;&gt;&gt; r = get_cmd.get_t_isochrones(6.0, 7.0, 0.05, 0.02)
+&gt;&gt;&gt; import pylab as plt
+&gt;&gt;&gt; plt.scatter(r[&#8216;logTe&#8217;], r[&#8216;logL/Lo&#8217;], c=r[&#8216;log(age/yr)&#8217;], edgecolor=&#8217;None&#8217;)
+&gt;&gt;&gt; plt.show()
+&gt;&gt;&gt; r.write(&#8216;myiso.fits&#8217;)</p>
+<p># getting only one isochrone
+&gt;&gt;&gt; r = cmd.get_one_isochrones(1e7, 0.02, phot=&#8217;spitzer&#8217;)</p>
+<dl class="function">
+<dt id="pypegase.isochrones.ezpadova.cmd.file_type">
+<tt class="descclassname">pypegase.isochrones.ezpadova.cmd.</tt><tt class="descname">file_type</tt><big>(</big><em>filename</em>, <em>stream=False</em><big>)</big><a class="reference internal" href="_modules/pypegase/isochrones/ezpadova/cmd.html#file_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.isochrones.ezpadova.cmd.file_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Detect potential compressed file
+Returns the gz, bz2 or zip if a compression is detected, else None.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypegase.isochrones.ezpadova.cmd.get_Z_isochrones">
+<tt class="descclassname">pypegase.isochrones.ezpadova.cmd.</tt><tt class="descname">get_Z_isochrones</tt><big>(</big><em>z0</em>, <em>z1</em>, <em>dz</em>, <em>age</em>, <em>ret_table=True</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/pypegase/isochrones/ezpadova/cmd.html#get_Z_isochrones"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.isochrones.ezpadova.cmd.get_Z_isochrones" title="Permalink to this definition">¶</a></dt>
+<dd><p>get a sequence of isochrones at constant time but variable Z</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>z0: float</strong></p>
+<blockquote>
+<div><p>minimal value of Z</p>
+</div></blockquote>
+<p><strong>z11: float</strong></p>
+<blockquote>
+<div><p>maximal value of Z</p>
+</div></blockquote>
+<p><strong>dz: float</strong></p>
+<blockquote>
+<div><p>step in Z</p>
+</div></blockquote>
+<p><strong>age: float</strong></p>
+<blockquote>
+<div><p>age of the sequence (in yr)</p>
+</div></blockquote>
+<p><strong>ret_table: bool</strong></p>
+<blockquote>
+<div><p>if set, return a eztable.Table object of the data</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">r: Table or str</p>
+<blockquote class="last">
+<div><p>if ret_table is set, return a eztable.Table object of the data
+else return the string content of the data</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypegase.isochrones.ezpadova.cmd.get_one_isochrone">
+<tt class="descclassname">pypegase.isochrones.ezpadova.cmd.</tt><tt class="descname">get_one_isochrone</tt><big>(</big><em>age</em>, <em>metal</em>, <em>ret_table=True</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/pypegase/isochrones/ezpadova/cmd.html#get_one_isochrone"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.isochrones.ezpadova.cmd.get_one_isochrone" title="Permalink to this definition">¶</a></dt>
+<dd><p>get one isochrone at a given time and Z</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>age: float</strong></p>
+<blockquote>
+<div><p>age of the isochrone (in yr)</p>
+</div></blockquote>
+<p><strong>metal: float</strong></p>
+<blockquote>
+<div><p>metalicity of the isochrone</p>
+</div></blockquote>
+<p><strong>ret_table: bool</strong></p>
+<blockquote>
+<div><p>if set, return a eztable.Table object of the data</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">r: Table or str</p>
+<blockquote class="last">
+<div><p>if ret_table is set, return a eztable.Table object of the data
+else return the string content of the data</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypegase.isochrones.ezpadova.cmd.get_t_isochrones">
+<tt class="descclassname">pypegase.isochrones.ezpadova.cmd.</tt><tt class="descname">get_t_isochrones</tt><big>(</big><em>logt0</em>, <em>logt1</em>, <em>dlogt</em>, <em>metal</em>, <em>ret_table=True</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/pypegase/isochrones/ezpadova/cmd.html#get_t_isochrones"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.isochrones.ezpadova.cmd.get_t_isochrones" title="Permalink to this definition">¶</a></dt>
+<dd><p>get a sequence of isochrones at constant Z</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>logt0: float</strong></p>
+<blockquote>
+<div><p>minimal value of log(t/yr)</p>
+</div></blockquote>
+<p><strong>logt1: float</strong></p>
+<blockquote>
+<div><p>maximal value of log(t/yr)</p>
+</div></blockquote>
+<p><strong>dlogt: float</strong></p>
+<blockquote>
+<div><p>step in log(t/yr) for the sequence</p>
+</div></blockquote>
+<p><strong>metal: float</strong></p>
+<blockquote>
+<div><p>metallicity value to use (Zsun=0.019)</p>
+</div></blockquote>
+<p><strong>ret_table: bool</strong></p>
+<blockquote>
+<div><p>if set, return a eztable.Table object of the data</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">r: Table or str</p>
+<blockquote class="last">
+<div><p>if ret_table is set, return a eztable.Table object of the data
+else return the string content of the data</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypegase.isochrones.ezpadova.cmd.help_carbon_stars">
+<tt class="descclassname">pypegase.isochrones.ezpadova.cmd.</tt><tt class="descname">help_carbon_stars</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pypegase/isochrones/ezpadova/cmd.html#help_carbon_stars"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.isochrones.ezpadova.cmd.help_carbon_stars" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pypegase.isochrones.ezpadova.cmd.help_circumdust">
+<tt class="descclassname">pypegase.isochrones.ezpadova.cmd.</tt><tt class="descname">help_circumdust</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pypegase/isochrones/ezpadova/cmd.html#help_circumdust"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.isochrones.ezpadova.cmd.help_circumdust" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pypegase.isochrones.ezpadova.cmd.help_cmd_version">
+<tt class="descclassname">pypegase.isochrones.ezpadova.cmd.</tt><tt class="descname">help_cmd_version</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pypegase/isochrones/ezpadova/cmd.html#help_cmd_version"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.isochrones.ezpadova.cmd.help_cmd_version" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pypegase.isochrones.ezpadova.cmd.help_models">
+<tt class="descclassname">pypegase.isochrones.ezpadova.cmd.</tt><tt class="descname">help_models</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pypegase/isochrones/ezpadova/cmd.html#help_models"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.isochrones.ezpadova.cmd.help_models" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+<div class="section" id="module-pypegase.isochrones.ezpadova">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pypegase.isochrones.ezpadova" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Morgan Fouesneau, Ariane Lancon, and Michel Fioc.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

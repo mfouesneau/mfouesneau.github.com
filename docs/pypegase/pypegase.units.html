@@ -1,0 +1,316 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pypegase.units package &mdash; pyPegase 1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'./',
+        VERSION:'1.0',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+    <script type="text/javascript">
+        jQuery(function () {
+            SphinxRtdTheme.StickyNav.enable();
+        });
+    </script>
+  
+
+  
+    <link rel="top" title="pyPegase 1.0 documentation" href="index.html"/> 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> pyPegase</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">pyPegase</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#simple-stellar-population-ssp">Simple stellar population (SSP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="readme.html">pyPEGASE v1.0</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#contents-of-the-directory">Contents of the directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#quick-start">Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#quick-start-by-example-3-steps-to-build-one-continuous-population">Quick start by example : 3 steps to build one &#8220;continuous&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#quick-start-by-example-3-steps-to-build-one-discrete-population">Quick start by example: 3 steps to build one &#8220;discrete&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#quick-start-by-example-3-steps-to-build-one-fast-discrete-population">Quick start by example: 3 steps to build one &#8220;fast-discrete&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#customize-your-runs">Customize your runs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#produce-large-collections-of-simulations">Produce large collections of simulations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#compute-colors">Compute colors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#for-those-who-wish-to-read-edit-the-codes">For those who wish to read/edit the codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#required-acknowledgements">Required acknowledgements</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">pyPegase</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>pypegase.units package</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/pypegase.units.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="pypegase-units-package">
+<h1>pypegase.units package<a class="headerlink" href="#pypegase-units-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-pypegase.units.pint">
+<span id="pypegase-units-pint-module"></span><h2>pypegase.units.pint module<a class="headerlink" href="#module-pypegase.units.pint" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="pint">
+<h3>pint<a class="headerlink" href="#pint" title="Permalink to this headline">¶</a></h3>
+<p>Pint is Python module/package to define, operate and manipulate
+<strong>physical quantities</strong>: the product of a numerical value and a
+unit of measurement. It allows arithmetic operations between them
+and conversions from and to different units.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">copyright:</th><td class="field-body">2012 by Hernan E. Grecco.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">license:</th><td class="field-body">BSD, see LICENSE for more details.</td>
+</tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="pypegase.units.pint.AliasDict">
+<em class="property">class </em><tt class="descclassname">pypegase.units.pint.</tt><tt class="descname">AliasDict</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/pypegase/units/pint.html#AliasDict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.units.pint.AliasDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">builtins.dict</span></tt></p>
+<dl class="method">
+<dt id="pypegase.units.pint.AliasDict.add_alias">
+<tt class="descname">add_alias</tt><big>(</big><em>key</em>, <em>value</em>, <em>preferred=False</em><big>)</big><a class="reference internal" href="_modules/pypegase/units/pint.html#AliasDict.add_alias"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.units.pint.AliasDict.add_alias" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pypegase.units.pint.AliasDict.get_aliased">
+<tt class="descname">get_aliased</tt><big>(</big><em>key</em><big>)</big><a class="reference internal" href="_modules/pypegase/units/pint.html#AliasDict.get_aliased"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.units.pint.AliasDict.get_aliased" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pypegase.units.pint.DimensionalityError">
+<em class="property">exception </em><tt class="descclassname">pypegase.units.pint.</tt><tt class="descname">DimensionalityError</tt><big>(</big><em>units1</em>, <em>units2</em>, <em>dim1=None</em>, <em>dim2=None</em><big>)</big><a class="reference internal" href="_modules/pypegase/units/pint.html#DimensionalityError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.units.pint.DimensionalityError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">builtins.ValueError</span></tt></p>
+<p>Raised when trying to convert between incompatible units.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="pypegase.units.pint.UndefinedUnitError">
+<em class="property">exception </em><tt class="descclassname">pypegase.units.pint.</tt><tt class="descname">UndefinedUnitError</tt><big>(</big><em>unit_names</em><big>)</big><a class="reference internal" href="_modules/pypegase/units/pint.html#UndefinedUnitError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.units.pint.UndefinedUnitError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">builtins.ValueError</span></tt></p>
+<p>Raised when the units are not defined in the unit registry.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pypegase.units.pint.UnitRegistry">
+<em class="property">class </em><tt class="descclassname">pypegase.units.pint.</tt><tt class="descname">UnitRegistry</tt><big>(</big><em>filename=''</em>, <em>force_ndarray=False</em><big>)</big><a class="reference internal" href="_modules/pypegase/units/pint.html#UnitRegistry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.units.pint.UnitRegistry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">builtins.object</span></tt></p>
+<p>The unit registry stores the definitions and relationships between
+units.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>filename</strong> &#8211; path of the units definition file to load.
+Empty to load the default definition file.
+None to leave the UnitRegistry empty.</li>
+<li><strong>force_ndarray</strong> &#8211; convert any input, scalar or not to a numpy.ndarray.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="pypegase.units.pint.UnitRegistry.add_from_file">
+<tt class="descname">add_from_file</tt><big>(</big><em>filename</em><big>)</big><a class="reference internal" href="_modules/pypegase/units/pint.html#UnitRegistry.add_from_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.units.pint.UnitRegistry.add_from_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add units and prefixes defined in a definition text file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.units.pint.UnitRegistry.add_prefix">
+<tt class="descname">add_prefix</tt><big>(</big><em>name</em>, <em>value</em>, <em>aliases=()</em><big>)</big><a class="reference internal" href="_modules/pypegase/units/pint.html#UnitRegistry.add_prefix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.units.pint.UnitRegistry.add_prefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add prefix to the registry.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.units.pint.UnitRegistry.add_unit">
+<tt class="descname">add_unit</tt><big>(</big><em>name</em>, <em>value</em>, <em>aliases=()</em>, <em>**modifiers</em><big>)</big><a class="reference internal" href="_modules/pypegase/units/pint.html#UnitRegistry.add_unit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.units.pint.UnitRegistry.add_unit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add unit to the registry.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.units.pint.UnitRegistry.get_alias">
+<tt class="descname">get_alias</tt><big>(</big><em>name</em><big>)</big><a class="reference internal" href="_modules/pypegase/units/pint.html#UnitRegistry.get_alias"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.units.pint.UnitRegistry.get_alias" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the preferred alias for a unit</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pypegase.units.pint.UnitsContainer">
+<em class="property">class </em><tt class="descclassname">pypegase.units.pint.</tt><tt class="descname">UnitsContainer</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/pypegase/units/pint.html#UnitsContainer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.units.pint.UnitsContainer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">builtins.dict</span></tt></p>
+<p>The UnitsContainer stores the product of units and their respective
+exponent and implements the corresponding operations</p>
+<dl class="method">
+<dt id="pypegase.units.pint.UnitsContainer.add">
+<tt class="descname">add</tt><big>(</big><em>key</em>, <em>value</em><big>)</big><a class="reference internal" href="_modules/pypegase/units/pint.html#UnitsContainer.add"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.units.pint.UnitsContainer.add" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="pypegase.units.pint.converter_from_reference">
+<tt class="descclassname">pypegase.units.pint.</tt><tt class="descname">converter_from_reference</tt><big>(</big><em>scale</em>, <em>offset</em>, <em>log_base</em><big>)</big><a class="reference internal" href="_modules/pypegase/units/pint.html#converter_from_reference"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.units.pint.converter_from_reference" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pypegase.units.pint.converter_to_reference">
+<tt class="descclassname">pypegase.units.pint.</tt><tt class="descname">converter_to_reference</tt><big>(</big><em>scale</em>, <em>offset</em>, <em>log_base</em><big>)</big><a class="reference internal" href="_modules/pypegase/units/pint.html#converter_to_reference"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.units.pint.converter_to_reference" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+<div class="section" id="module-pypegase.units">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pypegase.units" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>pint<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Pint is Python module/package to define, operate and manipulate
+<strong>physical quantities</strong>: the product of a numerical value and a
+unit of measurement. It allows arithmetic operations between them
+and conversions from and to different units.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">copyright:</th><td class="field-body"><ol class="first loweralpha simple" start="3">
+<li>2012 by Hernan E. Grecco.</li>
+</ol>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">license:</th><td class="field-body"><p class="first last">BSD, see LICENSE for more details.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="function">
+<dt id="pypegase.units.hasUnit">
+<tt class="descclassname">pypegase.units.</tt><tt class="descname">hasUnit</tt><big>(</big><em>val</em><big>)</big><a class="reference internal" href="_modules/pypegase/units.html#hasUnit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.units.hasUnit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Morgan Fouesneau, Ariane Lancon, and Michel Fioc.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

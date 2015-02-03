@@ -1,0 +1,866 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pypegase.ssp &mdash; pyPegase 1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'../../',
+        VERSION:'1.0',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+    <script type="text/javascript">
+        jQuery(function () {
+            SphinxRtdTheme.StickyNav.enable();
+        });
+    </script>
+  
+
+  
+    <link rel="top" title="pyPegase 1.0 documentation" href="../../index.html"/>
+        <link rel="up" title="Module code" href="../index.html"/> 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../index.html" class="fa fa-home"> pyPegase</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">pyPegase</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../intro.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../intro.html#simple-stellar-population-ssp">Simple stellar population (SSP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../intro.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../readme.html">pyPEGASE v1.0</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#contents-of-the-directory">Contents of the directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#quick-start">Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#quick-start-by-example-3-steps-to-build-one-continuous-population">Quick start by example : 3 steps to build one &#8220;continuous&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#quick-start-by-example-3-steps-to-build-one-discrete-population">Quick start by example: 3 steps to build one &#8220;discrete&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#quick-start-by-example-3-steps-to-build-one-fast-discrete-population">Quick start by example: 3 steps to build one &#8220;fast-discrete&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#customize-your-runs">Customize your runs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#produce-large-collections-of-simulations">Produce large collections of simulations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#compute-colors">Compute colors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#for-those-who-wish-to-read-edit-the-codes">For those who wish to read/edit the codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#required-acknowledgements">Required acknowledgements</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">pyPegase</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      
+    <li>pypegase.ssp</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <h1>Source code for pypegase.ssp</h1><div class="highlight"><pre>
+<span class="sd">&quot;&quot;&quot; Implements a Simple Stellar Population simulation functions</span>
+<span class="sd">    aiming to provide easier interface to the related quantities &quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">.units</span> <span class="kn">import</span> <span class="n">unit</span>
+<span class="kn">from</span> <span class="nn">.helpers</span> <span class="kn">import</span> <span class="n">val_in_unit</span>
+<span class="kn">from</span> <span class="nn">.config</span> <span class="kn">import</span> <span class="n">__NTHREADS__</span>
+<span class="kn">from</span> <span class="nn">.stellibs</span> <span class="kn">import</span> <span class="n">genIndividualStellarSpectrum</span><span class="p">,</span> <span class="n">genStellarSpectrum</span>
+<span class="kn">from</span> <span class="nn">.tools.pbar</span> <span class="kn">import</span> <span class="n">Pbar</span>
+<span class="kn">from</span> <span class="nn">.tools.common</span> <span class="kn">import</span> <span class="n">unsecure_histogram</span> <span class="k">as</span> <span class="n">histogram</span>
+
+<span class="n">Lsun</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">unit</span><span class="p">[</span><span class="s">&#39;lsun&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s">&#39;erg/s&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="continuous"><a class="viewcode-back" href="../../pypegase.html#pypegase.ssp.continuous">[docs]</a><span class="k">def</span> <span class="nf">continuous</span><span class="p">(</span><span class="n">age</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">imf</span><span class="p">,</span> <span class="n">iso</span><span class="p">,</span> <span class="n">sl</span><span class="p">,</span> <span class="n">neb</span><span class="p">,</span> <span class="n">fracNeb</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">inLsun</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+               <span class="n">with_units</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">nthreads</span><span class="o">=</span><span class="n">__NTHREADS__</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate an SSP assuming a continuously sampled mass function</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+
+<span class="sd">    age: float</span>
+<span class="sd">        age of the population (in yr)</span>
+
+<span class="sd">    Z: float</span>
+<span class="sd">        metallicity</span>
+
+<span class="sd">    imf: imf.Imf instance</span>
+<span class="sd">        Initial Mass function</span>
+
+<span class="sd">    iso: isochrone.Isochrone instance</span>
+<span class="sd">        Isochrone library</span>
+
+<span class="sd">    sl: stellib.Stellib instance</span>
+<span class="sd">        stellar library</span>
+
+<span class="sd">    neb: nebular.Nebular instance</span>
+<span class="sd">        Nebular Model</span>
+
+<span class="sd">    fracNeb: float</span>
+<span class="sd">        Photon fraction tranformed into nebular component</span>
+
+<span class="sd">    inLsun: bool</span>
+<span class="sd">        return results units normalized to Lsun</span>
+
+<span class="sd">    with_units: bool</span>
+<span class="sd">        if set, return results with units</span>
+
+<span class="sd">    nthreads:  int</span>
+<span class="sd">        number of threads during interpolation</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    l: numpy.ndarray[float, ndim=1]</span>
+<span class="sd">        wavelength in AA</span>
+
+<span class="sd">    s: numpy.ndarray[float, ndim=1]</span>
+<span class="sd">        Spectrum in ergs/s/AA or ergs/s/AA/Lsun</span>
+
+<span class="sd">    p: dict</span>
+<span class="sd">        various intermediate results and population properties</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c"># check units</span>
+    <span class="n">_age</span> <span class="o">=</span> <span class="n">val_in_unit</span><span class="p">(</span><span class="s">&#39;age&#39;</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s">&#39;yr&#39;</span><span class="p">)</span>
+
+    <span class="c"># generate a sample of stars</span>
+    <span class="n">stars</span>  <span class="o">=</span> <span class="n">iso</span><span class="o">.</span><span class="n">_get_continuous_isochrone</span><span class="p">(</span><span class="n">_age</span><span class="p">,</span> <span class="n">Z</span><span class="p">)</span>
+    <span class="c"># masses = numpy.power(10., stars[&#39;logM&#39;])</span>
+    <span class="n">Mtot</span>   <span class="o">=</span> <span class="mf">1.</span>  <span class="c"># normalized by def  integral (masses dm ) = 1</span>
+    <span class="n">Lbol</span>   <span class="o">=</span> <span class="p">(</span><span class="mi">10</span> <span class="o">**</span> <span class="n">stars</span><span class="p">[</span><span class="s">&#39;logL&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+    <span class="c"># compute their contributions according to the Mass Function</span>
+    <span class="c"># dN = imf(M) * dM</span>
+    <span class="c"># dN    = imf.nstars1(stars[&#39;logM&#39;], dlogm=stars[&#39;dlogm&#39;])</span>
+    <span class="c"># dN    = imf.nstars1(stars[&#39;logM&#39;])</span>
+    <span class="n">dN</span>    <span class="o">=</span> <span class="n">imf</span><span class="o">.</span><span class="n">nstars</span><span class="p">(</span><span class="n">stars</span><span class="p">[</span><span class="s">&#39;logM&#39;</span><span class="p">])</span>
+
+    <span class="c"># generate stellar spectrum</span>
+    <span class="c">#  * interpolate the spectral library to build the spectrum of each star</span>
+    <span class="c">#  * sum the contributions according to the IMF</span>
+    <span class="n">r</span><span class="p">,</span> <span class="n">l0</span><span class="p">,</span> <span class="n">s0</span><span class="p">,</span> <span class="n">NHI</span> <span class="o">=</span> <span class="n">genStellarSpectrum</span><span class="p">(</span><span class="n">stars</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">sl</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">dN</span><span class="p">,</span>
+                                        <span class="n">inLsun</span><span class="o">=</span><span class="n">inLsun</span><span class="p">,</span> <span class="n">with_units</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                                        <span class="n">nthreads</span><span class="o">=</span><span class="n">nthreads</span><span class="p">)</span>
+
+    <span class="c"># add Nebular component</span>
+    <span class="k">if</span> <span class="n">neb</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">inLsun</span><span class="p">:</span>
+            <span class="n">l</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">neb</span><span class="o">.</span><span class="n">add_emission</span><span class="p">(</span><span class="n">l0</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;AA&#39;</span><span class="p">],</span> <span class="n">s0</span> <span class="o">*</span> <span class="n">Lsun</span><span class="p">,</span> <span class="n">NHI</span><span class="p">,</span> <span class="n">fracNeb</span><span class="p">)</span>
+            <span class="n">s</span> <span class="o">/=</span> <span class="n">Lsun</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">l</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">neb</span><span class="o">.</span><span class="n">add_emission</span><span class="p">(</span><span class="n">l0</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;AA&#39;</span><span class="p">],</span> <span class="n">s0</span><span class="p">,</span> <span class="n">NHI</span><span class="p">,</span> <span class="n">fracNeb</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="n">l0</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">s0</span>
+
+    <span class="c"># concatenate the info</span>
+    <span class="n">properties</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">Nstars</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                      <span class="n">inLsun</span><span class="o">=</span><span class="n">inLsun</span><span class="p">,</span>
+                      <span class="n">age</span><span class="o">=</span><span class="n">age</span><span class="p">,</span>
+                      <span class="n">Z</span><span class="o">=</span><span class="n">Z</span><span class="p">,</span>
+                      <span class="n">fracneb</span><span class="o">=</span><span class="n">fracNeb</span><span class="p">,</span>
+                      <span class="n">imf</span><span class="o">=</span><span class="n">imf</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                      <span class="n">iso</span><span class="o">=</span><span class="n">iso</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                      <span class="n">stellib</span><span class="o">=</span><span class="n">sl</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                      <span class="n">stars</span><span class="o">=</span><span class="n">stars</span><span class="p">,</span>
+                      <span class="n">Mtot</span><span class="o">=</span><span class="n">Mtot</span><span class="p">,</span>
+                      <span class="n">Lbol</span><span class="o">=</span><span class="n">Lbol</span><span class="p">,</span>
+                      <span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span>
+                      <span class="n">l0</span><span class="o">=</span><span class="n">l0</span><span class="p">,</span>
+                      <span class="n">s0</span><span class="o">=</span><span class="n">s0</span>
+                      <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">with_units</span><span class="p">:</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="n">l</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;angstrom&#39;</span><span class="p">]</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;erg/s/angstrom/Msun&#39;</span><span class="p">]</span>
+        <span class="n">properties</span><span class="p">[</span><span class="s">&#39;s0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">s0</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;erg/s/angstrom/Msun&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">inLsun</span><span class="p">:</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">/</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;lsun&#39;</span><span class="p">]</span>
+            <span class="n">properties</span><span class="p">[</span><span class="s">&#39;s0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">properties</span><span class="p">[</span><span class="s">&#39;s0&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;lsun&#39;</span><span class="p">]</span>
+
+        <span class="n">properties</span><span class="p">[</span><span class="s">&#39;age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_age</span>
+        <span class="n">properties</span><span class="p">[</span><span class="s">&#39;l0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">l0</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;angstrom&#39;</span><span class="p">]</span>
+        <span class="n">properties</span><span class="p">[</span><span class="s">&#39;Mtot&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Mtot</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;msun&#39;</span><span class="p">]</span>
+        <span class="n">properties</span><span class="p">[</span><span class="s">&#39;Lbol&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Lbol</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;lsun&#39;</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">l</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">properties</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">l</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">properties</span>
+
+</div>
+<div class="viewcode-block" id="fast_discrete"><a class="viewcode-back" href="../../pypegase.html#pypegase.ssp.fast_discrete">[docs]</a><span class="k">def</span> <span class="nf">fast_discrete</span><span class="p">(</span><span class="n">nstars</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">imf</span><span class="p">,</span> <span class="n">iso</span><span class="p">,</span> <span class="n">sl</span><span class="p">,</span> <span class="n">neb</span><span class="p">,</span> <span class="n">fracNeb</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">dlogm</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span>
+                  <span class="n">nsamp</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">inLsun</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">with_units</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+                  <span class="n">nthreads</span><span class="o">=</span><span class="n">__NTHREADS__</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate an SSP assuming a continuously sampled mass function and</span>
+<span class="sd">    boostrap the mass binning according to the number of stars.</span>
+<span class="sd">    The number of samples is set by nsamp</span>
+
+<span class="sd">    The approximation we use in this modeling scheme is that stars are binned</span>
+<span class="sd">    in mass to their continuous equivalent mass bins and represented by their</span>
+<span class="sd">    central star spectrum.  This approximation is good enough as long as</span>
+<span class="sd">    variations from on side of the mass bin to the other are negligeable.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    nstars: int</span>
+<span class="sd">        total number of stars in the population</span>
+
+<span class="sd">    age: float</span>
+<span class="sd">        age of the population (in yr)</span>
+
+<span class="sd">    Z: float</span>
+<span class="sd">        metallicity</span>
+
+<span class="sd">    imf: imf.Imf instance</span>
+<span class="sd">        Initial Mass function</span>
+
+<span class="sd">    iso: isochrone.Isochrone instance</span>
+<span class="sd">        Isochrone library</span>
+
+<span class="sd">    sl: stellib.Stellib instance</span>
+<span class="sd">        stellar library</span>
+
+<span class="sd">    neb: nebular.Nebular instance</span>
+<span class="sd">        Nebular Model</span>
+
+<span class="sd">    fracNeb: float</span>
+<span class="sd">        Photon fraction tranformed into nebular component</span>
+
+<span class="sd">    dlogm: float</span>
+<span class="sd">        log mass step used to sample the isochrone</span>
+
+<span class="sd">    dlogt: float</span>
+<span class="sd">        log temperature used to sample the isochrone</span>
+
+<span class="sd">    dlogl: float</span>
+<span class="sd">        log luminosity used to sample the isochrone</span>
+
+<span class="sd">    nsamp: int</span>
+<span class="sd">        number of mass sampling</span>
+
+<span class="sd">    inLsun: bool</span>
+<span class="sd">        return results units normalized to Lsun</span>
+
+<span class="sd">    with_units: bool</span>
+<span class="sd">        if set, return results with units</span>
+
+<span class="sd">    nthreads:  int</span>
+<span class="sd">        number of threads during interpolation</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    l: numpy.ndarray[float, ndim=1]</span>
+<span class="sd">        wavelength in AA</span>
+
+<span class="sd">    s: numpy.ndarray[float, ndim=1]</span>
+<span class="sd">        Spectrum in ergs/s/AA or ergs/s/AA/Lsun</span>
+
+<span class="sd">    p: dict</span>
+<span class="sd">        various intermediate results and population properties</span>
+
+
+
+<span class="sd">    .. todo::</span>
+<span class="sd">        Could be optimized to compute only once the interpolation on the grid</span>
+<span class="sd">        and apply variable weights ==&gt; lot more sampling for the same time</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c"># check units</span>
+    <span class="n">_age</span> <span class="o">=</span> <span class="n">val_in_unit</span><span class="p">(</span><span class="s">&#39;age&#39;</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s">&#39;yr&#39;</span><span class="p">)</span>
+
+    <span class="c"># Continuously sample the corresponding isochrone</span>
+    <span class="c"># -----------------------------------------------</span>
+    <span class="c"># get reference stars for a continuously sampled isochrone</span>
+    <span class="n">stars</span><span class="p">,</span> <span class="n">logm_bins</span> <span class="o">=</span> <span class="n">iso</span><span class="o">.</span><span class="n">_get_continuous_isochrone</span><span class="p">(</span><span class="n">_age</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">ret_bins</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">dlogm</span><span class="o">=</span><span class="n">dlogm</span><span class="p">)</span>
+    <span class="n">m_bins</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="n">logm_bins</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">m_bins</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&#39;binning error&#39;</span><span class="p">)</span>
+
+    <span class="c"># filter the masses according to the IMF definition</span>
+    <span class="c"># -------------------------------------------------</span>
+    <span class="c"># imf_truncation = (stars[&#39;logM&#39;] &gt;= log10(imf.massMin)) &amp; (stars[&#39;logM&#39;] &lt;= log10(imf.massMax))</span>
+    <span class="c"># logM = stars[&#39;logM&#39;][imf_truncation]</span>
+    <span class="c"># dlogM = stars[&#39;dlogm&#39;][imf_truncation]</span>
+    <span class="c"># stars = stars[imf_truncation]</span>
+    <span class="n">logM</span> <span class="o">=</span> <span class="n">stars</span><span class="p">[</span><span class="s">&#39;logM&#39;</span><span class="p">]</span>
+    <span class="c"># dlogM = stars[&#39;dlogm&#39;]</span>
+
+    <span class="c"># find the corresponding bin edges</span>
+    <span class="c"># --------------------------------</span>
+    <span class="c"># bins1 = 10 ** ( np.hstack([ logM[0] - 0.5 * dlogM[0], logM + 0.5 * dlogM ]))</span>
+
+    <span class="c"># print &#39;bins&#39;, len(m_bins)</span>
+    <span class="c"># print &#39;dbin&#39;, m_bins - bins1</span>
+    <span class="c"># print &#39;dbin&#39;, np.abs(m_bins - bins1).max()</span>
+
+    <span class="c"># Simulate the continuous population</span>
+    <span class="c"># ----------------------------------</span>
+    <span class="c"># This will set all the dimensions for the variables</span>
+
+    <span class="c"># dN, bins = imf.nstars1(stars[&#39;logM&#39;], dlogm=stars[&#39;dlogm&#39;], ret_bins=True)</span>
+    <span class="n">dN</span> <span class="o">=</span> <span class="n">imf</span><span class="o">.</span><span class="n">nstars</span><span class="p">(</span><span class="n">stars</span><span class="p">[</span><span class="s">&#39;logM&#39;</span><span class="p">],</span> <span class="n">ret_bins</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">edges</span><span class="o">=</span><span class="n">logm_bins</span><span class="p">)</span>
+
+    <span class="c"># minM = 10 ** stars[&#39;logM&#39;].min()</span>
+    <span class="n">maxM</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="n">stars</span><span class="p">[</span><span class="s">&#39;logM&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+    <span class="n">r</span><span class="p">,</span> <span class="n">l0</span><span class="p">,</span> <span class="n">s0</span><span class="p">,</span> <span class="n">NHI</span> <span class="o">=</span> <span class="n">genStellarSpectrum</span><span class="p">(</span><span class="n">stars</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">sl</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">dN</span><span class="p">,</span> <span class="n">inLsun</span><span class="o">=</span><span class="n">inLsun</span><span class="p">,</span> <span class="n">nthreads</span><span class="o">=</span><span class="n">nthreads</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">neb</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">inLsun</span><span class="p">:</span>
+            <span class="n">l</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">neb</span><span class="o">.</span><span class="n">add_emission</span><span class="p">(</span><span class="n">l0</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;angstrom&#39;</span><span class="p">],</span> <span class="n">s0</span> <span class="o">*</span> <span class="n">Lsun</span><span class="p">,</span> <span class="n">NHI</span><span class="p">,</span> <span class="n">fracNeb</span><span class="p">)</span>
+            <span class="n">s</span> <span class="o">/=</span> <span class="n">Lsun</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">l</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">neb</span><span class="o">.</span><span class="n">add_emission</span><span class="p">(</span><span class="n">l0</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;angstrom&#39;</span><span class="p">],</span> <span class="n">s0</span><span class="p">,</span> <span class="n">NHI</span><span class="p">,</span> <span class="n">fracNeb</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="n">l0</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">s0</span>
+
+    <span class="c"># for book keeping</span>
+    <span class="n">ll0</span> <span class="o">=</span> <span class="n">l0</span><span class="p">[:]</span>
+    <span class="n">ls0</span> <span class="o">=</span> <span class="n">s0</span><span class="p">[:]</span>
+
+    <span class="c"># Simulate nsamp discrete populations</span>
+    <span class="c"># -----------------------------------</span>
+
+    <span class="c"># book keeping variables</span>
+    <span class="n">ds</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">nsamp</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">size</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">ds0</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">nsamp</span><span class="p">,</span> <span class="n">s0</span><span class="o">.</span><span class="n">size</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">dn</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">nsamp</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">dN</span><span class="p">)),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">Mtot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsamp</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">Minit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsamp</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">Mdead</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsamp</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">Mmax</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsamp</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">Lbol</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsamp</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+    <span class="c"># reset stellib weights</span>
+    <span class="n">r</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">Pbar</span><span class="p">(</span><span class="s">&#39;Sampling&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">iterover</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">nsamp</span><span class="p">)):</span>
+        <span class="c"># Mass properties of the populations</span>
+        <span class="c"># ----------------------------------</span>
+        <span class="c"># _masses = imf.random(nstars, minM, maxM)</span>
+        <span class="n">_masses</span> <span class="o">=</span> <span class="n">imf</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">nstars</span><span class="p">)</span>
+        <span class="n">ind</span> <span class="o">=</span> <span class="p">(</span><span class="n">_masses</span> <span class="o">&gt;</span> <span class="n">maxM</span><span class="p">)</span>
+        <span class="n">Mdead</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">_masses</span><span class="p">[</span><span class="n">ind</span><span class="p">])</span>   <span class="c"># total mass above the isochrone limit</span>
+        <span class="n">Minit</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">_masses</span><span class="p">)</span>
+        <span class="n">Mmax</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">_masses</span><span class="p">)</span>
+        <span class="c"># _masses = _masses[~ind]</span>
+        <span class="n">Mtot</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">Minit</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+
+        <span class="c"># Approximation scheme</span>
+        <span class="c"># --------------------</span>
+        <span class="c"># n, edges = histogram( val, bins=b)</span>
+        <span class="n">_dN</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span> <span class="n">_masses</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">m_bins</span><span class="p">)</span>
+
+        <span class="c"># Generate the stellar spectrum</span>
+        <span class="c"># -----------------------------</span>
+        <span class="c"># note: no need to recompute the weights through the interpolation</span>
+        <span class="n">_r</span><span class="p">,</span> <span class="n">l0</span><span class="p">,</span> <span class="n">s0</span><span class="p">,</span> <span class="n">NHI</span> <span class="o">=</span> <span class="n">genStellarSpectrum</span><span class="p">(</span><span class="n">stars</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">sl</span><span class="p">,</span>
+                                             <span class="n">weights</span><span class="o">=</span><span class="p">(</span><span class="n">_dN</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span>
+                                             <span class="n">inLsun</span><span class="o">=</span><span class="n">inLsun</span><span class="p">,</span> <span class="n">nthreads</span><span class="o">=</span><span class="n">nthreads</span><span class="p">)</span>
+        <span class="n">r</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">_r</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+
+        <span class="c"># add Nebular component</span>
+        <span class="c"># ---------------------</span>
+        <span class="k">if</span> <span class="n">neb</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">inLsun</span><span class="p">:</span>
+                <span class="n">l</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">neb</span><span class="o">.</span><span class="n">add_emission</span><span class="p">(</span><span class="n">l0</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;angstrom&#39;</span><span class="p">],</span> <span class="n">s0</span> <span class="o">*</span> <span class="n">Lsun</span><span class="p">,</span> <span class="n">NHI</span><span class="p">,</span> <span class="n">fracNeb</span><span class="p">)</span>
+                <span class="n">s</span> <span class="o">/=</span> <span class="n">Lsun</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">l</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">neb</span><span class="o">.</span><span class="n">add_emission</span><span class="p">(</span><span class="n">l0</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;angstrom&#39;</span><span class="p">],</span> <span class="n">s0</span><span class="p">,</span> <span class="n">NHI</span><span class="p">,</span> <span class="n">fracNeb</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">l</span> <span class="o">=</span> <span class="n">l0</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">s0</span>
+
+        <span class="c"># book keeping</span>
+        <span class="n">dn</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>  <span class="o">=</span> <span class="n">_dN</span><span class="p">[:]</span>
+        <span class="n">ds</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>  <span class="o">=</span> <span class="n">s</span>
+        <span class="n">ds0</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">s0</span>
+        <span class="n">Lbol</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span> <span class="o">**</span> <span class="n">stars</span><span class="p">[</span><span class="s">&#39;logL&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">_dN</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+    <span class="c"># s      = np.median(ds, axis=0)</span>
+    <span class="c"># s0     = np.median(ds0, axis=0)</span>
+    <span class="n">s</span>      <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">s0</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">ds0</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">del</span> <span class="n">ds0</span>
+
+    <span class="c"># concatenate the info</span>
+    <span class="n">properties</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">dn</span><span class="o">=</span><span class="n">dn</span><span class="p">,</span>
+                      <span class="n">m</span><span class="o">=</span><span class="mi">10</span> <span class="o">**</span> <span class="n">logM</span><span class="p">,</span>
+                      <span class="n">m_bins</span><span class="o">=</span><span class="n">m_bins</span><span class="p">,</span>
+                      <span class="n">dm</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">m_bins</span><span class="p">),</span>
+                      <span class="n">ds</span><span class="o">=</span><span class="n">ds</span><span class="p">,</span>
+                      <span class="n">Nstars</span><span class="o">=</span><span class="n">nstars</span><span class="p">,</span>
+                      <span class="n">inLsun</span><span class="o">=</span><span class="n">inLsun</span><span class="p">,</span>
+                      <span class="n">age</span><span class="o">=</span><span class="n">age</span><span class="p">,</span>
+                      <span class="n">Z</span><span class="o">=</span><span class="n">Z</span><span class="p">,</span>
+                      <span class="n">fracneb</span><span class="o">=</span><span class="n">fracNeb</span><span class="p">,</span>
+                      <span class="n">imf</span><span class="o">=</span><span class="n">imf</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                      <span class="n">iso</span><span class="o">=</span><span class="n">iso</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                      <span class="n">stellib</span><span class="o">=</span><span class="n">sl</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                      <span class="n">stars</span><span class="o">=</span><span class="n">stars</span><span class="p">,</span>
+                      <span class="n">Mtot</span><span class="o">=</span><span class="n">Mtot</span><span class="p">,</span>
+                      <span class="n">Lbol</span><span class="o">=</span><span class="n">Lbol</span><span class="p">,</span>
+                      <span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span>
+                      <span class="n">l0</span><span class="o">=</span><span class="n">l0</span><span class="p">,</span>
+                      <span class="n">s0</span><span class="o">=</span><span class="n">s0</span><span class="p">,</span>
+                      <span class="n">Mdead</span><span class="o">=</span><span class="n">Mdead</span><span class="p">,</span>
+                      <span class="n">Minit</span><span class="o">=</span><span class="n">Minit</span><span class="p">,</span>
+                      <span class="n">Mmax</span><span class="o">=</span><span class="n">Mmax</span><span class="p">,</span>
+                      <span class="n">dnc</span><span class="o">=</span><span class="n">dN</span><span class="p">,</span>
+                      <span class="n">ll0</span><span class="o">=</span><span class="n">ll0</span><span class="p">,</span>
+                      <span class="n">ls0</span><span class="o">=</span><span class="n">ls0</span>
+                      <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">with_units</span><span class="p">:</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="n">l</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;angstrom&#39;</span><span class="p">]</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;erg/s/angstrom&#39;</span><span class="p">]</span>
+        <span class="n">properties</span><span class="p">[</span><span class="s">&#39;s0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">s0</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;erg/s/angstrom&#39;</span><span class="p">]</span>
+        <span class="n">properties</span><span class="p">[</span><span class="s">&#39;ds&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;erg/s/angstrom&#39;</span><span class="p">]</span>
+        <span class="n">properties</span><span class="p">[</span><span class="s">&#39;ls0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ls0</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;erg/s/angstrom&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">inLsun</span><span class="p">:</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">/</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;lsun&#39;</span><span class="p">]</span>
+            <span class="n">properties</span><span class="p">[</span><span class="s">&#39;s0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">properties</span><span class="p">[</span><span class="s">&#39;s0&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;lsun&#39;</span><span class="p">]</span>
+            <span class="n">properties</span><span class="p">[</span><span class="s">&#39;ds&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">properties</span><span class="p">[</span><span class="s">&#39;ds&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;lsun&#39;</span><span class="p">]</span>
+            <span class="n">properties</span><span class="p">[</span><span class="s">&#39;ls0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">properties</span><span class="p">[</span><span class="s">&#39;ls0&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;lsun&#39;</span><span class="p">]</span>
+
+        <span class="n">properties</span><span class="p">[</span><span class="s">&#39;age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_age</span>
+        <span class="n">properties</span><span class="p">[</span><span class="s">&#39;l0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">l0</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;angstrom&#39;</span><span class="p">]</span>
+        <span class="n">properties</span><span class="p">[</span><span class="s">&#39;ll0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ll0</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;angstrom&#39;</span><span class="p">]</span>
+        <span class="n">properties</span><span class="p">[</span><span class="s">&#39;Mtot&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Mtot</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;msun&#39;</span><span class="p">]</span>
+        <span class="n">properties</span><span class="p">[</span><span class="s">&#39;Mdead&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Mdead</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;msun&#39;</span><span class="p">]</span>
+        <span class="n">properties</span><span class="p">[</span><span class="s">&#39;Minit&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Minit</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;msun&#39;</span><span class="p">]</span>
+        <span class="n">properties</span><span class="p">[</span><span class="s">&#39;Mmax&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Mmax</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;msun&#39;</span><span class="p">]</span>
+        <span class="n">properties</span><span class="p">[</span><span class="s">&#39;m&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="n">logM</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;msun&#39;</span><span class="p">]</span>
+        <span class="n">properties</span><span class="p">[</span><span class="s">&#39;m_bins&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">m_bins</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;msun&#39;</span><span class="p">]</span>
+        <span class="n">properties</span><span class="p">[</span><span class="s">&#39;dm&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">m_bins</span><span class="p">)</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;msun&#39;</span><span class="p">]</span>
+        <span class="n">properties</span><span class="p">[</span><span class="s">&#39;Lbol&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Lbol</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;lsun&#39;</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">l</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">properties</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">l</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">properties</span>
+
+</div>
+<div class="viewcode-block" id="discrete"><a class="viewcode-back" href="../../pypegase.html#pypegase.ssp.discrete">[docs]</a><span class="k">def</span> <span class="nf">discrete</span><span class="p">(</span><span class="n">nstars</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">imf</span><span class="p">,</span> <span class="n">iso</span><span class="p">,</span> <span class="n">sl</span><span class="p">,</span> <span class="n">neb</span><span class="p">,</span> <span class="n">fracNeb</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">nsamp</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+             <span class="n">inLsun</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">with_units</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">nthreads</span><span class="o">=</span><span class="n">__NTHREADS__</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate a stochastic SSP assuming a discretely sampled mass function</span>
+<span class="sd">    according to the number of stars.</span>
+<span class="sd">    The number of samples is set by nsamp</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    nstars: int</span>
+<span class="sd">        total number of stars in the population</span>
+
+<span class="sd">    age: float</span>
+<span class="sd">        age of the population (in yr)</span>
+
+<span class="sd">    Z: float</span>
+<span class="sd">        metallicity</span>
+
+<span class="sd">    imf:   imf.Imf</span>
+<span class="sd">        Initial Mass function</span>
+
+<span class="sd">    iso: isochrone.Isochrone</span>
+<span class="sd">        Isochrone library</span>
+
+<span class="sd">    sl: stellib.Stellib</span>
+<span class="sd">        stellar library</span>
+
+<span class="sd">    neb: nebular.Nebular</span>
+<span class="sd">        Nebular Model</span>
+
+<span class="sd">    fracNeb: float</span>
+<span class="sd">        Photon fraction tranformed into nebular component</span>
+
+<span class="sd">    nsamp: int</span>
+<span class="sd">        number of mass sampling</span>
+
+<span class="sd">    inLsun: bool</span>
+<span class="sd">        return results units normalized to Lsun</span>
+
+<span class="sd">    with_units: bool</span>
+<span class="sd">        if set, return results with units</span>
+
+<span class="sd">    nthreads: int</span>
+<span class="sd">        number of threads during interpolation</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    l: numpy.ndarray[float, ndim=1]</span>
+<span class="sd">        wavelength (in AA, by default)</span>
+
+<span class="sd">    s: numpy.ndarray[float, ndim=1]</span>
+<span class="sd">        Spectrum in ergs/s/AA or ergs/s/AA/Lsun</span>
+
+<span class="sd">    p: dict</span>
+<span class="sd">        various intermediate results and population properties</span>
+
+<span class="sd">    .. todo::</span>
+<span class="sd">        Could be optimized to compute only once the interpolation on the</span>
+<span class="sd">        grid and apply variable weights ==&gt; lot more sampling for the same time</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c"># check units</span>
+    <span class="n">u_age</span> <span class="o">=</span> <span class="n">val_in_unit</span><span class="p">(</span><span class="s">&#39;age&#39;</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s">&#39;yr&#39;</span><span class="p">)</span>
+
+    <span class="n">Mtot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nsamp</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">masses</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">nsamp</span><span class="p">,</span> <span class="n">nstars</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nsamp</span><span class="p">):</span>
+        <span class="n">_masses</span> <span class="o">=</span> <span class="n">imf</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">nstars</span><span class="p">)</span>
+        <span class="n">pop</span>     <span class="o">=</span> <span class="n">iso</span><span class="o">.</span><span class="n">_get_isochrone</span><span class="p">(</span><span class="n">u_age</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">masses</span><span class="o">=</span><span class="n">_masses</span><span class="p">)</span>
+        <span class="n">Mtot</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">_masses</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+        <span class="n">_r</span><span class="p">,</span> <span class="n">l0</span><span class="p">,</span> <span class="n">s0</span><span class="p">,</span> <span class="n">NHI</span> <span class="o">=</span> <span class="n">genStellarSpectrum</span><span class="p">(</span><span class="n">pop</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">sl</span><span class="p">,</span> <span class="n">inLsun</span><span class="o">=</span><span class="n">inLsun</span><span class="p">,</span> <span class="n">nthreads</span><span class="o">=</span><span class="n">nthreads</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">rk</span> <span class="ow">in</span> <span class="n">_r</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">rk</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="n">r</span><span class="p">:</span>
+                <span class="n">r</span><span class="p">[</span><span class="n">rk</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">+=</span> <span class="n">rk</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">r</span><span class="p">[</span><span class="n">rk</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">rk</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="c"># add Nebular component</span>
+        <span class="k">if</span> <span class="n">neb</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">inLsun</span><span class="p">:</span>
+                <span class="n">l</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">neb</span><span class="o">.</span><span class="n">add_emission</span><span class="p">(</span><span class="n">l0</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;angstrom&#39;</span><span class="p">],</span> <span class="n">s0</span> <span class="o">*</span> <span class="n">Lsun</span><span class="p">,</span> <span class="n">NHI</span><span class="p">,</span> <span class="n">fracNeb</span><span class="p">)</span>
+                <span class="n">s</span> <span class="o">/=</span> <span class="n">Lsun</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">l</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">neb</span><span class="o">.</span><span class="n">add_emission</span><span class="p">(</span><span class="n">l0</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;angstrom&#39;</span><span class="p">],</span> <span class="n">s0</span><span class="p">,</span> <span class="n">NHI</span><span class="p">,</span> <span class="n">fracNeb</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">l</span> <span class="o">=</span> <span class="n">l0</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">s0</span>
+
+        <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">ds</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">nsamp</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">size</span><span class="p">))</span>
+            <span class="n">ds0</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">nsamp</span><span class="p">,</span> <span class="n">s0</span><span class="o">.</span><span class="n">size</span><span class="p">))</span>
+
+        <span class="n">ds</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>  <span class="o">=</span> <span class="n">s</span>
+        <span class="n">ds0</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">s0</span>
+        <span class="n">masses</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">_masses</span>
+
+    <span class="n">Lbol</span>   <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="mf">10.</span><span class="p">,</span> <span class="n">pop</span><span class="p">[</span><span class="s">&#39;logL&#39;</span><span class="p">]))</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">s</span>      <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">s0</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">ds0</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">r</span>      <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+    <span class="k">del</span> <span class="n">ds0</span>
+
+    <span class="c"># concatenate the info</span>
+    <span class="n">properties</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">dn</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span>
+                      <span class="n">dm</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>  <span class="c"># numpy.diff(bins),</span>
+                      <span class="n">ds</span><span class="o">=</span><span class="n">ds</span><span class="p">,</span>
+                      <span class="n">Nstars</span><span class="o">=</span><span class="n">nstars</span><span class="p">,</span>
+                      <span class="n">inLsun</span><span class="o">=</span><span class="n">inLsun</span><span class="p">,</span>
+                      <span class="n">age</span><span class="o">=</span><span class="n">age</span><span class="p">,</span>
+                      <span class="n">Z</span><span class="o">=</span><span class="n">Z</span><span class="p">,</span>
+                      <span class="n">fracneb</span><span class="o">=</span><span class="n">fracNeb</span><span class="p">,</span>
+                      <span class="n">imf</span><span class="o">=</span><span class="n">imf</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                      <span class="n">iso</span><span class="o">=</span><span class="n">iso</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                      <span class="n">stellib</span><span class="o">=</span><span class="n">sl</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                      <span class="n">stars</span><span class="o">=</span><span class="n">pop</span><span class="p">,</span>
+                      <span class="n">Mtot</span><span class="o">=</span><span class="n">Mtot</span><span class="p">,</span>
+                      <span class="n">Lbol</span><span class="o">=</span><span class="n">Lbol</span><span class="p">,</span>
+                      <span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span>
+                      <span class="n">l0</span><span class="o">=</span><span class="n">l0</span><span class="p">,</span>
+                      <span class="n">s0</span><span class="o">=</span><span class="n">s0</span><span class="p">,</span>
+                      <span class="n">masses</span><span class="o">=</span><span class="n">masses</span>
+                      <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">with_units</span><span class="p">:</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="n">l</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;angstrom&#39;</span><span class="p">]</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;erg/s/angstrom&#39;</span><span class="p">]</span>
+        <span class="n">properties</span><span class="p">[</span><span class="s">&#39;s0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">s0</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;erg/s/angstrom&#39;</span><span class="p">]</span>
+        <span class="n">properties</span><span class="p">[</span><span class="s">&#39;ds&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;erg/s/angstrom&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">inLsun</span><span class="p">:</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">/</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;lsun&#39;</span><span class="p">]</span>
+            <span class="n">properties</span><span class="p">[</span><span class="s">&#39;s0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">properties</span><span class="p">[</span><span class="s">&#39;s0&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;lsun&#39;</span><span class="p">]</span>
+            <span class="n">properties</span><span class="p">[</span><span class="s">&#39;ds&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">properties</span><span class="p">[</span><span class="s">&#39;ds&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;lsun&#39;</span><span class="p">]</span>
+
+        <span class="n">properties</span><span class="p">[</span><span class="s">&#39;age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">u_age</span>
+        <span class="n">properties</span><span class="p">[</span><span class="s">&#39;l0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">l0</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;angstrom&#39;</span><span class="p">]</span>
+        <span class="n">properties</span><span class="p">[</span><span class="s">&#39;Mtot&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Mtot</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;msun&#39;</span><span class="p">]</span>
+        <span class="n">properties</span><span class="p">[</span><span class="s">&#39;Lbol&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Lbol</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;lsun&#39;</span><span class="p">]</span>
+        <span class="n">properties</span><span class="p">[</span><span class="s">&#39;masses&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">masses</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;msun&#39;</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">l</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">properties</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">l</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">properties</span>
+
+</div>
+<div class="viewcode-block" id="fast_discrete1"><a class="viewcode-back" href="../../pypegase.html#pypegase.ssp.fast_discrete1">[docs]</a><span class="k">def</span> <span class="nf">fast_discrete1</span><span class="p">(</span><span class="n">nstars</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">imf</span><span class="p">,</span> <span class="n">iso</span><span class="p">,</span> <span class="n">sl</span><span class="p">,</span> <span class="n">neb</span><span class="p">,</span> <span class="n">fracNeb</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">dlogm</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span>
+                   <span class="n">nsamp</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">inLsun</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">with_units</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">full_outputs</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                   <span class="n">nthreads</span><span class="o">=</span><span class="n">__NTHREADS__</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate an SSP assuming a continuously sampled mass function and</span>
+<span class="sd">    boostrap the mass binning according to the number of stars.</span>
+<span class="sd">    The number of samples is set by nsamp</span>
+
+<span class="sd">    The approximation we use in this modeling scheme is that stars are</span>
+<span class="sd">    binned in mass to their continuous equivalent mass bins and represented</span>
+<span class="sd">    by their central star spectrum.  This approximation is good enough as</span>
+<span class="sd">    long as variations from on side of the mass bin to the other are</span>
+<span class="sd">    negligeable.</span>
+
+<span class="sd">    This function is optimized to make large collections of clusters at fixed</span>
+<span class="sd">    isochrone.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    nstars: int</span>
+<span class="sd">        total number of stars in the population</span>
+
+<span class="sd">    age: float</span>
+<span class="sd">        age of the population (in yr)</span>
+
+<span class="sd">    Z: float</span>
+<span class="sd">        metallicity</span>
+
+<span class="sd">    imf: imf.Imf instance</span>
+<span class="sd">        Initial Mass function</span>
+
+<span class="sd">    iso: isochrone.Isochrone instance</span>
+<span class="sd">        Isochrone library</span>
+
+<span class="sd">    sl: stellib.Stellib instance</span>
+<span class="sd">        stellar library</span>
+
+<span class="sd">    neb: nebular.Nebular instance</span>
+<span class="sd">        Nebular Model</span>
+
+<span class="sd">    fracNeb: float</span>
+<span class="sd">        Photon fraction tranformed into nebular component</span>
+
+<span class="sd">    nsamp: int</span>
+<span class="sd">        number of mass sampling</span>
+
+<span class="sd">    inLsun: bool</span>
+<span class="sd">        return results units normalized to Lsun</span>
+
+<span class="sd">    with_units: bool</span>
+<span class="sd">        if set, return results with units</span>
+
+<span class="sd">    full_outputs: bool</span>
+<span class="sd">        if set, returns also the individual stars and their frequencies</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    l: numpy.ndarray[float, ndim=1]</span>
+<span class="sd">        wavelength in AA</span>
+
+<span class="sd">    s: numpy.ndarray[float, ndim=1]</span>
+<span class="sd">        Spectrum in ergs/s/AA or ergs/s/AA/Lsun</span>
+
+<span class="sd">    p: dict</span>
+<span class="sd">        various population properties</span>
+
+<span class="sd">    stars: Table</span>
+<span class="sd">        table of stars describing the isochrone</span>
+<span class="sd">        only if full_output is set</span>
+
+<span class="sd">    specs: ndarray</span>
+<span class="sd">        spectra associated to each star in stars</span>
+<span class="sd">        only if full_output is set</span>
+
+<span class="sd">    dN: ndarray</span>
+<span class="sd">        number of stars represented by each of the ones in stars</span>
+<span class="sd">        only if full_output is set</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c"># check units</span>
+    <span class="n">_age</span> <span class="o">=</span> <span class="n">val_in_unit</span><span class="p">(</span><span class="s">&#39;age&#39;</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s">&#39;yr&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span>
+
+    <span class="n">Lsun</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">unit</span><span class="p">[</span><span class="s">&#39;lsun&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s">&#39;erg/s&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span><span class="p">)</span>
+
+    <span class="c"># Continuously sample the corresponding isochrone</span>
+    <span class="c"># and simulate the continuous population</span>
+    <span class="c"># to set the different variables and dimensions, respectively</span>
+    <span class="c"># -----------------------------------------------------------</span>
+    <span class="c"># get reference stars for a continuously sampled isochrone</span>
+    <span class="n">stars</span><span class="p">,</span> <span class="n">logm_bins</span> <span class="o">=</span> <span class="n">iso</span><span class="o">.</span><span class="n">_get_continuous_isochrone</span><span class="p">(</span><span class="n">_age</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">ret_bins</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+                                                     <span class="n">dlogm</span><span class="o">=</span><span class="n">dlogm</span><span class="p">)</span>
+    <span class="n">m_bins</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="n">logm_bins</span>
+    <span class="c"># try to add robustness</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">m_bins</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&#39;binning error&#39;</span><span class="p">)</span>
+
+    <span class="c"># get the predicted number of stars per bin of mass on this isochrone</span>
+    <span class="c"># dN = imf.nstars(stars[&#39;logM&#39;], ret_bins=False, edges=logm_bins)</span>
+    <span class="n">maxM</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="n">stars</span><span class="p">[</span><span class="s">&#39;logM&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+    <span class="c"># compute all the individual spectra incl. neb component.</span>
+    <span class="c"># this will allow us to to a simple weighted sum.</span>
+    <span class="n">stars_lamb</span><span class="p">,</span> <span class="n">stars_specs</span><span class="p">,</span> <span class="n">NHI</span> <span class="o">=</span> <span class="n">genIndividualStellarSpectrum</span><span class="p">(</span><span class="n">stars</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">sl</span><span class="p">,</span>
+                                                                <span class="n">inLsun</span><span class="o">=</span><span class="n">inLsun</span><span class="p">)</span>
+
+    <span class="c"># add the nebular emission</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">neb</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">fracNeb</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">inLsun</span><span class="p">:</span>
+            <span class="n">l</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">neb</span><span class="o">.</span><span class="n">add_emission_to_many</span><span class="p">(</span><span class="n">stars_lamb</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;angstrom&#39;</span><span class="p">],</span>
+                                            <span class="n">stars_specs</span> <span class="o">*</span> <span class="n">Lsun</span><span class="p">,</span> <span class="n">NHI</span><span class="p">,</span> <span class="n">fracNeb</span><span class="p">)</span>
+            <span class="n">s</span> <span class="o">/=</span> <span class="n">Lsun</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">l</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">neb</span><span class="o">.</span><span class="n">add_emission_to_many</span><span class="p">(</span><span class="n">stars_lamb</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;angstrom&#39;</span><span class="p">],</span>
+                                            <span class="n">stars_specs</span><span class="p">,</span> <span class="n">NHI</span><span class="p">,</span> <span class="n">fracNeb</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="n">stars_lamb</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">stars_specs</span>
+
+    <span class="c"># book keeping variables</span>
+    <span class="n">specs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">nsamp</span><span class="p">,</span> <span class="n">l</span><span class="o">.</span><span class="n">size</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">Mtot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsamp</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">Minit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsamp</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">Mdead</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsamp</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">Mmax</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsamp</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">Lbol</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsamp</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">nsamp</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span> <span class="o">*</span> <span class="n">_age</span>
+    <span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">nsamp</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span> <span class="o">*</span> <span class="n">Z</span>
+    <span class="k">if</span> <span class="n">full_outputs</span><span class="p">:</span>
+        <span class="n">dN</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">nsamp</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">stars</span><span class="p">)),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">Pbar</span><span class="p">(</span><span class="s">&#39;Mixing&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">iterover</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">nsamp</span><span class="p">)):</span>
+        <span class="c"># Mass properties of the populations</span>
+        <span class="c"># ----------------------------------</span>
+        <span class="c"># _masses = imf.random(nstars, minM, maxM)</span>
+        <span class="n">_masses</span> <span class="o">=</span> <span class="n">imf</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">nstars</span><span class="p">)</span>
+
+        <span class="c"># Approximation scheme</span>
+        <span class="c"># --------------------</span>
+        <span class="n">_dN</span> <span class="o">=</span> <span class="n">histogram</span><span class="p">(</span> <span class="n">_masses</span><span class="p">,</span> <span class="n">m_bins</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+
+        <span class="n">specs</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="p">(</span><span class="n">_dN</span><span class="p">[:,</span> <span class="bp">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">s</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">Lbol</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span> <span class="o">**</span> <span class="n">stars</span><span class="p">[</span><span class="s">&#39;logL&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">_dN</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+        <span class="n">ind</span> <span class="o">=</span> <span class="p">(</span><span class="n">_masses</span> <span class="o">&gt;</span> <span class="n">maxM</span><span class="p">)</span>
+        <span class="c"># total mass above the isochrone limit</span>
+        <span class="n">Mdead</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">_masses</span><span class="p">[</span><span class="n">ind</span><span class="p">])</span>
+        <span class="n">Minit</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">_masses</span><span class="p">)</span>
+        <span class="n">Mmax</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">_masses</span><span class="p">)</span>
+        <span class="n">_masses</span> <span class="o">=</span> <span class="n">_masses</span><span class="p">[</span><span class="o">~</span><span class="n">ind</span><span class="p">]</span>
+        <span class="n">Mtot</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">Minit</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">full_outputs</span><span class="p">:</span>
+            <span class="n">dN</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">_dN</span>
+
+    <span class="k">if</span> <span class="n">with_units</span><span class="p">:</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="n">l</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;angstrom&#39;</span><span class="p">]</span>
+        <span class="n">specs</span> <span class="o">=</span> <span class="n">specs</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;erg/s/angstrom&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">inLsun</span><span class="p">:</span>
+            <span class="n">specs</span> <span class="o">=</span> <span class="n">specs</span> <span class="o">/</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;lsun&#39;</span><span class="p">]</span>
+
+        <span class="n">properties</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">Mtot</span><span class="o">=</span><span class="n">Mtot</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;msun&#39;</span><span class="p">],</span>
+                          <span class="n">Minit</span><span class="o">=</span><span class="n">Minit</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;msun&#39;</span><span class="p">],</span>
+                          <span class="n">Mdead</span><span class="o">=</span><span class="n">Mdead</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;msun&#39;</span><span class="p">],</span>
+                          <span class="n">Mmax</span><span class="o">=</span><span class="n">Mmax</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;msun&#39;</span><span class="p">],</span>
+                          <span class="n">Lbol</span><span class="o">=</span><span class="n">Lbol</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;lsun&#39;</span><span class="p">],</span>
+                          <span class="n">age</span><span class="o">=</span><span class="n">age</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;yr&#39;</span><span class="p">],</span>
+                          <span class="n">Z</span><span class="o">=</span><span class="n">Z</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">properties</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">Mtot</span><span class="o">=</span><span class="n">Mtot</span><span class="p">,</span> <span class="n">Minit</span><span class="o">=</span><span class="n">Minit</span><span class="p">,</span> <span class="n">Mdead</span><span class="o">=</span><span class="n">Mdead</span><span class="p">,</span> <span class="n">Mmax</span><span class="o">=</span><span class="n">Mmax</span><span class="p">,</span>
+                          <span class="n">Lbol</span><span class="o">=</span><span class="n">Lbol</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="n">age</span><span class="p">,</span> <span class="n">Z</span><span class="o">=</span><span class="n">Z</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">full_outputs</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">l</span><span class="p">,</span> <span class="n">specs</span><span class="p">,</span> <span class="n">properties</span><span class="p">,</span> <span class="n">stars</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">dN</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">l</span><span class="p">,</span> <span class="n">specs</span><span class="p">,</span> <span class="n">properties</span></div>
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Morgan Fouesneau, Ariane Lancon, and Michel Fioc.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

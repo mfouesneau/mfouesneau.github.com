@@ -1,0 +1,527 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pypegase.nebular &mdash; pyPegase 1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'../../',
+        VERSION:'1.0',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+    <script type="text/javascript">
+        jQuery(function () {
+            SphinxRtdTheme.StickyNav.enable();
+        });
+    </script>
+  
+
+  
+    <link rel="top" title="pyPegase 1.0 documentation" href="../../index.html"/>
+        <link rel="up" title="Module code" href="../index.html"/> 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../index.html" class="fa fa-home"> pyPegase</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">pyPegase</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../intro.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../intro.html#simple-stellar-population-ssp">Simple stellar population (SSP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../intro.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../readme.html">pyPEGASE v1.0</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#contents-of-the-directory">Contents of the directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#quick-start">Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#quick-start-by-example-3-steps-to-build-one-continuous-population">Quick start by example : 3 steps to build one &#8220;continuous&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#quick-start-by-example-3-steps-to-build-one-discrete-population">Quick start by example: 3 steps to build one &#8220;discrete&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#quick-start-by-example-3-steps-to-build-one-fast-discrete-population">Quick start by example: 3 steps to build one &#8220;fast-discrete&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#customize-your-runs">Customize your runs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#produce-large-collections-of-simulations">Produce large collections of simulations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#compute-colors">Compute colors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#for-those-who-wish-to-read-edit-the-codes">For those who wish to read/edit the codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#required-acknowledgements">Required acknowledgements</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">pyPegase</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      
+    <li>pypegase.nebular</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <h1>Source code for pypegase.nebular</h1><div class="highlight"><pre>
+<span class="sd">&quot;&quot;&quot; Everything nebular continuum + emission related</span>
+
+<span class="sd">nebular emission lines relative to the underlying stellar continuum indicating</span>
+<span class="sd">that the stars and gas that give rise to the lines and to the continuum see</span>
+<span class="sd">different amounts of dust. This interaction between stars and gas led to</span>
+<span class="sd">two-step model in which young stars which emit ionizing photons are likely to</span>
+<span class="sd">be still surrounded by the clouds of gas and dust from which they formed. In</span>
+<span class="sd">this model all stars are attenuated by &quot;diffuse&quot; dust in the same manner as</span>
+<span class="sd">equation 2. However young ( &lt; 10 Myr) stars undergo an additional &quot;birth cloud&quot;</span>
+<span class="sd">attenuation.</span>
+
+<span class="sd">In practice this means that the UV light and nebular emission lines associated</span>
+<span class="sd">with the short-lived massive stars are more obscured than the optical light</span>
+<span class="sd">dominated by the longer-lived stars, as observed in real galaxies</span>
+
+<span class="sd">Finally the integrated spectrum of a given SSP is the mixture of a stellar</span>
+<span class="sd">content interacting with dust and gas.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">interp</span>
+<span class="kn">from</span> <span class="nn">.io</span> <span class="kn">import</span> <span class="n">Table</span>
+<span class="kn">from</span> <span class="nn">.units</span> <span class="kn">import</span> <span class="n">unit</span><span class="p">,</span> <span class="n">hasUnit</span>
+<span class="kn">from</span> <span class="nn">.helpers</span> <span class="kn">import</span> <span class="n">val_in_unit</span>
+<span class="kn">from</span> <span class="nn">.tools.compatibility</span> <span class="kn">import</span> <span class="nb">range</span>
+<span class="kn">from</span> <span class="nn">.tools.pbar</span> <span class="kn">import</span> <span class="n">Pbar</span>
+
+<span class="kn">import</span> <span class="nn">inspect</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">localpath</span> <span class="o">=</span> <span class="s">&#39;/&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">inspect</span><span class="o">.</span><span class="n">getfile</span><span class="p">(</span><span class="n">inspect</span><span class="o">.</span><span class="n">currentframe</span><span class="p">()))</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+
+<div class="viewcode-block" id="NebularModel"><a class="viewcode-back" href="../../pypegase.html#pypegase.nebular.NebularModel">[docs]</a><span class="k">class</span> <span class="nc">NebularModel</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; template Class &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+<div class="viewcode-block" id="NebularModel.gen_spectra"><a class="viewcode-back" href="../../pypegase.html#pypegase.nebular.NebularModel.gen_spectra">[docs]</a>    <span class="k">def</span> <span class="nf">gen_spectra</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lamb</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; template &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="bp">NotImplemented</span>
+</div>
+<div class="viewcode-block" id="NebularModel.add_emission"><a class="viewcode-back" href="../../pypegase.html#pypegase.nebular.NebularModel.add_emission">[docs]</a>    <span class="k">def</span> <span class="nf">add_emission</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lamb</span><span class="p">,</span> <span class="n">flux</span><span class="p">,</span> <span class="n">NHI</span><span class="p">,</span> <span class="n">frac</span><span class="p">,</span> <span class="n">with_units</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute the nebular component and add its contribution</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        lamb: ndarray, dtype=float</span>
+<span class="sd">            initial wavelength of the spectrum</span>
+<span class="sd">            in angstroms</span>
+
+<span class="sd">        flux: ndarray, dtype=float</span>
+<span class="sd">            initial flux of the spectrum</span>
+
+<span class="sd">        NHI: int</span>
+<span class="sd">            number of photons contributing to HI Lym_alpha</span>
+
+<span class="sd">        frac: float</span>
+<span class="sd">            fraction of ionizing photons</span>
+
+<span class="sd">        with_units: bool</span>
+<span class="sd">            if set, return results with units</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        l: ndarray, dtype=float</span>
+<span class="sd">            wavelength values revised from the input array to include emission lines</span>
+<span class="sd">            in angstroms</span>
+
+<span class="sd">        f: ndarray, dtype=float</span>
+<span class="sd">            final associated fluxes</span>
+<span class="sd">            in units of input fluxes</span>
+
+<span class="sd">        .. note::</span>
+
+<span class="sd">            kwargs forwarded to self.gen_spectra</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">u_lamb</span> <span class="o">=</span> <span class="n">val_in_unit</span><span class="p">(</span><span class="s">&#39;lamb&#39;</span><span class="p">,</span> <span class="n">lamb</span><span class="p">,</span> <span class="s">&#39;angstrom&#39;</span><span class="p">)</span>
+        <span class="n">_lamb</span> <span class="o">=</span> <span class="n">u_lamb</span><span class="o">.</span><span class="n">magnitude</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">hasUnit</span><span class="p">(</span><span class="n">flux</span><span class="p">):</span>
+            <span class="n">f_unit</span> <span class="o">=</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;erg/s/AA&#39;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">f_unit</span> <span class="o">=</span> <span class="n">unit</span><span class="p">[</span><span class="n">flux</span><span class="o">.</span><span class="n">units</span><span class="p">]</span>
+
+        <span class="n">lyman_alpha_sup</span> <span class="o">=</span> <span class="mf">912.</span>  <span class="c"># AA</span>
+        <span class="c"># get the nebular component</span>
+        <span class="n">le</span><span class="p">,</span> <span class="n">fe</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gen_spectra</span><span class="p">(</span><span class="n">u_lamb</span><span class="p">,</span> <span class="n">with_units</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="c"># make sure the spectra are def on the same wavelengths</span>
+        <span class="n">f</span>      <span class="o">=</span> <span class="n">interp</span><span class="p">(</span><span class="n">le</span><span class="p">,</span> <span class="n">_lamb</span><span class="p">,</span> <span class="n">flux</span><span class="p">)</span>
+        <span class="c"># Do the actual sum</span>
+        <span class="n">f</span> <span class="o">+=</span> <span class="n">NHI</span> <span class="o">*</span> <span class="n">frac</span> <span class="o">*</span> <span class="n">fe</span>
+        <span class="c"># remove photons absorbed if spectrum contain it</span>
+        <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">le</span> <span class="o">&lt;</span> <span class="n">lyman_alpha_sup</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">):</span>
+            <span class="n">f</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">*=</span> <span class="mf">1.</span> <span class="o">-</span> <span class="n">frac</span>
+
+        <span class="k">if</span> <span class="n">with_units</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">le</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;AA&#39;</span><span class="p">],</span> <span class="n">f</span> <span class="o">*</span> <span class="n">f_unit</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">le</span><span class="p">,</span> <span class="n">f</span>
+</div>
+<div class="viewcode-block" id="NebularModel.add_emission_to_many"><a class="viewcode-back" href="../../pypegase.html#pypegase.nebular.NebularModel.add_emission_to_many">[docs]</a>    <span class="k">def</span> <span class="nf">add_emission_to_many</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lamb</span><span class="p">,</span> <span class="n">flux</span><span class="p">,</span> <span class="n">NHI</span><span class="p">,</span> <span class="n">frac</span><span class="p">,</span> <span class="n">with_units</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Compute the nebular component and add its contribution</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        lamb: ndarray, dtype=float</span>
+<span class="sd">            initial wavelength of the spectrum</span>
+<span class="sd">            in angstroms</span>
+
+<span class="sd">        flux: ndarray, dtype=float</span>
+<span class="sd">            initial flux of the spectrum</span>
+
+<span class="sd">        NHI: int</span>
+<span class="sd">            number of photons contributing to HI Lym_alpha</span>
+
+<span class="sd">        frac: float</span>
+<span class="sd">            fraction of ionizing photons</span>
+
+<span class="sd">        with_units: bool</span>
+<span class="sd">            if set, return results with units</span>
+
+<span class="sd">        .. note::</span>
+
+<span class="sd">            kwargs forwarded to self.gen_spectra</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        l: ndarray, dtype=float</span>
+<span class="sd">            wavelength values revised from the input array to include emission lines</span>
+<span class="sd">            in angstroms</span>
+
+<span class="sd">        f: ndarray, dtype=float</span>
+<span class="sd">            final associated fluxes</span>
+<span class="sd">            in units of input fluxes</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">u_lamb</span> <span class="o">=</span> <span class="n">val_in_unit</span><span class="p">(</span><span class="s">&#39;lamb&#39;</span><span class="p">,</span> <span class="n">lamb</span><span class="p">,</span> <span class="s">&#39;angstrom&#39;</span><span class="p">)</span>
+        <span class="n">_lamb</span> <span class="o">=</span> <span class="n">u_lamb</span><span class="o">.</span><span class="n">magnitude</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">hasUnit</span><span class="p">(</span><span class="n">flux</span><span class="p">):</span>
+            <span class="n">f_unit</span> <span class="o">=</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;erg/s/AA&#39;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">f_unit</span> <span class="o">=</span> <span class="n">unit</span><span class="p">[</span><span class="n">flux</span><span class="o">.</span><span class="n">units</span><span class="p">]</span>
+
+        <span class="n">silent</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;silent&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+
+        <span class="n">lyman_alpha_sup</span> <span class="o">=</span> <span class="mf">912.</span>  <span class="c"># AA</span>
+        <span class="c"># get the nebular component</span>
+        <span class="n">le</span><span class="p">,</span> <span class="n">fe</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gen_spectra</span><span class="p">(</span><span class="n">u_lamb</span><span class="p">,</span> <span class="n">with_units</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="c"># remove photons absorbed if spectrum contain it</span>
+        <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">le</span> <span class="o">&lt;</span> <span class="n">lyman_alpha_sup</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="n">r</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">silent</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">fk</span><span class="p">,</span> <span class="n">nk</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">flux</span><span class="p">,</span> <span class="n">NHI</span><span class="p">):</span>
+                <span class="c"># make sure the spectra are def on the same wavelengths</span>
+                <span class="n">f</span> <span class="o">=</span> <span class="n">interp</span><span class="p">(</span><span class="n">le</span><span class="p">,</span> <span class="n">_lamb</span><span class="p">,</span> <span class="n">fk</span><span class="p">)</span>
+                <span class="c"># Do the actual sum</span>
+                <span class="n">f</span> <span class="o">+=</span> <span class="n">nk</span> <span class="o">*</span> <span class="n">frac</span> <span class="o">*</span> <span class="n">fe</span>
+                <span class="k">if</span> <span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">):</span>
+                    <span class="n">f</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">*=</span> <span class="mf">1.</span> <span class="o">-</span> <span class="n">frac</span>
+                <span class="n">r</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">fk</span><span class="p">,</span> <span class="n">nk</span> <span class="ow">in</span> <span class="n">Pbar</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">NHI</span><span class="p">),</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Nebulosity&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">iterover</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">flux</span><span class="p">,</span> <span class="n">NHI</span><span class="p">)):</span>
+                <span class="c"># make sure the spectra are def on the same wavelengths</span>
+                <span class="n">f</span> <span class="o">=</span> <span class="n">interp</span><span class="p">(</span><span class="n">le</span><span class="p">,</span> <span class="n">_lamb</span><span class="p">,</span> <span class="n">fk</span><span class="p">)</span>
+                <span class="c"># Do the actual sum</span>
+                <span class="n">f</span> <span class="o">+=</span> <span class="n">nk</span> <span class="o">*</span> <span class="n">frac</span> <span class="o">*</span> <span class="n">fe</span>
+                <span class="k">if</span> <span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">):</span>
+                    <span class="n">f</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">*=</span> <span class="mf">1.</span> <span class="o">-</span> <span class="n">frac</span>
+                <span class="n">r</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+        <span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">with_units</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">le</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;AA&#39;</span><span class="p">],</span> <span class="n">f</span> <span class="o">*</span> <span class="n">f_unit</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">le</span><span class="p">,</span> <span class="n">f</span>
+
+</div></div>
+<div class="viewcode-block" id="pegase"><a class="viewcode-back" href="../../pypegase.html#pypegase.nebular.pegase">[docs]</a><span class="k">class</span> <span class="nc">pegase</span><span class="p">(</span><span class="n">NebularModel</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Nebular model implemented in Pegase.2</span>
+
+<span class="sd">    A simplified nebular emission model computed as in Guiderdoni et al. (1987)</span>
+<span class="sd">    is linked to the number of ionizing photons in the specific galaxy model,</span>
+<span class="sd">    furnishing line intensities and the nebular continuum in the same</span>
+<span class="sd">    wavelength range as the stellar spectra. The models also include the</span>
+<span class="sd">    effects of dust extinction using the average properties for the galaxy type</span>
+<span class="sd">    and the chemical enrichment of the interstellar medium.</span>
+
+<span class="sd">    .. note::</span>
+
+<span class="sd">        requires local resources</span>
+
+<span class="sd">            * libs/pegase.HII.cont.fits</span>
+<span class="sd">            * libs/pegase.HII.lines.fits</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="s">&#39;Pegase model (Fioc+1997)&#39;</span>
+
+        <span class="n">NebularModel</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+
+        <span class="c"># libraries</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">continuumFile</span> <span class="o">=</span> <span class="n">localpath</span> <span class="o">+</span> <span class="s">&#39;/libs/pegase.HII.cont.fits&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">linesFile</span>     <span class="o">=</span> <span class="n">localpath</span> <span class="o">+</span> <span class="s">&#39;/libs/pegase.HII.lines.fits&#39;</span>
+
+    <span class="k">def</span> <span class="nf">_get_continuum_</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lamb</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-20</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Generate the continuum spectrum</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        lamb: ndarray, dtype=float</span>
+<span class="sd">            wavelength to generate the spectrum</span>
+<span class="sd">            expected Angstrom units</span>
+
+<span class="sd">        eps: float, optional</span>
+<span class="sd">            precision in the interpolations</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        fneb: ndarray, dtype=float</span>
+<span class="sd">            nebular continuum normalized to NHI = 1.</span>
+<span class="sd">            [ in ergs/s/AA/NHI ]</span>
+<span class="sd">            (assuming no escaping photons)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">u_lamb</span> <span class="o">=</span> <span class="n">val_in_unit</span><span class="p">(</span><span class="s">&#39;lamb&#39;</span><span class="p">,</span> <span class="n">lamb</span><span class="p">,</span> <span class="s">&#39;angstrom&#39;</span><span class="p">)</span>
+        <span class="n">_lamb</span> <span class="o">=</span> <span class="n">u_lamb</span><span class="o">.</span><span class="n">magnitude</span>
+
+        <span class="c"># continuum</span>
+        <span class="n">t</span>       <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">continuumFile</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s">&#39;fits&#39;</span><span class="p">)</span>
+        <span class="n">HeI</span>     <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s">&#39;HEI&#39;</span><span class="p">])</span>
+        <span class="n">HeII</span>    <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s">&#39;HEII&#39;</span><span class="p">])</span>
+        <span class="n">alphaTe</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s">&#39;ALPHATE&#39;</span><span class="p">])</span>
+
+        <span class="c"># interpolation in x=1/lamb and y=log(gamma)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">/</span> <span class="n">_lamb</span>
+        <span class="n">x0</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">/</span> <span class="n">t</span><span class="p">[</span><span class="s">&#39;lambda&#39;</span><span class="p">]</span>
+
+        <span class="n">ind</span>         <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">_lamb</span> <span class="o">&gt;</span> <span class="n">t</span><span class="p">[</span><span class="s">&#39;lambda&#39;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">y</span>           <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="s">&#39;gamma1&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">eps</span><span class="p">)</span>
+        <span class="c"># interp requires xp to be increasing</span>
+        <span class="n">log_g1</span>      <span class="o">=</span> <span class="n">interp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x0</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">y</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">left</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ind</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c"># -1.9: gaunt factor ~ nu**(-0.1) at long wavelength.</span>
+            <span class="n">log_g1</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x0</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">x</span><span class="p">[</span><span class="n">ind</span><span class="p">])</span>
+        <span class="n">y</span>           <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="s">&#39;gamma2&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">eps</span><span class="p">)</span>
+        <span class="n">log_g2</span>      <span class="o">=</span> <span class="n">interp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x0</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">y</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">left</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ind</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">log_g2</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x0</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">x</span><span class="p">[</span><span class="n">ind</span><span class="p">])</span>
+        <span class="n">y</span>           <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="s">&#39;gamma3&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">eps</span><span class="p">)</span>
+        <span class="n">log_g3</span>      <span class="o">=</span> <span class="n">interp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x0</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">y</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">left</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ind</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">log_g3</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x0</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">x</span><span class="p">[</span><span class="n">ind</span><span class="p">])</span>
+        <span class="n">y</span>           <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="s">&#39;gamma4&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">eps</span><span class="p">)</span>
+        <span class="n">log_g4</span>      <span class="o">=</span> <span class="n">interp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x0</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">y</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">left</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ind</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">log_g4</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x0</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">x</span><span class="p">[</span><span class="n">ind</span><span class="p">])</span>
+        <span class="k">del</span> <span class="n">ind</span><span class="p">,</span> <span class="n">y</span>
+
+        <span class="c"># light speed in Angstroms/second</span>
+        <span class="n">c_ang</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">unit</span><span class="p">[</span><span class="s">&#39;c&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s">&#39;AA/s&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span><span class="p">)</span>
+
+        <span class="n">fneb</span>  <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="n">log_g1</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">**</span> <span class="n">log_g2</span> <span class="o">+</span> <span class="n">HeI</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">**</span> <span class="n">log_g3</span> <span class="o">+</span> <span class="n">HeII</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">**</span> <span class="n">log_g4</span>
+        <span class="n">fneb</span> <span class="o">*=</span> <span class="mf">1e-40</span> <span class="o">*</span> <span class="n">c_ang</span> <span class="o">/</span> <span class="n">alphaTe</span> <span class="o">*</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span>
+
+        <span class="k">del</span> <span class="n">x</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">log_g1</span><span class="p">,</span> <span class="n">log_g2</span><span class="p">,</span> <span class="n">log_g3</span><span class="p">,</span> <span class="n">log_g4</span>
+        <span class="k">del</span> <span class="n">t</span>
+
+        <span class="k">return</span> <span class="n">fneb</span>
+
+    <span class="k">def</span> <span class="nf">_get_lines_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns wavelengths and Energy of emission lines normalized to NHI = 1</span>
+<span class="sd">        and no escaping photons line strength relative to Hbeta (first line).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">t</span>       <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">linesFile</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s">&#39;fits&#39;</span><span class="p">)</span>
+        <span class="n">alphaTe</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s">&#39;ALPHATE&#39;</span><span class="p">])</span>
+        <span class="n">lamb</span>    <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="s">&#39;lambda&#39;</span><span class="p">]</span>
+        <span class="n">flines</span>  <span class="o">=</span> <span class="mf">1.244e-25</span> <span class="o">*</span> <span class="n">t</span><span class="p">[</span><span class="s">&#39;gline&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">alphaTe</span>
+
+        <span class="k">del</span> <span class="n">t</span>
+
+        <span class="k">return</span> <span class="n">lamb</span><span class="p">,</span> <span class="n">flines</span>
+
+<div class="viewcode-block" id="pegase.gen_spectra"><a class="viewcode-back" href="../../pypegase.html#pypegase.nebular.pegase.gen_spectra">[docs]</a>    <span class="k">def</span> <span class="nf">gen_spectra</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lambin</span><span class="p">,</span> <span class="n">with_units</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Generate a photon normalized nebular spectrum</span>
+
+<span class="sd">        On top of adding the continuum component, for each emission line, we</span>
+<span class="sd">        compute where it should lie on the continuum and spread the energy on a</span>
+<span class="sd">        triplet of points, single point or a couple enclosing the position.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        lambin: ndarray, dtype=float</span>
+<span class="sd">            initial wavelengths to compute</span>
+<span class="sd">            [in Angstroms]</span>
+
+<span class="sd">        with_units: bool</span>
+<span class="sd">            if set, return results with units</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        l: ndarray, dtype=float</span>
+<span class="sd">            wavelength values revised from the input array to include emission lines</span>
+<span class="sd">            in Angstroms</span>
+
+<span class="sd">        f: ndarray, dtype=float</span>
+<span class="sd">            final associated fluxes</span>
+<span class="sd">            [ in erg/s/AA/NHI ]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">u_lamb</span> <span class="o">=</span> <span class="n">val_in_unit</span><span class="p">(</span><span class="s">&#39;lambin&#39;</span><span class="p">,</span> <span class="n">lambin</span><span class="p">,</span> <span class="s">&#39;angstrom&#39;</span><span class="p">)</span>
+        <span class="n">_lamb</span> <span class="o">=</span> <span class="n">u_lamb</span><span class="o">.</span><span class="n">magnitude</span>
+
+        <span class="c"># t_young = 10 Myr?</span>
+
+        <span class="c"># Compute emission spectrum</span>
+        <span class="c"># Get lines and associated lambda values</span>
+        <span class="n">le</span><span class="p">,</span> <span class="n">Ee</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_lines_</span><span class="p">()</span>
+        <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span> <span class="p">(</span><span class="n">le</span> <span class="o">&lt;=</span> <span class="n">_lamb</span><span class="o">.</span><span class="n">max</span><span class="p">())</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">le</span> <span class="o">&gt;=</span> <span class="n">_lamb</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="p">)</span>
+        <span class="n">le</span> <span class="o">=</span> <span class="n">le</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span>
+        <span class="n">Ee</span> <span class="o">=</span> <span class="n">Ee</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span>
+
+        <span class="c"># Build a spectrum including lamb and le wavelengths by</span>
+        <span class="c"># interpolation. Hence generate a new lamb list</span>
+        <span class="n">lamb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">_lamb</span><span class="p">,</span> <span class="n">le</span><span class="p">))</span>
+        <span class="n">lamb</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+        <span class="n">lamb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">lamb</span><span class="p">)</span>
+
+        <span class="c"># Get the continuum</span>
+        <span class="c"># Lsun = float(units.lsun.rescale(&#39;erg/s&#39;))</span>
+        <span class="n">fcont</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_continuum_</span><span class="p">(</span><span class="n">_lamb</span><span class="p">[:]</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;angstrom&#39;</span><span class="p">])</span>
+        <span class="n">flux</span>  <span class="o">=</span> <span class="n">interp</span><span class="p">(</span><span class="n">lamb</span><span class="p">,</span> <span class="n">_lamb</span><span class="p">,</span> <span class="n">fcont</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
+
+        <span class="c"># for each emission line, compute where it should lie on the</span>
+        <span class="c"># continuum and spread the energy on a triplet of points.single point or a couple</span>
+        <span class="c"># enclosing the position.</span>
+        <span class="k">for</span> <span class="n">lk</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">le</span><span class="p">)):</span>
+                <span class="c"># exact match</span>
+                <span class="n">jl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">lamb</span> <span class="o">==</span> <span class="n">le</span><span class="p">[</span><span class="n">lk</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">jl0</span> <span class="o">=</span> <span class="n">jl</span> <span class="o">-</span> <span class="mi">1</span>
+                <span class="n">jl1</span> <span class="o">=</span> <span class="n">jl</span> <span class="o">+</span> <span class="mi">1</span>
+                <span class="k">if</span> <span class="n">jl0</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">l0</span> <span class="o">=</span> <span class="n">lamb</span><span class="p">[</span><span class="n">jl0</span><span class="p">]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">l0</span> <span class="o">=</span> <span class="n">lamb</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="n">lamb</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">lamb</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="k">if</span> <span class="n">jl1</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">lamb</span><span class="p">):</span>
+                    <span class="n">l1</span> <span class="o">=</span> <span class="n">lamb</span><span class="p">[</span><span class="n">jl1</span><span class="p">]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">l1</span> <span class="o">=</span> <span class="n">lamb</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="n">lamb</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">lamb</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+
+                <span class="c"># Energy of the line is spread over l0, l, l1</span>
+                <span class="n">flux</span><span class="p">[</span><span class="n">jl</span><span class="p">]</span> <span class="o">+=</span> <span class="n">Ee</span><span class="p">[</span><span class="n">lk</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="n">l1</span> <span class="o">-</span> <span class="n">l0</span><span class="p">)</span> <span class="o">*</span> <span class="mf">2.0</span>
+
+        <span class="k">del</span> <span class="n">Ee</span><span class="p">,</span> <span class="n">le</span><span class="p">,</span> <span class="n">fcont</span>
+
+        <span class="k">if</span> <span class="n">with_units</span><span class="p">:</span>
+            <span class="n">unit</span><span class="o">.</span><span class="n">add_unit</span><span class="p">(</span><span class="s">&#39;NHI&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">lamb</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;AA&#39;</span><span class="p">],</span> <span class="n">flux</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s">&#39;erg/s/AA/NHI&#39;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">lamb</span><span class="p">,</span> <span class="n">flux</span></div></div>
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Morgan Fouesneau, Ariane Lancon, and Michel Fioc.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

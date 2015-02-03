@@ -1,0 +1,360 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pypegase.helpers &mdash; pyPegase 1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'../../',
+        VERSION:'1.0',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+    <script type="text/javascript">
+        jQuery(function () {
+            SphinxRtdTheme.StickyNav.enable();
+        });
+    </script>
+  
+
+  
+    <link rel="top" title="pyPegase 1.0 documentation" href="../../index.html"/>
+        <link rel="up" title="Module code" href="../index.html"/> 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../index.html" class="fa fa-home"> pyPegase</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">pyPegase</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../intro.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../intro.html#simple-stellar-population-ssp">Simple stellar population (SSP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../intro.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../readme.html">pyPEGASE v1.0</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#contents-of-the-directory">Contents of the directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#quick-start">Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#quick-start-by-example-3-steps-to-build-one-continuous-population">Quick start by example : 3 steps to build one &#8220;continuous&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#quick-start-by-example-3-steps-to-build-one-discrete-population">Quick start by example: 3 steps to build one &#8220;discrete&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#quick-start-by-example-3-steps-to-build-one-fast-discrete-population">Quick start by example: 3 steps to build one &#8220;fast-discrete&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#customize-your-runs">Customize your runs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#produce-large-collections-of-simulations">Produce large collections of simulations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#compute-colors">Compute colors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#for-those-who-wish-to-read-edit-the-codes">For those who wish to read/edit the codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#required-acknowledgements">Required acknowledgements</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">pyPegase</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      
+    <li>pypegase.helpers</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <h1>Source code for pypegase.helpers</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">.units</span> <span class="kn">import</span> <span class="n">unit</span><span class="p">,</span> <span class="n">hasUnit</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
+
+
+<div class="viewcode-block" id="warning_on_one_line"><a class="viewcode-back" href="../../pypegase.html#pypegase.helpers.warning_on_one_line">[docs]</a><span class="k">def</span> <span class="nf">warning_on_one_line</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">category</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">lineno</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s">&quot; {0:s}:{1:d} {2:s}:{3:s}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">lineno</span><span class="p">,</span> <span class="n">category</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">message</span><span class="p">))</span>
+
+</div>
+<div class="viewcode-block" id="missing_units_warning"><a class="viewcode-back" href="../../pypegase.html#pypegase.helpers.missing_units_warning">[docs]</a><span class="k">def</span> <span class="nf">missing_units_warning</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">defaultunit</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Warn if any unit is missing</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    name: str</span>
+<span class="sd">        name of the variable</span>
+
+<span class="sd">    defaultunit: str</span>
+<span class="sd">        default unit definition</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    warning: warnings.warn</span>
+<span class="sd">        warn if units are assumed</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">formatwarning</span> <span class="o">=</span> <span class="n">warning_on_one_line</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">&#39;Variable {0:s} does not have explicit units. Assuming `{1:s}`</span><span class="se">\n</span><span class="s">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">defaultunit</span><span class="p">),</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="val_in_unit"><a class="viewcode-back" href="../../pypegase.html#pypegase.helpers.val_in_unit">[docs]</a><span class="k">def</span> <span class="nf">val_in_unit</span><span class="p">(</span><span class="n">varname</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">defaultunit</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; check units and convert to defaultunit or create the unit information</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    varname: str</span>
+<span class="sd">        name of the variable</span>
+
+<span class="sd">    value: value</span>
+<span class="sd">        value of the variable, which may be unitless</span>
+
+<span class="sd">    defaultunit: str</span>
+<span class="sd">        default units is unitless</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    quantity: ezunits.Quantity</span>
+<span class="sd">        value with units</span>
+
+<span class="sd">    .. code::</span>
+
+<span class="sd">        &gt;&gt;&gt; r = 0.5</span>
+<span class="sd">        &gt;&gt;&gt; print(val_in_unit(&#39;r&#39;, r, &#39;degree&#39;))</span>
+<span class="sd">        # UserWarning: Variable r does not have explicit units. Assuming `degree`</span>
+<span class="sd">        &lt;Quantity(0.5, &#39;degree&#39;)&gt;</span>
+
+<span class="sd">        &gt;&gt;&gt; r = 0.5 * unit[&#39;degree&#39;]</span>
+<span class="sd">        &gt;&gt;&gt; print(val_in_unit(&#39;r&#39;, r, &#39;degree&#39;))</span>
+<span class="sd">        &lt;Quantity(0.5, &#39;degree&#39;)&gt;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">hasUnit</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+        <span class="n">missing_units_warning</span><span class="p">(</span><span class="n">varname</span><span class="p">,</span> <span class="n">defaultunit</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">value</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="n">defaultunit</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">defaultunit</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="deprecated"><a class="viewcode-back" href="../../pypegase.html#pypegase.helpers.deprecated">[docs]</a><span class="k">def</span> <span class="nf">deprecated</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; A dummy decorator that warns against using a deprecated function &quot;&quot;&quot;</span>
+    <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">deco</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">txt</span> <span class="o">=</span> <span class="s">&#39;Function {0:s} is deprecated. You should avoid its usage&#39;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">txt</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">__name__</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">deco</span>
+
+</div>
+<div class="viewcode-block" id="isNestedInstance"><a class="viewcode-back" href="../../pypegase.html#pypegase.helpers.isNestedInstance">[docs]</a><span class="k">def</span> <span class="nf">isNestedInstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">cl</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Test for sub-classes types</span>
+<span class="sd">    I could not find a universal test</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    obj: object instance</span>
+<span class="sd">        object to test</span>
+
+<span class="sd">    cl: Class</span>
+<span class="sd">        top level class to test</span>
+
+<span class="sd">    returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    r: bool</span>
+<span class="sd">        True if obj is indeed an instance or subclass instance of cl</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">tree</span> <span class="o">=</span> <span class="p">[</span> <span class="n">cl</span> <span class="p">]</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">cl</span><span class="p">,</span> <span class="s">&#39;__subclasses&#39;</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">cl</span><span class="o">.</span><span class="n">__subclasses</span><span class="p">():</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="s">&#39;__subclasses&#39;</span><span class="p">):</span>
+                <span class="n">tree</span> <span class="o">+=</span> <span class="n">k</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()</span>
+    <span class="k">return</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">tree</span><span class="p">))</span>
+
+</div>
+<div class="viewcode-block" id="type_checker"><a class="viewcode-back" href="../../pypegase.html#pypegase.helpers.type_checker">[docs]</a><span class="k">def</span> <span class="nf">type_checker</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">tp</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Check a given type and raise a type error if not correct</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    name: str</span>
+<span class="sd">        name of the variable to show in the exception text</span>
+
+<span class="sd">    obj: object</span>
+<span class="sd">        object to check</span>
+
+<span class="sd">    tp: type</span>
+<span class="sd">        expected type of obj</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    :exc:TypeError:</span>
+<span class="sd">        raises a TypeError if object is not of the correct type of a subclass of it</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">isNestedInstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">tp</span><span class="p">):</span>
+        <span class="n">txt</span> <span class="o">=</span> <span class="s">&#39;Expected &quot;{0:s}&quot; of type {1:s}, got {2:s} instead.&#39;</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="n">txt</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">tp</span><span class="o">.</span><span class="n">__name__</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">.</span><span class="n">__name__</span><span class="p">)))</span>
+
+</div>
+<div class="viewcode-block" id="pretty_size_print"><a class="viewcode-back" href="../../pypegase.html#pypegase.helpers.pretty_size_print">[docs]</a><span class="k">def</span> <span class="nf">pretty_size_print</span><span class="p">(</span><span class="n">num_bytes</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Output number of bytes in a human readable format</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    num_bytes: int</span>
+<span class="sd">        number of bytes to convert</span>
+
+<span class="sd">    returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    output: str</span>
+<span class="sd">        string representation of the size with appropriate unit scale</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">num_bytes</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">return</span>
+
+    <span class="n">KiB</span> <span class="o">=</span> <span class="mi">1024</span>
+    <span class="n">MiB</span> <span class="o">=</span> <span class="n">KiB</span> <span class="o">*</span> <span class="n">KiB</span>
+    <span class="n">GiB</span> <span class="o">=</span> <span class="n">KiB</span> <span class="o">*</span> <span class="n">MiB</span>
+    <span class="n">TiB</span> <span class="o">=</span> <span class="n">KiB</span> <span class="o">*</span> <span class="n">GiB</span>
+    <span class="n">PiB</span> <span class="o">=</span> <span class="n">KiB</span> <span class="o">*</span> <span class="n">TiB</span>
+    <span class="n">EiB</span> <span class="o">=</span> <span class="n">KiB</span> <span class="o">*</span> <span class="n">PiB</span>
+    <span class="n">ZiB</span> <span class="o">=</span> <span class="n">KiB</span> <span class="o">*</span> <span class="n">EiB</span>
+    <span class="n">YiB</span> <span class="o">=</span> <span class="n">KiB</span> <span class="o">*</span> <span class="n">ZiB</span>
+
+    <span class="k">if</span> <span class="n">num_bytes</span> <span class="o">&gt;</span> <span class="n">YiB</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="s">&#39;</span><span class="si">%.3g</span><span class="s"> YB&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">num_bytes</span> <span class="o">/</span> <span class="n">YiB</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">num_bytes</span> <span class="o">&gt;</span> <span class="n">ZiB</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="s">&#39;</span><span class="si">%.3g</span><span class="s"> ZB&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">num_bytes</span> <span class="o">/</span> <span class="n">ZiB</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">num_bytes</span> <span class="o">&gt;</span> <span class="n">EiB</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="s">&#39;</span><span class="si">%.3g</span><span class="s"> EB&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">num_bytes</span> <span class="o">/</span> <span class="n">EiB</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">num_bytes</span> <span class="o">&gt;</span> <span class="n">PiB</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="s">&#39;</span><span class="si">%.3g</span><span class="s"> PB&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">num_bytes</span> <span class="o">/</span> <span class="n">PiB</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">num_bytes</span> <span class="o">&gt;</span> <span class="n">TiB</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="s">&#39;</span><span class="si">%.3g</span><span class="s"> TB&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">num_bytes</span> <span class="o">/</span> <span class="n">TiB</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">num_bytes</span> <span class="o">&gt;</span> <span class="n">GiB</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="s">&#39;</span><span class="si">%.3g</span><span class="s"> GB&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">num_bytes</span> <span class="o">/</span> <span class="n">GiB</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">num_bytes</span> <span class="o">&gt;</span> <span class="n">MiB</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="s">&#39;</span><span class="si">%.3g</span><span class="s"> MB&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">num_bytes</span> <span class="o">/</span> <span class="n">MiB</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">num_bytes</span> <span class="o">&gt;</span> <span class="n">KiB</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="s">&#39;</span><span class="si">%.3g</span><span class="s"> KB&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">num_bytes</span> <span class="o">/</span> <span class="n">KiB</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="s">&#39;</span><span class="si">%.3g</span><span class="s"> Bytes&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">num_bytes</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">output</span>
+
+</div>
+<div class="viewcode-block" id="nbytes"><a class="viewcode-back" href="../../pypegase.html#pypegase.helpers.nbytes">[docs]</a><span class="k">def</span> <span class="nf">nbytes</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">pprint</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; return the number of bytes of the object, which includes size of nested</span>
+<span class="sd">    structures</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    obj: object</span>
+<span class="sd">        object to find the size of</span>
+
+<span class="sd">    pprint: bool, optional (default=False)</span>
+<span class="sd">        if set, returns the result after calling pretty_size_print</span>
+
+<span class="sd">    returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    num_bytes: int or str</span>
+<span class="sd">        total number of bytes or human readable corresponding string</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">num_bytes</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">nbytes</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="s">&#39;nbytes&#39;</span><span class="p">)</span> <span class="k">else</span> <span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">__dict__</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+    <span class="k">if</span> <span class="n">pprint</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">pretty_size_print</span><span class="p">(</span><span class="n">num_bytes</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">num_bytes</span></div>
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Morgan Fouesneau, Ariane Lancon, and Michel Fioc.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

@@ -1,0 +1,765 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pypegase.io.hdfstore &mdash; pyPegase 1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'../../../',
+        VERSION:'1.0',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+    <script type="text/javascript">
+        jQuery(function () {
+            SphinxRtdTheme.StickyNav.enable();
+        });
+    </script>
+  
+
+  
+    <link rel="top" title="pyPegase 1.0 documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../../index.html" class="fa fa-home"> pyPegase</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro.html">pyPegase</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../intro.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../intro.html#simple-stellar-population-ssp">Simple stellar population (SSP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../intro.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../readme.html">pyPEGASE v1.0</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#contents-of-the-directory">Contents of the directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#quick-start">Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#quick-start-by-example-3-steps-to-build-one-continuous-population">Quick start by example : 3 steps to build one &#8220;continuous&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#quick-start-by-example-3-steps-to-build-one-discrete-population">Quick start by example: 3 steps to build one &#8220;discrete&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#quick-start-by-example-3-steps-to-build-one-fast-discrete-population">Quick start by example: 3 steps to build one &#8220;fast-discrete&#8221; population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#customize-your-runs">Customize your runs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#produce-large-collections-of-simulations">Produce large collections of simulations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#compute-colors">Compute colors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#for-those-who-wish-to-read-edit-the-codes">For those who wish to read/edit the codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#required-acknowledgements">Required acknowledgements</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">pyPegase</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      
+    <li>pypegase.io.hdfstore</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <h1>Source code for pypegase.io.hdfstore</h1><div class="highlight"><pre>
+<span class="sd">&quot;&quot;&quot; HDFStore</span>
+<span class="sd">High level interface to PyTables for reading and writing structures to disk</span>
+<span class="sd">Could work either as a (key, value) storage or as a classic tables.file.File</span>
+<span class="sd">object.</span>
+
+<span class="sd">Example usage</span>
+
+<span class="sd">.. code:: python</span>
+
+<span class="sd">    &gt;&gt;&gt; import numpy as np</span>
+<span class="sd">        with HDFStore(&#39;tmp.hd5&#39;, mode=&#39;w&#39;) as hd:</span>
+<span class="sd">            #make some variables</span>
+<span class="sd">            d = {}</span>
+<span class="sd">            d[&#39;a&#39;] = np.arange(10, dtype=float)</span>
+<span class="sd">            d[&#39;b&#39;] = np.arange(10, dtype=&#39;int&#39;)</span>
+<span class="sd">            c = np.random.normal(0, 1, (10, 10))</span>
+<span class="sd">            d[&#39;c&#39;] = c</span>
+<span class="sd">            #put values into the store</span>
+<span class="sd">            hd[&#39;/subdir/table&#39;] = d</span>
+<span class="sd">            hd[&#39;/subdir1/array&#39;] = c</span>
+<span class="sd">            #check values</span>
+<span class="sd">            print hd.keys()</span>
+<span class="sd">            print hd[&#39;subdir/table&#39;]</span>
+<span class="sd">            print hd[&#39;subdir1/array&#39;]</span>
+<span class="sd">            hd.removeNode(&#39;/subdir1&#39;, recursive=True)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">import</span> <span class="nn">tables</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">tables</span><span class="o">.</span><span class="n">__version__</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="n">_future</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="kn">from</span> <span class="nn">future.tables_file</span> <span class="kn">import</span> <span class="n">createEArray</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">_future</span> <span class="o">=</span> <span class="bp">False</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;HDFStore&#39;</span><span class="p">,</span> <span class="s">&#39;convert_dict_to_structured_ndarray&#39;</span><span class="p">]</span>
+
+<span class="c"># Type conversion mapping between numpy and pytables</span>
+<span class="n">_typeDict</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">_typeDict</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">bool_</span><span class="p">]</span>      <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">BoolCol</span>
+<span class="n">_typeDict</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">short</span><span class="p">]</span>      <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">Int8Col</span>
+<span class="n">_typeDict</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">int8</span><span class="p">]</span>       <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">Int8Col</span>
+<span class="n">_typeDict</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">]</span>      <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">UInt8Col</span>
+<span class="n">_typeDict</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">int16</span><span class="p">]</span>      <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">Int16Col</span>
+<span class="n">_typeDict</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">uint16</span><span class="p">]</span>     <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">UInt16Col</span>
+<span class="n">_typeDict</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">]</span>      <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">Int32Col</span>
+<span class="n">_typeDict</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">]</span>     <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">UInt32Col</span>
+<span class="n">_typeDict</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">]</span>      <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">Int64Col</span>
+<span class="n">_typeDict</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">uint64</span><span class="p">]</span>     <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">UInt64Col</span>
+<span class="n">_typeDict</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">float16</span><span class="p">]</span>    <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">Float32Col</span>
+<span class="n">_typeDict</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">]</span>    <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">Float32Col</span>
+<span class="n">_typeDict</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">]</span>    <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">Float64Col</span>
+<span class="n">_typeDict</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">complex64</span><span class="p">]</span>  <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">Complex64Col</span>
+<span class="n">_typeDict</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">complex128</span><span class="p">]</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">Complex128Col</span>
+<span class="n">_typeDict</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">str</span><span class="p">]</span>        <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">StringCol</span>
+<span class="n">_typeDict</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">string_</span><span class="p">]</span>    <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">StringCol</span>
+<span class="n">_typeDict</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>           <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">StringCol</span>
+<span class="n">_typeDict</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">unicode_</span><span class="p">]</span>   <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">StringCol</span>
+
+
+<span class="k">def</span> <span class="nf">__descr_from_dtype__</span><span class="p">(</span><span class="n">dtype_</span><span class="p">,</span> <span class="n">shape_</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get a description instance and byteorder from a (nested) NumPy dtype.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    dtype_:  dtype</span>
+<span class="sd">        dtype of a ndarray</span>
+
+<span class="sd">    shape_:  dict</span>
+<span class="sd">        a dictionary of column&#39;s shapes</span>
+
+<span class="sd">    returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    r: tables.Description</span>
+<span class="sd">        Description of a new table</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">fbyteorder</span> <span class="o">=</span> <span class="s">&#39;|&#39;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="p">(</span><span class="n">dtype</span><span class="p">,</span> <span class="n">pos</span><span class="p">))</span> <span class="ow">in</span> <span class="n">dtype_</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">kind</span> <span class="o">=</span> <span class="n">dtype</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">kind</span>
+        <span class="n">shape</span> <span class="o">=</span> <span class="n">shape_</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="p">())</span>
+        <span class="n">byteorder</span> <span class="o">=</span> <span class="n">dtype</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">byteorder</span>
+        <span class="k">if</span> <span class="n">byteorder</span> <span class="ow">in</span> <span class="s">&#39;&gt;&lt;=&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">fbyteorder</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;|&#39;</span><span class="p">,</span> <span class="n">byteorder</span><span class="p">]:</span>
+                <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+                    <span class="s">&quot;record arrays with mixed byteorders &quot;</span>
+                    <span class="s">&quot;are not supported yet, sorry&quot;</span> <span class="p">)</span>
+            <span class="n">fbyteorder</span> <span class="o">=</span> <span class="n">byteorder</span>
+        <span class="c"># Non-nested column</span>
+        <span class="k">if</span> <span class="n">kind</span> <span class="ow">in</span> <span class="s">&#39;biufSc&#39;</span><span class="p">:</span>
+            <span class="c"># col = tables.Col.from_dtype(dtype, pos=pos)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">col</span> <span class="o">=</span> <span class="n">_typeDict</span><span class="p">[</span><span class="n">dtype</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">type</span><span class="p">](</span><span class="n">shape</span><span class="o">=</span><span class="n">shape</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">col</span> <span class="o">=</span> <span class="n">_typeDict</span><span class="p">[</span><span class="n">dtype</span><span class="o">.</span><span class="n">type</span><span class="p">]()</span>
+        <span class="c"># Nested column</span>
+        <span class="k">elif</span> <span class="n">kind</span> <span class="o">==</span> <span class="s">&#39;V&#39;</span> <span class="ow">and</span> <span class="n">dtype</span><span class="o">.</span><span class="n">shape</span> <span class="ow">in</span> <span class="p">[(),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,)]:</span>
+            <span class="n">col</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">__descr_from_dtype__</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span>
+            <span class="n">col</span><span class="o">.</span><span class="n">_v_pos</span> <span class="o">=</span> <span class="n">pos</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+                <span class="s">&quot;record arrays with columns with type description ``</span><span class="si">%s</span><span class="s">`` &quot;</span>
+                <span class="s">&quot;are not supported yet, sorry&quot;</span> <span class="o">%</span> <span class="n">dtype</span> <span class="p">)</span>
+        <span class="n">fields</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">col</span>
+
+    <span class="k">return</span> <span class="n">tables</span><span class="o">.</span><span class="n">Description</span><span class="p">(</span><span class="n">fields</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">__createTable__</span><span class="p">(</span><span class="n">hd5</span><span class="p">,</span> <span class="n">tab</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">tablename</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;__createTable__ -- make a new table in the hdf file</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+
+<span class="sd">    hd5: tables.file.File</span>
+<span class="sd">        opened hdf file</span>
+
+<span class="sd">    tab: structured ndarray</span>
+<span class="sd">        structure that contains individual columns</span>
+
+<span class="sd">    group: str</span>
+<span class="sd">        path to where the table will be created</span>
+
+<span class="sd">    tablename: str</span>
+<span class="sd">        name of the node for the table</span>
+
+<span class="sd">    returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    t: tables.table.Table</span>
+<span class="sd">        table node instance already set into the file</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">shapes</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">tab</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">names</span><span class="p">:</span>
+        <span class="n">shapes</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">tab</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">desc</span> <span class="o">=</span> <span class="n">__descr_from_dtype__</span><span class="p">(</span><span class="n">tab</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">shapes</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">group</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;/&#39;</span><span class="p">:</span>
+        <span class="n">group</span> <span class="o">=</span> <span class="n">group</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">t</span> <span class="o">=</span> <span class="n">hd5</span><span class="o">.</span><span class="n">createTable</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="n">tablename</span><span class="p">,</span> <span class="n">desc</span><span class="p">,</span> <span class="n">expectedrows</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">),</span> <span class="n">createparents</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">hd5</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">t</span>
+
+
+<div class="viewcode-block" id="convert_dict_to_structured_ndarray"><a class="viewcode-back" href="../../../pypegase.io.html#pypegase.io.hdfstore.convert_dict_to_structured_ndarray">[docs]</a><span class="k">def</span> <span class="nf">convert_dict_to_structured_ndarray</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;convert_dict_to_structured_ndarray</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+
+<span class="sd">    data: dictionary like object</span>
+<span class="sd">        data structure which provides iteritems and itervalues</span>
+
+<span class="sd">    returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    tab: structured ndarray</span>
+<span class="sd">        structured numpy array</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">newdtype</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">dk</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+        <span class="n">_dk</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">dk</span><span class="p">)</span>
+        <span class="n">dtype</span> <span class="o">=</span> <span class="n">_dk</span><span class="o">.</span><span class="n">dtype</span>
+        <span class="c"># unknown type is converted to text</span>
+        <span class="k">if</span> <span class="n">dtype</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">object_</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">longest</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">longest</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">_dk</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">))</span>
+                <span class="n">_dk</span> <span class="o">=</span> <span class="n">_dk</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s">&#39;|</span><span class="si">%i</span><span class="s">S&#39;</span> <span class="o">%</span> <span class="n">longest</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">_dk</span><span class="o">.</span><span class="n">ndim</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">newdtype</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">),</span> <span class="n">_dk</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="p">(</span><span class="n">_dk</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],)))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">newdtype</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">),</span> <span class="n">_dk</span><span class="o">.</span><span class="n">dtype</span><span class="p">))</span>
+    <span class="n">tab</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">rec</span><span class="o">.</span><span class="n">fromarrays</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">itervalues</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">newdtype</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">tab</span>
+
+</div>
+<span class="k">def</span> <span class="nf">__write__</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">hd5</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="s">&#39;/&#39;</span><span class="p">,</span> <span class="n">tablename</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="p">{},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;__write__</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data: dict like object</span>
+<span class="sd">        structure that contains individual columns</span>
+
+<span class="sd">    hd5: tables.file.File</span>
+<span class="sd">        opened hdf file</span>
+
+<span class="sd">    group: str</span>
+<span class="sd">        path to where the table will be created</span>
+
+<span class="sd">    tablename: str</span>
+<span class="sd">        name of the node for the table</span>
+
+<span class="sd">    append: bool</span>
+<span class="sd">        if set, attempts to add content at the end of an existing node</span>
+<span class="sd">        Only works for Tables (not Arrays)</span>
+
+<span class="sd">    silent: bool</span>
+<span class="sd">        if set, do not print information content</span>
+
+<span class="sd">    header: dictionary like</span>
+<span class="sd">        attributes to add to the node</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">tablename</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="s">&#39;Noname&#39;</span><span class="p">,</span> <span class="s">&#39;None&#39;</span><span class="p">]:</span>
+        <span class="n">tablename</span> <span class="o">=</span> <span class="s">&#39;data&#39;</span>
+
+    <span class="c"># fill the table</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s">&#39;dtype&#39;</span><span class="p">):</span>
+        <span class="c"># assumes dict like object</span>
+        <span class="n">tab</span> <span class="o">=</span> <span class="n">convert_dict_to_structured_ndarray</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">tab</span> <span class="o">=</span> <span class="n">data</span>
+
+    <span class="k">if</span> <span class="n">tab</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">names</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">append</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">_future</span><span class="p">:</span>
+                <span class="n">createEArray</span><span class="p">(</span><span class="n">hd5</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">tablename</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="n">tab</span><span class="p">,</span> <span class="n">createparents</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">hd5</span><span class="o">.</span><span class="n">createEArray</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="n">tablename</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="n">tab</span><span class="p">,</span> <span class="n">createparents</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+            <span class="n">hd5</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="n">hd5</span><span class="o">.</span><span class="n">getNode</span><span class="p">(</span><span class="n">group</span> <span class="o">+</span> <span class="s">&#39;/&#39;</span> <span class="o">+</span> <span class="n">tablename</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="n">hd5</span><span class="o">.</span><span class="n">getNode</span><span class="p">(</span><span class="n">group</span> <span class="o">+</span> <span class="s">&#39;/&#39;</span> <span class="o">+</span> <span class="n">tablename</span><span class="p">)</span>
+            <span class="n">t</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c"># generate the empty table</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">append</span><span class="p">:</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="n">__createTable__</span><span class="p">(</span><span class="n">hd5</span><span class="p">,</span> <span class="n">tab</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">tablename</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">t</span> <span class="o">=</span> <span class="n">hd5</span><span class="o">.</span><span class="n">getNode</span><span class="p">(</span><span class="n">group</span> <span class="o">+</span> <span class="s">&#39;/&#39;</span> <span class="o">+</span> <span class="n">tablename</span><span class="p">)</span>
+            <span class="k">except</span> <span class="n">tables</span><span class="o">.</span><span class="n">NoSuchNodeError</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">silent</span><span class="p">:</span>
+                    <span class="k">print</span><span class="p">(</span><span class="s">&quot;Warning: Table does not exists.  New table will be created&quot;</span><span class="p">)</span>
+                <span class="n">t</span> <span class="o">=</span> <span class="n">__createTable__</span><span class="p">(</span><span class="n">hd5</span><span class="p">,</span> <span class="n">tab</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">tablename</span><span class="p">)</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">t</span> <span class="o">=</span> <span class="n">__createTable__</span><span class="p">(</span><span class="n">hd5</span><span class="p">,</span> <span class="n">tab</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">tablename</span><span class="p">)</span>
+                <span class="k">except</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">silent</span><span class="p">:</span>
+                        <span class="k">print</span><span class="p">(</span><span class="s">&quot;Warning: Table creation exception. Table may already exist.&quot;</span><span class="p">)</span>
+                    <span class="n">t</span> <span class="o">=</span> <span class="n">hd5</span><span class="o">.</span><span class="n">getNode</span><span class="p">(</span><span class="n">group</span> <span class="o">+</span> <span class="s">&#39;/&#39;</span> <span class="o">+</span> <span class="n">tablename</span><span class="p">)</span>
+
+        <span class="n">t</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">tab</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">description</span><span class="o">.</span><span class="n">_v_dtype</span><span class="p">)</span> <span class="p">)</span>
+        <span class="n">hd5</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+
+    <span class="c"># update the header</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">header</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="s">&#39;FILTERS&#39;</span> <span class="ow">and</span> <span class="nb">float</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s">&#39;VERSION&#39;</span><span class="p">])</span> <span class="o">&gt;=</span> <span class="mf">2.0</span><span class="p">:</span>
+            <span class="n">t</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s">&#39;filters&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">t</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+    <span class="k">if</span> <span class="s">&#39;TITLE&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">header</span><span class="p">:</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s">&#39;TITLE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tablename</span>
+
+
+<div class="viewcode-block" id="HDFStore"><a class="viewcode-back" href="../../../pypegase.io.html#pypegase.io.hdfstore.HDFStore">[docs]</a><span class="k">class</span> <span class="nc">HDFStore</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Handling quick in and out of the HDF5 file</span>
+<span class="sd">        This class can be used as a context manager</span>
+
+<span class="sd">        Any attribute of the HDF will be directly available transparently if</span>
+<span class="sd">        the source if opened</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lnpfile</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;__init__</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+
+<span class="sd">        lnpfile: str or tables.file.File</span>
+<span class="sd">            storage to use</span>
+
+<span class="sd">        mode: str (&#39;r&#39;, &#39;w&#39;, &#39;a&#39;, &#39;r+&#39;)</span>
+<span class="sd">            The mode to open the file.</span>
+<span class="sd">            (see set_mode)</span>
+
+<span class="sd">        **kwargs can be use to set options to tables.openFile</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lnpfile</span> <span class="o">=</span> <span class="n">lnpfile</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_keep_open</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_open_kwargs</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_mode</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<div class="viewcode-block" id="HDFStore.set_mode"><a class="viewcode-back" href="../../../pypegase.io.html#pypegase.io.hdfstore.HDFStore.set_mode">[docs]</a>    <span class="k">def</span> <span class="nf">set_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        set a flag to open the file in a given mode operations</span>
+<span class="sd">        if the mode changes, and the storage already opened, it will close the</span>
+<span class="sd">        storage and reopen it in the new mode</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+
+<span class="sd">        val: str (optional)</span>
+<span class="sd">            The mode to open the file.  It can be one of the following:</span>
+<span class="sd">              * &#39;r&#39;  -- Read-only; no data can be modified.</span>
+<span class="sd">              * &#39;w&#39;  -- Write; a new file is created (existing file would be deleted)</span>
+<span class="sd">              * &#39;a&#39;  -- Append; an existing file is opened for reading and writing, and if the file does not exist it is created.</span>
+<span class="sd">              * &#39;r+&#39; -- It is similar to &#39;a&#39;, but the file must already exist.</span>
+
+<span class="sd">        **kwargs is forwarded to tables.openFile</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+
+<span class="sd">        status: str</span>
+<span class="sd">            return the status only if None was provided</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">val</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;title&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_open_kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;title&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+            <span class="n">rootUEP</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;rootUEP&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_open_kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;rootUEP&#39;</span><span class="p">,</span> <span class="s">&#39;/&#39;</span><span class="p">)</span>
+            <span class="n">filters</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;filters&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_open_kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;filters&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_open_kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span> <span class="n">rootUEP</span><span class="o">=</span><span class="n">rootUEP</span><span class="p">,</span> <span class="n">filters</span><span class="o">=</span><span class="n">filters</span><span class="p">))</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">val</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">source</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">close_source</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">open_source</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="HDFStore.keep_open"><a class="viewcode-back" href="../../../pypegase.io.html#pypegase.io.hdfstore.HDFStore.keep_open">[docs]</a>    <span class="k">def</span> <span class="nf">keep_open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;keep_open - set a flag to keep the storage file open for multiple operations</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+
+<span class="sd">        val: bool (optional)</span>
+<span class="sd">            if set, set the flags to apply</span>
+
+<span class="sd">        returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        status: bool</span>
+<span class="sd">            return the status only if None was provided</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">val</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_keep_open</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_keep_open</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="HDFStore.open_source"><a class="viewcode-back" href="../../../pypegase.io.html#pypegase.io.hdfstore.HDFStore.open_source">[docs]</a>    <span class="k">def</span> <span class="nf">open_source</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;open_source</span>
+<span class="sd">        Open the file if needed, handles that the object was initialized with an opened file</span>
+
+<span class="sd">        returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        v: bool</span>
+<span class="sd">            returns if any operation was actually done (True) else the file was already opened (False)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">source</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lnpfile</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">openFile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lnpfile</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_mode</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_open_kwargs</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lnpfile</span><span class="p">,</span> <span class="n">tables</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">File</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lnpfile</span>
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">return</span> <span class="bp">False</span>
+</div>
+<div class="viewcode-block" id="HDFStore.close_source"><a class="viewcode-back" href="../../../pypegase.io.html#pypegase.io.hdfstore.HDFStore.close_source">[docs]</a>    <span class="k">def</span> <span class="nf">close_source</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;close_source</span>
+<span class="sd">        close the file only if the object opened any file</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        force: bool (default: False)</span>
+<span class="sd">            if set, bypass keep_open status</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">force</span> <span class="ow">is</span> <span class="bp">True</span><span class="p">)</span> <span class="ow">or</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">source</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">keep_open</span><span class="p">())):</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source</span><span class="p">,</span> <span class="n">tables</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">File</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">source</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="bp">None</span>
+</div>
+<div class="viewcode-block" id="HDFStore.keys"><a class="viewcode-back" href="../../../pypegase.io.html#pypegase.io.hdfstore.HDFStore.keys">[docs]</a>    <span class="k">def</span> <span class="nf">keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return a (potentially unordered) list of the keys corresponding to the</span>
+<span class="sd">        objects stored in the HDFStore. These are ABSOLUTE path-names (e.g. have the leading &#39;/&#39;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="bp">self</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">_v_pathname</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">source</span><span class="o">.</span><span class="n">walkNodes</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">r</span>
+</div>
+<div class="viewcode-block" id="HDFStore.items"><a class="viewcode-back" href="../../../pypegase.io.html#pypegase.io.hdfstore.HDFStore.items">[docs]</a>    <span class="k">def</span> <span class="nf">items</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        key-&gt;group</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">iteritems</span><span class="p">())</span>
+</div>
+<div class="viewcode-block" id="HDFStore.iteritems"><a class="viewcode-back" href="../../../pypegase.io.html#pypegase.io.hdfstore.HDFStore.iteritems">[docs]</a>    <span class="k">def</span> <span class="nf">iteritems</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        iterate on key-&gt;group</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="bp">self</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">groups</span><span class="p">():</span>
+                <span class="k">yield</span> <span class="n">g</span><span class="o">.</span><span class="n">_v_pathname</span><span class="p">,</span> <span class="n">g</span>
+</div>
+<div class="viewcode-block" id="HDFStore.groups"><a class="viewcode-back" href="../../../pypegase.io.html#pypegase.io.hdfstore.HDFStore.groups">[docs]</a>    <span class="k">def</span> <span class="nf">groups</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="s">&#39;/&#39;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; return a list of all the top-level nodes (that are not themselves a pandas storage object) &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="bp">self</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
+            <span class="n">g</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">source</span><span class="o">.</span><span class="n">walkGroups</span><span class="p">(</span><span class="n">where</span><span class="o">=</span><span class="n">where</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">g</span>
+</div>
+<div class="viewcode-block" id="HDFStore.write"><a class="viewcode-back" href="../../../pypegase.io.html#pypegase.io.hdfstore.HDFStore.write">[docs]</a>    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="s">&#39;/&#39;</span><span class="p">,</span> <span class="n">tablename</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+              <span class="n">header</span><span class="o">=</span><span class="p">{},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        write a data structure into the source file</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+
+<span class="sd">        data: dict like object</span>
+<span class="sd">            structure that contains individual columns</span>
+
+<span class="sd">        hd5: tables.file.File</span>
+<span class="sd">            opened hdf file</span>
+
+<span class="sd">        group: str</span>
+<span class="sd">            path to where the table will be created</span>
+
+<span class="sd">        tablename: str</span>
+<span class="sd">            name of the node for the table</span>
+
+<span class="sd">        append: bool</span>
+<span class="sd">            if set, attempts to add content at the end of an existing node</span>
+<span class="sd">            Only works for Tables (not Arrays)</span>
+
+<span class="sd">        silent: bool</span>
+<span class="sd">            if set, do not print information content</span>
+
+<span class="sd">        header: dictionary like</span>
+<span class="sd">            attributes to add to the node</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="bp">self</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">_mode</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;r&#39;</span><span class="p">:</span>
+                <span class="n">s</span><span class="o">.</span><span class="n">set_mode</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">)</span>
+            <span class="n">__write__</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">source</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">tablename</span><span class="p">,</span> <span class="n">append</span><span class="p">,</span> <span class="n">silent</span><span class="p">,</span> <span class="n">header</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
+    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;__getitem__</span>
+<span class="sd">        Returns the node corresponding to the key</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="bp">self</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">key</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s">&#39;/&#39;</span><span class="p">:</span>
+                <span class="n">p</span> <span class="o">=</span> <span class="s">&#39;/&#39;</span> <span class="o">+</span> <span class="n">key</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">p</span> <span class="o">=</span> <span class="n">key</span>
+            <span class="k">if</span> <span class="n">p</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s">&#39;No object named {0} in this store&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">source</span><span class="o">.</span><span class="n">getNode</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;__setitem__</span>
+<span class="sd">        create a node with the key path/name and set value as its content</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="bp">self</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s">&#39;Object named {0} already exists in this store&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+            <span class="n">p</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">p</span> <span class="o">=</span> <span class="s">&#39;/&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">p</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">p</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">p</span> <span class="o">==</span> <span class="s">&#39;&#39;</span><span class="p">):</span>
+                <span class="n">p</span> <span class="o">=</span> <span class="s">&#39;/&#39;</span>
+            <span class="k">if</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s">&#39;/&#39;</span><span class="p">:</span>
+                <span class="n">p</span> <span class="o">=</span> <span class="s">&#39;/&#39;</span> <span class="o">+</span> <span class="n">p</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="n">p</span><span class="p">,</span> <span class="n">tablename</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;__getattr__</span>
+<span class="sd">        Give direct access to any function from self.source (tables.file.File)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__dict__</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__dict__</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="s">&quot;&#39;{0}&#39; object has no attribute &#39;{1}&#39;&quot;</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">object</span><span class="o">.</span><span class="n">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; enter context &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">open_source</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_context_close</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">close_source</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_context_close</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="nf">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_val</span><span class="p">,</span> <span class="n">exc_tb</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; close context &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_context_close</span><span class="p">:</span>
+            <span class="n">k</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">close_source</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; check for existance of this key</span>
+<span class="sd">        can match the exact pathname or the pathnm w/o the leading &#39;/&#39;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">groups</span><span class="p">())</span>
+
+<div class="viewcode-block" id="HDFStore.get_Q_from_node"><a class="viewcode-back" href="../../../pypegase.io.html#pypegase.io.hdfstore.HDFStore.get_Q_from_node">[docs]</a>    <span class="k">def</span> <span class="nf">get_Q_from_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nodename</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span> <span class="n">condvars</span><span class="o">=</span><span class="p">{},</span> <span class="n">coordinates</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; returns a quantity from a HDF5 Node given its math expression.</span>
+<span class="sd">            Assuming that all quantities are either from the node or in condvars</span>
+
+<span class="sd">            attempt to be clever and optimizing speed when coordinates are provided</span>
+
+<span class="sd">            all np function can be used (log, exp, pi...)</span>
+
+<span class="sd">            ** method **</span>
+
+<span class="sd">            Pure eval expression was too slow when using disk access and HD5</span>
+<span class="sd">            nodes.  Instead, we use the tables.expression feature that parse</span>
+<span class="sd">            &quot;expr&quot; and extracts the variable names for interest.  Based on this</span>
+<span class="sd">            list we build the context of evaluation by adding missing values</span>
+<span class="sd">            from the node.</span>
+
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            nodename: str or ables.table.Table</span>
+<span class="sd">                the Table node to get data from (need named columns)</span>
+
+<span class="sd">            expr: str</span>
+<span class="sd">                the mathematical expression which could include numpy functions or</span>
+<span class="sd">                simply be a column name</span>
+
+<span class="sd">            condvars: dict</span>
+<span class="sd">                The condvars mapping may be used to define the variable names</span>
+<span class="sd">                appearing in the condition.</span>
+
+<span class="sd">            coordinates: iterable of int</span>
+<span class="sd">                reduces the computations to only set of rows given their indexes</span>
+<span class="sd">                Only works with nodes of tables.table.Table type</span>
+
+<span class="sd">            returns</span>
+<span class="sd">            -------</span>
+<span class="sd">            q: ndarray like</span>
+<span class="sd">                the column values requested with type and shape defined in the table.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="bp">self</span> <span class="k">as</span> <span class="n">storage</span><span class="p">:</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="n">storage</span><span class="o">.</span><span class="n">source</span><span class="o">.</span><span class="n">getNode</span><span class="p">(</span><span class="n">nodename</span><span class="p">)</span>
+            <span class="n">colnames</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">colnames</span>
+            <span class="k">if</span> <span class="n">expr</span> <span class="ow">in</span> <span class="n">colnames</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="s">&#39;readCoordinates&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">coordinates</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">):</span>
+                    <span class="n">q</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">readCoordinates</span><span class="p">(</span><span class="n">coordinates</span><span class="p">,</span> <span class="n">field</span><span class="o">=</span><span class="n">expr</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">q</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="n">expr</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c"># parse qname, using tables.Expr does not help with log10 etc</span>
+                <span class="n">names</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">expression</span><span class="o">.</span><span class="n">getExprNames</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="p">{})[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="s">&#39;readCoordinates&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">coordinates</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">):</span>
+                    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">colnames</span><span class="p">:</span>
+                            <span class="n">condvars</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">readCoordinates</span><span class="p">(</span><span class="n">coordinates</span><span class="p">,</span> <span class="n">field</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="p">(</span><span class="n">coordinates</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">):</span>
+                    <span class="n">_tmp</span> <span class="o">=</span> <span class="n">node</span><span class="p">[</span><span class="n">coordinates</span><span class="p">]</span>
+                    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">colnames</span><span class="p">:</span>
+                            <span class="n">condvars</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">_tmp</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">colnames</span><span class="p">:</span>
+                            <span class="n">condvars</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>
+                <span class="n">q</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">condvars</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">__dict__</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">q</span>
+
+</div></div>
+<span class="k">def</span> <span class="nf">unittest</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;unittest</span>
+<span class="sd">    Example usage</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+    <span class="c"># make a store</span>
+    <span class="k">with</span> <span class="n">HDFStore</span><span class="p">(</span><span class="s">&#39;tmp.hd5&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hd</span><span class="p">:</span>
+        <span class="c"># make some variables</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">d</span><span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+        <span class="n">d</span><span class="p">[</span><span class="s">&#39;b&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s">&#39;int&#39;</span><span class="p">)</span>
+        <span class="n">c1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+        <span class="n">c2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+        <span class="n">d</span><span class="p">[</span><span class="s">&#39;c&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">c1</span>
+
+        <span class="c"># put values into the store</span>
+        <span class="n">hd</span><span class="p">[</span><span class="s">&#39;/subdir/table&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span>
+        <span class="n">hd</span><span class="p">[</span><span class="s">&#39;/subdir1/array&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">c1</span>
+        <span class="n">hd</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">c2</span><span class="p">,</span> <span class="s">&#39;/subdir1&#39;</span><span class="p">,</span> <span class="s">&#39;array&#39;</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+        <span class="c"># check values</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">hd</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">hd</span><span class="p">[</span><span class="s">&#39;subdir/table&#39;</span><span class="p">])</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">hd</span><span class="p">[</span><span class="s">&#39;subdir1/array&#39;</span><span class="p">])</span>
+        <span class="n">hd</span><span class="o">.</span><span class="n">removeNode</span><span class="p">(</span><span class="s">&#39;/subdir1&#39;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">hd</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Morgan Fouesneau, Ariane Lancon, and Michel Fioc.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

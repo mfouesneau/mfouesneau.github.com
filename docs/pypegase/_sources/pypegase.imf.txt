@@ -1,0 +1,38 @@
+pypegase.imf package
+====================
+
+Submodules
+----------
+
+pypegase.imf.common module
+--------------------------
+
+.. automodule:: pypegase.imf.common
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypegase.imf.imf module
+-----------------------
+
+.. automodule:: pypegase.imf.imf
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypegase.imf.tests module
+-------------------------
+
+.. automodule:: pypegase.imf.tests
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: pypegase.imf
+    :members:
+    :undoc-members:
+    :show-inheritance:
