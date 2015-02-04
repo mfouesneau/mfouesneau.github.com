@@ -166,6 +166,15 @@ hr {
     background-size: cover;
 }
 
+.codes {
+    background: url(../img/seattle_bw.jpg) no-repeat center center scroll;
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 /* Writing */
 .writing {
 

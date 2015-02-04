@@ -55,6 +55,9 @@
                         <a href="#research">Research</a>
                     </li>
                     <li class="page-scroll">
+                        <a href="#codes">Codes</a>
+                    </li>
+                    <li class="page-scroll">
                         <a href="#publications">Publications</a>
                     </li>
                     <li class="page-scroll">
@@ -179,31 +182,25 @@
     </section>
 -->
 
-    <!-- friends -->
+    <!-- Research -->
     <section id="research" class="full-page research">
         <div class="section-body">
             <div class="container">
                 <div class="row darken-bg-50">
                     <div class="col-lg-8 col-lg-offset-2">
-                        <h2 class="italic">Research</h2>
+                        <h2 class="italic">Recent Selected Research</h2>
                         <hr width="25%" />
-			<p>
-			(Under construction)
-			</p>
 			<p>
 			A small selection of current projects and research.
 			</p>
                     </div>
-                    <div class="col-sm-8 col-sm-offset-2">
+                    <div class="col-sm-10 col-sm-offset-1">
                         <a class="btn btn-default" id="select-stochastic"
 				row="research-stochastic">Clusters in Low-Mass Regime</a>
+                        <a class="btn btn-default" id="select-pop"
+				row="research-clpop">Cluster Populations</a>
                         <a class="btn btn-default" id="select-dissolution"
-				row="research-dissolution">Cluster Dissolution
-				and Mass Function</a>
-                        <a class="btn btn-default" id="select-gas"
-				row="research-pegase">PyPegase</a>
-                        <a class="btn btn-default" id="select-beast"
-				row="research-beast">BEAST</a>
+				row="research-dissolution">Cluster Dissolution</a>
                         <!-- <hr width="25%" /> -->
                     </div>
                 </div>
@@ -240,11 +237,10 @@
 		        </div>
                     </div>
                 </div>
-                <div class="row darken-bg-50" id="research-dissolution">
+                <div class="row darken-bg-50" id="research-clpop">
                     <div class="col-lg-8 col-lg-offset-2">
                         <a href="" class="topic">
-				Dissolution and Star Cluster Initial Mass
-				Function</a> 
+				Star Cluster Populations: Age and Mass Functions</a> 
 			<hr width="60%" />
 			<div class="col-sm-6">
 			<p class='description'>
@@ -287,7 +283,73 @@
 		        </div>
                     </div>
                 </div>
-                <div class="row darken-bg-50" id="research-pegase">
+                <div class="row darken-bg-50" id="research-dissolution">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <a href="" class="topic">
+				Dissolution of Star Clusters, Formation Histories and  Mass Functions</a> 
+			<hr width="60%" />
+			<p>
+			(Coming soon)
+			</p>
+			<div class="col-sm-6">
+			<p class='description'>
+			We currently work on infering the disruption processes
+			and initial mass function with respect to environment
+			and star formation intensity in M31 from the PHAT survey.
+			</p>
+			
+			</div>
+			<div class="col-sm-6 light">
+			<p class='description'>
+				<a href="img/phat_age_mass_int.png">
+				<img class="right" width="100%" src="img/phat_age_mass_int.png" alt="">
+				</a>
+
+			<br>
+			<!--
+	  		 <a
+			 href="http://adsabs.harvard.edu/abs/2010A%26A...521A..22F">Fouesneau,
+			 M., Lan&ccedil;on, A., 2010</a> 
+			-->
+			</p>
+		        </div>
+                    </div>
+                </div>
+                <!-- -->
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="page-scroll">
+                            <a href="#codes" class="btn btn-circle">
+                                <i class="fa fa-angle-double-down"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Codes -->
+    <section id="codes" class="full-page codes">
+        <div class="section-body">
+            <div class="container">
+                <div class="row darken-bg-50">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <h2 class="italic">Codes</h2>
+                        <hr width="25%" />
+			<p>
+			A small selection of scientific codes
+			</p>
+                    </div>
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <a class="btn btn-default" id="select-pegase"
+				row="codes-pegase">PyPegase</a>
+                        <a class="btn btn-default" id="select-beast"
+				row="codes-beast">BEAST</a>
+                    </div>
+                </div>
+
+                <div class="row darken-bg-50" id="codes-pegase">
                     <div class="col-lg-8 col-lg-offset-2">
                         <a href="" class="topic">PyPegase</a> <hr width="60%" />
 			<div class="col-sm-7">
@@ -316,6 +378,7 @@
 			libraries are currently available on demand .
 			</p>
 			</div>
+
 			<div class="col-sm-5 light">
 			<p class='description'>
 				<a href="img/figure_sto_5myr-crop.png">
@@ -332,12 +395,30 @@
 			</a> 
 			-->
 			</p>
-		        </div>
+			</div>
+		    </div>
                 </div>
-                <div class="row darken-bg-50" id="research-beast">
+                <div class="row darken-bg-50" id="codes-beast">
                     <div class="col-lg-8 col-lg-offset-2">
                         <a href="" class="topic">Beast</a> <hr width="60%" />
-			<div class=container>
+			<p>
+			(Under construction)
+			</p>
+			<div class="col-sm-12">
+			<p class='description'>
+			the Bayesian Extinction and Stellar Tool (BEAST) is a
+			probabilistic approach to infering stellar parameters
+			and line of sight attenuation from the dust attenuated
+			photometric spectral energy distribution of an
+			individual star, which accounts for observational
+			uncertainties common to large resolved star surveys. 
+
+			Specifically, the inference model accounts for
+			measurement uncertainties and any correlation between
+			them due to photon noise, stellar crowding (systematic
+			biases and uncertainties in the bias), and absolute flux
+			calibration. 
+			</p>
 
 
 			</div>
@@ -998,6 +1079,38 @@ Magnier, E. A., Platais, I., Tonry, J. L., Waters, C., Wyse, R. F. G.,
             });
 
         }
+        function setupCodeSections() {
+            // highlight initially selected topic
+            $("#codes .row .btn").each(function(j,elem) {
+                rowID = $(elem).attr("row");
+                $("#" + rowID).hide();
+            });
+
+            // Default selection
+            $("#select-pegase").addClass("btn-filled");
+            rowID = $("#select-pegase").attr("row");
+            $("#" + rowID).show(400);
+
+            $("#codes .row .btn").click(function() {
+                if ($(this).hasClass("btn-filled"))
+                    return;
+
+                // trigger all stops
+                $(".fa-stop").trigger("click");
+                $("#codes .row .btn").each(function(j,elem) {
+                    if ($(elem).hasClass("btn-filled")) {
+                        $(elem).removeClass("btn-filled");
+                        rowID = $(elem).attr("row");
+                        $("#" + rowID).hide(400);
+                    }
+                });
+
+                $(this).addClass("btn-filled");
+                rowID = $(this).attr("row");
+                $("#" + rowID).show(400);
+            });
+
+        }
 
         $(document).ready(function() {
             $(".full-page").height(window.innerHeight);
@@ -1016,6 +1129,7 @@ Magnier, E. A., Platais, I., Tonry, J. L., Waters, C., Wyse, R. F. G.,
             setupWriting();
             setupCVSections();
             setupResearchSections();
+            setupCodeSections();
 
             var name = "fouesneau",
                 address = "mpia.de";
