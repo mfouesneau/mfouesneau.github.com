@@ -120,12 +120,13 @@
 <ul class="simple">
 </ul>
 </div>
-<p>This repository is an exercise I had with <strong>Iskren Georgiev</strong> when he was
+<p>This repository is an exercise I had with <a class="reference external" href="http://www.mpia.de/homes/georgiev/">Iskren Georgiev</a> when he was
 looking at linear correlations between the stellar mass of galaxies and the
 properties of their central nuclear star cluster.</p>
 <p>The approach here is neither frequentist nor Bayesian but more like in between.
-we explored how to quickly get fits through his data even when the uncertainties
+We explored how to quickly get fits through his data even when the uncertainties
 were non-symmetric or upper limits.</p>
+<p>The full mcmc approach is also included in the repository.</p>
 <div class="section" id="example-usage">
 <h2>Example usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
 <div class="code python highlight-python"><div class="highlight"><pre>python btmcfit.py reff_NSC_Mass_late.dat -o reff_NSC_Mass_late_samp.dat \
@@ -136,6 +137,132 @@ were non-symmetric or upper limits.</p>
 </pre></div>
 </div>
 <img alt="_images/example.png" src="_images/example.png" />
+</div>
+<div class="section" id="command-line-details">
+<h2>Command line details<a class="headerlink" href="#command-line-details" title="Permalink to this headline">¶</a></h2>
+<p>Options are all available from the command line and from the (optional)
+configuration file.</p>
+<div class="section" id="options">
+<h3>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h3>
+<p><strong>fitting options</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>-n, &#8211;nsamp</td>
+<td>number of samples to represent per data point uncertainties</td>
+</tr>
+<tr class="row-even"><td>-N, &#8211;nboot</td>
+<td>number of bootstrap realization</td>
+</tr>
+<tr class="row-odd"><td>&#8211;xnorm</td>
+<td>x-data normalization value</td>
+</tr>
+<tr class="row-even"><td>&#8211;ynorm</td>
+<td>y-data normalization value</td>
+</tr>
+<tr class="row-odd"><td>&#8211;xfloor</td>
+<td>floor of x-value uncertainty (in %)</td>
+</tr>
+<tr class="row-even"><td>&#8211;yfloor</td>
+<td>floor of y-value uncertainty (in %)</td>
+</tr>
+<tr class="row-odd"><td>-o OUTPUT, &#8211;output</td>
+<td>export the samples into a file</td>
+</tr>
+</tbody>
+</table>
+<p><strong>plotting options</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>-f, &#8211;savefig</td>
+<td>Generate figures with the desired format (pdf, png...)</td>
+</tr>
+<tr class="row-even"><td>&#8211;sigma_samp</td>
+<td>number of samplings to represent the intrinsic dispersion of the plot</td>
+</tr>
+<tr class="row-odd"><td>&#8211;x12label=X12LABEL</td>
+<td>X-label of the top-right plot (it can be in latex form)</td>
+</tr>
+<tr class="row-even"><td>&#8211;y12label=Y12LABEL</td>
+<td>Y-label of the top-right plot (it can be in latex form)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>special options</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>-c, &#8211;config</td>
+<td>Configuration file to use for default values (see below for details)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="configuration-file">
+<h3>Configuration file<a class="headerlink" href="#configuration-file" title="Permalink to this headline">¶</a></h3>
+<p>All options from the command line have default values. Theses values are
+arbitrary but can be set by using a configuration file (option: <cite>-c</cite>).</p>
+<p>In this file, any option can be set but the <strong>command line has priority</strong>. To
+set one option, you need to use the <em>longname</em> option as reference.</p>
+<p><strong>Example of configuration file</strong></p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></div></td><td class="code"><div class="highlight"><pre>[BTMC]
+# Generate figures with the desired format (pdf, png...)
+savefig: False   
+# number of samples to represent per data point uncertainties
+nsamp: 1         
+# number of bootstrap realization
+nboot: 100       
+# x-data normalization value
+xnorm: 1         
+# y-data normalization value
+ynorm: 1         
+# floor of x-value uncertainty (in percent)
+xfloor: 10.      
+# floor of y-value uncertainty (in percent)
+yfloor: 10.      
+# number of samplings to represent the intrinsic dispersion of the plot
+sigma_samp: 0    
+# export the samples into a file
+output: None     
+# X-label of the top-right plot (it can be in latex form)
+x12label: None   
+# Y-label of the top-right plot (it can be in latex form)
+y12label: None   
+</pre></div>
+</td></tr></table></div>
+</div>
 </div>
 <div class="section" id="definition-of-the-problem">
 <h2>Definition of the problem<a class="headerlink" href="#definition-of-the-problem" title="Permalink to this headline">¶</a></h2>
