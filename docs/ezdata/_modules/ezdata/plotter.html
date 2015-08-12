@@ -1,0 +1,1034 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ezdata.plotter &mdash; ezData 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="ezData 1.0 documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">ezData 1.0 documentation</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for ezdata.plotter</h1><div class="highlight"><pre>
+<span class="sd">&quot;&quot;&quot; A convenient plotting container</span>
+
+<span class="sd">In this package implements :class:`Plotter`, which is a simple container to</span>
+<span class="sd">dictionary like structure (e.g. :class:`dict`, :class:`np.recarray`,</span>
+<span class="sd">:class:`pandas.DataFrame`). It allows the user to plot directly using keys of</span>
+<span class="sd">the data and also allows rapid group plotting routines (groupy and facets).</span>
+
+<span class="sd">I was basically tired of all the packages doing fancy things and not allowing</span>
+<span class="sd">basics or requiring a lot of dependencies.</span>
+
+<span class="sd">Examples</span>
+<span class="sd">--------</span>
+
+<span class="sd">.. code-block::python</span>
+
+<span class="sd">    &gt;&gt; d = {...}</span>
+<span class="sd">    &gt;&gt; p = plotter.Plotter(d)</span>
+<span class="sd">    &gt;&gt; g = p.groupby(&#39;BRK&#39;, markers=&#39;&lt;^&gt;v.oxs&#39;, colors=&#39;parula_r&#39;)</span>
+<span class="sd">    &gt;&gt; g.plot(&#39;CRA&#39;, &#39;CDEC&#39;)</span>
+<span class="sd">    &gt;&gt; g.colorbar().set_label(&#39;BRK&#39;)</span>
+
+<span class="sd">Multiple groups can be done as well. (Caution, the `facet` option is not robust)</span>
+
+<span class="sd">.. code-block::python</span>
+
+<span class="sd">    &gt;&gt; g = p.groupby(&#39;BRK&#39;, facet=True, sharex=True, sharey=True).groupby(&#39;FLD&#39;)</span>
+<span class="sd">    &gt;&gt; g.plot(&#39;CRA&#39;, &#39;CDEC&#39;, &#39;o&#39;)</span>
+
+<span class="sd">.. note::</span>
+
+<span class="sd">    * tested with python 2.7, &amp; 3.4</span>
+<span class="sd">    * tested compatible with pandas (not required)</span>
+<span class="sd">    * requirements: numpy, matplotlib</span>
+
+<span class="sd">:author: Morgan Fouesneau</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="p">(</span><span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span><span class="p">,</span>
+                        <span class="n">unicode_literals</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">PY3</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">2</span>
+
+<span class="k">if</span> <span class="n">PY3</span><span class="p">:</span>
+    <span class="nb">basestring</span> <span class="o">=</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">basestring</span> <span class="o">=</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">unicode</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">pylab</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="kn">as</span> <span class="nn">mpl</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">itertools</span>
+
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Group&#39;</span><span class="p">,</span> <span class="s">&#39;Plotter&#39;</span><span class="p">,</span> <span class="s">&#39;create_common_cbar&#39;</span><span class="p">,</span> <span class="s">&#39;colorify&#39;</span><span class="p">,</span> <span class="s">&#39;evalexpr&#39;</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">get_doc_from</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="n">plt</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; decorator to add documentation from a module (default: matplotlib)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    name: str</span>
+<span class="sd">        name of the function to get the documentation from</span>
+<span class="sd">    obj: object</span>
+<span class="sd">        module from which the function is an attribute</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    decorator: callable</span>
+<span class="sd">        decorator</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">deco</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+        <span class="n">fn</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">fn</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">func</span><span class="o">.</span><span class="n">__doc__</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">func</span><span class="o">.</span><span class="n">__doc__</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">__doc__</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">func</span><span class="o">.</span><span class="n">__doc__</span> <span class="o">+=</span> <span class="n">fn</span><span class="o">.</span><span class="n">__doc__</span>
+        <span class="k">return</span> <span class="n">func</span>
+    <span class="k">return</span> <span class="n">deco</span>
+
+
+<span class="k">def</span> <span class="nf">_groupby</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; create an iterator which returns (key, DataFrame) grouped by each</span>
+<span class="sd">    value of key(value) &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">_arg_groupby</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="n">a</span><span class="p">:</span> <span class="n">b</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+        <span class="k">yield</span> <span class="n">k</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_arg_groupby</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; create an iterator which returns (key, index) grouped by each</span>
+<span class="sd">    value of key(value) &quot;&quot;&quot;</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+    <span class="n">ind</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">val</span><span class="p">))),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">grp</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">ind</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">grp</span><span class="p">]</span>
+        <span class="k">yield</span> <span class="n">k</span><span class="p">,</span> <span class="n">index</span>
+
+
+<div class="viewcode-block" id="Group"><a class="viewcode-back" href="../../ezdata.html#ezdata.plotter.Group">[docs]</a><span class="k">class</span> <span class="nc">Group</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Group multiple plotter instances into one container. This offers any function</span>
+<span class="sd">    of :class:`Plotter` through an implicit loop of any method It allows for</span>
+<span class="sd">    instance to generate multiple plots on the same axes or even facet plot</span>
+<span class="sd">    (one per group).</span>
+
+<span class="sd">    .. code-block:: python</span>
+
+<span class="sd">        &gt;&gt; g = Plotter(df).groupby(&#39;class&#39;)</span>
+<span class="sd">        &gt;&gt; g.set_options(facet=True, ncols=2, projection=&#39;aitoff&#39;)</span>
+<span class="sd">        # which is equivalent to</span>
+<span class="sd">        &gt;&gt; g = Plotter(df).groupby(&#39;class&#39;, facet=True, ncols=2, projection=&#39;aitoff&#39;)</span>
+<span class="sd">        &gt;&gt; g.plot(&#39;RA&#39;, &#39;Dec&#39;, &#39;o&#39;, alpha=0.5, mec=&#39;None&#39;)</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    seq: sequence</span>
+<span class="sd">        Sequence of Plotter instances</span>
+<span class="sd">    title: str</span>
+<span class="sd">        name of the group (used as label is nested groups)</span>
+<span class="sd">    facet: bool</span>
+<span class="sd">        set to use facets, i.e., one subplot per element of the group</span>
+<span class="sd">    markers: iterable</span>
+<span class="sd">        sequence of markers one per group</span>
+<span class="sd">    linestyles: iterable</span>
+<span class="sd">        sequence of linestyles one per group</span>
+<span class="sd">    colors: seq or Colormap</span>
+<span class="sd">        sequence of colors or Colormap instance from which deriving a</span>
+<span class="sd">        sequence of colors to encode each group</span>
+<span class="sd">        if Colormap instance, a cmap attribute will be generated after a</span>
+<span class="sd">        plot and will refer to the updated instance</span>
+<span class="sd">    sharex: bool</span>
+<span class="sd">        set to share x-axis with all subplots</span>
+<span class="sd">    sharey: bool</span>
+<span class="sd">        set to share y-axis with all subplots</span>
+<span class="sd">    kwargs: dict</span>
+<span class="sd">        any other option will be forwarded to :func:`plt.subplot`</span>
+
+<span class="sd">    .. see also::</span>
+
+<span class="sd">        :func:`set_options`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">seq</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">seq</span> <span class="o">=</span> <span class="n">seq</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">facet</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">markers</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">linestyles</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">colors</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ncols</span> <span class="o">=</span> <span class="mi">3</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sharex</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sharey</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">axes</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">create_common_cbar</span> <span class="o">=</span> <span class="n">create_common_cbar</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_options</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">show</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span>
+
+<div class="viewcode-block" id="Group.make_facets"><a class="viewcode-back" href="../../ezdata.html#ezdata.plotter.Group.make_facets">[docs]</a>    <span class="k">def</span> <span class="nf">make_facets</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; generates multiple subplots</span>
+<span class="sd">        uses self.ncols as number of columns</span>
+<span class="sd">        and subplots are also using self.kwargs.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        axes: sequence</span>
+<span class="sd">            sequence of the axes instance from the subplots</span>
+
+<span class="sd">        .. see also::</span>
+
+<span class="sd">            :func:`set_options`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">axes</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">ncols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ncols</span>
+        <span class="n">nlines</span> <span class="o">=</span> <span class="n">n</span> <span class="o">//</span> <span class="n">ncols</span>
+        <span class="k">if</span> <span class="n">ncols</span> <span class="o">*</span> <span class="n">nlines</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+            <span class="n">nlines</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">nlines</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">nlines</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="n">ncols</span> <span class="o">=</span> <span class="n">n</span>
+        <span class="n">axes</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">sharex</span> <span class="o">=</span> <span class="n">sharey</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sharex</span><span class="p">:</span>
+                <span class="n">sharex</span> <span class="o">=</span> <span class="n">ax</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sharey</span><span class="p">:</span>
+                <span class="n">sharey</span> <span class="o">=</span> <span class="n">ax</span>
+            <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">nlines</span><span class="p">,</span> <span class="n">ncols</span><span class="p">,</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="n">sharex</span><span class="p">,</span>
+                             <span class="n">sharey</span><span class="o">=</span><span class="n">sharey</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="n">axes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">seq</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">label</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">seq</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">label</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sharex</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">ncols</span><span class="p">):</span>
+                    <span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">(),</span> <span class="n">visible</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sharey</span><span class="p">):</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">k</span> <span class="o">%</span> <span class="n">ncols</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_yticklabels</span><span class="p">(),</span> <span class="n">visible</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">axes</span> <span class="o">=</span> <span class="n">axes</span>
+        <span class="k">return</span> <span class="n">axes</span>
+</div>
+<div class="viewcode-block" id="Group.set_options"><a class="viewcode-back" href="../../ezdata.html#ezdata.plotter.Group.set_options">[docs]</a>    <span class="k">def</span> <span class="nf">set_options</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Set some options</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        title: str</span>
+<span class="sd">            rename the group</span>
+<span class="sd">        facet: bool</span>
+<span class="sd">            set the group to display facets or one plot</span>
+<span class="sd">        ncols: int</span>
+<span class="sd">            when facet is True, this gives how many columns should be used</span>
+<span class="sd">        markers: seq</span>
+<span class="sd">            sequence of markers (will cycle through)</span>
+<span class="sd">        linestyles: seq</span>
+<span class="sd">            sequence of linestyles (will cycle through)</span>
+<span class="sd">        colors: seq or Colormap</span>
+<span class="sd">            sequence of colors or Colormap instance from which deriving a</span>
+<span class="sd">            sequence of colors to encode each group</span>
+<span class="sd">            if Colormap instance, a cmap attribute will be generated after a</span>
+<span class="sd">            plot and will refer to the updated instance</span>
+<span class="sd">        sharex: bool</span>
+<span class="sd">            set to share x-axis with all subplots</span>
+<span class="sd">        sharey: bool</span>
+<span class="sd">            set to share y-axis with all subplots</span>
+<span class="sd">        kwargs: dict</span>
+<span class="sd">            any other option will be forwarded to :func:`plt.subplot`</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        self: Group instance</span>
+<span class="sd">            returns itself for conveniance when writting one liners.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;title&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="n">facet</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;facet&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="n">ncols</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;ncols&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="n">markers</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;markers&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="n">colors</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;colors&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="n">linestyles</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;linestyles&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="n">labels</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;labels&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="n">sharex</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;sharex&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="n">sharey</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;sharey&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">sharex</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sharex</span> <span class="o">=</span> <span class="n">sharex</span>
+        <span class="k">if</span> <span class="n">sharey</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sharey</span> <span class="o">=</span> <span class="n">sharey</span>
+        <span class="k">if</span> <span class="n">title</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span>
+        <span class="k">if</span> <span class="n">facet</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">facet</span> <span class="o">=</span> <span class="n">facet</span>
+        <span class="k">if</span> <span class="n">ncols</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ncols</span> <span class="o">=</span> <span class="n">ncols</span>
+        <span class="k">if</span> <span class="n">markers</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">markers</span> <span class="o">=</span> <span class="n">markers</span>
+        <span class="k">if</span> <span class="n">colors</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">colors</span> <span class="o">=</span> <span class="n">colors</span>
+            <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">colors</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">basestring</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">colors</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">colors</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">linestyles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">linestyles</span> <span class="o">=</span> <span class="n">linestyles</span>
+        <span class="k">if</span> <span class="n">labels</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">seq</span><span class="p">,</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">(</span><span class="n">labels</span><span class="p">)):</span>
+                <span class="n">k</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">v</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span>
+</div>
+<div class="viewcode-block" id="Group.groupby"><a class="viewcode-back" href="../../ezdata.html#ezdata.plotter.Group.groupby">[docs]</a>    <span class="k">def</span> <span class="nf">groupby</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">select</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Make individual plots per group</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        key: str</span>
+<span class="sd">            key on which building groups</span>
+
+<span class="sd">        select: sequence</span>
+<span class="sd">            explicit selection on the groups</span>
+<span class="sd">            if a group does not exist, it will be returned empty</span>
+
+<span class="sd">        labels: dict</span>
+<span class="sd">            set to replace the group names by a specific label string during</span>
+<span class="sd">            the plot</span>
+
+<span class="sd">        kwargs: dict</span>
+<span class="sd">            optional keywords forwarded to :func:`set_options` method</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        g: Group instance</span>
+<span class="sd">            group of plotters</span>
+
+<span class="sd">        .. see also::</span>
+
+<span class="sd">            :func:`set_options`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gg</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">sk</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">seq</span><span class="p">:</span>
+            <span class="n">lst</span> <span class="o">=</span> <span class="n">sk</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">select</span><span class="o">=</span><span class="n">select</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">sk</span><span class="o">.</span><span class="n">__dict__</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;seq&#39;</span><span class="p">,</span> <span class="s">&#39;title&#39;</span><span class="p">]:</span>
+                    <span class="nb">setattr</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">sk</span><span class="p">,</span> <span class="s">&#39;title&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="n">lst</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">sk</span><span class="o">.</span><span class="n">title</span>
+            <span class="n">lst</span><span class="o">.</span><span class="n">set_options</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="n">gg</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="n">gg</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Group.subplot"><a class="viewcode-back" href="../../ezdata.html#ezdata.plotter.Group.subplot">[docs]</a>    <span class="k">def</span> <span class="nf">subplot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; A convenient shortcut for one liner use</span>
+<span class="sd">        Generates a subplot with given arguments and returns `self`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span>
+</div>
+    <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">seq</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">txt</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;Object Group {0:s} (length={2:d}): {1:s}&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">txt</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="nb">object</span><span class="o">.</span><span class="n">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">__dir__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; show the content of Plotter &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">seq</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">__dir__</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Returns a looper function on each plotter of the group &quot;&quot;&quot;</span>
+        <span class="n">cyclenames</span> <span class="o">=</span> <span class="s">&#39;linestyles&#39;</span><span class="p">,</span> <span class="s">&#39;colors&#39;</span><span class="p">,</span> <span class="s">&#39;markers&#39;</span>
+        <span class="n">cyclekw</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">cyclenames</span><span class="p">}</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">colors</span><span class="p">,</span> <span class="n">mpl</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">Colormap</span><span class="p">):</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">sk</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">seq</span><span class="p">:</span>
+                <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">sk</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="p">]))</span>
+            <span class="n">colors</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="n">colorify</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+            <span class="n">cyclekw</span><span class="p">[</span><span class="s">&#39;colors&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">colors</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cmap</span> <span class="o">=</span> <span class="n">cmap</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">facet</span><span class="p">:</span>
+            <span class="n">axes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">make_facets</span><span class="p">()</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">looper_facet_method</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">seq</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">axes</span><span class="p">,</span> <span class="n">cyclekw</span><span class="o">=</span><span class="n">cyclekw</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">looper_method</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">seq</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">cyclekw</span><span class="o">=</span><span class="n">cyclekw</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Iterator over the individual plotter of the group &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">seq</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">k</span>
+
+    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Returns one plotter of the group &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">seq</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Group.looper_method"><a class="viewcode-back" href="../../ezdata.html#ezdata.plotter.Group.looper_method">[docs]</a>    <span class="k">def</span> <span class="nf">looper_method</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">methodname</span><span class="p">,</span> <span class="n">cyclekw</span><span class="o">=</span><span class="p">{},</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; calls a method on many instance of sequence of objects</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        lst: sequence</span>
+<span class="sd">            sequence of objects to call the method from</span>
+<span class="sd">        methodname: str</span>
+<span class="sd">            name of the method to call from each object</span>
+<span class="sd">        cyclekw: dict</span>
+<span class="sd">            keyword arguments that calls need to cycle over per object.</span>
+<span class="sd">            Each element in this dictionary is expected to be a sequence and one</span>
+<span class="sd">            element of each will be used per call. It will use</span>
+<span class="sd">            :func:`itertools.cycle`. (None elements are filtered)</span>
+<span class="sd">            cyclenames = &#39;linestyles&#39;, &#39;colors&#39;, &#39;markers&#39;</span>
+<span class="sd">        kw: dict</span>
+<span class="sd">            other keywords (have priority on `cyclekw`)</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        deco: callable</span>
+<span class="sd">            mapper function</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">cyclenames</span> <span class="o">=</span> <span class="s">&#39;linestyles&#39;</span><span class="p">,</span> <span class="s">&#39;colors&#39;</span><span class="p">,</span> <span class="s">&#39;markers&#39;</span>
+
+        <span class="n">_cyclekw</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">(</span><span class="n">cyclekw</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+                    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">cyclenames</span> <span class="k">if</span> <span class="n">cyclekw</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="p">}</span>
+
+        <span class="k">def</span> <span class="nf">next_cyclekw</span><span class="p">():</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span><span class="nb">next</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">_cyclekw</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+            <span class="k">return</span> <span class="n">a</span>
+
+        <span class="k">def</span> <span class="nf">deco</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
+                <span class="n">k0</span> <span class="o">=</span> <span class="n">next_cyclekw</span><span class="p">()</span>
+                <span class="n">kw</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">k0</span><span class="p">)</span>
+                <span class="n">kw</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">l</span><span class="o">.</span><span class="n">data</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">l</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+                    <span class="n">a</span> <span class="o">=</span> <span class="bp">None</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">a</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">methodname</span><span class="p">)(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+                <span class="n">r</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">r</span>
+        <span class="k">return</span> <span class="n">deco</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Group.looper_facet_method"><a class="viewcode-back" href="../../ezdata.html#ezdata.plotter.Group.looper_facet_method">[docs]</a>    <span class="k">def</span> <span class="nf">looper_facet_method</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">methodname</span><span class="p">,</span> <span class="n">axes</span><span class="p">,</span> <span class="n">cyclekw</span><span class="o">=</span><span class="p">{},</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        calls a method on many instance of sequence of objects but also imposes</span>
+<span class="sd">        ax as keyword argument. This method will also test if there is no data</span>
+<span class="sd">        to plot.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        lst: sequence</span>
+<span class="sd">            sequence of objects to call the method from</span>
+<span class="sd">        methodname: str</span>
+<span class="sd">            name of the method to call from each object</span>
+<span class="sd">        axes: sequence</span>
+<span class="sd">            list of axes, one per call</span>
+<span class="sd">        cyclekw: dict</span>
+<span class="sd">            keyword arguments that calls need to cycle over per object.</span>
+<span class="sd">            Each element in this dictionary is expected to be a sequence and one</span>
+<span class="sd">            element of each will be used per call. It will use</span>
+<span class="sd">            :func:`itertools.cycle`. (None elements are filtered)</span>
+<span class="sd">            cyclenames = &#39;linestyles&#39;, &#39;colors&#39;, &#39;markers&#39;</span>
+<span class="sd">        kw: dict</span>
+<span class="sd">            other keywords (have priority on `cyclekw`)</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        deco: callable</span>
+<span class="sd">            mapper function</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cyclenames</span> <span class="o">=</span> <span class="s">&#39;linestyles&#39;</span><span class="p">,</span> <span class="s">&#39;colors&#39;</span><span class="p">,</span> <span class="s">&#39;markers&#39;</span>
+
+        <span class="n">_cyclekw</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">(</span><span class="n">cyclekw</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+                    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">cyclenames</span> <span class="k">if</span> <span class="n">cyclekw</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="p">}</span>
+
+        <span class="k">def</span> <span class="nf">next_cyclekw</span><span class="p">():</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span><span class="nb">next</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">_cyclekw</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+            <span class="k">return</span> <span class="n">a</span>
+
+        <span class="k">def</span> <span class="nf">deco</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">l</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">axes</span><span class="p">):</span>
+                <span class="n">k0</span> <span class="o">=</span> <span class="n">next_cyclekw</span><span class="p">()</span>
+                <span class="n">kw</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">k0</span><span class="p">)</span>
+                <span class="n">kw</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">l</span><span class="o">.</span><span class="n">data</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">l</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+                    <span class="n">_intercept_empty_plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">kw</span><span class="p">[</span><span class="s">&#39;ax&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ax</span>
+                    <span class="n">a</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">methodname</span><span class="p">)(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+                    <span class="n">r</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">r</span>
+        <span class="k">return</span> <span class="n">deco</span>
+</div>
+    <span class="nd">@get_doc_from</span><span class="p">(</span><span class="s">&#39;colorbar&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="Group.colorbar"><a class="viewcode-back" href="../../ezdata.html#ezdata.plotter.Group.colorbar">[docs]</a>    <span class="k">def</span> <span class="nf">colorbar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;cmap&#39;</span><span class="p">):</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&#39;No registered colormap with the group&#39;</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">return</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cmap</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
+    <span class="k">def</span> <span class="nf">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">Group</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">seq</span><span class="p">,</span> <span class="n">other</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">__class__</span><span class="p">):</span>
+            <span class="c"># copy the list and append the new element</span>
+            <span class="n">g</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">([</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">seq</span><span class="p">])</span>
+            <span class="n">g</span><span class="o">.</span><span class="n">seq</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__dict__</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;seq&#39;</span><span class="p">,</span> <span class="s">&#39;title&#39;</span><span class="p">]:</span>
+                    <span class="nb">setattr</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">g</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s">&#39;Cannot add {0} type objects to {1} instance&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span>
+                               <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">))</span>
+
+</div>
+<div class="viewcode-block" id="Plotter"><a class="viewcode-back" href="../../ezdata.html#ezdata.plotter.Plotter">[docs]</a><span class="k">class</span> <span class="nc">Plotter</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A wrapper around plotting functions and DataFrame</span>
+<span class="sd">    This should also work with pure dictionary objects.</span>
+
+<span class="sd">    all plotting functions are basically proxies to matplotlib in which</span>
+<span class="sd">    arguments can be named columns from the data (not necessary) and each method handles a</span>
+<span class="sd">    `ax` keyword to specify a Axes instance to use (default using :func:`plt.gca`)</span>
+
+<span class="sd">    .. code-block:: python</span>
+
+<span class="sd">        Plotter(df).groupby(&#39;class&#39;).plot(&#39;RA&#39;, &#39;Dec&#39;, &#39;o&#39;, alpha=0.5, mec=&#39;None&#39;)</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data: dict-like structure</span>
+<span class="sd">        data with column named format</span>
+
+<span class="sd">    label: str, optional</span>
+<span class="sd">        label to use on the data as default label</span>
+
+<span class="sd">    allow_expressions: bool, optional</span>
+<span class="sd">        set to use math expressions with the keys</span>
+<span class="sd">        see :func:`evalexpr`</span>
+
+<span class="sd">    ax: plt.Axes instance</span>
+<span class="sd">        contains the last axes reference(s) after a plot</span>
+<span class="sd">        (do not exists if no plotting function was called)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">allow_expressions</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">label</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">allow_expressions</span> <span class="o">=</span> <span class="n">allow_expressions</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">show</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span>
+
+    <span class="k">def</span> <span class="nf">_value_from_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Parse a key for existing data in the dataframe. If not found,</span>
+<span class="sd">        returns the key directly &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">basestring</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">key</span>
+        <span class="k">elif</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">allow_expressions</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="n">evalexpr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+                <span class="k">except</span><span class="p">:</span>
+                    <span class="k">pass</span>
+            <span class="k">return</span> <span class="n">key</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+
+<div class="viewcode-block" id="Plotter.evalexpr"><a class="viewcode-back" href="../../ezdata.html#ezdata.plotter.Plotter.evalexpr">[docs]</a>    <span class="k">def</span> <span class="nf">evalexpr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span> <span class="n">exprvars</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; evaluate expression based on the data and external variables</span>
+<span class="sd">            all np function can be used (log, exp, pi...)</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        data: dict or dict-like structure</span>
+<span class="sd">            data frame / dict-like structure containing named columns</span>
+
+<span class="sd">        expr: str</span>
+<span class="sd">            expression to evaluate on the table</span>
+<span class="sd">            includes mathematical operations and attribute names</span>
+
+<span class="sd">        exprvars: dictionary, optional</span>
+<span class="sd">            A dictionary that replaces the local operands in current frame.</span>
+
+<span class="sd">        dtype: dtype definition</span>
+<span class="sd">            dtype of the output array</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        out : np.array</span>
+<span class="sd">            array of the result</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">evalexpr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span> <span class="n">exprvars</span><span class="o">=</span><span class="n">exprvars</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Plotter.subplot"><a class="viewcode-back" href="../../ezdata.html#ezdata.plotter.Plotter.subplot">[docs]</a>    <span class="k">def</span> <span class="nf">subplot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; A convenient shortcut for one liner use</span>
+<span class="sd">        Generates a subplot with given arguments and returns self.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span>
+</div>
+    <span class="nd">@get_doc_from</span><span class="p">(</span><span class="s">&#39;scatter&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="Plotter.scatter"><a class="viewcode-back" href="../../ezdata.html#ezdata.plotter.Plotter.scatter">[docs]</a>    <span class="k">def</span> <span class="nf">scatter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s">&#39;k&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">_x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value_from_data</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">_y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value_from_data</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+        <span class="n">_c</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value_from_data</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+        <span class="n">_s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value_from_data</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;ax&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="s">&#39;label&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span>
+
+        <span class="k">return</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">_x</span><span class="p">,</span> <span class="n">_y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">_c</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">_s</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
+    <span class="nd">@get_doc_from</span><span class="p">(</span><span class="s">&#39;plot&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="Plotter.plot"><a class="viewcode-back" href="../../ezdata.html#ezdata.plotter.Plotter.plot">[docs]</a>    <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">_x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value_from_data</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">_y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value_from_data</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;ax&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">axes</span> <span class="o">=</span> <span class="n">ax</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="s">&#39;label&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span>
+
+        <span class="k">return</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">_x</span><span class="p">,</span> <span class="n">_y</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
+    <span class="nd">@get_doc_from</span><span class="p">(</span><span class="s">&#39;hist&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="Plotter.hist"><a class="viewcode-back" href="../../ezdata.html#ezdata.plotter.Plotter.hist">[docs]</a>    <span class="k">def</span> <span class="nf">hist</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">_x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value_from_data</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;ax&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">axes</span> <span class="o">=</span> <span class="n">ax</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="s">&#39;label&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">_x</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
+    <span class="nd">@get_doc_from</span><span class="p">(</span><span class="s">&#39;hist2d&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="Plotter.hist2d"><a class="viewcode-back" href="../../ezdata.html#ezdata.plotter.Plotter.hist2d">[docs]</a>    <span class="k">def</span> <span class="nf">hist2d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">_x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value_from_data</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">_y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value_from_data</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;ax&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">axes</span> <span class="o">=</span> <span class="n">ax</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="s">&#39;label&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span>
+
+        <span class="k">return</span> <span class="n">ax</span><span class="o">.</span><span class="n">hist2d</span><span class="p">(</span><span class="n">_x</span><span class="p">,</span> <span class="n">_y</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
+    <span class="nd">@get_doc_from</span><span class="p">(</span><span class="s">&#39;hexbin&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="Plotter.hexbin"><a class="viewcode-back" href="../../ezdata.html#ezdata.plotter.Plotter.hexbin">[docs]</a>    <span class="k">def</span> <span class="nf">hexbin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">_x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value_from_data</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">_y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value_from_data</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+        <span class="n">_C</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value_from_data</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;ax&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">axes</span> <span class="o">=</span> <span class="n">ax</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="s">&#39;label&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span>
+
+        <span class="k">return</span> <span class="n">ax</span><span class="o">.</span><span class="n">hexbin</span><span class="p">(</span><span class="n">_x</span><span class="p">,</span> <span class="n">_y</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="n">_C</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
+    <span class="nd">@get_doc_from</span><span class="p">(</span><span class="s">&#39;violinplot&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="Plotter.violinplot"><a class="viewcode-back" href="../../ezdata.html#ezdata.plotter.Plotter.violinplot">[docs]</a>    <span class="k">def</span> <span class="nf">violinplot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_value_from_data</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">dataset</span><span class="p">]</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;ax&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">axes</span> <span class="o">=</span> <span class="n">ax</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="s">&#39;label&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span>
+        <span class="k">return</span> <span class="n">ax</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
+    <span class="nd">@get_doc_from</span><span class="p">(</span><span class="s">&#39;boxplot&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="Plotter.boxplot"><a class="viewcode-back" href="../../ezdata.html#ezdata.plotter.Plotter.boxplot">[docs]</a>    <span class="k">def</span> <span class="nf">boxplot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_value_from_data</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">dataset</span><span class="p">]</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;ax&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">axes</span> <span class="o">=</span> <span class="n">ax</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="s">&#39;label&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span>
+        <span class="k">return</span> <span class="n">ax</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Plotter.groupby"><a class="viewcode-back" href="../../ezdata.html#ezdata.plotter.Plotter.groupby">[docs]</a>    <span class="k">def</span> <span class="nf">groupby</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">select</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Make individual plots per group</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        key: str</span>
+<span class="sd">            key on which building groups</span>
+
+<span class="sd">        select: sequence</span>
+<span class="sd">            explicit selection on the groups</span>
+<span class="sd">            if a group does not exist, it will be returned empty</span>
+
+<span class="sd">        labels: dict</span>
+<span class="sd">            set to replace the group names by a specific label string during</span>
+<span class="sd">            the plot</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        g: Group instance</span>
+<span class="sd">            group of plotters</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">_groupby</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">select</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">grp</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">((</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">r</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">select</span><span class="p">)</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="p">[(</span><span class="n">k</span><span class="p">,</span> <span class="n">grp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="p">[]))</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">select</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">labels</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">labels</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="n">Plotter</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">labels</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">k</span><span class="p">))</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">r</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">Group</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">key</span><span class="p">)</span><span class="o">.</span><span class="n">set_options</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Plotter.lagplot"><a class="viewcode-back" href="../../ezdata.html#ezdata.plotter.Plotter.lagplot">[docs]</a>    <span class="k">def</span> <span class="nf">lagplot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A lag plot checks whether a data set or time series is random or not.</span>
+
+<span class="sd">        Random data should not exhibit any identifiable structure in the lag</span>
+<span class="sd">        plot. Non-random structure in the lag plot indicates that the</span>
+<span class="sd">        underlying data are not random.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        x: str</span>
+<span class="sd">            the data column to plot</span>
+<span class="sd">        t: int</span>
+<span class="sd">            lag to apply, default 1</span>
+
+<span class="sd">        see also: :func:`scatter`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">_x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value_from_data</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">_x</span><span class="p">[</span><span class="n">t</span><span class="p">:],</span> <span class="n">_x</span><span class="p">[:</span><span class="n">t</span><span class="p">]])</span>
+
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;ax&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">axes</span> <span class="o">=</span> <span class="n">ax</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="s">&#39;label&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span>
+
+        <span class="n">defaults</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">marker</span><span class="o">=</span><span class="s">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s">&#39;None&#39;</span><span class="p">)</span>
+        <span class="n">defaults</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">_x</span><span class="p">,</span> <span class="n">_y</span><span class="p">,</span> <span class="o">**</span><span class="n">defaults</span><span class="p">)</span>
+</div>
+    <span class="k">def</span> <span class="nf">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">Group</span><span class="p">([</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s">&#39;Cannot add {0} type objects to {1} instance&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span>
+                               <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">))</span>
+
+</div>
+<span class="k">def</span> <span class="nf">_intercept_empty_plot</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; fall back to empty plot when data is empty</span>
+
+<span class="sd">    Mostly designed to produce plots when forced group selections are made</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;ax&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+    <span class="c"># ax.cla()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s">&#39;No Data&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s">&#39;center&#39;</span><span class="p">,</span>
+            <span class="n">transform</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">transAxes</span><span class="p">)</span>
+    <span class="c"># Adjust x, y ticks spacing.</span>
+    <span class="c"># plt.setp(ax.get_xticklabels() + ax.get_yticklabels(), visible=False)</span>
+    <span class="c"># plt.setp(ax.get_xticklines() + ax.get_yticklines(), visible=False)</span>
+
+
+<div class="viewcode-block" id="evalexpr"><a class="viewcode-back" href="../../ezdata.html#ezdata.plotter.evalexpr">[docs]</a><span class="k">def</span> <span class="nf">evalexpr</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span> <span class="n">exprvars</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; evaluate expression based on the data and external variables</span>
+<span class="sd">        all np function can be used (log, exp, pi...)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data: dict or dict-like structure</span>
+<span class="sd">        data frame / dict-like structure containing named columns</span>
+
+<span class="sd">    expr: str</span>
+<span class="sd">        expression to evaluate on the table</span>
+<span class="sd">        includes mathematical operations and attribute names</span>
+
+<span class="sd">    exprvars: dictionary, optional</span>
+<span class="sd">        A dictionary that replaces the local operands in current frame.</span>
+
+<span class="sd">    dtype: dtype definition</span>
+<span class="sd">        dtype of the output array</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    out : np.array</span>
+<span class="sd">        array of the result</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_globals</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">keys</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s">&#39;keys&#39;</span><span class="p">):</span>
+        <span class="n">keys</span> <span class="o">+=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s">&#39;dtype&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">),</span> <span class="s">&#39;names&#39;</span><span class="p">):</span>
+        <span class="n">keys</span> <span class="o">+=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">names</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s">&#39;_aliases&#39;</span><span class="p">):</span>
+        <span class="c"># SimpleTable specials</span>
+        <span class="n">keys</span> <span class="o">+=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">_aliases</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+    <span class="n">keys</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">expr</span><span class="p">:</span>
+            <span class="n">_globals</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">exprvars</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">exprvars</span><span class="p">,</span> <span class="s">&#39;items&#39;</span><span class="p">))):</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s">&quot;Expecting a dictionary-like as condvars with an `items` method&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="p">(</span> <span class="n">exprvars</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="p">):</span>
+            <span class="n">_globals</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+
+    <span class="c"># evaluate expression, to obtain the final filter</span>
+    <span class="c"># r = np.empty( self.nrows, dtype=dtype)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">_globals</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">__dict__</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="create_common_cbar"><a class="viewcode-back" href="../../ezdata.html#ezdata.plotter.create_common_cbar">[docs]</a><span class="k">def</span> <span class="nf">create_common_cbar</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">box</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Create a common colorbar to a complex figure</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    vmin: float</span>
+<span class="sd">        minimum value on the colorscale</span>
+<span class="sd">    vmax: float</span>
+<span class="sd">        maximum value on the colorscale</span>
+<span class="sd">    box: tuple</span>
+<span class="sd">        axis definition box</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    cb: ColorBar instance</span>
+<span class="sd">        the colorbar object</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">box</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">box</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">]</span>
+
+    <span class="n">kw</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">spacing</span><span class="o">=</span><span class="s">&#39;proportional&#39;</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s">&#39;horizontal&#39;</span><span class="p">,</span>
+              <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span><span class="p">)</span>
+
+    <span class="n">kw</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">norm</span> <span class="o">=</span> <span class="n">kw</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;norm&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">norm</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">norm</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
+
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">box</span><span class="p">)</span>
+    <span class="n">cb</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">ColorbarBase</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cb</span>
+
+</div>
+<span class="k">def</span> <span class="nf">create_common_legend</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span> <span class="n">markers</span><span class="o">=</span><span class="s">&#39;s&#39;</span><span class="p">,</span> <span class="n">mec</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                         <span class="n">linestyles</span><span class="o">=</span><span class="s">&#39;None&#39;</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">fig</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                         <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Create a legend from the symbols without the actual plot</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    labels: seq</span>
+<span class="sd">        sequence of label strings</span>
+<span class="sd">    colors: seq or Colormap</span>
+<span class="sd">        sequence of colors or Colormap instance from which deriving a</span>
+<span class="sd">        sequence of colors to encode each group</span>
+<span class="sd">        if Colormap instance, a cmap attribute will be generated after a</span>
+<span class="sd">        plot and will refer to the updated instance</span>
+<span class="sd">    markers: seq</span>
+<span class="sd">        sequence of markers (will cycle through)</span>
+<span class="sd">        default is `s`, i.e., a square</span>
+<span class="sd">    mec: seq</span>
+<span class="sd">        marker edge colors</span>
+<span class="sd">    linestyles: seq</span>
+<span class="sd">        sequence of linestyles (will cycle through)</span>
+<span class="sd">    linewidths: seq</span>
+<span class="sd">        sequence of linewidths (will cycle through)</span>
+<span class="sd">    fig: plt.Figure</span>
+<span class="sd">        figure to add a legend (default: `plt.gcf()`)</span>
+<span class="sd">    kwargs: dict</span>
+<span class="sd">        any other keyword will go to :func:`plt.legend`</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    lgd: plt.Legend instance</span>
+<span class="sd">        the newly created legend</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">matplotlib.lines</span> <span class="kn">import</span> <span class="n">Line2D</span>
+    <span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">cycle</span>
+
+    <span class="k">if</span> <span class="n">fig</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span>
+
+    <span class="n">defaults</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">numpoints</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">defaults</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">mec</span><span class="p">,</span> <span class="s">&#39;__iter__&#39;</span><span class="p">):</span>
+        <span class="n">mec</span> <span class="o">=</span> <span class="p">[</span><span class="n">mec</span><span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">linewidths</span><span class="p">,</span> <span class="s">&#39;__iter__&#39;</span><span class="p">):</span>
+        <span class="n">linewidths</span> <span class="o">=</span> <span class="p">[</span><span class="n">linewidths</span><span class="p">]</span>
+
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">lbl</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">ls</span><span class="p">,</span> <span class="n">me</span><span class="p">,</span> <span class="n">lw</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span> <span class="n">cycle</span><span class="p">(</span><span class="n">markers</span><span class="p">),</span>
+                                         <span class="n">cycle</span><span class="p">(</span><span class="n">linestyles</span><span class="p">),</span> <span class="n">cycle</span><span class="p">(</span><span class="n">mec</span><span class="p">),</span>
+                                         <span class="n">cycle</span><span class="p">(</span><span class="n">linewidths</span><span class="p">)):</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="n">Line2D</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="n">m</span><span class="p">,</span> <span class="n">mec</span><span class="o">=</span><span class="n">me</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="n">ls</span><span class="p">,</span>
+                   <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="n">lw</span><span class="p">)</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+
+    <span class="n">lgd</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">lend</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="o">**</span><span class="n">defaults</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">draw_if_interactive</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">lgd</span>
+
+
+<div class="viewcode-block" id="colorify"><a class="viewcode-back" href="../../ezdata.html#ezdata.plotter.colorify">[docs]</a><span class="k">def</span> <span class="nf">colorify</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Spectral</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Associate a color map to a quantity vector</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data: sequence</span>
+<span class="sd">        values to encode</span>
+<span class="sd">    vmin: float</span>
+<span class="sd">        minimum value</span>
+<span class="sd">    vmax: float</span>
+<span class="sd">        maximum value</span>
+<span class="sd">    cmap: Colormap instance</span>
+<span class="sd">        colormap to use</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    colors: sequence or array</span>
+<span class="sd">        one color per input data</span>
+<span class="sd">    cmap: Colormap</span>
+<span class="sd">        data normalized colormap instance</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="kn">import</span> <span class="n">Normalize</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="c"># old mpl</span>
+        <span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="kn">import</span> <span class="n">normalize</span> <span class="k">as</span> <span class="n">Normalize</span>
+
+    <span class="n">_vmin</span> <span class="o">=</span> <span class="n">vmin</span> <span class="ow">or</span> <span class="nb">min</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">_vmax</span> <span class="o">=</span> <span class="n">vmax</span> <span class="ow">or</span> <span class="nb">max</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">cNorm</span> <span class="o">=</span> <span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="n">_vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">_vmax</span><span class="p">)</span>
+
+    <span class="n">scalarMap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">ScalarMappable</span><span class="p">(</span><span class="n">norm</span><span class="o">=</span><span class="n">cNorm</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">colors</span> <span class="o">=</span> <span class="n">scalarMap</span><span class="o">.</span><span class="n">to_rgba</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="n">colors</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">scalarMap</span><span class="o">.</span><span class="n">to_rgba</span><span class="p">,</span> <span class="n">data</span><span class="p">))</span>
+    <span class="n">scalarMap</span><span class="o">.</span><span class="n">set_array</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">colors</span><span class="p">,</span> <span class="n">scalarMap</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">ezData</a></h1>
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=mfouesneau&repo=ezdata&type=watch&count=true&size=large"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2015, M. Fouesneau.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.2.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.3</a>
+      
+    </div>
+
+    
+    <a href="https://github.com/mfouesneau/ezdata" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>

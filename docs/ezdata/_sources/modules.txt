@@ -1,0 +1,7 @@
+ezdata
+======
+
+.. toctree::
+   :maxdepth: 4
+
+   ezdata
