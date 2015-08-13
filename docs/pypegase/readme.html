@@ -1,139 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>pyPEGASE v1.0 &mdash; pyPegase 1.0 documentation</title>
-  
-
-  
-  
-
-  
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
-  
-  
-
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pyPEGASE v1.0 &mdash; pyPegase 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:'./',
-        VERSION:'1.0',
-        COLLAPSE_INDEX:false,
-        FILE_SUFFIX:'.html',
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="pyPegase 1.0 documentation" href="index.html" />
+    <link rel="prev" title="pyPegase" href="intro.html" />
+	<script type="text/x-mathjax-config"> MathJax.Hub.Config({
+		"TeX": {Macros: {AA : "{\\unicode{x212B}}"}}, "HTML-CSS": {scale: 90}});
+	</script>
 
-    
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="intro.html" title="pyPegase"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">pyPegase 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
 
-  
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
-    <script type="text/javascript">
-        jQuery(function () {
-            SphinxRtdTheme.StickyNav.enable();
-        });
-    </script>
-  
-
-  
-    <link rel="top" title="pyPegase 1.0 documentation" href="index.html"/>
-        <link rel="prev" title="pyPegase" href="intro.html"/> 
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
-
-</head>
-
-<body class="wy-body-for-nav" role="document">
-
-  <div class="wy-grid-for-nav">
-
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
-        <a href="index.html" class="fa fa-home"> pyPegase</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-      </div>
-
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        
-        
-            <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="intro.html">pyPegase</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#simple-stellar-population-ssp">Simple stellar population (SSP)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#examples">Examples</a></li>
-</ul>
-</li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">pyPEGASE v1.0</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#contents-of-the-directory">Contents of the directory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#quick-start">Quick Start</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#quick-start-by-example-3-steps-to-build-one-continuous-population">Quick start by example : 3 steps to build one &#8220;continuous&#8221; population</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#quick-start-by-example-3-steps-to-build-one-discrete-population">Quick start by example: 3 steps to build one &#8220;discrete&#8221; population</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#quick-start-by-example-3-steps-to-build-one-fast-discrete-population">Quick start by example: 3 steps to build one &#8220;fast-discrete&#8221; population</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#customize-your-runs">Customize your runs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#produce-large-collections-of-simulations">Produce large collections of simulations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#compute-colors">Compute colors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#for-those-who-wish-to-read-edit-the-codes">For those who wish to read/edit the codes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#required-acknowledgements">Required acknowledgements</a></li>
-</ul>
-</li>
-</ul>
-
-        
-      </div>
-      &nbsp;
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">pyPegase</a>
-      </nav>
-
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>pyPEGASE v1.0</li>
-      <li class="wy-breadcrumbs-aside">
-        
-          <a href="_sources/readme.txt" rel="nofollow"> View page source</a>
-        
-      </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main">
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
             
   <div class="section" id="pypegase-v1-0">
 <h1>pyPEGASE v1.0<a class="headerlink" href="#pypegase-v1-0" title="Permalink to this headline">¶</a></h1>
@@ -249,7 +167,7 @@ the structure of the code.</p>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">units are handled with an adaptation of <cite>pint</cite> (standalone version included)</p>
+<p class="last">units are handled with an adaptation of <a class="reference external" href="http://pint.readthedocs.org/en/0.6/">pint</a> (standalone version included)</p>
 </div>
 </div>
 <div class="section" id="optional">
@@ -312,7 +230,8 @@ The results computed in this mode are normalized to <span class="math">\(1\,M_\o
 <li><strong>discrete</strong> and <strong>fast-discrete</strong>: both modes assume a discrete sampling of
 the mass function.  The results are provided for a given number of stars
 (user-defined).  The fast-discrete mode approximates the spectral contribution
-of each star in order to speed up calculations (&lt;3% error in flux).</li>
+of each star in order to speed up calculations (&lt;3% error in flux with the
+default parameters).</li>
 </ul>
 </div>
 <div class="section" id="shopping-centers-where-to-find-the-ingredients">
@@ -438,7 +357,7 @@ ingredient.</p>
 <span class="n">pylab</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Some details, if you want to do it by hand instead of using a black box at step 3:</p>
+<p><strong>Some details, if you want to do it by hand instead of using a black box</strong> at step 3:</p>
 <p>3.1 Selected isochrone <span class="math">\((t,Z)\)</span> in the continuous prescription (this
 prescription imposes the isochrone sampling too.)</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">stars</span> <span class="o">=</span> <span class="n">oISO</span><span class="o">.</span><span class="n">_get_continuous_isochrone</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">Z</span><span class="p">)</span>
@@ -451,7 +370,7 @@ contains all the needed the quantities (logT, logg, logL, Z, M, and
 more)</p>
 </div>
 <p>3.2 Compute the contribution of each bin of mass with respect to the IMF:
-expected fraction of stars: <span class="math">\(dN = imf(M) * dM\)</span></p>
+expected fraction of stars: <span class="math">\(dN = imf(M) \times dM\)</span></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">dN</span> <span class="o">=</span> <span class="n">oIMF</span><span class="o">.</span><span class="n">nstars</span><span class="p">(</span> <span class="n">stars</span><span class="p">[</span><span class="s">&#39;logM&#39;</span><span class="p">],</span> <span class="n">dlogm</span><span class="o">=</span><span class="n">stars</span><span class="p">[</span><span class="s">&#39;dlogm&#39;</span><span class="p">]</span> <span class="p">)</span>
 </pre></div>
 </div>
@@ -463,7 +382,8 @@ expected fraction of stars: <span class="math">\(dN = imf(M) * dM\)</span></p>
 <dt>3.3 Interpolate the spectral library and compute the weight of each library star</dt>
 <dd>in the integrated spectrum of the isochrone population.</dd>
 </dl>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">r</span> <span class="o">=</span> <span class="n">oSL</span><span class="o">.</span><span class="n">interpMany</span><span class="p">(</span><span class="n">stars</span><span class="p">[</span><span class="s">&#39;logT&#39;</span><span class="p">],</span> <span class="n">stars</span><span class="p">[</span><span class="s">&#39;logg&#39;</span><span class="p">],</span> <span class="n">Z</span><span class="p">,</span> <span class="n">stars</span><span class="p">[</span><span class="s">&#39;logL&#39;</span><span class="p">],</span> <span class="n">weights</span><span class="o">=</span><span class="n">dN</span> <span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">r</span> <span class="o">=</span> <span class="n">oSL</span><span class="o">.</span><span class="n">interpMany</span><span class="p">(</span><span class="n">stars</span><span class="p">[</span><span class="s">&#39;logT&#39;</span><span class="p">],</span> <span class="n">stars</span><span class="p">[</span><span class="s">&#39;logg&#39;</span><span class="p">],</span> <span class="n">Z</span><span class="p">,</span> <span class="n">stars</span><span class="p">[</span><span class="s">&#39;logL&#39;</span><span class="p">],</span> \
+                   <span class="n">weights</span><span class="o">=</span><span class="n">dN</span> <span class="p">)</span>
 </pre></div>
 </div>
 <p>3.4 Sum the contributions from the stars in the library itself using the
@@ -479,10 +399,20 @@ interpolation weights <cite>r</cite></p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>Units: fluxes are by default in Lsun/AA/1Msun (AA=Angstroem, Lsun=bolometric luminosity of the Sun).</p>
-<p>a keyword inLsun of genSpectrum is available to switch to ergs/s/AA/1Msun</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Units:</th><td class="field-body">fluxes are by default in <span class="math">\(L_\odot/\AA/1\,M_\odot\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>(<span class="math">\(\AA\)</span> refers to Angstroem, <span class="math">\(L_\odot\)</span> is the bolometric luminosity of the
+Sun).</p>
+<p>a keyword <cite>inLsun</cite> of <tt class="xref py py-func docutils literal"><span class="pre">genSpectrum()</span></tt> is available to switch to
+<span class="math">\(ergs/s/\AA/1\,M_\odot\)</span></p>
 <p class="last">All functions are able to use units in most of their arguments when it
-makes sense. e.g., wavelength definitions supports units AA, um, nm, etc...</p>
+makes sense. e.g., wavelength definitions supports units <cite>AA</cite>, <cite>um</cite>, <cite>nm</cite>, etc...</p>
 </div>
 </div>
 <div class="section" id="quick-start-by-example-3-steps-to-build-one-discrete-population">
@@ -628,11 +558,11 @@ could be reduced to the following code:</p>
 <li>In <cite>imf</cite>, you will find a variety of IMFs defined. Edit this file or derive
 <tt class="xref py py-class docutils literal"><span class="pre">IMF</span></tt> to use your own favourite.</li>
 <li>In <cite>isochrones</cite> two sets of isochrones are currently available :
-isochrone.Padova2010 (Girardi+2010), and isochrone.pegase (Fioc+1997),
+<tt class="xref py py-class docutils literal"><span class="pre">isochrone.Padova2010</span></tt> (Girardi+2010), and <tt class="xref py py-class docutils literal"><span class="pre">isochrone.pegase</span></tt> (Fioc+1997),
 based on Padova 2004 with extension to TPAGB and reconnection to WD).
 we also provide an direct interface to the padova website CMD.</li>
 <li>In <cite>stellibs</cite> two spectral libraries are currently available :
-stellibs.BaSeL (Lejeune+1998) and stellib.Elodie (as in PegaseHR,
+<tt class="xref py py-class docutils literal"><span class="pre">stellibs.BaSeL</span></tt> (Lejeune+1998) and <tt class="xref py py-class docutils literal"><span class="pre">stellib.Elodie</span></tt> (as in PegaseHR,
 Le Borgne+2004</li>
 </ul>
 </dd>
@@ -659,33 +589,86 @@ Le Borgne+2004</li>
 
 
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-      
-        <a href="intro.html" class="btn btn-neutral" title="pyPegase"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2014, Morgan Fouesneau, Ariane Lancon, and Michel Fioc.
-    </p>
-  </div>
-
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
-</footer>
         </div>
       </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">pyPegase</a></h1>
 
-    </section>
 
-  </div>
-  
 
-</body>
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=mfouesneau&repo=pypegase&type=watch&count=true&size=large"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">pyPEGASE v1.0</a><ul>
+<li><a class="reference internal" href="#contents-of-the-directory">Contents of the directory</a></li>
+<li><a class="reference internal" href="#setup">Setup</a><ul>
+<li><a class="reference internal" href="#requirements">Requirements</a></li>
+<li><a class="reference internal" href="#optional">Optional</a></li>
+<li><a class="reference internal" href="#customization">Customization</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#quick-start">Quick Start</a><ul>
+<li><a class="reference internal" href="#ssp-generation-description">SSP Generation Description</a></li>
+<li><a class="reference internal" href="#calculation-modes">Calculation Modes</a></li>
+<li><a class="reference internal" href="#shopping-centers-where-to-find-the-ingredients">Shopping centers: Where to find the ingredients?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#quick-start-by-example-3-steps-to-build-one-continuous-population">Quick start by example : 3 steps to build one &#8220;continuous&#8221; population</a></li>
+<li><a class="reference internal" href="#quick-start-by-example-3-steps-to-build-one-discrete-population">Quick start by example: 3 steps to build one &#8220;discrete&#8221; population</a></li>
+<li><a class="reference internal" href="#quick-start-by-example-3-steps-to-build-one-fast-discrete-population">Quick start by example: 3 steps to build one &#8220;fast-discrete&#8221; population</a></li>
+<li><a class="reference internal" href="#customize-your-runs">Customize your runs</a></li>
+<li><a class="reference internal" href="#produce-large-collections-of-simulations">Produce large collections of simulations</a></li>
+<li><a class="reference internal" href="#compute-colors">Compute colors</a></li>
+<li><a class="reference internal" href="#for-those-who-wish-to-read-edit-the-codes">For those who wish to read/edit the codes</a></li>
+<li><a class="reference internal" href="#required-acknowledgements">Required acknowledgements</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="intro.html" title="pyPegase"
+             >previous</a> |</li>
+        <li><a href="index.html">pyPegase 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Morgan Fouesneau, Ariane Lancon, and Michel Fioc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
 </html>

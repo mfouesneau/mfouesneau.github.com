@@ -83,7 +83,7 @@ Requirements
 
 .. note::
 
-        units are handled with an adaptation of `pint` (standalone version included)
+        units are handled with an adaptation of `pint <http://pint.readthedocs.org/en/0.6/>`_ (standalone version included)
 
 Optional
 ~~~~~~~~
@@ -146,7 +146,8 @@ fully **discrete**, and **fast-discrete**.
 * **discrete** and **fast-discrete**: both modes assume a discrete sampling of
   the mass function.  The results are provided for a given number of stars
   (user-defined).  The fast-discrete mode approximates the spectral contribution
-  of each star in order to speed up calculations (<3% error in flux).
+  of each star in order to speed up calculations (<3% error in flux with the
+  default parameters).
 
 
 Shopping centers: Where to find the ingredients?
@@ -237,7 +238,7 @@ Plot the result with your favourite python tool, for instance
         pylab.loglog(l, s)
 
 
-Some details, if you want to do it by hand instead of using a black box at step 3:
+**Some details, if you want to do it by hand instead of using a black box** at step 3:
 
 3.1 Selected isochrone :math:`(t,Z)` in the continuous prescription (this
 prescription imposes the isochrone sampling too.)
@@ -253,7 +254,7 @@ prescription imposes the isochrone sampling too.)
         more)
 
 3.2 Compute the contribution of each bin of mass with respect to the IMF:
-expected fraction of stars: :math:`dN = imf(M) * dM`
+expected fraction of stars: :math:`dN = imf(M) \times dM`
 
 .. code-block:: python
 
@@ -268,7 +269,8 @@ expected fraction of stars: :math:`dN = imf(M) * dM`
 
 .. code-block:: python
 
-       r = oSL.interpMany(stars['logT'], stars['logg'], Z, stars['logL'], weights=dN )
+       r = oSL.interpMany(stars['logT'], stars['logg'], Z, stars['logL'], \
+                          weights=dN )
 
 3.4 Sum the contributions from the stars in the library itself using the
 interpolation weights `r`
@@ -287,12 +289,15 @@ interpolation weights `r`
 
 .. note::
 
-        Units: fluxes are by default in Lsun/AA/1Msun (AA=Angstroem, Lsun=bolometric luminosity of the Sun).
+        :Units: fluxes are by default in :math:`L_\odot/\AA/1\,M_\odot`
+        (:math:`\AA` refers to Angstroem, :math:`L_\odot` is the bolometric luminosity of the
+        Sun).
         
-        a keyword inLsun of genSpectrum is available to switch to ergs/s/AA/1Msun
+        a keyword `inLsun` of :func:`genSpectrum` is available to switch to 
+        :math:`ergs/s/\AA/1\,M_\odot`
 
         All functions are able to use units in most of their arguments when it
-        makes sense. e.g., wavelength definitions supports units AA, um, nm, etc...
+        makes sense. e.g., wavelength definitions supports units `AA`, `um`, `nm`, etc...
 
 
 Quick start by example: 3 steps to build one "discrete" population
@@ -447,11 +452,11 @@ Customize your runs
         - In `imf`, you will find a variety of IMFs defined. Edit this file or derive
           :class:`IMF` to use your own favourite.
         - In `isochrones` two sets of isochrones are currently available :
-          isochrone.Padova2010 (Girardi+2010), and isochrone.pegase (Fioc+1997),
+          :class:`isochrone.Padova2010` (Girardi+2010), and :class:`isochrone.pegase` (Fioc+1997),
           based on Padova 2004 with extension to TPAGB and reconnection to WD).
           we also provide an direct interface to the padova website CMD.
         - In `stellibs` two spectral libraries are currently available :
-          stellibs.BaSeL (Lejeune+1998) and stellib.Elodie (as in PegaseHR, 
+          :class:`stellibs.BaSeL` (Lejeune+1998) and :class:`stellib.Elodie` (as in PegaseHR, 
           Le Borgne+2004
 
 * Redden the output spectra :

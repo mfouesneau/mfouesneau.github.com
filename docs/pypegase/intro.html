@@ -1,140 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>pyPegase &mdash; pyPegase 1.0 documentation</title>
-  
-
-  
-  
-
-  
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
-  
-  
-
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pyPegase &mdash; pyPegase 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:'./',
-        VERSION:'1.0',
-        COLLAPSE_INDEX:false,
-        FILE_SUFFIX:'.html',
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="pyPegase 1.0 documentation" href="index.html" />
+    <link rel="next" title="pyPEGASE v1.0" href="readme.html" />
+    <link rel="prev" title="Welcome to PyPegase’s documentation!" href="index.html" />
+	<script type="text/x-mathjax-config"> MathJax.Hub.Config({
+		"TeX": {Macros: {AA : "{\\unicode{x212B}}"}}, "HTML-CSS": {scale: 90}});
+	</script>
 
-    
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="readme.html" title="pyPEGASE v1.0"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to PyPegase’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">pyPegase 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
 
-  
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
-    <script type="text/javascript">
-        jQuery(function () {
-            SphinxRtdTheme.StickyNav.enable();
-        });
-    </script>
-  
-
-  
-    <link rel="top" title="pyPegase 1.0 documentation" href="index.html"/>
-        <link rel="next" title="pyPEGASE v1.0" href="readme.html"/>
-        <link rel="prev" title="Welcome to PyPegase’s documentation!" href="index.html"/> 
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
-
-</head>
-
-<body class="wy-body-for-nav" role="document">
-
-  <div class="wy-grid-for-nav">
-
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
-        <a href="index.html" class="fa fa-home"> pyPegase</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-      </div>
-
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        
-        
-            <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="">pyPegase</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#simple-stellar-population-ssp">Simple stellar population (SSP)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="readme.html">pyPEGASE v1.0</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="readme.html#contents-of-the-directory">Contents of the directory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="readme.html#setup">Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="readme.html#quick-start">Quick Start</a></li>
-<li class="toctree-l2"><a class="reference internal" href="readme.html#quick-start-by-example-3-steps-to-build-one-continuous-population">Quick start by example : 3 steps to build one &#8220;continuous&#8221; population</a></li>
-<li class="toctree-l2"><a class="reference internal" href="readme.html#quick-start-by-example-3-steps-to-build-one-discrete-population">Quick start by example: 3 steps to build one &#8220;discrete&#8221; population</a></li>
-<li class="toctree-l2"><a class="reference internal" href="readme.html#quick-start-by-example-3-steps-to-build-one-fast-discrete-population">Quick start by example: 3 steps to build one &#8220;fast-discrete&#8221; population</a></li>
-<li class="toctree-l2"><a class="reference internal" href="readme.html#customize-your-runs">Customize your runs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="readme.html#produce-large-collections-of-simulations">Produce large collections of simulations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="readme.html#compute-colors">Compute colors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="readme.html#for-those-who-wish-to-read-edit-the-codes">For those who wish to read/edit the codes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="readme.html#required-acknowledgements">Required acknowledgements</a></li>
-</ul>
-</li>
-</ul>
-
-        
-      </div>
-      &nbsp;
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">pyPegase</a>
-      </nav>
-
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>pyPegase</li>
-      <li class="wy-breadcrumbs-aside">
-        
-          <a href="_sources/intro.txt" rel="nofollow"> View page source</a>
-        
-      </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main">
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
             
   <div class="section" id="pypegase">
 <h1>pyPegase<a class="headerlink" href="#pypegase" title="Permalink to this headline">¶</a></h1>
@@ -150,8 +71,13 @@ spectrum with a synthetic spectral energy distribution (SED) or adjust synthetic
 SEDs with the integrated photometry, which remains the path of choice for
 studying large samples.  Luminosities and colors of stellar populations are
 related to their ages, masses and metallicities, in a very complex relation.
-Various models (e.g. Fioc &amp; Rocca-Volmerange 1997, Leitherer et al. 1999,
-Vazdekis &amp; Arimoto 1999, Bruzual &amp; Charlot 2003, Cordier et al. 2007) allow us
+Various models (e.g.,
+<a class="reference external" href="http://arxiv.org/abs/astro-ph/9707017v1">Fioc &amp; Rocca-Volmerange 1997</a>,
+<a class="reference external" href="http://adsabs.harvard.edu/abs/1999ApJS..123....3L">Leitherer et al. 1999</a>,
+<a class="reference external" href="http://adsabs.harvard.edu/abs/1999ApJ...525..144V">Vazdekis &amp; Arimoto 1999</a>,
+<a class="reference external" href="http://adsabs.harvard.edu/abs/2003MNRAS.344.1000B">Bruzual &amp; Charlot 2003</a>,
+<a class="reference external" href="http://adsabs.harvard.edu/abs/2007AJ....133..468C">Cordier et al. 2007</a>
+) allow us
 to predict the evolution of their SEDs. They are based on assumptions for the
 stellar evolution (evolutionary tracks), and for formation history (initial mass
 function, star formation rate...).</p>
@@ -160,20 +86,29 @@ prediction. Conceptually, all stars of an SSP are co-eval, at any given time,
 the stars composing an SSP describe the same isochrone.  A priori, we cannot
 tell all stellar groups, associations or star clusters are SSPs Regardless some
 clusters have been shown explicitly to host stellar populations of a composite
-nature (e.g.  NGC 2808, Piotto et al.  2007; see also Kalirai &amp; Richer 2010;
-van Loon 2010, or <span class="math">\(\omega\)</span>-Centauri, Villanova et al.  2007), star clusters are
+nature (e.g.  NGC 2808,
+<a class="reference external" href="http://adsabs.harvard.edu/abs/2007ApJ...661L..53P">Piotto et al.  2007</a>; see also
+<a class="reference external" href="http://adsabs.harvard.edu/abs/2010RSPTA.368..755K">Kalirai &amp; Richer 2010</a>;
+<a class="reference external" href="http://adsabs.harvard.edu/abs/2010RSPTA.368..801V">van Loon 2010</a>,
+or <span class="math">\(\omega\)</span>-Centauri,
+<a class="reference external" href="http://adsabs.harvard.edu/abs/2007ApJ...663..296V">Villanova et al.  2007</a>
+), star clusters are
 often quoted as the reference in matter of SSP examples in nature.</p>
 <p>One major issue when studying low and intermediate mass clusters is the
 fluctuations due to the random presence of a very few luminous stars dominating
 the energy distribution. Pioneering work has shown that the predicted luminosity
 and color distributions depend strongly on the total mass in the cluster, and
 can be far from Gaussian even for total mass above <span class="math">\(10^5M_\odot\)</span>
-citep[e.g.][]{Lancon2000, Bruzual2002, Cervino2006}. A reliable interpretation
+(e.g.,
+<a class="reference external" href="http://adsabs.harvard.edu/abs/2000ASPC..211...34L">Lancon &amp; Mouhcine 2000</a>,
+<a class="reference external" href="http://adsabs.harvard.edu/abs/2002IAUS..207..616B">Bruzual 2002</a>,
+<a class="reference external" href="http://adsabs.harvard.edu/abs/2006A%26A...451..475C">Cervino &amp; Luridiana 2006</a>
+). A reliable interpretation
 of observed SEDs requires models able to predict these fluctuations. Because it
 remains on accounting for the presence of massive stars in a given population,
 this translate into considering the IMF to be discrete.  To address the question
 of producing {em Discrete population synthesis models}, we adapted the last
-version of PEGASE.2 citep{Fioc1999} to explicitly produce SEDs of discrete
+version of <a class="reference external" href="http://adsabs.harvard.edu/abs/1999astro.ph.12179F">PEGASE.2 (Fioc &amp; Rocca-Volmerange 1999)</a> to explicitly produce SEDs of discrete
 populations.</p>
 <p>We develop a code, and focuses on its predicted colors and luminosities
 according to different assumptions.</p>
@@ -239,9 +174,12 @@ becomes a scaling factor.</p>
 of the mass dimension in order to proceed to the integration.  However, the
 timescales of the different evolution phases varies over many orders of
 magnitudes.  As a result, a simple discretization leads to oscillations of the
-emitted light (Charlot &amp; Bruzual 1991) unless rapid evolution phases can be
-resolved with a sufficient time resolution (Lancon &amp; Rocca-Volmerange
-1996). To avoid that problem, one possibility is to discretize the mass
+emitted light (
+<a class="reference external" href="http://adsabs.harvard.edu/abs/1991ApJ...367..126C">Charlot &amp; Bruzual 1991</a>
+) unless rapid evolution phases can be
+resolved with a sufficient time resolution (
+<a class="reference external" href="http://adsabs.harvard.edu/abs/1996NewA....1..215L">Lancon &amp; Rocca-Volmerange 1996</a>
+). To avoid that problem, one possibility is to discretize the mass
 dimension according to the evolution phases variations. In other words the
 isochrone is sampled such that every evolution phase is represented at least by
 one mass bin. It follows:</p>
@@ -299,6 +237,30 @@ while the errors on the SED of each individual star remains limited to the
 sampling criteria on the evolution phases. We discuss this sampling and we
 compare the predictions of the pseudo-discrete with discrete modeling in
 Section XX.</p>
+<p>The code we present is a branch of PEGASE.2 and is designed to be flexible to
+replacing ingredients of the SSP modeling by others. Among with already
+available compilations of libraries (eg, isochrones, spectral libraries, IMF),
+one can use his own ingredients with relatively low effort of python coding.
+Object oriented codes offers the users to only provide file reading routines to
+change a library.</p>
+</div>
+</div>
+<div class="section" id="ssp-ingredients-available-in-pypegase">
+<h2>SSP ingredients available in PyPegase<a class="headerlink" href="#ssp-ingredients-available-in-pypegase" title="Permalink to this headline">¶</a></h2>
+<p>We provide with this code a compiled version of SSP ingredients:</p>
+<ul class="simple">
+<li>IMF functions: Kennicutt, Kroupa2001 Kroupa93, MillerScalo, Salpeter, Scalo86, Scalo98;</li>
+<li>Isochrones: Pegase.2 reconnected isochrones, interface to the online PADOVA/PARSEC models;</li>
+<li>Spectral libraries: BaSeL, Rauch, Elodie;</li>
+<li>Extinction laws: Calzetti et al, 2000, Cardelli et al, 1989, Fitzpatrick, 1999, Gordon et al., 2003, SMC bar, interface to mix models.</li>
+</ul>
+<p>In addition, the code provides the three methods of generating SSP models as
+described above: continuous, discrete, pseudo-discrete assumptions.</p>
+<p>We also provide a suite to compute the photometry of spectra through a large
+collection of filters.</p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">add Kurucz &amp; TLusty spectral libs</p>
 </div>
 </div>
 <div class="section" id="examples">
@@ -641,7 +603,9 @@ Section XX.</p>
 336
 337
 338
-339</pre></div></td><td class="code"><div class="highlight"><pre><span class="sd">&quot;&quot;&quot;</span>
+339
+340
+341</pre></div></td><td class="code"><div class="highlight"><pre><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">DEMO - Example of approximative discretely sampled population spectral synthesis</span>
 
 <span class="sd">In this example, we generate one population with the &#39;fast_discrete&#39; method and</span>
@@ -730,7 +694,7 @@ Section XX.</p>
     <span class="c"># ----------------------------------------------------------------------</span>
     <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot2grid</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
     <span class="c"># plot the grid</span>
-    <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">oSL</span><span class="o">.</span><span class="n">grid</span><span class="p">[</span><span class="s">&#39;Teff&#39;</span><span class="p">],</span> <span class="n">oSL</span><span class="o">.</span><span class="n">grid</span><span class="p">[</span><span class="s">&#39;logG&#39;</span><span class="p">],</span> <span class="s">&#39;,&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;0.0&#39;</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">oSL</span><span class="o">.</span><span class="n">logT</span><span class="p">,</span> <span class="n">oSL</span><span class="o">.</span><span class="n">logg</span><span class="p">,</span> <span class="s">&#39;,&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;0.0&#39;</span><span class="p">)</span>
     <span class="c"># plot the isochrone</span>
     <span class="n">_iso</span>   <span class="o">=</span> <span class="n">oISO</span><span class="o">.</span><span class="n">_get_isochrone</span><span class="p">(</span><span class="n">val_in_unit</span><span class="p">(</span><span class="s">&#39;age&#39;</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="s">&#39;age&#39;</span><span class="p">],</span> <span class="s">&#39;yr&#39;</span><span class="p">),</span> <span class="n">p</span><span class="p">[</span><span class="s">&#39;Z&#39;</span><span class="p">])</span>
     <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">_iso</span><span class="p">[</span><span class="s">&#39;logT&#39;</span><span class="p">],</span> <span class="n">_iso</span><span class="p">[</span><span class="s">&#39;logg&#39;</span><span class="p">])</span>
@@ -740,7 +704,7 @@ Section XX.</p>
     <span class="n">idx</span> <span class="o">=</span> <span class="p">(</span><span class="n">_w</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
     <span class="n">_w</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">_w</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
     <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">stars</span><span class="p">[</span><span class="s">&#39;logT&#39;</span><span class="p">],</span> <span class="n">stars</span><span class="p">[</span><span class="s">&#39;logg&#39;</span><span class="p">],</span> <span class="s">&#39;.&#39;</span><span class="p">,</span> <span class="n">mec</span><span class="o">=</span><span class="s">&#39;None&#39;</span><span class="p">)</span>
-    <span class="n">ax1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">oSL</span><span class="o">.</span><span class="n">grid</span><span class="p">[</span><span class="s">&#39;Teff&#39;</span><span class="p">][</span><span class="n">Sidx</span><span class="p">],</span> <span class="n">oSL</span><span class="o">.</span><span class="n">grid</span><span class="p">[</span><span class="s">&#39;logG&#39;</span><span class="p">][</span><span class="n">Sidx</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">_w</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s">&#39;None&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">oSL</span><span class="o">.</span><span class="n">logT</span><span class="p">[</span><span class="n">Sidx</span><span class="p">],</span> <span class="n">oSL</span><span class="o">.</span><span class="n">logg</span><span class="p">[</span><span class="n">Sidx</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">_w</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s">&#39;None&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
     <span class="c"># polish axis orientations and labels</span>
     <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">ax1</span><span class="o">.</span><span class="n">get_xlim</span><span class="p">()[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
     <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">ax1</span><span class="o">.</span><span class="n">get_ylim</span><span class="p">()[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
@@ -887,7 +851,7 @@ Section XX.</p>
         <span class="k">return</span> <span class="n">q</span>
 
 
-<span class="k">def</span> <span class="nf">fast_discrete1</span><span class="p">(</span><span class="n">Nstars</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="mf">1e6</span><span class="p">),</span> <span class="n">age</span><span class="o">=</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">Z</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">fracNeb</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">nsamp</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">fast_discrete1</span><span class="p">(</span><span class="n">Nstars</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="mf">1e6</span><span class="p">),</span> <span class="n">age</span><span class="o">=</span><span class="mf">1e10</span><span class="p">,</span> <span class="n">Z</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">fracNeb</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">nsamp</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; Example that generate an ssp model assuming an approximative discrete sampling</span>
 <span class="sd">    and generates a figure.</span>
 
@@ -917,7 +881,9 @@ Section XX.</p>
     <span class="n">oIMF</span>     <span class="o">=</span> <span class="n">imf</span><span class="o">.</span><span class="n">Kroupa2001</span><span class="p">()</span>
     <span class="n">oISO</span>     <span class="o">=</span> <span class="n">isochrones</span><span class="o">.</span><span class="n">Pegase</span><span class="p">()</span>
     <span class="n">oNEB</span>     <span class="o">=</span> <span class="n">nebular</span><span class="o">.</span><span class="n">pegase</span><span class="p">()</span>
-    <span class="n">oSL</span>      <span class="o">=</span> <span class="n">stellibs</span><span class="o">.</span><span class="n">BaSeL</span><span class="p">()</span>
+    <span class="c"># oSL      = stellibs.BaSeL() + stellibs.Rauch()</span>
+    <span class="n">oSL</span>      <span class="o">=</span> <span class="n">stellibs</span><span class="o">.</span><span class="n">Rauch</span><span class="p">()</span>  <span class="o">+</span> <span class="n">stellibs</span><span class="o">.</span><span class="n">BaSeL</span><span class="p">()</span>
+    <span class="c">#oSL      = stellibs.Elodie()</span>
 
     <span class="c"># Example showing how to add units to quantities</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">hasUnit</span><span class="p">(</span><span class="n">age</span><span class="p">):</span>
@@ -941,7 +907,7 @@ Section XX.</p>
         <span class="c"># ----------------------------------------------------------------------</span>
         <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot2grid</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
         <span class="c"># plot the grid</span>
-        <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">oSL</span><span class="o">.</span><span class="n">grid</span><span class="p">[</span><span class="s">&#39;Teff&#39;</span><span class="p">],</span> <span class="n">oSL</span><span class="o">.</span><span class="n">grid</span><span class="p">[</span><span class="s">&#39;logG&#39;</span><span class="p">],</span> <span class="s">&#39;.&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;0.0&#39;</span><span class="p">,</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">oSL</span><span class="o">.</span><span class="n">logT</span><span class="p">,</span> <span class="n">oSL</span><span class="o">.</span><span class="n">logg</span><span class="p">,</span> <span class="s">&#39;.&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;0.0&#39;</span><span class="p">,</span>
                  <span class="n">zorder</span><span class="o">=-</span><span class="mi">100</span><span class="p">)</span>
         <span class="c"># plot the isochrone</span>
         <span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">dN</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
@@ -987,35 +953,79 @@ Section XX.</p>
 
 
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="readme.html" class="btn btn-neutral float-right" title="pyPEGASE v1.0"/>Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="index.html" class="btn btn-neutral" title="Welcome to PyPegase’s documentation!"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2014, Morgan Fouesneau, Ariane Lancon, and Michel Fioc.
-    </p>
-  </div>
-
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
-</footer>
         </div>
       </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">pyPegase</a></h1>
 
-    </section>
 
-  </div>
-  
 
-</body>
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=mfouesneau&repo=pypegase&type=watch&count=true&size=large"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">pyPegase</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#simple-stellar-population-ssp">Simple stellar population (SSP)</a><ul>
+<li><a class="reference internal" href="#a-common-recipe">A common recipe</a></li>
+<li><a class="reference internal" href="#the-continuous-assumption">The continuous assumption</a></li>
+<li><a class="reference internal" href="#limitation-of-the-continuous-assumption">Limitation of the continuous assumption</a></li>
+<li><a class="reference internal" href="#pseudo-discrete-assumption">Pseudo-discrete assumption</a></li>
+<li><a class="reference internal" href="#limitations-of-the-pseudo-discrete-modeling">Limitations of the pseudo-discrete modeling</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ssp-ingredients-available-in-pypegase">SSP ingredients available in PyPegase</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="readme.html" title="pyPEGASE v1.0"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to PyPegase’s documentation!"
+             >previous</a> |</li>
+        <li><a href="index.html">pyPegase 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Morgan Fouesneau, Ariane Lancon, and Michel Fioc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
 </html>
