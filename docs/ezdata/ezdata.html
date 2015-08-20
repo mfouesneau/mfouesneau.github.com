@@ -944,6 +944,43 @@ arguments can be named columns from the data (not necessary) and each method han
 </tbody>
 </table>
 <dl class="method">
+<dt id="ezdata.plotter.Plotter.aggregate">
+<tt class="descname">aggregate</tt><big>(</big><em>func</em>, <em>keys</em>, <em>args=()</em>, <em>kwargs={}</em><big>)</big><a class="reference internal" href="_modules/ezdata/plotter.html#Plotter.aggregate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.plotter.Plotter.aggregate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply func on groups within the data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>func: callable</strong></p>
+<blockquote>
+<div><p>function to apply</p>
+</div></blockquote>
+<p><strong>keys: sequence(str)</strong></p>
+<blockquote>
+<div><p>sequence of keys defining the groups</p>
+</div></blockquote>
+<p><strong>args: tuple</strong></p>
+<blockquote>
+<div><p>optional arguments to func (will be given at the end)</p>
+</div></blockquote>
+<p><strong>kwargs: dict</strong></p>
+<blockquote>
+<div><p>optional keywords to func</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">seq: sequence</p>
+<blockquote class="last">
+<div><p>flattened sequence of keys and value
+(key1, key2, ... keyn, {})</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="ezdata.plotter.Plotter.boxplot">
 <tt class="descname">boxplot</tt><big>(</big><em>dataset</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/ezdata/plotter.html#Plotter.boxplot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.plotter.Plotter.boxplot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make a box and whisker plot.</p>
@@ -1105,6 +1142,46 @@ whiskers (outliers).</li>
 </table>
 <p class="rubric">Examples</p>
 <p>Additional kwargs: hold = [True|False] overrides default hold state</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ezdata.plotter.Plotter.colorify">
+<tt class="descname">colorify</tt><big>(</big><em>key</em>, <em>vmin=None</em>, <em>vmax=None</em>, <em>cmap=None</em><big>)</big><a class="reference internal" href="_modules/ezdata/plotter.html#Plotter.colorify"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.plotter.Plotter.colorify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Associate a color map to a quantity vector</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>data: sequence</strong></p>
+<blockquote>
+<div><p>values to encode</p>
+</div></blockquote>
+<p><strong>vmin: float</strong></p>
+<blockquote>
+<div><p>minimum value</p>
+</div></blockquote>
+<p><strong>vmax: float</strong></p>
+<blockquote>
+<div><p>maximum value</p>
+</div></blockquote>
+<p><strong>cmap: Colormap instance</strong></p>
+<blockquote>
+<div><p>colormap to use</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">colors: sequence or array</p>
+<blockquote>
+<div><p>one color per input data</p>
+</div></blockquote>
+<p>cmap: Colormap</p>
+<blockquote class="last">
+<div><p>data normalized colormap instance</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1296,8 +1373,8 @@ figure: a <tt class="xref py py-class docutils literal"><span class="pre">matplo
 gid: an id string         
 hatch: [ &#8216;/&#8217; | &#8216;\&#8217; | &#8216;|&#8217; | &#8216;-&#8216; | &#8216;+&#8217; | &#8216;x&#8217; | &#8216;o&#8217; | &#8216;O&#8217; | &#8216;.&#8217; | &#8216;*&#8217; ]         
 label: string or anything printable with &#8216;%s&#8217; conversion.         
-linestyle or dashes or linestyles: [&#8216;solid&#8217; | &#8216;dashed&#8217;, &#8216;dashdot&#8217;, &#8216;dotted&#8217; |         (offset, on-off-dash-seq) ]         
-linewidth or linewidths or lw: float or sequence of floats         
+linestyle or linestyles or dashes: [&#8216;solid&#8217; | &#8216;dashed&#8217;, &#8216;dashdot&#8217;, &#8216;dotted&#8217; |         (offset, on-off-dash-seq) ]         
+linewidth or lw or linewidths: float or sequence of floats         
 lod: [True | False]         
 norm: unknown
 offset_position: unknown
@@ -1617,6 +1694,66 @@ underlying data are not random.</p>
 <div><p>lag to apply, default 1</p>
 </div></blockquote>
 <p class="last"><strong>see also: :func:`scatter`</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ezdata.plotter.Plotter.multigroupby">
+<tt class="descname">multigroupby</tt><big>(</big><em>*args</em><big>)</big><a class="reference internal" href="_modules/ezdata/plotter.html#Plotter.multigroupby"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.plotter.Plotter.multigroupby" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate nested df based on multiple grouping keys</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>args: str or sequence</strong></p>
+<blockquote class="last">
+<div><p>column(s) to index the DF</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ezdata.plotter.Plotter.pivot_plot">
+<tt class="descname">pivot_plot</tt><big>(</big><em>key1</em>, <em>key2</em>, <em>plotfn</em>, <em>plotkw={}</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/ezdata/plotter.html#Plotter.pivot_plot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.plotter.Plotter.pivot_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>generate a multiple plots ordered according to 2 keys</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>key1: str</strong></p>
+<blockquote>
+<div><p>key along the x-axis</p>
+</div></blockquote>
+<p><strong>key2: str</strong></p>
+<blockquote>
+<div><p>key along the y-axis</p>
+</div></blockquote>
+<p><strong>plotfn: callable</strong></p>
+<blockquote>
+<div><p>the plotting function
+This function signature must take a dataset and manage an <cite>ax</cite> keyword
+&gt; plotfn(data, ax=ax, <a href="#id1"><span class="problematic" id="id2">**</span></a>plotkw)</p>
+</div></blockquote>
+<p><strong>plotkw: dict</strong></p>
+<blockquote>
+<div><p>optional keywords to pass to the plotting function</p>
+</div></blockquote>
+<p><strong>kwargs: dict</strong></p>
+<blockquote>
+<div><p>forwarded to <tt class="xref py py-func docutils literal"><span class="pre">plt.subplots()</span></tt></p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">axes: sequence</p>
+<blockquote class="last">
+<div><p>list of all axes used in the plot</p>
+</div></blockquote>
 </td>
 </tr>
 </tbody>
@@ -2090,7 +2227,7 @@ violin&#8217;s distribution.</li>
 
 <dl class="function">
 <dt id="ezdata.plotter.colorify">
-<tt class="descclassname">ezdata.plotter.</tt><tt class="descname">colorify</tt><big>(</big><em>data</em>, <em>vmin=None</em>, <em>vmax=None</em>, <em>cmap=&lt;matplotlib.colors.LinearSegmentedColormap object at 0x10514dda0&gt;</em><big>)</big><a class="reference internal" href="_modules/ezdata/plotter.html#colorify"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.plotter.colorify" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">ezdata.plotter.</tt><tt class="descname">colorify</tt><big>(</big><em>data</em>, <em>vmin=None</em>, <em>vmax=None</em>, <em>cmap=&lt;matplotlib.colors.LinearSegmentedColormap object at 0x106187278&gt;</em><big>)</big><a class="reference internal" href="_modules/ezdata/plotter.html#colorify"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.plotter.colorify" title="Permalink to this definition">¶</a></dt>
 <dd><p>Associate a color map to a quantity vector</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -2161,6 +2298,62 @@ includes mathematical operations and attribute names</p>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : np.array</p>
 <blockquote class="last">
 <div><p>array of the result</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="ezdata.plotter.create_common_legend">
+<tt class="descclassname">ezdata.plotter.</tt><tt class="descname">create_common_legend</tt><big>(</big><em>labels</em>, <em>colors</em>, <em>markers='s'</em>, <em>mec=None</em>, <em>linestyles='None'</em>, <em>linewidths=None</em>, <em>fig=None</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/ezdata/plotter.html#create_common_legend"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.plotter.create_common_legend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a legend from the symbols without the actual plot</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>labels: seq</strong></p>
+<blockquote>
+<div><p>sequence of label strings</p>
+</div></blockquote>
+<p><strong>colors: seq or Colormap</strong></p>
+<blockquote>
+<div><p>sequence of colors or Colormap instance from which deriving a
+sequence of colors to encode each group
+if Colormap instance, a cmap attribute will be generated after a
+plot and will refer to the updated instance</p>
+</div></blockquote>
+<p><strong>markers: seq</strong></p>
+<blockquote>
+<div><p>sequence of markers (will cycle through)
+default is <cite>s</cite>, i.e., a square</p>
+</div></blockquote>
+<p><strong>mec: seq</strong></p>
+<blockquote>
+<div><p>marker edge colors</p>
+</div></blockquote>
+<p><strong>linestyles: seq</strong></p>
+<blockquote>
+<div><p>sequence of linestyles (will cycle through)</p>
+</div></blockquote>
+<p><strong>linewidths: seq</strong></p>
+<blockquote>
+<div><p>sequence of linewidths (will cycle through)</p>
+</div></blockquote>
+<p><strong>fig: plt.Figure</strong></p>
+<blockquote>
+<div><p>figure to add a legend (default: <cite>plt.gcf()</cite>)</p>
+</div></blockquote>
+<p><strong>kwargs: dict</strong></p>
+<blockquote>
+<div><p>any other keyword will go to <tt class="xref py py-func docutils literal"><span class="pre">plt.legend()</span></tt></p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">lgd: plt.Legend instance</p>
+<blockquote class="last">
+<div><p>the newly created legend</p>
 </div></blockquote>
 </td>
 </tr>

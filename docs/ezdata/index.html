@@ -174,6 +174,31 @@ with shared axis</li>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]:</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">&#39;AV&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+<ul class="simple">
+<li>even more complex</li>
+</ul>
+<a class="reference internal image-reference" href="pivot_plot.png"><img alt="example2" src="pivot_plot.png" style="width: 60%;" /></a>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">plotfn</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;ax&#39;</span><span class="p">,</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">())</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">Plotter</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s">&#39;LOGAGE&#39;</span><span class="p">,</span> <span class="s">&#39;LOGMASS&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s">&#39;detect&#39;</span><span class="p">,</span> \
+                         <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">binary</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+
+<span class="n">kw</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">wspace</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> \
+          <span class="n">bottom</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="n">axes</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">Plotter</span><span class="o">.</span><span class="n">pivot_plot</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s">&#39;nms_idx&#39;</span><span class="p">,</span> <span class="s">&#39;nrgb_idx&#39;</span><span class="p">,</span> <span class="n">plotfn</span><span class="p">,</span>
+                               <span class="n">gridspec_kw</span><span class="o">=</span><span class="n">kw</span><span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_yticklabels</span><span class="p">()</span> <span class="o">+</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">(),</span> <span class="n">visible</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">&#39;log age&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">&#39;log mass&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figtext</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.02</span><span class="p">,</span> <span class="s">&#39;increasing NMS $\longrightarrow$&#39;</span><span class="p">,</span>
+            <span class="n">fontsize</span><span class="o">=</span><span class="s">&#39;x-large&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s">&#39;bottom&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figtext</span><span class="p">(</span><span class="mf">1.02</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s">&#39;increasing NRGB $\longrightarrow$&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span>
+            <span class="n">fontsize</span><span class="o">=</span><span class="s">&#39;x-large&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s">&#39;left&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s">&#39;center&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="api-contents">

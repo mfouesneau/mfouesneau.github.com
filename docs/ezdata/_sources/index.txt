@@ -126,6 +126,34 @@ Examples
 	    t.AV.max(), 20), normed=True)
     >>> for ax in plt.gcf().axes[-3:]: ax.set_xlabel('AV')
 
+* even more complex
+
+.. image:: pivot_plot.png
+   :width: 60%
+   :alt: example2
+
+.. code-block:: python
+
+        def plotfn(data, **kwargs):
+            ax = kwargs.pop('ax', plt.gca())
+            data.Plotter.scatter('LOGAGE', 'LOGMASS', c='detect', \
+                                 cmap=plt.cm.binary, ax=ax)
+    
+        kw = dict(wspace=0, hspace=0, left=0.05, right=1, top=1., \
+                  bottom=0.05)
+        axes = data.Plotter.pivot_plot(d, 'nms_idx', 'nrgb_idx', plotfn,
+                                       gridspec_kw=kw)
+
+        ax = axes[-1, 0]
+        plt.setp(ax.get_yticklabels() + ax.get_xticklabels(), visible=True)
+        ax.set_xlabel('log age')
+        ax.set_ylabel('log mass')
+
+        plt.figtext(0.5, 1.02, 'increasing NMS $\longrightarrow$', 
+                    fontsize='x-large', ha='center', va='bottom')
+        plt.figtext(1.02, 0.5, 'increasing NRGB $\longrightarrow$', rotation=90, 
+                    fontsize='x-large', ha='left', va='center');
+
 
 API Contents
 ============
