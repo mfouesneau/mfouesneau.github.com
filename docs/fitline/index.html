@@ -31,7 +31,7 @@
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     
 
@@ -215,71 +215,36 @@ arbitrary but can be set by using a configuration file (option: <cite>-c</cite>)
 <p>In this file, any option can be set but the <strong>command line has priority</strong>. To
 set one option, you need to use the <em>longname</em> option as reference.</p>
 <p><strong>Example of configuration file</strong></p>
-<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23</pre></div></td><td class="code"><div class="highlight"><pre>[BTMC]
-# Generate figures with the desired format (pdf, png...)
-savefig: False   
-# number of samples to represent per data point uncertainties
-nsamp: 1         
-# number of bootstrap realization
-nboot: 100       
-# x-data normalization value
-xnorm: 1         
-# y-data normalization value
-ynorm: 1         
-# floor of x-value uncertainty (in percent)
-xfloor: 10.      
-# floor of y-value uncertainty (in percent)
-yfloor: 10.      
-# number of samplings to represent the intrinsic dispersion of the plot
-sigma_samp: 0    
-# export the samples into a file
-output: None     
-# X-label of the top-right plot (it can be in latex form)
-x12label: None   
-# Y-label of the top-right plot (it can be in latex form)
-y12label: None   
-</pre></div>
-</td></tr></table></div>
 </div>
 </div>
 <div class="section" id="definition-of-the-problem">
 <h2>Definition of the problem<a class="headerlink" href="#definition-of-the-problem" title="Permalink to this headline">¶</a></h2>
 <p>If we define the data set <span class="math">\(D\)</span> with uncertainties <span class="math">\(E\)</span> of <span class="math">\({d_k, e_k}\)</span>
-independent observations and a model M predicting what the data should look
+<strong>independent</strong> observations and a model <span class="math">\(M\)</span> predicting what the data should look
 like. It comes through Bayes rule:</p>
 <div class="math">
 \[p(M | D, E) = \frac{1}{Z}  \prod_k P(d_k| M, e_k) P(M)\]</div>
-<p><span class="math">\(Z\)</span> is the evidence (normalization factor), <span class="math">\(P(d_k| M, e_k)\)</span> the
-likelihood the the <span class="math">\(k\)</span>-th data point, and <span class="math">\(P(M)\)</span> the prior on the
-model (or its parameters).</p>
+<p>where
+<span class="math">\(Z\)</span> is the evidence (normalization factor, strictly dependent on <span class="math">\(M\)</span>),
+<span class="math">\(P(d_k| M, e_k)\)</span> the likelihood the <span class="math">\(k\)</span>-th data point,
+and <span class="math">\(P(M)\)</span> the prior on the model (or its parameters).</p>
 </div>
 <div class="section" id="non-symmetric-uncertainties-split-normal-distribution">
 <h2>Non-symmetric uncertainties: Split-Normal distribution<a class="headerlink" href="#non-symmetric-uncertainties-split-normal-distribution" title="Permalink to this headline">¶</a></h2>
+<p>When accounting for uncertainties in the data, one should strictly integrate the
+<span class="math">\(k\)</span>-th likelihood over the associated uncertainties <span class="math">\(e_k\)</span>,</p>
+<div class="math">
+\[\begin{split}\begin{eqnarray}
+         p(d_k | M, e_k) &amp;= \int_{t_k} P(d_k, t_k | M, e_k) dt_k
+         &amp; = \int_{t_k} P(d_k| M, e_k, t_k) P(t_k | M, e_k) dt_k
+\end{eqnarray}\end{split}\]</div>
+<p>In the above, <span class="math">\(P(d_k| M, e_k, t_k)\)</span> is the measurement model, which tells
+how likely it is to have <span class="math">\(t_k\)</span> as true measurement given the data, while
+<span class="math">\(P(t_k | M, e_k)\)</span> is effectively a measurement proposal model or how
+likely it is to measure <span class="math">\(t_k\)</span> given the model itself.</p>
 <p>Most of the uncertainties in astronomy are Gaussian or Gaussian-ish. Accounting
 for more complex uncertainties is sometimes a challenge.</p>
-<p>Howver, it stays trivial when uncertainties are non-correlated by observing that
+<p>However, it stays trivial when uncertainties are non-correlated by observing that
 it corresponds to a skewed normal distribution. The latter can be very simply
 defined by the closed form of a split normal distribution.</p>
 <p>The split normal distribution arises from merging two opposite halves of two
@@ -296,6 +261,11 @@ mode.</p>
 \[A = \sqrt{2/\pi} (\sigma_1+\sigma_2)^{-1}.\]</div>
 <p>This function as the advantage to allow the proper treatment of skewed
 distributions as well as upper/lower limits with one unique functional form.</p>
+<div class="figure" id="id1">
+<img alt="example of a split normal" src="_images/splitnormal.png" />
+<p class="caption"><span class="caption-text"><strong>Figure:</strong> Example of a split normal distrbution in which one can clearly see the
+non-symmetric distribution.</span></p>
+</div>
 </div>
 <div class="section" id="finite-data-sample">
 <h2>Finite Data Sample<a class="headerlink" href="#finite-data-sample" title="Permalink to this headline">¶</a></h2>
@@ -308,7 +278,7 @@ realizations.</p>
 <h2>Fitting a straight line to data<a class="headerlink" href="#fitting-a-straight-line-to-data" title="Permalink to this headline">¶</a></h2>
 <p>We define our model as follow:</p>
 <div class="math">
-\[y_{model}(x | \alpha, \beta) = \alpha \, x + \beta\]</div>
+\[y_{model}(x | \alpha, \beta) = \alpha \, x_{model} + \beta\]</div>
 <p>I assume here that we have perfect &#8220;fake&#8221; data to work with, <span class="math">\((x_{data}, y_{data})\)</span>,
 so that the MAP is actually trivial to get from the covariance of the sample:</p>
 <div class="math">
@@ -316,9 +286,15 @@ so that the MAP is actually trivial to get from the covariance of the sample:</p
 </div>
 <div class="section" id="hat-trick-sampling-from-the-data">
 <h2>Hat trick: sampling from the data<a class="headerlink" href="#hat-trick-sampling-from-the-data" title="Permalink to this headline">¶</a></h2>
-<p>The approximation that we propose to do is to replace the data point <span class="math">\(d_k\)</span> by a
-sampling of <span class="math">\(d_k\)</span> following the distribution given by <span class="math">\(e_k\)</span>. Here we suppose
-normally distributed uncertainties.</p>
+<p>The proper way to do the integral mentioned above is often non trivial and the
+actual sampling ends up being rapidly inefficient, spending most of the samples
+computing null likelihood values. For instance, imagine computing the orbit of
+an asteroid given a position. There are gazillions possible orbits allowed by
+your priors, but only a few will actually go through this data point.</p>
+<p>We propose an approximation which is to replace the data point <span class="math">\(d_k\)</span> by a
+sampling of <span class="math">\(d_k\)</span> following the distribution given by <span class="math">\(e_k\)</span>. Here we
+suppose normally distributed uncertainties. In other words, do a Monte-Carlo
+integration where the proposal distribution is given by the data.</p>
 <p>it comes that either you can do</p>
 <div class="math">
 \[p(D | M) p(M) = \prod_k \sum_j (P(d_{k,j}| M) \, P(M)),\]</div>
@@ -383,9 +359,9 @@ from the line is given by:</p>
 <div class="section" id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><a class="reference internal" href="genindex.html"><em>Index</em></a></li>
-<li><a class="reference internal" href="py-modindex.html"><em>Module Index</em></a></li>
-<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
+<li><a class="reference internal" href="genindex.html"><span>Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span>Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span>Search Page</span></a></li>
 </ul>
 </div>
 
