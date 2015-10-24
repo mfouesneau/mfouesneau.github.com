@@ -1,4 +1,4 @@
-.. lsh documentation master file
+.. documentation master file
 
 Welcome to PyPegase's documentation!
 ====================================
@@ -23,8 +23,8 @@ Contents
    This directive is replaced by a list of all todo directives in the
       whole documentation.
 
-Indices and tables
-==================
+detailed API
+============
 
 * :ref:`genindex`
 * :ref:`modindex`

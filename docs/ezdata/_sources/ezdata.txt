@@ -1,0 +1,38 @@
+ezdata package
+==============
+
+Submodules
+----------
+
+ezdata.dictdataframe module
+---------------------------
+
+.. automodule:: ezdata.dictdataframe
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+ezdata.plotter module
+---------------------
+
+.. automodule:: ezdata.plotter
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+ezdata.simpletable module
+-------------------------
+
+.. automodule:: ezdata.simpletable
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: ezdata
+    :members:
+    :undoc-members:
+    :show-inheritance:

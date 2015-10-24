@@ -14,8 +14,13 @@ spectrum with a synthetic spectral energy distribution (SED) or adjust synthetic
 SEDs with the integrated photometry, which remains the path of choice for
 studying large samples.  Luminosities and colors of stellar populations are
 related to their ages, masses and metallicities, in a very complex relation.
-Various models (e.g. Fioc & Rocca-Volmerange 1997, Leitherer et al. 1999,
-Vazdekis & Arimoto 1999, Bruzual & Charlot 2003, Cordier et al. 2007) allow us
+Various models (e.g., 
+`Fioc & Rocca-Volmerange 1997 <http://arxiv.org/abs/astro-ph/9707017v1>`_, 
+`Leitherer et al. 1999 <http://adsabs.harvard.edu/abs/1999ApJS..123....3L>`_,
+`Vazdekis & Arimoto 1999 <http://adsabs.harvard.edu/abs/1999ApJ...525..144V>`_, 
+`Bruzual & Charlot 2003 <http://adsabs.harvard.edu/abs/2003MNRAS.344.1000B>`_, 
+`Cordier et al. 2007 <http://adsabs.harvard.edu/abs/2007AJ....133..468C>`_
+) allow us
 to predict the evolution of their SEDs. They are based on assumptions for the
 stellar evolution (evolutionary tracks), and for formation history (initial mass
 function, star formation rate...). 
@@ -25,8 +30,13 @@ prediction. Conceptually, all stars of an SSP are co-eval, at any given time,
 the stars composing an SSP describe the same isochrone.  A priori, we cannot
 tell all stellar groups, associations or star clusters are SSPs Regardless some
 clusters have been shown explicitly to host stellar populations of a composite
-nature (e.g.  NGC 2808, Piotto et al.  2007; see also Kalirai & Richer 2010;
-van Loon 2010, or :math:`\omega`-Centauri, Villanova et al.  2007), star clusters are
+nature (e.g.  NGC 2808, 
+`Piotto et al.  2007 <http://adsabs.harvard.edu/abs/2007ApJ...661L..53P>`_; see also 
+`Kalirai & Richer 2010 <http://adsabs.harvard.edu/abs/2010RSPTA.368..755K>`_;
+`van Loon 2010 <http://adsabs.harvard.edu/abs/2010RSPTA.368..801V>`_, 
+or :math:`\omega`-Centauri, 
+`Villanova et al.  2007 <http://adsabs.harvard.edu/abs/2007ApJ...663..296V>`_
+), star clusters are
 often quoted as the reference in matter of SSP examples in nature. 
 
 One major issue when studying low and intermediate mass clusters is the
@@ -34,12 +44,16 @@ fluctuations due to the random presence of a very few luminous stars dominating
 the energy distribution. Pioneering work has shown that the predicted luminosity
 and color distributions depend strongly on the total mass in the cluster, and
 can be far from Gaussian even for total mass above :math:`10^5M_\odot`
-\citep[e.g.][]{Lancon2000, Bruzual2002, Cervino2006}. A reliable interpretation
+(e.g., 
+`Lancon & Mouhcine 2000 <http://adsabs.harvard.edu/abs/2000ASPC..211...34L>`_,
+`Bruzual 2002 <http://adsabs.harvard.edu/abs/2002IAUS..207..616B>`_, 
+`Cervino & Luridiana 2006 <http://adsabs.harvard.edu/abs/2006A%26A...451..475C>`_
+). A reliable interpretation
 of observed SEDs requires models able to predict these fluctuations. Because it
 remains on accounting for the presence of massive stars in a given population,
 this translate into considering the IMF to be discrete.  To address the question
 of producing {\em Discrete population synthesis models}, we adapted the last
-version of PEGASE.2 \citep{Fioc1999} to explicitly produce SEDs of discrete
+version of `PEGASE.2 (Fioc & Rocca-Volmerange 1999) <http://adsabs.harvard.edu/abs/1999astro.ph.12179F>`_ to explicitly produce SEDs of discrete
 populations. 
 
 We develop a code, and focuses on its predicted colors and luminosities
@@ -121,9 +135,12 @@ In practice, the computation this equation requires a discretization
 of the mass dimension in order to proceed to the integration.  However, the
 timescales of the different evolution phases varies over many orders of
 magnitudes.  As a result, a simple discretization leads to oscillations of the
-emitted light (Charlot & Bruzual 1991) unless rapid evolution phases can be
-resolved with a sufficient time resolution (Lancon & Rocca-Volmerange
-1996). To avoid that problem, one possibility is to discretize the mass
+emitted light (
+`Charlot & Bruzual 1991 <http://adsabs.harvard.edu/abs/1991ApJ...367..126C>`_
+) unless rapid evolution phases can be
+resolved with a sufficient time resolution (
+`Lancon & Rocca-Volmerange 1996 <http://adsabs.harvard.edu/abs/1996NewA....1..215L>`_
+). To avoid that problem, one possibility is to discretize the mass
 dimension according to the evolution phases variations. In other words the
 isochrone is sampled such that every evolution phase is represented at least by
 one mass bin. It follows:
@@ -192,6 +209,34 @@ while the errors on the SED of each individual star remains limited to the
 sampling criteria on the evolution phases. We discuss this sampling and we
 compare the predictions of the pseudo-discrete with discrete modeling in
 Section XX.
+
+The code we present is a branch of PEGASE.2 and is designed to be flexible to
+replacing ingredients of the SSP modeling by others. Among with already
+available compilations of libraries (\eg, isochrones, spectral libraries, IMF),
+one can use his own ingredients with relatively low effort of python coding.
+Object oriented codes offers the users to only provide file reading routines to
+change a library.
+
+
+SSP ingredients available in PyPegase 
+--------------------------------------
+We provide with this code a compiled version of SSP ingredients:
+
+* IMF functions: Kennicutt, Kroupa2001 Kroupa93, MillerScalo, Salpeter, Scalo86, Scalo98;
+* Isochrones: Pegase.2 reconnected isochrones, interface to the online PADOVA/PARSEC models;
+* Spectral libraries: BaSeL, Rauch, Elodie;  
+* Extinction laws: Calzetti et al, 2000, Cardelli et al, 1989, Fitzpatrick, 1999, Gordon et al., 2003, SMC bar, interface to mix models.
+
+In addition, the code provides the three methods of generating SSP models as
+described above: continuous, discrete, pseudo-discrete assumptions.
+
+We also provide a suite to compute the photometry of spectra through a large
+collection of filters.
+
+.. todo::
+        
+        add Kurucz & TLusty spectral libs
+
 
 
 Examples

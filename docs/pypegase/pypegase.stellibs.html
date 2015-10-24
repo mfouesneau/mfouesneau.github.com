@@ -1,138 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>pypegase.stellibs package &mdash; pyPegase 1.0 documentation</title>
-  
-
-  
-  
-
-  
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
-  
-  
-
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pypegase.stellibs package &mdash; pyPegase 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:'./',
-        VERSION:'1.0',
-        COLLAPSE_INDEX:false,
-        FILE_SUFFIX:'.html',
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="pyPegase 1.0 documentation" href="index.html" />
+	<script type="text/x-mathjax-config"> MathJax.Hub.Config({
+		"TeX": {Macros: {AA : "{\\unicode{x212B}}"}}, "HTML-CSS": {scale: 90}});
+	</script>
 
-    
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">pyPegase 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
 
-  
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
-    <script type="text/javascript">
-        jQuery(function () {
-            SphinxRtdTheme.StickyNav.enable();
-        });
-    </script>
-  
-
-  
-    <link rel="top" title="pyPegase 1.0 documentation" href="index.html"/> 
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
-
-</head>
-
-<body class="wy-body-for-nav" role="document">
-
-  <div class="wy-grid-for-nav">
-
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
-        <a href="index.html" class="fa fa-home"> pyPegase</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-      </div>
-
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        
-        
-            <ul>
-<li class="toctree-l1"><a class="reference internal" href="intro.html">pyPegase</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#simple-stellar-population-ssp">Simple stellar population (SSP)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#examples">Examples</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="readme.html">pyPEGASE v1.0</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="readme.html#contents-of-the-directory">Contents of the directory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="readme.html#setup">Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="readme.html#quick-start">Quick Start</a></li>
-<li class="toctree-l2"><a class="reference internal" href="readme.html#quick-start-by-example-3-steps-to-build-one-continuous-population">Quick start by example : 3 steps to build one &#8220;continuous&#8221; population</a></li>
-<li class="toctree-l2"><a class="reference internal" href="readme.html#quick-start-by-example-3-steps-to-build-one-discrete-population">Quick start by example: 3 steps to build one &#8220;discrete&#8221; population</a></li>
-<li class="toctree-l2"><a class="reference internal" href="readme.html#quick-start-by-example-3-steps-to-build-one-fast-discrete-population">Quick start by example: 3 steps to build one &#8220;fast-discrete&#8221; population</a></li>
-<li class="toctree-l2"><a class="reference internal" href="readme.html#customize-your-runs">Customize your runs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="readme.html#produce-large-collections-of-simulations">Produce large collections of simulations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="readme.html#compute-colors">Compute colors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="readme.html#for-those-who-wish-to-read-edit-the-codes">For those who wish to read/edit the codes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="readme.html#required-acknowledgements">Required acknowledgements</a></li>
-</ul>
-</li>
-</ul>
-
-        
-      </div>
-      &nbsp;
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">pyPegase</a>
-      </nav>
-
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>pypegase.stellibs package</li>
-      <li class="wy-breadcrumbs-aside">
-        
-          <a href="_sources/pypegase.stellibs.txt" rel="nofollow"> View page source</a>
-        
-      </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main">
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
             
   <div class="section" id="pypegase-stellibs-package">
 <h1>pypegase.stellibs package<a class="headerlink" href="#pypegase-stellibs-package" title="Permalink to this headline">¶</a></h1>
@@ -156,11 +71,11 @@ sources.</p>
 <em class="property">class </em><tt class="descclassname">pypegase.stellibs.basel.</tt><tt class="descname">BaSeL</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/pypegase/stellibs/basel.html#BaSeL"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.basel.BaSeL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pypegase.stellibs.stellib.Stellib" title="pypegase.stellibs.stellib.Stellib"><tt class="xref py py-class docutils literal"><span class="pre">pypegase.stellibs.stellib.Stellib</span></tt></a></p>
 <dl class="docutils">
-<dt>BaSeL 2.2 + Rauch stellar library derived class</dt>
-<dd>This library is used in Pegase.2</dd>
+<dt>BaSeL 2.2 library derived class</dt>
+<dd>This library + Rauch is used in Pegase.2</dd>
 </dl>
-<p>The BaSeL stellar spectral energy distribution (SED) libraries are libraries of
-theoretical stellar SEDs recalibrated using empirical photometric data.
+<p>The BaSeL stellar spectral energy distribution (SED) libraries are libraries
+of theoretical stellar SEDs recalibrated using empirical photometric data.
 Therefore, we call them semi-empirical libraries.</p>
 <p>The BaSeL 2.2 library was calibrated using photometric data from solar
 metallicity stars.</p>
@@ -235,6 +150,94 @@ metallicity stars.</p>
 <dl class="attribute">
 <dt id="pypegase.stellibs.basel.BaSeL.logg">
 <tt class="descname">logg</tt><a class="reference internal" href="_modules/pypegase/stellibs/basel.html#BaSeL.logg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.basel.BaSeL.logg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pypegase.stellibs.basel.BaSeL_old">
+<em class="property">class </em><tt class="descclassname">pypegase.stellibs.basel.</tt><tt class="descname">BaSeL_old</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/pypegase/stellibs/basel.html#BaSeL_old"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.basel.BaSeL_old" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pypegase.stellibs.stellib.Stellib" title="pypegase.stellibs.stellib.Stellib"><tt class="xref py py-class docutils literal"><span class="pre">pypegase.stellibs.stellib.Stellib</span></tt></a></p>
+<dl class="docutils">
+<dt>BaSeL 2.2 + Rauch stellar library derived class</dt>
+<dd>This library is used in Pegase.2</dd>
+</dl>
+<p>The BaSeL stellar spectral energy distribution (SED) libraries are libraries of
+theoretical stellar SEDs recalibrated using empirical photometric data.
+Therefore, we call them semi-empirical libraries.</p>
+<p>The BaSeL 2.2 library was calibrated using photometric data from solar
+metallicity stars.</p>
+<p class="rubric">References</p>
+<ul class="simple">
+<li>Lejeune, Cuisiner, and Buser, 1998 A&amp;AS, 130, 65</li>
+<li>can be downloaded <a class="reference external" href="http://www.astro.unibas.ch/BaSeL_files/BaSeL2_2.tar.gz">http://www.astro.unibas.ch/BaSeL_files/BaSeL2_2.tar.gz</a></li>
+</ul>
+<dl class="attribute">
+<dt id="pypegase.stellibs.basel.BaSeL_old.NHI">
+<tt class="descname">NHI</tt><a class="reference internal" href="_modules/pypegase/stellibs/basel.html#BaSeL_old.NHI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.basel.BaSeL_old.NHI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pypegase.stellibs.basel.BaSeL_old.NHeI">
+<tt class="descname">NHeI</tt><a class="reference internal" href="_modules/pypegase/stellibs/basel.html#BaSeL_old.NHeI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.basel.BaSeL_old.NHeI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pypegase.stellibs.basel.BaSeL_old.NHeII">
+<tt class="descname">NHeII</tt><a class="reference internal" href="_modules/pypegase/stellibs/basel.html#BaSeL_old.NHeII"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.basel.BaSeL_old.NHeII" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pypegase.stellibs.basel.BaSeL_old.Teff">
+<tt class="descname">Teff</tt><a class="reference internal" href="_modules/pypegase/stellibs/basel.html#BaSeL_old.Teff"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.basel.BaSeL_old.Teff" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pypegase.stellibs.basel.BaSeL_old.Z">
+<tt class="descname">Z</tt><a class="reference internal" href="_modules/pypegase/stellibs/basel.html#BaSeL_old.Z"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.basel.BaSeL_old.Z" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pypegase.stellibs.basel.BaSeL_old.bbox">
+<tt class="descname">bbox</tt><big>(</big><em>dlogT=0.05</em>, <em>dlogg=0.25</em><big>)</big><a class="reference internal" href="_modules/pypegase/stellibs/basel.html#BaSeL_old.bbox"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.basel.BaSeL_old.bbox" title="Permalink to this definition">¶</a></dt>
+<dd><p>Boundary of Basel 2.2 library</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>dlogT: float</strong></p>
+<blockquote>
+<div><p>log-temperature tolerance before extrapolation limit</p>
+</div></blockquote>
+<p><strong>dlogg: float</strong></p>
+<blockquote>
+<div><p>log-g tolerance before extrapolation limit</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">bbox: ndarray</p>
+<blockquote class="last">
+<div><p>(logT, logg) edges of the bounding polygon</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pypegase.stellibs.basel.BaSeL_old.logT">
+<tt class="descname">logT</tt><a class="reference internal" href="_modules/pypegase/stellibs/basel.html#BaSeL_old.logT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.basel.BaSeL_old.logT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pypegase.stellibs.basel.BaSeL_old.logZ">
+<tt class="descname">logZ</tt><a class="reference internal" href="_modules/pypegase/stellibs/basel.html#BaSeL_old.logZ"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.basel.BaSeL_old.logZ" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pypegase.stellibs.basel.BaSeL_old.logg">
+<tt class="descname">logg</tt><a class="reference internal" href="_modules/pypegase/stellibs/basel.html#BaSeL_old.logg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.basel.BaSeL_old.logg" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -524,6 +527,11 @@ sources.</p>
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="pypegase.stellibs.elodie.Elodie.logZ">
+<tt class="descname">logZ</tt><a class="reference internal" href="_modules/pypegase/stellibs/elodie.html#Elodie.logZ"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.elodie.Elodie.logZ" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="pypegase.stellibs.elodie.Elodie.logg">
 <tt class="descname">logg</tt><a class="reference internal" href="_modules/pypegase/stellibs/elodie.html#Elodie.logg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.elodie.Elodie.logg" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -707,6 +715,63 @@ sources.</p>
 <em class="property">class </em><tt class="descclassname">pypegase.stellibs.stellib.</tt><tt class="descname">CompositeStellib</tt><big>(</big><em>osllist</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/pypegase/stellibs/stellib.html#CompositeStellib"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.stellib.CompositeStellib" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pypegase.stellibs.stellib.Stellib" title="pypegase.stellibs.stellib.Stellib"><tt class="xref py py-class docutils literal"><span class="pre">pypegase.stellibs.stellib.Stellib</span></tt></a></p>
 <p>Generates an object from the union of multiple individual libraries</p>
+<dl class="attribute">
+<dt id="pypegase.stellibs.stellib.CompositeStellib.Teff">
+<tt class="descname">Teff</tt><a class="reference internal" href="_modules/pypegase/stellibs/stellib.html#CompositeStellib.Teff"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.stellib.CompositeStellib.Teff" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pypegase.stellibs.stellib.CompositeStellib.Z">
+<tt class="descname">Z</tt><a class="reference internal" href="_modules/pypegase/stellibs/stellib.html#CompositeStellib.Z"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.stellib.CompositeStellib.Z" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pypegase.stellibs.stellib.CompositeStellib.genIndividualStellarSpectrum">
+<tt class="descname">genIndividualStellarSpectrum</tt><big>(</big><em>stars</em>, <em>Z</em>, <em>inLsun=False</em>, <em>with_units=False</em><big>)</big><a class="reference internal" href="_modules/pypegase/stellibs/stellib.html#CompositeStellib.genIndividualStellarSpectrum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.stellib.CompositeStellib.genIndividualStellarSpectrum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates individual spectra for the given stars and stellar library</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>stars: Table</strong></p>
+<blockquote>
+<div><p>contains at least (logT, logg, logL) of the considered stars</p>
+</div></blockquote>
+<p><strong>Z: float</strong></p>
+<blockquote>
+<div><p>metallicity</p>
+</div></blockquote>
+<p><strong>inLsun: bool</strong></p>
+<blockquote>
+<div><p>return results units normalized to Lsun</p>
+</div></blockquote>
+<p><strong>with_units: bool</strong></p>
+<blockquote>
+<div><p>if set, return results with units</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">l0: ndarray, ndim=1</p>
+<blockquote>
+<div><p>wavelength definition of the spectra
+wavelength in AA</p>
+</div></blockquote>
+<p>s0: ndarray, shape=(len(stars), len(l0))</p>
+<blockquote>
+<div><p>array of spectra, one per input star
+Spectrum in ergs/s/AA or ergs/s/AA/Lsun</p>
+</div></blockquote>
+<p>NHI: ndarray, ndim=1, shape=(len(stars), )</p>
+<blockquote class="last">
+<div><p>number of photons potentially interacting with HI
+NHI property per star</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="method">
 <dt id="pypegase.stellibs.stellib.CompositeStellib.genQ">
 <tt class="descname">genQ</tt><big>(</big><em>qname</em>, <em>r</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/pypegase/stellibs/stellib.html#CompositeStellib.genQ"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.stellib.CompositeStellib.genQ" title="Permalink to this definition">¶</a></dt>
@@ -784,7 +849,7 @@ Works on 1 desired star or a population of stars</dd>
 
 <dl class="method">
 <dt id="pypegase.stellibs.stellib.CompositeStellib.get_boundaries">
-<tt class="descname">get_boundaries</tt><big>(</big><em>dlogT=0.1</em>, <em>dlogg=0.3</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/pypegase/stellibs/stellib.html#CompositeStellib.get_boundaries"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.stellib.CompositeStellib.get_boundaries" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_boundaries</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/pypegase/stellibs/stellib.html#CompositeStellib.get_boundaries"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.stellib.CompositeStellib.get_boundaries" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the closed boundary polygon around the stellar library with
 given margins</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -948,6 +1013,115 @@ to 12 star indexes and associated weights</p>
 </table>
 </dd></dl>
 
+<dl class="method">
+<dt id="pypegase.stellibs.stellib.CompositeStellib.interp_indidivualstars">
+<tt class="descname">interp_indidivualstars</tt><big>(</big><em>stars</em>, <em>Z</em>, <em>weights=None</em>, <em>inLsun=False</em>, <em>nthreads=1</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/pypegase/stellibs/stellib.html#CompositeStellib.interp_indidivualstars"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.stellib.CompositeStellib.interp_indidivualstars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build for each star individually the interpolation weights from the
+library to generate individual spectra.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>stars: Table</strong></p>
+<blockquote>
+<div><p>contains at least (logT, logg, logL) of the considered stars</p>
+</div></blockquote>
+<p><strong>Z: float</strong></p>
+<blockquote>
+<div><p>metallicity</p>
+</div></blockquote>
+<p><strong>weigths: ndarray[float, ndim=1]</strong></p>
+<blockquote>
+<div><p>weighted contribution of each star</p>
+</div></blockquote>
+<p><strong>inLsun: bool</strong></p>
+<blockquote>
+<div><p>return results units normalized to Lsun</p>
+</div></blockquote>
+<p><strong>nthreads: int</strong></p>
+<blockquote>
+<div><p>number of threads during interpolation</p>
+</div></blockquote>
+<p><strong>**kwargs are passed to osl.interpMany</strong></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">r: ndarray[float, ndim=2]</p>
+<blockquote class="last">
+<div><p>star index in the spectral library with respective contibutions</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.stellibs.stellib.CompositeStellib.interp_manystars">
+<tt class="descname">interp_manystars</tt><big>(</big><em>stars</em>, <em>Z</em>, <em>weights=None</em>, <em>inLsun=False</em>, <em>nthreads=1</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/pypegase/stellibs/stellib.html#CompositeStellib.interp_manystars"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.stellib.CompositeStellib.interp_manystars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build for the ensemble of stars the interpolation weights from the library
+to generate the integrated spectrum</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>stars: Table</strong></p>
+<blockquote>
+<div><p>contains at least (logT, logg, logL) of the considered stars</p>
+</div></blockquote>
+<p><strong>Z: float</strong></p>
+<blockquote>
+<div><p>metallicity</p>
+</div></blockquote>
+<p><strong>weigths: ndarray[float, ndim=1]</strong></p>
+<blockquote>
+<div><p>weighted contribution of each star</p>
+</div></blockquote>
+<p><strong>inLsun: bool</strong></p>
+<blockquote>
+<div><p>return results units normalized to Lsun</p>
+</div></blockquote>
+<p><strong>nthreads: int</strong></p>
+<blockquote>
+<div><p>number of threads during interpolation</p>
+</div></blockquote>
+<p><strong>**kwargs are passed to osl.interpMany</strong></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">r: ndarray[float, ndim=2]</p>
+<blockquote class="last">
+<div><p>star index in the spectral library with respective contibutions</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pypegase.stellibs.stellib.CompositeStellib.logT">
+<tt class="descname">logT</tt><a class="reference internal" href="_modules/pypegase/stellibs/stellib.html#CompositeStellib.logT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.stellib.CompositeStellib.logT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pypegase.stellibs.stellib.CompositeStellib.logZ">
+<tt class="descname">logZ</tt><a class="reference internal" href="_modules/pypegase/stellibs/stellib.html#CompositeStellib.logZ"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.stellib.CompositeStellib.logZ" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pypegase.stellibs.stellib.CompositeStellib.logg">
+<tt class="descname">logg</tt><a class="reference internal" href="_modules/pypegase/stellibs/stellib.html#CompositeStellib.logg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.stellib.CompositeStellib.logg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pypegase.stellibs.stellib.CompositeStellib.name">
+<tt class="descname">name</tt><a class="reference internal" href="_modules/pypegase/stellibs/stellib.html#CompositeStellib.name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.stellib.CompositeStellib.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pypegase.stellibs.stellib.CompositeStellib.set_default_extrapolation_bounds">
+<tt class="descname">set_default_extrapolation_bounds</tt><big>(</big><em>dlogT=None</em>, <em>dlogg=None</em><big>)</big><a class="reference internal" href="_modules/pypegase/stellibs/stellib.html#CompositeStellib.set_default_extrapolation_bounds"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.stellib.CompositeStellib.set_default_extrapolation_bounds" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="pypegase.stellibs.stellib.CompositeStellib.source">
 <tt class="descname">source</tt><a class="reference internal" href="_modules/pypegase/stellibs/stellib.html#CompositeStellib.source"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.stellib.CompositeStellib.source" title="Permalink to this definition">¶</a></dt>
@@ -962,7 +1136,7 @@ used to reinterpolate any spectrum onto a common definition</p>
 
 <dl class="method">
 <dt id="pypegase.stellibs.stellib.CompositeStellib.which_osl">
-<tt class="descname">which_osl</tt><big>(</big><em>xypoints</em>, <em>dlogT=0.0</em>, <em>dlogg=0.0</em><big>)</big><a class="reference internal" href="_modules/pypegase/stellibs/stellib.html#CompositeStellib.which_osl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.stellib.CompositeStellib.which_osl" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">which_osl</tt><big>(</big><em>xypoints</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/pypegase/stellibs/stellib.html#CompositeStellib.which_osl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.stellib.CompositeStellib.which_osl" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the library indice that contains each point in xypoints</p>
 <p>The decision is made from a two step search:</p>
 <blockquote>
@@ -1009,6 +1183,53 @@ relaxed and a new search is made.</li>
 <em class="property">class </em><tt class="descclassname">pypegase.stellibs.stellib.</tt><tt class="descname">Stellib</tt><big>(</big><em>*args</em>, <em>**kargs</em><big>)</big><a class="reference internal" href="_modules/pypegase/stellibs/stellib.html#Stellib"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.stellib.Stellib" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">builtins.object</span></tt></p>
 <p>Basic stellar library class</p>
+<dl class="method">
+<dt id="pypegase.stellibs.stellib.Stellib.genIndividualStellarSpectrum">
+<tt class="descname">genIndividualStellarSpectrum</tt><big>(</big><em>stars</em>, <em>Z</em>, <em>inLsun=False</em>, <em>with_units=False</em><big>)</big><a class="reference internal" href="_modules/pypegase/stellibs/stellib.html#Stellib.genIndividualStellarSpectrum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.stellib.Stellib.genIndividualStellarSpectrum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates individual spectra for the given stars and stellar library</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>stars: Table</strong></p>
+<blockquote>
+<div><p>contains at least (logT, logg, logL) of the considered stars</p>
+</div></blockquote>
+<p><strong>Z: float</strong></p>
+<blockquote>
+<div><p>metallicity</p>
+</div></blockquote>
+<p><strong>inLsun: bool</strong></p>
+<blockquote>
+<div><p>return results units normalized to Lsun</p>
+</div></blockquote>
+<p><strong>with_units: bool</strong></p>
+<blockquote>
+<div><p>if set, return results with units</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">l0: ndarray, ndim=1</p>
+<blockquote>
+<div><p>wavelength definition of the spectra
+wavelength in AA</p>
+</div></blockquote>
+<p>s0: ndarray, shape=(len(stars), len(l0))</p>
+<blockquote>
+<div><p>array of spectra, one per input star
+Spectrum in ergs/s/AA or ergs/s/AA/Lsun</p>
+</div></blockquote>
+<p>NHI: ndarray, ndim=1, shape=(len(stars), )</p>
+<blockquote class="last">
+<div><p>number of photons potentially interacting with HI
+NHI property per star</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="method">
 <dt id="pypegase.stellibs.stellib.Stellib.genQ">
 <tt class="descname">genQ</tt><big>(</big><em>qname</em>, <em>r</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/pypegase/stellibs/stellib.html#Stellib.genQ"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.stellib.Stellib.genQ" title="Permalink to this definition">¶</a></dt>
@@ -1072,6 +1293,63 @@ previous interpolation</p>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">s: ndarray</p>
 <blockquote class="last">
 <div><p>an array containing the composite spectrum</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.stellibs.stellib.Stellib.genStellarSpectrum">
+<tt class="descname">genStellarSpectrum</tt><big>(</big><em>stars</em>, <em>Z</em>, <em>weights=None</em>, <em>inLsun=False</em>, <em>with_units=False</em>, <em>nthreads=1</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/pypegase/stellibs/stellib.html#Stellib.genStellarSpectrum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.stellib.Stellib.genStellarSpectrum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the spectrum from stellar content only</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>stars: mytables.Table</strong></p>
+<blockquote>
+<div><p>contains logT, logg, logL of the considered stars</p>
+</div></blockquote>
+<p><strong>Z: float</strong></p>
+<blockquote>
+<div><p>metallicity</p>
+</div></blockquote>
+<p><strong>weigths: numpy.ndarray[float, ndim=1]</strong></p>
+<blockquote>
+<div><p>weighted contribution of each star</p>
+</div></blockquote>
+<p><strong>inLsun: bool</strong></p>
+<blockquote>
+<div><p>return results units normalized to Lsun</p>
+</div></blockquote>
+<p><strong>with_units: bool</strong></p>
+<blockquote>
+<div><p>if set, return results with units</p>
+</div></blockquote>
+<p><strong>nthreads: int</strong></p>
+<blockquote>
+<div><p>number of threads during interpolation</p>
+</div></blockquote>
+<p><strong>**kwargs are passed to osl.interpMany</strong></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">r: ndarray[float, ndim=2]</p>
+<blockquote>
+<div><p>star index in the spectral library with respective contibutions</p>
+</div></blockquote>
+<p>l0: ndarray[float, ndim=1]</p>
+<blockquote>
+<div><p>wavelength in AA</p>
+</div></blockquote>
+<p>s0: ndarray[float, ndim=1]</p>
+<blockquote>
+<div><p>Spectrum in ergs/s/AA or ergs/s/AA/Lsun</p>
+</div></blockquote>
+<p>NHI: float</p>
+<blockquote class="last">
+<div><p>number of photons potentially interacting with HI</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1159,7 +1437,7 @@ and only recomputed when parameters are updated</p>
 
 <dl class="method">
 <dt id="pypegase.stellibs.stellib.Stellib.interp">
-<tt class="descname">interp</tt><big>(</big><em>T0</em>, <em>g0</em>, <em>Z0</em>, <em>L0</em>, <em>dT_max=0.1</em>, <em>eps=1e-06</em><big>)</big><a class="reference internal" href="_modules/pypegase/stellibs/stellib.html#Stellib.interp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.stellib.Stellib.interp" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">interp</tt><big>(</big><em>T0</em>, <em>g0</em>, <em>Z0</em>, <em>L0</em>, <em>dT_max=0.1</em>, <em>eps=1e-06</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/pypegase/stellibs/stellib.html#Stellib.interp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.stellib.Stellib.interp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Interpolation of the T,g grid</p>
 <p>Interpolate on the grid and returns star indices and
 associated weights, and Z.
@@ -1295,6 +1573,94 @@ the same temperature</p>
 </table>
 </dd></dl>
 
+<dl class="method">
+<dt id="pypegase.stellibs.stellib.Stellib.interp_indidivualstars">
+<tt class="descname">interp_indidivualstars</tt><big>(</big><em>stars</em>, <em>Z</em>, <em>weights=None</em>, <em>inLsun=False</em>, <em>nthreads=1</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/pypegase/stellibs/stellib.html#Stellib.interp_indidivualstars"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.stellib.Stellib.interp_indidivualstars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build for each star individually the interpolation weights from the
+library to generate individual spectra.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>stars: Table</strong></p>
+<blockquote>
+<div><p>contains at least (logT, logg, logL) of the considered stars</p>
+</div></blockquote>
+<p><strong>Z: float</strong></p>
+<blockquote>
+<div><p>metallicity</p>
+</div></blockquote>
+<p><strong>weigths: ndarray[float, ndim=1]</strong></p>
+<blockquote>
+<div><p>weighted contribution of each star</p>
+</div></blockquote>
+<p><strong>inLsun: bool</strong></p>
+<blockquote>
+<div><p>return results units normalized to Lsun</p>
+</div></blockquote>
+<p><strong>nthreads: int</strong></p>
+<blockquote>
+<div><p>number of threads during interpolation</p>
+</div></blockquote>
+<p><strong>**kwargs are passed to osl.interpMany</strong></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">osl: ndarray(float, ndim=1)</p>
+<blockquote>
+<div><p>stellib index of the stars</p>
+</div></blockquote>
+<p>r: ndarray[float, ndim=2]</p>
+<blockquote class="last">
+<div><p>star index in the spectral library with respective contibutions</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.stellibs.stellib.Stellib.interp_manystars">
+<tt class="descname">interp_manystars</tt><big>(</big><em>stars</em>, <em>Z</em>, <em>weights=None</em>, <em>inLsun=False</em>, <em>nthreads=1</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/pypegase/stellibs/stellib.html#Stellib.interp_manystars"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.stellib.Stellib.interp_manystars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build for the ensemble of stars the interpolation weights from the library
+to generate the integrated spectrum</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>stars: Table</strong></p>
+<blockquote>
+<div><p>contains at least (logT, logg, logL) of the considered stars</p>
+</div></blockquote>
+<p><strong>Z: float</strong></p>
+<blockquote>
+<div><p>metallicity</p>
+</div></blockquote>
+<p><strong>weigths: ndarray[float, ndim=1]</strong></p>
+<blockquote>
+<div><p>weighted contribution of each star</p>
+</div></blockquote>
+<p><strong>inLsun: bool</strong></p>
+<blockquote>
+<div><p>return results units normalized to Lsun</p>
+</div></blockquote>
+<p><strong>nthreads: int</strong></p>
+<blockquote>
+<div><p>number of threads during interpolation</p>
+</div></blockquote>
+<p><strong>**kwargs are passed to osl.interpMany</strong></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">r: ndarray[float, ndim=2]</p>
+<blockquote class="last">
+<div><p>star index in the spectral library with respective contibutions</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="pypegase.stellibs.stellib.Stellib.nbytes">
 <tt class="descname">nbytes</tt><a class="reference internal" href="_modules/pypegase/stellibs/stellib.html#Stellib.nbytes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.stellibs.stellib.Stellib.nbytes" title="Permalink to this definition">¶</a></dt>
@@ -1373,26 +1739,69 @@ A point on the boundary may be treated as inside or outside.</p>
 
 
           </div>
-          <footer>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2014, Morgan Fouesneau, Ariane Lancon, and Michel Fioc.
-    </p>
-  </div>
-
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
-</footer>
         </div>
       </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">pyPegase</a></h1>
 
-    </section>
 
-  </div>
-  
 
-</body>
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=mfouesneau&repo=pypegase&type=watch&count=true&size=large"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">pypegase.stellibs package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-pypegase.stellibs.basel">pypegase.stellibs.basel module</a></li>
+<li><a class="reference internal" href="#module-pypegase.stellibs.common">pypegase.stellibs.common module</a></li>
+<li><a class="reference internal" href="#module-pypegase.stellibs.elodie">pypegase.stellibs.elodie module</a></li>
+<li><a class="reference internal" href="#module-pypegase.stellibs.interpolator">pypegase.stellibs.interpolator module</a></li>
+<li><a class="reference internal" href="#module-pypegase.stellibs.stellib">pypegase.stellibs.stellib module</a></li>
+<li><a class="reference internal" href="#module-pypegase.stellibs">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">pyPegase 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Morgan Fouesneau, Ariane Lancon, and Michel Fioc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
 </html>

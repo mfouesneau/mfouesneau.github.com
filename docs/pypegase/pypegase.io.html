@@ -1,138 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>pypegase.io package &mdash; pyPegase 1.0 documentation</title>
-  
-
-  
-  
-
-  
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
-  
-  
-
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pypegase.io package &mdash; pyPegase 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:'./',
-        VERSION:'1.0',
-        COLLAPSE_INDEX:false,
-        FILE_SUFFIX:'.html',
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="pyPegase 1.0 documentation" href="index.html" />
+	<script type="text/x-mathjax-config"> MathJax.Hub.Config({
+		"TeX": {Macros: {AA : "{\\unicode{x212B}}"}}, "HTML-CSS": {scale: 90}});
+	</script>
 
-    
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">pyPegase 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
 
-  
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
-    <script type="text/javascript">
-        jQuery(function () {
-            SphinxRtdTheme.StickyNav.enable();
-        });
-    </script>
-  
-
-  
-    <link rel="top" title="pyPegase 1.0 documentation" href="index.html"/> 
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
-
-</head>
-
-<body class="wy-body-for-nav" role="document">
-
-  <div class="wy-grid-for-nav">
-
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
-        <a href="index.html" class="fa fa-home"> pyPegase</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-      </div>
-
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        
-        
-            <ul>
-<li class="toctree-l1"><a class="reference internal" href="intro.html">pyPegase</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#simple-stellar-population-ssp">Simple stellar population (SSP)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#examples">Examples</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="readme.html">pyPEGASE v1.0</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="readme.html#contents-of-the-directory">Contents of the directory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="readme.html#setup">Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="readme.html#quick-start">Quick Start</a></li>
-<li class="toctree-l2"><a class="reference internal" href="readme.html#quick-start-by-example-3-steps-to-build-one-continuous-population">Quick start by example : 3 steps to build one &#8220;continuous&#8221; population</a></li>
-<li class="toctree-l2"><a class="reference internal" href="readme.html#quick-start-by-example-3-steps-to-build-one-discrete-population">Quick start by example: 3 steps to build one &#8220;discrete&#8221; population</a></li>
-<li class="toctree-l2"><a class="reference internal" href="readme.html#quick-start-by-example-3-steps-to-build-one-fast-discrete-population">Quick start by example: 3 steps to build one &#8220;fast-discrete&#8221; population</a></li>
-<li class="toctree-l2"><a class="reference internal" href="readme.html#customize-your-runs">Customize your runs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="readme.html#produce-large-collections-of-simulations">Produce large collections of simulations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="readme.html#compute-colors">Compute colors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="readme.html#for-those-who-wish-to-read-edit-the-codes">For those who wish to read/edit the codes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="readme.html#required-acknowledgements">Required acknowledgements</a></li>
-</ul>
-</li>
-</ul>
-
-        
-      </div>
-      &nbsp;
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">pyPegase</a>
-      </nav>
-
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>pypegase.io package</li>
-      <li class="wy-breadcrumbs-aside">
-        
-          <a href="_sources/pypegase.io.txt" rel="nofollow"> View page source</a>
-        
-      </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main">
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
             
   <div class="section" id="pypegase-io-package">
 <h1>pypegase.io package<a class="headerlink" href="#pypegase-io-package" title="Permalink to this headline">¶</a></h1>
@@ -424,22 +339,590 @@ Only works for Tables (not Arrays)</p>
 <h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><dl class="first docutils">
+<dt>FIT format:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
 <dt>astropy:</dt>
-<dd><p class="first">provides a samp access (astropy.vo.samp) for both python 2 and 3
-refactored version of sampy</p>
-<p class="last">provides a replacement to pyfits</p>
+<dd><p class="first last">provides a replacement to pyfits
+pyfits can still be used instead but astropy is now the default</p>
 </dd>
 </dl>
 </li>
 </ul>
-<div class="admonition note">
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>HDF5 format:</dt>
+<dd><ul class="first last simple">
+<li>pytables</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>RuntimeError will be raised when writing to a format associated with missing
+package.</p>
+<dl class="class">
+<dt id="pypegase.io.simpletable.AstroHelpers">
+<em class="property">class </em><tt class="descclassname">pypegase.io.simpletable.</tt><tt class="descname">AstroHelpers</tt><a class="reference internal" href="_modules/pypegase/io/simpletable.html#AstroHelpers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.AstroHelpers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">builtins.object</span></tt></p>
+<p>Helpers related to astronomy data</p>
+<dl class="staticmethod">
+<dt id="pypegase.io.simpletable.AstroHelpers.conesearch">
+<em class="property">static </em><tt class="descname">conesearch</tt><big>(</big><em>ra0</em>, <em>dec0</em>, <em>ra</em>, <em>dec</em>, <em>r</em>, <em>outtype=0</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#AstroHelpers.conesearch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.AstroHelpers.conesearch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform a cone search on a table</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ra0: ndarray[ndim=1, dtype=float]</strong></p>
+<blockquote>
+<div><p>column name to use as RA source in degrees</p>
+</div></blockquote>
+<p><strong>dec0: ndarray[ndim=1, dtype=float]</strong></p>
+<blockquote>
+<div><p>column name to use as DEC source in degrees</p>
+</div></blockquote>
+<p><strong>ra: float</strong></p>
+<blockquote>
+<div><p>ra to look for (in degree)</p>
+</div></blockquote>
+<p><strong>dec: float</strong></p>
+<blockquote>
+<div><p>ra to look for (in degree)</p>
+</div></blockquote>
+<p><strong>r: float</strong></p>
+<blockquote>
+<div><p>distance in degrees</p>
+</div></blockquote>
+<p><strong>outtype: int</strong></p>
+<blockquote>
+<div><dl class="docutils">
+<dt>type of outputs</dt>
+<dd><p class="first last">0 &#8211; minimal, indices of matching coordinates
+1 &#8211; indices and distances of matching coordinates
+2 &#8211; full, boolean filter and distances</p>
+</dd>
+</dl>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">t: tuple</p>
+<blockquote class="last">
+<div><dl class="docutils">
+<dt>if outtype is 0:</dt>
+<dd><p class="first last">only return indices from ra0, dec0</p>
+</dd>
+<dt>elif outtype is 1:</dt>
+<dd><p class="first last">return indices from ra0, dec0 and distances</p>
+</dd>
+<dt>elif outtype is 2:</dt>
+<dd><p class="first last">return conditional vector and distance to all ra0, dec0</p>
+</dd>
+</dl>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="pypegase.io.simpletable.AstroHelpers.deg2dms">
+<em class="property">static </em><tt class="descname">deg2dms</tt><big>(</big><em>val</em>, <em>delim=':'</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#AstroHelpers.deg2dms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.AstroHelpers.deg2dms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert degrees into hex coordinates</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>deg: float</strong></p>
+<blockquote>
+<div><p>angle in degrees</p>
+</div></blockquote>
+<p><strong>delimiter: str</strong></p>
+<blockquote>
+<div><p>character delimiting the fields</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">str: string or sequence</p>
+<blockquote class="last">
+<div><p>string to convert</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="pypegase.io.simpletable.AstroHelpers.deg2hms">
+<em class="property">static </em><tt class="descname">deg2hms</tt><big>(</big><em>val</em>, <em>delim=':'</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#AstroHelpers.deg2hms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.AstroHelpers.deg2hms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert degrees into hex coordinates</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>deg: float</strong></p>
+<blockquote>
+<div><p>angle in degrees</p>
+</div></blockquote>
+<p><strong>delimiter: str</strong></p>
+<blockquote>
+<div><p>character delimiting the fields</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">str: string or sequence</p>
+<blockquote class="last">
+<div><p>string to convert</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="pypegase.io.simpletable.AstroHelpers.dms2deg">
+<em class="property">static </em><tt class="descname">dms2deg</tt><big>(</big><em>_str</em>, <em>delim=':'</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#AstroHelpers.dms2deg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.AstroHelpers.dms2deg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert hex coordinates into degrees</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>str: string or sequence</strong></p>
+<blockquote>
+<div><p>string to convert</p>
+</div></blockquote>
+<p><strong>delimiter: str</strong></p>
+<blockquote>
+<div><p>character delimiting the fields</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">deg: float</p>
+<blockquote class="last">
+<div><p>angle in degrees</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="pypegase.io.simpletable.AstroHelpers.euler">
+<em class="property">static </em><tt class="descname">euler</tt><big>(</big><em>ai_in</em>, <em>bi_in</em>, <em>select</em>, <em>b1950=False</em>, <em>dtype='f8'</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#AstroHelpers.euler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.AstroHelpers.euler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform between Galactic, celestial, and ecliptic coordinates.
+Celestial coordinates (RA, Dec) should be given in equinox J2000
+unless the b1950 is True.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="22%" />
+<col width="19%" />
+<col width="16%" />
+<col width="16%" />
+<col width="17%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>select</td>
+<td>From</td>
+<td>To</td>
+<td>select</td>
+<td>From</td>
+<td>To</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>RA-Dec (2000)</td>
+<td>Galactic</td>
+<td>4</td>
+<td>Ecliptic</td>
+<td>RA-Dec</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>Galactic</td>
+<td>RA-DEC</td>
+<td>5</td>
+<td>Ecliptic</td>
+<td>Galactic</td>
+</tr>
+<tr class="row-even"><td>3</td>
+<td>RA-Dec</td>
+<td>Ecliptic</td>
+<td>6</td>
+<td>Galactic</td>
+<td>Ecliptic</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>long_in: float, or sequence</strong></p>
+<blockquote>
+<div><p>Input Longitude in DEGREES, scalar or vector.</p>
+</div></blockquote>
+<p><strong>lat_in: float, or sequence</strong></p>
+<blockquote>
+<div><p>Latitude in DEGREES</p>
+</div></blockquote>
+<p><strong>select: int</strong></p>
+<blockquote>
+<div><p>Integer from 1 to 6 specifying type of coordinate transformation.</p>
+</div></blockquote>
+<p><strong>b1950: bool</strong></p>
+<blockquote>
+<div><p>set equinox set to 1950</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">long_out: float, seq</p>
+<blockquote>
+<div><p>Output Longitude in DEGREES</p>
+</div></blockquote>
+<p>lat_out: float, seq</p>
+<blockquote>
+<div><p>Output Latitude in DEGREES</p>
+</div></blockquote>
+<div class="last admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">pyfits can still be used instead but astropy is now the default</p>
+<p class="last">Written W. Landsman,  February 1987
+Adapted from Fortran by Daryl Yentis NRL
+Converted to IDL V5.0   W. Landsman   September 1997
+Made J2000 the default, added /FK4 keyword  W. Landsman December 1998
+Add option to specify SELECT as a keyword W. Landsman March 2003
+Converted from IDL to numerical Python: Erin Sheldon, NYU, 2008-07-02</p>
 </div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="pypegase.io.simpletable.AstroHelpers.hms2deg">
+<em class="property">static </em><tt class="descname">hms2deg</tt><big>(</big><em>_str</em>, <em>delim=':'</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#AstroHelpers.hms2deg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.AstroHelpers.hms2deg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert hex coordinates into degrees</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>str: string or sequence</strong></p>
+<blockquote>
+<div><p>string to convert</p>
+</div></blockquote>
+<p><strong>delimiter: str</strong></p>
+<blockquote>
+<div><p>character delimiting the fields</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">deg: float</p>
+<blockquote class="last">
+<div><p>angle in degrees</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="pypegase.io.simpletable.AstroHelpers.sphdist">
+<em class="property">static </em><tt class="descname">sphdist</tt><big>(</big><em>ra1</em>, <em>dec1</em>, <em>ra2</em>, <em>dec2</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#AstroHelpers.sphdist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.AstroHelpers.sphdist" title="Permalink to this definition">¶</a></dt>
+<dd><p>measures the spherical distance between 2 points</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ra1: float or sequence</strong></p>
+<blockquote>
+<div><p>first right ascensions in degrees</p>
+</div></blockquote>
+<p><strong>dec1: float or sequence</strong></p>
+<blockquote>
+<div><p>first declination in degrees</p>
+</div></blockquote>
+<p><strong>ra2: float or sequence</strong></p>
+<blockquote>
+<div><p>second right ascensions in degrees</p>
+</div></blockquote>
+<p><strong>dec2: float or sequence</strong></p>
+<blockquote>
+<div><p>first declination in degrees</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Outputs: float or sequence</p>
+<blockquote class="last">
+<div><p>returns a distance in degrees</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pypegase.io.simpletable.AstroTable">
+<em class="property">class </em><tt class="descclassname">pypegase.io.simpletable.</tt><tt class="descname">AstroTable</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#AstroTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.AstroTable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pypegase.io.simpletable.SimpleTable" title="pypegase.io.simpletable.SimpleTable"><tt class="xref py py-class docutils literal"><span class="pre">pypegase.io.simpletable.SimpleTable</span></tt></a></p>
+<p>Derived from the Table, this class add implementations of common astro
+tools especially conesearch</p>
+<dl class="method">
+<dt id="pypegase.io.simpletable.AstroTable.coneSearch">
+<tt class="descname">coneSearch</tt><big>(</big><em>ra</em>, <em>dec</em>, <em>r</em>, <em>outtype=0</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#AstroTable.coneSearch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.AstroTable.coneSearch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform a cone search on a table</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ra0: ndarray[ndim=1, dtype=float]</strong></p>
+<blockquote>
+<div><p>column name to use as RA source in degrees</p>
+</div></blockquote>
+<p><strong>dec0: ndarray[ndim=1, dtype=float]</strong></p>
+<blockquote>
+<div><p>column name to use as DEC source in degrees</p>
+</div></blockquote>
+<p><strong>ra: float</strong></p>
+<blockquote>
+<div><p>ra to look for (in degree)</p>
+</div></blockquote>
+<p><strong>dec: float</strong></p>
+<blockquote>
+<div><p>ra to look for (in degree)</p>
+</div></blockquote>
+<p><strong>r: float</strong></p>
+<blockquote>
+<div><p>distance in degrees</p>
+</div></blockquote>
+<p><strong>outtype: int</strong></p>
+<blockquote>
+<div><dl class="docutils">
+<dt>type of outputs</dt>
+<dd><p class="first last">0 &#8211; minimal, indices of matching coordinates
+1 &#8211; indices and distances of matching coordinates
+2 &#8211; full, boolean filter and distances</p>
+</dd>
+</dl>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">t: tuple</p>
+<blockquote class="last">
+<div><dl class="docutils">
+<dt>if outtype is 0:</dt>
+<dd><p class="first last">only return indices from ra0, dec0</p>
+</dd>
+<dt>elif outtype is 1:</dt>
+<dd><p class="first last">return indices from ra0, dec0 and distances</p>
+</dd>
+<dt>elif outtype is 2:</dt>
+<dd><p class="first last">return conditional vector and distance to all ra0, dec0</p>
+</dd>
+</dl>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.io.simpletable.AstroTable.get_DEC">
+<tt class="descname">get_DEC</tt><big>(</big><em>degree=True</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#AstroTable.get_DEC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.AstroTable.get_DEC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns RA, converted from hexa/sexa into degrees</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.io.simpletable.AstroTable.get_RA">
+<tt class="descname">get_RA</tt><big>(</big><em>degree=True</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#AstroTable.get_RA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.AstroTable.get_RA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns RA, converted from hexa/sexa into degrees</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.io.simpletable.AstroTable.info">
+<tt class="descname">info</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#AstroTable.info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.AstroTable.info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pypegase.io.simpletable.AstroTable.selectWhere">
+<tt class="descname">selectWhere</tt><big>(</big><em>fields</em>, <em>condition=None</em>, <em>condvars=None</em>, <em>cone=None</em>, <em>zone=None</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#AstroTable.selectWhere"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.AstroTable.selectWhere" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read table data fulfilling the given <cite>condition</cite>.
+Only the rows fulfilling the <cite>condition</cite> are included in the result.
+conesearch is also possible through the keyword cone formatted as (ra, dec, r)
+zonesearch is also possible through the keyword zone formatted as (ramin, ramax, decmin, decmax)</p>
+<p>Combination of multiple selections is also available.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.io.simpletable.AstroTable.set_DEC">
+<tt class="descname">set_DEC</tt><big>(</big><em>val</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#AstroTable.set_DEC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.AstroTable.set_DEC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the column that defines DEC coordinates</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.io.simpletable.AstroTable.set_RA">
+<tt class="descname">set_RA</tt><big>(</big><em>val</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#AstroTable.set_RA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.AstroTable.set_RA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the column that defines RA coordinates</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.io.simpletable.AstroTable.where">
+<tt class="descname">where</tt><big>(</big><em>condition=None</em>, <em>condvars=None</em>, <em>cone=None</em>, <em>zone=None</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#AstroTable.where"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.AstroTable.where" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read table data fulfilling the given <cite>condition</cite>.
+Only the rows fulfilling the <cite>condition</cite> are included in the result.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>condition: str</strong></p>
+<blockquote>
+<div><p>expression to evaluate on the table
+includes mathematical operations and attribute names</p>
+</div></blockquote>
+<p><strong>condvars: dictionary, optional</strong></p>
+<blockquote>
+<div><p>A dictionary that replaces the local operands in current frame.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">out: ndarray/ tuple of ndarrays</p>
+<p class="last">result equivalent to <tt class="xref py py-func docutils literal"><span class="pre">np.where()</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.io.simpletable.AstroTable.zoneSearch">
+<tt class="descname">zoneSearch</tt><big>(</big><em>ramin</em>, <em>ramax</em>, <em>decmin</em>, <em>decmax</em>, <em>outtype=0</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#AstroTable.zoneSearch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.AstroTable.zoneSearch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform a zone search on a table, i.e., a rectangular selection</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ramin: float</strong></p>
+<blockquote>
+<div><p>minimal value of RA</p>
+</div></blockquote>
+<p><strong>ramax: float</strong></p>
+<blockquote>
+<div><p>maximal value of RA</p>
+</div></blockquote>
+<p><strong>decmin: float</strong></p>
+<blockquote>
+<div><p>minimal value of DEC</p>
+</div></blockquote>
+<p><strong>decmax: float</strong></p>
+<blockquote>
+<div><p>maximal value of DEC</p>
+</div></blockquote>
+<p><strong>outtype: int</strong></p>
+<blockquote>
+<div><dl class="docutils">
+<dt>type of outputs</dt>
+<dd><p class="first last">0 or 1 &#8211; minimal, indices of matching coordinates
+2 &#8211; full, boolean filter and distances</p>
+</dd>
+</dl>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">r: sequence</p>
+<blockquote class="last">
+<div><p>indices or conditional sequence of matching values</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
 <dl class="class">
 <dt id="pypegase.io.simpletable.SimpleTable">
 <em class="property">class </em><tt class="descclassname">pypegase.io.simpletable.</tt><tt class="descname">SimpleTable</tt><big>(</big><em>fname</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#SimpleTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.SimpleTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">builtins.object</span></tt></p>
+<p>Table class that is designed to be the basis of any format wrapping
+around numpy recarrays</p>
+<p class="rubric">Attributes</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>fname: str or object</td>
+<td>if str, the file to read from. This may be limited to the format currently handled automatically. If the format is not correctly handled, you can try by providing an object.__  if object with a structure like dict, ndarray, or recarray-like the data will be encapsulated into a Table</td>
+</tr>
+<tr class="row-even"><td>caseless: bool</td>
+<td>if set, column names will be caseless during operations</td>
+</tr>
+<tr class="row-odd"><td>aliases: dict</td>
+<td>set of column aliases (can be defined later <a class="reference internal" href="#pypegase.io.simpletable.SimpleTable.set_alias" title="pypegase.io.simpletable.SimpleTable.set_alias"><tt class="xref py py-func docutils literal"><span class="pre">set_alias()</span></tt></a>)</td>
+</tr>
+<tr class="row-even"><td>units: dict</td>
+<td>set of column units (can be defined later <a class="reference internal" href="#pypegase.io.simpletable.SimpleTable.set_unit" title="pypegase.io.simpletable.SimpleTable.set_unit"><tt class="xref py py-func docutils literal"><span class="pre">set_unit()</span></tt></a>)</td>
+</tr>
+<tr class="row-odd"><td>desc: dict</td>
+<td>set of column description or comments (can be defined later <a class="reference internal" href="#pypegase.io.simpletable.SimpleTable.set_comment" title="pypegase.io.simpletable.SimpleTable.set_comment"><tt class="xref py py-func docutils literal"><span class="pre">set_comment()</span></tt></a>)</td>
+</tr>
+<tr class="row-even"><td>header: dict</td>
+<td>key, value pair corresponding to the attributes of the table</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="pypegase.io.simpletable.SimpleTable.Plotter">
+<tt class="descname">Plotter</tt><a class="reference internal" href="_modules/pypegase/io/simpletable.html#SimpleTable.Plotter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.SimpleTable.Plotter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plotter instance related to this dataset.
+Requires plotter add-on to work</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.io.simpletable.SimpleTable.addCol">
+<tt class="descname">addCol</tt><big>(</big><em>name</em>, <em>data</em>, <em>dtype=None</em>, <em>unit=None</em>, <em>description=None</em><big>)</big><a class="headerlink" href="#pypegase.io.simpletable.SimpleTable.addCol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add one or multiple columns to the table</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name: str or sequence(str)</strong></p>
+<blockquote>
+<div><p>The name(s) of the column(s) to add</p>
+</div></blockquote>
+<p><strong>data: ndarray, or sequence of ndarray</strong></p>
+<blockquote>
+<div><p>The column data, or sequence of columns</p>
+</div></blockquote>
+<p><strong>dtype: dtype</strong></p>
+<blockquote>
+<div><p>numpy dtype for the data to add</p>
+</div></blockquote>
+<p><strong>unit: str</strong></p>
+<blockquote>
+<div><p>The unit of the values in the column</p>
+</div></blockquote>
+<p><strong>description: str</strong></p>
+<blockquote class="last">
+<div><p>A description of the content of the column</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="method">
 <dt id="pypegase.io.simpletable.SimpleTable.addLine">
 <tt class="descname">addLine</tt><big>(</big><em>iterable</em><big>)</big><a class="headerlink" href="#pypegase.io.simpletable.SimpleTable.addLine" title="Permalink to this definition">¶</a></dt>
@@ -461,35 +944,31 @@ refactored version of sampy</p>
 
 <dl class="method">
 <dt id="pypegase.io.simpletable.SimpleTable.add_column">
-<tt class="descname">add_column</tt><big>(</big><em>name</em>, <em>data</em>, <em>dtype=None</em>, <em>before=None</em>, <em>after=None</em>, <em>position=None</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#SimpleTable.add_column"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.SimpleTable.add_column" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add a column to the table</p>
+<tt class="descname">add_column</tt><big>(</big><em>name</em>, <em>data</em>, <em>dtype=None</em>, <em>unit=None</em>, <em>description=None</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#SimpleTable.add_column"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.SimpleTable.add_column" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add one or multiple columns to the table</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name: str</strong></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name: str or sequence(str)</strong></p>
 <blockquote>
-<div><p>The name of the column to add</p>
+<div><p>The name(s) of the column(s) to add</p>
 </div></blockquote>
-<p><strong>data: ndarray</strong></p>
+<p><strong>data: ndarray, or sequence of ndarray</strong></p>
 <blockquote>
-<div><p>The column data</p>
+<div><p>The column data, or sequence of columns</p>
 </div></blockquote>
 <p><strong>dtype: dtype</strong></p>
 <blockquote>
-<div><p>numpy dtype for the data</p>
+<div><p>numpy dtype for the data to add</p>
 </div></blockquote>
-<p><strong>before: str</strong></p>
+<p><strong>unit: str</strong></p>
 <blockquote>
-<div><p>Column before which the new column should be inserted</p>
+<div><p>The unit of the values in the column</p>
 </div></blockquote>
-<p><strong>after: str</strong></p>
-<blockquote>
-<div><p>Column after which the new column should be inserted</p>
-</div></blockquote>
-<p><strong>position:</strong></p>
+<p><strong>description: str</strong></p>
 <blockquote class="last">
-<div><p>Position at which the new column should be inserted (0 = first)</p>
+<div><p>A description of the content of the column</p>
 </div></blockquote>
 </td>
 </tr>
@@ -519,7 +998,48 @@ refactored version of sampy</p>
 <dl class="attribute">
 <dt id="pypegase.io.simpletable.SimpleTable.colnames">
 <tt class="descname">colnames</tt><a class="reference internal" href="_modules/pypegase/io/simpletable.html#SimpleTable.colnames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.SimpleTable.colnames" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Sequence of column names</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.io.simpletable.SimpleTable.compress">
+<tt class="descname">compress</tt><big>(</big><em>condition</em>, <em>axis=None</em>, <em>out=None</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#SimpleTable.compress"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.SimpleTable.compress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return selected slices of an array along given axis.</p>
+<p>When working along a given axis, a slice along that axis is returned in
+<cite>output</cite> for each index where <cite>condition</cite> evaluates to True. When
+working on a 1-D array, <cite>compress</cite> is equivalent to <cite>extract</cite>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>condition</strong> : 1-D array of bools</p>
+<blockquote>
+<div><p>Array that selects which entries to return. If len(condition)
+is less than the size of <cite>a</cite> along the given axis, then output is
+truncated to the length of the condition array.</p>
+</div></blockquote>
+<p><strong>axis</strong> : int, optional</p>
+<blockquote>
+<div><p>Axis along which to take slices. If None (default), work on the
+flattened array.</p>
+</div></blockquote>
+<p><strong>out</strong> : ndarray, optional</p>
+<blockquote>
+<div><p>Output array.  Its type is preserved and it must be of the right
+shape to hold the output.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>compressed_array</strong> : ndarray</p>
+<blockquote class="last">
+<div><p>A copy of <cite>a</cite> without the slices along axis for which <cite>condition</cite>
+is false.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="method">
 <dt id="pypegase.io.simpletable.SimpleTable.delCol">
@@ -542,7 +1062,8 @@ refactored version of sampy</p>
 <dl class="attribute">
 <dt id="pypegase.io.simpletable.SimpleTable.dtype">
 <tt class="descname">dtype</tt><a class="reference internal" href="_modules/pypegase/io/simpletable.html#SimpleTable.dtype"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.SimpleTable.dtype" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>dtype of the data</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="pypegase.io.simpletable.SimpleTable.empty_row">
@@ -595,14 +1116,83 @@ elements Only works at this time is 2 lines are <em>the same entry</em> not if
 </dd></dl>
 
 <dl class="method">
+<dt id="pypegase.io.simpletable.SimpleTable.get">
+<tt class="descname">get</tt><big>(</big><em>v</em>, <em>full_match=False</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#SimpleTable.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.SimpleTable.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a table from columns given as v</p>
+<p>this function is equivalent to <tt class="xref py py-func docutils literal"><span class="pre">__getitem__()</span></tt> but preserve the
+Table format and associated properties (units, description, header)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>v: str</strong></p>
+<blockquote>
+<div><p>pattern to filter the keys with</p>
+</div></blockquote>
+<p><strong>full_match: bool</strong></p>
+<blockquote class="last">
+<div><p>if set, use <tt class="xref py py-func docutils literal"><span class="pre">re.fullmatch()</span></tt> instead of <tt class="xref py py-func docutils literal"><span class="pre">re.match()</span></tt></p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.io.simpletable.SimpleTable.groupby">
+<tt class="descname">groupby</tt><big>(</big><em>*key</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#SimpleTable.groupby"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.SimpleTable.groupby" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an iterator which returns (key, sub-table) grouped by each value
+of key(value)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>key: str</strong></p>
+<blockquote>
+<div><p>expression or pattern to filter the keys with</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">key: str or sequence</p>
+<blockquote>
+<div><p>group key</p>
+</div></blockquote>
+<p>tab: SimpleTable instance</p>
+<blockquote class="last">
+<div><p>sub-table of the group
+header, aliases and column metadata are preserved (linked to the
+master table).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.io.simpletable.SimpleTable.info">
+<tt class="descname">info</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#SimpleTable.info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.SimpleTable.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>prints information on the table</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.io.simpletable.SimpleTable.items">
+<tt class="descname">items</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#SimpleTable.items"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.SimpleTable.items" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterator on the (key, value) pairs</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="pypegase.io.simpletable.SimpleTable.iterkeys">
 <tt class="descname">iterkeys</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#SimpleTable.iterkeys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.SimpleTable.iterkeys" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Iterator over the columns of the table</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="pypegase.io.simpletable.SimpleTable.itervalues">
 <tt class="descname">itervalues</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#SimpleTable.itervalues"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.SimpleTable.itervalues" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Iterator over the lines of the table</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="pypegase.io.simpletable.SimpleTable.join_by">
@@ -672,8 +1262,33 @@ Matching is not preserved if there are some duplicates...</li>
 
 <dl class="method">
 <dt id="pypegase.io.simpletable.SimpleTable.keys">
-<tt class="descname">keys</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#SimpleTable.keys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.SimpleTable.keys" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<tt class="descname">keys</tt><big>(</big><em>regexp=None</em>, <em>full_match=False</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#SimpleTable.keys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.SimpleTable.keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the data column names or a subset of it</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>regexp: str</strong></p>
+<blockquote>
+<div><p>pattern to filter the keys with</p>
+</div></blockquote>
+<p><strong>full_match: bool</strong></p>
+<blockquote>
+<div><p>if set, use <tt class="xref py py-func docutils literal"><span class="pre">re.fullmatch()</span></tt> instead of <tt class="xref py py-func docutils literal"><span class="pre">re.match()</span></tt></p>
+</div></blockquote>
+<p><strong>Try to apply the pattern at the start of the string, returning</strong></p>
+<p><strong>a match object, or None if no match was found.</strong></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">seq: sequence</p>
+<blockquote class="last">
+<div><p>sequence of keys</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="method">
 <dt id="pypegase.io.simpletable.SimpleTable.match">
@@ -707,23 +1322,26 @@ matching uses 2 columns that are compared in values</p>
 <dl class="attribute">
 <dt id="pypegase.io.simpletable.SimpleTable.name">
 <tt class="descname">name</tt><a class="reference internal" href="_modules/pypegase/io/simpletable.html#SimpleTable.name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.SimpleTable.name" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>name of the table given by the Header[&#8216;NAME&#8217;] attribute</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="pypegase.io.simpletable.SimpleTable.nbytes">
 <tt class="descname">nbytes</tt><a class="reference internal" href="_modules/pypegase/io/simpletable.html#SimpleTable.nbytes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.SimpleTable.nbytes" title="Permalink to this definition">¶</a></dt>
-<dd><p>return the number of bytes of the object</p>
+<dd><p>number of bytes of the object</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="pypegase.io.simpletable.SimpleTable.ncols">
 <tt class="descname">ncols</tt><a class="reference internal" href="_modules/pypegase/io/simpletable.html#SimpleTable.ncols"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.SimpleTable.ncols" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>number of columns</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="pypegase.io.simpletable.SimpleTable.nrows">
 <tt class="descname">nrows</tt><a class="reference internal" href="_modules/pypegase/io/simpletable.html#SimpleTable.nrows"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.SimpleTable.nrows" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>number of lines</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="pypegase.io.simpletable.SimpleTable.pop_columns">
@@ -742,6 +1360,73 @@ matching uses 2 columns that are compared in values</p>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">values: tuple</p>
 <blockquote class="last">
 <div><p>list of columns</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.io.simpletable.SimpleTable.pprint">
+<tt class="descname">pprint</tt><big>(</big><em>idx=None</em>, <em>fields=None</em>, <em>ret=False</em>, <em>all=False</em>, <em>full_match=False</em>, <em>headerChar='-'</em>, <em>delim=' | '</em>, <em>endline='\n'</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#SimpleTable.pprint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.SimpleTable.pprint" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Pretty print the table content</dt>
+<dd>you can select the table parts to display using idx to
+select the rows and fields to only display some columns
+(ret is only for insternal use)</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx: sequence, slide</strong></p>
+<blockquote>
+<div><p>sub selection to print</p>
+</div></blockquote>
+<p><strong>fields: str, sequence</strong></p>
+<blockquote>
+<div><p>if str can be a regular expression, and/or list of fields separated
+by spaces or commas</p>
+</div></blockquote>
+<p><strong>ret: bool</strong></p>
+<blockquote>
+<div><p>if set return the string representation instead of printing the result</p>
+</div></blockquote>
+<p><strong>all: bool</strong></p>
+<blockquote>
+<div><p>if set, force to show all rows</p>
+</div></blockquote>
+<p><strong>headerChar: char</strong></p>
+<blockquote>
+<div><p>Character to be used for the row separator line</p>
+</div></blockquote>
+<p><strong>delim: char</strong></p>
+<blockquote class="last">
+<div><p>The column delimiter.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.io.simpletable.SimpleTable.pprint_entry">
+<tt class="descname">pprint_entry</tt><big>(</big><em>num</em>, <em>keys=None</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#SimpleTable.pprint_entry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.SimpleTable.pprint_entry" title="Permalink to this definition">¶</a></dt>
+<dd><p>print one line with key and values properly to be readable</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>num: int, slice</strong></p>
+<blockquote>
+<div><p>indice selection</p>
+</div></blockquote>
+<p><strong>keys: sequence or str</strong></p>
+<blockquote class="last">
+<div><p>if str, can be a regular expression
+if sequence, the sequence of keys to print</p>
 </div></blockquote>
 </td>
 </tr>
@@ -806,6 +1491,28 @@ Aliases are defined by using .define_alias()</p>
 <dt id="pypegase.io.simpletable.SimpleTable.select">
 <tt class="descname">select</tt><big>(</big><em>fields</em>, <em>indices=None</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#SimpleTable.select"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.SimpleTable.select" title="Permalink to this definition">¶</a></dt>
 <dd><p>Select only a few fields in the table</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fields: str or sequence</strong></p>
+<blockquote>
+<div><p>fields to keep in the resulting table</p>
+</div></blockquote>
+<p><strong>indices: sequence or slice</strong></p>
+<blockquote>
+<div><p>extract only on these indices</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">tab: SimpleTable instance</p>
+<blockquote class="last">
+<div><p>resulting table</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -819,14 +1526,68 @@ Aliases are defined by using .define_alias()</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>condition: str</strong></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fields: str or sequence</strong></p>
+<blockquote>
+<div><p>fields to keep in the resulting table</p>
+</div></blockquote>
+<p><strong>condition: str</strong></p>
 <blockquote>
 <div><p>expression to evaluate on the table
 includes mathematical operations and attribute names</p>
 </div></blockquote>
 <p><strong>condvars: dictionary, optional</strong></p>
-<blockquote class="last">
+<blockquote>
 <div><p>A dictionary that replaces the local operands in current frame.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">tab: SimpleTable instance</p>
+<blockquote class="last">
+<div><p>resulting table</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.io.simpletable.SimpleTable.setComment">
+<tt class="descname">setComment</tt><big>(</big><em>colname</em>, <em>comment</em><big>)</big><a class="headerlink" href="#pypegase.io.simpletable.SimpleTable.setComment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the comment of a column referenced by its name</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>colname: str</strong></p>
+<blockquote>
+<div><p>column name or registered alias</p>
+</div></blockquote>
+<p><strong>comment: str</strong></p>
+<blockquote class="last">
+<div><p>column description</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.io.simpletable.SimpleTable.setUnit">
+<tt class="descname">setUnit</tt><big>(</big><em>colname</em>, <em>unit</em><big>)</big><a class="headerlink" href="#pypegase.io.simpletable.SimpleTable.setUnit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the unit of a column referenced by its name</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>colname: str</strong></p>
+<blockquote>
+<div><p>column name or registered alias</p>
+</div></blockquote>
+<p><strong>unit: str</strong></p>
+<blockquote class="last">
+<div><p>unit description</p>
 </div></blockquote>
 </td>
 </tr>
@@ -856,10 +1617,55 @@ includes mathematical operations and attribute names</p>
 </table>
 </dd></dl>
 
+<dl class="method">
+<dt id="pypegase.io.simpletable.SimpleTable.set_comment">
+<tt class="descname">set_comment</tt><big>(</big><em>colname</em>, <em>comment</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#SimpleTable.set_comment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.SimpleTable.set_comment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the comment of a column referenced by its name</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>colname: str</strong></p>
+<blockquote>
+<div><p>column name or registered alias</p>
+</div></blockquote>
+<p><strong>comment: str</strong></p>
+<blockquote class="last">
+<div><p>column description</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.io.simpletable.SimpleTable.set_unit">
+<tt class="descname">set_unit</tt><big>(</big><em>colname</em>, <em>unit</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#SimpleTable.set_unit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.SimpleTable.set_unit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the unit of a column referenced by its name</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>colname: str</strong></p>
+<blockquote>
+<div><p>column name or registered alias</p>
+</div></blockquote>
+<p><strong>unit: str</strong></p>
+<blockquote class="last">
+<div><p>unit description</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="pypegase.io.simpletable.SimpleTable.shape">
 <tt class="descname">shape</tt><a class="reference internal" href="_modules/pypegase/io/simpletable.html#SimpleTable.shape"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.SimpleTable.shape" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>shape of the data</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="pypegase.io.simpletable.SimpleTable.sort">
@@ -899,6 +1705,92 @@ the existing table (and does not return a new table).</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="pypegase.io.simpletable.SimpleTable.stats">
+<tt class="descname">stats</tt><big>(</big><em>fn=None</em>, <em>fields=None</em>, <em>fill=None</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#SimpleTable.stats"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.SimpleTable.stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make statistics on columns of a table</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fn: callable or sequence of callables</strong></p>
+<blockquote>
+<div><p>functions to apply to each column
+default: (np.mean, np.std, np.nanmin, np.nanmax)</p>
+</div></blockquote>
+<p><strong>fields: str or sequence</strong></p>
+<blockquote>
+<div><p>any key or key expression to subselect columns
+default is all columns</p>
+</div></blockquote>
+<p><strong>fill: value</strong></p>
+<blockquote>
+<div><p>value when not applicable
+default np.nan</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">tab: Table instance</p>
+<blockquote class="last">
+<div><p>collection of statistics, one column per function in fn and 1 ligne
+per column in the table</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pypegase.io.simpletable.SimpleTable.take">
+<tt class="descname">take</tt><big>(</big><em>indices</em>, <em>axis=None</em>, <em>out=None</em>, <em>mode='raise'</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#SimpleTable.take"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.SimpleTable.take" title="Permalink to this definition">¶</a></dt>
+<dd><p>Take elements from an array along an axis.</p>
+<p>This function does the same thing as &#8220;fancy&#8221; indexing (indexing arrays
+using arrays); however, it can be easier to use if you need elements
+along a given axis.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>indices</strong> : array_like</p>
+<blockquote>
+<div><p>The indices of the values to extract.
+Also allow scalars for indices.</p>
+</div></blockquote>
+<p><strong>axis</strong> : int, optional</p>
+<blockquote>
+<div><p>The axis over which to select values. By default, the flattened
+input array is used.</p>
+</div></blockquote>
+<p><strong>out</strong> : ndarray, optional</p>
+<blockquote>
+<div><p>If provided, the result will be placed in this array. It should
+be of the appropriate shape and dtype.</p>
+</div></blockquote>
+<p><strong>mode</strong> : {&#8216;raise&#8217;, &#8216;wrap&#8217;, &#8216;clip&#8217;}, optional</p>
+<blockquote>
+<div><p>Specifies how out-of-bounds indices will behave.</p>
+<ul class="simple">
+<li>&#8216;raise&#8217; &#8211; raise an error (default)</li>
+<li>&#8216;wrap&#8217; &#8211; wrap around</li>
+<li>&#8216;clip&#8217; &#8211; clip to the range</li>
+</ul>
+<p>&#8216;clip&#8217; mode means that all indices that are too large are replaced
+by the index that addresses the last element along that axis. Note
+that this disables indexing with negative numbers.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>subarray</strong> : ndarray</p>
+<blockquote class="last">
+<div><p>The returned array has the same type as <cite>a</cite>.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="pypegase.io.simpletable.SimpleTable.where">
 <tt class="descname">where</tt><big>(</big><em>condition</em>, <em>condvars=None</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#SimpleTable.where"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.SimpleTable.where" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read table data fulfilling the given <cite>condition</cite>.
@@ -919,9 +1811,7 @@ includes mathematical operations and attribute names</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">out: ndarray/ tuple of ndarrays</p>
-<blockquote class="last">
-<div><p>result equivalent to numpy.where</p>
-</div></blockquote>
+<p class="last">result equivalent to <tt class="xref py py-func docutils literal"><span class="pre">np.where()</span></tt></p>
 </td>
 </tr>
 </tbody>
@@ -931,6 +1821,76 @@ includes mathematical operations and attribute names</p>
 <dl class="method">
 <dt id="pypegase.io.simpletable.SimpleTable.write">
 <tt class="descname">write</tt><big>(</big><em>fname</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#SimpleTable.write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.SimpleTable.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>write table into file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fname: str</strong></p>
+<blockquote>
+<div><p>filename to export the table into</p>
+</div></blockquote>
+<p><strong>.. note::</strong></p>
+<blockquote class="last">
+<div><p>additional keywords are forwarded to the corresponding libraries
+<tt class="xref py py-func docutils literal"><span class="pre">pyfits.writeto()</span></tt> or <tt class="xref py py-func docutils literal"><span class="pre">pyfits.append()</span></tt>
+<tt class="xref py py-func docutils literal"><span class="pre">np.savetxt()</span></tt></p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pypegase.io.simpletable.stats">
+<em class="property">class </em><tt class="descclassname">pypegase.io.simpletable.</tt><tt class="descname">stats</tt><a class="reference internal" href="_modules/pypegase/io/simpletable.html#stats"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">builtins.object</span></tt></p>
+<dl class="classmethod">
+<dt id="pypegase.io.simpletable.stats.has_nan">
+<em class="property">classmethod </em><tt class="descname">has_nan</tt><big>(</big><em>s</em>, <em>v</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#stats.has_nan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.stats.has_nan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="pypegase.io.simpletable.stats.max">
+<em class="property">classmethod </em><tt class="descname">max</tt><big>(</big><em>s</em>, <em>v</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#stats.max"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.stats.max" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="pypegase.io.simpletable.stats.mean">
+<em class="property">classmethod </em><tt class="descname">mean</tt><big>(</big><em>s</em>, <em>v</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#stats.mean"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.stats.mean" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="pypegase.io.simpletable.stats.min">
+<em class="property">classmethod </em><tt class="descname">min</tt><big>(</big><em>s</em>, <em>v</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#stats.min"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.stats.min" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="pypegase.io.simpletable.stats.p16">
+<em class="property">classmethod </em><tt class="descname">p16</tt><big>(</big><em>s</em>, <em>v</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#stats.p16"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.stats.p16" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="pypegase.io.simpletable.stats.p50">
+<em class="property">classmethod </em><tt class="descname">p50</tt><big>(</big><em>s</em>, <em>v</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#stats.p50"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.stats.p50" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="pypegase.io.simpletable.stats.p84">
+<em class="property">classmethod </em><tt class="descname">p84</tt><big>(</big><em>s</em>, <em>v</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#stats.p84"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.stats.p84" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="pypegase.io.simpletable.stats.std">
+<em class="property">classmethod </em><tt class="descname">std</tt><big>(</big><em>s</em>, <em>v</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#stats.std"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.stats.std" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="pypegase.io.simpletable.stats.var">
+<em class="property">classmethod </em><tt class="descname">var</tt><big>(</big><em>s</em>, <em>v</em><big>)</big><a class="reference internal" href="_modules/pypegase/io/simpletable.html#stats.var"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pypegase.io.simpletable.stats.var" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -944,26 +1904,70 @@ includes mathematical operations and attribute names</p>
 
 
           </div>
-          <footer>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2014, Morgan Fouesneau, Ariane Lancon, and Michel Fioc.
-    </p>
-  </div>
-
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
-</footer>
         </div>
       </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">pyPegase</a></h1>
 
-    </section>
 
-  </div>
-  
 
-</body>
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=mfouesneau&repo=pypegase&type=watch&count=true&size=large"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">pypegase.io package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-pypegase.io.fits">pypegase.io.fits module</a></li>
+<li><a class="reference internal" href="#module-pypegase.io.hdfstore">pypegase.io.hdfstore module</a></li>
+<li><a class="reference internal" href="#module-pypegase.io.simpletable">pypegase.io.simpletable module</a><ul>
+<li><a class="reference internal" href="#requirements">Requirements</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-pypegase.io">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">pyPegase 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Morgan Fouesneau, Ariane Lancon, and Michel Fioc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
 </html>
