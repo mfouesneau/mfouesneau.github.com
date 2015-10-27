@@ -102,25 +102,41 @@ Definition of the problem
 -------------------------
 
 If we define the data set :math:`D` with uncertainties :math:`E` of :math:`{d_k, e_k}`
-independent observations and a model M predicting what the data should look
+**independent** observations and a model :math:`M` predicting what the data should look
 like. It comes through Bayes rule:
 
 .. math::
 
     p(M | D, E) = \frac{1}{Z}  \prod_k P(d_k| M, e_k) P(M)
 
-:math:`Z` is the evidence (normalization factor), :math:`P(d_k| M, e_k)` the
-likelihood the the :math:`k`-th data point, and :math:`P(M)` the prior on the
-model (or its parameters).
+where 
+:math:`Z` is the evidence (normalization factor, strictly dependent on :math:`M`), 
+:math:`P(d_k| M, e_k)` the likelihood the :math:`k`-th data point, 
+and :math:`P(M)` the prior on the model (or its parameters).
 
 
 Non-symmetric uncertainties: Split-Normal distribution
 ------------------------------------------------------
 
+When accounting for uncertainties in the data, one should strictly integrate the
+:math:`k`-th likelihood over the associated uncertainties :math:`e_k`,
+
+.. math::
+
+        \begin{eqnarray}
+                 p(d_k | M, e_k) &= \int_{t_k} P(d_k, t_k | M, e_k) dt_k
+                 & = \int_{t_k} P(d_k| M, e_k, t_k) P(t_k | M, e_k) dt_k
+        \end{eqnarray}
+
+In the above, :math:`P(d_k| M, e_k, t_k)` is the measurement model, which tells
+how likely it is to have :math:`t_k` as true measurement given the data, while  
+:math:`P(t_k | M, e_k)` is effectively a measurement proposal model or how
+likely it is to measure :math:`t_k` given the model itself.
+
 Most of the uncertainties in astronomy are Gaussian or Gaussian-ish. Accounting
 for more complex uncertainties is sometimes a challenge.
 
-Howver, it stays trivial when uncertainties are non-correlated by observing that
+However, it stays trivial when uncertainties are non-correlated by observing that
 it corresponds to a skewed normal distribution. The latter can be very simply
 defined by the closed form of a split normal distribution.
 
@@ -147,6 +163,13 @@ This function as the advantage to allow the proper treatment of skewed
 distributions as well as upper/lower limits with one unique functional form.
 
 
+.. figure:: splitnormal.png
+     :alt: example of a split normal
+
+     **Figure:** Example of a split normal distrbution in which one can clearly see the
+     non-symmetric distribution.
+
+
 Finite Data Sample
 ------------------
 
@@ -163,7 +186,7 @@ We define our model as follow:
 
 .. math::
 
-    y_{model}(x | \alpha, \beta) = \alpha \, x + \beta
+    y_{model}(x | \alpha, \beta) = \alpha \, x_{model} + \beta
 
 I assume here that we have perfect "fake" data to work with, :math:`(x_{data}, y_{data})`, 
 so that the MAP is actually trivial to get from the covariance of the sample:
@@ -180,9 +203,16 @@ so that the MAP is actually trivial to get from the covariance of the sample:
 Hat trick: sampling from the data
 ---------------------------------
 
-The approximation that we propose to do is to replace the data point :math:`d_k` by a
-sampling of :math:`d_k` following the distribution given by :math:`e_k`. Here we suppose
-normally distributed uncertainties.
+The proper way to do the integral mentioned above is often non trivial and the
+actual sampling ends up being rapidly inefficient, spending most of the samples
+computing null likelihood values. For instance, imagine computing the orbit of
+an asteroid given a position. There are gazillions possible orbits allowed by
+your priors, but only a few will actually go through this data point.
+
+We propose an approximation which is to replace the data point :math:`d_k` by a
+sampling of :math:`d_k` following the distribution given by :math:`e_k`. Here we
+suppose normally distributed uncertainties. In other words, do a Monte-Carlo
+integration where the proposal distribution is given by the data.
 
 it comes that either you can do
 
