@@ -1,0 +1,559 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>gridengine package &mdash; Gridengine 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Gridengine 1.0 documentation" href="index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">Gridengine 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="gridengine-package">
+<h1>gridengine package<a class="headerlink" href="#gridengine-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-gridengine.dispatch">
+<span id="gridengine-dispatch-module"></span><h2>gridengine.dispatch module<a class="headerlink" href="#module-gridengine.dispatch" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="gridengine.dispatch.JobDispatcher">
+<em class="property">class </em><tt class="descclassname">gridengine.dispatch.</tt><tt class="descname">JobDispatcher</tt><big>(</big><em>scheduler=&lt;function best_available at 0x10725b950&gt;</em><big>)</big><a class="reference internal" href="_modules/gridengine/dispatch.html#JobDispatcher"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gridengine.dispatch.JobDispatcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">builtins.object</span></tt></p>
+<p>Server-like node tasked with dispatching and mediating jobs</p>
+<dl class="method">
+<dt id="gridengine.dispatch.JobDispatcher.controller">
+<tt class="descname">controller</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/gridengine/dispatch.html#JobDispatcher.controller"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gridengine.dispatch.JobDispatcher.controller" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="gridengine.dispatch.JobDispatcher.dispatch">
+<tt class="descname">dispatch</tt><big>(</big><em>jobs</em><big>)</big><a class="reference internal" href="_modules/gridengine/dispatch.html#JobDispatcher.dispatch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gridengine.dispatch.JobDispatcher.dispatch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dispatch a set of jobs to run asynchronously</p>
+<p>Request the scheduler to schedule the set of jobs to run,
+then spin up the JobDispatcher.controller in a separate
+thread to control execution of the jobs.</p>
+<p>This method will raise a RuntimeError if called more than once
+before a call to join().</p>
+<p>Raises:
+RuntimeError: if called multiple times before a corresponding
+call to join()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="gridengine.dispatch.JobDispatcher.finished">
+<tt class="descname">finished</tt><a class="headerlink" href="#gridengine.dispatch.JobDispatcher.finished" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="gridengine.dispatch.JobDispatcher.get_finished">
+<tt class="descname">get_finished</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/gridengine/dispatch.html#JobDispatcher.get_finished"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gridengine.dispatch.JobDispatcher.get_finished" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="gridengine.dispatch.JobDispatcher.join">
+<tt class="descname">join</tt><big>(</big><em>timeout=None</em><big>)</big><a class="reference internal" href="_modules/gridengine/dispatch.html#JobDispatcher.join"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gridengine.dispatch.JobDispatcher.join" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wait until the jobs terminate</p>
+<p>This blocks the calling thread until the jobs terminate - either
+normally or through an unhandled exception - or until the optional
+timeout occurs.</p>
+<p>Raises:
+TimeoutError: If the jobs have not finished before the specified timeout
+RuntimeError: If a call to join is made before dispatching</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gridengine.dispatch.JobDispatcher.set_finished">
+<tt class="descname">set_finished</tt><big>(</big><em>value</em><big>)</big><a class="reference internal" href="_modules/gridengine/dispatch.html#JobDispatcher.set_finished"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gridengine.dispatch.JobDispatcher.set_finished" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-gridengine.functional">
+<span id="gridengine-functional-module"></span><h2>gridengine.functional module<a class="headerlink" href="#module-gridengine.functional" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="gridengine.functional.PicklableLambda">
+<em class="property">class </em><tt class="descclassname">gridengine.functional.</tt><tt class="descname">PicklableLambda</tt><big>(</big><em>func</em><big>)</big><a class="reference internal" href="_modules/gridengine/functional.html#PicklableLambda"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gridengine.functional.PicklableLambda" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">builtins.object</span></tt></p>
+<p>Class/Decorator that ensures a lambda (&#8220;anonymous&#8221; function) will be
+picklable.  Lambda are not picklable because they are anonymous while
+pickling mainly works with the names.  This class digs out the code of the
+lambda, which is picklable and recreates the lambda function when called.
+The encapsulated lambda is not anonymous anymore.</p>
+<dl class="docutils">
+<dt>Notes:</dt>
+<dd><ul class="first last simple">
+<li>Dependencies are not handled.</li>
+<li>Often Partial can replace a lambda definition</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="gridengine.functional.islambda">
+<tt class="descclassname">gridengine.functional.</tt><tt class="descname">islambda</tt><big>(</big><em>func</em><big>)</big><a class="reference internal" href="_modules/gridengine/functional.html#islambda"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gridengine.functional.islambda" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test if the function func is a lambda (&#8220;anonymous&#8221; function)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gridengine.functional.map">
+<tt class="descclassname">gridengine.functional.</tt><tt class="descname">map</tt><big>(</big><em>f</em>, <em>args</em>, <em>scheduler=&lt;function best_available at 0x10725b950&gt;</em>, <em>reraise=True</em><big>)</big><a class="reference internal" href="_modules/gridengine/functional.html#map"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gridengine.functional.map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform a functional-style map operation</p>
+<p>Apply a function f to each argument in the iterable args. This is equivalent to</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span>
+<span class="go">    args = range(100)</span>
+<span class="go">    y = [f(x) for x in args]</span>
+<span class="go">    y = map(f, args)</span>
+</pre></div>
+</div>
+<p>except that each argument in the iterable is assigned to a separate Job
+and scheduled to run via the scheduler.</p>
+<p>The default scheduler is a schedulers.ProcessScheduler instance. To run map
+on a grid engine, simply pass a schedulers.GridEngineScheduler instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f: callable</strong></p>
+<blockquote>
+<div><p>A picklable function</p>
+</div></blockquote>
+<p><strong>args: iterable</strong></p>
+<blockquote>
+<div><p>An iterable (list) of arguments to f</p>
+</div></blockquote>
+<p><strong>scheduler: schedulers.Scheduler instance or class</strong></p>
+<blockquote>
+<div><p>By default, the system tries to return the best_available() scheduler.
+Use this if you want to set a scheduler specifically.</p>
+</div></blockquote>
+<p><strong>reraise: bool</strong></p>
+<blockquote>
+<div><p>Reraise exceptions that occur in any of the jobs. Set this to False if
+you want to salvage any good results.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">List of return values equivalent to the builtin map function</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><strong>Any exception that would occur when applying [f(x) for x in args]</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="gridengine.functional.partial">
+<tt class="descclassname">gridengine.functional.</tt><tt class="descname">partial</tt><big>(</big><em>f</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/gridengine/functional.html#partial"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gridengine.functional.partial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a callable partially closed over the input function and arguments</p>
+<p>partial is functionally equivalent to functools.partial, however it also
+applies a variant of functools.update_wrapper, with:</p>
+<blockquote>
+<div>__doc__    = f.__doc__
+__module__ = f.__module__
+__name__   = f.__name__ + string_representation_of_closed_arguments</div></blockquote>
+<p>This is useful for running functions with different parameter sets, whilst
+being able to identify the variants by name</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-gridengine.job">
+<span id="gridengine-job-module"></span><h2>gridengine.job module<a class="headerlink" href="#module-gridengine.job" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="gridengine.job.Job">
+<em class="property">class </em><tt class="descclassname">gridengine.job.</tt><tt class="descname">Job</tt><big>(</big><em>mutable=False</em>, <em>target=None</em>, <em>name=None</em>, <em>args=()</em>, <em>kwargs={}</em><big>)</big><a class="reference internal" href="_modules/gridengine/job.html#Job"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gridengine.job.Job" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">builtins.object</span></tt></p>
+<p>Execution node that wraps a function and its arguments</p>
+<p>A gridengine Job observes the same API as the builtin threading.Thread
+and multiprocessing.Process classes. This is to assist in transitioning
+from multiprocessing to Sun Grid Engine processing.</p>
+<dl class="docutils">
+<dt>Job has two use cases:</dt>
+<dd><ol class="first last arabic simple">
+<li>Wrap a callable and its arguments in the constructor and let the grid
+engine handle everything else (the normal use case)</li>
+<li>Subclass Job and override the behaviour of the run() method</li>
+</ol>
+</dd>
+</dl>
+<p>The latter option enables more powerful use cases (such as the use of
+protocol.Protocols for bidirectional job communication), but requires more
+code.</p>
+<p>Note that some care has been taken to ensure that Job objects and the
+functions they wrap are gridengine.serializer serializable. When subclassing Job, be sure to
+do the same.</p>
+<dl class="method">
+<dt id="gridengine.job.Job.run">
+<tt class="descname">run</tt><big>(</big><em>controller</em><big>)</big><a class="reference internal" href="_modules/gridengine/job.html#Job.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gridengine.job.Job.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs the Job target with the stored arguments.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>controller (JobController): The controller is a handle to the controller
+that is managing this job. If the target accepts &#8216;controller&#8217; as
+a keyword argument, the controller is passed through. This allows the
+job to directly communicate with the dispatcher to, for example,
+retrieve meta job information such as jobid or push intermediate
+results back to the dispatcher</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="gridengine.job.JobController">
+<em class="property">class </em><tt class="descclassname">gridengine.job.</tt><tt class="descname">JobController</tt><big>(</big><em>submission_host</em><big>)</big><a class="reference internal" href="_modules/gridengine/job.html#JobController"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gridengine.job.JobController" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">builtins.object</span></tt></p>
+<dl class="method">
+<dt id="gridengine.job.JobController.fetch">
+<tt class="descname">fetch</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/gridengine/job.html#JobController.fetch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gridengine.job.JobController.fetch" title="Permalink to this definition">¶</a></dt>
+<dd><p>fetch the job assignment from the job dispatcher</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gridengine.job.JobController.start">
+<tt class="descname">start</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/gridengine/job.html#JobController.start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gridengine.job.JobController.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="gridengine.job.JobController.store">
+<tt class="descname">store</tt><big>(</big><em>jobid</em>, <em>result</em><big>)</big><a class="reference internal" href="_modules/gridengine/job.html#JobController.store"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gridengine.job.JobController.store" title="Permalink to this definition">¶</a></dt>
+<dd><p>Push the results back to the server</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="gridengine.job.run_from_command_line">
+<tt class="descclassname">gridengine.job.</tt><tt class="descname">run_from_command_line</tt><big>(</big><em>argv</em><big>)</big><a class="reference internal" href="_modules/gridengine/job.html#run_from_command_line"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gridengine.job.run_from_command_line" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-gridengine.schedulers">
+<span id="gridengine-schedulers-module"></span><h2>gridengine.schedulers module<a class="headerlink" href="#module-gridengine.schedulers" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="gridengine.schedulers.GridEngineScheduler">
+<em class="property">class </em><tt class="descclassname">gridengine.schedulers.</tt><tt class="descname">GridEngineScheduler</tt><big>(</big><em>**resources</em><big>)</big><a class="reference internal" href="_modules/gridengine/schedulers.html#GridEngineScheduler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gridengine.schedulers.GridEngineScheduler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#gridengine.schedulers.Scheduler" title="gridengine.schedulers.Scheduler"><tt class="xref py py-class docutils literal"><span class="pre">gridengine.schedulers.Scheduler</span></tt></a></p>
+<p>A Scheduler that schedules jobs on a Sun Grid Engine (SGE) using the drmaa
+library</p>
+<dl class="method">
+<dt id="gridengine.schedulers.GridEngineScheduler.join">
+<tt class="descname">join</tt><big>(</big><em>timeout=None</em><big>)</big><a class="reference internal" href="_modules/gridengine/schedulers.html#GridEngineScheduler.join"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gridengine.schedulers.GridEngineScheduler.join" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wait until the jobs terminate</p>
+<p>This blocks the calling thread until the jobs terminate - either
+normally or through an unhandled exception - or until the optional
+timeout occurs.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>timeout: int</strong></p>
+<blockquote>
+<div><p>The time to wait for the jobs to join before raising</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><strong>TimeoutError: If the jobs have not finished before the specified timeout</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gridengine.schedulers.GridEngineScheduler.killall">
+<tt class="descname">killall</tt><big>(</big><em>verbose=False</em><big>)</big><a class="reference internal" href="_modules/gridengine/schedulers.html#GridEngineScheduler.killall"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gridengine.schedulers.GridEngineScheduler.killall" title="Permalink to this definition">¶</a></dt>
+<dd><p>Terminate any running jobs</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gridengine.schedulers.GridEngineScheduler.schedule">
+<tt class="descname">schedule</tt><big>(</big><em>submission_host</em>, <em>job_queue</em>, <em>**resources</em><big>)</big><a class="reference internal" href="_modules/gridengine/schedulers.html#GridEngineScheduler.schedule"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gridengine.schedulers.GridEngineScheduler.schedule" title="Permalink to this definition">¶</a></dt>
+<dd><p>schedule the jobs (dict of {jobid, job.Job}) to run</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>submission_host: str</strong></p>
+<blockquote>
+<div><p>the address of the submission host (job.JobDispatcher.address)</p>
+</div></blockquote>
+<p><strong>job_queue: dict</strong></p>
+<blockquote>
+<div><p>the dict of {jobid, job.Job} items to run</p>
+</div></blockquote>
+<p><strong>Resources: dict</strong></p>
+<blockquote class="last">
+<div><p>to be passed to the -l command of qsub. These override any
+arguments that were given to the constructor. e.g.
+h_cpu: maximum time expressed in format &#8216;02:00:00&#8217; (2 hours)
+h_vmem: maximum memory allocation before job is killed in format &#8216;10G&#8217; (10GB)
+virtual_free: memory free on host BEFORE job can be allocated</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="gridengine.schedulers.ProcessScheduler">
+<em class="property">class </em><tt class="descclassname">gridengine.schedulers.</tt><tt class="descname">ProcessScheduler</tt><big>(</big><em>max_threads=None</em><big>)</big><a class="reference internal" href="_modules/gridengine/schedulers.html#ProcessScheduler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gridengine.schedulers.ProcessScheduler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#gridengine.schedulers.Scheduler" title="gridengine.schedulers.Scheduler"><tt class="xref py py-class docutils literal"><span class="pre">gridengine.schedulers.Scheduler</span></tt></a></p>
+<p>A Scheduler that schedules jobs as multiple processes on a multi-core CPU.
+Requires ZeroMQ, but not a Sun Grid Engine (drmaa).</p>
+<dl class="method">
+<dt id="gridengine.schedulers.ProcessScheduler.join">
+<tt class="descname">join</tt><big>(</big><em>timeout=None</em><big>)</big><a class="reference internal" href="_modules/gridengine/schedulers.html#ProcessScheduler.join"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gridengine.schedulers.ProcessScheduler.join" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wait until the jobs terminate</p>
+<p>This blocks the calling thread until the jobs terminate - either
+normally or through an unhandled exception - or until the optional
+timeout occurs.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><strong>TimeoutError: If the jobs have not finished before the specified timeout</strong></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gridengine.schedulers.ProcessScheduler.killall">
+<tt class="descname">killall</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/gridengine/schedulers.html#ProcessScheduler.killall"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gridengine.schedulers.ProcessScheduler.killall" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="gridengine.schedulers.ProcessScheduler.schedule">
+<tt class="descname">schedule</tt><big>(</big><em>submission_host</em>, <em>job_queue</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/gridengine/schedulers.html#ProcessScheduler.schedule"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gridengine.schedulers.ProcessScheduler.schedule" title="Permalink to this definition">¶</a></dt>
+<dd><p>schedule the jobs (dict of {jobid, job.Job}) to run asynchronously</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>submission_host: str</strong></p>
+<blockquote>
+<div><p>the address of the submission host (job.JobDispatcher.address)</p>
+</div></blockquote>
+<p><strong>job_queue: dict</strong></p>
+<blockquote class="last">
+<div><p>the dict of {jobid, job.Job{ items to run</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="gridengine.schedulers.Scheduler">
+<em class="property">class </em><tt class="descclassname">gridengine.schedulers.</tt><tt class="descname">Scheduler</tt><a class="reference internal" href="_modules/gridengine/schedulers.html#Scheduler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gridengine.schedulers.Scheduler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">builtins.object</span></tt></p>
+<p>A generic scheduler interface</p>
+<dl class="method">
+<dt id="gridengine.schedulers.Scheduler.join">
+<tt class="descname">join</tt><big>(</big><em>timeout=None</em><big>)</big><a class="reference internal" href="_modules/gridengine/schedulers.html#Scheduler.join"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gridengine.schedulers.Scheduler.join" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="gridengine.schedulers.Scheduler.killall">
+<tt class="descname">killall</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/gridengine/schedulers.html#Scheduler.killall"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gridengine.schedulers.Scheduler.killall" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="gridengine.schedulers.Scheduler.schedule">
+<tt class="descname">schedule</tt><big>(</big><em>submission_host</em>, <em>job_queue</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/gridengine/schedulers.html#Scheduler.schedule"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gridengine.schedulers.Scheduler.schedule" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="gridengine.schedulers.TimeoutError">
+<em class="property">exception </em><tt class="descclassname">gridengine.schedulers.</tt><tt class="descname">TimeoutError</tt><a class="reference internal" href="_modules/gridengine/schedulers.html#TimeoutError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gridengine.schedulers.TimeoutError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">builtins.Exception</span></tt></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gridengine.schedulers.best_available">
+<tt class="descclassname">gridengine.schedulers.</tt><tt class="descname">best_available</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/gridengine/schedulers.html#best_available"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gridengine.schedulers.best_available" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the best available scheduler for a system</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-gridengine.settings">
+<span id="gridengine-settings-module"></span><h2>gridengine.settings module<a class="headerlink" href="#module-gridengine.settings" title="Permalink to this headline">¶</a></h2>
+<p>Django-Style configuration file for GridEngine</p>
+</div>
+<div class="section" id="module-gridengine">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-gridengine" title="Permalink to this headline">¶</a></h2>
+<p>A lightweight Python library for distributed computing on Sun Grid Engines</p>
+<p>GridEngine streamlines the process of managing distributed computing on a
+Sun Grid Engine. It was designed for iterating over algorithm and experiment
+design on a computing cluster.</p>
+<p>GridEngine was intentionally designed to match the API of the built-in
+multiprocessing.Process and threading.Thread classes. If you have ever used
+these, the gridengine.Job class will be familiar to you.</p>
+<p>At its core, gridengine is designed to transparently schedule and execute
+Jobs on a Sun Grid Engine computing cluster and return the results once the
+jobs have completed. All scheduling and communication whilst jobs are running
+are handled by gridengine.</p>
+<p>The component layout of gridengine can be visualized as follows:</p>
+<div class="code highlight-python"><div class="highlight"><pre>        |       JobDispatcher  ------&gt;  Scheduler
+Host    |           /\                    /
+        |          /  \                  /
+                  /    \                /
+Comms   | ZeroMQ /      \              / Sun Grid Engine
+                /        \            /
+Cluster |     Job0  ...  Job1  ...  JobN
+</pre></div>
+</div>
+<p>Jobs are wrappers around a function and its arguments. Jobs are constructed on
+the host and executed on the cluster. The JobDispatcher is tasked with
+collating and dispatching the jobs, then communicating with them once running.
+The JobDispatcher passes the jobs to the Scheduler to be invoked.</p>
+<dl class="docutils">
+<dt>Schedulers:</dt>
+<dd><dl class="first last docutils">
+<dt>ProcessScheduler: schedules jobs across processes on a multi-core computer</dt>
+<dd>(laptop, etc). This is handy for debugging and experiment
+design before scheduling thousands of jobs on the cluster</dd>
+<dt>GridEngineScheduler: schedules jobs across nodes on a Sun Grid Engine</dt>
+<dd>(cluster). This scheduler can be used in any environment
+which uses DRMAA, it is not strictly limited to SGE.</dd>
+</dl>
+</dd>
+</dl>
+<p>Once the jobs have have scheduled, they contact the JobDispatcher for their job
+allocation, run the job, and submit the results back to the dispatcher before
+terminating.</p>
+<dl class="docutils">
+<dt>Modules:</dt>
+<dd>job: The Job and JobController
+dispatch: The JobDispatcher
+schedulers: ProcessScheduler, GridEngineScheduler and TimeoutError
+functional: provides a distributed &#8216;map&#8217; function
+settings: settings that control the global behaviour of gridengine
+example: example usage of gridengine.functional.map</dd>
+</dl>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Gridengine</a></h1>
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=mfouesneau&repo=gridengine&type=watch&count=true&size=large"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">gridengine package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-gridengine.dispatch">gridengine.dispatch module</a></li>
+<li><a class="reference internal" href="#module-gridengine.functional">gridengine.functional module</a></li>
+<li><a class="reference internal" href="#module-gridengine.job">gridengine.job module</a></li>
+<li><a class="reference internal" href="#module-gridengine.schedulers">gridengine.schedulers module</a></li>
+<li><a class="reference internal" href="#module-gridengine.settings">gridengine.settings module</a></li>
+<li><a class="reference internal" href="#module-gridengine">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2015, Morgan Fouesneau.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.2.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.3</a>
+      
+      |
+      <a href="_sources/gridengine.txt"
+          rel="nofollow">Page source</a></li>
+    </div>
+
+    
+    <a href="https://github.com/mfouesneau/gridengine" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>

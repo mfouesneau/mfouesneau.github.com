@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>gridengine.schedulers &mdash; Gridengine 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Gridengine 1.0 documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Gridengine 1.0 documentation</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for gridengine.schedulers</h1><div class="highlight"><pre>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">job</span><span class="p">,</span> <span class="n">settings</span>
+
+
+<span class="c"># ----------------------------------------------------------------------------</span>
+<span class="c"># Exceptions</span>
+<span class="c"># ----------------------------------------------------------------------------</span>
+<div class="viewcode-block" id="TimeoutError"><a class="viewcode-back" href="../../gridengine.html#gridengine.schedulers.TimeoutError">[docs]</a><span class="k">class</span> <span class="nc">TimeoutError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="c"># ----------------------------------------------------------------------------</span>
+<span class="c"># Generic scheduler interface</span>
+<span class="c"># ----------------------------------------------------------------------------</span></div>
+<div class="viewcode-block" id="Scheduler"><a class="viewcode-back" href="../../gridengine.html#gridengine.schedulers.Scheduler">[docs]</a><span class="k">class</span> <span class="nc">Scheduler</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A generic scheduler interface&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Scheduler.schedule"><a class="viewcode-back" href="../../gridengine.html#gridengine.schedulers.Scheduler.schedule">[docs]</a>    <span class="k">def</span> <span class="nf">schedule</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">submission_host</span><span class="p">,</span> <span class="n">job_queue</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="Scheduler.join"><a class="viewcode-back" href="../../gridengine.html#gridengine.schedulers.Scheduler.join">[docs]</a>    <span class="k">def</span> <span class="nf">join</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="Scheduler.killall"><a class="viewcode-back" href="../../gridengine.html#gridengine.schedulers.Scheduler.killall">[docs]</a>    <span class="k">def</span> <span class="nf">killall</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+
+</div></div>
+<div class="viewcode-block" id="best_available"><a class="viewcode-back" href="../../gridengine.html#gridengine.schedulers.best_available">[docs]</a><span class="k">def</span> <span class="nf">best_available</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Return the best available scheduler for a system&quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">GridEngineScheduler</span><span class="p">()</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">RuntimeError</span><span class="p">,</span> <span class="ne">ImportError</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">ProcessScheduler</span><span class="p">()</span>
+
+
+<span class="c"># ----------------------------------------------------------------------------</span>
+<span class="c"># MultiProcess Scheduler</span>
+<span class="c"># ----------------------------------------------------------------------------</span></div>
+<div class="viewcode-block" id="ProcessScheduler"><a class="viewcode-back" href="../../gridengine.html#gridengine.schedulers.ProcessScheduler">[docs]</a><span class="k">class</span> <span class="nc">ProcessScheduler</span><span class="p">(</span><span class="n">Scheduler</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A Scheduler that schedules jobs as multiple processes on a multi-core CPU.</span>
+<span class="sd">    Requires ZeroMQ, but not a Sun Grid Engine (drmaa).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">max_threads</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="kn">import</span> <span class="nn">multiprocessing</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">multiprocessing</span> <span class="o">=</span> <span class="n">multiprocessing</span>
+        <span class="c"># set the threads to the cpu count</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_threads</span> <span class="o">=</span> <span class="n">max_threads</span> <span class="k">if</span> <span class="n">max_threads</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">multiprocessing</span><span class="o">.</span><span class="n">cpu_count</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">killall</span><span class="p">()</span>
+
+<div class="viewcode-block" id="ProcessScheduler.schedule"><a class="viewcode-back" href="../../gridengine.html#gridengine.schedulers.ProcessScheduler.schedule">[docs]</a>    <span class="k">def</span> <span class="nf">schedule</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">submission_host</span><span class="p">,</span> <span class="n">job_queue</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;schedule the jobs (dict of {jobid, job.Job}) to run asynchronously</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        submission_host: str</span>
+<span class="sd">            the address of the submission host (job.JobDispatcher.address)</span>
+<span class="sd">        job_queue: dict</span>
+<span class="sd">            the dict of {jobid, job.Job{ items to run</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pool</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">multiprocessing</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_threads</span><span class="p">)</span>
+        <span class="n">args</span> <span class="o">=</span> <span class="p">([</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">submission_host</span><span class="p">]</span> <span class="k">for</span> <span class="n">jobid</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">job_queue</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pool</span><span class="o">.</span><span class="n">map_async</span><span class="p">(</span><span class="n">job</span><span class="o">.</span><span class="n">run_from_command_line</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;ProcessScheduler: submitted {0} jobs across {1} concurrent processes&#39;</span>
+              <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">job_queue</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_threads</span><span class="p">))</span>
+</div>
+<div class="viewcode-block" id="ProcessScheduler.join"><a class="viewcode-back" href="../../gridengine.html#gridengine.schedulers.ProcessScheduler.join">[docs]</a>    <span class="k">def</span> <span class="nf">join</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Wait until the jobs terminate</span>
+
+<span class="sd">        This blocks the calling thread until the jobs terminate - either</span>
+<span class="sd">        normally or through an unhandled exception - or until the optional</span>
+<span class="sd">        timeout occurs.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">          TimeoutError: If the jobs have not finished before the specified timeout</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pool</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pool</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+        <span class="k">except</span> <span class="bp">self</span><span class="o">.</span><span class="n">multiprocessing</span><span class="o">.</span><span class="n">TimeoutError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">TimeoutError</span><span class="p">(</span><span class="s">&#39;call to join() timed out before jobs finished&#39;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">KeyboardInterrupt</span><span class="p">,</span> <span class="ne">Exception</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pool</span><span class="o">.</span><span class="n">terminate</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pool</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+            <span class="k">raise</span> <span class="n">e</span>
+</div>
+<div class="viewcode-block" id="ProcessScheduler.killall"><a class="viewcode-back" href="../../gridengine.html#gridengine.schedulers.ProcessScheduler.killall">[docs]</a>    <span class="k">def</span> <span class="nf">killall</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pool</span><span class="o">.</span><span class="n">terminate</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pool</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">AttributeError</span><span class="p">,</span> <span class="ne">RuntimeError</span><span class="p">):</span>
+            <span class="k">pass</span>
+
+
+<span class="c"># ----------------------------------------------------------------------------</span>
+<span class="c"># Grid Engine Scheduler</span>
+<span class="c"># ----------------------------------------------------------------------------</span></div></div>
+<div class="viewcode-block" id="GridEngineScheduler"><a class="viewcode-back" href="../../gridengine.html#gridengine.schedulers.GridEngineScheduler">[docs]</a><span class="k">class</span> <span class="nc">GridEngineScheduler</span><span class="p">(</span><span class="n">Scheduler</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A Scheduler that schedules jobs on a Sun Grid Engine (SGE) using the drmaa</span>
+<span class="sd">    library</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">resources</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Initialize a GridEngineScheduler instance</span>
+
+<span class="sd">        Only one instance may run per Python process, since the underlying drmaa</span>
+<span class="sd">        layer is a singleton.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        Resources: dict</span>
+<span class="sd">            to be passed to the -l command of qsub.</span>
+<span class="sd">            e.g.:</span>
+<span class="sd">            h_cpu: maximum time expressed in format &#39;02:00:00&#39; (2 hours)</span>
+<span class="sd">            h_vmem: maximum memory allocation before job is killed in format &#39;10G&#39; (10GB)</span>
+<span class="sd">            virtual_free: memory free on host BEFORE job can be allocated</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">import</span> <span class="nn">drmaa</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">drmaa</span> <span class="o">=</span> <span class="n">drmaa</span>
+
+        <span class="c"># pass-through options to the jobs</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">resources</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">DEFAULT_RESOURCES</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">resources</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">resources</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">session</span> <span class="o">=</span> <span class="n">drmaa</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">initialize</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sgeids</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;drmaa&#39;</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">killall</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+            <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">drmaa</span><span class="o">.</span><span class="n">errors</span><span class="o">.</span><span class="n">NoActiveSessionException</span><span class="p">):</span>
+                <span class="k">pass</span>
+
+<div class="viewcode-block" id="GridEngineScheduler.schedule"><a class="viewcode-back" href="../../gridengine.html#gridengine.schedulers.GridEngineScheduler.schedule">[docs]</a>    <span class="k">def</span> <span class="nf">schedule</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">submission_host</span><span class="p">,</span> <span class="n">job_queue</span><span class="p">,</span> <span class="o">**</span><span class="n">resources</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;schedule the jobs (dict of {jobid, job.Job}) to run</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        submission_host: str</span>
+<span class="sd">            the address of the submission host (job.JobDispatcher.address)</span>
+<span class="sd">        job_queue: dict</span>
+<span class="sd">            the dict of {jobid, job.Job} items to run</span>
+<span class="sd">        Resources: dict</span>
+<span class="sd">            to be passed to the -l command of qsub. These override any</span>
+<span class="sd">            arguments that were given to the constructor. e.g.</span>
+<span class="sd">            h_cpu: maximum time expressed in format &#39;02:00:00&#39; (2 hours)</span>
+<span class="sd">            h_vmem: maximum memory allocation before job is killed in format &#39;10G&#39; (10GB)</span>
+<span class="sd">            virtual_free: memory free on host BEFORE job can be allocated</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c"># dont spin up the scheduler if there&#39;s nothing to do</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">job_queue</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="c"># update the keyword resources</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">resources</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">resources</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="o">+</span> <span class="n">resources</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">resources</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">resources</span><span class="o">.</span><span class="n">items</span><span class="p">())</span> <span class="o">+</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">resources</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+
+        <span class="c"># retrieve the job target</span>
+        <span class="n">target</span> <span class="o">=</span> <span class="n">job_queue</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">target</span>
+        <span class="n">target</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">__module__</span> <span class="o">+</span> <span class="s">&#39;.&#39;</span> <span class="o">+</span> <span class="n">target</span><span class="o">.</span><span class="n">__name__</span>
+
+        <span class="c"># build the homogenous job template and submit array</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">createJobTemplate</span><span class="p">()</span> <span class="k">as</span> <span class="n">jt</span><span class="p">:</span>
+            <span class="n">jt</span><span class="o">.</span><span class="n">jobEnvironment</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span>
+
+            <span class="n">jt</span><span class="o">.</span><span class="n">remoteCommand</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">WRAPPER</span><span class="p">)</span>
+            <span class="n">jt</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="n">submission_host</span><span class="p">]</span>
+            <span class="n">jt</span><span class="o">.</span><span class="n">jobName</span> <span class="o">=</span> <span class="n">resources</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">,</span><span class="n">target</span><span class="p">)</span>
+            <span class="n">jt</span><span class="o">.</span><span class="n">jobName</span> <span class="o">=</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">jt</span><span class="o">.</span><span class="n">jobName</span><span class="o">.</span><span class="n">split</span><span class="p">())[:</span><span class="mi">15</span><span class="p">]</span>
+            <span class="n">jt</span><span class="o">.</span><span class="n">nativeSpecification</span> <span class="o">=</span> <span class="s">&#39;-l &#39;</span> <span class="o">+</span> <span class="s">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                <span class="n">resource</span> <span class="o">+</span> <span class="s">&#39;=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="k">for</span> <span class="n">resource</span><span class="p">,</span><span class="n">value</span> <span class="ow">in</span> <span class="n">resources</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+            <span class="p">)</span> <span class="k">if</span> <span class="n">resources</span> <span class="k">else</span> <span class="s">&#39;&#39;</span>
+            <span class="n">jt</span><span class="o">.</span><span class="n">joinFiles</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="n">jt</span><span class="o">.</span><span class="n">outputPath</span> <span class="o">=</span> <span class="s">&#39;:&#39;</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">TEMPDIR</span><span class="p">)</span>
+            <span class="n">jt</span><span class="o">.</span><span class="n">errorPath</span>  <span class="o">=</span> <span class="s">&#39;:&#39;</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">TEMPDIR</span><span class="p">)</span>
+            <span class="n">jt</span><span class="o">.</span><span class="n">WORKING_DIRECTORY</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+            <span class="n">jt</span><span class="o">.</span><span class="n">workingDirectory</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">sgeids</span>  <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">runBulkJobs</span><span class="p">(</span><span class="n">jt</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">job_queue</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">arrayid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sgeids</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&#39;GridEngineScheduler: submitted {0} jobs in array {1}&#39;</span>
+                  <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">job_queue</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">arrayid</span><span class="p">))</span>
+</div>
+<div class="viewcode-block" id="GridEngineScheduler.join"><a class="viewcode-back" href="../../gridengine.html#gridengine.schedulers.GridEngineScheduler.join">[docs]</a>    <span class="k">def</span> <span class="nf">join</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Wait until the jobs terminate</span>
+
+<span class="sd">        This blocks the calling thread until the jobs terminate - either</span>
+<span class="sd">        normally or through an unhandled exception - or until the optional</span>
+<span class="sd">        timeout occurs.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        timeout: int</span>
+<span class="sd">         The time to wait for the jobs to join before raising</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">          TimeoutError: If the jobs have not finished before the specified timeout</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">timeout</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s">&#39;inf&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">timeout</span> <span class="ow">is</span> <span class="bp">None</span> <span class="k">else</span> <span class="nb">int</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
+        <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">synchronize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sgeids</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">timeout</span><span class="p">),</span> <span class="n">dispose</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+            <span class="k">except</span> <span class="bp">self</span><span class="o">.</span><span class="n">drmaa</span><span class="o">.</span><span class="n">ExitTimeoutException</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span> <span class="o">&gt;</span> <span class="n">timeout</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="n">TimeoutError</span><span class="p">(</span><span class="s">&#39;call to join() timed out before jobs finished&#39;</span><span class="p">)</span>
+            <span class="k">except</span> <span class="p">(</span><span class="ne">KeyboardInterrupt</span><span class="p">,</span> <span class="ne">Exception</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">killall</span><span class="p">()</span>
+                <span class="k">raise</span> <span class="n">e</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">break</span>
+</div>
+<div class="viewcode-block" id="GridEngineScheduler.killall"><a class="viewcode-back" href="../../gridengine.html#gridengine.schedulers.GridEngineScheduler.killall">[docs]</a>    <span class="k">def</span> <span class="nf">killall</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Terminate any running jobs&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">control</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">drmaa</span><span class="o">.</span><span class="n">Session</span><span class="o">.</span><span class="n">JOB_IDS_SESSION_ALL</span><span class="p">,</span>
+                             <span class="bp">self</span><span class="o">.</span><span class="n">drmaa</span><span class="o">.</span><span class="n">JobControlAction</span><span class="o">.</span><span class="n">TERMINATE</span><span class="p">)</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Gridengine</a></h1>
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=mfouesneau&repo=gridengine&type=watch&count=true&size=large"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2015, Morgan Fouesneau.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.2.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.3</a>
+      
+    </div>
+
+    
+    <a href="https://github.com/mfouesneau/gridengine" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>

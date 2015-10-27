@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>gridengine.job &mdash; Gridengine 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Gridengine 1.0 documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Gridengine 1.0 documentation</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for gridengine.job</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">import</span> <span class="nn">socket</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">traceback</span>
+<span class="kn">import</span> <span class="nn">zmq</span>
+
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">serializer</span>
+
+
+<span class="c"># ----------------------------------------------------------------------------</span>
+<span class="c"># JOB</span>
+<span class="c"># ----------------------------------------------------------------------------</span>
+<div class="viewcode-block" id="Job"><a class="viewcode-back" href="../../gridengine.html#gridengine.job.Job">[docs]</a><span class="k">class</span> <span class="nc">Job</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Execution node that wraps a function and its arguments</span>
+
+<span class="sd">    A gridengine Job observes the same API as the builtin threading.Thread</span>
+<span class="sd">    and multiprocessing.Process classes. This is to assist in transitioning</span>
+<span class="sd">    from multiprocessing to Sun Grid Engine processing.</span>
+
+<span class="sd">    Job has two use cases:</span>
+<span class="sd">      1. Wrap a callable and its arguments in the constructor and let the grid</span>
+<span class="sd">         engine handle everything else (the normal use case)</span>
+<span class="sd">      2. Subclass Job and override the behaviour of the run() method</span>
+
+<span class="sd">    The latter option enables more powerful use cases (such as the use of</span>
+<span class="sd">    protocol.Protocols for bidirectional job communication), but requires more</span>
+<span class="sd">    code.</span>
+
+<span class="sd">    Note that some care has been taken to ensure that Job objects and the</span>
+<span class="sd">    functions they wrap are gridengine.serializer serializable. When subclassing Job, be sure to</span>
+<span class="sd">    do the same.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mutable</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(),</span> <span class="n">kwargs</span><span class="o">=</span><span class="p">{}):</span>
+        <span class="sd">&quot;&quot;&quot;Initialize a Job</span>
+
+<span class="sd">        The constructor should always be called with keyword arguments. If</span>
+<span class="sd">        subclassing Job, you do not need to call super().</span>
+<span class="sd">        Args:</span>
+<span class="sd">          mutable: reserved for subclasses. Indicates that the Job exhibits mutable</span>
+<span class="sd">          behaviour and should be synchronized with the host on return</span>
+<span class="sd">          target: the function to wrap. Must be serializable</span>
+<span class="sd">          name: a name for the job. If None, a unique identifier is generated</span>
+<span class="sd">          args: the positional arguments to the target</span>
+<span class="sd">          kwargs: the keyword arguments to the target</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+      <span class="c"># make sure the target is callable and picklable</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">callable</span><span class="p">(</span><span class="n">target</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&quot;&#39;{type}&#39; object is not callable&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="nb">type</span><span class="p">(</span><span class="n">target</span><span class="p">)</span><span class="o">.</span><span class="n">__name__</span><span class="p">))</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">serializer</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;Given target cannot be serialized by {s}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="o">=</span><span class="n">serializer</span><span class="o">.</span><span class="n">__name__</span><span class="p">))</span>
+
+        <span class="c"># store the arguments</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="n">target</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span> <span class="o">=</span> <span class="n">kwargs</span>
+
+        <span class="c"># mutation behaviour reserved for subclasses</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mutable</span> <span class="o">=</span> <span class="bp">False</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;target&#39;</span><span class="p">):</span>
+            <span class="c"># return a truncated view of the function invocation</span>
+            <span class="n">f</span>      <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">__name__</span>
+            <span class="n">args</span>   <span class="o">=</span> <span class="p">[</span><span class="s">&#39;{:.5}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">arg</span><span class="p">))</span> <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">]</span>
+            <span class="n">kwargs</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;{key}={val:.8}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">val</span><span class="p">))</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+            <span class="k">return</span> <span class="s">&#39;{f}({args})&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span> <span class="o">+</span> <span class="n">kwargs</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">object</span><span class="o">.</span><span class="n">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Job.run"><a class="viewcode-back" href="../../gridengine.html#gridengine.job.Job.run">[docs]</a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">controller</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Runs the Job target with the stored arguments.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            controller (JobController): The controller is a handle to the controller</span>
+<span class="sd">            that is managing this job. If the target accepts &#39;controller&#39; as</span>
+<span class="sd">            a keyword argument, the controller is passed through. This allows the</span>
+<span class="sd">            job to directly communicate with the dispatcher to, for example,</span>
+<span class="sd">            retrieve meta job information such as jobid or push intermediate</span>
+<span class="sd">            results back to the dispatcher</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+
+
+<span class="c"># ----------------------------------------------------------------------------</span>
+<span class="c"># JOB CONTROLLER</span>
+<span class="c"># ----------------------------------------------------------------------------</span></div></div>
+<div class="viewcode-block" id="JobController"><a class="viewcode-back" href="../../gridengine.html#gridengine.job.JobController">[docs]</a><span class="k">class</span> <span class="nc">JobController</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">submission_host</span><span class="p">):</span>
+        <span class="c"># actual job invocation</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">context</span> <span class="o">=</span> <span class="n">zmq</span><span class="o">.</span><span class="n">Context</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">host_name</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">gethostname</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ip</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">gethostbyname</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">host_name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">transport</span> <span class="o">=</span> <span class="s">&#39;tcp://{ip}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ip</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">ip</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">submission_host</span> <span class="o">=</span> <span class="n">submission_host</span>
+
+        <span class="c"># client/request protocol (zmq.REQ)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">socket</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">REQ</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">socket</span><span class="o">.</span><span class="n">setsockopt</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">RCVTIMEO</span><span class="p">,</span> <span class="mi">5000</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">socket</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">submission_host</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">socket</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<div class="viewcode-block" id="JobController.start"><a class="viewcode-back" href="../../gridengine.html#gridengine.job.JobController.start">[docs]</a>    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c"># fetch the job</span>
+        <span class="n">job</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+        <span class="c"># run the job</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">job</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&#39;Job terminated with KeyboardInterrupt&#39;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="c"># store the exception to handle on the host</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="s">&#39;Original Caller &#39;</span> <span class="o">+</span> <span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">()</span>
+            <span class="n">e</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">e</span>
+        <span class="c"># return the result to the dispatcher controller</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="n">job</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="JobController.fetch"><a class="viewcode-back" href="../../gridengine.html#gridengine.job.JobController.fetch">[docs]</a>    <span class="k">def</span> <span class="nf">fetch</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;fetch the job assignment from the job dispatcher&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">socket</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">serializer</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span>
+            <span class="p">{</span><span class="s">&#39;request&#39;</span><span class="p">:</span> <span class="s">&#39;fetch_job&#39;</span><span class="p">,</span>
+             <span class="s">&#39;jobid&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+             <span class="s">&#39;data&#39;</span><span class="p">:</span> <span class="bp">None</span> <span class="p">},</span>
+            <span class="n">serializer</span><span class="o">.</span><span class="n">HIGHEST_PROTOCOL</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">serializer</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">socket</span><span class="o">.</span><span class="n">recv</span><span class="p">())</span>
+</div>
+<div class="viewcode-block" id="JobController.store"><a class="viewcode-back" href="../../gridengine.html#gridengine.job.JobController.store">[docs]</a>    <span class="k">def</span> <span class="nf">store</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jobid</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Push the results back to the server&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">socket</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">serializer</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span>
+            <span class="p">{</span><span class="s">&#39;request&#39;</span><span class="p">:</span> <span class="s">&#39;store_data&#39;</span><span class="p">,</span>
+             <span class="s">&#39;jobid&#39;</span><span class="p">:</span> <span class="n">jobid</span><span class="p">,</span>
+             <span class="s">&#39;data&#39;</span><span class="p">:</span> <span class="n">result</span><span class="p">},</span>
+            <span class="n">serializer</span><span class="o">.</span><span class="n">HIGHEST_PROTOCOL</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">serializer</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">socket</span><span class="o">.</span><span class="n">recv</span><span class="p">())</span>
+
+</div></div>
+<div class="viewcode-block" id="run_from_command_line"><a class="viewcode-back" href="../../gridengine.html#gridengine.job.run_from_command_line">[docs]</a><span class="k">def</span> <span class="nf">run_from_command_line</span><span class="p">(</span><span class="n">argv</span><span class="p">):</span>
+    <span class="c"># retrieve the client jobid and submission host address</span>
+    <span class="n">script</span><span class="p">,</span> <span class="n">submission_host</span> <span class="o">=</span> <span class="n">argv</span>
+
+    <span class="c"># create a job controller</span>
+    <span class="n">controller</span> <span class="o">=</span> <span class="n">JobController</span><span class="p">(</span><span class="n">submission_host</span><span class="p">)</span>
+
+    <span class="c"># fetch the job, run and store the results</span>
+    <span class="n">controller</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</div>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">run_from_command_line</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Gridengine</a></h1>
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=mfouesneau&repo=gridengine&type=watch&count=true&size=large"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2015, Morgan Fouesneau.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.2.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.3</a>
+      
+    </div>
+
+    
+    <a href="https://github.com/mfouesneau/gridengine" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>

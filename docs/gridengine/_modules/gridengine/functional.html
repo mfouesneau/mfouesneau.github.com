@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>gridengine.functional &mdash; Gridengine 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Gridengine 1.0 documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Gridengine 1.0 documentation</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for gridengine.functional</h1><div class="highlight"><pre>
+<span class="kn">import</span> <span class="nn">inspect</span> <span class="kn">as</span> <span class="nn">_inspect</span>
+<span class="kn">import</span> <span class="nn">functools</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">job</span><span class="p">,</span> <span class="n">dispatch</span><span class="p">,</span> <span class="n">schedulers</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span> <span class="s">&#39;PicklableLambda&#39;</span><span class="p">,</span> <span class="s">&#39;islambda&#39;</span><span class="p">,</span> <span class="s">&#39;map&#39;</span><span class="p">,</span> <span class="s">&#39;partial&#39;</span><span class="p">]</span>
+
+
+<span class="c"># ----------------------------------------------------------------------------</span>
+<span class="c"># Partial</span>
+<span class="c"># ----------------------------------------------------------------------------</span>
+<span class="k">def</span> <span class="nf">isexception</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Test whether the value is an Exception instance&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="ne">Exception</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">isnumeric</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Test whether the value can be represented as a number&quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">False</span>
+
+
+<div class="viewcode-block" id="islambda"><a class="viewcode-back" href="../../gridengine.html#gridengine.functional.islambda">[docs]</a><span class="k">def</span> <span class="nf">islambda</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Test if the function func is a lambda (&quot;anonymous&quot; function) &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="s">&#39;func_name&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span> <span class="o">==</span> <span class="s">&#39;&lt;lambda&gt;&#39;</span>
+
+</div>
+<div class="viewcode-block" id="PicklableLambda"><a class="viewcode-back" href="../../gridengine.html#gridengine.functional.PicklableLambda">[docs]</a><span class="k">class</span> <span class="nc">PicklableLambda</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Class/Decorator that ensures a lambda (&quot;anonymous&quot; function) will be</span>
+<span class="sd">    picklable.  Lambda are not picklable because they are anonymous while</span>
+<span class="sd">    pickling mainly works with the names.  This class digs out the code of the</span>
+<span class="sd">    lambda, which is picklable and recreates the lambda function when called.</span>
+<span class="sd">    The encapsulated lambda is not anonymous anymore.</span>
+
+<span class="sd">    Notes:</span>
+<span class="sd">        * Dependencies are not handled.</span>
+<span class="sd">        * Often Partial can replace a lambda definition</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">islambda</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;Object not a lambda function&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">func_code</span> <span class="o">=</span> <span class="n">_inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__name__</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func_code</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">func_code</span> <span class="o">+</span> <span class="nb">object</span><span class="o">.</span><span class="n">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">func</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">func_code</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="partial"><a class="viewcode-back" href="../../gridengine.html#gridengine.functional.partial">[docs]</a><span class="k">def</span> <span class="nf">partial</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return a callable partially closed over the input function and arguments</span>
+
+<span class="sd">    partial is functionally equivalent to functools.partial, however it also</span>
+<span class="sd">    applies a variant of functools.update_wrapper, with:</span>
+
+<span class="sd">        __doc__    = f.__doc__</span>
+<span class="sd">        __module__ = f.__module__</span>
+<span class="sd">        __name__   = f.__name__ + string_representation_of_closed_arguments</span>
+
+<span class="sd">    This is useful for running functions with different parameter sets, whilst</span>
+<span class="sd">    being able to identify the variants by name</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="n">var</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">var</span><span class="o">.</span><span class="n">__name__</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">var</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> <span class="k">if</span> <span class="n">isnumeric</span><span class="p">(</span><span class="n">var</span><span class="p">)</span> <span class="k">else</span> <span class="n">var</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span>
+    <span class="k">if</span> <span class="n">islambda</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+        <span class="n">g</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">PicklableLambda</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">g</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">g</span><span class="o">.</span><span class="n">__doc__</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">__doc__</span>
+    <span class="n">g</span><span class="o">.</span><span class="n">__module__</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">__module__</span>
+    <span class="n">g</span><span class="o">.</span><span class="n">__name__</span> <span class="o">=</span> <span class="s">&#39;_&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">f</span><span class="o">.</span><span class="n">__name__</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">name</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span> <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">+</span>
+                                          <span class="nb">list</span><span class="p">(</span><span class="n">kwargs</span><span class="o">.</span><span class="n">values</span><span class="p">())])</span>
+    <span class="k">return</span> <span class="n">g</span>
+
+
+<span class="c"># ----------------------------------------------------------------------------</span>
+<span class="c"># Map</span>
+<span class="c"># ----------------------------------------------------------------------------</span></div>
+<div class="viewcode-block" id="map"><a class="viewcode-back" href="../../gridengine.html#gridengine.functional.map">[docs]</a><span class="k">def</span> <span class="nf">map</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">scheduler</span><span class="o">=</span><span class="n">schedulers</span><span class="o">.</span><span class="n">best_available</span><span class="p">,</span> <span class="n">reraise</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Perform a functional-style map operation</span>
+
+<span class="sd">    Apply a function f to each argument in the iterable args. This is equivalent to</span>
+
+<span class="sd">    &gt;&gt;&gt; f = lambda x: x</span>
+<span class="sd">        args = range(100)</span>
+<span class="sd">        y = [f(x) for x in args]</span>
+<span class="sd">        y = map(f, args)</span>
+
+<span class="sd">    except that each argument in the iterable is assigned to a separate Job</span>
+<span class="sd">    and scheduled to run via the scheduler.</span>
+
+<span class="sd">    The default scheduler is a schedulers.ProcessScheduler instance. To run map</span>
+<span class="sd">    on a grid engine, simply pass a schedulers.GridEngineScheduler instance.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    f: callable</span>
+<span class="sd">        A picklable function</span>
+<span class="sd">    args: iterable</span>
+<span class="sd">        An iterable (list) of arguments to f</span>
+
+<span class="sd">    scheduler: schedulers.Scheduler instance or class</span>
+<span class="sd">        By default, the system tries to return the best_available() scheduler.</span>
+<span class="sd">        Use this if you want to set a scheduler specifically.</span>
+
+<span class="sd">    reraise: bool</span>
+<span class="sd">        Reraise exceptions that occur in any of the jobs. Set this to False if</span>
+<span class="sd">        you want to salvage any good results.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">        List of return values equivalent to the builtin map function</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">        Any exception that would occur when applying [f(x) for x in args]</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c"># setup the dispatcher</span>
+    <span class="n">dispatcher</span> <span class="o">=</span> <span class="n">dispatch</span><span class="o">.</span><span class="n">JobDispatcher</span><span class="p">(</span><span class="n">scheduler</span><span class="p">)</span>
+
+    <span class="c"># allocate the jobs</span>
+    <span class="n">jobs</span> <span class="o">=</span> <span class="p">[</span><span class="n">job</span><span class="o">.</span><span class="n">Job</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">arg</span><span class="p">,))</span> <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">]</span>
+
+    <span class="c"># run the jobs (guaranteed to return in the same order)</span>
+    <span class="n">dispatcher</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">jobs</span><span class="p">)</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">dispatcher</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+
+    <span class="c"># check for exceptions</span>
+    <span class="k">if</span> <span class="n">reraise</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">exception</span> <span class="ow">in</span> <span class="nb">filter</span><span class="p">(</span><span class="n">isexception</span><span class="p">,</span> <span class="n">results</span><span class="p">):</span>
+            <span class="c"># an error occurred during execution of one of the jobs, reraise it</span>
+            <span class="k">raise</span> <span class="n">exception</span>
+
+    <span class="k">return</span> <span class="n">results</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Gridengine</a></h1>
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=mfouesneau&repo=gridengine&type=watch&count=true&size=large"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2015, Morgan Fouesneau.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.2.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.3</a>
+      
+    </div>
+
+    
+    <a href="https://github.com/mfouesneau/gridengine" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>
