@@ -1,0 +1,7 @@
+pyphot
+======
+
+.. toctree::
+   :maxdepth: 4
+
+   pyphot

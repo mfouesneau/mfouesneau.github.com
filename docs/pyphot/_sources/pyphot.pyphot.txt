@@ -1,0 +1,69 @@
+pyphot.pyphot package
+=====================
+
+Subpackages
+-----------
+
+.. toctree::
+
+    pyphot.pyphot.ezunits
+
+Submodules
+----------
+
+pyphot.pyphot.config module
+---------------------------
+
+.. automodule:: pyphot.pyphot.config
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pyphot.pyphot.helpers module
+----------------------------
+
+.. automodule:: pyphot.pyphot.helpers
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pyphot.pyphot.pbar module
+-------------------------
+
+.. automodule:: pyphot.pyphot.pbar
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pyphot.pyphot.phot module
+-------------------------
+
+.. automodule:: pyphot.pyphot.phot
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pyphot.pyphot.simpletable module
+--------------------------------
+
+.. automodule:: pyphot.pyphot.simpletable
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pyphot.pyphot.vega module
+-------------------------
+
+.. automodule:: pyphot.pyphot.vega
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: pyphot.pyphot
+    :members:
+    :undoc-members:
+    :show-inheritance:

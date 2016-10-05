@@ -1,0 +1,904 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pyphot.pyphot.phot &mdash; pyphot 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="pyphot 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for pyphot.pyphot.phot</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Photometric package</span>
+<span class="sd">===================</span>
+
+<span class="sd">Defines a Filter class and associated functions to extract photometry.</span>
+
+<span class="sd">This also include functions to keep libraries up to date</span>
+
+<span class="sd">.. note::</span>
+
+<span class="sd">    integrations are done using :func:`trapz`</span>
+<span class="sd">    Why not Simpsons? Simpsons principle is to take sequence of 3 points to</span>
+<span class="sd">    make a quadratic interpolation. Which in the end, when filters have sharp</span>
+<span class="sd">    edges, the error due to this &quot;interpolation&quot; are extremely large in</span>
+<span class="sd">    comparison to the uncertainties induced by trapeze integration.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span><span class="p">,</span> <span class="n">division</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">tables</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">trapz</span>
+
+<span class="kn">from</span> <span class="nn">.simpletable</span> <span class="kn">import</span> <span class="n">SimpleTable</span>
+<span class="kn">from</span> <span class="nn">.ezunits</span> <span class="kn">import</span> <span class="n">hasUnit</span><span class="p">,</span> <span class="n">unit</span>
+<span class="kn">from</span> <span class="nn">.vega</span> <span class="kn">import</span> <span class="n">Vega</span>
+<span class="kn">from</span> <span class="nn">.config</span> <span class="kn">import</span> <span class="n">libsdir</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c1"># directories</span>
+<span class="c1"># __default__      = libsdir + &#39;/filters.hd5&#39;</span>
+<span class="c1"># __default__ = libsdir + &#39;/filters&#39;</span>
+<span class="n">__default__</span> <span class="o">=</span> <span class="n">libsdir</span> <span class="o">+</span> <span class="s1">&#39;/new_filters.hd5&#39;</span>
+
+
+<span class="k">def</span> <span class="nf">_drop_units</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Drop the unit definition silently &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">q</span><span class="o">.</span><span class="n">magnitude</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">q</span>
+
+
+<div class="viewcode-block" id="Filter"><a class="viewcode-back" href="../../../pyphot.pyphot.html#pyphot.pyphot.phot.Filter">[docs]</a><span class="k">class</span> <span class="nc">Filter</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Class filter</span>
+
+<span class="sd">    Define a filter by its name, wavelength and transmission</span>
+<span class="sd">    The type of detector (energy or photon counter) can be specified for</span>
+<span class="sd">    adapting calculations. (default: photon)</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    name: str</span>
+<span class="sd">        name of the filter</span>
+
+<span class="sd">    cl: float</span>
+<span class="sd">        central wavelength of the filter</span>
+
+<span class="sd">    norm: float</span>
+<span class="sd">        normalization factor of the filter</span>
+
+<span class="sd">    lpivot: float</span>
+<span class="sd">        pivot wavelength of the filter</span>
+
+<span class="sd">    wavelength: ndarray</span>
+<span class="sd">        wavelength sequence defining the filter transmission curve</span>
+
+<span class="sd">    transmit: ndarray</span>
+<span class="sd">        transmission curve of the filter</span>
+
+<span class="sd">    dtype: str</span>
+<span class="sd">        detector type, either &quot;photon&quot; or &quot;energy&quot; counter</span>
+
+<span class="sd">    unit: str</span>
+<span class="sd">        wavelength units</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">,</span> <span class="n">transmit</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;photon&quot;</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Constructor&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span>       <span class="o">=</span> <span class="n">name</span>
+        <span class="k">try</span><span class="p">:</span>   <span class="c1"># get units from the inputs</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_wavelength</span> <span class="o">=</span> <span class="n">wavelength</span><span class="o">.</span><span class="n">magnitude</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">wavelength</span><span class="o">.</span><span class="n">units</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_wavelength</span> <span class="o">=</span> <span class="n">wavelength</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="o">=</span> <span class="n">unit</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">transmit</span>   <span class="o">=</span> <span class="n">transmit</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">norm</span>       <span class="o">=</span> <span class="n">trapz</span><span class="p">(</span><span class="n">transmit</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wavelength</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_lT</span>        <span class="o">=</span> <span class="n">trapz</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_wavelength</span> <span class="o">*</span> <span class="n">transmit</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wavelength</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_lpivot</span>    <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lT</span> <span class="o">/</span> <span class="n">trapz</span><span class="p">(</span><span class="n">transmit</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wavelength</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wavelength</span><span class="p">)</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cl</span>        <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lT</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">norm</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_dtype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Filter.set_dtype"><a class="viewcode-back" href="../../../pyphot.pyphot.html#pyphot.pyphot.phot.Filter.set_dtype">[docs]</a>    <span class="k">def</span> <span class="nf">set_dtype</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dtype</span><span class="p">):</span>
+        <span class="n">_d</span> <span class="o">=</span> <span class="n">dtype</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="k">if</span> <span class="s2">&quot;phot&quot;</span> <span class="ow">in</span> <span class="n">_d</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">dtype</span> <span class="o">=</span> <span class="s2">&quot;photon&quot;</span>
+        <span class="k">elif</span> <span class="s2">&quot;ener&quot;</span> <span class="ow">in</span> <span class="n">_d</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">dtype</span> <span class="o">=</span> <span class="s2">&quot;energy&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Unknown detector type {0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dtype</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="Filter.info"><a class="viewcode-back" href="../../../pyphot.pyphot.html#pyphot.pyphot.phot.Filter.info">[docs]</a>    <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">show_zeropoints</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; display information about the current filter&quot;&quot;&quot;</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Filter object information:</span>
+<span class="s2">    name:                 {s.name:s}</span>
+<span class="s2">    detector type:        {s.dtype:s}</span>
+<span class="s2">    wavelength units:     {s.wavelength_unit}</span>
+<span class="s2">    central wavelength:   {s.cl:f}</span>
+<span class="s2">    pivot wavelength:     {s.lpivot:f}</span>
+<span class="s2">    effective wavelength: {s.leff:f}</span>
+<span class="s2">    norm:                 {s.norm:f}</span>
+<span class="s2">    definition contains {s.transmit.size:d} points&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;None&#39;</span><span class="p">,</span> <span class="s1">&#39;unknown&#39;</span><span class="p">))</span>
+
+        <span class="c1"># zero points only if units</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="ow">not</span> <span class="n">show_zeropoints</span><span class="p">):</span>
+            <span class="k">return</span>
+
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    Zeropoints</span>
+<span class="s2">        Vega: {s.Vega_zero_mag:f} mag,</span>
+<span class="s2">              {s.Vega_zero_flux},</span>
+<span class="s2">              {s.Vega_zero_Jy}</span>
+<span class="s2">          AB: {s.AB_zero_mag:f} mag,</span>
+<span class="s2">              {s.AB_zero_flux},</span>
+<span class="s2">              {s.AB_zero_Jy}</span>
+<span class="s2">          ST: {s.ST_zero_mag:f} mag,</span>
+<span class="s2">              {s.ST_zero_flux},</span>
+<span class="s2">              {s.ST_zero_Jy}</span>
+<span class="s2">        &quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="o">=</span><span class="bp">self</span><span class="p">))</span></div>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;Filter: {0:s}, {1:s}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="nb">object</span><span class="o">.</span><span class="n">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">wavelength</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Unitwise wavelength definition &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wavelength</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wavelength</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">lpivot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Unitwise wavelength definition &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lpivot</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lpivot</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">cl</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Unitwise wavelength definition &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cl</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cl</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">leff</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Unitwise Effective wavelength</span>
+<span class="sd">        leff = int (lamb * T * Vega dlamb) / int(T * Vega dlamb)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="n">Vega</span><span class="p">()</span> <span class="k">as</span> <span class="n">v</span><span class="p">:</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reinterp</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">wavelength</span><span class="p">)</span>
+            <span class="n">w</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">_wavelength</span>
+            <span class="n">leff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">w</span> <span class="o">*</span> <span class="n">s</span><span class="o">.</span><span class="n">transmit</span> <span class="o">*</span> <span class="n">v</span><span class="o">.</span><span class="n">flux</span><span class="o">.</span><span class="n">magnitude</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">leff</span> <span class="o">/=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">transmit</span> <span class="o">*</span> <span class="n">v</span><span class="o">.</span><span class="n">flux</span><span class="o">.</span><span class="n">magnitude</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">leff</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">leff</span>
+
+    <span class="k">def</span> <span class="nf">_get_filter_in_units_of</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">slamb</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="n">w</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength</span>
+        <span class="k">if</span> <span class="n">hasUnit</span><span class="p">(</span><span class="n">slamb</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">hasUnit</span><span class="p">(</span><span class="n">w</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">w</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">slamb</span><span class="o">.</span><span class="n">units</span><span class="p">))</span><span class="o">.</span><span class="n">magnitude</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Warning: assuming units are consistent&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wavelength</span>
+
+<div class="viewcode-block" id="Filter.getFlux"><a class="viewcode-back" href="../../../pyphot.pyphot.html#pyphot.pyphot.phot.Filter.getFlux">[docs]</a>    <span class="k">def</span> <span class="nf">getFlux</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">slamb</span><span class="p">,</span> <span class="n">sflux</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;getFlux</span>
+<span class="sd">        Integrate the flux within the filter and return the integrated energy</span>
+<span class="sd">        If you consider applying the filter to many spectra, you might want to</span>
+<span class="sd">        consider extractSEDs.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        slamb: ndarray(dtype=float, ndim=1)</span>
+<span class="sd">            spectrum wavelength definition domain</span>
+
+<span class="sd">        sflux: ndarray(dtype=float, ndim=1)</span>
+<span class="sd">            associated flux</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        flux: float</span>
+<span class="sd">            Energy of the spectrum within the filter</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">_wavelength</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_filter_in_units_of</span><span class="p">(</span><span class="n">slamb</span><span class="p">)</span>
+        <span class="n">_slamb</span> <span class="o">=</span> <span class="n">_drop_units</span><span class="p">(</span><span class="n">slamb</span><span class="p">)</span>
+        <span class="c1">#clean data for inf values by interpolation</span>
+        <span class="k">if</span> <span class="bp">True</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">sflux</span><span class="p">):</span>
+            <span class="n">indinf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">sflux</span><span class="p">))</span>
+            <span class="n">indfin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">sflux</span><span class="p">))</span>
+            <span class="n">sflux</span><span class="p">[</span><span class="n">indinf</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">_slamb</span><span class="p">[</span><span class="n">indinf</span><span class="p">],</span> <span class="n">_slamb</span><span class="p">[</span><span class="n">indfin</span><span class="p">],</span> <span class="n">sflux</span><span class="p">[</span><span class="n">indfin</span><span class="p">])</span>
+
+        <span class="c1"># reinterpolate transmission onto the same wavelength def as the data</span>
+        <span class="n">ifT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">_slamb</span><span class="p">,</span> <span class="n">_wavelength</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">transmit</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
+
+        <span class="c1"># if the filter is null on that wavelength range flux is then 0</span>
+        <span class="k">if</span> <span class="bp">True</span> <span class="ow">in</span> <span class="p">(</span><span class="n">ifT</span> <span class="o">&gt;</span> <span class="mf">0.</span><span class="p">):</span>
+            <span class="c1"># limit integrals to where necessary</span>
+            <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ifT</span> <span class="o">&gt;</span> <span class="mf">0.</span><span class="p">)</span>
+            <span class="k">if</span> <span class="s1">&#39;photon&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">:</span>
+                <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">_slamb</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">*</span> <span class="n">ifT</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">*</span> <span class="n">sflux</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">_slamb</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span>
+                <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">_slamb</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">*</span> <span class="n">ifT</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">_slamb</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span> <span class="p">)</span>
+            <span class="k">elif</span> <span class="s1">&#39;energy&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">:</span>
+                <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span> <span class="n">ifT</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">*</span> <span class="n">sflux</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">_slamb</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span> <span class="p">)</span>
+                <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span> <span class="n">ifT</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">_slamb</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span> <span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">|</span> <span class="n">np</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">b</span><span class="p">)):</span>
+                <span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;Warn for inf value&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">0.</span></div>
+
+<div class="viewcode-block" id="Filter.get_flux"><a class="viewcode-back" href="../../../pyphot.pyphot.html#pyphot.pyphot.phot.Filter.get_flux">[docs]</a>    <span class="k">def</span> <span class="nf">get_flux</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">slamb</span><span class="p">,</span> <span class="n">sflux</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;getFlux</span>
+<span class="sd">        Integrate the flux within the filter and return the integrated energy</span>
+<span class="sd">        If you consider applying the filter to many spectra, you might want to</span>
+<span class="sd">        consider extractSEDs.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        slamb: ndarray(dtype=float, ndim=1)</span>
+<span class="sd">            spectrum wavelength definition domain</span>
+
+<span class="sd">        sflux: ndarray(dtype=float, ndim=1)</span>
+<span class="sd">            associated flux</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        flux: float</span>
+<span class="sd">            Energy of the spectrum within the filter</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getFlux</span><span class="p">(</span><span class="n">slamb</span><span class="p">,</span> <span class="n">sflux</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Filter.reinterp"><a class="viewcode-back" href="../../../pyphot.pyphot.html#pyphot.pyphot.phot.Filter.reinterp">[docs]</a>    <span class="k">def</span> <span class="nf">reinterp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lamb</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; reinterpolate filter onto a different wavelength definition &quot;&quot;&quot;</span>
+        <span class="n">_wavelength</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_filter_in_units_of</span><span class="p">(</span><span class="n">lamb</span><span class="p">)</span>
+        <span class="n">_lamb</span> <span class="o">=</span> <span class="n">_drop_units</span><span class="p">(</span><span class="n">lamb</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">_unit</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">lamb</span><span class="o">.</span><span class="n">units</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">_unit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span>
+        <span class="n">ifT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">_lamb</span><span class="p">,</span> <span class="n">_wavelength</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">transmit</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="n">_lamb</span><span class="p">,</span> <span class="n">ifT</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">_unit</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">slamb</span><span class="p">,</span> <span class="n">sflux</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">applyTo</span><span class="p">(</span><span class="n">slamb</span><span class="p">,</span> <span class="n">sflux</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Filter.apply_transmission"><a class="viewcode-back" href="../../../pyphot.pyphot.html#pyphot.pyphot.phot.Filter.apply_transmission">[docs]</a>    <span class="k">def</span> <span class="nf">apply_transmission</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">slamb</span><span class="p">,</span> <span class="n">sflux</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Apply filter transmission to a spectrum (with reinterpolation of the filter)</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        slamb: ndarray</span>
+<span class="sd">            spectrum wavelength definition domain</span>
+
+<span class="sd">        sflux: ndarray</span>
+<span class="sd">            associated flux</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        flux: float</span>
+<span class="sd">            new spectrum values accounting for the filter</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">_wavelength</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_filter_in_units_of</span><span class="p">(</span><span class="n">slamb</span><span class="p">)</span>
+        <span class="n">_lamb</span> <span class="o">=</span> <span class="n">_drop_units</span><span class="p">(</span><span class="n">slamb</span><span class="p">)</span>
+        <span class="n">ifT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">_lamb</span><span class="p">,</span> <span class="n">_wavelength</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">transmit</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ifT</span> <span class="o">*</span> <span class="n">sflux</span></div>
+
+<div class="viewcode-block" id="Filter.applyTo"><a class="viewcode-back" href="../../../pyphot.pyphot.html#pyphot.pyphot.phot.Filter.applyTo">[docs]</a>    <span class="k">def</span> <span class="nf">applyTo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">slamb</span><span class="p">,</span> <span class="n">sflux</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; For compatibility but bad name &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_transmission</span><span class="p">(</span><span class="n">slamb</span><span class="p">,</span> <span class="n">sflux</span><span class="p">)</span></div>
+
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Filter.from_ascii"><a class="viewcode-back" href="../../../pyphot.pyphot.html#pyphot.pyphot.phot.Filter.from_ascii">[docs]</a>    <span class="k">def</span> <span class="nf">from_ascii</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;csv&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Load filter from ascii file &quot;&quot;&quot;</span>
+        <span class="n">lamb</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;lamb&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="n">detector</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;detector&#39;</span><span class="p">,</span> <span class="s1">&#39;photon&#39;</span><span class="p">)</span>
+        <span class="n">unit</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;unit&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+
+        <span class="n">t</span> <span class="o">=</span> <span class="n">SimpleTable</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">w</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="s1">&#39;WAVELENGTH&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="s1">&#39;THROUGHPUT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+
+        <span class="c1"># update properties from file header</span>
+        <span class="n">detector</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;DETECTOR&#39;</span><span class="p">,</span> <span class="n">detector</span><span class="p">)</span>
+        <span class="n">unit</span>     <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;WAVELENGTH_UNIT&#39;</span><span class="p">,</span> <span class="n">unit</span><span class="p">)</span>
+
+        <span class="c1"># try from the comments in the header first</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="s1">&#39;None&#39;</span><span class="p">,</span> <span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">):</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+                    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">t</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;COMMENT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="s1">&#39;COMPNAME&#39;</span> <span class="ow">in</span> <span class="n">k</span><span class="p">]</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;&quot;&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="c1"># if that did not work try the table header directly</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="s1">&#39;None&#39;</span><span class="p">,</span> <span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">):</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;NAME&#39;</span><span class="p">]</span>
+
+        <span class="n">_filter</span> <span class="o">=</span> <span class="n">Filter</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">detector</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">unit</span><span class="p">)</span>
+
+        <span class="c1"># reinterpolate if requested</span>
+        <span class="k">if</span> <span class="n">lamb</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">_filter</span> <span class="o">=</span> <span class="n">_filter</span><span class="o">.</span><span class="n">reinterp</span><span class="p">(</span><span class="n">lamb</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">_filter</span></div>
+
+<div class="viewcode-block" id="Filter.write_to"><a class="viewcode-back" href="../../../pyphot.pyphot.html#pyphot.pyphot.phot.Filter.write_to">[docs]</a>    <span class="k">def</span> <span class="nf">write_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Export filter to a file</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        fname: str</span>
+<span class="sd">            filename</span>
+
+<span class="sd">        Uses `SimpleTable.write` parameters</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_Table</span><span class="p">()</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Filter.to_Table"><a class="viewcode-back" href="../../../pyphot.pyphot.html#pyphot.pyphot.phot.Filter.to_Table">[docs]</a>    <span class="k">def</span> <span class="nf">to_Table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Export filter to a SimpleTable object</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        fname: str</span>
+<span class="sd">            filename</span>
+
+<span class="sd">        Uses `SimpleTable` parameters</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">SimpleTable</span><span class="p">({</span><span class="s1">&#39;WAVELENGTH&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wavelength</span><span class="p">,</span>
+                            <span class="s1">&#39;THROUGHPUT&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">transmit</span><span class="p">})</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">data</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;WAVELENGTH_UNIT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;DETECTOR&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dtype</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;COMPNAME&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;NAME&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">set_comment</span><span class="p">(</span><span class="s1">&#39;THROUGHPUT&#39;</span><span class="p">,</span> <span class="s1">&#39;filter throughput definition&#39;</span><span class="p">)</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">set_comment</span><span class="p">(</span><span class="s1">&#39;WAVELENGTH&#39;</span><span class="p">,</span> <span class="s1">&#39;filter wavelength definition&#39;</span><span class="p">)</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">set_comment</span><span class="p">(</span><span class="s1">&#39;WAVELENGTH&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">or</span> <span class="s1">&#39;AA&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">data</span></div>
+
+<div class="viewcode-block" id="Filter.to_dict"><a class="viewcode-back" href="../../../pyphot.pyphot.html#pyphot.pyphot.phot.Filter.to_dict">[docs]</a>    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Return a dictionary of the filter &quot;&quot;&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;WAVELENGTH&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wavelength</span><span class="p">,</span> <span class="s1">&#39;THROUGHPUT&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">transmit</span><span class="p">}</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">data</span><span class="p">[</span><span class="s1">&#39;WAVELENGTH_UNIT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;DETECTOR&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dtype</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;NAME&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;PIVOT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lpivot</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;CENTRAL&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cl</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;EFFECTIVE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_drop_units</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">leff</span><span class="p">)</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;NORM&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">norm</span>
+        <span class="k">return</span> <span class="n">data</span></div>
+
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Filter.make_integration_filter"><a class="viewcode-back" href="../../../pyphot.pyphot.html#pyphot.pyphot.phot.Filter.make_integration_filter">[docs]</a>    <span class="k">def</span> <span class="nf">make_integration_filter</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">lmin</span><span class="p">,</span> <span class="n">lmax</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;photon&#39;</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Generate an heavyside filter between lmin and lmax &quot;&quot;&quot;</span>
+        <span class="n">dyn</span> <span class="o">=</span> <span class="n">lmax</span> <span class="o">-</span> <span class="n">lmin</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">unit</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">dyn</span><span class="o">.</span><span class="n">units</span><span class="p">)</span>
+            <span class="n">dyn</span> <span class="o">=</span> <span class="n">_drop_units</span><span class="p">(</span><span class="n">dyn</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">lmin</span> <span class="o">-</span> <span class="mf">0.01</span> <span class="o">*</span> <span class="n">dyn</span><span class="p">,</span> <span class="n">lmin</span><span class="p">,</span> <span class="n">lmax</span><span class="p">,</span> <span class="n">lmax</span> <span class="o">+</span> <span class="mf">0.01</span> <span class="o">*</span> <span class="n">dyn</span><span class="p">])</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">Filter</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">unit</span><span class="p">)</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">AB_zero_mag</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; AB magnitude zero point</span>
+<span class="sd">        ABmag = -2.5 * log10(f_nu) - 48.60</span>
+<span class="sd">              = -2.5 * log10(f_lamb) - 2.5 * log10(lpivot ** 2 / c) - 48.60</span>
+<span class="sd">              = -2.5 * log10(f_lamb) - zpts</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s1">&#39;Needs wavelength units&#39;</span><span class="p">)</span>
+
+        <span class="n">C1</span> <span class="o">=</span> <span class="n">unit</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;AA&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="n">unit</span><span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;AA/s&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span>
+        <span class="n">c1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lpivot</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">C1</span>
+
+        <span class="n">m</span> <span class="o">=</span> <span class="mf">2.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">c1</span><span class="p">)</span> <span class="o">+</span> <span class="mf">48.6</span>
+        <span class="k">return</span> <span class="n">m</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">AB_zero_flux</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; AB flux zero point in erg/s/cm2/AA &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="mi">10</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.4</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">AB_zero_mag</span><span class="p">)</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s1">&#39;erg/s/cm ** 2/AA&#39;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">AB_zero_Jy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; AB flux zero point in Jansky (Jy) &quot;&quot;&quot;</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">unit</span><span class="p">[</span><span class="s1">&#39;1e-8 * c&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;m/s&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="mf">1e5</span> <span class="o">/</span> <span class="n">c</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">leff</span><span class="o">.</span><span class="n">magnitude</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">AB_zero_flux</span><span class="o">.</span><span class="n">magnitude</span>
+        <span class="k">return</span> <span class="n">f</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s1">&#39;Jy&#39;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">Vega_zero_mag</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Vega magnitude zero point</span>
+<span class="sd">        Vegamag = -2.5 * log10(f_lamb) + 2.5 * log10(f_vega)</span>
+<span class="sd">        Vegamag = -2.5 * log10(f_lamb) - zpts</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s1">&#39;Needs wavelength units&#39;</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="n">Vega</span><span class="p">()</span> <span class="k">as</span> <span class="n">v</span><span class="p">:</span>
+            <span class="n">f_vega</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_flux</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">flux</span><span class="o">.</span><span class="n">magnitude</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mf">2.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">f_vega</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">Vega_zero_flux</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Vega flux zero point in erg/s/cm2/AA &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="mi">10</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.4</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">Vega_zero_mag</span><span class="p">)</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s1">&#39;erg/s/cm ** 2/AA&#39;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">Vega_zero_Jy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Vega flux zero point in Jansky (Jy) &quot;&quot;&quot;</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">unit</span><span class="p">[</span><span class="s1">&#39;1e-8 * c&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;m/s&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="mf">1e5</span> <span class="o">/</span> <span class="n">c</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">leff</span><span class="o">.</span><span class="n">magnitude</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">Vega_zero_flux</span><span class="o">.</span><span class="n">magnitude</span>
+        <span class="k">return</span> <span class="n">f</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s1">&#39;Jy&#39;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">ST_zero_mag</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; ST magnitude zero point</span>
+<span class="sd">        STmag = -2.5 * log10(f_lamb) -21.1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="mf">21.1</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">ST_zero_flux</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; ST flux zero point in erg/s/cm2/AA &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="mi">10</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.4</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">ST_zero_mag</span><span class="p">)</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s1">&#39;erg/s/cm ** 2/AA&#39;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">ST_zero_Jy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; ST flux zero point in Jansky (Jy) &quot;&quot;&quot;</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">unit</span><span class="p">[</span><span class="s1">&#39;1e-8 * c&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;m/s&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="mf">1e5</span> <span class="o">/</span> <span class="n">c</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">leff</span><span class="o">.</span><span class="n">magnitude</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">ST_zero_flux</span><span class="o">.</span><span class="n">magnitude</span>
+        <span class="k">return</span> <span class="n">f</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s1">&#39;Jy&#39;</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="Library"><a class="viewcode-back" href="../../../pyphot.pyphot.html#pyphot.pyphot.phot.Library">[docs]</a><span class="k">class</span> <span class="nc">Library</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Common grounds for filter libraries &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">__default__</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Construct the library &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;Filter Library: {0}</span><span class="se">\n</span><span class="s2">{1:s}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source</span><span class="p">,</span> <span class="nb">object</span><span class="o">.</span><span class="n">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Enter context &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="nf">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>  <span class="o">*</span><span class="n">exc_info</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; end context &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">False</span>
+
+    <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Size of the library &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Library.to_csv"><a class="viewcode-back" href="../../../pyphot.pyphot.html#pyphot.pyphot.phot.Library.to_csv">[docs]</a>    <span class="k">def</span> <span class="nf">to_csv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;./&#39;</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Export each filter into a csv file with its own name</span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        directory: str</span>
+<span class="sd">            directory to write into</span>
+<span class="sd">        progress: bool</span>
+<span class="sd">            show progress if set</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">.helpers</span> <span class="kn">import</span> <span class="n">progress_enumerate</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">progress_enumerate</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s1">&#39;export&#39;</span><span class="p">,</span> <span class="n">show_progress</span><span class="o">=</span><span class="n">progress</span><span class="p">):</span>
+                <span class="n">f</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="n">f</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="o">=</span> <span class="s1">&#39;AA&#39;</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write_to</span><span class="p">(</span><span class="s2">&quot;{0:s}/{1:s}.csv&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span>
+                           <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%.6f</span><span class="s2">&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Library.to_hdf"><a class="viewcode-back" href="../../../pyphot.pyphot.html#pyphot.pyphot.phot.Library.to_hdf">[docs]</a>    <span class="k">def</span> <span class="nf">to_hdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="o">=</span><span class="s1">&#39;filters.hd5&#39;</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Export each filter into a csv file with its own name</span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        directory: str</span>
+<span class="sd">            directory to write into</span>
+<span class="sd">        progress: bool</span>
+<span class="sd">            show progress if set</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">.helpers</span> <span class="kn">import</span> <span class="n">progress_enumerate</span>
+        <span class="k">with</span> <span class="bp">self</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">progress_enumerate</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s1">&#39;export&#39;</span><span class="p">,</span> <span class="n">show_progress</span><span class="o">=</span><span class="n">progress</span><span class="p">):</span>
+                <span class="n">f</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="n">f</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="o">=</span> <span class="s1">&#39;AA&#39;</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write_to</span><span class="p">(</span><span class="s2">&quot;{0:s}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fname</span><span class="p">),</span>
+                           <span class="n">tablename</span><span class="o">=</span><span class="s1">&#39;/filters/{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">),</span>
+                           <span class="n">createparents</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Library.from_hd5"><a class="viewcode-back" href="../../../pyphot.pyphot.html#pyphot.pyphot.phot.Library.from_hd5">[docs]</a>    <span class="k">def</span> <span class="nf">from_hd5</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">HDF_Library</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Library.from_ascci"><a class="viewcode-back" href="../../../pyphot.pyphot.html#pyphot.pyphot.phot.Library.from_ascci">[docs]</a>    <span class="k">def</span> <span class="nf">from_ascci</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Ascii_Library</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Get the content list &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_library_content</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Make this object like a dictionary and load one or multiple filters &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="bp">self</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">f</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">_load_filter</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+                <span class="n">f</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">_load_filter</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">name</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">f</span>
+
+    <span class="k">def</span> <span class="nf">_load_filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Load a given filter from the library &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="bp">NotImplemented</span>
+
+<div class="viewcode-block" id="Library.get_library_content"><a class="viewcode-back" href="../../../pyphot.pyphot.html#pyphot.pyphot.phot.Library.get_library_content">[docs]</a>    <span class="k">def</span> <span class="nf">get_library_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; get the content of the library &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="bp">NotImplemented</span></div>
+
+<div class="viewcode-block" id="Library.load_all_filters"><a class="viewcode-back" href="../../../pyphot.pyphot.html#pyphot.pyphot.phot.Library.load_all_filters">[docs]</a>    <span class="k">def</span> <span class="nf">load_all_filters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interp</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">lamb</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; load all filters from the library &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="bp">NotImplemented</span></div>
+
+<div class="viewcode-block" id="Library.add_filter"><a class="viewcode-back" href="../../../pyphot.pyphot.html#pyphot.pyphot.phot.Library.add_filter">[docs]</a>    <span class="k">def</span> <span class="nf">add_filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; add a filter to the library &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="bp">NotImplemented</span></div>
+
+<div class="viewcode-block" id="Library.find"><a class="viewcode-back" href="../../../pyphot.pyphot.html#pyphot.pyphot.phot.Library.find">[docs]</a>    <span class="k">def</span> <span class="nf">find</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">case_sensitive</span><span class="p">:</span>
+            <span class="n">_n</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_library_content</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">_n</span> <span class="ow">in</span> <span class="n">k</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+                    <span class="n">r</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">content</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">k</span><span class="p">:</span>
+                    <span class="n">r</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">r</span></div></div>
+
+
+<div class="viewcode-block" id="Ascii_Library"><a class="viewcode-back" href="../../../pyphot.pyphot.html#pyphot.pyphot.phot.Ascii_Library">[docs]</a><span class="k">class</span> <span class="nc">Ascii_Library</span><span class="p">(</span><span class="n">Library</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Interface one or multiple directory or many files as a filter library</span>
+
+<span class="sd">    &gt;&gt;&gt; lib = Ascii_Library([&#39;ground&#39;, &#39;hst&#39;, &#39;myfilter.csv&#39;])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="n">source</span>
+
+    <span class="k">def</span> <span class="nf">_load_filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">interp</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">lamb</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Load a given filter from the library &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">fil</span> <span class="o">=</span> <span class="n">Filter</span><span class="o">.</span><span class="n">from_ascii</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">content</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">content</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">content</span> <span class="k">if</span> <span class="n">fname</span> <span class="ow">in</span> <span class="n">k</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># try all lower for filenames (ascii convention)</span>
+                <span class="n">r</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">content</span> <span class="k">if</span> <span class="n">fname</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">k</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">print</span><span class="p">(</span><span class="s2">&quot;auto correction found multiple choices&quot;</span><span class="p">)</span>
+                <span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Refine name to one of {0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
+            <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Cannot find filter {0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fname</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">fil</span> <span class="o">=</span> <span class="n">Filter</span><span class="o">.</span><span class="n">from_ascii</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">interp</span> <span class="ow">is</span> <span class="bp">True</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">lamb</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">fil</span><span class="o">.</span><span class="n">reinterp</span><span class="p">(</span><span class="n">lamb</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">fil</span>
+
+<div class="viewcode-block" id="Ascii_Library.get_library_content"><a class="viewcode-back" href="../../../pyphot.pyphot.html#pyphot.pyphot.phot.Ascii_Library.get_library_content">[docs]</a>    <span class="k">def</span> <span class="nf">get_library_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; get the content of the library &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">glob</span> <span class="kn">import</span> <span class="n">glob</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source</span><span class="p">)</span>
+            <span class="n">lst</span> <span class="o">=</span> <span class="n">glob</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source</span> <span class="o">+</span> <span class="s1">&#39;/*&#39;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+            <span class="n">lst</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">source</span>
+        <span class="n">dircheck</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="k">while</span> <span class="n">dircheck</span> <span class="ow">is</span> <span class="bp">True</span><span class="p">:</span>
+            <span class="n">dircheck</span> <span class="o">=</span> <span class="bp">False</span>
+            <span class="n">newlst</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">entry</span><span class="p">):</span>
+                    <span class="n">newlst</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="n">entry</span> <span class="o">+</span> <span class="s1">&#39;/*&#39;</span><span class="p">))</span>
+                    <span class="n">dircheck</span> <span class="o">=</span> <span class="bp">True</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">newlst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+            <span class="n">lst</span> <span class="o">=</span> <span class="n">newlst</span>
+        <span class="k">return</span> <span class="n">lst</span></div>
+
+<div class="viewcode-block" id="Ascii_Library.load_all_filters"><a class="viewcode-back" href="../../../pyphot.pyphot.html#pyphot.pyphot.phot.Ascii_Library.load_all_filters">[docs]</a>    <span class="k">def</span> <span class="nf">load_all_filters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interp</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">lamb</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; load all filters from the library &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_load_filter</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">interp</span><span class="o">=</span><span class="n">interp</span><span class="p">,</span> <span class="n">lamb</span><span class="o">=</span><span class="n">lamb</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">content</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="Ascii_Library.load_filters"><a class="viewcode-back" href="../../../pyphot.pyphot.html#pyphot.pyphot.phot.Ascii_Library.load_filters">[docs]</a>    <span class="k">def</span> <span class="nf">load_filters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">names</span><span class="p">,</span> <span class="n">interp</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">lamb</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">filterLib</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; load a limited set of filters</span>
+
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            names: list[str]</span>
+<span class="sd">                normalized names according to filtersLib</span>
+
+<span class="sd">            interp: bool</span>
+<span class="sd">                reinterpolate the filters over given lambda points</span>
+
+<span class="sd">            lamb: ndarray[float, ndim=1]</span>
+<span class="sd">                desired wavelength definition of the filter</span>
+
+<span class="sd">            filterLib: path</span>
+<span class="sd">                path to the filter library hd5 file</span>
+
+<span class="sd">            Returns</span>
+<span class="sd">            -------</span>
+<span class="sd">            filters: list[filter]</span>
+<span class="sd">                list of filter objects</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">filters</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_load_filter</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">interp</span><span class="o">=</span><span class="n">interp</span><span class="p">,</span> <span class="n">lamb</span><span class="o">=</span><span class="n">lamb</span><span class="p">)</span> <span class="k">for</span> <span class="n">fname</span> <span class="ow">in</span> <span class="n">names</span><span class="p">]</span>
+        <span class="k">return</span><span class="p">(</span><span class="n">filters</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Ascii_Library.add_filters"><a class="viewcode-back" href="../../../pyphot.pyphot.html#pyphot.pyphot.phot.Ascii_Library.add_filters">[docs]</a>    <span class="k">def</span> <span class="nf">add_filters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%.6f</span><span class="s2">&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Add a filter to the library permanently</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        f: Filter object</span>
+<span class="sd">            filter to add</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">Filter</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Argument of type Filter expected. Got type {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">)))</span>
+
+        <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;Filter wavelength must have units for storage.&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write_to</span><span class="p">(</span><span class="s2">&quot;{0:s}/{1:s}.csv&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">fmt</span><span class="o">=</span><span class="n">fmt</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="HDF_Library"><a class="viewcode-back" href="../../../pyphot.pyphot.html#pyphot.pyphot.phot.HDF_Library">[docs]</a><span class="k">class</span> <span class="nc">HDF_Library</span><span class="p">(</span><span class="n">Library</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">__default__</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="n">source</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hdf</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="n">mode</span>
+
+    <span class="k">def</span> <span class="nf">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Enter context &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">hdf</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">hdf</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">openFile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="nf">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>  <span class="o">*</span><span class="n">exc_info</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; end context &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">hdf</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">hdf</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">hdf</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">return</span> <span class="bp">False</span>
+
+    <span class="k">def</span> <span class="nf">_load_filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">interp</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">lamb</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Load a given filter from the library</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        fname: str</span>
+<span class="sd">            normalized names according to filtersLib</span>
+
+<span class="sd">        interp: bool, optional</span>
+<span class="sd">            reinterpolate the filters over given lambda points</span>
+
+<span class="sd">        lamb: ndarray[float, ndim=1]</span>
+<span class="sd">            desired wavelength definition of the filter</span>
+
+<span class="sd">        integrationFilter: bool, optional</span>
+<span class="sd">            set True for specail integraion filter such as Qion or E_uv</span>
+<span class="sd">            if set, lamb should be given</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        filter: Filter instance</span>
+<span class="sd">            filter object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ftab</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hdf</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;decode&#39;</span><span class="p">):</span>
+            <span class="n">fnode</span>    <span class="o">=</span> <span class="n">ftab</span><span class="o">.</span><span class="n">getNode</span><span class="p">(</span><span class="s1">&#39;/filters/&#39;</span> <span class="o">+</span> <span class="n">fname</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">fnode</span>    <span class="o">=</span> <span class="n">ftab</span><span class="o">.</span><span class="n">getNode</span><span class="p">(</span><span class="s1">&#39;/filters/&#39;</span> <span class="o">+</span> <span class="n">fname</span><span class="p">)</span>
+        <span class="n">flamb</span>    <span class="o">=</span> <span class="n">fnode</span><span class="p">[:][</span><span class="s1">&#39;WAVELENGTH&#39;</span><span class="p">]</span>
+        <span class="n">transmit</span> <span class="o">=</span> <span class="n">fnode</span><span class="p">[:][</span><span class="s1">&#39;THROUGHPUT&#39;</span><span class="p">]</span>
+        <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;photon&#39;</span>
+        <span class="n">unit</span> <span class="o">=</span> <span class="bp">None</span>
+
+        <span class="n">attrs</span> <span class="o">=</span> <span class="n">fnode</span><span class="o">.</span><span class="n">attrs</span>
+        <span class="k">if</span> <span class="s1">&#39;DETECTOR&#39;</span> <span class="ow">in</span> <span class="n">attrs</span><span class="p">:</span>
+            <span class="n">dtype</span> <span class="o">=</span> <span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;DETECTOR&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s1">&#39;WAVELENGTH_UNIT&#39;</span> <span class="ow">in</span> <span class="n">attrs</span><span class="p">:</span>
+            <span class="n">unit</span> <span class="o">=</span> <span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;WAVELENGTH_UNIT&#39;</span><span class="p">]</span>
+
+        <span class="n">fil</span> <span class="o">=</span> <span class="n">Filter</span><span class="p">(</span><span class="n">flamb</span><span class="p">,</span> <span class="n">transmit</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">fnode</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">unit</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">interp</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">lamb</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">):</span>
+            <span class="n">fil</span> <span class="o">=</span> <span class="n">fil</span><span class="o">.</span><span class="n">reinterp</span><span class="p">(</span><span class="n">lamb</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">fil</span>
+
+<div class="viewcode-block" id="HDF_Library.get_library_content"><a class="viewcode-back" href="../../../pyphot.pyphot.html#pyphot.pyphot.phot.HDF_Library.get_library_content">[docs]</a>    <span class="k">def</span> <span class="nf">get_library_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; get the content of the library &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="bp">self</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">filters</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">hdf</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">cols</span><span class="o">.</span><span class="n">TABLENAME</span><span class="p">[:]</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="n">filters</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">hdf</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">_v_children</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">filters</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;decode&#39;</span><span class="p">):</span>
+            <span class="n">filters</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">filters</span><span class="p">]</span>
+        <span class="k">return</span><span class="p">(</span><span class="n">filters</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HDF_Library.load_all_filters"><a class="viewcode-back" href="../../../pyphot.pyphot.html#pyphot.pyphot.phot.HDF_Library.load_all_filters">[docs]</a>    <span class="k">def</span> <span class="nf">load_all_filters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interp</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">lamb</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; load all filters from the library</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        interp: bool</span>
+<span class="sd">            reinterpolate the filters over given lambda points</span>
+
+<span class="sd">        lamb: ndarray[float, ndim=1]</span>
+<span class="sd">            desired wavelength definition of the filter</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        filters: list[filter]</span>
+<span class="sd">            list of filter objects</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="bp">self</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
+            <span class="n">filters</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">_load_filter</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">interp</span><span class="o">=</span><span class="n">interp</span><span class="p">,</span> <span class="n">lamb</span><span class="o">=</span><span class="n">lamb</span><span class="p">)</span>
+                       <span class="k">for</span> <span class="n">fname</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">content</span> <span class="p">]</span>
+        <span class="k">return</span><span class="p">(</span><span class="n">filters</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HDF_Library.load_filters"><a class="viewcode-back" href="../../../pyphot.pyphot.html#pyphot.pyphot.phot.HDF_Library.load_filters">[docs]</a>    <span class="k">def</span> <span class="nf">load_filters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">names</span><span class="p">,</span> <span class="n">interp</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">lamb</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">filterLib</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; load a limited set of filters</span>
+
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            names: list[str]</span>
+<span class="sd">                normalized names according to filtersLib</span>
+
+<span class="sd">            interp: bool</span>
+<span class="sd">                reinterpolate the filters over given lambda points</span>
+
+<span class="sd">            lamb: ndarray[float, ndim=1]</span>
+<span class="sd">                desired wavelength definition of the filter</span>
+
+<span class="sd">            filterLib: path</span>
+<span class="sd">                path to the filter library hd5 file</span>
+
+<span class="sd">            Returns</span>
+<span class="sd">            -------</span>
+<span class="sd">            filters: list[filter]</span>
+<span class="sd">                list of filter objects</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="bp">self</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
+            <span class="n">filters</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">_load_filter</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">interp</span><span class="o">=</span><span class="n">interp</span><span class="p">,</span> <span class="n">lamb</span><span class="o">=</span><span class="n">lamb</span><span class="p">)</span>
+                       <span class="k">for</span> <span class="n">fname</span> <span class="ow">in</span> <span class="n">names</span><span class="p">]</span>
+        <span class="k">return</span><span class="p">(</span><span class="n">filters</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HDF_Library.add_filter"><a class="viewcode-back" href="../../../pyphot.pyphot.html#pyphot.pyphot.phot.HDF_Library.add_filter">[docs]</a>    <span class="k">def</span> <span class="nf">add_filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Add a filter to the library permanently</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        f: Filter object</span>
+<span class="sd">            filter to add</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">Filter</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Argument of type Filter expected. Got type {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">)))</span>
+
+        <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;Filter wavelength must have units for storage.&quot;</span><span class="p">)</span>
+
+        <span class="n">f</span><span class="o">.</span><span class="n">write_to</span><span class="p">(</span><span class="s2">&quot;{0:s}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source</span><span class="p">),</span>
+                   <span class="n">tablename</span><span class="o">=</span><span class="s1">&#39;/filters/{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">),</span>
+                   <span class="n">createparents</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+                   <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="get_library"><a class="viewcode-back" href="../../../pyphot.pyphot.html#pyphot.pyphot.phot.get_library">[docs]</a><span class="k">def</span> <span class="nf">get_library</span><span class="p">(</span><span class="n">fname</span><span class="o">=</span><span class="n">__default__</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Finds the appropriate class to load the library &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">HDF_Library</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Ascii_Library</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, M. Fouesneau.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
