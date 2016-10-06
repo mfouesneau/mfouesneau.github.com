@@ -664,7 +664,7 @@ leff = int (lamb * T * Vega dlamb) / int(T * Vega dlamb)</p>
 
 <dl class="class">
 <dt id="pyphot.phot.HDF_Library">
-<em class="property">class </em><code class="descclassname">pyphot.phot.</code><code class="descname">HDF_Library</code><span class="sig-paren">(</span><em>source='/Users/fouesneau/Work/Beast/beast2/pyphot/libs/new_filters.hd5'</em>, <em>mode='r'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#HDF_Library"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.HDF_Library" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">pyphot.phot.</code><code class="descname">HDF_Library</code><span class="sig-paren">(</span><em>source='/Users/fouesneau/Work/pyphot/libs/new_filters.hd5'</em>, <em>mode='r'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#HDF_Library"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.HDF_Library" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pyphot.phot.Library" title="pyphot.phot.Library"><code class="xref py py-class docutils literal"><span class="pre">pyphot.phot.Library</span></code></a></p>
 <dl class="method">
 <dt id="pyphot.phot.HDF_Library.add_filter">
@@ -722,7 +722,7 @@ leff = int (lamb * T * Vega dlamb) / int(T * Vega dlamb)</p>
 
 <dl class="class">
 <dt id="pyphot.phot.Library">
-<em class="property">class </em><code class="descclassname">pyphot.phot.</code><code class="descname">Library</code><span class="sig-paren">(</span><em>source='/Users/fouesneau/Work/Beast/beast2/pyphot/libs/new_filters.hd5'</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#Library"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.Library" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">pyphot.phot.</code><code class="descname">Library</code><span class="sig-paren">(</span><em>source='/Users/fouesneau/Work/pyphot/libs/new_filters.hd5'</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#Library"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.Library" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Common grounds for filter libraries</p>
 <dl class="method">
@@ -798,7 +798,7 @@ directory: str</p>
 
 <dl class="function">
 <dt id="pyphot.phot.get_library">
-<code class="descclassname">pyphot.phot.</code><code class="descname">get_library</code><span class="sig-paren">(</span><em>fname='/Users/fouesneau/Work/Beast/beast2/pyphot/libs/new_filters.hd5'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#get_library"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.get_library" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">pyphot.phot.</code><code class="descname">get_library</code><span class="sig-paren">(</span><em>fname='/Users/fouesneau/Work/pyphot/libs/new_filters.hd5'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#get_library"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.get_library" title="Permalink to this definition">¶</a></dt>
 <dd><p>Finds the appropriate class to load the library</p>
 </dd></dl>
 
@@ -1566,7 +1566,7 @@ gid: an id string
 hatch: [ &#8216;/&#8217; | &#8216;\&#8217; | &#8216;|&#8217; | &#8216;-&#8216; | &#8216;+&#8217; | &#8216;x&#8217; | &#8216;o&#8217; | &#8216;O&#8217; | &#8216;.&#8217; | &#8216;*&#8217; ] 
 label: string or anything printable with &#8216;%s&#8217; conversion. 
 linestyle or dashes or linestyles: [&#8216;solid&#8217; | &#8216;dashed&#8217;, &#8216;dashdot&#8217;, &#8216;dotted&#8217; | (offset, on-off-dash-seq) | <code class="docutils literal"><span class="pre">'-'</span></code> | <code class="docutils literal"><span class="pre">'--'</span></code> | <code class="docutils literal"><span class="pre">'-.'</span></code> | <code class="docutils literal"><span class="pre">':'</span></code> | <code class="docutils literal"><span class="pre">'None'</span></code> | <code class="docutils literal"><span class="pre">'</span> <span class="pre">'</span></code> | <code class="docutils literal"><span class="pre">''</span></code>]
-linewidth or linewidths or lw: float or sequence of floats 
+linewidth or lw or linewidths: float or sequence of floats 
 norm: unknown
 offset_position: unknown
 offsets: float or sequence of floats 
@@ -1593,7 +1593,7 @@ to the return collection as attributes <em>hbar</em> and <em>vbar</em>.</p>
 <strong>data</strong> keyword argument. If such a <strong>data</strong> argument is given, the
 following arguments are replaced by <strong>data[&lt;arg&gt;]</strong>:</p>
 <ul class="simple">
-<li>All arguments with the following names: &#8216;x&#8217;, &#8216;y&#8217;.</li>
+<li>All arguments with the following names: &#8216;y&#8217;, &#8216;x&#8217;.</li>
 </ul>
 <p>Additional kwargs: hold = [True|False] overrides default hold state</p>
 </dd></dl>
@@ -1809,7 +1809,7 @@ the <em>norm</em> keyword argument. Likewise, power-law normalization
 <strong>data</strong> keyword argument. If such a <strong>data</strong> argument is given, the
 following arguments are replaced by <strong>data[&lt;arg&gt;]</strong>:</p>
 <ul class="simple">
-<li>All arguments with the following names: &#8216;weights&#8217;, &#8216;x&#8217;, &#8216;y&#8217;.</li>
+<li>All arguments with the following names: &#8216;y&#8217;, &#8216;weights&#8217;, &#8216;x&#8217;.</li>
 </ul>
 <p>Additional kwargs: hold = [True|False] overrides default hold state</p>
 </dd></dl>
@@ -2182,7 +2182,7 @@ whether the <em>x</em> and <em>y</em> axes are autoscaled; the default is
 <strong>data</strong> keyword argument. If such a <strong>data</strong> argument is given, the
 following arguments are replaced by <strong>data[&lt;arg&gt;]</strong>:</p>
 <ul class="simple">
-<li>All arguments with the following names: &#8216;x&#8217;, &#8216;y&#8217;.</li>
+<li>All arguments with the following names: &#8216;y&#8217;, &#8216;x&#8217;.</li>
 </ul>
 <p>Additional kwargs: hold = [True|False] overrides default hold state</p>
 </dd></dl>
@@ -2367,7 +2367,7 @@ and <cite>y</cite>.</p>
 <strong>data</strong> keyword argument. If such a <strong>data</strong> argument is given, the
 following arguments are replaced by <strong>data[&lt;arg&gt;]</strong>:</p>
 <ul class="simple">
-<li>All arguments with the following names: &#8216;edgecolors&#8217;, &#8216;x&#8217;, &#8216;c&#8217;, &#8216;linewidths&#8217;, &#8216;facecolors&#8217;, &#8216;y&#8217;, &#8216;facecolor&#8217;, &#8216;color&#8217;, &#8216;s&#8217;.</li>
+<li>All arguments with the following names: &#8216;s&#8217;, &#8216;c&#8217;, &#8216;linewidths&#8217;, &#8216;edgecolors&#8217;, &#8216;y&#8217;, &#8216;facecolors&#8217;, &#8216;x&#8217;, &#8216;color&#8217;, &#8216;facecolor&#8217;.</li>
 </ul>
 <p>Additional kwargs: hold = [True|False] overrides default hold state</p>
 </dd></dl>
@@ -2701,7 +2701,7 @@ result equivalent to <code class="xref py py-func docutils literal"><span class=
 <p>Vega.wavelength and Vega.flux have now units!</p>
 <dl class="class">
 <dt id="pyphot.vega.Vega">
-<em class="property">class </em><code class="descclassname">pyphot.vega.</code><code class="descname">Vega</code><span class="sig-paren">(</span><em>source='/Users/fouesneau/Work/Beast/beast2/pyphot/libs/vega.hd5'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/vega.html#Vega"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.vega.Vega" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">pyphot.vega.</code><code class="descname">Vega</code><span class="sig-paren">(</span><em>source='/Users/fouesneau/Work/pyphot/libs/vega.hd5'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/vega.html#Vega"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.vega.Vega" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Class that handles vega spectrum and references.  This class know where to
 find the Vega synthetic spectrum (Bohlin 2007) in order to compute fluxes
@@ -2839,6 +2839,10 @@ and magnitudes in given filters</p>
           rel="nofollow">Page source</a>
     </div>
 
+    
+    <a href="https://github.com/mfouesneau/pyphot" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
     
 
     
