@@ -1,0 +1,742 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Extention to Lick indices &mdash; pyphot 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="pyphot 1.0 documentation" href="index.html" />
+    <link rel="next" title="API" href="modules.html" />
+    <link rel="prev" title="Provided Filter library" href="libcontent.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="extention-to-lick-indices">
+<h1>Extention to Lick indices<a class="headerlink" href="#extention-to-lick-indices" title="Permalink to this headline">¶</a></h1>
+<p>We also include functions to compute lick indices and provide a series of
+commonly use ones.</p>
+<div class="section" id="lick-index">
+<h2>Lick index<a class="headerlink" href="#lick-index" title="Permalink to this headline">¶</a></h2>
+<p>The Lick system of spectral line indices is one of the most commonly used
+methods of determining ages and metallicities of unresolved (integrated light)
+stellar populations.</p>
+<p>The calibration of the Lick / IDS system is complicated because the original
+Lick spectra were not flux calibrated, so there are usually systematic effects
+due to differences in continuum shape.  Proper calibration involves observing
+many of the original Lick/IDS standard stars and deriving offsets to the
+standard system.</p>
+<p>In Vazdekis et al. (2010), they propose a new Line Index System, hereafter
+LIS, with three new spectral resolutions at which to measure the Lick
+indices. Note that this new system should not be restricted to the Lick set
+of indices in a flux calibrated system. In fact, LIS can be used for any
+index in the literature (e.g., for the Rose (1984) indices), including
+newly defined indices (e.g., Cervantes &amp; Vazdekis 2009).</p>
+<p>The LIS system is defined for 3 different spectral resolutions which are
+best suited for the following astrophysical cases:</p>
+<ul class="simple">
+<li>LIS-5.0AA: globular clusters</li>
+<li>LIS-8.4AA: low and intermediate-mass galaxies</li>
+<li>LIS-14.0AA: massive galaxies</li>
+</ul>
+<p>Conversions to transform the data from the Lick/IDS system to LIS can be found
+in Johansson, Thomas &amp; Maraston (2010), which provides a discussion of indices
+and the information content of them.</p>
+</div>
+<div class="section" id="calculations">
+<h2>Calculations<a class="headerlink" href="#calculations" title="Permalink to this headline">¶</a></h2>
+<p>Suppose one has a spectrum <span class="math">\(f_\lambda\)</span> defined over the wavelength
+<span class="math">\(\lambda\)</span>.  First, we must adapt the resolution of the spectrum to match
+one of the LIS range.  Indeed Lick definitions have different resolution
+elements as function of wavelength:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="60%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="7%" />
+<col width="9%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><span class="math">\(\lambda\)</span> in <span class="math">\(\unicode{x212B}\)</span></td>
+<td>4000</td>
+<td>4400</td>
+<td>4900</td>
+<td>5400</td>
+<td>6000</td>
+</tr>
+<tr class="row-even"><td>resolution (FWHM in <span class="math">\(\unicode{x212B}\)</span>)</td>
+<td>11.5</td>
+<td>9.2</td>
+<td>8.4</td>
+<td>8.4</td>
+<td>9.8</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">new_f</span> <span class="o">=</span> <span class="n">licks</span><span class="o">.</span><span class="n">reduce_resolution</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">sigma0</span><span class="o">=</span><span class="mf">0.55</span><span class="p">,</span> <span class="n">sigma_floor</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Indices are defined on continuum normalized spectra. Therefore all indices come
+with 3 intervals: a <cite>band</cite> that gives the index range but also a <cite>blue</cite> and a
+<cite>red</cite> interval on each side which are used to fit a polynomial function as local
+continuum.</p>
+<p>see: <code class="xref py py-func docutils literal"><span class="pre">licks.LickIndex.continuum_normalized_region_around_line()</span></code>.</p>
+<p>Finally any index is calculated by integrated the continuum normalized flux.
+Some indices are given in <cite>magnitudes</cite>, and some in <cite>equivalent width</cite> units.</p>
+<div class="section" id="references">
+<h3>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Worthey G., Faber S. M., Gonzalez J. J., Burstein D., 1994, ApJS, 94, 687</li>
+<li>Worthey G., Ottaviani D. L., 1997, ApJS, 111, 377</li>
+<li>Puzia et al. 2002</li>
+<li>Zhang, Li &amp; Han 2005, <a class="reference external" href="http://arxiv.org/abs/astro-ph/0508634v1">http://arxiv.org/abs/astro-ph/0508634v1</a></li>
+<li>Vazdekis et al., 2010</li>
+<li>Johansson, Thomas &amp; Maraston, 2010,  <a class="reference external" href="http://wwwmpa.mpa-garching.mpg.de/~jonasj/milesff/milesff.pdf">http://wwwmpa.mpa-garching.mpg.de/~jonasj/milesff/milesff.pdf</a></li>
+</ul>
+<p>This page shows the content of the provided library with respective properties
+of the passband filters. The code to generate the table is also provided below.</p>
+</div>
+</div>
+<div class="section" id="library-content">
+<h2>Library content<a class="headerlink" href="#library-content" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyphot</span>
+
+<span class="c1"># define header and table format (as csv)</span>
+<span class="n">hdr</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;wavelength units&quot;</span><span class="p">,</span> <span class="s2">&quot;index units&quot;</span><span class="p">,</span> <span class="s2">&quot;min&quot;</span><span class="p">,</span> <span class="s2">&quot;max&quot;</span> <span class="s2">&quot;min blue&quot;</span><span class="p">,</span> <span class="s2">&quot;max blue&quot;</span><span class="p">,</span> <span class="s2">&quot;min red&quot;</span><span class="p">,</span> <span class="s2">&quot;max red&quot;</span><span class="p">)</span>
+<span class="n">fmt</span> <span class="o">=</span> <span class="s2">&quot;{0:s},{1:s},{2:s},{3:.3f},{4:.3f},{5:.3f},{6:.5f},{7:.3f},{8:.3f}</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+<span class="n">l</span> <span class="o">=</span> <span class="n">pyphot</span><span class="o">.</span><span class="n">LickLibrary</span><span class="p">()</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;licks_table.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">output</span><span class="p">:</span>
+    <span class="n">output</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">hdr</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">l</span><span class="o">.</span><span class="n">content</span><span class="p">):</span>
+        <span class="n">fk</span> <span class="o">=</span> <span class="n">l</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+        <span class="c1"># wavelength have units</span>
+        <span class="n">band</span> <span class="o">=</span> <span class="n">fk</span><span class="o">.</span><span class="n">band</span><span class="o">.</span><span class="n">magnitude</span>
+        <span class="n">blue</span> <span class="o">=</span> <span class="n">fk</span><span class="o">.</span><span class="n">blue</span><span class="o">.</span><span class="n">magnitude</span>
+        <span class="n">red</span> <span class="o">=</span> <span class="n">fk</span><span class="o">.</span><span class="n">red</span><span class="o">.</span><span class="n">magnitude</span>
+        <span class="n">rec</span> <span class="o">=</span> <span class="p">(</span><span class="n">fk</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">fk</span><span class="o">.</span><span class="n">wavelength_unit</span><span class="p">,</span> <span class="n">fk</span><span class="o">.</span><span class="n">index_unit</span><span class="p">,</span> <span class="n">band</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">band</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+               <span class="n">blue</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">blue</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">red</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">red</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">output</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">fmt</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">rec</span><span class="p">))</span>
+</pre></div>
+</div>
+<table border="1" class="docutils" id="id1">
+<caption><span class="caption-text">Current internal library</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>name</td>
+<td>wavelength units</td>
+<td>index units</td>
+<td>min</td>
+<td>maxmin blue</td>
+<td>max blue</td>
+<td>min red</td>
+<td>max red</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>CN_1</td>
+<td>AA</td>
+<td>mag</td>
+<td>4142.125</td>
+<td>4177.125</td>
+<td>4080.125</td>
+<td>4117.62500</td>
+<td>4244.125</td>
+<td>4284.125</td>
+</tr>
+<tr class="row-odd"><td>CN_2</td>
+<td>AA</td>
+<td>mag</td>
+<td>4142.125</td>
+<td>4177.125</td>
+<td>4083.875</td>
+<td>4096.37500</td>
+<td>4244.125</td>
+<td>4284.125</td>
+</tr>
+<tr class="row-even"><td>Ca1_LB13</td>
+<td>AA</td>
+<td>ew</td>
+<td>8484.000</td>
+<td>8513.000</td>
+<td>8474.000</td>
+<td>8484.00000</td>
+<td>8563.000</td>
+<td>8577.000</td>
+</tr>
+<tr class="row-odd"><td>Ca2_LB13</td>
+<td>AA</td>
+<td>ew</td>
+<td>8522.000</td>
+<td>8562.000</td>
+<td>8474.000</td>
+<td>8484.00000</td>
+<td>8563.000</td>
+<td>8577.000</td>
+</tr>
+<tr class="row-even"><td>Ca3_LB13</td>
+<td>AA</td>
+<td>ew</td>
+<td>8642.000</td>
+<td>8682.000</td>
+<td>8619.000</td>
+<td>8642.00000</td>
+<td>8700.000</td>
+<td>8725.000</td>
+</tr>
+<tr class="row-odd"><td>Ca4227</td>
+<td>AA</td>
+<td>ew</td>
+<td>4222.250</td>
+<td>4234.750</td>
+<td>4211.000</td>
+<td>4219.75000</td>
+<td>4241.000</td>
+<td>4251.000</td>
+</tr>
+<tr class="row-even"><td>Ca4455</td>
+<td>AA</td>
+<td>ew</td>
+<td>4452.125</td>
+<td>4474.625</td>
+<td>4445.875</td>
+<td>4454.62500</td>
+<td>4477.125</td>
+<td>4492.125</td>
+</tr>
+<tr class="row-odd"><td>CaH</td>
+<td>AA</td>
+<td>ew</td>
+<td>6775.000</td>
+<td>6817.000</td>
+<td>6520.000</td>
+<td>6545.00000</td>
+<td>7035.000</td>
+<td>7050.000</td>
+</tr>
+<tr class="row-even"><td>CaHK_LB13</td>
+<td>AA</td>
+<td>ew</td>
+<td>3899.470</td>
+<td>4003.470</td>
+<td>3806.500</td>
+<td>3833.82000</td>
+<td>4020.690</td>
+<td>4052.360</td>
+</tr>
+<tr class="row-odd"><td>CaH_1</td>
+<td>AA</td>
+<td>mag</td>
+<td>6357.500</td>
+<td>6401.750</td>
+<td>6342.125</td>
+<td>6356.50000</td>
+<td>6408.500</td>
+<td>6429.750</td>
+</tr>
+<tr class="row-even"><td>CaH_2</td>
+<td>AA</td>
+<td>mag</td>
+<td>6775.000</td>
+<td>6900.000</td>
+<td>6510.000</td>
+<td>6539.25000</td>
+<td>7017.000</td>
+<td>7064.000</td>
+</tr>
+<tr class="row-odd"><td>Fe4383</td>
+<td>AA</td>
+<td>ew</td>
+<td>4369.125</td>
+<td>4420.375</td>
+<td>4359.125</td>
+<td>4370.37500</td>
+<td>4442.875</td>
+<td>4455.375</td>
+</tr>
+<tr class="row-even"><td>Fe4531</td>
+<td>AA</td>
+<td>ew</td>
+<td>4514.250</td>
+<td>4559.250</td>
+<td>4504.250</td>
+<td>4514.25000</td>
+<td>4560.500</td>
+<td>4579.250</td>
+</tr>
+<tr class="row-odd"><td>Fe4668</td>
+<td>AA</td>
+<td>ew</td>
+<td>4634.000</td>
+<td>4720.250</td>
+<td>4611.500</td>
+<td>4630.25000</td>
+<td>4742.750</td>
+<td>4756.500</td>
+</tr>
+<tr class="row-even"><td>Fe5015</td>
+<td>AA</td>
+<td>ew</td>
+<td>4977.750</td>
+<td>5054.000</td>
+<td>4946.500</td>
+<td>4977.75000</td>
+<td>5054.000</td>
+<td>5065.250</td>
+</tr>
+<tr class="row-odd"><td>Fe5270</td>
+<td>AA</td>
+<td>ew</td>
+<td>5245.650</td>
+<td>5285.650</td>
+<td>5233.150</td>
+<td>5248.15000</td>
+<td>5285.650</td>
+<td>5318.150</td>
+</tr>
+<tr class="row-even"><td>Fe5335</td>
+<td>AA</td>
+<td>ew</td>
+<td>5312.125</td>
+<td>5352.125</td>
+<td>5304.625</td>
+<td>5315.87500</td>
+<td>5353.375</td>
+<td>5363.375</td>
+</tr>
+<tr class="row-odd"><td>Fe5406</td>
+<td>AA</td>
+<td>ew</td>
+<td>5387.500</td>
+<td>5415.000</td>
+<td>5376.250</td>
+<td>5387.50000</td>
+<td>5415.000</td>
+<td>5425.000</td>
+</tr>
+<tr class="row-even"><td>Fe5709</td>
+<td>AA</td>
+<td>ew</td>
+<td>5696.625</td>
+<td>5720.375</td>
+<td>5672.875</td>
+<td>5696.62500</td>
+<td>5722.875</td>
+<td>5736.625</td>
+</tr>
+<tr class="row-odd"><td>Fe5782</td>
+<td>AA</td>
+<td>ew</td>
+<td>5776.625</td>
+<td>5796.625</td>
+<td>5765.375</td>
+<td>5775.37500</td>
+<td>5797.875</td>
+<td>5811.625</td>
+</tr>
+<tr class="row-even"><td>G4300</td>
+<td>AA</td>
+<td>ew</td>
+<td>4281.375</td>
+<td>4316.375</td>
+<td>4266.375</td>
+<td>4282.62500</td>
+<td>4318.875</td>
+<td>4335.125</td>
+</tr>
+<tr class="row-odd"><td>H_beta</td>
+<td>AA</td>
+<td>ew</td>
+<td>4847.875</td>
+<td>4876.625</td>
+<td>4827.875</td>
+<td>4847.87500</td>
+<td>4876.625</td>
+<td>4891.625</td>
+</tr>
+<tr class="row-even"><td>Hbeta0</td>
+<td>AA</td>
+<td>ew</td>
+<td>4839.275</td>
+<td>4877.097</td>
+<td>4821.175</td>
+<td>4838.40400</td>
+<td>4897.445</td>
+<td>4915.845</td>
+</tr>
+<tr class="row-odd"><td>HbetaEW</td>
+<td>AA</td>
+<td>ew</td>
+<td>4847.875</td>
+<td>4876.625</td>
+<td>4799.000</td>
+<td>4839.00000</td>
+<td>4886.000</td>
+<td>4926.000</td>
+</tr>
+<tr class="row-even"><td>HdeltaEW</td>
+<td>AA</td>
+<td>ew</td>
+<td>4083.500</td>
+<td>4122.250</td>
+<td>4017.000</td>
+<td>4057.00000</td>
+<td>4153.000</td>
+<td>4193.000</td>
+</tr>
+<tr class="row-odd"><td>Hdelta_A</td>
+<td>AA</td>
+<td>ew</td>
+<td>4083.500</td>
+<td>4122.250</td>
+<td>4041.600</td>
+<td>4079.75000</td>
+<td>4128.500</td>
+<td>4161.000</td>
+</tr>
+<tr class="row-even"><td>Hdelta_F</td>
+<td>AA</td>
+<td>ew</td>
+<td>4091.000</td>
+<td>4112.250</td>
+<td>4057.250</td>
+<td>4088.50000</td>
+<td>4114.750</td>
+<td>4137.250</td>
+</tr>
+<tr class="row-odd"><td>HgammaEW</td>
+<td>AA</td>
+<td>ew</td>
+<td>4319.750</td>
+<td>4363.500</td>
+<td>4242.000</td>
+<td>4282.00000</td>
+<td>4404.000</td>
+<td>4444.000</td>
+</tr>
+<tr class="row-even"><td>Hgamma_A</td>
+<td>AA</td>
+<td>ew</td>
+<td>4319.750</td>
+<td>4363.500</td>
+<td>4283.500</td>
+<td>4319.75000</td>
+<td>4367.250</td>
+<td>4419.750</td>
+</tr>
+<tr class="row-odd"><td>Hgamma_F</td>
+<td>AA</td>
+<td>ew</td>
+<td>4331.250</td>
+<td>4352.250</td>
+<td>4283.500</td>
+<td>4319.75000</td>
+<td>4354.750</td>
+<td>4384.750</td>
+</tr>
+<tr class="row-even"><td>Mg4780</td>
+<td>AA</td>
+<td>ew</td>
+<td>4760.780</td>
+<td>4798.800</td>
+<td>4738.910</td>
+<td>4757.31000</td>
+<td>4819.780</td>
+<td>4835.510</td>
+</tr>
+<tr class="row-odd"><td>Mg_1</td>
+<td>AA</td>
+<td>mag</td>
+<td>5069.125</td>
+<td>5134.125</td>
+<td>4895.125</td>
+<td>4957.62500</td>
+<td>5301.125</td>
+<td>5366.125</td>
+</tr>
+<tr class="row-even"><td>Mg_2</td>
+<td>AA</td>
+<td>mag</td>
+<td>5154.125</td>
+<td>5196.625</td>
+<td>4895.125</td>
+<td>4957.62500</td>
+<td>5301.125</td>
+<td>5366.125</td>
+</tr>
+<tr class="row-odd"><td>Mg_b</td>
+<td>AA</td>
+<td>ew</td>
+<td>5160.125</td>
+<td>5192.625</td>
+<td>5142.625</td>
+<td>5161.37500</td>
+<td>5191.375</td>
+<td>5206.375</td>
+</tr>
+<tr class="row-even"><td>NaI</td>
+<td>AA</td>
+<td>ew</td>
+<td>8163.500</td>
+<td>8229.125</td>
+<td>8140.000</td>
+<td>8163.50000</td>
+<td>8230.250</td>
+<td>8250.000</td>
+</tr>
+<tr class="row-odd"><td>NaI_F13</td>
+<td>AA</td>
+<td>ew</td>
+<td>8180.000</td>
+<td>8200.000</td>
+<td>8137.000</td>
+<td>8147.00000</td>
+<td>8233.000</td>
+<td>8244.000</td>
+</tr>
+<tr class="row-even"><td>NaI_LB13</td>
+<td>AA</td>
+<td>ew</td>
+<td>8180.000</td>
+<td>8200.000</td>
+<td>8143.000</td>
+<td>8153.00000</td>
+<td>8233.000</td>
+<td>8244.000</td>
+</tr>
+<tr class="row-odd"><td>NaI_V12</td>
+<td>AA</td>
+<td>ew</td>
+<td>8180.000</td>
+<td>8200.000</td>
+<td>8164.000</td>
+<td>8173.00000</td>
+<td>8233.000</td>
+<td>8244.000</td>
+</tr>
+<tr class="row-even"><td>Na_D</td>
+<td>AA</td>
+<td>ew</td>
+<td>5876.875</td>
+<td>5909.375</td>
+<td>5860.625</td>
+<td>5875.62500</td>
+<td>5922.125</td>
+<td>5948.125</td>
+</tr>
+<tr class="row-odd"><td>OIIEW</td>
+<td>AA</td>
+<td>ew</td>
+<td>3716.300</td>
+<td>3738.300</td>
+<td>3696.300</td>
+<td>3716.30000</td>
+<td>3738.300</td>
+<td>3758.300</td>
+</tr>
+<tr class="row-even"><td>TiO2SDSS_LB13</td>
+<td>AA</td>
+<td>mag</td>
+<td>6189.625</td>
+<td>6272.125</td>
+<td>6066.625</td>
+<td>6141.62500</td>
+<td>6442.000</td>
+<td>6455.000</td>
+</tr>
+<tr class="row-odd"><td>TiO3</td>
+<td>AA</td>
+<td>ew</td>
+<td>6600.000</td>
+<td>6723.000</td>
+<td>6520.000</td>
+<td>6545.00000</td>
+<td>7035.000</td>
+<td>7050.000</td>
+</tr>
+<tr class="row-even"><td>TiOCaH</td>
+<td>AA</td>
+<td>ew</td>
+<td>6600.000</td>
+<td>6817.000</td>
+<td>6520.000</td>
+<td>6545.00000</td>
+<td>7035.000</td>
+<td>7050.000</td>
+</tr>
+<tr class="row-odd"><td>TiO_1</td>
+<td>AA</td>
+<td>mag</td>
+<td>5936.625</td>
+<td>5994.125</td>
+<td>5816.625</td>
+<td>5849.12500</td>
+<td>6038.625</td>
+<td>6103.625</td>
+</tr>
+<tr class="row-even"><td>TiO_2</td>
+<td>AA</td>
+<td>mag</td>
+<td>6189.625</td>
+<td>6272.125</td>
+<td>6066.625</td>
+<td>6141.62500</td>
+<td>6372.625</td>
+<td>6415.125</td>
+</tr>
+<tr class="row-odd"><td>TiO_3</td>
+<td>AA</td>
+<td>mag</td>
+<td>7123.750</td>
+<td>7162.500</td>
+<td>7017.000</td>
+<td>7064.00000</td>
+<td>7234.000</td>
+<td>7269.000</td>
+</tr>
+<tr class="row-even"><td>TiO_4</td>
+<td>AA</td>
+<td>mag</td>
+<td>7643.250</td>
+<td>7717.250</td>
+<td>7527.000</td>
+<td>7577.75000</td>
+<td>7735.500</td>
+<td>7782.750</td>
+</tr>
+<tr class="row-odd"><td>aTiO</td>
+<td>AA</td>
+<td>mag</td>
+<td>5445.000</td>
+<td>5600.000</td>
+<td>5420.000</td>
+<td>5442.00000</td>
+<td>5630.000</td>
+<td>5655.000</td>
+</tr>
+<tr class="row-even"><td>bTiO</td>
+<td>AA</td>
+<td>ew</td>
+<td>4758.500</td>
+<td>4800.000</td>
+<td>4742.750</td>
+<td>4756.50000</td>
+<td>4827.875</td>
+<td>4847.875</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Extention to Lick indices</a><ul>
+<li><a class="reference internal" href="#lick-index">Lick index</a></li>
+<li><a class="reference internal" href="#calculations">Calculations</a><ul>
+<li><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#library-content">Library content</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="libcontent.html" title="previous chapter">Provided Filter library</a></li>
+      <li>Next: <a href="modules.html" title="next chapter">API</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/licks.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, M. Fouesneau.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/licks.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/mfouesneau/pyphot" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>
