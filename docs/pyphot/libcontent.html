@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="pyphot 1.0 documentation" href="index.html" />
-    <link rel="next" title="API" href="modules.html" />
+    <link rel="next" title="Extention to Lick indices" href="licks.html" />
     <link rel="prev" title="PYPHOT – A tool for computing photometry from spectra" href="index.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -788,6 +788,134 @@ properties: <cite>central wavelength</cite>, <cite>pivot wavelength</cite>, and 
 <td>21.10000</td>
 <td>3.6308e-09</td>
 <td>8957.1</td>
+</tr>
+<tr class="row-even"><td>HERSCHEL_PACS_BLUE</td>
+<td>photon</td>
+<td>AA</td>
+<td>719334.161</td>
+<td>715414.931</td>
+<td>689247.297</td>
+<td>40.82294</td>
+<td>4.6862e-17</td>
+<td>0.7426</td>
+<td>31.68074</td>
+<td>2.1267e-13</td>
+<td>3370</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>5.7535e+07</td>
+</tr>
+<tr class="row-odd"><td>HERSCHEL_PACS_GREEN</td>
+<td>photon</td>
+<td>AA</td>
+<td>1026174.164</td>
+<td>1020073.134</td>
+<td>979034.877</td>
+<td>42.36816</td>
+<td>1.1291e-17</td>
+<td>0.361</td>
+<td>32.45110</td>
+<td>1.0461e-13</td>
+<td>3344.5</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>1.1608e+08</td>
+</tr>
+<tr class="row-even"><td>HERSCHEL_PACS_RED</td>
+<td>photon</td>
+<td>AA</td>
+<td>1671354.805</td>
+<td>1653561.821</td>
+<td>1539442.422</td>
+<td>44.44139</td>
+<td>1.6728e-18</td>
+<td>0.13224</td>
+<td>33.50005</td>
+<td>3.9809e-14</td>
+<td>3146.9</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>2.8702e+08</td>
+</tr>
+<tr class="row-odd"><td>HERSCHEL_SPIRE_PLW</td>
+<td>photon</td>
+<td>AA</td>
+<td>5116044.871</td>
+<td>5078435.227</td>
+<td>nan</td>
+<td>inf</td>
+<td>0</td>
+<td>nan</td>
+<td>35.93660</td>
+<td>4.2205e-15</td>
+<td>nan</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>nan</td>
+</tr>
+<tr class="row-even"><td>HERSCHEL_SPIRE_PLW_EXT</td>
+<td>photon</td>
+<td>AA</td>
+<td>5266019.933</td>
+<td>5228537.901</td>
+<td>nan</td>
+<td>inf</td>
+<td>0</td>
+<td>nan</td>
+<td>35.99985</td>
+<td>3.9816e-15</td>
+<td>nan</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>nan</td>
+</tr>
+<tr class="row-odd"><td>HERSCHEL_SPIRE_PMW</td>
+<td>photon</td>
+<td>AA</td>
+<td>3528320.433</td>
+<td>3513680.785</td>
+<td>2945574.880</td>
+<td>47.06959</td>
+<td>1.4865e-19</td>
+<td>0.043021</td>
+<td>35.13676</td>
+<td>8.8165e-15</td>
+<td>2551.6</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>1.0508e+09</td>
+</tr>
+<tr class="row-even"><td>HERSCHEL_SPIRE_PSW</td>
+<td>photon</td>
+<td>AA</td>
+<td>2515000.130</td>
+<td>2504291.502</td>
+<td>2428026.020</td>
+<td>46.31312</td>
+<td>2.9837e-19</td>
+<td>0.058673</td>
+<td>34.40137</td>
+<td>1.7356e-14</td>
+<td>3413</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>7.1398e+08</td>
+</tr>
+<tr class="row-odd"><td>HERSCHEL_SPIRE_PSW_EXT</td>
+<td>photon</td>
+<td>AA</td>
+<td>2556459.010</td>
+<td>2546211.106</td>
+<td>2470951.549</td>
+<td>46.38730</td>
+<td>2.7866e-19</td>
+<td>0.056753</td>
+<td>34.43742</td>
+<td>1.6789e-14</td>
+<td>3419.3</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>7.3945e+08</td>
 </tr>
 <tr class="row-even"><td>HST_ACS_HRC_F220W</td>
 <td>photon</td>
@@ -3045,7 +3173,471 @@ properties: <cite>central wavelength</cite>, <cite>pivot wavelength</cite>, and 
 <td>3.6308e-09</td>
 <td>10013</td>
 </tr>
-<tr class="row-odd"><td>SDSS_g</td>
+<tr class="row-odd"><td>JWST_NIRCAM_F070W</td>
+<td>photon</td>
+<td>um</td>
+<td>0.706</td>
+<td>0.704</td>
+<td>6955.949</td>
+<td>21.93391</td>
+<td>1.6844e-09</td>
+<td>2718.5</td>
+<td>21.64680</td>
+<td>2.1942e-09</td>
+<td>3541.4</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>5859.9</td>
+</tr>
+<tr class="row-even"><td>JWST_NIRCAM_F090W</td>
+<td>photon</td>
+<td>um</td>
+<td>0.904</td>
+<td>0.902</td>
+<td>8945.107</td>
+<td>22.69608</td>
+<td>8.3477e-10</td>
+<td>2228</td>
+<td>22.18472</td>
+<td>1.3369e-09</td>
+<td>3568.3</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>9690.6</td>
+</tr>
+<tr class="row-odd"><td>JWST_NIRCAM_F115W</td>
+<td>photon</td>
+<td>um</td>
+<td>1.157</td>
+<td>1.154</td>
+<td>11379.700</td>
+<td>23.49678</td>
+<td>3.9929e-10</td>
+<td>1724.8</td>
+<td>22.71955</td>
+<td>8.1692e-10</td>
+<td>3528.7</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>15683</td>
+</tr>
+<tr class="row-even"><td>JWST_NIRCAM_F140M</td>
+<td>photon</td>
+<td>um</td>
+<td>1.406</td>
+<td>1.405</td>
+<td>14009.590</td>
+<td>24.24994</td>
+<td>1.9954e-10</td>
+<td>1306.3</td>
+<td>23.14688</td>
+<td>5.5112e-10</td>
+<td>3608.1</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>23770</td>
+</tr>
+<tr class="row-odd"><td>JWST_NIRCAM_F150W</td>
+<td>photon</td>
+<td>um</td>
+<td>1.504</td>
+<td>1.501</td>
+<td>14808.806</td>
+<td>24.49486</td>
+<td>1.5924e-10</td>
+<td>1164.9</td>
+<td>23.28950</td>
+<td>4.8328e-10</td>
+<td>3535.2</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>26559</td>
+</tr>
+<tr class="row-even"><td>JWST_NIRCAM_F150W2</td>
+<td>photon</td>
+<td>um</td>
+<td>1.704</td>
+<td>1.659</td>
+<td>13991.447</td>
+<td>24.73338</td>
+<td>1.2783e-10</td>
+<td>834.74</td>
+<td>23.50694</td>
+<td>3.9557e-10</td>
+<td>2583</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>23709</td>
+</tr>
+<tr class="row-odd"><td>JWST_NIRCAM_F162M</td>
+<td>photon</td>
+<td>um</td>
+<td>1.628</td>
+<td>1.627</td>
+<td>16227.646</td>
+<td>24.81696</td>
+<td>1.1836e-10</td>
+<td>1039.7</td>
+<td>23.46523</td>
+<td>4.1106e-10</td>
+<td>3610.8</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>31893</td>
+</tr>
+<tr class="row-even"><td>JWST_NIRCAM_F164N</td>
+<td>photon</td>
+<td>um</td>
+<td>1.645</td>
+<td>1.645</td>
+<td>16445.858</td>
+<td>24.88010</td>
+<td>1.1168e-10</td>
+<td>1007.5</td>
+<td>23.48824</td>
+<td>4.0244e-10</td>
+<td>3630.8</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>32756</td>
+</tr>
+<tr class="row-odd"><td>JWST_NIRCAM_F182M</td>
+<td>photon</td>
+<td>um</td>
+<td>1.847</td>
+<td>1.845</td>
+<td>18360.335</td>
+<td>25.29601</td>
+<td>7.6137e-11</td>
+<td>856.12</td>
+<td>23.73813</td>
+<td>3.197e-10</td>
+<td>3594.9</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>40826</td>
+</tr>
+<tr class="row-even"><td>JWST_NIRCAM_F187N</td>
+<td>photon</td>
+<td>um</td>
+<td>1.874</td>
+<td>1.874</td>
+<td>18735.528</td>
+<td>25.39574</td>
+<td>6.9455e-11</td>
+<td>813.23</td>
+<td>23.77167</td>
+<td>3.0998e-10</td>
+<td>3629.5</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>42512</td>
+</tr>
+<tr class="row-odd"><td>JWST_NIRCAM_F200W</td>
+<td>photon</td>
+<td>um</td>
+<td>1.993</td>
+<td>1.989</td>
+<td>19587.020</td>
+<td>25.57670</td>
+<td>5.8792e-11</td>
+<td>752.38</td>
+<td>23.90073</td>
+<td>2.7524e-10</td>
+<td>3522.3</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>46464</td>
+</tr>
+<tr class="row-even"><td>JWST_NIRCAM_F210M</td>
+<td>photon</td>
+<td>um</td>
+<td>2.096</td>
+<td>2.095</td>
+<td>20889.980</td>
+<td>25.79467</td>
+<td>4.8099e-11</td>
+<td>700.14</td>
+<td>24.01433</td>
+<td>2.4789e-10</td>
+<td>3608.5</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>52851</td>
+</tr>
+<tr class="row-odd"><td>JWST_NIRCAM_F212N</td>
+<td>photon</td>
+<td>um</td>
+<td>2.121</td>
+<td>2.121</td>
+<td>21204.111</td>
+<td>25.84190</td>
+<td>4.6051e-11</td>
+<td>690.65</td>
+<td>24.04085</td>
+<td>2.4191e-10</td>
+<td>3628.1</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>54453</td>
+</tr>
+<tr class="row-even"><td>JWST_NIRCAM_F250M</td>
+<td>photon</td>
+<td>um</td>
+<td>2.504</td>
+<td>2.503</td>
+<td>24995.103</td>
+<td>26.51715</td>
+<td>2.4725e-11</td>
+<td>515.26</td>
+<td>24.40067</td>
+<td>1.7367e-10</td>
+<td>3619.3</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>75664</td>
+</tr>
+<tr class="row-odd"><td>JWST_NIRCAM_F277W</td>
+<td>photon</td>
+<td>um</td>
+<td>2.769</td>
+<td>2.762</td>
+<td>27131.777</td>
+<td>26.90313</td>
+<td>1.7328e-11</td>
+<td>425.48</td>
+<td>24.61397</td>
+<td>1.427e-10</td>
+<td>3503.9</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>89153</td>
+</tr>
+<tr class="row-even"><td>JWST_NIRCAM_F300M</td>
+<td>photon</td>
+<td>um</td>
+<td>2.991</td>
+<td>2.989</td>
+<td>29786.369</td>
+<td>27.23895</td>
+<td>1.2718e-11</td>
+<td>376.39</td>
+<td>24.78576</td>
+<td>1.2181e-10</td>
+<td>3605</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>1.0745e+05</td>
+</tr>
+<tr class="row-odd"><td>JWST_NIRCAM_F322W2</td>
+<td>photon</td>
+<td>um</td>
+<td>3.267</td>
+<td>3.232</td>
+<td>30073.766</td>
+<td>27.48831</td>
+<td>1.0108e-11</td>
+<td>304.95</td>
+<td>24.95531</td>
+<td>1.042e-10</td>
+<td>3143.6</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>1.0954e+05</td>
+</tr>
+<tr class="row-even"><td>JWST_NIRCAM_F323N</td>
+<td>photon</td>
+<td>um</td>
+<td>3.237</td>
+<td>3.237</td>
+<td>32366.624</td>
+<td>27.56484</td>
+<td>9.4203e-12</td>
+<td>329.18</td>
+<td>24.95861</td>
+<td>1.0389e-10</td>
+<td>3630.2</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>1.2687e+05</td>
+</tr>
+<tr class="row-odd"><td>JWST_NIRCAM_F335M</td>
+<td>photon</td>
+<td>um</td>
+<td>3.364</td>
+<td>3.362</td>
+<td>33502.184</td>
+<td>27.72286</td>
+<td>8.1443e-12</td>
+<td>304.92</td>
+<td>25.04105</td>
+<td>9.629e-11</td>
+<td>3605</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>1.3593e+05</td>
+</tr>
+<tr class="row-even"><td>JWST_NIRCAM_F356W</td>
+<td>photon</td>
+<td>um</td>
+<td>3.577</td>
+<td>3.568</td>
+<td>35119.188</td>
+<td>27.95716</td>
+<td>6.5635e-12</td>
+<td>270.03</td>
+<td>25.17030</td>
+<td>8.5483e-11</td>
+<td>3516.8</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>1.4937e+05</td>
+</tr>
+<tr class="row-odd"><td>JWST_NIRCAM_F360M</td>
+<td>photon</td>
+<td>um</td>
+<td>3.626</td>
+<td>3.624</td>
+<td>36110.478</td>
+<td>28.03568</td>
+<td>6.1056e-12</td>
+<td>265.57</td>
+<td>25.20403</td>
+<td>8.2869e-11</td>
+<td>3604.4</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>1.5792e+05</td>
+</tr>
+<tr class="row-even"><td>JWST_NIRCAM_F405N</td>
+<td>photon</td>
+<td>um</td>
+<td>4.052</td>
+<td>4.052</td>
+<td>40515.653</td>
+<td>28.52768</td>
+<td>3.8809e-12</td>
+<td>212.5</td>
+<td>25.44615</td>
+<td>6.6304e-11</td>
+<td>3630.5</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>1.988e+05</td>
+</tr>
+<tr class="row-odd"><td>JWST_NIRCAM_F410M</td>
+<td>photon</td>
+<td>um</td>
+<td>4.084</td>
+<td>4.082</td>
+<td>40679.662</td>
+<td>28.53482</td>
+<td>3.8554e-12</td>
+<td>212.82</td>
+<td>25.46244</td>
+<td>6.5317e-11</td>
+<td>3605.4</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>2.0042e+05</td>
+</tr>
+<tr class="row-even"><td>JWST_NIRCAM_F430M</td>
+<td>photon</td>
+<td>um</td>
+<td>4.282</td>
+<td>4.281</td>
+<td>42771.726</td>
+<td>28.73641</td>
+<td>3.2021e-12</td>
+<td>195.4</td>
+<td>25.56577</td>
+<td>5.9387e-11</td>
+<td>3624</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>2.2156e+05</td>
+</tr>
+<tr class="row-odd"><td>JWST_NIRCAM_F444W</td>
+<td>photon</td>
+<td>um</td>
+<td>4.416</td>
+<td>4.404</td>
+<td>43272.378</td>
+<td>28.83580</td>
+<td>2.922e-12</td>
+<td>182.51</td>
+<td>25.62726</td>
+<td>5.6117e-11</td>
+<td>3505.1</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>2.2678e+05</td>
+</tr>
+<tr class="row-even"><td>JWST_NIRCAM_F460M</td>
+<td>photon</td>
+<td>um</td>
+<td>4.630</td>
+<td>4.630</td>
+<td>46243.469</td>
+<td>29.06878</td>
+<td>2.3577e-12</td>
+<td>168.18</td>
+<td>25.73568</td>
+<td>5.0784e-11</td>
+<td>3622.5</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>2.5899e+05</td>
+</tr>
+<tr class="row-odd"><td>JWST_NIRCAM_F466N</td>
+<td>photon</td>
+<td>um</td>
+<td>4.654</td>
+<td>4.654</td>
+<td>46539.235</td>
+<td>29.12327</td>
+<td>2.2423e-12</td>
+<td>162</td>
+<td>25.74727</td>
+<td>5.0245e-11</td>
+<td>3630</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>2.6231e+05</td>
+</tr>
+<tr class="row-even"><td>JWST_NIRCAM_F470N</td>
+<td>photon</td>
+<td>um</td>
+<td>4.708</td>
+<td>4.708</td>
+<td>47076.317</td>
+<td>29.13627</td>
+<td>2.2156e-12</td>
+<td>163.79</td>
+<td>25.77201</td>
+<td>4.9113e-11</td>
+<td>3630.6</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>2.684e+05</td>
+</tr>
+<tr class="row-odd"><td>JWST_NIRCAM_F480M</td>
+<td>photon</td>
+<td>um</td>
+<td>4.819</td>
+<td>4.818</td>
+<td>48091.063</td>
+<td>29.22973</td>
+<td>2.0329e-12</td>
+<td>156.83</td>
+<td>25.82220</td>
+<td>4.6894e-11</td>
+<td>3617.6</td>
+<td>21.10000</td>
+<td>3.6308e-09</td>
+<td>2.801e+05</td>
+</tr>
+<tr class="row-even"><td>SDSS_g</td>
 <td>photon</td>
 <td>AA</td>
 <td>4718.872</td>
@@ -3061,7 +3653,7 @@ properties: <cite>central wavelength</cite>, <cite>pivot wavelength</cite>, and 
 <td>3.6308e-09</td>
 <td>2607.9</td>
 </tr>
-<tr class="row-even"><td>SDSS_i</td>
+<tr class="row-odd"><td>SDSS_i</td>
 <td>photon</td>
 <td>AA</td>
 <td>7499.704</td>
@@ -3077,7 +3669,7 @@ properties: <cite>central wavelength</cite>, <cite>pivot wavelength</cite>, and 
 <td>3.6308e-09</td>
 <td>6703</td>
 </tr>
-<tr class="row-odd"><td>SDSS_r</td>
+<tr class="row-even"><td>SDSS_r</td>
 <td>photon</td>
 <td>AA</td>
 <td>6185.194</td>
@@ -3093,7 +3685,7 @@ properties: <cite>central wavelength</cite>, <cite>pivot wavelength</cite>, and 
 <td>3.6308e-09</td>
 <td>4539.5</td>
 </tr>
-<tr class="row-even"><td>SDSS_u</td>
+<tr class="row-odd"><td>SDSS_u</td>
 <td>photon</td>
 <td>AA</td>
 <td>3561.789</td>
@@ -3109,7 +3701,7 @@ properties: <cite>central wavelength</cite>, <cite>pivot wavelength</cite>, and 
 <td>3.6308e-09</td>
 <td>1565.2</td>
 </tr>
-<tr class="row-odd"><td>SDSS_z</td>
+<tr class="row-even"><td>SDSS_z</td>
 <td>photon</td>
 <td>AA</td>
 <td>8961.488</td>
@@ -3125,7 +3717,7 @@ properties: <cite>central wavelength</cite>, <cite>pivot wavelength</cite>, and 
 <td>3.6308e-09</td>
 <td>9586.8</td>
 </tr>
-<tr class="row-even"><td>SPITZER_IRAC_36</td>
+<tr class="row-odd"><td>SPITZER_IRAC_36</td>
 <td>photon</td>
 <td>AA</td>
 <td>35634.294</td>
@@ -3141,7 +3733,7 @@ properties: <cite>central wavelength</cite>, <cite>pivot wavelength</cite>, and 
 <td>3.6308e-09</td>
 <td>1.495e+05</td>
 </tr>
-<tr class="row-odd"><td>SPITZER_IRAC_45</td>
+<tr class="row-even"><td>SPITZER_IRAC_45</td>
 <td>photon</td>
 <td>AA</td>
 <td>45110.142</td>
@@ -3157,7 +3749,7 @@ properties: <cite>central wavelength</cite>, <cite>pivot wavelength</cite>, and 
 <td>3.6308e-09</td>
 <td>2.3903e+05</td>
 </tr>
-<tr class="row-even"><td>SPITZER_IRAC_58</td>
+<tr class="row-odd"><td>SPITZER_IRAC_58</td>
 <td>photon</td>
 <td>AA</td>
 <td>57593.368</td>
@@ -3173,7 +3765,7 @@ properties: <cite>central wavelength</cite>, <cite>pivot wavelength</cite>, and 
 <td>3.6308e-09</td>
 <td>3.8625e+05</td>
 </tr>
-<tr class="row-odd"><td>SPITZER_IRAC_80</td>
+<tr class="row-even"><td>SPITZER_IRAC_80</td>
 <td>photon</td>
 <td>AA</td>
 <td>79594.931</td>
@@ -3189,7 +3781,7 @@ properties: <cite>central wavelength</cite>, <cite>pivot wavelength</cite>, and 
 <td>3.6308e-09</td>
 <td>7.0269e+05</td>
 </tr>
-<tr class="row-even"><td>WISE_RSR_W1</td>
+<tr class="row-odd"><td>WISE_RSR_W1</td>
 <td>photon</td>
 <td>um</td>
 <td>3.379</td>
@@ -3205,7 +3797,7 @@ properties: <cite>central wavelength</cite>, <cite>pivot wavelength</cite>, and 
 <td>3.6308e-09</td>
 <td>1.3126e+05</td>
 </tr>
-<tr class="row-odd"><td>WISE_RSR_W2</td>
+<tr class="row-even"><td>WISE_RSR_W2</td>
 <td>photon</td>
 <td>um</td>
 <td>4.629</td>
@@ -3221,7 +3813,7 @@ properties: <cite>central wavelength</cite>, <cite>pivot wavelength</cite>, and 
 <td>3.6308e-09</td>
 <td>2.4989e+05</td>
 </tr>
-<tr class="row-even"><td>WISE_RSR_W3</td>
+<tr class="row-odd"><td>WISE_RSR_W3</td>
 <td>photon</td>
 <td>um</td>
 <td>12.334</td>
@@ -3237,7 +3829,7 @@ properties: <cite>central wavelength</cite>, <cite>pivot wavelength</cite>, and 
 <td>3.6308e-09</td>
 <td>1.2854e+06</td>
 </tr>
-<tr class="row-odd"><td>WISE_RSR_W4</td>
+<tr class="row-even"><td>WISE_RSR_W4</td>
 <td>photon</td>
 <td>um</td>
 <td>22.253</td>
@@ -3276,7 +3868,7 @@ properties: <cite>central wavelength</cite>, <cite>pivot wavelength</cite>, and 
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="index.html" title="previous chapter">PYPHOT &#8211; A tool for computing photometry from spectra</a></li>
-      <li>Next: <a href="modules.html" title="next chapter">API</a></li>
+      <li>Next: <a href="licks.html" title="next chapter">Extention to Lick indices</a></li>
   </ul></li>
 </ul>
 </div>
