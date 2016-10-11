@@ -52,10 +52,10 @@ filters are handled with a <cite>Library</cite>. We provide an internal library 
 contains a signitificant amount of common filters.</p>
 <p>Each filter is minimally defined by a <cite>wavelength</cite> and <cite>throughput</cite>. Many
 properties such as central of pivot wavelength are computed internally.</p>
-<p><strong>When units</strong> are provided for the wavelength, zero points in multiple units are also
-accessible (AB, Vega magnitude, Jy, erg/s/cm2/AA). The default detector type is
-assumed to be photonic, but energetic detectors are also handled for the
-computations.</p>
+<p><strong>When units</strong> are provided for the wavelength of the filters, zero points in
+multiple units are also accessible (AB, Vega magnitude, Jy, erg/s/cm2/AA). The
+default detector type is assumed to be photonic, but energetic detectors are
+also handled for the computations.</p>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <p class="last">All provided filters have defined units and detector type
@@ -128,16 +128,30 @@ Filter object information:
 [...]
 </pre></div>
 </div>
+<p>Suppose one has a calibrated spectrum and wants to compute the vega magnitude
+throug the HST WFC3 F110W passband,</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># convert to magnitudes</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">lib</span><span class="p">[</span><span class="s1">&#39;hst_wfc3_f110w&#39;</span><span class="p">]</span>
+<span class="c1"># compute the integrated flux through the filter f</span>
+<span class="n">fluxes</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">get_flux</span><span class="p">(</span><span class="n">lamb</span><span class="p">,</span> <span class="n">spectra</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># convert to vega magnitudes</span>
+<span class="n">mags</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">fluxes</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="o">.</span><span class="n">Vega_zero_mag</span>
+<span class="c1"># or similarly</span>
+<span class="n">mags</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">fluxes</span> <span class="o">/</span> <span class="n">f</span><span class="o">.</span><span class="n">Vega_zero_flux</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="details-on-predicting-photometry">
 <h2>Details on predicting photometry<a class="headerlink" href="#details-on-predicting-photometry" title="Permalink to this headline">¶</a></h2>
 <p>It is sometimes not obvious that there are important differences between
-photometric systems. But even less known the difference between detector types
-which requires also special care.</p>
+photometric systems. But even less known the difference between detector
+count types (energy or photons) which requires also special care.</p>
 <p>In this section, we review the important details for computing the luminosity
-and the magnitude of a star through a photometric passband filter.</p>
-<p>If we consider a filter throughput defined in wavelength by the dimensionless
-function <span class="math">\(T(\lambda)\)</span>,
+and the magnitude of a star through a photometric passband filter. We do not
+discuss calibration, which in principle is covered by instrument documentations.</p>
+<p>If we consider a filter throughput (a.k.a, transmission curve, or response
+function) defined in wavelength by the dimensionless function <span class="math">\(T(\lambda)\)</span>,
 this function tells you what fraction of the arriving photons at wavelength
 <span class="math">\(\lambda\)</span> actually get through the instrument.  Therefore, the total number of
 photons, per unit time per unit area, received in this filter is</p>
