@@ -72,6 +72,20 @@ best suited for the following astrophysical cases:</p>
 in Johansson, Thomas &amp; Maraston (2010), which provides a discussion of indices
 and the information content of them.</p>
 </div>
+<div class="section" id="quick-start-example">
+<h2>Quick start example<a class="headerlink" href="#quick-start-example" title="Permalink to this headline">¶</a></h2>
+<p>The lick extension is very similar to the broadband usage.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># convert to magnitudes</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">pyphot</span> <span class="kn">import</span> <span class="n">LickLibrary</span>
+<span class="c1"># using the internal collection of indices</span>
+<span class="n">lib</span> <span class="o">=</span> <span class="n">LickLibrary</span><span class="p">()</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">lib</span><span class="p">[</span><span class="s1">&#39;CN_1&#39;</span><span class="p">]</span>
+<span class="c1"># work on many spectra at once</span>
+<span class="n">index</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">lamb</span><span class="p">,</span> <span class="n">spectra</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="calculations">
 <h2>Calculations<a class="headerlink" href="#calculations" title="Permalink to this headline">¶</a></h2>
 <p>Suppose one has a spectrum <span class="math">\(f_\lambda\)</span> defined over the wavelength
@@ -681,6 +695,7 @@ of the passband filters. The code to generate the table is also provided below.<
   <ul>
 <li><a class="reference internal" href="#">Extention to Lick indices</a><ul>
 <li><a class="reference internal" href="#lick-index">Lick index</a></li>
+<li><a class="reference internal" href="#quick-start-example">Quick start example</a></li>
 <li><a class="reference internal" href="#calculations">Calculations</a><ul>
 <li><a class="reference internal" href="#references">References</a></li>
 </ul>

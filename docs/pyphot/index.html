@@ -134,11 +134,23 @@ throug the HST WFC3 F110W passband,</p>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">lib</span><span class="p">[</span><span class="s1">&#39;hst_wfc3_f110w&#39;</span><span class="p">]</span>
 <span class="c1"># compute the integrated flux through the filter f</span>
+<span class="c1"># note that it work on many spectra at once</span>
 <span class="n">fluxes</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">get_flux</span><span class="p">(</span><span class="n">lamb</span><span class="p">,</span> <span class="n">spectra</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="c1"># convert to vega magnitudes</span>
 <span class="n">mags</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">fluxes</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="o">.</span><span class="n">Vega_zero_mag</span>
 <span class="c1"># or similarly</span>
 <span class="n">mags</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">fluxes</span> <span class="o">/</span> <span class="n">f</span><span class="o">.</span><span class="n">Vega_zero_flux</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If one wants to use a given transmission curve as filter, defined by <cite>lamb_T</cite> and
+<cite>T</cite>, one would use the <a class="reference internal" href="pyphot.html#pyphot.phot.Filter" title="pyphot.phot.Filter"><code class="xref py py-class docutils literal"><span class="pre">pyphot.phot.Filter</span></code></a> directly as</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># convert to magnitudes</span>
+<span class="kn">from</span> <span class="nn">pyphot</span> <span class="kn">import</span> <span class="n">Filter</span>
+<span class="c1"># if lamb_T has units the Filter object will use those.</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">Filter</span><span class="p">(</span><span class="n">lamb_T</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;my_filter&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;photon&#39;</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;Angstrom&#39;</span><span class="p">)</span>
+<span class="c1"># compute the integrated flux through the filter f</span>
+<span class="n">fluxes</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">get_flux</span><span class="p">(</span><span class="n">lamb</span><span class="p">,</span> <span class="n">spectra</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="o">...</span>
 </pre></div>
 </div>
 </div>
