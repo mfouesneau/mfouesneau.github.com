@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pystellibs.interpolator package &mdash; pystellibs 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="pystellibs 1.0 documentation" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="pystellibs-interpolator-package">
+<h1>pystellibs.interpolator package<a class="headerlink" href="#pystellibs-interpolator-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-pystellibs.interpolator.interpolator">
+<span id="pystellibs-interpolator-interpolator-module"></span><h2>pystellibs.interpolator.interpolator module<a class="headerlink" href="#module-pystellibs.interpolator.interpolator" title="Permalink to this headline">¶</a></h2>
+<p>Base interpolator: a dummy class is derived by the different interpolator schemes</p>
+<dl class="class">
+<dt id="pystellibs.interpolator.interpolator.BaseInterpolator">
+<em class="property">class </em><code class="descclassname">pystellibs.interpolator.interpolator.</code><code class="descname">BaseInterpolator</code><span class="sig-paren">(</span><em>osl</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pystellibs/interpolator/interpolator.html#BaseInterpolator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pystellibs.interpolator.interpolator.BaseInterpolator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="pystellibs.interpolator.interpolator.BaseInterpolator.interp">
+<code class="descname">interp</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pystellibs/interpolator/interpolator.html#BaseInterpolator.interp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pystellibs.interpolator.interpolator.BaseInterpolator.interp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pystellibs.interpolator.interpolator.BaseInterpolator.interp_many">
+<code class="descname">interp_many</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pystellibs/interpolator/interpolator.html#BaseInterpolator.interp_many"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pystellibs.interpolator.interpolator.BaseInterpolator.interp_many" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pystellibs.interpolator.interpolator.BaseInterpolator.interp_single">
+<code class="descname">interp_single</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pystellibs/interpolator/interpolator.html#BaseInterpolator.interp_single"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pystellibs.interpolator.interpolator.BaseInterpolator.interp_single" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pystellibs.interpolator.lejeune">
+<span id="pystellibs-interpolator-lejeune-module"></span><h2>pystellibs.interpolator.lejeune module<a class="headerlink" href="#module-pystellibs.interpolator.lejeune" title="Permalink to this headline">¶</a></h2>
+<p>Lejeune interpolator is basically a linear interpolator for a Lejeune grid
+based spectral library.</p>
+<p>This is the simplest interpolator but most commonly used.</p>
+<p>It takes care of boundary conditions by imposing limits to extrapolation on a
+given grid.</p>
+<dl class="class">
+<dt id="pystellibs.interpolator.lejeune.LejeuneInterpolator">
+<em class="property">class </em><code class="descclassname">pystellibs.interpolator.lejeune.</code><code class="descname">LejeuneInterpolator</code><span class="sig-paren">(</span><em>dT_max=0.1</em>, <em>eps=1e-06</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pystellibs/interpolator/lejeune.html#LejeuneInterpolator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pystellibs.interpolator.lejeune.LejeuneInterpolator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pystellibs.interpolator.interpolator.BaseInterpolator" title="pystellibs.interpolator.interpolator.BaseInterpolator"><code class="xref py py-class docutils literal"><span class="pre">pystellibs.interpolator.interpolator.BaseInterpolator</span></code></a></p>
+<p>Interpolation for grid based on the Lejeune library definition</p>
+<p>The interpolation is N-D linear in log-temperature, log-gravity, and linear
+in metallicity Z. Preference is always given to the temperature over the
+gravity when needed.</p>
+<p>This version is translated from Pegase</p>
+<dl class="docutils">
+<dt>dT_max: float, optional</dt>
+<dd>If, T2 (resp. T1) is too far from T compared to T1 (resp. T2), i2
+(resp. i1) is not used.  (see below for namings)</dd>
+<dt>eps: float</dt>
+<dd>temperature sensitivity under which points are considered to have
+the same temperature</dd>
+</dl>
+<dl class="method">
+<dt id="pystellibs.interpolator.lejeune.LejeuneInterpolator.interp">
+<code class="descname">interp</code><span class="sig-paren">(</span><em>T0</em>, <em>g0</em>, <em>Z0</em>, <em>L0</em>, <em>T</em>, <em>g</em>, <em>Z</em>, <em>weight=1.0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pystellibs/interpolator/lejeune.html#LejeuneInterpolator.interp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pystellibs.interpolator.lejeune.LejeuneInterpolator.interp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Interpolation of the T,g grid</p>
+<p>Interpolate on the grid and returns star indices and associated weights,
+and Z.</p>
+<p>3 to 12 stars are returned.
+It calls _interp_, but reduce the output to the relevant stars.</p>
+<dl class="docutils">
+<dt>T0: float</dt>
+<dd>log(Teff) to obtain</dd>
+<dt>g0: float</dt>
+<dd>log(g) to obtain</dd>
+<dt>Z0: float</dt>
+<dd>metallicity to obtain</dd>
+<dt>L0: float</dt>
+<dd>bolometric luminosity to get</dd>
+<dt>T: float</dt>
+<dd>log(Teff) of the grid</dd>
+<dt>g: float</dt>
+<dd>log(g) of the grid</dd>
+<dt>weight: float, optional</dt>
+<dd>weight to apply to the selected star</dd>
+</dl>
+<dl class="docutils">
+<dt>idx: ndarray, dtype=int, size=4</dt>
+<dd>4 star indexes</dd>
+<dt>w: ndarray, dtype=float, size=4</dt>
+<dd>4 associated weights</dd>
+</dl>
+<p>Returns 3 to 12 star indexes and associated weights</p>
+<p>see _interp_</p>
+<p>TODO: compute new weights accounting for Z</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pystellibs.interpolator.lejeune.LejeuneInterpolator.interp_many">
+<code class="descname">interp_many</code><span class="sig-paren">(</span><em>oSL</em>, <em>logT</em>, <em>logg</em>, <em>Z</em>, <em>logL</em>, <em>weights=None</em>, <em>pool=None</em>, <em>nthreads=0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pystellibs/interpolator/lejeune.html#LejeuneInterpolator.interp_many"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pystellibs.interpolator.lejeune.LejeuneInterpolator.interp_many" title="Permalink to this definition">¶</a></dt>
+<dd><p>Interpolate multiple stars at the same time (optionally in parallel)</p>
+<dl class="docutils">
+<dt>oSL: Stellib instance</dt>
+<dd>spectral library to interpolate</dd>
+<dt>logT: ndarray, dtype=float</dt>
+<dd>log-effective temperature to get</dd>
+<dt>logg: ndarray, dtype=float</dt>
+<dd>log-surface gravity to get</dd>
+<dt>Z: float</dt>
+<dd>metallicity target</dd>
+<dt>logL: ndarray</dt>
+<dd>log-luminosity to get</dd>
+<dt>weights: ndarray, dtype=float, optional</dt>
+<dd>optional weighting scheme for each star</dd>
+<dt>pool: Pool instance, optional</dt>
+<dd>pool that can be used to do the computation (expecting a map attribute)</dd>
+<dt>nthreads: int, optiona</dt>
+<dd>if set without providing a pool arguement, configure a new Pool object
+to do the computations</dd>
+</dl>
+<dl class="docutils">
+<dt>(idx, w): tuples</dt>
+<dd><dl class="first last docutils">
+<dt>idx: ndarray, dtype=int, size=4</dt>
+<dd>4 star indexes</dd>
+<dt>w: ndarray, dtype=float, size=4</dt>
+<dd>4 associated weights</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pystellibs.interpolator.lejeune.LejeuneInterpolator.interp_single">
+<code class="descname">interp_single</code><span class="sig-paren">(</span><em>args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pystellibs/interpolator/lejeune.html#LejeuneInterpolator.interp_single"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pystellibs.interpolator.lejeune.LejeuneInterpolator.interp_single" title="Permalink to this definition">¶</a></dt>
+<dd><p>proxy to interp with a list of arguements</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pystellibs.interpolator.ndlinear">
+<span id="pystellibs-interpolator-ndlinear-module"></span><h2>pystellibs.interpolator.ndlinear module<a class="headerlink" href="#module-pystellibs.interpolator.ndlinear" title="Permalink to this headline">¶</a></h2>
+<p>N-D linear interpolation</p>
+<dl class="class">
+<dt id="pystellibs.interpolator.ndlinear.NDLinearInterpolator">
+<em class="property">class </em><code class="descclassname">pystellibs.interpolator.ndlinear.</code><code class="descname">NDLinearInterpolator</code><span class="sig-paren">(</span><em>osl</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pystellibs/interpolator/ndlinear.html#NDLinearInterpolator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pystellibs.interpolator.ndlinear.NDLinearInterpolator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pystellibs.interpolator.interpolator.BaseInterpolator" title="pystellibs.interpolator.interpolator.BaseInterpolator"><code class="xref py py-class docutils literal"><span class="pre">pystellibs.interpolator.interpolator.BaseInterpolator</span></code></a></p>
+<dl class="method">
+<dt id="pystellibs.interpolator.ndlinear.NDLinearInterpolator.interp">
+<code class="descname">interp</code><span class="sig-paren">(</span><em>aps</em>, <em>weights=1.0</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pystellibs/interpolator/ndlinear.html#NDLinearInterpolator.interp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pystellibs.interpolator.ndlinear.NDLinearInterpolator.interp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Interpolate spectra</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pystellibs.interpolator.ndlinear.NDLinearInterpolator.interp_other">
+<code class="descname">interp_other</code><span class="sig-paren">(</span><em>aps</em>, <em>values</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pystellibs/interpolator/ndlinear.html#NDLinearInterpolator.interp_other"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pystellibs.interpolator.ndlinear.NDLinearInterpolator.interp_other" title="Permalink to this definition">¶</a></dt>
+<dd><p>Interpolate on other values</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pystellibs.interpolator">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pystellibs.interpolator" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">pystellibs.interpolator package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-pystellibs.interpolator.interpolator">pystellibs.interpolator.interpolator module</a></li>
+<li><a class="reference internal" href="#module-pystellibs.interpolator.lejeune">pystellibs.interpolator.lejeune module</a></li>
+<li><a class="reference internal" href="#module-pystellibs.interpolator.ndlinear">pystellibs.interpolator.ndlinear module</a></li>
+<li><a class="reference internal" href="#module-pystellibs.interpolator">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pystellibs.interpolator.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, M. Fouesneau.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/pystellibs.interpolator.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/mfouesneau/pystellibs" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>
