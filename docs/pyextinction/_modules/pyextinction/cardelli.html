@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pyextinction.cardelli &mdash; pyextinction 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="pyextinction 1.0 documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for pyextinction.cardelli</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">.extinction</span> <span class="kn">import</span> <span class="n">ExtinctionLaw</span><span class="p">,</span> <span class="n">val_in_unit</span>
+
+
+<div class="viewcode-block" id="Cardelli"><a class="viewcode-back" href="../../pyextinction.html#pyextinction.cardelli.Cardelli">[docs]</a><span class="k">class</span> <span class="nc">Cardelli</span><span class="p">(</span><span class="n">ExtinctionLaw</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Cardelli, Clayton, and Mathis (1989, ApJ, 345, 245)&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Cardelli&#39;</span>
+
+<div class="viewcode-block" id="Cardelli.function"><a class="viewcode-back" href="../../pyextinction.html#pyextinction.cardelli.Cardelli.function">[docs]</a>    <span class="k">def</span> <span class="nf">function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lamb</span><span class="p">,</span> <span class="n">Av</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">Rv</span><span class="o">=</span><span class="mf">3.1</span><span class="p">,</span> <span class="n">Alambda</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Cardelli extinction Law</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        lamb: float or ndarray(dtype=float)</span>
+<span class="sd">            wavelength [in Angstroms] at which evaluate the law.</span>
+
+<span class="sd">        Av: float</span>
+<span class="sd">            desired A(V) (default: 1.0)</span>
+
+<span class="sd">        Rv: float</span>
+<span class="sd">            desired R(V) (default: 3.1)</span>
+
+<span class="sd">        Alambda: bool</span>
+<span class="sd">            if set returns +2.5*1./log(10.)*tau, tau otherwise</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        r: float or ndarray(dtype=float)</span>
+<span class="sd">            attenuation as a function of wavelength</span>
+<span class="sd">            depending on Alambda option +2.5*1./log(10.)*tau,  or tau</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">_lamb</span> <span class="o">=</span> <span class="n">val_in_unit</span><span class="p">(</span><span class="s1">&#39;lamb&#39;</span><span class="p">,</span> <span class="n">lamb</span><span class="p">,</span> <span class="s1">&#39;angstrom&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">_lamb</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">_lamb</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float_</span><span class="p">):</span>
+            <span class="n">_lamb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">_lamb</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">_lamb</span> <span class="o">=</span> <span class="n">_lamb</span><span class="p">[:]</span>
+
+        <span class="c1"># init variables</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="mf">1.e4</span> <span class="o">/</span> <span class="n">_lamb</span>  <span class="c1"># wavenumber in um^-1</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="c1"># Infrared (Eq 2a,2b)</span>
+        <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mf">0.3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mf">1.1</span><span class="p">))</span>
+        <span class="n">a</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span>  <span class="mf">0.574</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">**</span> <span class="mf">1.61</span>
+        <span class="n">b</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.527</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">**</span> <span class="mf">1.61</span>
+        <span class="c1"># Optical &amp; Near IR</span>
+        <span class="c1"># Eq 3a, 3b</span>
+        <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mf">1.1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;=</span> <span class="mf">3.3</span><span class="p">))</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">-</span> <span class="mf">1.82</span>
+        <span class="n">a</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">+</span> <span class="mf">0.17699</span> <span class="o">*</span> <span class="n">y</span> <span class="o">-</span> <span class="mf">0.50447</span> <span class="o">*</span> <span class="n">y</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mf">0.02427</span> <span class="o">*</span> <span class="n">y</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">+</span> <span class="mf">0.72085</span> <span class="o">*</span> <span class="n">y</span> <span class="o">**</span> <span class="mi">4</span> <span class="o">+</span> <span class="mf">0.01979</span> <span class="o">*</span> <span class="n">y</span> <span class="o">**</span> <span class="mi">5</span> <span class="o">-</span> <span class="mf">0.77530</span> <span class="o">*</span> <span class="n">y</span> <span class="o">**</span> <span class="mi">6</span> <span class="o">+</span> <span class="mf">0.32999</span> <span class="o">*</span> <span class="n">y</span> <span class="o">**</span> <span class="mi">7</span>
+        <span class="n">b</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span>      <span class="mf">1.41338</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">2.28305</span> <span class="o">*</span> <span class="n">y</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mf">1.07233</span> <span class="o">*</span> <span class="n">y</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">-</span> <span class="mf">5.38434</span> <span class="o">*</span> <span class="n">y</span> <span class="o">**</span> <span class="mi">4</span> <span class="o">-</span> <span class="mf">0.62251</span> <span class="o">*</span> <span class="n">y</span> <span class="o">**</span> <span class="mi">5</span> <span class="o">+</span> <span class="mf">5.30260</span> <span class="o">*</span> <span class="n">y</span> <span class="o">**</span> <span class="mi">6</span> <span class="o">-</span> <span class="mf">2.09002</span> <span class="o">*</span> <span class="n">y</span> <span class="o">**</span> <span class="mi">7</span>
+        <span class="c1"># UV</span>
+        <span class="c1"># Eq 4a, 4b</span>
+        <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mf">3.3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;=</span> <span class="mf">8.0</span><span class="p">))</span>
+        <span class="n">a</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span>  <span class="mf">1.752</span> <span class="o">-</span> <span class="mf">0.316</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.104</span> <span class="o">/</span> <span class="p">((</span><span class="n">x</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">-</span> <span class="mf">4.67</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mf">0.341</span><span class="p">)</span>
+        <span class="n">b</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">3.090</span> <span class="o">+</span> <span class="mf">1.825</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">+</span> <span class="mf">1.206</span> <span class="o">/</span> <span class="p">((</span><span class="n">x</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">-</span> <span class="mf">4.62</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mf">0.263</span><span class="p">)</span>
+
+        <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mf">5.9</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;=</span> <span class="mf">8.0</span><span class="p">))</span>
+        <span class="n">Fa</span>     <span class="o">=</span> <span class="o">-</span><span class="mf">0.04473</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">-</span> <span class="mf">5.9</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mf">0.009779</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">-</span> <span class="mf">5.9</span><span class="p">)</span> <span class="o">**</span> <span class="mi">3</span>
+        <span class="n">Fb</span>     <span class="o">=</span>  <span class="mf">0.21300</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">-</span> <span class="mf">5.9</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mf">0.120700</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">-</span> <span class="mf">5.9</span><span class="p">)</span> <span class="o">**</span> <span class="mi">3</span>
+        <span class="n">a</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">+</span> <span class="n">Fa</span>
+        <span class="n">b</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">+</span> <span class="n">Fb</span>
+        <span class="c1"># Far UV</span>
+        <span class="c1"># Eq 5a, 5b</span>
+        <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mf">8.0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;=</span> <span class="mf">10.0</span><span class="p">))</span>
+        <span class="c1"># Fa = Fb = 0</span>
+        <span class="n">a</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.073</span> <span class="o">-</span> <span class="mf">0.628</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">-</span> <span class="mf">8.</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.137</span> <span class="o">*</span> <span class="p">((</span><span class="n">x</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">-</span> <span class="mf">8.</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.070</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">-</span> <span class="mf">8.</span><span class="p">)</span> <span class="o">**</span> <span class="mi">3</span>
+        <span class="n">b</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span> <span class="mf">13.670</span> <span class="o">+</span> <span class="mf">4.257</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">-</span> <span class="mf">8.</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.420</span> <span class="o">*</span> <span class="p">((</span><span class="n">x</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">-</span> <span class="mf">8.</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.374</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">-</span> <span class="mf">8.</span><span class="p">)</span> <span class="o">**</span> <span class="mi">3</span>
+
+        <span class="c1"># Case of -values x out of range [0.3,10.0]</span>
+        <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mf">10.0</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mf">0.3</span><span class="p">))</span>
+        <span class="n">a</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">b</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+        <span class="c1"># Return Extinction vector</span>
+        <span class="c1"># Eq 1</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">Alambda</span><span class="p">):</span>
+            <span class="k">return</span><span class="p">(</span> <span class="p">(</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">/</span> <span class="n">Rv</span> <span class="p">)</span> <span class="o">*</span> <span class="n">Av</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># return( 1./(2.5 * 1. / np.log(10.)) * ( a + b / Rv ) * Av)</span>
+            <span class="k">return</span><span class="p">(</span> <span class="mf">0.4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mf">10.</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">/</span> <span class="n">Rv</span> <span class="p">)</span> <span class="o">*</span> <span class="n">Av</span><span class="p">)</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, M. Fouesneau.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+    </div>
+
+    
+    <a href="https://github.com/mfouesneau/pyextinction" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>

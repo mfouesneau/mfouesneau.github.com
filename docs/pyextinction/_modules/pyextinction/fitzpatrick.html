@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pyextinction.fitzpatrick &mdash; pyextinction 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="pyextinction 1.0 documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for pyextinction.fitzpatrick</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">interpolate</span>
+
+<span class="kn">from</span> <span class="nn">.extinction</span> <span class="kn">import</span> <span class="n">ExtinctionLaw</span><span class="p">,</span> <span class="n">val_in_unit</span>
+
+
+<div class="viewcode-block" id="Fitzpatrick99"><a class="viewcode-back" href="../../pyextinction.html#pyextinction.fitzpatrick.Fitzpatrick99">[docs]</a><span class="k">class</span> <span class="nc">Fitzpatrick99</span><span class="p">(</span><span class="n">ExtinctionLaw</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Fitzpatrick (1999, PASP, 111, 63) [1999PASP..111...63F]_</span>
+<span class="sd">    R(V) dependent extinction curve that explicitly deals with optical/NIR</span>
+<span class="sd">    extinction being measured from broad/medium band photometry.</span>
+<span class="sd">    Based on fm_unred.pro from the IDL astronomy library</span>
+
+
+<span class="sd">    .. [1999PASP..111...63F] http://adsabs.harvard.edu/abs/1999PASP..111...63F</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Fitzpatrick99&#39;</span>
+
+<div class="viewcode-block" id="Fitzpatrick99.function"><a class="viewcode-back" href="../../pyextinction.html#pyextinction.fitzpatrick.Fitzpatrick99.function">[docs]</a>    <span class="k">def</span> <span class="nf">function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lamb</span><span class="p">,</span> <span class="n">Av</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">Rv</span><span class="o">=</span><span class="mf">3.1</span><span class="p">,</span> <span class="n">Alambda</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Fitzpatrick99 extinction Law</span>
+<span class="sd">        Lamb is input in Anstroms</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        lamb: float or ndarray(dtype=float)</span>
+<span class="sd">            wavelength [in Angstroms] at which evaluate the law.</span>
+
+<span class="sd">        Av: float</span>
+<span class="sd">            desired A(V) (default 1.0)</span>
+
+<span class="sd">        Rv: float</span>
+<span class="sd">            desired R(V) (default 3.1)</span>
+
+<span class="sd">        Alambda: bool</span>
+<span class="sd">            if set returns +2.5*1./log(10.)*tau, tau otherwise</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        r: float or ndarray(dtype=float)</span>
+<span class="sd">            attenuation as a function of wavelength</span>
+<span class="sd">            depending on Alambda option +2.5*1./log(10.)*tau,  or tau</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">_lamb</span> <span class="o">=</span> <span class="n">val_in_unit</span><span class="p">(</span><span class="s1">&#39;lamb&#39;</span><span class="p">,</span> <span class="n">lamb</span><span class="p">,</span> <span class="s1">&#39;angstrom&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">_lamb</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">_lamb</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float_</span><span class="p">):</span>
+            <span class="n">_lamb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">_lamb</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">_lamb</span> <span class="o">=</span> <span class="n">_lamb</span><span class="p">[:]</span>
+
+        <span class="n">c2</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.824</span> <span class="o">+</span> <span class="mf">4.717</span> <span class="o">/</span> <span class="n">Rv</span>
+        <span class="n">c1</span> <span class="o">=</span> <span class="mf">2.030</span> <span class="o">-</span> <span class="mf">3.007</span> <span class="o">*</span> <span class="n">c2</span>
+        <span class="n">c3</span> <span class="o">=</span> <span class="mf">3.23</span>
+        <span class="n">c4</span> <span class="o">=</span> <span class="mf">0.41</span>
+        <span class="n">x0</span> <span class="o">=</span> <span class="mf">4.596</span>
+        <span class="n">gamma</span> <span class="o">=</span> <span class="mf">0.99</span>
+
+        <span class="n">x</span> <span class="o">=</span> <span class="mf">1.e4</span> <span class="o">/</span> <span class="n">_lamb</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+        <span class="c1"># compute the UV portion of A(lambda)/E(B-V)</span>
+        <span class="n">xcutuv</span> <span class="o">=</span> <span class="mf">10000.0</span> <span class="o">/</span> <span class="mf">2700.</span>
+        <span class="n">xspluv</span> <span class="o">=</span> <span class="mf">10000.0</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2700.</span><span class="p">,</span> <span class="mf">2600.</span><span class="p">])</span>
+        <span class="n">yspluv</span> <span class="o">=</span> <span class="n">c1</span> <span class="o">+</span> <span class="p">(</span><span class="n">c2</span> <span class="o">*</span> <span class="n">xspluv</span><span class="p">)</span> <span class="o">+</span> <span class="n">c3</span> <span class="o">*</span> <span class="p">((</span><span class="n">xspluv</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span> <span class="p">((</span><span class="n">xspluv</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="p">(</span><span class="n">x0</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">gamma</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">((</span><span class="n">xspluv</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="p">))</span>
+        <span class="n">ind</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="n">xcutuv</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">True</span> <span class="ow">in</span> <span class="n">ind</span><span class="p">:</span>
+            <span class="n">k</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span> <span class="n">c1</span> <span class="o">+</span> <span class="p">(</span><span class="n">c2</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="n">ind</span><span class="p">])</span> <span class="o">+</span> <span class="n">c3</span> <span class="o">*</span> <span class="p">((</span><span class="n">x</span><span class="p">[</span><span class="n">ind</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span> <span class="p">((</span><span class="n">x</span><span class="p">[</span><span class="n">ind</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="p">(</span><span class="n">x0</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">gamma</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">((</span><span class="n">x</span><span class="p">[</span><span class="n">ind</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span> <span class="p">))</span>
+
+            <span class="c1"># FUV portion</span>
+            <span class="n">fuvind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mf">5.9</span><span class="p">)</span>
+            <span class="n">k</span><span class="p">[</span><span class="n">fuvind</span><span class="p">]</span> <span class="o">+=</span> <span class="n">c4</span> <span class="o">*</span> <span class="p">(</span><span class="mf">0.5392</span> <span class="o">*</span> <span class="p">((</span><span class="n">x</span><span class="p">[</span><span class="n">fuvind</span><span class="p">]</span> <span class="o">-</span> <span class="mf">5.9</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.05644</span> <span class="o">*</span> <span class="p">((</span><span class="n">x</span><span class="p">[</span><span class="n">fuvind</span><span class="p">]</span> <span class="o">-</span> <span class="mf">5.9</span><span class="p">)</span> <span class="o">**</span> <span class="mi">3</span><span class="p">))</span>
+
+            <span class="n">k</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">+=</span> <span class="n">Rv</span>
+            <span class="n">yspluv</span> <span class="o">+=</span> <span class="n">Rv</span>
+
+        <span class="c1"># Optical/NIR portion</span>
+
+        <span class="n">ind</span> <span class="o">=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">xcutuv</span>
+        <span class="k">if</span> <span class="bp">True</span> <span class="ow">in</span> <span class="n">ind</span><span class="p">:</span>
+            <span class="n">xsplopir</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+            <span class="n">xsplopir</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="n">xsplopir</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span> <span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="mf">10000.0</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">26500.0</span><span class="p">,</span> <span class="mf">12200.0</span><span class="p">,</span> <span class="mf">6000.0</span><span class="p">,</span> <span class="mf">5470.0</span><span class="p">,</span> <span class="mf">4670.0</span><span class="p">,</span> <span class="mf">4110.0</span><span class="p">])</span>
+
+            <span class="n">ysplopir</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+            <span class="n">ysplopir</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.26469</span><span class="p">,</span> <span class="mf">0.82925</span><span class="p">])</span> <span class="o">*</span> <span class="n">Rv</span> <span class="o">/</span> <span class="mf">3.1</span>
+
+            <span class="n">ysplopir</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span> <span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">([</span><span class="mf">2.13572e-04</span><span class="p">,</span> <span class="mf">1.00270</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.22809e-01</span><span class="p">])(</span><span class="n">Rv</span><span class="p">),</span>
+                                       <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">([</span><span class="o">-</span><span class="mf">7.35778e-05</span><span class="p">,</span> <span class="mf">1.00216</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.13540e-02</span><span class="p">])(</span><span class="n">Rv</span><span class="p">),</span>
+                                       <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">([</span><span class="o">-</span><span class="mf">3.32598e-05</span><span class="p">,</span> <span class="mf">1.00184</span><span class="p">,</span>  <span class="mf">7.00127e-01</span><span class="p">])(</span><span class="n">Rv</span><span class="p">),</span>
+                                       <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">([</span> <span class="mf">1.19456</span><span class="p">,</span> <span class="mf">1.01707</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.46959e-03</span><span class="p">,</span> <span class="mf">7.97809e-04</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.45636e-05</span><span class="p">][::</span><span class="o">-</span><span class="mi">1</span><span class="p">])(</span><span class="n">Rv</span><span class="p">)])</span>
+
+            <span class="n">tck</span> <span class="o">=</span> <span class="n">interpolate</span><span class="o">.</span><span class="n">splrep</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">xsplopir</span><span class="p">,</span> <span class="n">xspluv</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">ysplopir</span><span class="p">,</span> <span class="n">yspluv</span><span class="p">]),</span> <span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+            <span class="n">k</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span> <span class="n">interpolate</span><span class="o">.</span><span class="n">splev</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">tck</span><span class="p">)</span>
+
+        <span class="c1"># convert from A(lambda)/E(B-V) to A(lambda)/A(V)</span>
+        <span class="n">k</span> <span class="o">/=</span> <span class="n">Rv</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">Alambda</span><span class="p">):</span>
+            <span class="k">return</span><span class="p">(</span><span class="n">k</span> <span class="o">*</span> <span class="n">Av</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span><span class="p">(</span><span class="n">k</span> <span class="o">*</span> <span class="n">Av</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mf">10.</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.4</span><span class="p">))</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, M. Fouesneau.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+    </div>
+
+    
+    <a href="https://github.com/mfouesneau/pyextinction" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>

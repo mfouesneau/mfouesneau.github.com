@@ -1,0 +1,345 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pyextinction.extinction &mdash; pyextinction 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="pyextinction 1.0 documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for pyextinction.extinction</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Dust Extinction laws</span>
+<span class="sd">--------------------</span>
+
+
+<span class="sd">.. note::</span>
+
+<span class="sd">    This module is able to handle values with units</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">.helpers</span> <span class="kn">import</span> <span class="n">val_in_unit</span><span class="p">,</span> <span class="n">isNestedInstance</span>
+
+<span class="n">__version__</span> <span class="o">=</span> <span class="s1">&#39;1.0&#39;</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ExtinctionLaw&#39;</span><span class="p">,</span> <span class="s1">&#39;MixtureLaw&#39;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="ExtinctionLaw"><a class="viewcode-back" href="../../pyextinction.html#pyextinction.extinction.ExtinctionLaw">[docs]</a><span class="k">class</span> <span class="nc">ExtinctionLaw</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Template class &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;None&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;{0:s}</span><span class="se">\n</span><span class="s1">{1:s}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="nb">object</span><span class="o">.</span><span class="n">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+
+<div class="viewcode-block" id="ExtinctionLaw.function"><a class="viewcode-back" href="../../pyextinction.html#pyextinction.extinction.ExtinctionLaw.function">[docs]</a>    <span class="k">def</span> <span class="nf">function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lamb</span><span class="p">,</span> <span class="o">*</span><span class="n">arg</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; expected to contain a function of lambda that return the</span>
+<span class="sd">        extinction values</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        lamb: ndarray</span>
+<span class="sd">            wavelength</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        val: ndarray</span>
+<span class="sd">            expected values of the law evaluated at lamb</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Make the extinction law callable object using :func:`self.function`&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<div class="viewcode-block" id="ExtinctionLaw.isvalid"><a class="viewcode-back" href="../../pyextinction.html#pyextinction.extinction.ExtinctionLaw.isvalid">[docs]</a>    <span class="k">def</span> <span class="nf">isvalid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Check if the current arguments are in the validity domain of the law</span>
+<span class="sd">        Must be redefined if any restriction applies to the law</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">True</span></div>
+
+    <span class="k">def</span> <span class="nf">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">MixtureLaw</span><span class="p">(</span><span class="n">A</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">B</span><span class="o">=</span><span class="n">other</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="MixtureLaw"><a class="viewcode-back" href="../../pyextinction.html#pyextinction.extinction.MixtureLaw">[docs]</a><span class="k">class</span> <span class="nc">MixtureLaw</span><span class="p">(</span><span class="n">ExtinctionLaw</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Mixture of extinction laws allowing to vary for instance the bump amplitude</span>
+<span class="sd">    in the extinction law</span>
+
+<span class="sd">    ..math::</span>
+
+<span class="sd">            f_A * A(*args, **kwargs) + (1 - f_A) * B(*args, **kwargs)</span>
+
+<span class="sd">    .. example::</span>
+
+<span class="sd">        l = Fitzpatrick99() + Gordon03_SMCBar()</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">A</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">B</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Constructor</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        A: ExtinctionLaw</span>
+<span class="sd">            Component A</span>
+
+<span class="sd">        B: ExtinctionLaw</span>
+<span class="sd">            Component B</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">isNestedInstance</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">ExtinctionLaw</span><span class="p">)</span> <span class="o">&amp;</span>
+                <span class="n">isNestedInstance</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">ExtinctionLaw</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Expecting ExtinctionLaw instances&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">A</span> <span class="o">=</span> <span class="n">A</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">B</span> <span class="o">=</span> <span class="n">B</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span> <span class="ow">or</span> <span class="s1">&#39;(&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">B</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span>
+
+<div class="viewcode-block" id="MixtureLaw.function"><a class="viewcode-back" href="../../pyextinction.html#pyextinction.extinction.MixtureLaw.function">[docs]</a>    <span class="k">def</span> <span class="nf">function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lamb</span><span class="p">,</span> <span class="n">Av</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">Rv_A</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">Alambda</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">f_A</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">Rv_B</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                 <span class="n">Rv</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Lamb as to be in Angstroms!!!</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        lamb: float or ndarray(dtype=float)</span>
+<span class="sd">            wavelength [in Angstroms] at which evaluate the law.</span>
+
+<span class="sd">        Av: float</span>
+<span class="sd">            desired A(V) (default 1.0)</span>
+
+<span class="sd">        Alambda: bool</span>
+<span class="sd">            if set returns +2.5*1./log(10.)*tau, tau otherwise</span>
+
+<span class="sd">        f_A: float</span>
+<span class="sd">            set the mixture ratio between the two laws (default 0.5)</span>
+
+<span class="sd">        Rv_A: float</span>
+<span class="sd">            extinction param. on the Law A</span>
+
+<span class="sd">        Rv_B: float</span>
+<span class="sd">            extinction param. on the bumpless component</span>
+
+<span class="sd">        Rv: float</span>
+<span class="sd">            effective R(V) according to the mixture</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        r: float or ndarray(dtype=float)</span>
+<span class="sd">            attenuation as a function of wavelength</span>
+<span class="sd">            depending on Alambda option +2.5*1./log(10.)*tau,  or tau</span>
+
+<span class="sd">        .. math::</span>
+
+<span class="sd">            f_A * A(*args, **kwargs) + (1. - f_A) * B(*args, **kwargs)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">u_lamb</span> <span class="o">=</span> <span class="n">val_in_unit</span><span class="p">(</span><span class="s1">&#39;lamb&#39;</span><span class="p">,</span> <span class="n">lamb</span><span class="p">,</span> <span class="s1">&#39;angstrom&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">Rv_A</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">Rv_A</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="s1">&#39;Rv&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">Rv_B</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">Rv_B</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">B</span><span class="p">,</span> <span class="s1">&#39;Rv&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">sum</span><span class="p">([</span><span class="n">Rv_A</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">,</span> <span class="n">Rv_B</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">,</span> <span class="n">Rv</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">])</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Must provide at least 2 Rv values&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">Rv_A</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">Rv_A</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_Rv_A</span><span class="p">(</span><span class="n">Rv</span><span class="p">,</span> <span class="n">f_A</span><span class="p">,</span> <span class="n">Rv_B</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">Rv_B</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">Rv_B</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_Rv_B</span><span class="p">(</span><span class="n">Rv</span><span class="p">,</span> <span class="n">Rv_A</span><span class="p">,</span> <span class="n">f_A</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="p">(</span><span class="n">f_A</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="n">u_lamb</span><span class="p">,</span> <span class="n">Av</span><span class="o">=</span><span class="n">Av</span><span class="p">,</span> <span class="n">Rv</span><span class="o">=</span><span class="n">Rv_A</span><span class="p">,</span> <span class="n">Alambda</span><span class="o">=</span><span class="n">Alambda</span><span class="p">)</span>
+                <span class="o">+</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">-</span> <span class="n">f_A</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">B</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="n">u_lamb</span><span class="p">,</span> <span class="n">Av</span><span class="o">=</span><span class="n">Av</span><span class="p">,</span> <span class="n">Alambda</span><span class="o">=</span><span class="n">Alambda</span><span class="p">,</span>
+                                               <span class="n">Rv</span><span class="o">=</span><span class="n">Rv_B</span><span class="p">)</span>
+                <span class="p">)</span></div>
+
+<div class="viewcode-block" id="MixtureLaw.isvalid"><a class="viewcode-back" href="../../pyextinction.html#pyextinction.extinction.MixtureLaw.isvalid">[docs]</a>    <span class="k">def</span> <span class="nf">isvalid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Av</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">Rv</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">f_A</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">Rv_A</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">Rv_B</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Test the validity of an extinction vector (Av, Rv, Rv_A, Rv_B, fbump)</span>
+
+<span class="sd">        .. math::</span>
+<span class="sd">            Law = f_A * A(lamb, Av=Av, Rv=Rv_A) + (1. - f_A) * B(lamb, Av=Av, Rv=Rv_B)</span>
+
+<span class="sd">        The validity impose :math:`R_V` ranges and  to be a fraction (i.e.,</span>
+<span class="sd">        between 0 and 1)</span>
+
+<span class="sd">        At least 2 out of the 3 :math:`R_V` values must be provided, the 3rd</span>
+<span class="sd">        will be computed if missing.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        Av: float</span>
+<span class="sd">            Av value (any value is allowed, even &lt;0)</span>
+
+<span class="sd">        Rv, Rv_A, Rv_B: float, float, float</span>
+<span class="sd">            effective Rv, A component and B component Rv values, respectively.</span>
+<span class="sd">            At least 2 must be provided.</span>
+
+<span class="sd">        f_A: float</span>
+<span class="sd">            Mixture ratio between the two components</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        r: bool</span>
+<span class="sd">            True, if the values a coherent with the definition.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">Rv_B</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">B</span><span class="p">,</span> <span class="s1">&#39;Rv&#39;</span><span class="p">):</span>
+            <span class="n">Rv_B</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">B</span><span class="o">.</span><span class="n">Rv</span>
+
+        <span class="k">if</span> <span class="n">Rv_A</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="s1">&#39;Rv&#39;</span><span class="p">):</span>
+            <span class="n">Rv_A</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="o">.</span><span class="n">Rv</span>
+
+        <span class="c1"># if we do not have at least 2 of the 3 Rvs defined then it&#39;s invalid</span>
+        <span class="k">if</span> <span class="nb">sum</span><span class="p">([</span><span class="n">Rv_A</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">,</span> <span class="n">Rv_B</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">,</span> <span class="n">Rv</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">])</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span>
+
+        <span class="k">if</span> <span class="n">Rv_A</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">Rv_A</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_Rv_A</span><span class="p">(</span><span class="n">Rv</span><span class="p">,</span> <span class="n">f_A</span><span class="p">,</span> <span class="n">Rv_B</span><span class="o">=</span><span class="n">Rv_B</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">Rv</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">Rv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_Rv</span><span class="p">(</span><span class="n">Rv_A</span><span class="p">,</span> <span class="n">f_A</span><span class="p">,</span> <span class="n">Rv_B</span><span class="o">=</span><span class="n">Rv_B</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">Rv_B</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">Rv_B</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_Rv_B</span><span class="p">(</span><span class="n">Rv</span><span class="p">,</span> <span class="n">Rv_A</span><span class="p">,</span> <span class="n">f_A</span><span class="p">)</span>
+
+        <span class="c1"># f_A is a fraction and any Rv is limited to [2.0, 6.0]</span>
+        <span class="k">return</span> <span class="p">((</span><span class="mf">0.</span> <span class="o">&lt;=</span> <span class="n">f_A</span> <span class="o">&lt;=</span> <span class="mf">1.</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">&lt;=</span> <span class="n">Rv_B</span> <span class="o">&lt;=</span> <span class="mf">6.0</span><span class="p">)</span> <span class="o">&amp;</span>
+                <span class="p">(</span><span class="mf">2.0</span> <span class="o">&lt;=</span> <span class="n">Rv_A</span> <span class="o">&lt;=</span> <span class="mf">6.0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">&lt;=</span> <span class="n">Rv</span> <span class="o">&lt;=</span> <span class="mf">6.0</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="MixtureLaw.get_Rv_A"><a class="viewcode-back" href="../../pyextinction.html#pyextinction.extinction.MixtureLaw.get_Rv_A">[docs]</a>    <span class="k">def</span> <span class="nf">get_Rv_A</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Rv</span><span class="p">,</span> <span class="n">f_A</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">Rv_B</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Returns the equivalent Rv to use in the bump component</span>
+<span class="sd">            Law = f_A * A (lamb, Av=Av, Rv=Rv_A) + (1. - f_A) * B(lamb, Av=Av, Rv=Rv_B)</span>
+
+<span class="sd">            and Rv_A is such that:</span>
+
+<span class="sd">            ..math::</span>
+
+<span class="sd">                1 / Rv = f_A / Rv_A + (1 - f_A) / Rv_B</span>
+
+<span class="sd">                Rv_A = 1. / (1. / (Rv * f_A) - (1. - f_A) / (f_A * Rv_B))</span>
+
+<span class="sd">            not that Gordon03_SMCBar has a fixed Rv=2.74</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">Rv_B</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">B</span><span class="p">,</span> <span class="s1">&#39;Rv&#39;</span><span class="p">):</span>
+            <span class="n">Rv_B</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">B</span><span class="o">.</span><span class="n">Rv</span>
+
+        <span class="k">return</span> <span class="mf">1.</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">/</span> <span class="p">(</span><span class="n">Rv</span> <span class="o">*</span> <span class="n">f_A</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">-</span> <span class="n">f_A</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">f_A</span> <span class="o">*</span> <span class="n">Rv_B</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="MixtureLaw.get_Rv"><a class="viewcode-back" href="../../pyextinction.html#pyextinction.extinction.MixtureLaw.get_Rv">[docs]</a>    <span class="k">def</span> <span class="nf">get_Rv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Rv_A</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">f_A</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">Rv_B</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Returns the equivalent effective Rv according to the mixture</span>
+
+<span class="sd">        ..math::</span>
+
+<span class="sd">            Law = f_A * A (lamb, Av=Av, Rv=Rv_A) + (1. - f_A) * B(lamb, Av=Av, Rv=Rv_B)</span>
+
+<span class="sd">        and Rv is such that:</span>
+
+<span class="sd">        ..math::</span>
+
+<span class="sd">            1 / Rv = f_A / Rv_A + (1 - f_A) / Rv_B</span>
+
+<span class="sd">            Rv_A = 1. / (1. / (Rv * f_A) - (1. - f_A) / (f_A * Rv_B))</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">Rv_B</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">B</span><span class="p">,</span> <span class="s1">&#39;Rv&#39;</span><span class="p">):</span>
+            <span class="n">Rv_B</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">B</span><span class="o">.</span><span class="n">Rv</span>
+
+        <span class="k">if</span> <span class="n">Rv_A</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="s1">&#39;Rv&#39;</span><span class="p">):</span>
+            <span class="n">Rv_A</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="o">.</span><span class="n">Rv</span>
+
+        <span class="k">return</span> <span class="mf">1.</span> <span class="o">/</span> <span class="p">(</span><span class="n">f_A</span> <span class="o">/</span> <span class="n">Rv_A</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">f_A</span><span class="p">)</span> <span class="o">/</span> <span class="n">Rv_B</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MixtureLaw.get_Rv_B"><a class="viewcode-back" href="../../pyextinction.html#pyextinction.extinction.MixtureLaw.get_Rv_B">[docs]</a>    <span class="k">def</span> <span class="nf">get_Rv_B</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Rv</span><span class="p">,</span> <span class="n">Rv_A</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">f_A</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Returns the equivalent Rv to use in the bumpless component</span>
+
+<span class="sd">        .. math::</span>
+<span class="sd">            Law = f_A * A (lamb, Av=Av, Rv=Rv_A) + (1. - f_A) * B(lamb, Av=Av, Rv=Rv_B)</span>
+
+<span class="sd">        and Rv_B is such that</span>
+
+<span class="sd">        .. math::</span>
+
+<span class="sd">            1 / Rv = f_A / Rv_A + (1 - f_A) / Rv_B</span>
+
+<span class="sd">            Rv_A = 1. / (1. / (Rv * f_A) - (1. - f_A) / (f_A * Rv_B))</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">Rv_A</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="s1">&#39;Rv&#39;</span><span class="p">):</span>
+            <span class="n">Rv_A</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="o">.</span><span class="n">Rv</span>
+
+        <span class="k">return</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">-</span> <span class="n">f_A</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">/</span> <span class="n">Rv</span> <span class="o">-</span> <span class="n">f_A</span> <span class="o">/</span> <span class="n">Rv_A</span><span class="p">)</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, M. Fouesneau.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+    </div>
+
+    
+    <a href="https://github.com/mfouesneau/pyextinction" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>

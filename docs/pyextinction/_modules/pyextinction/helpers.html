@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pyextinction.helpers &mdash; pyextinction 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="pyextinction 1.0 documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for pyextinction.helpers</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">This is a first collection of tools making the design easier</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">from</span> <span class="nn">.ezunits</span> <span class="kn">import</span> <span class="n">unit</span><span class="p">,</span> <span class="n">hasUnit</span>
+
+
+<div class="viewcode-block" id="isNestedInstance"><a class="viewcode-back" href="../../pyextinction.html#pyextinction.helpers.isNestedInstance">[docs]</a><span class="k">def</span> <span class="nf">isNestedInstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">cl</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Test for sub-classes types</span>
+<span class="sd">    I could not find a universal test</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    obj: object instance</span>
+<span class="sd">        object to test</span>
+
+<span class="sd">    cl: Class</span>
+<span class="sd">        top level class to test</span>
+
+<span class="sd">    returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    r: bool</span>
+<span class="sd">        True if obj is indeed an instance or subclass instance of cl</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">tree</span> <span class="o">=</span> <span class="p">[</span> <span class="n">cl</span> <span class="p">]</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">cl</span><span class="p">,</span> <span class="s1">&#39;__subclasses&#39;</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">cl</span><span class="o">.</span><span class="n">__subclasses</span><span class="p">():</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="s1">&#39;__subclasses&#39;</span><span class="p">):</span>
+                <span class="n">tree</span> <span class="o">+=</span> <span class="n">k</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()</span>
+    <span class="k">return</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">tree</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="type_checker"><a class="viewcode-back" href="../../pyextinction.html#pyextinction.helpers.type_checker">[docs]</a><span class="k">def</span> <span class="nf">type_checker</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">tp</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Check a given type and raise a type error if not correct</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    name: str</span>
+<span class="sd">        name of the variable to show in the exception text</span>
+
+<span class="sd">    obj: object</span>
+<span class="sd">        object to check</span>
+
+<span class="sd">    tp: type</span>
+<span class="sd">        expected type of obj</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    :exc:TypeError:</span>
+<span class="sd">        raises a TypeError if object is not of the correct type of a subclass of it</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">isNestedInstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">tp</span><span class="p">):</span>
+        <span class="n">txt</span> <span class="o">=</span> <span class="s1">&#39;Expected &quot;{0:s}&quot; of type {1:s}, got {2:s} instead.&#39;</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="n">txt</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">tp</span><span class="o">.</span><span class="n">__name__</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">.</span><span class="n">__name__</span><span class="p">)))</span></div>
+
+
+<div class="viewcode-block" id="warning_on_one_line"><a class="viewcode-back" href="../../pyextinction.html#pyextinction.helpers.warning_on_one_line">[docs]</a><span class="k">def</span> <span class="nf">warning_on_one_line</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">category</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">lineno</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                        <span class="n">line</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s2">&quot; {0:s}:{1:d} {2:s}:{3:s}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">lineno</span><span class="p">,</span>
+                                             <span class="n">category</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">message</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="missing_units_warning"><a class="viewcode-back" href="../../pyextinction.html#pyextinction.helpers.missing_units_warning">[docs]</a><span class="k">def</span> <span class="nf">missing_units_warning</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">defaultunit</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Warn if any unit is missing</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    name: str</span>
+<span class="sd">        name of the variable</span>
+
+<span class="sd">    defaultunit: str</span>
+<span class="sd">        default unit definition</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    warning: warnings.warn</span>
+<span class="sd">        warn if units are assumed</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">formatwarning</span> <span class="o">=</span> <span class="n">warning_on_one_line</span>
+    <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;Variable {0:s} does not have explicit units. Assuming `{1:s}`</span><span class="se">\n</span><span class="s1">&#39;</span>
+    <span class="c1"># stacklevel makes the correct code reference</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">defaultunit</span><span class="p">),</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="val_in_unit"><a class="viewcode-back" href="../../pyextinction.html#pyextinction.helpers.val_in_unit">[docs]</a><span class="k">def</span> <span class="nf">val_in_unit</span><span class="p">(</span><span class="n">varname</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">defaultunit</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; check units and convert to defaultunit or create the unit information</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    varname: str</span>
+<span class="sd">        name of the variable</span>
+
+<span class="sd">    value: value</span>
+<span class="sd">        value of the variable, which may be unitless</span>
+
+<span class="sd">    defaultunit: str</span>
+<span class="sd">        default units is unitless</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    quantity: ezunits.Quantity</span>
+<span class="sd">        value with units</span>
+
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
+<span class="sd">    &gt;&gt;&gt; r = 0.5</span>
+<span class="sd">    &gt;&gt;&gt; print(val_in_unit(&#39;r&#39;, r, &#39;degree&#39;))</span>
+<span class="sd">    # UserWarning: Variable r does not have explicit units. Assuming `degree`</span>
+<span class="sd">    &lt;Quantity(0.5, &#39;degree&#39;)&gt;</span>
+
+<span class="sd">    &gt;&gt;&gt; r = 0.5 * unit[&#39;degree&#39;]</span>
+<span class="sd">    &gt;&gt;&gt; print(val_in_unit(&#39;r&#39;, r, &#39;degree&#39;))</span>
+<span class="sd">    &lt;Quantity(0.5, &#39;degree&#39;)&gt;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">hasUnit</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+        <span class="n">missing_units_warning</span><span class="p">(</span><span class="n">varname</span><span class="p">,</span> <span class="n">defaultunit</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">value</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="n">defaultunit</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">defaultunit</span><span class="p">)</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, M. Fouesneau.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+    </div>
+
+    
+    <a href="https://github.com/mfouesneau/pyextinction" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>
