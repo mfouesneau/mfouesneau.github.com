@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Welcome to ezData’s documentation! &mdash; ezData 1.0 documentation</title>
+    <title>Welcome to ezData’s documentation! &#8212; ezData 1.0 documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -17,41 +17,31 @@
         VERSION:     '1.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="ezData 1.0 documentation" href="#" />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="ezdata package" href="ezdata.html" />
    
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body>
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="ezdata.html" title="ezdata package"
-             accesskey="N">next</a> |</li>
-        <li><a href="#">ezData 1.0 documentation</a> &raquo;</li> 
-      </ul>
-    </div>  
+  <body role="document">
+  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="welcome-to-ezdata-s-documentation">
 <h1>Welcome to ezData&#8217;s documentation!<a class="headerlink" href="#welcome-to-ezdata-s-documentation" title="Permalink to this headline">¶</a></h1>
@@ -93,7 +83,7 @@ nor large data access</strong>.</p>
 <li><dl class="first docutils">
 <dt><cite>dictdataframe</cite>: an advanced dictionary object.</dt>
 <dd><p class="first last">A simple-ish dictionary like structure allowing usage as array on non
-constant multi-dimensional column data.  The <tt class="xref py py-class docutils literal"><span class="pre">DataFrame</span></tt>
+constant multi-dimensional column data.  The <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code>
 container allows easier manipulations of the data but is basically a
 wrapper of many existing function around a <cite>dictionary</cite> object.</p>
 </dd>
@@ -101,17 +91,17 @@ wrapper of many existing function around a <cite>dictionary</cite> object.</p>
 </li>
 <li><dl class="first docutils">
 <dt><cite>simpletable</cite>: a simplified version of <a class="reference external" href="https://github.com/mfouesneau/eztables">ezTables</a></dt>
-<dd><p class="first last">The <tt class="xref py py-class docutils literal"><span class="pre">SimpleTable</span></tt> allows easier manipulations of the data
+<dd><p class="first last">The <code class="xref py py-class docutils literal"><span class="pre">SimpleTable</span></code> allows easier manipulations of the data
 but is basically a wrapper of many existing function around a <cite>numpy.recarray</cite> object.
 It implements reading and writing ascii, FITS and HDF5 files.
-The <tt class="xref py py-class docutils literal"><span class="pre">AstroTable</span></tt> built on top of the latter class, adds-on
+The <code class="xref py py-class docutils literal"><span class="pre">AstroTable</span></code> built on top of the latter class, adds-on
 astronomy related functions, such as <cite>conesearch</cite></p>
 </dd>
 </dl>
 </li>
-<li><p class="first"><cite>plotter</cite>: In this package implements <tt class="xref py py-class docutils literal"><span class="pre">Plotter</span></tt>, which is a simple
-container to dictionary like structure (e.g. <tt class="xref py py-class docutils literal"><span class="pre">dict</span></tt>,
-<tt class="xref py py-class docutils literal"><span class="pre">np.recarray</span></tt>, <tt class="xref py py-class docutils literal"><span class="pre">pandas.DataFrame</span></tt>, <tt class="xref py py-class docutils literal"><span class="pre">SimpleTable</span></tt>).
+<li><p class="first"><cite>plotter</cite>: In this package implements <code class="xref py py-class docutils literal"><span class="pre">Plotter</span></code>, which is a simple
+container to dictionary like structure (e.g. <code class="xref py py-class docutils literal"><span class="pre">dict</span></code>,
+<code class="xref py py-class docutils literal"><span class="pre">np.recarray</span></code>, <code class="xref py py-class docutils literal"><span class="pre">pandas.DataFrame</span></code>, <code class="xref py py-class docutils literal"><span class="pre">SimpleTable</span></code>).
 It allows the user to plot directly using keys of the data and also allows
 rapid group plotting routines (<cite>groupy</cite> and <cite>facets</cite>). Note that is also
 allows expressions instead of keys.  <strong>This interface should basically work on
@@ -129,21 +119,21 @@ examples below). Both also have a direct access to a <cite>Plotter</cite> attrib
 <ul class="simple">
 <li>Some data manipulation basics</li>
 </ul>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">SimpleTable</span><span class="p">(</span><span class="s">&#39;path/mytable.csv&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">SimpleTable</span><span class="p">(</span><span class="s1">&#39;path/mytable.csv&#39;</span><span class="p">)</span>
 <span class="go"># get a subset of columns only</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;M_* logTe logLo U B V I J K&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;M_* logTe logLo U B V I J K&#39;</span><span class="p">)</span>
 <span class="go"># set some aliases</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">set_alias</span><span class="p">(</span><span class="s">&#39;logT&#39;</span><span class="p">,</span> <span class="s">&#39;logTe&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">set_alias</span><span class="p">(</span><span class="s">&#39;logL&#39;</span><span class="p">,</span> <span class="s">&#39;logLLo&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">set_alias</span><span class="p">(</span><span class="s1">&#39;logT&#39;</span><span class="p">,</span> <span class="s1">&#39;logTe&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">set_alias</span><span class="p">(</span><span class="s1">&#39;logL&#39;</span><span class="p">,</span> <span class="s1">&#39;logLLo&#39;</span><span class="p">)</span>
 <span class="go"># make a query on one or multiple column</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">selectWhere</span><span class="p">(</span><span class="s">&#39;logT logL&#39;</span><span class="p">,</span> <span class="s">&#39;(J &gt; 2) &amp; (10 ** logT &gt; 5000)&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">selectWhere</span><span class="p">(</span><span class="s1">&#39;logT logL&#39;</span><span class="p">,</span> <span class="s1">&#39;(J &gt; 2) &amp; (10 ** logT &gt; 5000)&#39;</span><span class="p">)</span>
 <span class="go"># note that `q` is also a table object</span>
 <span class="go"># makes a simple plot (see :module:`plotter`)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span><span class="o">.</span><span class="n">Plotter</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s">&#39;logT&#39;</span><span class="p">,</span> <span class="s">&#39;logL&#39;</span><span class="p">,</span> <span class="s">&#39;,&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span><span class="o">.</span><span class="n">Plotter</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;logT&#39;</span><span class="p">,</span> <span class="s1">&#39;logL&#39;</span><span class="p">,</span> <span class="s1">&#39;,&#39;</span><span class="p">)</span>
 <span class="go"># export the initial subtable to a new file</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;newtable.fits&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;newtable.fits&#39;</span><span class="p">)</span>
 <span class="go"># or</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;newtable.hd5&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;newtable.hd5&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -151,13 +141,13 @@ examples below). Both also have a direct access to a <cite>Plotter</cite> attrib
 a different color (colormap or other) and different marker.</li>
 </ul>
 <a class="reference internal image-reference" href="ex1.png"><img alt="example1" src="ex1.png" style="width: 60%;" /></a>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">Plotter</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">&#39;BRK&#39;</span><span class="p">,</span> <span class="n">markers</span><span class="o">=</span><span class="s">&#39;&lt;^&gt;v.oxs&#39;</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s">&#39;parula&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s">&#39;CRA&#39;</span><span class="p">,</span> <span class="s">&#39;CDEC&#39;</span><span class="p">,</span> <span class="s">&#39;o&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">Plotter</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;BRK&#39;</span><span class="p">,</span> <span class="n">markers</span><span class="o">=</span><span class="s1">&#39;&lt;^&gt;v.oxs&#39;</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;parula&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;CRA&#39;</span><span class="p">,</span> <span class="s1">&#39;CDEC&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pylab</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">&#39;best&#39;</span><span class="p">,</span> <span class="n">numpoints</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">numpoints</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">()[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;RA&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;DEC&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;RA&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;DEC&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -166,37 +156,37 @@ given by &#8216;BRK&#8217;, with given color scheme per region value and individ
 with shared axis</li>
 </ul>
 <a class="reference internal image-reference" href="ex2.png"><img alt="example2" src="ex2.png" style="width: 60%;" /></a>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">Plotter</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">&#39;BRK&#39;</span><span class="p">,</span> <span class="n">facet</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> \
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">Plotter</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;BRK&#39;</span><span class="p">,</span> <span class="n">facet</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> \
 <span class="go">        colors=plt.cm.parula, sharex=True, \</span>
 <span class="go">        sharey=True).hist(&#39;AV&#39;,</span>
 <span class="go">        bins=np.linspace(t.AV.min(),</span>
 <span class="go">        t.AV.max(), 20), normed=True)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]:</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">&#39;AV&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]:</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;AV&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <ul class="simple">
 <li>even more complex</li>
 </ul>
 <a class="reference internal image-reference" href="pivot_plot.png"><img alt="example2" src="pivot_plot.png" style="width: 60%;" /></a>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">plotfn</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;ax&#39;</span><span class="p">,</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">())</span>
-    <span class="n">data</span><span class="o">.</span><span class="n">Plotter</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s">&#39;LOGAGE&#39;</span><span class="p">,</span> <span class="s">&#39;LOGMASS&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s">&#39;detect&#39;</span><span class="p">,</span> \
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plotfn</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;ax&#39;</span><span class="p">,</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">())</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">Plotter</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;LOGAGE&#39;</span><span class="p">,</span> <span class="s1">&#39;LOGMASS&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;detect&#39;</span><span class="p">,</span> \
                          <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">binary</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
 
 <span class="n">kw</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">wspace</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> \
           <span class="n">bottom</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
-<span class="n">axes</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">Plotter</span><span class="o">.</span><span class="n">pivot_plot</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s">&#39;nms_idx&#39;</span><span class="p">,</span> <span class="s">&#39;nrgb_idx&#39;</span><span class="p">,</span> <span class="n">plotfn</span><span class="p">,</span>
+<span class="n">axes</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">Plotter</span><span class="o">.</span><span class="n">pivot_plot</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s1">&#39;nms_idx&#39;</span><span class="p">,</span> <span class="s1">&#39;nrgb_idx&#39;</span><span class="p">,</span> <span class="n">plotfn</span><span class="p">,</span>
                                <span class="n">gridspec_kw</span><span class="o">=</span><span class="n">kw</span><span class="p">)</span>
 
 <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_yticklabels</span><span class="p">()</span> <span class="o">+</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">(),</span> <span class="n">visible</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">&#39;log age&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">&#39;log mass&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;log age&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;log mass&#39;</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">figtext</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.02</span><span class="p">,</span> <span class="s">&#39;increasing NMS $\longrightarrow$&#39;</span><span class="p">,</span>
-            <span class="n">fontsize</span><span class="o">=</span><span class="s">&#39;x-large&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s">&#39;bottom&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figtext</span><span class="p">(</span><span class="mf">1.02</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s">&#39;increasing NRGB $\longrightarrow$&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span>
-            <span class="n">fontsize</span><span class="o">=</span><span class="s">&#39;x-large&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s">&#39;left&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s">&#39;center&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figtext</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.02</span><span class="p">,</span> <span class="s1">&#39;increasing NMS $\longrightarrow$&#39;</span><span class="p">,</span>
+            <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;x-large&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figtext</span><span class="p">(</span><span class="mf">1.02</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;increasing NRGB $\longrightarrow$&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span>
+            <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;x-large&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -219,9 +209,9 @@ with shared axis</li>
 <div class="section" id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><a class="reference internal" href="genindex.html"><em>Index</em></a></li>
-<li><a class="reference internal" href="py-modindex.html"><em>Module Index</em></a></li>
-<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
 </ul>
 </div>
 
@@ -229,7 +219,7 @@ with shared axis</li>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <h1 class="logo"><a href="#">ezData</a></h1>
 
@@ -237,10 +227,14 @@ with shared axis</li>
 
 
 
+
 <p>
-<iframe src="https://ghbtns.com/github-btn.html?user=mfouesneau&repo=ezdata&type=watch&count=true&size=large"
+<iframe src="https://ghbtns.com/github-btn.html?user=mfouesneau&repo=ezdata&type=watch&count=true&size=large&v=2"
   allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
 </p>
+
+
+
 
 
 
@@ -256,17 +250,14 @@ with shared axis</li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
 </ul>
 
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -277,17 +268,17 @@ with shared axis</li>
       &copy;2015, M. Fouesneau.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.2.3</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.3</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
       |
-      <a href="_sources/index.txt"
-          rel="nofollow">Page source</a></li>
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
     </div>
 
     
     <a href="https://github.com/mfouesneau/ezdata" class="github">
-        <img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
     </a>
     
 
