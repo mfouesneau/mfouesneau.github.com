@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>ezdata package &#8212; ezData 1.0 documentation</title>
-    
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -24,7 +21,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="Welcome to ezData’s documentation!" href="index.html" />
@@ -35,7 +32,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body role="document">
+  <body>
   
 
     <div class="document">
@@ -110,7 +107,7 @@ Requires plotter add-on to work</p>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">seq: sequence</p>
 <blockquote class="last">
 <div><p>flattened sequence of keys and value
-(key1, key2, ... keyn, {})</p>
+(key1, key2, … keyn, {})</p>
 </div></blockquote>
 </td>
 </tr>
@@ -143,7 +140,47 @@ refers to <code class="xref py py-func docutils literal"><span class="pre">dict.
 <code class="descname">evalexpr</code><span class="sig-paren">(</span><em>expr</em>, <em>exprvars=None</em>, <em>dtype=&lt;class 'float'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/dictdataframe.html#DictDataFrame.evalexpr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.dictdataframe.DictDataFrame.evalexpr" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
 <dt>evaluate expression based on the data and external variables</dt>
-<dd>all np function can be used (log, exp, pi...)</dd>
+<dd>all np function can be used (log, exp, pi…)</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>data: dict or dict-like structure</strong></p>
+<blockquote>
+<div><p>data frame / dict-like structure containing named columns</p>
+</div></blockquote>
+<p><strong>expr: str</strong></p>
+<blockquote>
+<div><p>expression to evaluate on the table
+includes mathematical operations and attribute names</p>
+</div></blockquote>
+<p><strong>exprvars: dictionary, optional</strong></p>
+<blockquote>
+<div><p>A dictionary that replaces the local operands in current frame.</p>
+</div></blockquote>
+<p><strong>dtype: dtype definition</strong></p>
+<blockquote>
+<div><p>dtype of the output array</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : np.array</p>
+<blockquote class="last">
+<div><p>array of the result</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ezdata.dictdataframe.DictDataFrame.evaluate">
+<code class="descname">evaluate</code><span class="sig-paren">(</span><em>expr</em>, <em>exprvars=None</em>, <em>dtype=&lt;class 'float'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#ezdata.dictdataframe.DictDataFrame.evaluate" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>evaluate expression based on the data and external variables</dt>
+<dd>all np function can be used (log, exp, pi…)</dd>
 </dl>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -180,13 +217,13 @@ includes mathematical operations and attribute names</p>
 
 <dl class="classmethod">
 <dt id="ezdata.dictdataframe.DictDataFrame.from_lines">
-<em class="property">classmethod </em><code class="descname">from_lines</code><span class="sig-paren">(</span><em>it</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/dictdataframe.html#DictDataFrame.from_lines"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.dictdataframe.DictDataFrame.from_lines" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">from_lines</code><span class="sig-paren">(</span><em>iterable</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/dictdataframe.html#DictDataFrame.from_lines"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.dictdataframe.DictDataFrame.from_lines" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a DataFrame object from its lines instead of columns</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>it: iterable</strong></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>iterable: iterable</strong></p>
 <blockquote>
 <div><p>sequence of lines with the same keys (expecting dict like structure)</p>
 </div></blockquote>
@@ -215,6 +252,53 @@ value of key(value)</p>
 <dd><p>Iterator on the lines of the dataframe</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="ezdata.dictdataframe.DictDataFrame.join">
+<code class="descname">join</code><span class="sig-paren">(</span><em>key</em>, <em>other</em>, <em>key_other=None</em>, <em>columns_other=None</em>, <em>prefix=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/dictdataframe.html#DictDataFrame.join"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.dictdataframe.DictDataFrame.join" title="Permalink to this definition">¶</a></dt>
+<dd><p>Experimental joining of structures, (equivalent to SQL left outer join)
+Example:
+&gt;&gt;&gt; x = np.arange(10)
+&gt;&gt;&gt; y = x**2
+&gt;&gt;&gt; z = x**3
+&gt;&gt;&gt; df = DictDataFrame(x=x, y=y)
+&gt;&gt;&gt; df2 = DictDataFrame(x=x[:4], z=z[:4])
+&gt;&gt;&gt; df.join(‘x’, df2, ‘x’, column_other=[‘z’])</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>key: str</strong></p>
+<blockquote>
+<div><p>key for the left table (self)</p>
+</div></blockquote>
+<p><strong>other: DictDataFrame</strong></p>
+<blockquote>
+<div><p>Other dataset to join with (the right side of the outer join)</p>
+</div></blockquote>
+<p><strong>key_other: str, optional</strong></p>
+<blockquote>
+<div><p>key on which to join (default identical to key)</p>
+</div></blockquote>
+<p><strong>columns_other: tuple, optional</strong></p>
+<blockquote>
+<div><p>column names to add to the dataframe (default: all fields)</p>
+</div></blockquote>
+<p><strong>prefix: str, optional</strong></p>
+<blockquote>
+<div><p>add a prefix to the new column</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">self: DictDataFrame</p>
+<blockquote class="last">
+<div><p>itself</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="ezdata.dictdataframe.DictDataFrame.lines">
 <code class="descname">lines</code><a class="headerlink" href="#ezdata.dictdataframe.DictDataFrame.lines" title="Permalink to this definition">¶</a></dt>
@@ -229,7 +313,7 @@ value of key(value)</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>key1, key2, ...: sequence</strong></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>key1, key2, …: sequence</strong></p>
 <blockquote>
 <div><p>keys over which indexing the data</p>
 </div></blockquote>
@@ -237,7 +321,7 @@ value of key(value)</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">it: generator</p>
 <blockquote class="last">
-<div><p>(key1, (key2, (... keyn, {})))</p>
+<div><p>(key1, (key2, (… keyn, {})))</p>
 </div></blockquote>
 </td>
 </tr>
@@ -287,7 +371,7 @@ value of key(value)</p>
 <blockquote>
 <div><p>field names to select.
 Can be a single field names as follow:
-&#8216;RA&#8217;, or [&#8216;RA&#8217;, &#8216;DEC&#8217;], or &#8216;RA,DEC&#8217;, or &#8216;RA DEC&#8217;</p>
+‘RA’, or [‘RA’, ‘DEC’], or ‘RA,DEC’, or ‘RA DEC’</p>
 </div></blockquote>
 <p><strong>caseless: bool</strong></p>
 <blockquote>
@@ -418,7 +502,11 @@ possible before switching to Dask.dataframe.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>npartitions</strong> : int, optional</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>keys: sequence, optional</strong></p>
+<blockquote>
+<div><p>ordered subset of columns to export</p>
+</div></blockquote>
+<p><strong>npartitions</strong> : int, optional</p>
 <blockquote>
 <div><p>The number of partitions of the index to create. Note that depending on
 the size and index of the dataframe, the output may have fewer
@@ -430,8 +518,8 @@ partitions than requested.</p>
 </div></blockquote>
 <p><strong>sort: bool</strong></p>
 <blockquote>
-<div><p>Sort input first to obtain cleanly divided partitions or don&#8217;t sort and
-don&#8217;t get cleanly divided partitions</p>
+<div><p>Sort input first to obtain cleanly divided partitions or don’t sort and
+don’t get cleanly divided partitions</p>
 </div></blockquote>
 <p><strong>name: string, optional</strong></p>
 <blockquote>
@@ -450,6 +538,35 @@ don&#8217;t get cleanly divided partitions</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="ezdata.dictdataframe.DictDataFrame.to_dict">
+<code class="descname">to_dict</code><span class="sig-paren">(</span><em>keys=None</em>, <em>contiguous=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/dictdataframe.html#DictDataFrame.to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.dictdataframe.DictDataFrame.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a dictionary from this dataframe with contiguous arrays</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>keys: sequence, optional</strong></p>
+<blockquote>
+<div><p>ordered subset of columns to export</p>
+</div></blockquote>
+<p><strong>contiguous: boolean</strong></p>
+<blockquote>
+<div><p>make sure each value is a contiguous numpy array object
+(C-aligned)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">data: dict</p>
+<blockquote class="last">
+<div><p>converted data</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="ezdata.dictdataframe.DictDataFrame.to_pandas">
 <code class="descname">to_pandas</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/dictdataframe.html#DictDataFrame.to_pandas"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.dictdataframe.DictDataFrame.to_pandas" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct a pandas dataframe</p>
@@ -457,7 +574,14 @@ don&#8217;t get cleanly divided partitions</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>data</strong> : ndarray (structured dtype), list of tuples, dict, or DataFrame</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>data</strong> : ndarray</p>
+<blockquote>
+<div><p>(structured dtype), list of tuples, dict, or DataFrame</p>
+</div></blockquote>
+<p><strong>keys: sequence, optional</strong></p>
+<blockquote>
+<div><p>ordered subset of columns to export</p>
+</div></blockquote>
 <p><strong>index</strong> : string, list of fields, array-like</p>
 <blockquote>
 <div><p>Field of array to use as the index, alternately a specific set of
@@ -491,8 +615,26 @@ decimal.Decimal) to floating point, useful for SQL result sets</p>
 
 <dl class="method">
 <dt id="ezdata.dictdataframe.DictDataFrame.to_records">
-<code class="descname">to_records</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/dictdataframe.html#DictDataFrame.to_records"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.dictdataframe.DictDataFrame.to_records" title="Permalink to this definition">¶</a></dt>
+<code class="descname">to_records</code><span class="sig-paren">(</span><em>keys=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/dictdataframe.html#DictDataFrame.to_records"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.dictdataframe.DictDataFrame.to_records" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct a numpy record array from this dataframe</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>keys: sequence, optional</strong></p>
+<blockquote>
+<div><p>ordered subset of columns to export</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">arr: recarray</p>
+<blockquote class="last">
+<div><p>converted data</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -506,6 +648,10 @@ decimal.Decimal) to floating point, useful for SQL result sets</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name: str</strong></p>
 <blockquote>
 <div><p>unique for the dataset</p>
+</div></blockquote>
+<p><strong>keys: sequence, optional</strong></p>
+<blockquote>
+<div><p>ordered subset of columns to export</p>
 </div></blockquote>
 </td>
 </tr>
@@ -524,12 +670,53 @@ decimal.Decimal) to floating point, useful for SQL result sets</p>
 <code class="descname">to_xarray</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/dictdataframe.html#DictDataFrame.to_xarray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.dictdataframe.DictDataFrame.to_xarray" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct an xarray dataset</p>
 <p>Each column will be converted into an independent variable in the
-Dataset. If the dataframe&#8217;s index is a MultiIndex, it will be expanded
+Dataset. If the dataframe’s index is a MultiIndex, it will be expanded
 into a tensor product of one-dimensional indices (filling in missing
 values with NaN). This method will produce a Dataset very similar to
-that on which the &#8216;to_dataframe&#8217; method was called, except with
+that on which the ‘to_dataframe’ method was called, except with
 possibly redundant dimensions (since all dataset variables will have
 the same dimensionality).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>data</strong> : ndarray</p>
+<blockquote>
+<div><p>(structured dtype), list of tuples, dict, or DataFrame</p>
+</div></blockquote>
+<p><strong>keys: sequence, optional</strong></p>
+<blockquote>
+<div><p>ordered subset of columns to export</p>
+</div></blockquote>
+<p><strong>index</strong> : string, list of fields, array-like</p>
+<blockquote>
+<div><p>Field of array to use as the index, alternately a specific set of
+input labels to use</p>
+</div></blockquote>
+<p><strong>exclude</strong> : sequence, default None</p>
+<blockquote>
+<div><p>Columns or fields to exclude</p>
+</div></blockquote>
+<p><strong>columns</strong> : sequence, default None</p>
+<blockquote>
+<div><p>Column names to use. If the passed data do not have names
+associated with them, this argument provides names for the
+columns. Otherwise this argument indicates the order of the columns
+in the result (any names not found in the data will become all-NA
+columns)</p>
+</div></blockquote>
+<p><strong>coerce_float</strong> : boolean, default False</p>
+<blockquote>
+<div><p>Attempt to convert values to non-string, non-numeric objects (like
+decimal.Decimal) to floating point, useful for SQL result sets</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>df</strong> : DataFrame</p>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="classmethod">
@@ -540,7 +727,7 @@ the same dimensionality).</p>
 
 <dl class="method">
 <dt id="ezdata.dictdataframe.DictDataFrame.where">
-<code class="descname">where</code><span class="sig-paren">(</span><em>condition</em>, <em>condvars=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/dictdataframe.html#DictDataFrame.where"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.dictdataframe.DictDataFrame.where" title="Permalink to this definition">¶</a></dt>
+<code class="descname">where</code><span class="sig-paren">(</span><em>condition</em>, <em>condvars=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/dictdataframe.html#DictDataFrame.where"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.dictdataframe.DictDataFrame.where" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read table data fulfilling the given <cite>condition</cite>.
 Only the rows fulfilling the <cite>condition</cite> are included in the result.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -575,6 +762,30 @@ entry.</p>
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ezdata.dictdataframe.DictDataFrame.write">
+<code class="descname">write</code><span class="sig-paren">(</span><em>fname</em>, <em>keys=None</em>, <em>header=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/dictdataframe.html#DictDataFrame.write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.dictdataframe.DictDataFrame.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write DictDataFrame into file</p>
+<dl class="docutils">
+<dt>fname: string</dt>
+<dd>file to write into</dd>
+<dt>keys: sequence, optional</dt>
+<dd>ordered sequence of columns</dd>
+<dt>header: string</dt>
+<dd>header to add to the file</dd>
+<dt>extension: str</dt>
+<dd>csv or txt/dat file
+auto guess from fname
+sets the delimiter and comments accordingly</dd>
+<dt>delimiter: str</dt>
+<dd>force  the column delimiter</dd>
+<dt>comments: str</dt>
+<dd>force the char defining comment line</dd>
+<dt>kwargs: dict</dt>
+<dd>forwarded to np.savetxt</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -626,38 +837,38 @@ instance to generate multiple plots on the same axes or even facet plot
 <p class="rubric">Attributes</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col width="11%" />
+<col width="89%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>seq: sequence</td>
+<tr class="row-odd"><td><strong>seq: sequence</strong></td>
 <td>Sequence of Plotter instances</td>
 </tr>
-<tr class="row-even"><td>title: str</td>
+<tr class="row-even"><td><strong>title: str</strong></td>
 <td>name of the group (used as label is nested groups)</td>
 </tr>
-<tr class="row-odd"><td>facet: bool</td>
+<tr class="row-odd"><td><strong>facet: bool</strong></td>
 <td>set to use facets, i.e., one subplot per element of the group</td>
 </tr>
-<tr class="row-even"><td>markers: iterable</td>
+<tr class="row-even"><td><strong>markers: iterable</strong></td>
 <td>sequence of markers one per group</td>
 </tr>
-<tr class="row-odd"><td>linestyles: iterable</td>
+<tr class="row-odd"><td><strong>linestyles: iterable</strong></td>
 <td>sequence of linestyles one per group</td>
 </tr>
-<tr class="row-even"><td>colors: seq or Colormap</td>
+<tr class="row-even"><td><strong>colors: seq or Colormap</strong></td>
 <td>sequence of colors or Colormap instance from which deriving a sequence of colors to encode each group if Colormap instance, a cmap attribute will be generated after a plot and will refer to the updated instance</td>
 </tr>
-<tr class="row-odd"><td>sharex: bool</td>
+<tr class="row-odd"><td><strong>sharex: bool</strong></td>
 <td>set to share x-axis with all subplots</td>
 </tr>
-<tr class="row-even"><td>sharey: bool</td>
+<tr class="row-even"><td><strong>sharey: bool</strong></td>
 <td>set to share y-axis with all subplots</td>
 </tr>
-<tr class="row-odd"><td>kwargs: dict</td>
+<tr class="row-odd"><td><strong>kwargs: dict</strong></td>
 <td>any other option will be forwarded to <code class="xref py py-func docutils literal"><span class="pre">plt.subplot()</span></code></td>
 </tr>
-<tr class="row-even"><td></td>
+<tr class="row-even"><td><strong>.. see also::</strong></td>
 <td><a class="reference internal" href="#ezdata.plotter.Group.set_options" title="ezdata.plotter.Group.set_options"><code class="xref py py-func docutils literal"><span class="pre">set_options()</span></code></a></td>
 </tr>
 </tbody>
@@ -709,8 +920,8 @@ grid_spec module.</dd>
 <blockquote>
 <div><table border="1" class="docutils">
 <colgroup>
-<col width="20%" />
-<col width="80%" />
+<col width="18%" />
+<col width="82%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Property</th>
@@ -729,7 +940,7 @@ grid_spec module.</dd>
 of original axes between colorbar and new image axes</td>
 </tr>
 <tr class="row-odd"><td><em>shrink</em></td>
-<td>1.0; fraction by which to shrink the colorbar</td>
+<td>1.0; fraction by which to multiply the size of the colorbar</td>
 </tr>
 <tr class="row-even"><td><em>aspect</em></td>
 <td>20; ratio of long to short dimensions</td>
@@ -741,7 +952,7 @@ the anchor point of the colorbar axes</td>
 <tr class="row-even"><td><em>panchor</em></td>
 <td>(1.0, 0.5) if vertical; (0.5, 0.0) if horizontal;
 the anchor point of the colorbar parent axes. If
-False, the parent axes&#8217; anchor will be unchanged</td>
+False, the parent axes’ anchor will be unchanged</td>
 </tr>
 </tbody>
 </table>
@@ -760,22 +971,22 @@ False, the parent axes&#8217; anchor will be unchanged</td>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td><em>extend</em></td>
-<td>[ &#8216;neither&#8217; | &#8216;both&#8217; | &#8216;min&#8217; | &#8216;max&#8217; ]
-If not &#8216;neither&#8217;, make pointed end(s) for out-of-
+<td>[ ‘neither’ | ‘both’ | ‘min’ | ‘max’ ]
+If not ‘neither’, make pointed end(s) for out-of-
 range values.  These are set for a given colormap
 using the colormap set_under and set_over methods.</td>
 </tr>
 <tr class="row-odd"><td><em>extendfrac</em></td>
-<td>[ <em>None</em> | &#8216;auto&#8217; | length | lengths ]
+<td>[ <em>None</em> | ‘auto’ | length | lengths ]
 If set to <em>None</em>, both the minimum and maximum
 triangular colorbar extensions with have a length of
 5% of the interior colorbar length (this is the
-default setting). If set to &#8216;auto&#8217;, makes the
+default setting). If set to ‘auto’, makes the
 triangular colorbar extensions the same lengths as
 the interior boxes (when <em>spacing</em> is set to
-&#8216;uniform&#8217;) or the same lengths as the respective
+‘uniform’) or the same lengths as the respective
 adjacent interior boxes (when <em>spacing</em> is set to
-&#8216;proportional&#8217;). If a scalar, indicates the length
+‘proportional’). If a scalar, indicates the length
 of both the minimum and maximum triangular colorbar
 extensions as a fraction of the interior colorbar
 length. A two-element sequence of fractions may also
@@ -790,7 +1001,7 @@ will be triangular (the default). If <em>True</em> the
 extensions will be rectangular.</td>
 </tr>
 <tr class="row-odd"><td><em>spacing</em></td>
-<td>[ &#8216;uniform&#8217; | &#8216;proportional&#8217; ]
+<td>[ ‘uniform’ | ‘proportional’ ]
 Uniform spacing gives each discrete color the same
 space; proportional makes the space proportional to
 the data interval.</td>
@@ -804,7 +1015,7 @@ input.</td>
 <td>[ None | format string | Formatter object ]
 If None, the
 <code class="xref py py-class docutils literal"><span class="pre">ScalarFormatter</span></code> is used.
-If a format string is given, e.g., &#8216;%.3f&#8217;, that is
+If a format string is given, e.g., ‘%.3f’, that is
 used. An alternative
 <code class="xref py py-class docutils literal"><span class="pre">Formatter</span></code> object may be
 given instead.</td>
@@ -940,7 +1151,7 @@ to plot.</p>
 Each element in this dictionary is expected to be a sequence and one
 element of each will be used per call. It will use
 <code class="xref py py-func docutils literal"><span class="pre">itertools.cycle()</span></code>. (None elements are filtered)
-cyclenames = &#8216;linestyles&#8217;, &#8216;colors&#8217;, &#8216;markers&#8217;</p>
+cyclenames = ‘linestyles’, ‘colors’, ‘markers’</p>
 </div></blockquote>
 <p><strong>kw: dict</strong></p>
 <blockquote>
@@ -980,7 +1191,7 @@ cyclenames = &#8216;linestyles&#8217;, &#8216;colors&#8217;, &#8216;markers&#821
 Each element in this dictionary is expected to be a sequence and one
 element of each will be used per call. It will use
 <code class="xref py py-func docutils literal"><span class="pre">itertools.cycle()</span></code>. (None elements are filtered)
-cyclenames = &#8216;linestyles&#8217;, &#8216;colors&#8217;, &#8216;markers&#8217;</p>
+cyclenames = ‘linestyles’, ‘colors’, ‘markers’</p>
 </div></blockquote>
 <p><strong>kw: dict</strong></p>
 <blockquote>
@@ -1126,20 +1337,20 @@ arguments can be named columns from the data (not necessary) and each method han
 <p class="rubric">Attributes</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="25%" />
-<col width="75%" />
+<col width="27%" />
+<col width="73%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>data: dict-like structure</td>
+<tr class="row-odd"><td><strong>data: dict-like structure</strong></td>
 <td>data with column named format</td>
 </tr>
-<tr class="row-even"><td>label: str, optional</td>
+<tr class="row-even"><td><strong>label: str, optional</strong></td>
 <td>label to use on the data as default label</td>
 </tr>
-<tr class="row-odd"><td>allow_expressions: bool, optional</td>
+<tr class="row-odd"><td><strong>allow_expressions: bool, optional</strong></td>
 <td>set to use math expressions with the keys see <a class="reference internal" href="#ezdata.plotter.evalexpr" title="ezdata.plotter.evalexpr"><code class="xref py py-func docutils literal"><span class="pre">evalexpr()</span></code></a></td>
 </tr>
-<tr class="row-even"><td>ax: plt.Axes instance</td>
+<tr class="row-even"><td><strong>ax: plt.Axes instance</strong></td>
 <td>contains the last axes reference(s) after a plot (do not exists if no plotting function was called)</td>
 </tr>
 </tbody>
@@ -1173,7 +1384,7 @@ arguments can be named columns from the data (not necessary) and each method han
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">seq: sequence</p>
 <blockquote class="last">
 <div><p>flattened sequence of keys and value
-(key1, key2, ... keyn, {})</p>
+(key1, key2, … keyn, {})</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1211,17 +1422,6 @@ By default uses the active axes.</p>
 <dt id="ezdata.plotter.Plotter.boxplot">
 <code class="descname">boxplot</code><span class="sig-paren">(</span><em>dataset</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/plotter.html#Plotter.boxplot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.plotter.Plotter.boxplot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make a box and whisker plot.</p>
-<p>Call signature:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">boxplot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">notch</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sym</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vert</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">whis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-        <span class="n">positions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">widths</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">patch_artist</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-        <span class="n">bootstrap</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">usermedians</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">conf_intervals</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-        <span class="n">meanline</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">showmeans</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">showcaps</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-        <span class="n">showbox</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">showfliers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">boxprops</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-        <span class="n">labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">flierprops</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">medianprops</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-        <span class="n">meanprops</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">capprops</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">whiskerprops</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-        <span class="n">manage_xticks</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">autorange</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</pre></div>
-</div>
 <p>Make a box and whisker plot for each column of <code class="docutils literal"><span class="pre">x</span></code> or each
 vector in sequence <code class="docutils literal"><span class="pre">x</span></code>.  The box extends from the lower to
 upper quartile values of the data, with a line at the median.
@@ -1238,13 +1438,25 @@ data.  Flier points are those past the end of the whiskers.</p>
 <p><strong>notch</strong> : bool, optional (False)</p>
 <blockquote>
 <div><p>If <cite>True</cite>, will produce a notched box plot. Otherwise, a
-rectangular boxplot is produced.</p>
+rectangular boxplot is produced. The notches represent the
+confidence interval (CI) around the median. See the entry
+for the <code class="docutils literal"><span class="pre">bootstrap</span></code> parameter for information regarding
+how the locations of the notches are computed.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In cases where the values of the CI are less than the
+lower quartile or greater than the upper quartile, the
+notches will extend beyond the box, giving it a
+distinctive “flipped” appearance. This is expected
+behavior and consistent with other statistical
+visualization packages.</p>
+</div>
 </div></blockquote>
 <p><strong>sym</strong> : str, optional</p>
 <blockquote>
 <div><p>The default symbol for flier points. Enter an empty string
-(&#8216;&#8217;) if you don&#8217;t want to show fliers. If <cite>None</cite>, then the
-fliers default to &#8216;b+&#8217;  If you want more control use the
+(‘’) if you don’t want to show fliers. If <cite>None</cite>, then the
+fliers default to ‘b+’  If you want more control use the
 flierprops kwarg.</p>
 </div></blockquote>
 <p><strong>vert</strong> : bool, optional (True)</p>
@@ -1254,9 +1466,12 @@ everything is drawn horizontally.</p>
 </div></blockquote>
 <p><strong>whis</strong> : float, sequence, or string (default = 1.5)</p>
 <blockquote>
-<div><p>As a float, determines the reach of the whiskers past the
-first and third quartiles (e.g., Q3 + whis*IQR,
-IQR = interquartile range, Q3-Q1). Beyond the whiskers, data
+<div><p>As a float, determines the reach of the whiskers to the beyond the
+first and third quartiles. In other words, where IQR is the
+interquartile range (<cite>Q3-Q1</cite>), the upper whisker will extend to
+last datum less than <cite>Q3 + whis*IQR</cite>). Similarly, the lower whisker
+will extend to the first datum greater than <cite>Q1 - whis*IQR</cite>.
+Beyond the whiskers, data
 are considered outliers and are plotted as individual
 points. Set this to an unreasonably high value to force the
 whiskers to show the min and max values. Alternatively, set
@@ -1268,13 +1483,13 @@ whiskers to the min and max of the data.</p>
 <p><strong>bootstrap</strong> : int, optional</p>
 <blockquote>
 <div><p>Specifies whether to bootstrap the confidence intervals
-around the median for notched boxplots. If <cite>bootstrap</cite> is None,
-no bootstrapping is performed, and notches are calculated
-using a Gaussian-based asymptotic approximation (see McGill,
-R., Tukey, J.W., and Larsen, W.A., 1978, and Kendall and
-Stuart, 1967). Otherwise, bootstrap specifies the number of
-times to bootstrap the median to determine its 95%
-confidence intervals. Values between 1000 and 10000 are
+around the median for notched boxplots. If <code class="docutils literal"><span class="pre">bootstrap</span></code> is
+None, no bootstrapping is performed, and notches are
+calculated using a Gaussian-based asymptotic approximation
+(see McGill, R., Tukey, J.W., and Larsen, W.A., 1978, and
+Kendall and Stuart, 1967). Otherwise, bootstrap specifies
+the number of times to bootstrap the median to determine its
+95% confidence intervals. Values between 1000 and 10000 are
 recommended.</p>
 </div></blockquote>
 <p><strong>usermedians</strong> : array-like, optional</p>
@@ -1336,6 +1551,10 @@ according to <code class="docutils literal"><span class="pre">meanprops</span></
 <code class="docutils literal"><span class="pre">shownotches</span></code> is also True. Otherwise, means will be shown
 as points.</p>
 </div></blockquote>
+<p><strong>zorder</strong> : scalar, optional (None)</p>
+<blockquote>
+<div><p>Sets the zorder of the boxplot.</p>
+</div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>result</strong> : dict</p>
@@ -1346,7 +1565,7 @@ created. That dictionary has the following keys (assuming
 vertical boxplots):</p>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">boxes</span></code>: the main body of the boxplot showing the
-quartiles and the median&#8217;s confidence intervals if
+quartiles and the median’s confidence intervals if
 enabled.</li>
 <li><code class="docutils literal"><span class="pre">medians</span></code>: horizontal lines at the median of each box.</li>
 <li><code class="docutils literal"><span class="pre">whiskers</span></code>: the vertical lines extending to the most
@@ -1358,45 +1577,62 @@ the whiskers (fliers).</li>
 <li><code class="docutils literal"><span class="pre">means</span></code>: points or lines representing the means.</li>
 </ul>
 </div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>In addition to the above described arguments, this function can take a
+<strong>data</strong> keyword argument. If such a <strong>data</strong> argument is given, the
+following arguments are replaced by <strong>data[&lt;arg&gt;]</strong>:</p>
+<ul class="last simple">
+<li>All positional and all keyword arguments.</li>
+</ul>
+</div>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first"><strong>The following boolean options toggle the drawing of individual</strong></p>
-<p><strong>components of the boxplots:</strong></p>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first"><strong>showcaps</strong> : bool, optional (True)</p>
 <blockquote>
-<div><ul class="simple">
-<li>showcaps: the caps on the ends of whiskers
-(default is True)</li>
-<li>showbox: the central box (default is True)</li>
-<li>showfliers: the outliers beyond the caps (default is True)</li>
-<li>showmeans: the arithmetic means (default is False)</li>
-</ul>
+<div><p>Show the caps on the ends of whiskers.</p>
 </div></blockquote>
-<p><strong>The remaining options can accept dictionaries that specify the</strong></p>
-<p><strong>style of the individual artists:</strong></p>
+<p><strong>showbox</strong> : bool, optional (True)</p>
+<blockquote>
+<div><p>Show the central box.</p>
+</div></blockquote>
+<p><strong>showfliers</strong> : bool, optional (True)</p>
+<blockquote>
+<div><p>Show the outliers beyond the caps.</p>
+</div></blockquote>
+<p><strong>showmeans</strong> : bool, optional (False)</p>
+<blockquote>
+<div><p>Show the arithmetic means.</p>
+</div></blockquote>
+<p><strong>capprops</strong> : dict, optional (None)</p>
+<blockquote>
+<div><p>Specifies the style of the caps.</p>
+</div></blockquote>
+<p><strong>boxprops</strong> : dict, optional (None)</p>
+<blockquote>
+<div><p>Specifies the style of the box.</p>
+</div></blockquote>
+<p><strong>whiskerprops</strong> : dict, optional (None)</p>
+<blockquote>
+<div><p>Specifies the style of the whiskers.</p>
+</div></blockquote>
+<p><strong>flierprops</strong> : dict, optional (None)</p>
+<blockquote>
+<div><p>Specifies the style of the fliers.</p>
+</div></blockquote>
+<p><strong>medianprops</strong> : dict, optional (None)</p>
+<blockquote>
+<div><p>Specifies the style of the median.</p>
+</div></blockquote>
+<p><strong>meanprops</strong> : dict, optional (None)</p>
 <blockquote class="last">
-<div><ul class="simple">
-<li>capprops</li>
-<li>boxprops</li>
-<li>whiskerprops</li>
-<li>flierprops</li>
-<li>medianprops</li>
-<li>meanprops</li>
-</ul>
+<div><p>Specifies the style of the mean.</p>
 </div></blockquote>
 </td>
 </tr>
 </tbody>
 </table>
-<p class="rubric">Notes</p>
-<p>In addition to the above described arguments, this function can take a
-<strong>data</strong> keyword argument. If such a <strong>data</strong> argument is given, the
-following arguments are replaced by <strong>data[&lt;arg&gt;]</strong>:</p>
-<ul class="simple">
-<li>All positional and all keyword arguments.</li>
-</ul>
-<p>Additional kwargs: hold = [True|False] overrides default hold state</p>
-<p class="rubric">Examples</p>
 </dd></dl>
 
 <dl class="method">
@@ -1444,7 +1680,7 @@ following arguments are replaced by <strong>data[&lt;arg&gt;]</strong>:</p>
 <code class="descname">evalexpr</code><span class="sig-paren">(</span><em>expr</em>, <em>exprvars=None</em>, <em>dtype=&lt;class 'float'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/plotter.html#Plotter.evalexpr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.plotter.Plotter.evalexpr" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
 <dt>evaluate expression based on the data and external variables</dt>
-<dd>all np function can be used (log, exp, pi...)</dd>
+<dd>all np function can be used (log, exp, pi…)</dd>
 </dl>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1517,104 +1753,134 @@ the plot</p>
 <dt id="ezdata.plotter.Plotter.hexbin">
 <code class="descname">hexbin</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>C=None</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/plotter.html#Plotter.hexbin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.plotter.Plotter.hexbin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make a hexagonal binning plot.</p>
-<p>Call signature:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">hexbin</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">C</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">gridsize</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-       <span class="n">xscale</span> <span class="o">=</span> <span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">yscale</span> <span class="o">=</span> <span class="s1">&#39;linear&#39;</span><span class="p">,</span>
-       <span class="n">cmap</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-       <span class="n">alpha</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;none&#39;</span>
-       <span class="n">reduce_C_function</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> <span class="n">mincnt</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">marginals</span><span class="o">=</span><span class="kc">True</span>
-       <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-</pre></div>
-</div>
 <p>Make a hexagonal binning plot of <em>x</em> versus <em>y</em>, where <em>x</em>,
 <em>y</em> are 1-D sequences of the same length, <em>N</em>. If <em>C</em> is <em>None</em>
-(the default), this is a histogram of the number of occurences
+(the default), this is a histogram of the number of occurrences
 of the observations at (x[i],y[i]).</p>
 <p>If <em>C</em> is specified, it specifies values at the coordinate
 (x[i],y[i]). These values are accumulated for each hexagonal
 bin and then reduced according to <em>reduce_C_function</em>, which
-defaults to numpy&#8217;s mean function (np.mean). (If <em>C</em> is
+defaults to numpy’s mean function (np.mean). (If <em>C</em> is
 specified, it must also be a 1-D sequence of the same length
 as <em>x</em> and <em>y</em>.)</p>
-<p><em>x</em>, <em>y</em> and/or <em>C</em> may be masked arrays, in which case only
-unmasked points will be plotted.</p>
-<p>Optional keyword arguments:</p>
-<dl class="docutils">
-<dt><em>gridsize</em>: [ 100 | integer ]</dt>
-<dd>The number of hexagons in the <em>x</em>-direction, default is
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>x, y</strong> : array or masked array</p>
+<p><strong>C</strong> : array or masked array, optional, default is <em>None</em></p>
+<p><strong>gridsize</strong> : int or (int, int), optional, default is 100</p>
+<blockquote>
+<div><p>The number of hexagons in the <em>x</em>-direction, default is
 100. The corresponding number of hexagons in the
 <em>y</em>-direction is chosen such that the hexagons are
 approximately regular. Alternatively, gridsize can be a
 tuple with two elements specifying the number of hexagons
-in the <em>x</em>-direction and the <em>y</em>-direction.</dd>
-<dt><em>bins</em>: [ <em>None</em> | &#8216;log&#8217; | integer | sequence ]</dt>
-<dd><p class="first">If <em>None</em>, no binning is applied; the color of each hexagon
+in the <em>x</em>-direction and the <em>y</em>-direction.</p>
+</div></blockquote>
+<p><strong>bins</strong> : {‘log’} or int or sequence, optional, default is <em>None</em></p>
+<blockquote>
+<div><p>If <em>None</em>, no binning is applied; the color of each hexagon
 directly corresponds to its count value.</p>
-<p>If &#8216;log&#8217;, use a logarithmic scale for the color
+<p>If ‘log’, use a logarithmic scale for the color
 map. Internally, <span class="math">\(log_{10}(i+1)\)</span> is used to
 determine the hexagon color.</p>
 <p>If an integer, divide the counts in the specified number
 of bins, and color the hexagons accordingly.</p>
-<p class="last">If a sequence of values, the values of the lower bound of
+<p>If a sequence of values, the values of the lower bound of
 the bins to be used.</p>
-</dd>
-<dt><em>xscale</em>: [ &#8216;linear&#8217; | &#8216;log&#8217; ]</dt>
-<dd>Use a linear or log10 scale on the horizontal axis.</dd>
-<dt><em>scale</em>: [ &#8216;linear&#8217; | &#8216;log&#8217; ]</dt>
-<dd>Use a linear or log10 scale on the vertical axis.</dd>
-<dt><em>mincnt</em>: [ <em>None</em> | a positive integer ]</dt>
-<dd>If not <em>None</em>, only display cells with more than <em>mincnt</em>
-number of points in the cell</dd>
-<dt><em>marginals</em>: [ <em>True</em> | <em>False</em> ]</dt>
-<dd>if marginals is <em>True</em>, plot the marginal density as
-colormapped rectagles along the bottom of the x-axis and
-left of the y-axis</dd>
-<dt><em>extent</em>: [ <em>None</em> | scalars (left, right, bottom, top) ]</dt>
-<dd>The limits of the bins. The default assigns the limits
-based on gridsize, x, y, xscale and yscale.</dd>
-</dl>
-<p>Other keyword arguments controlling color mapping and normalization
-arguments:</p>
-<dl class="docutils">
-<dt><em>cmap</em>: [ <em>None</em> | Colormap ]</dt>
-<dd>a <code class="xref py py-class docutils literal"><span class="pre">matplotlib.colors.Colormap</span></code> instance. If <em>None</em>,
-defaults to rc <code class="docutils literal"><span class="pre">image.cmap</span></code>.</dd>
-<dt><em>norm</em>: [ <em>None</em> | Normalize ]</dt>
-<dd><code class="xref py py-class docutils literal"><span class="pre">matplotlib.colors.Normalize</span></code> instance is used to
-scale luminance data to 0,1.</dd>
-<dt><em>vmin</em> / <em>vmax</em>: scalar</dt>
-<dd><em>vmin</em> and <em>vmax</em> are used in conjunction with <em>norm</em> to normalize
-luminance data.  If either are <em>None</em>, the min and max of the color
-array <em>C</em> is used.  Note if you pass a norm instance, your settings
-for <em>vmin</em> and <em>vmax</em> will be ignored.</dd>
-<dt><em>alpha</em>: scalar between 0 and 1, or <em>None</em></dt>
-<dd>the alpha value for the patches</dd>
-<dt><em>linewidths</em>: [ <em>None</em> | scalar ]</dt>
-<dd>If <em>None</em>, defaults to rc lines.linewidth. Note that this
-is a tuple, and if you set the linewidths argument you
-must set it as a sequence of floats, as required by
-<code class="xref py py-class docutils literal"><span class="pre">RegularPolyCollection</span></code>.</dd>
-</dl>
-<p>Other keyword arguments controlling the Collection properties:</p>
-<dl class="docutils">
-<dt><em>edgecolors</em>: [ <em>None</em> | <code class="docutils literal"><span class="pre">'none'</span></code> | mpl color | color sequence ]</dt>
-<dd><p class="first">If <code class="docutils literal"><span class="pre">'none'</span></code>, draws the edges in the same color as the fill color.
-This is the default, as it avoids unsightly unpainted pixels
-between the hexagons.</p>
-<p>If <em>None</em>, draws the outlines in the default color.</p>
-<p class="last">If a matplotlib color arg or sequence of rgba tuples, draws the
-outlines in the specified color.</p>
-</dd>
-</dl>
-<p>Here are the standard descriptions of all the
-<code class="xref py py-class docutils literal"><span class="pre">Collection</span></code> kwargs:</p>
+</div></blockquote>
+<p><strong>xscale</strong> : {‘linear’, ‘log’}, optional, default is ‘linear’</p>
 <blockquote>
-<div>agg_filter: unknown
-alpha: float or None 
+<div><p>Use a linear or log10 scale on the horizontal axis.</p>
+</div></blockquote>
+<p><strong>yscale</strong> : {‘linear’, ‘log’}, optional, default is ‘linear’</p>
+<blockquote>
+<div><p>Use a linear or log10 scale on the vertical axis.</p>
+</div></blockquote>
+<p><strong>mincnt</strong> : int &gt; 0, optional, default is <em>None</em></p>
+<blockquote>
+<div><p>If not <em>None</em>, only display cells with more than <em>mincnt</em>
+number of points in the cell</p>
+</div></blockquote>
+<p><strong>marginals</strong> : bool, optional, default is <em>False</em></p>
+<blockquote>
+<div><p>if marginals is <em>True</em>, plot the marginal density as
+colormapped rectagles along the bottom of the x-axis and
+left of the y-axis</p>
+</div></blockquote>
+<p><strong>extent</strong> : scalar, optional, default is <em>None</em></p>
+<blockquote>
+<div><p>The limits of the bins. The default assigns the limits
+based on <em>gridsize</em>, <em>x</em>, <em>y</em>, <em>xscale</em> and <em>yscale</em>.</p>
+<p>If <em>xscale</em> or <em>yscale</em> is set to ‘log’, the limits are
+expected to be the exponent for a power of 10. E.g. for
+x-limits of 1 and 50 in ‘linear’ scale and y-limits
+of 10 and 1000 in ‘log’ scale, enter (1, 50, 1, 3).</p>
+<p>Order of scalars is (left, right, bottom, top).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">object</p>
+<blockquote>
+<div><p>a <code class="xref py py-class docutils literal"><span class="pre">PolyCollection</span></code> instance; use
+<code class="xref py py-meth docutils literal"><span class="pre">get_array()</span></code> on
+this <code class="xref py py-class docutils literal"><span class="pre">PolyCollection</span></code> to get
+the counts in each hexagon.</p>
+<p>If <em>marginals</em> is <em>True</em>, horizontal
+bar and vertical bar (both PolyCollections) will be attached
+to the return collection as attributes <em>hbar</em> and <em>vbar</em>.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first"><strong>cmap</strong> : object, optional, default is <em>None</em></p>
+<blockquote>
+<div><p>a <code class="xref py py-class docutils literal"><span class="pre">matplotlib.colors.Colormap</span></code> instance. If <em>None</em>,
+defaults to rc <code class="docutils literal"><span class="pre">image.cmap</span></code>.</p>
+</div></blockquote>
+<p><strong>norm</strong> : object, optional, default is <em>None</em></p>
+<blockquote>
+<div><p><code class="xref py py-class docutils literal"><span class="pre">matplotlib.colors.Normalize</span></code> instance is used to
+scale luminance data to 0,1.</p>
+</div></blockquote>
+<p><strong>vmin, vmax</strong> : scalar, optional, default is <em>None</em></p>
+<blockquote>
+<div><p><em>vmin</em> and <em>vmax</em> are used in conjunction with <em>norm</em> to
+normalize luminance data. If <em>None</em>, the min and max of the
+color array <em>C</em> are used.  Note if you pass a norm instance
+your settings for <em>vmin</em> and <em>vmax</em> will be ignored.</p>
+</div></blockquote>
+<p><strong>alpha</strong> : scalar between 0 and 1, optional, default is <em>None</em></p>
+<blockquote>
+<div><p>the alpha value for the patches</p>
+</div></blockquote>
+<p><strong>linewidths</strong> : scalar, optional, default is <em>None</em></p>
+<blockquote>
+<div><p>If <em>None</em>, defaults to 1.0.</p>
+</div></blockquote>
+<p><strong>edgecolors</strong> : {‘face’, ‘none’, <em>None</em>} or mpl color, optional, default            is ‘face’</p>
+<blockquote class="last">
+<div><p>If ‘face’, draws the edges in the same color as the fill color.</p>
+<p>If ‘none’, no edge is drawn; this can sometimes lead to unsightly
+unpainted pixels between the hexagons.</p>
+<p>If <em>None</em>, draws outlines in the default color.</p>
+<p>If a matplotlib color arg, draws outlines in the specified color.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>The standard descriptions of all the
+<code class="xref py py-class docutils literal"><span class="pre">Collection</span></code> parameters:</p>
+<blockquote>
+<div><blockquote>
+<div>agg_filter: unknown</div></blockquote>
+<p>alpha: float or None 
 animated: [True | False] 
 antialiased or antialiaseds: Boolean or sequence of booleans 
 array: unknown
-axes: an <code class="xref py py-class docutils literal"><span class="pre">Axes</span></code> instance 
 clim: a length 2 sequence of floats 
 clip_box: a <code class="xref py py-class docutils literal"><span class="pre">matplotlib.transforms.Bbox</span></code> instance 
 clip_on: [True | False] 
@@ -1626,9 +1892,9 @@ edgecolor or edgecolors: matplotlib color spec or sequence of specs
 facecolor or facecolors: matplotlib color spec or sequence of specs 
 figure: a <code class="xref py py-class docutils literal"><span class="pre">matplotlib.figure.Figure</span></code> instance 
 gid: an id string 
-hatch: [ &#8216;/&#8217; | &#8216;\&#8217; | &#8216;|&#8217; | &#8216;-&#8216; | &#8216;+&#8217; | &#8216;x&#8217; | &#8216;o&#8217; | &#8216;O&#8217; | &#8216;.&#8217; | &#8216;*&#8217; ] 
-label: string or anything printable with &#8216;%s&#8217; conversion. 
-linestyle or dashes or linestyles: [&#8216;solid&#8217; | &#8216;dashed&#8217;, &#8216;dashdot&#8217;, &#8216;dotted&#8217; | (offset, on-off-dash-seq) | <code class="docutils literal"><span class="pre">'-'</span></code> | <code class="docutils literal"><span class="pre">'--'</span></code> | <code class="docutils literal"><span class="pre">'-.'</span></code> | <code class="docutils literal"><span class="pre">':'</span></code> | <code class="docutils literal"><span class="pre">'None'</span></code> | <code class="docutils literal"><span class="pre">'</span> <span class="pre">'</span></code> | <code class="docutils literal"><span class="pre">''</span></code>]
+hatch: [ ‘/’ | ‘' | ‘|’ | ‘-‘ | ‘+’ | ‘x’ | ‘o’ | ‘O’ | ‘.’ | ‘*’ ] 
+label: string or anything printable with ‘%s’ conversion. 
+linestyle or dashes or linestyles: [‘solid’ | ‘dashed’, ‘dashdot’, ‘dotted’ | (offset, on-off-dash-seq) | <code class="docutils literal"><span class="pre">'-'</span></code> | <code class="docutils literal"><span class="pre">'--'</span></code> | <code class="docutils literal"><span class="pre">'-.'</span></code> | <code class="docutils literal"><span class="pre">':'</span></code> | <code class="docutils literal"><span class="pre">'None'</span></code> | <code class="docutils literal"><span class="pre">'</span> <span class="pre">'</span></code> | <code class="docutils literal"><span class="pre">''</span></code>]
 linewidth or linewidths or lw: float or sequence of floats 
 norm: unknown
 offset_position: unknown
@@ -1643,23 +1909,17 @@ transform: <code class="xref py py-class docutils literal"><span class="pre">Tra
 url: a url string 
 urls: unknown
 visible: [True | False] 
-zorder: any number</div></blockquote>
-<p>The return value is a
-<code class="xref py py-class docutils literal"><span class="pre">PolyCollection</span></code> instance; use
-<code class="xref py py-meth docutils literal"><span class="pre">get_array()</span></code> on
-this <code class="xref py py-class docutils literal"><span class="pre">PolyCollection</span></code> to get
-the counts in each hexagon. If <em>marginals</em> is <em>True</em>, horizontal
-bar and vertical bar (both PolyCollections) will be attached
-to the return collection as attributes <em>hbar</em> and <em>vbar</em>.</p>
-<p><strong>Example:</strong></p>
-<p class="rubric">Notes</p>
+zorder: any number</p>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
 <p>In addition to the above described arguments, this function can take a
 <strong>data</strong> keyword argument. If such a <strong>data</strong> argument is given, the
 following arguments are replaced by <strong>data[&lt;arg&gt;]</strong>:</p>
-<ul class="simple">
-<li>All arguments with the following names: &#8216;y&#8217;, &#8216;x&#8217;.</li>
+<ul class="last simple">
+<li>All arguments with the following names: ‘x’, ‘y’.</li>
 </ul>
-<p>Additional kwargs: hold = [True|False] overrides default hold state</p>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -1667,11 +1927,11 @@ following arguments are replaced by <strong>data[&lt;arg&gt;]</strong>:</p>
 <code class="descname">hist</code><span class="sig-paren">(</span><em>x</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/plotter.html#Plotter.hist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.plotter.Plotter.hist" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot a histogram.</p>
 <p>Compute and draw the histogram of <em>x</em>. The return value is a
-tuple (<em>n</em>, <em>bins</em>, <em>patches</em>) or ([<em>n0</em>, <em>n1</em>, ...], <em>bins</em>,
-[<em>patches0</em>, <em>patches1</em>,...]) if the input contains multiple
+tuple (<em>n</em>, <em>bins</em>, <em>patches</em>) or ([<em>n0</em>, <em>n1</em>, …], <em>bins</em>,
+[<em>patches0</em>, <em>patches1</em>,…]) if the input contains multiple
 data.</p>
 <p>Multiple data can be provided via <em>x</em> as a list of datasets
-of potentially different length ([<em>x0</em>, <em>x1</em>, ...]), or as
+of potentially different length ([<em>x0</em>, <em>x1</em>, …]), or as
 a 2-D ndarray in which each column is a dataset.  Note that
 the ndarray form is transposed relative to the list form.</p>
 <p>Masked arrays are not supported at present.</p>
@@ -1684,51 +1944,58 @@ the ndarray form is transposed relative to the list form.</p>
 <div><p>Input values, this takes either a single array or a sequency of
 arrays which are not required to be of the same length</p>
 </div></blockquote>
-<p><strong>bins</strong> : integer or array_like, optional</p>
+<p><strong>bins</strong> : integer or array_like or ‘auto’, optional</p>
 <blockquote>
-<div><p>If an integer is given, <cite>bins + 1</cite> bin edges are returned,
+<div><p>If an integer is given, <code class="docutils literal"><span class="pre">bins</span> <span class="pre">+</span> <span class="pre">1</span></code> bin edges are returned,
 consistently with <code class="xref py py-func docutils literal"><span class="pre">numpy.histogram()</span></code> for numpy version &gt;=
 1.3.</p>
-<p>Unequally spaced bins are supported if <cite>bins</cite> is a sequence.</p>
-<p>default is 10</p>
+<p>Unequally spaced bins are supported if <em>bins</em> is a sequence.</p>
+<p>If Numpy 1.11 is installed, may also be <code class="docutils literal"><span class="pre">'auto'</span></code>.</p>
+<p>Default is taken from the rcParam <code class="docutils literal"><span class="pre">hist.bins</span></code>.</p>
 </div></blockquote>
 <p><strong>range</strong> : tuple or None, optional</p>
 <blockquote>
 <div><p>The lower and upper range of the bins. Lower and upper outliers
-are ignored. If not provided, <cite>range</cite> is (x.min(), x.max()). Range
-has no effect if <cite>bins</cite> is a sequence.</p>
-<p>If <cite>bins</cite> is a sequence or <cite>range</cite> is specified, autoscaling
+are ignored. If not provided, <em>range</em> is <code class="docutils literal"><span class="pre">(x.min(),</span> <span class="pre">x.max())</span></code>.
+Range has no effect if <em>bins</em> is a sequence.</p>
+<p>If <em>bins</em> is a sequence or <em>range</em> is specified, autoscaling
 is based on the specified bin range instead of the
 range of x.</p>
 <p>Default is <code class="docutils literal"><span class="pre">None</span></code></p>
 </div></blockquote>
-<p><strong>normed</strong> : boolean, optional</p>
+<p><strong>density</strong> : boolean, optional</p>
 <blockquote>
-<div><p>If <cite>True</cite>, the first element of the return tuple will
+<div><p>If <code class="docutils literal"><span class="pre">True</span></code>, the first element of the return tuple will
 be the counts normalized to form a probability density, i.e.,
-<code class="docutils literal"><span class="pre">n/(len(x)`dbin)</span></code>, i.e., the integral of the histogram will sum
-to 1. If <em>stacked</em> is also <em>True</em>, the sum of the histograms is
-normalized to 1.</p>
-<p>Default is <code class="docutils literal"><span class="pre">False</span></code></p>
+the area (or integral) under the histogram will sum to 1.
+This is achieved by dividing the count by the number of
+observations times the bin width and not dividing by the total
+number of observations. If <em>stacked</em> is also <code class="docutils literal"><span class="pre">True</span></code>, the sum of
+the histograms is normalized to 1.</p>
+<p>Default is <code class="docutils literal"><span class="pre">None</span></code> for both <em>normed</em> and <em>density</em>. If either is
+set, then that value will be used. If neither are set, then the
+args will be treated as <code class="docutils literal"><span class="pre">False</span></code>.</p>
+<p>If both <em>density</em> and <em>normed</em> are set an error is raised.</p>
 </div></blockquote>
 <p><strong>weights</strong> : (n, ) array_like or None, optional</p>
 <blockquote>
-<div><p>An array of weights, of the same shape as <cite>x</cite>.  Each value in <cite>x</cite>
+<div><p>An array of weights, of the same shape as <em>x</em>.  Each value in <em>x</em>
 only contributes its associated weight towards the bin count
-(instead of 1).  If <cite>normed</cite> is True, the weights are normalized,
-so that the integral of the density over the range remains 1.</p>
+(instead of 1).  If <em>normed</em> or <em>density</em> is <code class="docutils literal"><span class="pre">True</span></code>,
+the weights are normalized, so that the integral of the density
+over the range remains 1.</p>
 <p>Default is <code class="docutils literal"><span class="pre">None</span></code></p>
 </div></blockquote>
 <p><strong>cumulative</strong> : boolean, optional</p>
 <blockquote>
-<div><p>If <cite>True</cite>, then a histogram is computed where each bin gives the
+<div><p>If <code class="docutils literal"><span class="pre">True</span></code>, then a histogram is computed where each bin gives the
 counts in that bin plus all bins for smaller values. The last bin
-gives the total number of datapoints.  If <cite>normed</cite> is also <cite>True</cite>
-then the histogram is normalized such that the last bin equals 1.
-If <cite>cumulative</cite> evaluates to less than 0 (e.g., -1), the direction
-of accumulation is reversed.  In this case, if <cite>normed</cite> is also
-<cite>True</cite>, then the histogram is normalized such that the first bin
-equals 1.</p>
+gives the total number of datapoints. If <em>normed</em> or <em>density</em>
+is also <code class="docutils literal"><span class="pre">True</span></code> then the histogram is normalized such that the
+last bin equals 1. If <em>cumulative</em> evaluates to less than 0
+(e.g., -1), the direction of accumulation is reversed.
+In this case, if <em>normed</em> and/or <em>density</em> is also <code class="docutils literal"><span class="pre">True</span></code>, then
+the histogram is normalized such that the first bin equals 1.</p>
 <p>Default is <code class="docutils literal"><span class="pre">False</span></code></p>
 </div></blockquote>
 <p><strong>bottom</strong> : array_like, scalar, or None</p>
@@ -1739,56 +2006,57 @@ If an array, each bin is shifted independently and the length
 of bottom must match the number of bins.  If None, defaults to 0.</p>
 <p>Default is <code class="docutils literal"><span class="pre">None</span></code></p>
 </div></blockquote>
-<p><strong>histtype</strong> : {&#8216;bar&#8217;, &#8216;barstacked&#8217;, &#8216;step&#8217;,  &#8216;stepfilled&#8217;}, optional</p>
+<p><strong>histtype</strong> : {‘bar’, ‘barstacked’, ‘step’,  ‘stepfilled’}, optional</p>
 <blockquote>
 <div><p>The type of histogram to draw.</p>
 <ul class="simple">
-<li>&#8216;bar&#8217; is a traditional bar-type histogram.  If multiple data
+<li>‘bar’ is a traditional bar-type histogram.  If multiple data
 are given the bars are aranged side by side.</li>
-<li>&#8216;barstacked&#8217; is a bar-type histogram where multiple
+<li>‘barstacked’ is a bar-type histogram where multiple
 data are stacked on top of each other.</li>
-<li>&#8216;step&#8217; generates a lineplot that is by default
+<li>‘step’ generates a lineplot that is by default
 unfilled.</li>
-<li>&#8216;stepfilled&#8217; generates a lineplot that is by default
+<li>‘stepfilled’ generates a lineplot that is by default
 filled.</li>
 </ul>
-<p>Default is &#8216;bar&#8217;</p>
+<p>Default is ‘bar’</p>
 </div></blockquote>
-<p><strong>align</strong> : {&#8216;left&#8217;, &#8216;mid&#8217;, &#8216;right&#8217;}, optional</p>
+<p><strong>align</strong> : {‘left’, ‘mid’, ‘right’}, optional</p>
 <blockquote>
 <div><p>Controls how the histogram is plotted.</p>
 <blockquote>
 <div><ul class="simple">
-<li>&#8216;left&#8217;: bars are centered on the left bin edges.</li>
-<li>&#8216;mid&#8217;: bars are centered between the bin edges.</li>
-<li>&#8216;right&#8217;: bars are centered on the right bin edges.</li>
+<li>‘left’: bars are centered on the left bin edges.</li>
+<li>‘mid’: bars are centered between the bin edges.</li>
+<li>‘right’: bars are centered on the right bin edges.</li>
 </ul>
 </div></blockquote>
-<p>Default is &#8216;mid&#8217;</p>
+<p>Default is ‘mid’</p>
 </div></blockquote>
-<p><strong>orientation</strong> : {&#8216;horizontal&#8217;, &#8216;vertical&#8217;}, optional</p>
+<p><strong>orientation</strong> : {‘horizontal’, ‘vertical’}, optional</p>
 <blockquote>
-<div><p>If &#8216;horizontal&#8217;, <cite>~matplotlib.pyplot.barh</cite> will be used for
+<div><p>If ‘horizontal’, <cite>~matplotlib.pyplot.barh</cite> will be used for
 bar-type histograms and the <em>bottom</em> kwarg will be the left edges.</p>
 </div></blockquote>
 <p><strong>rwidth</strong> : scalar or None, optional</p>
 <blockquote>
 <div><p>The relative width of the bars as a fraction of the bin width.  If
-<cite>None</cite>, automatically compute the width.</p>
-<p>Ignored if <cite>histtype</cite> is &#8216;step&#8217; or &#8216;stepfilled&#8217;.</p>
+<code class="docutils literal"><span class="pre">None</span></code>, automatically compute the width.</p>
+<p>Ignored if <em>histtype</em> is ‘step’ or ‘stepfilled’.</p>
 <p>Default is <code class="docutils literal"><span class="pre">None</span></code></p>
 </div></blockquote>
 <p><strong>log</strong> : boolean, optional</p>
 <blockquote>
-<div><p>If <cite>True</cite>, the histogram axis will be set to a log scale. If <cite>log</cite>
-is <cite>True</cite> and <cite>x</cite> is a 1D array, empty bins will be filtered out
-and only the non-empty (<cite>n</cite>, <cite>bins</cite>, <cite>patches</cite>) will be returned.</p>
+<div><p>If <code class="docutils literal"><span class="pre">True</span></code>, the histogram axis will be set to a log scale. If
+<em>log</em> is <code class="docutils literal"><span class="pre">True</span></code> and <em>x</em> is a 1D array, empty bins will be
+filtered out and only the non-empty <code class="docutils literal"><span class="pre">(n,</span> <span class="pre">bins,</span> <span class="pre">patches)</span></code>
+will be returned.</p>
 <p>Default is <code class="docutils literal"><span class="pre">False</span></code></p>
 </div></blockquote>
 <p><strong>color</strong> : color or array_like of colors or None, optional</p>
 <blockquote>
 <div><p>Color spec or sequence of color specs, one per dataset.  Default
-(<cite>None</cite>) uses the standard line color sequence.</p>
+(<code class="docutils literal"><span class="pre">None</span></code>) uses the standard line color sequence.</p>
 <p>Default is <code class="docutils literal"><span class="pre">None</span></code></p>
 </div></blockquote>
 <p><strong>label</strong> : string or None, optional</p>
@@ -1800,21 +2068,22 @@ the label, so that the legend command will work as expected.</p>
 </div></blockquote>
 <p><strong>stacked</strong> : boolean, optional</p>
 <blockquote>
-<div><p>If <cite>True</cite>, multiple data are stacked on top of each other If
-<cite>False</cite> multiple data are aranged side by side if histtype is
-&#8216;bar&#8217; or on top of each other if histtype is &#8216;step&#8217;</p>
+<div><p>If <code class="docutils literal"><span class="pre">True</span></code>, multiple data are stacked on top of each other If
+<code class="docutils literal"><span class="pre">False</span></code> multiple data are aranged side by side if histtype is
+‘bar’ or on top of each other if histtype is ‘step’</p>
 <p>Default is <code class="docutils literal"><span class="pre">False</span></code></p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>n</strong> : array or list of arrays</p>
 <blockquote>
-<div><p>The values of the histogram bins. See <strong>normed</strong> and <strong>weights</strong>
-for a description of the possible semantics. If input <strong>x</strong> is an
-array, then this is an array of length <strong>nbins</strong>. If input is a
-sequence arrays <code class="docutils literal"><span class="pre">[data1,</span> <span class="pre">data2,..]</span></code>, then this is a list of
-arrays with the values of the histograms for each of the arrays
-in the same order.</p>
+<div><p>The values of the histogram bins. See <em>normed</em> or <em>density</em>
+and <em>weights</em> for a description of the possible semantics.
+If input <em>x</em> is an array, then this is an array of length
+<em>nbins</em>. If input is a sequence arrays
+<code class="docutils literal"><span class="pre">[data1,</span> <span class="pre">data2,..]</span></code>, then this is a list of arrays with
+the values of the histograms for each of the arrays in the
+same order.</p>
 </div></blockquote>
 <p><strong>bins</strong> : array</p>
 <blockquote>
@@ -1830,7 +2099,7 @@ or list of such list if multiple input datasets.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first last"><strong>kwargs</strong> : <cite>~matplotlib.patches.Patch</cite> properties</p>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last"><strong>**kwargs</strong> : <cite>~matplotlib.patches.Patch</cite> properties</p>
 </td>
 </tr>
 </tbody>
@@ -1843,14 +2112,19 @@ or list of such list if multiple input datasets.</p>
 </dl>
 </div>
 <p class="rubric">Notes</p>
+<p>Until numpy release 1.5, the underlying numpy histogram function was
+incorrect with <code class="docutils literal"><span class="pre">normed=True</span></code> if bin sizes were unequal.  MPL
+inherited that error. It is now corrected within MPL when using
+earlier numpy versions.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
 <p>In addition to the above described arguments, this function can take a
 <strong>data</strong> keyword argument. If such a <strong>data</strong> argument is given, the
 following arguments are replaced by <strong>data[&lt;arg&gt;]</strong>:</p>
-<ul class="simple">
-<li>All arguments with the following names: &#8216;x&#8217;, &#8216;weights&#8217;.</li>
+<ul class="last simple">
+<li>All arguments with the following names: ‘weights’, ‘x’.</li>
 </ul>
-<p>Additional kwargs: hold = [True|False] overrides default hold state</p>
-<p class="rubric">Examples</p>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -1915,7 +2189,25 @@ return value count histogram will also be set to nan upon return</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first last"><strong>kwargs</strong> : <code class="xref py py-meth docutils literal"><span class="pre">pcolorfast()</span></code> properties.</p>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first"><strong>cmap</strong> : {Colormap, string}, optional</p>
+<blockquote>
+<div><p>A <code class="xref py py-class docutils literal"><span class="pre">matplotlib.colors.Colormap</span></code> instance.  If not set, use rc
+settings.</p>
+</div></blockquote>
+<p><strong>norm</strong> : Normalize, optional</p>
+<blockquote>
+<div><p>A <code class="xref py py-class docutils literal"><span class="pre">matplotlib.colors.Normalize</span></code> instance is used to
+scale luminance data to <code class="docutils literal"><span class="pre">[0,</span> <span class="pre">1]</span></code>. If not set, defaults to
+<code class="docutils literal"><span class="pre">Normalize()</span></code>.</p>
+</div></blockquote>
+<p><strong>vmin/vmax</strong> : {None, scalar}, optional</p>
+<blockquote>
+<div><p>Arguments passed to the <cite>Normalize</cite> instance.</p>
+</div></blockquote>
+<p><strong>alpha</strong> : <code class="docutils literal"><span class="pre">0</span> <span class="pre">&lt;=</span> <span class="pre">scalar</span> <span class="pre">&lt;=</span> <span class="pre">1</span></code> or <code class="docutils literal"><span class="pre">None</span></code>, optional</p>
+<blockquote class="last">
+<div><p>The alpha blending value.</p>
+</div></blockquote>
 </td>
 </tr>
 </tbody>
@@ -1928,14 +2220,20 @@ return value count histogram will also be set to nan upon return</p>
 </dl>
 </div>
 <p class="rubric">Notes</p>
+<p>Rendering the histogram with a logarithmic color scale is
+accomplished by passing a <code class="xref py py-class docutils literal"><span class="pre">colors.LogNorm</span></code> instance to
+the <em>norm</em> keyword argument. Likewise, power-law normalization
+(similar in effect to gamma correction) can be accomplished with
+<code class="xref py py-class docutils literal"><span class="pre">colors.PowerNorm</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
 <p>In addition to the above described arguments, this function can take a
 <strong>data</strong> keyword argument. If such a <strong>data</strong> argument is given, the
 following arguments are replaced by <strong>data[&lt;arg&gt;]</strong>:</p>
-<ul class="simple">
-<li>All arguments with the following names: &#8216;y&#8217;, &#8216;x&#8217;, &#8216;weights&#8217;.</li>
+<ul class="last simple">
+<li>All arguments with the following names: ‘weights’, ‘x’, ‘y’.</li>
 </ul>
-<p>Additional kwargs: hold = [True|False] overrides default hold state</p>
-<p class="rubric">Examples</p>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -2082,7 +2380,7 @@ an arbitrary number of <em>x</em>, <em>y</em>, <em>fmt</em> groups can be specif
 </div>
 <p>Return value is a list of lines that were added.</p>
 <p>By default, each line is assigned a different style specified by a
-&#8216;style cycle&#8217;.  To change this behavior, you can edit the
+‘style cycle’.  To change this behavior, you can edit the
 axes.prop_cycle rcParam.</p>
 <p>The following format string characters are accepted to control
 the line style or marker:</p>
@@ -2189,28 +2487,28 @@ the line style or marker:</p>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>&#8216;b&#8217;</td>
+<tr class="row-even"><td>‘b’</td>
 <td>blue</td>
 </tr>
-<tr class="row-odd"><td>&#8216;g&#8217;</td>
+<tr class="row-odd"><td>‘g’</td>
 <td>green</td>
 </tr>
-<tr class="row-even"><td>&#8216;r&#8217;</td>
+<tr class="row-even"><td>‘r’</td>
 <td>red</td>
 </tr>
-<tr class="row-odd"><td>&#8216;c&#8217;</td>
+<tr class="row-odd"><td>‘c’</td>
 <td>cyan</td>
 </tr>
-<tr class="row-even"><td>&#8216;m&#8217;</td>
+<tr class="row-even"><td>‘m’</td>
 <td>magenta</td>
 </tr>
-<tr class="row-odd"><td>&#8216;y&#8217;</td>
+<tr class="row-odd"><td>‘y’</td>
 <td>yellow</td>
 </tr>
-<tr class="row-even"><td>&#8216;k&#8217;</td>
+<tr class="row-even"><td>‘k’</td>
 <td>black</td>
 </tr>
-<tr class="row-odd"><td>&#8216;w&#8217;</td>
+<tr class="row-odd"><td>‘w’</td>
 <td>white</td>
 </tr>
 </tbody>
@@ -2254,21 +2552,20 @@ marker, linestyle, and markercolor with:</p>
 alpha: float (0.0 transparent through 1.0 opaque) 
 animated: [True | False] 
 antialiased or aa: [True | False] 
-axes: an <code class="xref py py-class docutils literal"><span class="pre">Axes</span></code> instance 
 clip_box: a <code class="xref py py-class docutils literal"><span class="pre">matplotlib.transforms.Bbox</span></code> instance 
 clip_on: [True | False] 
 clip_path: [ (<code class="xref py py-class docutils literal"><span class="pre">Path</span></code>, <code class="xref py py-class docutils literal"><span class="pre">Transform</span></code>) | <code class="xref py py-class docutils literal"><span class="pre">Patch</span></code> | None ] 
 color or c: any matplotlib color 
 contains: a callable function 
-dash_capstyle: [&#8216;butt&#8217; | &#8216;round&#8217; | &#8216;projecting&#8217;] 
-dash_joinstyle: [&#8216;miter&#8217; | &#8216;round&#8217; | &#8216;bevel&#8217;] 
+dash_capstyle: [‘butt’ | ‘round’ | ‘projecting’] 
+dash_joinstyle: [‘miter’ | ‘round’ | ‘bevel’] 
 dashes: sequence of on/off ink in points 
-drawstyle: [&#8216;default&#8217; | &#8216;steps&#8217; | &#8216;steps-pre&#8217; | &#8216;steps-mid&#8217; | &#8216;steps-post&#8217;] 
+drawstyle: [‘default’ | ‘steps’ | ‘steps-pre’ | ‘steps-mid’ | ‘steps-post’] 
 figure: a <code class="xref py py-class docutils literal"><span class="pre">matplotlib.figure.Figure</span></code> instance 
-fillstyle: [&#8216;full&#8217; | &#8216;left&#8217; | &#8216;right&#8217; | &#8216;bottom&#8217; | &#8216;top&#8217; | &#8216;none&#8217;] 
+fillstyle: [‘full’ | ‘left’ | ‘right’ | ‘bottom’ | ‘top’ | ‘none’] 
 gid: an id string 
-label: string or anything printable with &#8216;%s&#8217; conversion. 
-linestyle or ls: [&#8216;solid&#8217; | &#8216;dashed&#8217;, &#8216;dashdot&#8217;, &#8216;dotted&#8217; | (offset, on-off-dash-seq) | <code class="docutils literal"><span class="pre">'-'</span></code> | <code class="docutils literal"><span class="pre">'--'</span></code> | <code class="docutils literal"><span class="pre">'-.'</span></code> | <code class="docutils literal"><span class="pre">':'</span></code> | <code class="docutils literal"><span class="pre">'None'</span></code> | <code class="docutils literal"><span class="pre">'</span> <span class="pre">'</span></code> | <code class="docutils literal"><span class="pre">''</span></code>]
+label: string or anything printable with ‘%s’ conversion. 
+linestyle or ls: [‘solid’ | ‘dashed’, ‘dashdot’, ‘dotted’ | (offset, on-off-dash-seq) | <code class="docutils literal"><span class="pre">'-'</span></code> | <code class="docutils literal"><span class="pre">'--'</span></code> | <code class="docutils literal"><span class="pre">'-.'</span></code> | <code class="docutils literal"><span class="pre">':'</span></code> | <code class="docutils literal"><span class="pre">'None'</span></code> | <code class="docutils literal"><span class="pre">'</span> <span class="pre">'</span></code> | <code class="docutils literal"><span class="pre">''</span></code>]
 linewidth or lw: float value in points 
 marker: <code class="xref py py-mod docutils literal"><span class="pre">A</span> <span class="pre">valid</span> <span class="pre">marker</span> <span class="pre">style</span></code>
 markeredgecolor or mec: any matplotlib color 
@@ -2283,8 +2580,8 @@ pickradius: float distance in points
 rasterized: [True | False | None] 
 sketch_params: unknown
 snap: unknown
-solid_capstyle: [&#8216;butt&#8217; | &#8216;round&#8217; |  &#8216;projecting&#8217;] 
-solid_joinstyle: [&#8216;miter&#8217; | &#8216;round&#8217; | &#8216;bevel&#8217;] 
+solid_capstyle: [‘butt’ | ‘round’ |  ‘projecting’] 
+solid_joinstyle: [‘miter’ | ‘round’ | ‘bevel’] 
 transform: a <code class="xref py py-class docutils literal"><span class="pre">matplotlib.transforms.Transform</span></code> instance 
 url: a url string 
 visible: [True | False] 
@@ -2295,21 +2592,22 @@ zorder: any number</div></blockquote>
 <code class="xref py py-meth docutils literal"><span class="pre">autoscale_view()</span></code> to determine
 whether the <em>x</em> and <em>y</em> axes are autoscaled; the default is
 <em>True</em>.</p>
-<p class="rubric">Notes</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
 <p>In addition to the above described arguments, this function can take a
 <strong>data</strong> keyword argument. If such a <strong>data</strong> argument is given, the
 following arguments are replaced by <strong>data[&lt;arg&gt;]</strong>:</p>
-<ul class="simple">
-<li>All arguments with the following names: &#8216;y&#8217;, &#8216;x&#8217;.</li>
+<ul class="last simple">
+<li>All arguments with the following names: ‘x’, ‘y’.</li>
 </ul>
-<p>Additional kwargs: hold = [True|False] overrides default hold state</p>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="ezdata.plotter.Plotter.scatter">
 <code class="descname">scatter</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>c='k'</em>, <em>s=20</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/plotter.html#Plotter.scatter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.plotter.Plotter.scatter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Make a scatter plot of x vs y, where x and y are sequence like objects
-of the same length.</p>
+<dd><p>Make a scatter plot of <cite>x</cite> vs <cite>y</cite>.</p>
+<p>Marker size is scaled by <cite>s</cite> and marker color is mapped to <cite>c</cite>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2318,11 +2616,11 @@ of the same length.</p>
 <blockquote>
 <div><p>Input data</p>
 </div></blockquote>
-<p><strong>s</strong> : scalar or array_like, shape (n, ), optional, default: 20</p>
+<p><strong>s</strong> : scalar or array_like, shape (n, ), optional</p>
 <blockquote>
-<div><p>size in points^2.</p>
+<div><p>size in points^2.  Default is <cite>rcParams[‘lines.markersize’] ** 2</cite>.</p>
 </div></blockquote>
-<p><strong>c</strong> : color, sequence, or sequence of color, optional, default: &#8216;b&#8217;</p>
+<p><strong>c</strong> : color, sequence, or sequence of color, optional, default: ‘b’</p>
 <blockquote>
 <div><p><cite>c</cite> can be a single color format string, or a sequence of color
 specifications of length <cite>N</cite>, or a sequence of <cite>N</cite> numbers to be
@@ -2333,7 +2631,7 @@ values to be colormapped.  <cite>c</cite> can be a 2-D array in which the
 rows are RGB or RGBA, however, including the case of a single
 row to specify the same color for all points.</p>
 </div></blockquote>
-<p><strong>marker</strong> : <cite>~matplotlib.markers.MarkerStyle</cite>, optional, default: &#8216;o&#8217;</p>
+<p><strong>marker</strong> : <cite>~matplotlib.markers.MarkerStyle</cite>, optional, default: ‘o’</p>
 <blockquote>
 <div><p>See <cite>~matplotlib.markers</cite> for more information on the different
 styles of markers scatter supports. <cite>marker</cite> can be either
@@ -2367,13 +2665,22 @@ settings for <cite>vmin</cite> and <cite>vmax</cite> will be ignored.</p>
 <blockquote>
 <div><p>If None, defaults to (lines.linewidth,).</p>
 </div></blockquote>
+<p><strong>verts</strong> : sequence of (x, y), optional</p>
+<blockquote>
+<div><p>If <cite>marker</cite> is None, these vertices will be used to
+construct the marker.  The center of the marker is located
+at (0,0) in normalized units.  The overall marker is rescaled
+by <code class="docutils literal"><span class="pre">s</span></code>.</p>
+</div></blockquote>
 <p><strong>edgecolors</strong> : color or sequence of color, optional, default: None</p>
 <blockquote>
-<div><p>If None, defaults to (patch.edgecolor).
-If &#8216;face&#8217;, the edge color will always be the same as
-the face color.  If it is &#8216;none&#8217;, the patch boundary will not
-be drawn.  For non-filled markers, the <cite>edgecolors</cite> kwarg
-is ignored; color is determined by <cite>c</cite>.</p>
+<div><p>If None, defaults to ‘face’</p>
+<p>If ‘face’, the edge color will always be the same as
+the face color.</p>
+<p>If it is ‘none’, the patch boundary will not
+be drawn.</p>
+<p>For non-filled markers, the <cite>edgecolors</cite> kwarg
+is ignored and forced to ‘face’ internally.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -2381,21 +2688,47 @@ is ignored; color is determined by <cite>c</cite>.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first last"><strong>kwargs</strong> : <cite>~matplotlib.collections.Collection</cite> properties</p>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last"><strong>**kwargs</strong> : <cite>~matplotlib.collections.Collection</cite> properties</p>
 </td>
 </tr>
 </tbody>
 </table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<dl class="last docutils">
+<dt><a class="reference internal" href="#ezdata.plotter.Plotter.plot" title="ezdata.plotter.Plotter.plot"><code class="xref py py-obj docutils literal"><span class="pre">plot</span></code></a></dt>
+<dd>to plot scatter plots when markers are identical in size and color</dd>
+</dl>
+</div>
 <p class="rubric">Notes</p>
+<ul>
+<li><p class="first">The <cite>plot</cite> function will be faster for scatterplots where markers
+don’t vary in size or color.</p>
+</li>
+<li><p class="first">Any or all of <cite>x</cite>, <cite>y</cite>, <cite>s</cite>, and <cite>c</cite> may be masked arrays, in which
+case all masks will be combined and only unmasked points will be
+plotted.</p>
+<p>Fundamentally, scatter works with 1-D arrays; <cite>x</cite>, <cite>y</cite>, <cite>s</cite>, and <cite>c</cite>
+may be input as 2-D arrays, but within scatter they will be
+flattened. The exception is <cite>c</cite>, which will be flattened only if its
+size matches the size of <cite>x</cite> and <cite>y</cite>.</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
 <p>In addition to the above described arguments, this function can take a
 <strong>data</strong> keyword argument. If such a <strong>data</strong> argument is given, the
 following arguments are replaced by <strong>data[&lt;arg&gt;]</strong>:</p>
-<ul class="simple">
-<li>All arguments with the following names: &#8216;c&#8217;, &#8216;facecolor&#8217;, &#8216;color&#8217;, &#8216;y&#8217;, &#8216;linewidths&#8217;, &#8216;x&#8217;, &#8216;edgecolors&#8217;, &#8216;s&#8217;, &#8216;facecolors&#8217;.</li>
+<ul class="last simple">
+<li>All arguments with the following names: ‘c’, ‘color’, ‘edgecolors’, ‘facecolor’, ‘facecolors’, ‘linewidths’, ‘s’, ‘x’, ‘y’.</li>
 </ul>
-<p>Additional kwargs: hold = [True|False] overrides default hold state</p>
-<p class="rubric">Examples</p>
+</div>
 </dd></dl>
+
+<dl class="method">
+<dt id="ezdata.plotter.Plotter.set_options">
+<code class="descname">set_options</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/plotter.html#Plotter.set_options"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.plotter.Plotter.set_options" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="ezdata.plotter.Plotter.subplot">
@@ -2408,67 +2741,63 @@ Generates a subplot with given arguments and returns self.</p>
 <dt id="ezdata.plotter.Plotter.violinplot">
 <code class="descname">violinplot</code><span class="sig-paren">(</span><em>dataset</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/plotter.html#Plotter.violinplot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.plotter.Plotter.violinplot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make a violin plot.</p>
-<blockquote>
-<div><p>Call signature:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">violinplot</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">positions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vert</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">widths</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
-           <span class="n">showmeans</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">showextrema</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">showmedians</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-           <span class="n">points</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">bw_method</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-</pre></div>
-</div>
 <p>Make a violin plot for each column of <em>dataset</em> or each vector in
 sequence <em>dataset</em>.  Each filled area extends to represent the
 entire data range, with optional lines at the mean, the median,
 the minimum, and the maximum.</p>
-</div></blockquote>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>dataset</strong> : Array or a sequence of vectors.</p>
 <blockquote>
-<div><blockquote>
 <div><p>The input data.</p>
 </div></blockquote>
-<dl class="docutils">
-<dt>positions</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">array-like, default = [1, 2, ..., n]</span><dd><p class="first last">Sets the positions of the violins. The ticks and limits are
+<p><strong>positions</strong> : array-like, default = [1, 2, …, n]</p>
+<blockquote>
+<div><p>Sets the positions of the violins. The ticks and limits are
 automatically set to match the positions.</p>
-</dd>
-<dt>vert</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">bool, default = True.</span><dd><p class="first last">If true, creates a vertical violin plot.
+</div></blockquote>
+<p><strong>vert</strong> : bool, default = True.</p>
+<blockquote>
+<div><p>If true, creates a vertical violin plot.
 Otherwise, creates a horizontal violin plot.</p>
-</dd>
-<dt>widths</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">array-like, default = 0.5</span><dd><p class="first last">Either a scalar or a vector that sets the maximal width of
+</div></blockquote>
+<p><strong>widths</strong> : array-like, default = 0.5</p>
+<blockquote>
+<div><p>Either a scalar or a vector that sets the maximal width of
 each violin. The default is 0.5, which uses about half of the
 available horizontal space.</p>
-</dd>
-<dt>showmeans</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">bool, default = False</span><dd><p class="first last">If <cite>True</cite>, will toggle rendering of the means.</p>
-</dd>
-<dt>showextrema</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">bool, default = True</span><dd><p class="first last">If <cite>True</cite>, will toggle rendering of the extrema.</p>
-</dd>
-<dt>showmedians</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">bool, default = False</span><dd><p class="first last">If <cite>True</cite>, will toggle rendering of the medians.</p>
-</dd>
-<dt>points</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">scalar, default = 100</span><dd><p class="first last">Defines the number of points to evaluate each of the
+</div></blockquote>
+<p><strong>showmeans</strong> : bool, default = False</p>
+<blockquote>
+<div><p>If <cite>True</cite>, will toggle rendering of the means.</p>
+</div></blockquote>
+<p><strong>showextrema</strong> : bool, default = True</p>
+<blockquote>
+<div><p>If <cite>True</cite>, will toggle rendering of the extrema.</p>
+</div></blockquote>
+<p><strong>showmedians</strong> : bool, default = False</p>
+<blockquote>
+<div><p>If <cite>True</cite>, will toggle rendering of the medians.</p>
+</div></blockquote>
+<p><strong>points</strong> : scalar, default = 100</p>
+<blockquote>
+<div><p>Defines the number of points to evaluate each of the
 gaussian kernel density estimations at.</p>
-</dd>
-<dt>bw_method</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">str, scalar or callable, optional</span><dd><p class="first last">The method used to calculate the estimator bandwidth.  This can be
-&#8216;scott&#8217;, &#8216;silverman&#8217;, a scalar constant or a callable.  If a
+</div></blockquote>
+<p><strong>bw_method</strong> : str, scalar or callable, optional</p>
+<blockquote>
+<div><p>The method used to calculate the estimator bandwidth.  This can be
+‘scott’, ‘silverman’, a scalar constant or a callable.  If a
 scalar, this will be used directly as <cite>kde.factor</cite>.  If a
 callable, it should take a <cite>GaussianKDE</cite> instance as its only
-parameter and return a scalar. If None (default), &#8216;scott&#8217; is used.</p>
-</dd>
-</dl>
+parameter and return a scalar. If None (default), ‘scott’ is used.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>result</strong> : dict</p>
-<blockquote class="last">
+<blockquote>
 <div><p>A dictionary mapping each component of the violinplot to a
 list of the corresponding collection instances created. The
 dictionary has the following keys:</p>
@@ -2480,38 +2809,39 @@ containing the filled area of each violin.</li>
 <li><code class="docutils literal"><span class="pre">cmeans</span></code>: A
 <code class="xref py py-class docutils literal"><span class="pre">matplotlib.collections.LineCollection</span></code> instance
 created to identify the mean values of each of the
-violin&#8217;s distribution.</li>
+violin’s distribution.</li>
 <li><code class="docutils literal"><span class="pre">cmins</span></code>: A
 <code class="xref py py-class docutils literal"><span class="pre">matplotlib.collections.LineCollection</span></code> instance
-created to identify the bottom of each violin&#8217;s
+created to identify the bottom of each violin’s
 distribution.</li>
 <li><code class="docutils literal"><span class="pre">cmaxes</span></code>: A
 <code class="xref py py-class docutils literal"><span class="pre">matplotlib.collections.LineCollection</span></code> instance
-created to identify the top of each violin&#8217;s
+created to identify the top of each violin’s
 distribution.</li>
 <li><code class="docutils literal"><span class="pre">cbars</span></code>: A
 <code class="xref py py-class docutils literal"><span class="pre">matplotlib.collections.LineCollection</span></code> instance
-created to identify the centers of each violin&#8217;s
+created to identify the centers of each violin’s
 distribution.</li>
 <li><code class="docutils literal"><span class="pre">cmedians</span></code>: A
 <code class="xref py py-class docutils literal"><span class="pre">matplotlib.collections.LineCollection</span></code> instance
 created to identify the median values of each of the
-violin&#8217;s distribution.</li>
+violin’s distribution.</li>
 </ul>
 </div></blockquote>
 </div></blockquote>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p>In addition to the above described arguments, this function can take a
+<strong>data</strong> keyword argument. If such a <strong>data</strong> argument is given, the
+following arguments are replaced by <strong>data[&lt;arg&gt;]</strong>:</p>
+<ul class="last simple">
+<li>All arguments with the following names: ‘dataset’.</li>
+</ul>
+</div>
 </td>
 </tr>
 </tbody>
 </table>
-<p class="rubric">Notes</p>
-<p>In addition to the above described arguments, this function can take a
-<strong>data</strong> keyword argument. If such a <strong>data</strong> argument is given, the
-following arguments are replaced by <strong>data[&lt;arg&gt;]</strong>:</p>
-<ul class="simple">
-<li>All arguments with the following names: &#8216;dataset&#8217;.</li>
-</ul>
-<p>Additional kwargs: hold = [True|False] overrides default hold state</p>
 </dd></dl>
 
 </dd></dl>
@@ -2593,7 +2923,7 @@ following arguments are replaced by <strong>data[&lt;arg&gt;]</strong>:</p>
 <code class="descclassname">ezdata.plotter.</code><code class="descname">evalexpr</code><span class="sig-paren">(</span><em>data</em>, <em>expr</em>, <em>exprvars=None</em>, <em>dtype=&lt;class 'float'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/plotter.html#evalexpr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.plotter.evalexpr" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
 <dt>evaluate expression based on the data and external variables</dt>
-<dd>all np function can be used (log, exp, pi...)</dd>
+<dd>all np function can be used (log, exp, pi…)</dd>
 </dl>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -2694,15 +3024,14 @@ default is <cite>s</cite>, i.e., a square</p>
 </dl>
 <div class="section" id="requirements">
 <h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
-<ul>
+<ul class="simple">
 <li><dl class="first docutils">
 <dt>FIT format:</dt>
 <dd><ul class="first last">
 <li><dl class="first docutils">
 <dt>astropy:</dt>
-<dd><p class="first last">provides a replacement to pyfits
-pyfits can still be used instead but astropy is now the default</p>
-</dd>
+<dd>provides a replacement to pyfits
+pyfits can still be used instead but astropy is now the default</dd>
 </dl>
 </li>
 </ul>
@@ -2711,7 +3040,7 @@ pyfits can still be used instead but astropy is now the default</p>
 </li>
 <li><dl class="first docutils">
 <dt>HDF5 format:</dt>
-<dd><ul class="first last simple">
+<dd><ul class="first last">
 <li>pytables</li>
 </ul>
 </dd>
@@ -2757,9 +3086,9 @@ package.</p>
 <blockquote>
 <div><dl class="docutils">
 <dt>type of outputs</dt>
-<dd><p class="first last">0 &#8211; minimal, indices of matching coordinates
-1 &#8211; indices and distances of matching coordinates
-2 &#8211; full, boolean filter and distances</p>
+<dd><p class="first last">0 – minimal, indices of matching coordinates
+1 – indices and distances of matching coordinates
+2 – full, boolean filter and distances</p>
 </dd>
 </dl>
 </div></blockquote>
@@ -2788,21 +3117,22 @@ package.</p>
 <dl class="staticmethod">
 <dt id="ezdata.simpletable.AstroHelpers.deg2dms">
 <em class="property">static </em><code class="descname">deg2dms</code><span class="sig-paren">(</span><em>val</em>, <em>delim=':'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/simpletable.html#AstroHelpers.deg2dms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.simpletable.AstroHelpers.deg2dms" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert degrees into hex coordinates
-Parameters
-&#8212;&#8212;&#8212;-
-deg: float</p>
-<blockquote>
-<div>angle in degrees</div></blockquote>
-<dl class="docutils">
-<dt>delimiter: str</dt>
-<dd>character delimiting the fields</dd>
-</dl>
+<dd><p>Convert degrees into hex coordinates</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">str: string or sequence</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>deg: float</strong></p>
+<blockquote>
+<div><p>angle in degrees</p>
+</div></blockquote>
+<p><strong>delimiter: str</strong></p>
+<blockquote>
+<div><p>character delimiting the fields</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">str: string or sequence</p>
 <blockquote class="last">
 <div><p>string to convert</p>
 </div></blockquote>
@@ -2843,21 +3173,22 @@ deg: float</p>
 <dl class="staticmethod">
 <dt id="ezdata.simpletable.AstroHelpers.dms2deg">
 <em class="property">static </em><code class="descname">dms2deg</code><span class="sig-paren">(</span><em>_str</em>, <em>delim=':'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/simpletable.html#AstroHelpers.dms2deg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.simpletable.AstroHelpers.dms2deg" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert hex coordinates into degrees
-Parameters
-&#8212;&#8212;&#8212;-
-str: string or sequence</p>
-<blockquote>
-<div>string to convert</div></blockquote>
-<dl class="docutils">
-<dt>delimiter: str</dt>
-<dd>character delimiting the fields</dd>
-</dl>
+<dd><p>Convert hex coordinates into degrees</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">deg: float</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>str: string or sequence</strong></p>
+<blockquote>
+<div><p>string to convert</p>
+</div></blockquote>
+<p><strong>delimiter: str</strong></p>
+<blockquote>
+<div><p>character delimiting the fields</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">deg: float</p>
 <blockquote class="last">
 <div><p>angle in degrees</p>
 </div></blockquote>
@@ -2873,6 +3204,46 @@ str: string or sequence</p>
 <dd><p>Transform between Galactic, celestial, and ecliptic coordinates.
 Celestial coordinates (RA, Dec) should be given in equinox J2000
 unless the b1950 is True.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="22%" />
+<col width="19%" />
+<col width="16%" />
+<col width="16%" />
+<col width="17%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>select</td>
+<td>From</td>
+<td>To</td>
+<td>select</td>
+<td>From</td>
+<td>To</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>RA-Dec (2000)</td>
+<td>Galactic</td>
+<td>4</td>
+<td>Ecliptic</td>
+<td>RA-Dec</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>Galactic</td>
+<td>RA-DEC</td>
+<td>5</td>
+<td>Ecliptic</td>
+<td>Galactic</td>
+</tr>
+<tr class="row-even"><td>3</td>
+<td>RA-Dec</td>
+<td>Ecliptic</td>
+<td>6</td>
+<td>Galactic</td>
+<td>Ecliptic</td>
+</tr>
+</tbody>
+</table>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2903,13 +3274,15 @@ unless the b1950 is True.</p>
 <blockquote>
 <div><p>Output Latitude in DEGREES</p>
 </div></blockquote>
-<p>REVISION HISTORY:</p>
-<p>Written W. Landsman,  February 1987</p>
-<p>Adapted from Fortran by Daryl Yentis NRL</p>
-<p>Converted to IDL V5.0   W. Landsman   September 1997</p>
-<p>Made J2000 the default, added /FK4 keyword  W. Landsman December 1998</p>
-<p>Add option to specify SELECT as a keyword W. Landsman March 2003</p>
-<p class="last">Converted from IDL to numerical Python: Erin Sheldon, NYU, 2008-07-02</p>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Written W. Landsman,  February 1987
+Adapted from Fortran by Daryl Yentis NRL
+Converted to IDL V5.0   W. Landsman   September 1997
+Made J2000 the default, added /FK4 keyword  W. Landsman December 1998
+Add option to specify SELECT as a keyword W. Landsman March 2003
+Converted from IDL to numerical Python: Erin Sheldon, NYU, 2008-07-02</p>
+</div>
 </td>
 </tr>
 </tbody>
@@ -3020,9 +3393,9 @@ tools especially conesearch</p>
 <blockquote>
 <div><dl class="docutils">
 <dt>type of outputs</dt>
-<dd><p class="first last">0 &#8211; minimal, indices of matching coordinates
-1 &#8211; indices and distances of matching coordinates
-2 &#8211; full, boolean filter and distances</p>
+<dd><p class="first last">0 – minimal, indices of matching coordinates
+1 – indices and distances of matching coordinates
+2 – full, boolean filter and distances</p>
 </dd>
 </dl>
 </div></blockquote>
@@ -3118,32 +3491,39 @@ includes mathematical operations and attribute names</p>
 <dl class="method">
 <dt id="ezdata.simpletable.AstroTable.zoneSearch">
 <code class="descname">zoneSearch</code><span class="sig-paren">(</span><em>ramin</em>, <em>ramax</em>, <em>decmin</em>, <em>decmax</em>, <em>outtype=0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/simpletable.html#AstroTable.zoneSearch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.simpletable.AstroTable.zoneSearch" title="Permalink to this definition">¶</a></dt>
-<dd><p>Perform a zone search on a table, i.e., a rectangular selection
-Parameters
-&#8212;&#8212;&#8212;-
-ramin: float</p>
-<blockquote>
-<div>minimal value of RA</div></blockquote>
-<dl class="docutils">
-<dt>ramax: float</dt>
-<dd>maximal value of RA</dd>
-<dt>decmin: float</dt>
-<dd>minimal value of DEC</dd>
-<dt>decmax: float</dt>
-<dd>maximal value of DEC</dd>
-<dt>outtype: int</dt>
-<dd><dl class="first last docutils">
-<dt>type of outputs</dt>
-<dd>0 or 1 &#8211; minimal, indices of matching coordinates
-2 &#8211; full, boolean filter and distances</dd>
-</dl>
-</dd>
-</dl>
+<dd><p>Perform a zone search on a table, i.e., a rectangular selection</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">r: sequence</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ramin: float</strong></p>
+<blockquote>
+<div><p>minimal value of RA</p>
+</div></blockquote>
+<p><strong>ramax: float</strong></p>
+<blockquote>
+<div><p>maximal value of RA</p>
+</div></blockquote>
+<p><strong>decmin: float</strong></p>
+<blockquote>
+<div><p>minimal value of DEC</p>
+</div></blockquote>
+<p><strong>decmax: float</strong></p>
+<blockquote>
+<div><p>maximal value of DEC</p>
+</div></blockquote>
+<p><strong>outtype: int</strong></p>
+<blockquote>
+<div><dl class="docutils">
+<dt>type of outputs</dt>
+<dd><p class="first last">0 or 1 – minimal, indices of matching coordinates
+2 – full, boolean filter and distances</p>
+</dd>
+</dl>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">r: sequence</p>
 <blockquote class="last">
 <div><p>indices or conditional sequence of matching values</p>
 </div></blockquote>
@@ -3164,26 +3544,26 @@ around numpy recarrays</p>
 <p class="rubric">Attributes</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="7%" />
-<col width="93%" />
+<col width="8%" />
+<col width="92%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>fname: str or object</td>
+<tr class="row-odd"><td><strong>fname: str or object</strong></td>
 <td>if str, the file to read from. This may be limited to the format currently handled automatically. If the format is not correctly handled, you can try by providing an object.__  if object with a structure like dict, ndarray, or recarray-like the data will be encapsulated into a Table</td>
 </tr>
-<tr class="row-even"><td>caseless: bool</td>
+<tr class="row-even"><td><strong>caseless: bool</strong></td>
 <td>if set, column names will be caseless during operations</td>
 </tr>
-<tr class="row-odd"><td>aliases: dict</td>
+<tr class="row-odd"><td><strong>aliases: dict</strong></td>
 <td>set of column aliases (can be defined later <a class="reference internal" href="#ezdata.simpletable.SimpleTable.set_alias" title="ezdata.simpletable.SimpleTable.set_alias"><code class="xref py py-func docutils literal"><span class="pre">set_alias()</span></code></a>)</td>
 </tr>
-<tr class="row-even"><td>units: dict</td>
+<tr class="row-even"><td><strong>units: dict</strong></td>
 <td>set of column units (can be defined later <a class="reference internal" href="#ezdata.simpletable.SimpleTable.set_unit" title="ezdata.simpletable.SimpleTable.set_unit"><code class="xref py py-func docutils literal"><span class="pre">set_unit()</span></code></a>)</td>
 </tr>
-<tr class="row-odd"><td>desc: dict</td>
+<tr class="row-odd"><td><strong>desc: dict</strong></td>
 <td>set of column description or comments (can be defined later <a class="reference internal" href="#ezdata.simpletable.SimpleTable.set_comment" title="ezdata.simpletable.SimpleTable.set_comment"><code class="xref py py-func docutils literal"><span class="pre">set_comment()</span></code></a>)</td>
 </tr>
-<tr class="row-even"><td>header: dict</td>
+<tr class="row-even"><td><strong>header: dict</strong></td>
 <td>key, value pair corresponding to the attributes of the table</td>
 </tr>
 </tbody>
@@ -3382,7 +3762,7 @@ is false.</p>
 <code class="descname">evalexpr</code><span class="sig-paren">(</span><em>expr</em>, <em>exprvars=None</em>, <em>dtype=&lt;class 'float'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/simpletable.html#SimpleTable.evalexpr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.simpletable.SimpleTable.evalexpr" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
 <dt>evaluate expression based on the data and external variables</dt>
-<dd>all np function can be used (log, exp, pi...)</dd>
+<dd>all np function can be used (log, exp, pi…)</dd>
 </dl>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -3479,12 +3859,14 @@ master table).</p>
 <dl class="method">
 <dt id="ezdata.simpletable.SimpleTable.info">
 <code class="descname">info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/simpletable.html#SimpleTable.info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.simpletable.SimpleTable.info" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>prints information on the table</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="ezdata.simpletable.SimpleTable.items">
 <code class="descname">items</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/simpletable.html#SimpleTable.items"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.simpletable.SimpleTable.items" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Iterator on the (key, value) pairs</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="ezdata.simpletable.SimpleTable.iterkeys">
@@ -3521,12 +3903,12 @@ are not looked for by the algorithm.</p>
 <blockquote>
 <div><p>Table to join with</p>
 </div></blockquote>
-<p><strong>jointype: str in {&#8216;inner&#8217;, &#8216;outer&#8217;, &#8216;leftouter&#8217;}</strong></p>
+<p><strong>jointype: str in {‘inner’, ‘outer’, ‘leftouter’}</strong></p>
 <blockquote>
 <div><ul class="simple">
-<li>&#8216;inner&#8217;     : returns the elements common to both r1 and r2.</li>
-<li>&#8216;outer&#8217;     : returns the common elements as well as the elements of r1 not in r2 and the elements of not in r2.</li>
-<li>&#8216;leftouter&#8217; : returns the common elements and the elements of r1 not in r2.</li>
+<li>‘inner’     : returns the elements common to both r1 and r2.</li>
+<li>‘outer’     : returns the common elements as well as the elements of r1 not in r2 and the elements of not in r2.</li>
+<li>‘leftouter’ : returns the common elements and the elements of r1 not in r2.</li>
 </ul>
 </div></blockquote>
 <p><strong>r1postfix: str</strong></p>
@@ -3555,7 +3937,7 @@ are not looked for by the algorithm.</p>
 for the two arrays and concatenating the result. This array is
 then sorted, and the common entries selected. The output is
 constructed by filling the fields with the selected entries.
-Matching is not preserved if there are some duplicates...</li>
+Matching is not preserved if there are some duplicates…</li>
 </ul>
 </div>
 </td>
@@ -3626,7 +4008,7 @@ matching uses 2 columns that are compared in values</p>
 <dl class="attribute">
 <dt id="ezdata.simpletable.SimpleTable.name">
 <code class="descname">name</code><a class="headerlink" href="#ezdata.simpletable.SimpleTable.name" title="Permalink to this definition">¶</a></dt>
-<dd><p>name of the table given by the Header[&#8216;NAME&#8217;] attribute</p>
+<dd><p>name of the table given by the Header[‘NAME’] attribute</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -4017,7 +4399,24 @@ the existing table (and does not return a new table).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">tab: Table instance</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fn: callable or sequence of callables</strong></p>
+<blockquote>
+<div><p>functions to apply to each column
+default: (np.mean, np.std, np.nanmin, np.nanmax)</p>
+</div></blockquote>
+<p><strong>fields: str or sequence</strong></p>
+<blockquote>
+<div><p>any key or key expression to subselect columns
+default is all columns</p>
+</div></blockquote>
+<p><strong>fill: value</strong></p>
+<blockquote>
+<div><p>value when not applicable
+default np.nan</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">tab: Table instance</p>
 <blockquote class="last">
 <div><p>collection of statistics, one column per function in fn and 1 ligne
 per column in the table</p>
@@ -4032,7 +4431,7 @@ per column in the table</p>
 <dt id="ezdata.simpletable.SimpleTable.take">
 <code class="descname">take</code><span class="sig-paren">(</span><em>indices</em>, <em>axis=None</em>, <em>out=None</em>, <em>mode='raise'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/simpletable.html#SimpleTable.take"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.simpletable.SimpleTable.take" title="Permalink to this definition">¶</a></dt>
 <dd><p>Take elements from an array along an axis.</p>
-<p>This function does the same thing as &#8220;fancy&#8221; indexing (indexing arrays
+<p>This function does the same thing as “fancy” indexing (indexing arrays
 using arrays); however, it can be easier to use if you need elements
 along a given axis.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -4054,15 +4453,15 @@ input array is used.</p>
 <div><p>If provided, the result will be placed in this array. It should
 be of the appropriate shape and dtype.</p>
 </div></blockquote>
-<p><strong>mode</strong> : {&#8216;raise&#8217;, &#8216;wrap&#8217;, &#8216;clip&#8217;}, optional</p>
+<p><strong>mode</strong> : {‘raise’, ‘wrap’, ‘clip’}, optional</p>
 <blockquote>
 <div><p>Specifies how out-of-bounds indices will behave.</p>
 <ul class="simple">
-<li>&#8216;raise&#8217; &#8211; raise an error (default)</li>
-<li>&#8216;wrap&#8217; &#8211; wrap around</li>
-<li>&#8216;clip&#8217; &#8211; clip to the range</li>
+<li>‘raise’ – raise an error (default)</li>
+<li>‘wrap’ – wrap around</li>
+<li>‘clip’ – clip to the range</li>
 </ul>
-<p>&#8216;clip&#8217; mode means that all indices that are too large are replaced
+<p>‘clip’ mode means that all indices that are too large are replaced
 by the index that addresses the last element along that axis. Note
 that this disables indexing with negative numbers.</p>
 </div></blockquote>
@@ -4150,7 +4549,11 @@ possible before switching to Dask.dataframe.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>npartitions</strong> : int, optional</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>keys: sequence, optional</strong></p>
+<blockquote>
+<div><p>ordered subset of columns to export</p>
+</div></blockquote>
+<p><strong>npartitions</strong> : int, optional</p>
 <blockquote>
 <div><p>The number of partitions of the index to create. Note that depending on
 the size and index of the dataframe, the output may have fewer
@@ -4162,8 +4565,8 @@ partitions than requested.</p>
 </div></blockquote>
 <p><strong>sort: bool</strong></p>
 <blockquote>
-<div><p>Sort input first to obtain cleanly divided partitions or don&#8217;t sort and
-don&#8217;t get cleanly divided partitions</p>
+<div><p>Sort input first to obtain cleanly divided partitions or don’t sort and
+don’t get cleanly divided partitions</p>
 </div></blockquote>
 <p><strong>name: string, optional</strong></p>
 <blockquote>
@@ -4182,6 +4585,35 @@ don&#8217;t get cleanly divided partitions</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="ezdata.simpletable.SimpleTable.to_dict">
+<code class="descname">to_dict</code><span class="sig-paren">(</span><em>keys=None</em>, <em>contiguous=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/simpletable.html#SimpleTable.to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.simpletable.SimpleTable.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a dictionary from this dataframe with contiguous arrays</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>keys: sequence, optional</strong></p>
+<blockquote>
+<div><p>ordered subset of columns to export</p>
+</div></blockquote>
+<p><strong>contiguous: boolean</strong></p>
+<blockquote>
+<div><p>make sure each value is a contiguous numpy array object
+(C-aligned)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">data: dict</p>
+<blockquote class="last">
+<div><p>converted data</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="ezdata.simpletable.SimpleTable.to_pandas">
 <code class="descname">to_pandas</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/simpletable.html#SimpleTable.to_pandas"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.simpletable.SimpleTable.to_pandas" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct a pandas dataframe</p>
@@ -4189,7 +4621,14 @@ don&#8217;t get cleanly divided partitions</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>data</strong> : ndarray (structured dtype), list of tuples, dict, or DataFrame</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>data</strong> : ndarray</p>
+<blockquote>
+<div><p>(structured dtype), list of tuples, dict, or DataFrame</p>
+</div></blockquote>
+<p><strong>keys: sequence, optional</strong></p>
+<blockquote>
+<div><p>ordered subset of columns to export</p>
+</div></blockquote>
 <p><strong>index</strong> : string, list of fields, array-like</p>
 <blockquote>
 <div><p>Field of array to use as the index, alternately a specific set of
@@ -4239,6 +4678,10 @@ decimal.Decimal) to floating point, useful for SQL result sets</p>
 <blockquote>
 <div><p>unique for the dataset</p>
 </div></blockquote>
+<p><strong>keys: sequence, optional</strong></p>
+<blockquote>
+<div><p>ordered subset of columns to export</p>
+</div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">df: vaex.DataSetArrays</p>
@@ -4256,10 +4699,10 @@ decimal.Decimal) to floating point, useful for SQL result sets</p>
 <code class="descname">to_xarray</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/simpletable.html#SimpleTable.to_xarray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.simpletable.SimpleTable.to_xarray" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct an xarray dataset</p>
 <p>Each column will be converted into an independent variable in the
-Dataset. If the dataframe&#8217;s index is a MultiIndex, it will be expanded
+Dataset. If the dataframe’s index is a MultiIndex, it will be expanded
 into a tensor product of one-dimensional indices (filling in missing
 values with NaN). This method will produce a Dataset very similar to
-that on which the &#8216;to_dataframe&#8217; method was called, except with
+that on which the ‘to_dataframe’ method was called, except with
 possibly redundant dimensions (since all dataset variables will have
 the same dimensionality).</p>
 </dd></dl>
@@ -4324,47 +4767,47 @@ includes mathematical operations and attribute names</p>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <dl class="classmethod">
 <dt id="ezdata.simpletable.stats.has_nan">
-<em class="property">classmethod </em><code class="descname">has_nan</code><span class="sig-paren">(</span><em>s</em>, <em>v</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/simpletable.html#stats.has_nan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.simpletable.stats.has_nan" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">has_nan</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/simpletable.html#stats.has_nan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.simpletable.stats.has_nan" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="classmethod">
 <dt id="ezdata.simpletable.stats.max">
-<em class="property">classmethod </em><code class="descname">max</code><span class="sig-paren">(</span><em>s</em>, <em>v</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/simpletable.html#stats.max"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.simpletable.stats.max" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">max</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/simpletable.html#stats.max"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.simpletable.stats.max" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="classmethod">
 <dt id="ezdata.simpletable.stats.mean">
-<em class="property">classmethod </em><code class="descname">mean</code><span class="sig-paren">(</span><em>s</em>, <em>v</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/simpletable.html#stats.mean"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.simpletable.stats.mean" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">mean</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/simpletable.html#stats.mean"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.simpletable.stats.mean" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="classmethod">
 <dt id="ezdata.simpletable.stats.min">
-<em class="property">classmethod </em><code class="descname">min</code><span class="sig-paren">(</span><em>s</em>, <em>v</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/simpletable.html#stats.min"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.simpletable.stats.min" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">min</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/simpletable.html#stats.min"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.simpletable.stats.min" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="classmethod">
 <dt id="ezdata.simpletable.stats.p16">
-<em class="property">classmethod </em><code class="descname">p16</code><span class="sig-paren">(</span><em>s</em>, <em>v</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/simpletable.html#stats.p16"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.simpletable.stats.p16" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">p16</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/simpletable.html#stats.p16"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.simpletable.stats.p16" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="classmethod">
 <dt id="ezdata.simpletable.stats.p50">
-<em class="property">classmethod </em><code class="descname">p50</code><span class="sig-paren">(</span><em>s</em>, <em>v</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/simpletable.html#stats.p50"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.simpletable.stats.p50" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">p50</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/simpletable.html#stats.p50"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.simpletable.stats.p50" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="classmethod">
 <dt id="ezdata.simpletable.stats.p84">
-<em class="property">classmethod </em><code class="descname">p84</code><span class="sig-paren">(</span><em>s</em>, <em>v</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/simpletable.html#stats.p84"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.simpletable.stats.p84" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">p84</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/simpletable.html#stats.p84"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.simpletable.stats.p84" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="classmethod">
 <dt id="ezdata.simpletable.stats.std">
-<em class="property">classmethod </em><code class="descname">std</code><span class="sig-paren">(</span><em>s</em>, <em>v</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/simpletable.html#stats.std"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.simpletable.stats.std" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">std</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/simpletable.html#stats.std"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.simpletable.stats.std" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="classmethod">
 <dt id="ezdata.simpletable.stats.var">
-<em class="property">classmethod </em><code class="descname">var</code><span class="sig-paren">(</span><em>s</em>, <em>v</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/simpletable.html#stats.var"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.simpletable.stats.var" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">var</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ezdata/simpletable.html#stats.var"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ezdata.simpletable.stats.var" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4435,8 +4878,8 @@ includes mathematical operations and attribute names</p>
       &copy;2015, M. Fouesneau.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
       <a href="_sources/ezdata.rst.txt"

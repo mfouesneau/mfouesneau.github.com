@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>ezdata.simpletable &#8212; ezData 1.0 documentation</title>
-    
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
@@ -24,7 +21,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
    
@@ -34,7 +31,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body role="document">
+  <body>
   
 
     <div class="document">
@@ -109,6 +106,11 @@
     <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">_pd</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
     <span class="n">_pd</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">astropy.table</span> <span class="k">import</span> <span class="n">Table</span> <span class="k">as</span> <span class="n">_astropytable</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">_astropytable</span> <span class="o">=</span> <span class="kc">None</span>
 
 <span class="k">try</span><span class="p">:</span>
     <span class="kn">from</span> <span class="nn">.plotter</span> <span class="k">import</span> <span class="n">Plotter</span>
@@ -224,15 +226,35 @@
     <span class="n">fieldTerms</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;TTYPE&#39;</span><span class="p">,</span> <span class="s1">&#39;TFORM&#39;</span><span class="p">,</span> <span class="s1">&#39;TUNIT&#39;</span><span class="p">,</span> <span class="s1">&#39;ALIAS&#39;</span><span class="p">]</span>
 
     <span class="c1"># read col comments</span>
-    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">comment</span> <span class="ow">in</span> <span class="n">hdr</span><span class="o">.</span><span class="n">ascard</span><span class="p">[</span><span class="s1">&#39;TTYPE*&#39;</span><span class="p">]:</span>
-        <span class="n">comments</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">comment</span>
-        <span class="n">u</span> <span class="o">=</span> <span class="n">hdr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;TYPE&#39;</span><span class="p">,</span> <span class="s1">&#39;UNIT&#39;</span><span class="p">),</span> <span class="kc">None</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">u</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">units</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">u</span>
+    <span class="c1"># for k, name, comment in hdr.ascard[&#39;TTYPE*&#39;]:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">card</span> <span class="ow">in</span> <span class="n">hdr</span><span class="o">.</span><span class="n">cards</span><span class="p">[</span><span class="s1">&#39;TTYPE*&#39;</span><span class="p">]:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">card</span><span class="o">.</span><span class="n">value</span>
+            <span class="n">comments</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">card</span><span class="o">.</span><span class="n">comment</span>
+            <span class="n">u</span> <span class="o">=</span> <span class="n">hdr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">card</span><span class="o">.</span><span class="n">keyword</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;TYPE&#39;</span><span class="p">,</span> <span class="s1">&#39;UNIT&#39;</span><span class="p">),</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">u</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">units</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">u</span>
 
-    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">hdr</span><span class="o">.</span><span class="n">ascard</span><span class="p">[</span><span class="s1">&#39;ALIAS*&#39;</span><span class="p">]:</span>
-        <span class="n">al</span><span class="p">,</span> <span class="n">orig</span> <span class="o">=</span> <span class="n">val</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)</span>
-        <span class="n">alias</span><span class="p">[</span><span class="n">al</span><span class="p">]</span> <span class="o">=</span> <span class="n">orig</span>
+        <span class="c1"># for k, val, _ in hdr.ascard[&#39;ALIAS*&#39;]:</span>
+        <span class="k">for</span> <span class="n">card</span> <span class="ow">in</span> <span class="n">hdr</span><span class="o">.</span><span class="n">cards</span><span class="p">[</span><span class="s1">&#39;ALIAS*&#39;</span><span class="p">]:</span>
+            <span class="n">k</span> <span class="o">=</span> <span class="n">card</span><span class="o">.</span><span class="n">keyword</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="n">card</span><span class="o">.</span><span class="n">value</span>
+            <span class="n">al</span><span class="p">,</span> <span class="n">orig</span> <span class="o">=</span> <span class="n">val</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)</span>
+            <span class="n">alias</span><span class="p">[</span><span class="n">al</span><span class="p">]</span> <span class="o">=</span> <span class="n">orig</span>
+    <span class="k">except</span><span class="p">:</span>   <span class="c1">#pyfits stsci</span>
+        <span class="k">for</span> <span class="n">card</span> <span class="ow">in</span> <span class="n">hdr</span><span class="o">.</span><span class="n">ascard</span><span class="p">[</span><span class="s1">&#39;TTYPE*&#39;</span><span class="p">]:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">card</span><span class="o">.</span><span class="n">value</span>
+            <span class="n">comments</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">card</span><span class="o">.</span><span class="n">comment</span>
+            <span class="n">u</span> <span class="o">=</span> <span class="n">hdr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">card</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;TYPE&#39;</span><span class="p">,</span> <span class="s1">&#39;UNIT&#39;</span><span class="p">),</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">u</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">units</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">u</span>
+
+        <span class="c1"># for k, val, _ in hdr.ascard[&#39;ALIAS*&#39;]:</span>
+        <span class="k">for</span> <span class="n">card</span> <span class="ow">in</span> <span class="n">hdr</span><span class="o">.</span><span class="n">ascard</span><span class="p">[</span><span class="s1">&#39;ALIAS*&#39;</span><span class="p">]:</span>
+            <span class="n">k</span> <span class="o">=</span> <span class="n">card</span><span class="o">.</span><span class="n">key</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="n">card</span><span class="o">.</span><span class="n">value</span>
+            <span class="n">al</span><span class="p">,</span> <span class="n">orig</span> <span class="o">=</span> <span class="n">val</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)</span>
+            <span class="n">alias</span><span class="p">[</span><span class="n">al</span><span class="p">]</span> <span class="o">=</span> <span class="n">orig</span>
 
     <span class="c1"># other specific keywords: COMMENT, HISTORY</span>
     <span class="n">header_comments</span> <span class="o">=</span> <span class="p">[]</span>
@@ -1080,9 +1102,9 @@
 <div class="viewcode-block" id="AstroHelpers"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.AstroHelpers">[docs]</a><span class="k">class</span> <span class="nc">AstroHelpers</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; Helpers related to astronomy data &quot;&quot;&quot;</span>
 
-    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="AstroHelpers.hms2deg"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.AstroHelpers.hms2deg">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="nd">@elementwise</span>
-<div class="viewcode-block" id="AstroHelpers.hms2deg"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.AstroHelpers.hms2deg">[docs]</a>    <span class="k">def</span> <span class="nf">hms2deg</span><span class="p">(</span><span class="n">_str</span><span class="p">,</span> <span class="n">delim</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">hms2deg</span><span class="p">(</span><span class="n">_str</span><span class="p">,</span> <span class="n">delim</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Convert hex coordinates into degrees</span>
 
 <span class="sd">        Parameters</span>
@@ -1108,10 +1130,11 @@
                          <span class="nb">float</span><span class="p">(</span><span class="n">_str</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> <span class="o">/</span> <span class="mf">60.</span> <span class="o">+</span>
                         <span class="nb">float</span><span class="p">(</span><span class="n">_str</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="o">/</span> <span class="mf">24.</span> <span class="o">*</span> <span class="mf">360.</span><span class="p">))</span></div>
 
-    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="AstroHelpers.deg2dms"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.AstroHelpers.deg2dms">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="nd">@elementwise</span>
-<div class="viewcode-block" id="AstroHelpers.deg2dms"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.AstroHelpers.deg2dms">[docs]</a>    <span class="k">def</span> <span class="nf">deg2dms</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">delim</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">deg2dms</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">delim</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Convert degrees into hex coordinates</span>
+
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        deg: float</span>
@@ -1134,9 +1157,9 @@
         <span class="n">s</span> <span class="o">=</span> <span class="p">((</span> <span class="n">sign</span> <span class="o">*</span> <span class="n">val</span> <span class="o">-</span> <span class="n">d</span><span class="p">)</span> <span class="o">*</span> <span class="mf">60.</span>  <span class="o">-</span> <span class="n">m</span><span class="p">)</span> <span class="o">*</span> <span class="mf">60.</span>
         <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{0}{1}{2}{3}{4}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">sign</span> <span class="o">*</span> <span class="n">d</span><span class="p">,</span> <span class="n">delim</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">delim</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span></div>
 
-    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="AstroHelpers.deg2hms"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.AstroHelpers.deg2hms">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="nd">@elementwise</span>
-<div class="viewcode-block" id="AstroHelpers.deg2hms"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.AstroHelpers.deg2hms">[docs]</a>    <span class="k">def</span> <span class="nf">deg2hms</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">delim</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">deg2hms</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">delim</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Convert degrees into hex coordinates</span>
 
 <span class="sd">        Parameters</span>
@@ -1161,10 +1184,11 @@
         <span class="n">s</span> <span class="o">=</span> <span class="p">((</span> <span class="n">sign</span> <span class="o">*</span> <span class="n">val</span> <span class="o">/</span> <span class="mf">45.</span> <span class="o">*</span> <span class="mf">3.</span> <span class="o">-</span> <span class="n">h</span><span class="p">)</span> <span class="o">*</span> <span class="mf">60.</span>  <span class="o">-</span> <span class="n">m</span><span class="p">)</span> <span class="o">*</span> <span class="mf">60.</span>
         <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{0}{1}{2}{3}{4}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">sign</span> <span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">delim</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">delim</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span></div>
 
-    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="AstroHelpers.dms2deg"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.AstroHelpers.dms2deg">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="nd">@elementwise</span>
-<div class="viewcode-block" id="AstroHelpers.dms2deg"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.AstroHelpers.dms2deg">[docs]</a>    <span class="k">def</span> <span class="nf">dms2deg</span><span class="p">(</span><span class="n">_str</span><span class="p">,</span> <span class="n">delim</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">dms2deg</span><span class="p">(</span><span class="n">_str</span><span class="p">,</span> <span class="n">delim</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Convert hex coordinates into degrees</span>
+
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        str: string or sequence</span>
@@ -1186,19 +1210,23 @@
         <span class="n">_str</span> <span class="o">=</span> <span class="n">_str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">delim</span><span class="p">)</span>
         <span class="k">return</span> <span class="p">(</span><span class="n">neg</span> <span class="o">*</span> <span class="p">((</span><span class="nb">float</span><span class="p">(</span><span class="n">_str</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="mf">60.</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">_str</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> <span class="o">/</span> <span class="mf">60.</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">_str</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span></div>
 
-    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="AstroHelpers.euler"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.AstroHelpers.euler">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="nd">@elementwise</span>
-<div class="viewcode-block" id="AstroHelpers.euler"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.AstroHelpers.euler">[docs]</a>    <span class="k">def</span> <span class="nf">euler</span><span class="p">(</span><span class="n">ai_in</span><span class="p">,</span> <span class="n">bi_in</span><span class="p">,</span> <span class="n">select</span><span class="p">,</span> <span class="n">b1950</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;f8&#39;</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">euler</span><span class="p">(</span><span class="n">ai_in</span><span class="p">,</span> <span class="n">bi_in</span><span class="p">,</span> <span class="n">select</span><span class="p">,</span> <span class="n">b1950</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;f8&#39;</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Transform between Galactic, celestial, and ecliptic coordinates.</span>
 <span class="sd">        Celestial coordinates (RA, Dec) should be given in equinox J2000</span>
 <span class="sd">        unless the b1950 is True.</span>
 
-<span class="sd">        select From           To         |   select    From          To</span>
-<span class="sd">        ----------------------------------------------------------------------</span>
-<span class="sd">        1      RA-Dec (2000)  Galactic   |     4       Ecliptic      RA-Dec</span>
-<span class="sd">        2      Galactic       RA-DEC     |     5       Ecliptic      Galactic</span>
-<span class="sd">        3      RA-Dec         Ecliptic   |     6       Galactic      Ecliptic</span>
+<span class="sd">        +-------+--------------+------------+----------+----------+-----------+</span>
+<span class="sd">        |select | From         | To         |   select |   From   |  To       |</span>
+<span class="sd">        +-------+--------------+------------+----------+----------+-----------+</span>
+<span class="sd">        |1      |RA-Dec (2000) | Galactic   |     4    | Ecliptic |  RA-Dec   |</span>
+<span class="sd">        +-------+--------------+------------+----------+----------+-----------+</span>
+<span class="sd">        |2      |Galactic      | RA-DEC     |     5    | Ecliptic |  Galactic |</span>
+<span class="sd">        +-------+--------------+------------+----------+----------+-----------+</span>
+<span class="sd">        |3      |RA-Dec        | Ecliptic   |     6    | Galactic |  Ecliptic |</span>
+<span class="sd">        +-------+--------------+------------+----------+----------+-----------+</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -1225,13 +1253,14 @@
 <span class="sd">            Output Latitude in DEGREES</span>
 
 
-<span class="sd">        REVISION HISTORY:</span>
-<span class="sd">        Written W. Landsman,  February 1987</span>
-<span class="sd">        Adapted from Fortran by Daryl Yentis NRL</span>
-<span class="sd">        Converted to IDL V5.0   W. Landsman   September 1997</span>
-<span class="sd">        Made J2000 the default, added /FK4 keyword  W. Landsman December 1998</span>
-<span class="sd">        Add option to specify SELECT as a keyword W. Landsman March 2003</span>
-<span class="sd">        Converted from IDL to numerical Python: Erin Sheldon, NYU, 2008-07-02</span>
+<span class="sd">        .. note::</span>
+
+<span class="sd">            Written W. Landsman,  February 1987</span>
+<span class="sd">            Adapted from Fortran by Daryl Yentis NRL</span>
+<span class="sd">            Converted to IDL V5.0   W. Landsman   September 1997</span>
+<span class="sd">            Made J2000 the default, added /FK4 keyword  W. Landsman December 1998</span>
+<span class="sd">            Add option to specify SELECT as a keyword W. Landsman March 2003</span>
+<span class="sd">            Converted from IDL to numerical Python: Erin Sheldon, NYU, 2008-07-02</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="c1"># Make a copy as an array. ndmin=1 to avoid messed up scalar arrays</span>
@@ -1302,8 +1331,8 @@
         <span class="n">ao</span> <span class="o">=</span> <span class="p">(</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">psi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">fourpi</span><span class="p">)</span> <span class="o">%</span> <span class="n">twopi</span><span class="p">)</span> <span class="o">*</span> <span class="n">R2D</span>
         <span class="k">return</span> <span class="n">ao</span><span class="p">,</span> <span class="n">bo</span></div>
 
-    <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="AstroHelpers.sphdist"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.AstroHelpers.sphdist">[docs]</a>    <span class="k">def</span> <span class="nf">sphdist</span><span class="p">(</span><span class="n">ra1</span><span class="p">,</span> <span class="n">dec1</span><span class="p">,</span> <span class="n">ra2</span><span class="p">,</span> <span class="n">dec2</span><span class="p">):</span>
+<div class="viewcode-block" id="AstroHelpers.sphdist"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.AstroHelpers.sphdist">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">sphdist</span><span class="p">(</span><span class="n">ra1</span><span class="p">,</span> <span class="n">dec1</span><span class="p">,</span> <span class="n">ra2</span><span class="p">,</span> <span class="n">dec2</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;measures the spherical distance between 2 points</span>
 
 <span class="sd">        Parameters</span>
@@ -1330,8 +1359,8 @@
                                             <span class="n">sin</span><span class="p">((</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">ra1</span> <span class="o">-</span> <span class="n">ra2</span><span class="p">))</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span> <span class="o">**</span>
                                         <span class="mi">2</span><span class="p">)))</span></div>
 
-    <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="AstroHelpers.conesearch"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.AstroHelpers.conesearch">[docs]</a>    <span class="k">def</span> <span class="nf">conesearch</span><span class="p">(</span><span class="n">ra0</span><span class="p">,</span> <span class="n">dec0</span><span class="p">,</span> <span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">outtype</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="AstroHelpers.conesearch"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.AstroHelpers.conesearch">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">conesearch</span><span class="p">(</span><span class="n">ra0</span><span class="p">,</span> <span class="n">dec0</span><span class="p">,</span> <span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">outtype</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Perform a cone search on a table</span>
 
 <span class="sd">        Parameters</span>
@@ -1420,6 +1449,7 @@
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 
         <span class="n">dtype</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;dtype&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">dtype</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;format&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">caseless</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;caseless&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_aliases</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;aliases&#39;</span><span class="p">,</span> <span class="p">{})</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_units</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;units&#39;</span><span class="p">,</span> <span class="p">{})</span>
@@ -1440,6 +1470,8 @@
                 <span class="n">kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;delimiter&#39;</span><span class="p">,</span> <span class="s1">&#39;,&#39;</span><span class="p">)</span>
                 <span class="n">commentedHeader</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;commentedHeader&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
                 <span class="n">n</span><span class="p">,</span> <span class="n">header</span><span class="p">,</span> <span class="n">units</span><span class="p">,</span> <span class="n">comments</span><span class="p">,</span> <span class="n">aliases</span><span class="p">,</span> <span class="n">names</span> <span class="o">=</span> <span class="n">_ascii_read_header</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">commentedHeader</span><span class="o">=</span><span class="n">commentedHeader</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                <span class="k">if</span> <span class="s1">&#39;names&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+                    <span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span>
                 <span class="n">kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;names&#39;</span><span class="p">,</span> <span class="n">names</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">_pd</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>   <span class="c1"># pandas is faster</span>
                     <span class="n">kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;comment&#39;</span><span class="p">,</span> <span class="s1">&#39;#&#39;</span><span class="p">)</span>
@@ -1454,7 +1486,7 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">_desc</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="o">**</span><span class="n">comments</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_aliases</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="o">**</span><span class="n">aliases</span><span class="p">)</span>
                 <span class="n">kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;names&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-            <span class="k">elif</span> <span class="p">(</span><span class="n">extension</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;tsv&#39;</span><span class="p">,</span> <span class="s1">&#39;dat&#39;</span><span class="p">,</span> <span class="s1">&#39;txt&#39;</span><span class="p">))</span> <span class="ow">or</span> <span class="n">dtype</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;tsv&#39;</span><span class="p">,</span> <span class="s1">&#39;dat&#39;</span><span class="p">,</span> <span class="s1">&#39;txt&#39;</span><span class="p">):</span>
+            <span class="k">elif</span> <span class="p">(</span><span class="n">extension</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;tsv&#39;</span><span class="p">,</span> <span class="s1">&#39;dat&#39;</span><span class="p">,</span> <span class="s1">&#39;txt&#39;</span><span class="p">))</span> <span class="ow">or</span> <span class="p">(</span><span class="n">dtype</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;tsv&#39;</span><span class="p">,</span> <span class="s1">&#39;dat&#39;</span><span class="p">,</span> <span class="s1">&#39;txt&#39;</span><span class="p">)):</span>
                 <span class="n">commentedHeader</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;commentedHeader&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
                 <span class="n">n</span><span class="p">,</span> <span class="n">header</span><span class="p">,</span> <span class="n">units</span><span class="p">,</span> <span class="n">comments</span><span class="p">,</span> <span class="n">aliases</span><span class="p">,</span> <span class="n">names</span> <span class="o">=</span> <span class="n">_ascii_read_header</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">commentedHeader</span><span class="o">=</span><span class="n">commentedHeader</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
                 <span class="n">kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;names&#39;</span><span class="p">,</span> <span class="n">names</span><span class="p">)</span>
@@ -1482,7 +1514,7 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">_desc</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="o">**</span><span class="n">comments</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_units</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="o">**</span><span class="n">units</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_aliases</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="o">**</span><span class="n">aliases</span><span class="p">)</span>
-            <span class="k">elif</span> <span class="p">(</span><span class="n">extension</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;hdf5&#39;</span><span class="p">,</span> <span class="s1">&#39;hd5&#39;</span><span class="p">,</span> <span class="s1">&#39;hdf&#39;</span><span class="p">))</span> <span class="ow">or</span> <span class="n">dtype</span> <span class="ow">in</span> <span class="p">(</span><span class="n">extension</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;hdf5&#39;</span><span class="p">,</span> <span class="s1">&#39;hd5&#39;</span><span class="p">,</span> <span class="s1">&#39;hdf&#39;</span><span class="p">)):</span>
+            <span class="k">elif</span> <span class="p">(</span><span class="n">extension</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;hdf5&#39;</span><span class="p">,</span> <span class="s1">&#39;hd5&#39;</span><span class="p">,</span> <span class="s1">&#39;hdf&#39;</span><span class="p">))</span> <span class="ow">or</span> <span class="p">(</span><span class="n">dtype</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;hdf5&#39;</span><span class="p">,</span> <span class="s1">&#39;hd5&#39;</span><span class="p">,</span> <span class="s1">&#39;hdf&#39;</span><span class="p">)):</span>
                 <span class="k">if</span> <span class="n">tables</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;Cannot read this format, pytables not found&#39;</span><span class="p">)</span>
                 <span class="n">hdr</span><span class="p">,</span> <span class="n">aliases</span><span class="p">,</span> <span class="n">units</span><span class="p">,</span> <span class="n">desc</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">_hdf5_read_data</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -1491,6 +1523,17 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">_units</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="o">**</span><span class="n">units</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_desc</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="o">**</span><span class="n">desc</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_aliases</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="o">**</span><span class="n">aliases</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="p">(</span><span class="n">extension</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;vot&#39;</span><span class="p">,</span> <span class="s1">&#39;votable&#39;</span><span class="p">))</span> <span class="ow">or</span> <span class="p">(</span><span class="n">dtype</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;vot&#39;</span><span class="p">,</span> <span class="s1">&#39;votable&#39;</span><span class="p">)):</span>
+                <span class="c1"># Votable case</span>
+                <span class="k">if</span> <span class="n">_astropytable</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;Cannot read this votable format, astropy not found&#39;</span><span class="p">)</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="n">_astropytable</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;votable&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                <span class="n">units</span> <span class="o">=</span> <span class="p">[(</span><span class="n">k</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">unit</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">()]</span>
+                <span class="n">desc</span> <span class="o">=</span> <span class="p">[(</span><span class="n">k</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">description</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">()]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">as_array</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">header</span> <span class="o">=</span> <span class="p">{}</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_units</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">units</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_desc</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">desc</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Format </span><span class="si">{0:s}</span><span class="s1"> not handled&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">extension</span><span class="p">))</span>
         <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
@@ -1699,7 +1742,10 @@
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
-<span class="sd">        data : ndarray (structured dtype), list of tuples, dict, or DataFrame</span>
+<span class="sd">        data : ndarray </span>
+<span class="sd">            (structured dtype), list of tuples, dict, or DataFrame</span>
+<span class="sd">        keys: sequence, optional</span>
+<span class="sd">            ordered subset of columns to export</span>
 <span class="sd">        index : string, list of fields, array-like</span>
 <span class="sd">            Field of array to use as the index, alternately a specific set of</span>
 <span class="sd">            input labels to use</span>
@@ -1721,10 +1767,34 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="kn">from</span> <span class="nn">pandas</span> <span class="k">import</span> <span class="n">DataFrame</span>
-            <span class="k">return</span> <span class="n">DataFrame</span><span class="o">.</span><span class="n">from_records</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">keys</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;keys&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="n">keys</span><span class="o">=</span><span class="n">keys</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pandas import error&quot;</span><span class="p">)</span>
-            <span class="k">raise</span> <span class="n">e</span></div>
+            <span class="k">raise</span> <span class="n">error</span></div>
+
+<div class="viewcode-block" id="SimpleTable.to_dict"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.SimpleTable.to_dict">[docs]</a>    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">contiguous</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Construct a dictionary from this dataframe with contiguous arrays</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        keys: sequence, optional</span>
+<span class="sd">            ordered subset of columns to export</span>
+
+<span class="sd">        contiguous: boolean</span>
+<span class="sd">            make sure each value is a contiguous numpy array object</span>
+<span class="sd">            (C-aligned)</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        data: dict</span>
+<span class="sd">            converted data</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">keys</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">keys</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">contiguous</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="bp">self</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">}</span>
+        <span class="k">return</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="bp">self</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">}</span></div>
 
 <div class="viewcode-block" id="SimpleTable.to_xarray"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.SimpleTable.to_xarray">[docs]</a>    <span class="k">def</span> <span class="nf">to_xarray</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Construct an xarray dataset</span>
@@ -1738,11 +1808,11 @@
 <span class="sd">        the same dimensionality).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="kn">from</span> <span class="nn">xray</span> <span class="k">import</span> <span class="n">Dataset</span>
-            <span class="k">return</span> <span class="n">Dataset</span><span class="o">.</span><span class="n">from_dataframe</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">())</span>
-        <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">xarray</span> <span class="k">import</span> <span class="n">Dataset</span>
+            <span class="k">return</span> <span class="n">Dataset</span><span class="o">.</span><span class="n">from_dataframe</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
+        <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;xray import error&quot;</span><span class="p">)</span>
-            <span class="k">raise</span> <span class="n">e</span></div>
+            <span class="k">raise</span> <span class="n">error</span></div>
 
 <div class="viewcode-block" id="SimpleTable.to_vaex"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.SimpleTable.to_vaex">[docs]</a>    <span class="k">def</span> <span class="nf">to_vaex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -1752,6 +1822,8 @@
 <span class="sd">        ----------</span>
 <span class="sd">        name: str</span>
 <span class="sd">            unique for the dataset</span>
+<span class="sd">        keys: sequence, optional</span>
+<span class="sd">            ordered subset of columns to export</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -1760,10 +1832,10 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="kn">import</span> <span class="nn">vaex</span>
-            <span class="k">return</span> <span class="n">vaex</span><span class="o">.</span><span class="n">from_pandas</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">(),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">vaex</span><span class="o">.</span><span class="n">from_arrays</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="n">contiguous</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
+        <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Vaex import error&quot;</span><span class="p">)</span>
-            <span class="k">raise</span> <span class="n">e</span></div>
+            <span class="k">raise</span> <span class="n">error</span></div>
 
 <div class="viewcode-block" id="SimpleTable.to_dask"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.SimpleTable.to_dask">[docs]</a>    <span class="k">def</span> <span class="nf">to_dask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Construct a Dask DataFrame</span>
@@ -1778,6 +1850,8 @@
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
+<span class="sd">        keys: sequence, optional</span>
+<span class="sd">            ordered subset of columns to export</span>
 <span class="sd">        npartitions : int, optional</span>
 <span class="sd">            The number of partitions of the index to create. Note that depending on</span>
 <span class="sd">            the size and index of the dataframe, the output may have fewer</span>
@@ -1797,10 +1871,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="kn">from</span> <span class="nn">dask</span> <span class="k">import</span> <span class="n">dataframe</span>
-            <span class="k">return</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">from_pandas</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">(),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">keys</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;keys&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">from_pandas</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">(</span><span class="n">keys</span><span class="o">=</span><span class="n">keys</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dask import error&quot;</span><span class="p">)</span>
-            <span class="k">raise</span> <span class="n">e</span></div>
+            <span class="k">raise</span> <span class="n">error</span></div>
 
 <div class="viewcode-block" id="SimpleTable.to_astropy_table"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.SimpleTable.to_astropy_table">[docs]</a>    <span class="k">def</span> <span class="nf">to_astropy_table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -1839,10 +1914,14 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="kn">from</span> <span class="nn">astropy.table</span> <span class="k">import</span> <span class="n">Table</span>
-            <span class="k">return</span> <span class="n">Table</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="n">keys</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;keys&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">Table</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_records</span><span class="p">(</span><span class="n">keys</span><span class="o">=</span><span class="n">keys</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Astropy import error&quot;</span><span class="p">)</span>
             <span class="k">raise</span> <span class="n">e</span></div>
+
+    <span class="k">def</span> <span class="nf">_repr_html_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">_repr_html_</span><span class="p">()</span>
 
 <div class="viewcode-block" id="SimpleTable.set_alias"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.SimpleTable.set_alias">[docs]</a>    <span class="k">def</span> <span class="nf">set_alias</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alias</span><span class="p">,</span> <span class="n">colname</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -2000,7 +2079,7 @@
     <span class="k">def</span> <span class="nf">nbytes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; number of bytes of the object &quot;&quot;&quot;</span>
         <span class="n">n</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">nbytes</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="s1">&#39;nbytes&#39;</span><span class="p">)</span> <span class="k">else</span> <span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
-                <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__dict__</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+                <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">n</span>
 
     <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -2027,7 +2106,7 @@
             <span class="k">return</span> <span class="n">Plotter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">resolve_alias</span><span class="p">(</span><span class="n">v</span><span class="p">)))</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">resolve_alias</span><span class="p">(</span><span class="n">v</span><span class="p">)))</span>
 
 <div class="viewcode-block" id="SimpleTable.take"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.SimpleTable.take">[docs]</a>    <span class="k">def</span> <span class="nf">take</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indices</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;raise&#39;</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -2116,7 +2195,7 @@
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">new_keys</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-        <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="p">[</span><span class="n">new_keys</span><span class="p">])</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="bp">self</span><span class="p">[</span><span class="n">new_keys</span><span class="p">])</span>
         <span class="n">t</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">)</span>
         <span class="n">t</span><span class="o">.</span><span class="n">_aliases</span><span class="o">.</span><span class="n">update</span><span class="p">((</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_aliases</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">new_keys</span><span class="p">)</span>
         <span class="n">t</span><span class="o">.</span><span class="n">_units</span><span class="o">.</span><span class="n">update</span><span class="p">((</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_units</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">new_keys</span><span class="p">)</span>
@@ -2125,15 +2204,15 @@
 
     <span class="k">def</span> <span class="nf">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">resolve_alias</span><span class="p">(</span><span class="n">k</span><span class="p">),</span> <span class="n">v</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">resolve_alias</span><span class="p">(</span><span class="n">k</span><span class="p">),</span> <span class="n">v</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="nb">object</span><span class="o">.</span><span class="n">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+            <span class="nb">object</span><span class="o">.</span><span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">resolve_alias</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">resolve_alias</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
         <span class="k">except</span><span class="p">:</span>
-            <span class="k">return</span> <span class="nb">object</span><span class="o">.</span><span class="n">__getattribute__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">newtab</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">])</span>
@@ -2153,10 +2232,12 @@
             <span class="k">yield</span> <span class="n">l</span></div>
 
 <div class="viewcode-block" id="SimpleTable.items"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.SimpleTable.items">[docs]</a>    <span class="k">def</span> <span class="nf">items</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Iterator on the (key, value) pairs &quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">colnames</span><span class="p">:</span>
             <span class="k">yield</span> <span class="n">k</span><span class="p">,</span> <span class="bp">self</span><span class="p">[</span><span class="n">k</span><span class="p">]</span></div>
 
 <div class="viewcode-block" id="SimpleTable.info"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.SimpleTable.info">[docs]</a>    <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; prints information on the table &quot;&quot;&quot;</span>
         <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Table: </span><span class="si">{name:s}</span><span class="se">\n</span><span class="s2">       nrows=</span><span class="si">{s.nrows:d}</span><span class="s2">, ncols=</span><span class="si">{s.ncols:d}</span><span class="s2">, mem=</span><span class="si">{size:s}</span><span class="s2">&quot;</span>
         <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;NAME&#39;</span><span class="p">,</span> <span class="s1">&#39;Noname&#39;</span><span class="p">),</span> <span class="n">s</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
                      <span class="n">size</span><span class="o">=</span><span class="n">pretty_size_print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nbytes</span><span class="p">))</span>
@@ -2188,7 +2269,7 @@
                 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="si">{0:s}</span><span class="s1"> --&gt; </span><span class="si">{1:s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span></div>
 
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">s</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Table: </span><span class="si">{name:s}</span><span class="se">\n</span><span class="s2">       nrows=</span><span class="si">{s.nrows:d}</span><span class="s2">, ncols=</span><span class="si">{s.ncols:d}</span><span class="s2">, mem=</span><span class="si">{size:s}</span><span class="s2">&quot;</span>
         <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;NAME&#39;</span><span class="p">,</span> <span class="s1">&#39;Noname&#39;</span><span class="p">),</span> <span class="n">s</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
                         <span class="n">size</span><span class="o">=</span><span class="n">pretty_size_print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nbytes</span><span class="p">))</span>
@@ -2232,7 +2313,7 @@
         <span class="k">if</span> <span class="n">copy</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="n">keys</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
             <span class="n">t</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">t</span></div>
 
@@ -2277,7 +2358,7 @@
         <span class="k">if</span> <span class="n">inplace</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">sdata</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
             <span class="n">t</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">sdata</span>
             <span class="k">return</span> <span class="n">t</span></div>
 
@@ -2517,7 +2598,7 @@
 
         <span class="c1"># evaluate expression, to obtain the final filter</span>
         <span class="n">r</span>    <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">nrows</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
-        <span class="n">r</span><span class="p">[:]</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">_globals</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">__dict__</span><span class="p">)</span>
+        <span class="n">r</span><span class="p">[:]</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">_globals</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">r</span></div>
 
@@ -2566,24 +2647,24 @@
             <span class="k">if</span> <span class="n">indices</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="k">return</span> <span class="bp">self</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="n">tab</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">indices</span><span class="p">))</span>
-                <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__dict__</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">tab</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="bp">self</span><span class="p">[</span><span class="n">indices</span><span class="p">])</span>
+                <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
                     <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="p">):</span>
-                        <span class="nb">setattr</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__dict__</span><span class="p">[</span><span class="n">k</span><span class="p">]))</span>
+                        <span class="nb">setattr</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="n">k</span><span class="p">]))</span>
                 <span class="k">return</span> <span class="n">tab</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
             <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">_fields</span><span class="p">:</span>
                 <span class="n">_k</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">resolve_alias</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">indices</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-                    <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="n">_k</span><span class="p">]</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">indices</span><span class="p">)</span>
+                    <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="n">_k</span><span class="p">][</span><span class="n">indices</span><span class="p">]</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="n">_k</span><span class="p">]</span>
             <span class="n">d</span><span class="p">[</span><span class="s1">&#39;header&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">)</span>
-            <span class="n">tab</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__dict__</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">tab</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
                 <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="p">):</span>
-                    <span class="nb">setattr</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__dict__</span><span class="p">[</span><span class="n">k</span><span class="p">]))</span>
+                    <span class="nb">setattr</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="n">k</span><span class="p">]))</span>
             <span class="k">return</span> <span class="n">tab</span></div>
 
 <div class="viewcode-block" id="SimpleTable.selectWhere"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.SimpleTable.selectWhere">[docs]</a>    <span class="k">def</span> <span class="nf">selectWhere</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fields</span><span class="p">,</span> <span class="n">condition</span><span class="p">,</span> <span class="n">condvars</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -2610,7 +2691,7 @@
         <span class="k">if</span> <span class="n">condition</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;True&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
             <span class="n">ind</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">ind</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">condition</span><span class="p">,</span> <span class="n">condvars</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="n">ind</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">condition</span><span class="p">,</span> <span class="n">condvars</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 
         <span class="n">tab</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">fields</span><span class="p">,</span> <span class="n">indices</span><span class="o">=</span><span class="n">ind</span><span class="p">)</span>
 
@@ -2640,7 +2721,7 @@
         <span class="n">getter</span> <span class="o">=</span> <span class="n">operator</span><span class="o">.</span><span class="n">itemgetter</span><span class="p">(</span><span class="o">*</span><span class="n">_key</span><span class="p">)</span>
 
         <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">grp</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">getter</span><span class="p">):</span>
-            <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dstack</span><span class="p">(</span><span class="n">grp</span><span class="p">))</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dstack</span><span class="p">(</span><span class="n">grp</span><span class="p">))</span>
             <span class="n">t</span><span class="o">.</span><span class="n">header</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span>
             <span class="n">t</span><span class="o">.</span><span class="n">_aliases</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_aliases</span>
             <span class="n">t</span><span class="o">.</span><span class="n">_units</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_units</span>
@@ -2650,8 +2731,8 @@
 <div class="viewcode-block" id="SimpleTable.stats"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.SimpleTable.stats">[docs]</a>    <span class="k">def</span> <span class="nf">stats</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fn</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Make statistics on columns of a table</span>
 
-<span class="sd">        Paramters</span>
-<span class="sd">        ---------</span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
 <span class="sd">        fn: callable or sequence of callables</span>
 <span class="sd">            functions to apply to each column</span>
 <span class="sd">            default: (np.mean, np.std, np.nanmin, np.nanmax)</span>
@@ -2672,14 +2753,15 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">OrderedDict</span>
 
-        <span class="n">fn</span> <span class="o">=</span> <span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">std</span><span class="p">,</span>
-              <span class="n">stats</span><span class="o">.</span><span class="n">min</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">max</span><span class="p">,</span>
-              <span class="n">stats</span><span class="o">.</span><span class="n">has_nan</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">fn</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">fn</span> <span class="o">=</span> <span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">std</span><span class="p">,</span>
+                <span class="n">stats</span><span class="o">.</span><span class="n">min</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">max</span><span class="p">,</span>
+                <span class="n">stats</span><span class="o">.</span><span class="n">has_nan</span><span class="p">)</span>
 
         <span class="n">d</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
         <span class="n">d</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;FIELD&#39;</span><span class="p">,</span> <span class="p">[])</span>
         <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">fn</span><span class="p">:</span>
-            <span class="n">d</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="p">[])</span>
+            <span class="n">d</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="p">[])</span>
 
         <span class="k">if</span> <span class="n">fields</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">fields</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">colnames</span>
@@ -2696,9 +2778,9 @@
                     <span class="n">val</span> <span class="o">=</span> <span class="n">fnk</span><span class="p">(</span><span class="bp">self</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
                 <span class="k">except</span><span class="p">:</span>
                     <span class="n">val</span> <span class="o">=</span> <span class="n">fill</span>
-                <span class="n">d</span><span class="p">[</span><span class="n">fnk</span><span class="o">.</span><span class="n">__name__</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+                <span class="n">d</span><span class="p">[</span><span class="n">fnk</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">dict</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">dict</span><span class="p">)</span></div>
 
     <span class="c1"># method aliases</span>
     <span class="n">remove_column</span> <span class="o">=</span> <span class="n">remove_columns</span>
@@ -2717,7 +2799,7 @@
 <span class="sd">    tools especially conesearch</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_ra_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dec_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__autoRADEC__</span><span class="p">()</span>
         <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">AstroTable</span><span class="p">):</span>
@@ -2864,6 +2946,7 @@
 
 <div class="viewcode-block" id="AstroTable.zoneSearch"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.AstroTable.zoneSearch">[docs]</a>    <span class="k">def</span> <span class="nf">zoneSearch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ramin</span><span class="p">,</span> <span class="n">ramax</span><span class="p">,</span> <span class="n">decmin</span><span class="p">,</span> <span class="n">decmax</span><span class="p">,</span> <span class="n">outtype</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Perform a zone search on a table, i.e., a rectangular selection</span>
+
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        ramin: float</span>
@@ -2925,7 +3008,7 @@
                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Expecting zone keywords as a tuple of 4 elements (ramin, ramax, decmin, decmax)&#39;</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">condition</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">ind</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">condition</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="n">ind</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">condition</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">ind</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="k">if</span> <span class="p">(</span><span class="n">cone</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">zone</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
                     <span class="k">return</span> <span class="kc">None</span>
@@ -2933,23 +3016,24 @@
             <span class="n">ind</span> <span class="o">=</span> <span class="kc">True</span>
 
         <span class="n">blobs</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">cone</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
-            <span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">cone</span>
-            <span class="n">_ind</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coneSearch</span><span class="p">(</span><span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">outtype</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-            <span class="n">ind</span> <span class="o">=</span> <span class="n">ind</span> <span class="o">&amp;</span> <span class="n">_ind</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
-            <span class="n">blobs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">zone</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
-            <span class="n">_ind</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">zoneSearch</span><span class="p">(</span><span class="n">zone</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">zone</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">zone</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">zone</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">outtype</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-            <span class="n">ind</span> <span class="o">=</span> <span class="n">ind</span> <span class="o">&amp;</span> <span class="n">_ind</span>
-        <span class="k">elif</span> <span class="p">(</span><span class="n">cone</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">zone</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>  <span class="c1"># cone + zone</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">cone</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">zone</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>  <span class="c1"># cone + zone</span>
             <span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">cone</span>
             <span class="n">ind</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coneSearch</span><span class="p">(</span><span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">outtype</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
             <span class="n">ind</span> <span class="o">=</span> <span class="n">ind</span> <span class="o">&amp;</span> <span class="bp">self</span><span class="o">.</span><span class="n">zoneSearch</span><span class="p">(</span><span class="n">zone</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">zone</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">zone</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">zone</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">outtype</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
             <span class="n">d</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span>
-            <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span>
             <span class="n">blobs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="n">cone</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">cone</span>
+            <span class="n">_ind</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coneSearch</span><span class="p">(</span><span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">outtype</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">ind</span> <span class="o">=</span> <span class="n">ind</span> <span class="o">&amp;</span> <span class="n">_ind</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
+            <span class="n">blobs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">ind</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="n">zone</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="n">_ind</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">zoneSearch</span><span class="p">(</span><span class="n">zone</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">zone</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">zone</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">zone</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">outtype</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">ind</span> <span class="o">=</span> <span class="n">ind</span> <span class="o">&amp;</span> <span class="n">_ind</span>
 
-        <span class="k">return</span> <span class="n">ind</span><span class="p">,</span> <span class="n">blobs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></div>
+        <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ind</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">ind</span><span class="p">,</span> <span class="n">blobs</span></div>
 
 <div class="viewcode-block" id="AstroTable.selectWhere"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.AstroTable.selectWhere">[docs]</a>    <span class="k">def</span> <span class="nf">selectWhere</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fields</span><span class="p">,</span> <span class="n">condition</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">condvars</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cone</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zone</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Read table data fulfilling the given `condition`.</span>
@@ -2963,7 +3047,7 @@
         <span class="n">tab</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">fields</span><span class="p">,</span> <span class="n">indices</span><span class="o">=</span><span class="n">ind</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">cone</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">tab</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s1">&#39;separation&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">blobs</span><span class="p">),</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;degree&#39;</span><span class="p">)</span>
+            <span class="n">tab</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s1">&#39;separation&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">blobs</span><span class="p">),</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;degree&#39;</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ra_name</span> <span class="ow">in</span> <span class="n">tab</span><span class="p">:</span>
             <span class="n">tab</span><span class="o">.</span><span class="n">set_RA</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ra_name</span><span class="p">)</span>
@@ -2975,46 +3059,46 @@
 
 
 <div class="viewcode-block" id="stats"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.stats">[docs]</a><span class="k">class</span> <span class="nc">stats</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="stats.has_nan"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.stats.has_nan">[docs]</a>    <span class="k">def</span> <span class="nf">has_nan</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+<div class="viewcode-block" id="stats.has_nan"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.stats.has_nan">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">has_nan</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">(</span><span class="kc">True</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">v</span><span class="p">))</span></div>
 
-    <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="stats.mean"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.stats.mean">[docs]</a>    <span class="k">def</span> <span class="nf">mean</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+<div class="viewcode-block" id="stats.mean"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.stats.mean">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">mean</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">v</span><span class="p">)</span></div>
 
-    <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="stats.max"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.stats.max">[docs]</a>    <span class="k">def</span> <span class="nf">max</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+<div class="viewcode-block" id="stats.max"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.stats.max">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">max</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">v</span><span class="p">)</span></div>
 
-    <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="stats.min"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.stats.min">[docs]</a>    <span class="k">def</span> <span class="nf">min</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+<div class="viewcode-block" id="stats.min"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.stats.min">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">min</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmin</span><span class="p">(</span><span class="n">v</span><span class="p">)</span></div>
 
-    <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="stats.std"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.stats.std">[docs]</a>    <span class="k">def</span> <span class="nf">std</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+<div class="viewcode-block" id="stats.std"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.stats.std">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">std</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nanstd</span><span class="p">(</span><span class="n">v</span><span class="p">)</span></div>
 
-    <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="stats.var"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.stats.var">[docs]</a>    <span class="k">def</span> <span class="nf">var</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+<div class="viewcode-block" id="stats.var"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.stats.var">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">var</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">v</span><span class="p">)</span></div>
 
-    <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="stats.p16"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.stats.p16">[docs]</a>    <span class="k">def</span> <span class="nf">p16</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+<div class="viewcode-block" id="stats.p16"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.stats.p16">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">p16</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nanpercentile</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span></div>
 
-    <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="stats.p84"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.stats.p84">[docs]</a>    <span class="k">def</span> <span class="nf">p84</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+<div class="viewcode-block" id="stats.p84"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.stats.p84">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">p84</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nanpercentile</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="mi">84</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="mi">84</span><span class="p">)</span></div>
 
-    <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="stats.p50"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.stats.p50">[docs]</a>    <span class="k">def</span> <span class="nf">p50</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+<div class="viewcode-block" id="stats.p50"><a class="viewcode-back" href="../../ezdata.html#ezdata.simpletable.stats.p50">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">p50</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
@@ -3170,8 +3254,8 @@
       &copy;2015, M. Fouesneau.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
     </div>
 
