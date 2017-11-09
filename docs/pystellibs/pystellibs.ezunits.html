@@ -1,37 +1,39 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>pystellibs.ezunits package &mdash; pystellibs 1.0 documentation</title>
-    
+    <title>pystellibs.ezunits package &#8212; pystellibs 1.0 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
         VERSION:     '1.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="pystellibs 1.0 documentation" href="index.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pystellibs.future package" href="pystellibs.future.html" />
+    <link rel="prev" title="pystellibs package" href="pystellibs.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body role="document">
+  <body>
   
 
     <div class="document">
@@ -64,8 +66,9 @@ and conversions from and to different units.</p>
 </table>
 <dl class="class">
 <dt id="pystellibs.ezunits.pint.AliasDict">
-<em class="property">class </em><code class="descclassname">pystellibs.ezunits.pint.</code><code class="descname">AliasDict</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pystellibs/ezunits/pint.html#AliasDict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pystellibs.ezunits.pint.AliasDict" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">pystellibs.ezunits.pint.</code><code class="descname">AliasDict</code><span class="sig-paren">(</span><em>) -&gt; new empty dictionary dict(mapping) -&gt; new dictionary initialized from a mapping object's (key</em>, <em>value) pairs dict(iterable) -&gt; new dictionary initialized as if via: d = {} for k</em>, <em>v in iterable: d[k] = v dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs in the keyword argument list.  For example:  dict(one=1</em>, <em>two=2</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pystellibs/ezunits/pint.html#AliasDict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pystellibs.ezunits.pint.AliasDict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">dict</span></code></p>
+<p class="rubric">Methods</p>
 <dl class="method">
 <dt id="pystellibs.ezunits.pint.AliasDict.add_alias">
 <code class="descname">add_alias</code><span class="sig-paren">(</span><em>key</em>, <em>value</em>, <em>preferred=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pystellibs/ezunits/pint.html#AliasDict.add_alias"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pystellibs.ezunits.pint.AliasDict.add_alias" title="Permalink to this definition">¶</a></dt>
@@ -103,15 +106,16 @@ units.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>filename</strong> &#8211; path of the units definition file to load.
+<li><strong>filename</strong> – path of the units definition file to load.
 Empty to load the default definition file.
 None to leave the UnitRegistry empty.</li>
-<li><strong>force_ndarray</strong> &#8211; convert any input, scalar or not to a numpy.ndarray.</li>
+<li><strong>force_ndarray</strong> – convert any input, scalar or not to a numpy.ndarray.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Methods</p>
 <dl class="method">
 <dt id="pystellibs.ezunits.pint.UnitRegistry.add_from_file">
 <code class="descname">add_from_file</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pystellibs/ezunits/pint.html#UnitRegistry.add_from_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pystellibs.ezunits.pint.UnitRegistry.add_from_file" title="Permalink to this definition">¶</a></dt>
@@ -144,6 +148,7 @@ None to leave the UnitRegistry empty.</li>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">dict</span></code></p>
 <p>The UnitsContainer stores the product of units and their respective
 exponent and implements the corresponding operations</p>
+<p class="rubric">Methods</p>
 <dl class="method">
 <dt id="pystellibs.ezunits.pint.UnitsContainer.add">
 <code class="descname">add</code><span class="sig-paren">(</span><em>key</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pystellibs/ezunits/pint.html#UnitsContainer.add"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pystellibs.ezunits.pint.UnitsContainer.add" title="Permalink to this definition">¶</a></dt>
@@ -219,21 +224,27 @@ and conversions from and to different units.</p>
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">pystellibs</a><ul>
+  <li><a href="pystellibs.html">pystellibs package</a><ul>
+      <li>Previous: <a href="pystellibs.html" title="previous chapter">pystellibs package</a></li>
+      <li>Next: <a href="pystellibs.future.html" title="next chapter">pystellibs.future package</a></li>
+  </ul></li>
+  </ul></li>
   </ul></li>
 </ul>
 </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/pystellibs.ezunits.txt"
+      <li><a href="_sources/pystellibs.ezunits.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -247,11 +258,11 @@ and conversions from and to different units.</p>
       &copy;2016, M. Fouesneau.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
-      <a href="_sources/pystellibs.ezunits.txt"
+      <a href="_sources/pystellibs.ezunits.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

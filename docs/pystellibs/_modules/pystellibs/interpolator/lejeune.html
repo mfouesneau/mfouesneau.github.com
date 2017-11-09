@@ -1,38 +1,37 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>pystellibs.interpolator.lejeune &mdash; pystellibs 1.0 documentation</title>
-    
+    <title>pystellibs.interpolator.lejeune &#8212; pystellibs 1.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
         VERSION:     '1.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="pystellibs 1.0 documentation" href="../../../index.html" />
-    <link rel="up" title="Module code" href="../../index.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body role="document">
+  <body>
   
 
     <div class="document">
@@ -50,9 +49,8 @@
 <span class="sd">given grid.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">..ezmap</span> <span class="kn">import</span> <span class="nb">map</span>
-<span class="kn">from</span> <span class="nn">.interpolator</span> <span class="kn">import</span> <span class="n">BaseInterpolator</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">.interpolator</span> <span class="k">import</span> <span class="n">BaseInterpolator</span>
 
 
 <span class="k">def</span> <span class="nf">__det3x3__</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
@@ -153,7 +151,7 @@
     <span class="n">dist</span>   <span class="o">=</span> <span class="n">kappa</span> <span class="o">*</span> <span class="nb">abs</span><span class="p">(</span><span class="n">deltag</span><span class="p">)</span> <span class="o">+</span> <span class="nb">abs</span><span class="p">(</span><span class="n">deltaT</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">dist</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="p">(</span><span class="n">dist</span><span class="o">.</span><span class="n">argmin</span><span class="p">(),</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mf">1.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">dist</span><span class="o">.</span><span class="n">argmin</span><span class="p">(),</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="mf">1.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">))</span>
 
     <span class="c1"># Looking for i_{1..4}</span>
     <span class="n">ind_dT</span> <span class="o">=</span> <span class="n">deltaT</span> <span class="o">&gt;=</span> <span class="mi">0</span>
@@ -161,28 +159,28 @@
 
     <span class="c1"># i1</span>
     <span class="n">ind</span> <span class="o">=</span> <span class="p">(</span><span class="n">ind_dT</span> <span class="o">&amp;</span> <span class="n">ind_dg</span><span class="p">)</span>
-    <span class="k">if</span> <span class="bp">True</span> <span class="ow">in</span> <span class="n">ind</span><span class="p">:</span>
+    <span class="k">if</span> <span class="kc">True</span> <span class="ow">in</span> <span class="n">ind</span><span class="p">:</span>
         <span class="n">i1</span>  <span class="o">=</span> <span class="n">idx</span><span class="p">[</span><span class="n">ind</span><span class="p">][</span><span class="n">dist</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span><span class="o">.</span><span class="n">argmin</span><span class="p">()]</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">i1</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
 
     <span class="c1"># i2</span>
     <span class="n">ind</span> <span class="o">=</span> <span class="p">(</span><span class="n">ind_dT</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">ind_dg</span><span class="p">)</span>
-    <span class="k">if</span> <span class="bp">True</span> <span class="ow">in</span> <span class="n">ind</span><span class="p">:</span>
+    <span class="k">if</span> <span class="kc">True</span> <span class="ow">in</span> <span class="n">ind</span><span class="p">:</span>
         <span class="n">i2</span>  <span class="o">=</span> <span class="n">idx</span><span class="p">[</span><span class="n">ind</span><span class="p">][</span><span class="n">dist</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span><span class="o">.</span><span class="n">argmin</span><span class="p">()]</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">i2</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
 
     <span class="c1"># i3</span>
     <span class="n">ind</span> <span class="o">=</span> <span class="p">(</span><span class="o">~</span><span class="n">ind_dT</span> <span class="o">&amp;</span> <span class="n">ind_dg</span><span class="p">)</span>
-    <span class="k">if</span> <span class="bp">True</span> <span class="ow">in</span> <span class="n">ind</span><span class="p">:</span>
+    <span class="k">if</span> <span class="kc">True</span> <span class="ow">in</span> <span class="n">ind</span><span class="p">:</span>
         <span class="n">i3</span>  <span class="o">=</span> <span class="n">idx</span><span class="p">[</span><span class="n">ind</span><span class="p">][</span><span class="n">dist</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span><span class="o">.</span><span class="n">argmin</span><span class="p">()]</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">i3</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
 
     <span class="c1"># i4</span>
     <span class="n">ind</span> <span class="o">=</span> <span class="p">(</span><span class="o">~</span><span class="n">ind_dT</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">ind_dg</span><span class="p">)</span>
-    <span class="k">if</span> <span class="bp">True</span> <span class="ow">in</span> <span class="n">ind</span><span class="p">:</span>
+    <span class="k">if</span> <span class="kc">True</span> <span class="ow">in</span> <span class="n">ind</span><span class="p">:</span>
         <span class="n">i4</span>  <span class="o">=</span> <span class="n">idx</span><span class="p">[</span><span class="n">ind</span><span class="p">][</span><span class="n">dist</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span><span class="o">.</span><span class="n">argmin</span><span class="p">()]</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">i4</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
@@ -320,7 +318,8 @@
 
             <span class="c1"># If (T, g) is outside the triangle formed</span>
             <span class="c1"># by the three used points use only two points.</span>
-            <span class="k">if</span> <span class="p">((</span><span class="n">alpha2</span> <span class="o">&lt;</span> <span class="mf">0.</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">alpha2</span> <span class="o">&gt;</span> <span class="mf">1.</span> <span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">alpha3</span> <span class="o">&lt;</span> <span class="mf">0.</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">alpha3</span> <span class="o">&gt;</span> <span class="mf">1.</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">alpha4</span> <span class="o">&lt;</span> <span class="mf">0.</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">alpha4</span> <span class="o">&gt;</span> <span class="mf">1.</span> <span class="p">)</span> <span class="p">):</span>
+            <span class="k">if</span> <span class="p">((</span><span class="n">alpha2</span> <span class="o">&lt;</span> <span class="mf">0.</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">alpha2</span> <span class="o">&gt;</span> <span class="mf">1.</span> <span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">alpha3</span> <span class="o">&lt;</span> <span class="mf">0.</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">alpha3</span> <span class="o">&gt;</span> <span class="mf">1.</span><span class="p">)</span> <span class="o">|</span> 
+                <span class="p">(</span><span class="n">alpha4</span> <span class="o">&lt;</span> <span class="mf">0.</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">alpha4</span> <span class="o">&gt;</span> <span class="mf">1.</span> <span class="p">)</span> <span class="p">):</span>
                 <span class="n">alpha1</span> <span class="o">=</span> <span class="mf">0.</span>
                 <span class="k">if</span> <span class="p">(</span><span class="n">T2</span> <span class="o">==</span> <span class="n">T3</span><span class="p">):</span>
                     <span class="n">alpha2</span> <span class="o">=</span> <span class="mf">0.5</span>
@@ -536,6 +535,95 @@
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">((</span><span class="n">i1</span><span class="p">,</span> <span class="n">i2</span><span class="p">,</span> <span class="n">i3</span><span class="p">,</span> <span class="n">i4</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">((</span><span class="n">alpha1</span><span class="p">,</span> <span class="n">alpha2</span><span class="p">,</span> <span class="n">alpha3</span><span class="p">,</span> <span class="n">alpha4</span><span class="p">))</span>
 
 
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">class LejeuneInterpolator(BaseInterpolator):</span>
+<span class="sd">    &quot;&quot;&quot; Interpolation for grid based on the Lejeune library definition</span>
+
+<span class="sd">    The interpolation is N-D linear in log-temperature, log-gravity, and linear</span>
+<span class="sd">    in metallicity Z. Preference is always given to the temperature over the</span>
+<span class="sd">    gravity when needed.</span>
+
+<span class="sd">    This version is translated from Pegase</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+
+<span class="sd">    dT_max: float, optional</span>
+<span class="sd">        If, T2 (resp. T1) is too far from T compared to T1 (resp. T2), i2</span>
+<span class="sd">        (resp. i1) is not used.  (see below for namings)</span>
+
+<span class="sd">    eps: float</span>
+<span class="sd">        temperature sensitivity under which points are considered to have</span>
+<span class="sd">        the same temperature</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    def __init__(self, osl, dT_max=0.1, eps=1e-6, *args, **kwargs):</span>
+<span class="sd">        BaseInterpolator.__init__(self, osl, *args, **kwargs)</span>
+<span class="sd">        self.dlogT_max = dT_max</span>
+<span class="sd">        self.eps = eps</span>
+<span class="sd">        self.osl = osl</span>
+<span class="sd">        </span>
+<span class="sd">    def interp(self, aps, weights=None, **kwargs):</span>
+<span class="sd">        return self.interp_other(aps, self.osl.spectra, weights=weights, **kwargs)</span>
+<span class="sd">        </span>
+<span class="sd">    def interp_other(self, aps, other, weights=None, **kwargs):</span>
+<span class="sd">        # get osl data</span>
+<span class="sd">        osl_logT, osl_logg, osl_logZ = self.osl.get_interpolation_data().T</span>
+<span class="sd">        grid_logZ   = np.unique(osl_logZ)</span>
+<span class="sd">        if np.ndim(other) &lt; 2:</span>
+<span class="sd">            values = np.atleast_2d([other]).T</span>
+<span class="sd">        else:</span>
+<span class="sd">            values = np.atleast_2d(other)</span>
+<span class="sd">        </span>
+<span class="sd">        # params</span>
+<span class="sd">        library_index = np.arange(len(osl_logT), dtype=int)</span>
+<span class="sd">        _aps = np.atleast_2d(aps)</span>
+<span class="sd">        if weights is None:</span>
+<span class="sd">            _weights = np.ones(len(_aps), dtype=float)</span>
+<span class="sd">        elif np.ndim(weights) == 0:</span>
+<span class="sd">            _weights = np.ones(len(_aps), dtype=float) * weights</span>
+<span class="sd">        else:</span>
+<span class="sd">            _weights = weights</span>
+<span class="sd">        </span>
+<span class="sd">        final_values = []</span>
+<span class="sd">        for current_aps, current_weight in zip(np.atleast_2d(aps), _weights):</span>
+<span class="sd">            logT, logg, logZ = current_aps</span>
+<span class="sd">            # logZ = np.log10(Z)</span>
+<span class="sd">        </span>
+<span class="sd">            # find Zsup and Zinf</span>
+<span class="sd">            where = np.searchsorted(grid_logZ, logZ)</span>
+<span class="sd">            if where &gt;=0:</span>
+<span class="sd">                logZinf = grid_logZ[where]</span>
+<span class="sd">            else:</span>
+<span class="sd">                raise ValueError(&quot;Metallicity extrapolation&quot;)</span>
+<span class="sd">            if abs(logZinf - logZ) &lt; 1e-4: </span>
+<span class="sd">                # exact match no need to interpolate twice.</span>
+<span class="sd">                select = (abs(logZinf - osl_logZ) &lt; 1e-4)</span>
+<span class="sd">                # call Pegase interpolation scheme</span>
+<span class="sd">                #   Interpolation of the (logT, logg) grid at fixed Z from pegase.2</span>
+<span class="sd">                #   it returns the knots&#39;indices from the input data and their weights, resp.</span>
+<span class="sd">                #   the final result is then the weighted sum.</span>
+<span class="sd">                indices, alphas = __interp__(logT, logg, </span>
+<span class="sd">                                             osl_logT[select], osl_logg[select], </span>
+<span class="sd">                                             dT_max=self.dlogT_max, eps=self.eps)</span>
+<span class="sd">                # indices are for the selection</span>
+<span class="sd">                # if indices[k] = -1, then one corner is rejected</span>
+<span class="sd">                data_indices = library_index[select][indices[indices &gt;= 0]]</span>
+<span class="sd">                data_weights = alphas[indices &gt;= 0]</span>
+<span class="sd">                spectrum = np.sum(values[data_indices] * data_weights[:, None], axis=0)</span>
+<span class="sd">                # store the weighted sum * the input requested weight</span>
+<span class="sd">                final_values.append(spectrum * current_weight)</span>
+<span class="sd">            else:</span>
+<span class="sd">                logZsup = grid_logZ[where + 1]</span>
+<span class="sd">                # interpolate within each (therefore calling interp with Zinf, Zsup, resp.) </span>
+<span class="sd">                # then linearly interpolate between logZ values.</span>
+<span class="sd">                inf_spectrum = self.interp_other((logT, logg, logZinf), values, weights=current_weight, **kwargs)</span>
+<span class="sd">                sup_spectrum = self.interp_other((logT, logg, logZsup), values, weights=current_weight, **kwargs)</span>
+<span class="sd">                spectrum = inf_spectrum * (logZ - logZinf) / (logZsup - logZinf) + sup_spectrum * (logZsup - logZ) / (logZsup - logZinf)</span>
+<span class="sd">                final_values.append(spectrum)</span>
+<span class="sd">        return np.squeeze(final_values)</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+
 <div class="viewcode-block" id="LejeuneInterpolator"><a class="viewcode-back" href="../../../pystellibs.interpolator.html#pystellibs.interpolator.lejeune.LejeuneInterpolator">[docs]</a><span class="k">class</span> <span class="nc">LejeuneInterpolator</span><span class="p">(</span><span class="n">BaseInterpolator</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; Interpolation for grid based on the Lejeune library definition</span>
 
@@ -556,12 +644,13 @@
 <span class="sd">        temperature sensitivity under which points are considered to have</span>
 <span class="sd">        the same temperature</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dT_max</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="n">BaseInterpolator</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">dT_max</span> <span class="o">=</span> <span class="mf">0.1</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">osl</span><span class="p">,</span> <span class="n">dT_max</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">BaseInterpolator</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">osl</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dlogT_max</span> <span class="o">=</span> <span class="n">dT_max</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">eps</span> <span class="o">=</span> <span class="n">eps</span>
-
-<div class="viewcode-block" id="LejeuneInterpolator.interp"><a class="viewcode-back" href="../../../pystellibs.interpolator.html#pystellibs.interpolator.lejeune.LejeuneInterpolator.interp">[docs]</a>    <span class="k">def</span> <span class="nf">interp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T0</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">Z0</span><span class="p">,</span> <span class="n">L0</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mf">1.</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">osl</span> <span class="o">=</span> <span class="n">osl</span>
+        
+    <span class="k">def</span> <span class="nf">_osl_interp_weights</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">osl</span><span class="p">,</span> <span class="n">T0</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">Z0</span><span class="p">,</span> <span class="n">dT_max</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Interpolation of the T,g grid</span>
 
 <span class="sd">        Interpolate on the grid and returns star indices and associated weights,</span>
@@ -581,17 +670,13 @@
 <span class="sd">        Z0: float</span>
 <span class="sd">            metallicity to obtain</span>
 
-<span class="sd">        L0: float</span>
-<span class="sd">            bolometric luminosity to get</span>
+<span class="sd">        dT_max: float, optional</span>
+<span class="sd">            If, T2 (resp. T1) is too far from T compared to T1 (resp. T2), i2</span>
+<span class="sd">            (resp. i1) is not used.  (see below for namings)</span>
 
-<span class="sd">        T: float</span>
-<span class="sd">            log(Teff) of the grid</span>
-
-<span class="sd">        g: float</span>
-<span class="sd">            log(g) of the grid</span>
-
-<span class="sd">        weight: float, optional</span>
-<span class="sd">            weight to apply to the selected star</span>
+<span class="sd">        eps: float</span>
+<span class="sd">            temperature sensitivity under which points are considered to have</span>
+<span class="sd">            the same temperature</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -602,19 +687,16 @@
 <span class="sd">            4 associated weights</span>
 
 <span class="sd">        Returns 3 to 12 star indexes and associated weights</span>
-
-<span class="sd">        see _interp_</span>
-
-<span class="sd">        TODO: compute new weights accounting for Z</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">dT_max</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dT_max</span>
-        <span class="n">eps</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">eps</span>
-        <span class="n">_Z</span>    <span class="o">=</span> <span class="n">Z</span>
+        <span class="c1"># interpolation must be by construction from logT, logg, Z</span>
+        <span class="c1"># logZ could be an alternative.</span>
+        <span class="n">osl_logT</span><span class="p">,</span> <span class="n">osl_logg</span><span class="p">,</span> <span class="n">osl_logZ</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">osl</span><span class="o">.</span><span class="n">get_interpolation_data</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
+        <span class="n">_Z</span>    <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="n">osl_logZ</span>
         <span class="n">_Zv</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">_Z</span><span class="p">)</span>
-        <span class="n">_T</span>    <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
-        <span class="n">_g</span>    <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+        <span class="n">_T</span>    <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">osl_logT</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">double</span><span class="p">)</span>
+        <span class="n">_g</span>    <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">osl_logg</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">double</span><span class="p">)</span>
 
-        <span class="n">bZ_m</span>  <span class="o">=</span> <span class="bp">True</span> <span class="ow">in</span> <span class="p">(</span><span class="n">_Zv</span> <span class="o">==</span> <span class="n">Z0</span><span class="p">)</span>  <span class="c1"># Z_match bool</span>
+        <span class="n">bZ_m</span>  <span class="o">=</span> <span class="kc">True</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">_Zv</span> <span class="o">-</span> <span class="n">Z0</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-28</span><span class="p">)</span>  <span class="c1"># Z_match bool</span>
         <span class="n">r</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">_Zv</span> <span class="o">&lt;</span> <span class="n">Z0</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
         <span class="n">Z_inf</span> <span class="o">=</span> <span class="n">_Zv</span><span class="p">[</span><span class="n">r</span><span class="o">.</span><span class="n">max</span><span class="p">()]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="o">-</span><span class="mf">1.</span>
         <span class="n">r</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">_Zv</span> <span class="o">&gt;</span> <span class="n">Z0</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
@@ -624,28 +706,25 @@
         <span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>
         <span class="n">Z</span>       <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">weight</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-            <span class="n">weight</span> <span class="o">=</span> <span class="mf">1.</span>
-
         <span class="k">if</span> <span class="p">(</span><span class="n">bZ_m</span><span class="p">):</span>
-            <span class="n">ind</span>         <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">_Z</span> <span class="o">==</span> <span class="n">Z0</span><span class="p">)</span>
+            <span class="n">ind</span>         <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="nb">abs</span><span class="p">(</span><span class="n">_Z</span> <span class="o">-</span> <span class="n">Z0</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-28</span><span class="p">))</span>
             <span class="n">i</span><span class="p">,</span> <span class="n">w</span>        <span class="o">=</span> <span class="n">__interp__</span><span class="p">(</span><span class="n">T0</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">_T</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">_g</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">dT_max</span><span class="p">,</span> <span class="n">eps</span><span class="p">)</span>
             <span class="n">index</span><span class="p">[</span><span class="mi">8</span><span class="p">:]</span>   <span class="o">=</span> <span class="n">ind</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
-            <span class="n">weights</span><span class="p">[</span><span class="mi">8</span><span class="p">:]</span> <span class="o">=</span> <span class="n">w</span>
+            <span class="n">weights</span><span class="p">[</span><span class="mi">8</span><span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
             <span class="n">Z</span><span class="p">[</span><span class="mi">8</span><span class="p">:]</span>       <span class="o">=</span> <span class="p">[</span><span class="n">Z0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">4</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">Z_inf</span> <span class="o">&gt;</span> <span class="mf">0.</span><span class="p">):</span>
                 <span class="n">ind</span>         <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">_Z</span> <span class="o">==</span> <span class="n">Z_inf</span><span class="p">)</span>
                 <span class="n">i</span><span class="p">,</span> <span class="n">w</span>        <span class="o">=</span> <span class="n">__interp__</span><span class="p">(</span><span class="n">T0</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">_T</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">_g</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">dT_max</span><span class="p">,</span> <span class="n">eps</span><span class="p">)</span>
                 <span class="n">index</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>   <span class="o">=</span> <span class="n">ind</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
-                <span class="n">weights</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">w</span>
+                <span class="n">weights</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
                 <span class="n">Z</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>       <span class="o">=</span> <span class="p">[</span><span class="n">Z_inf</span><span class="p">]</span> <span class="o">*</span> <span class="mi">4</span>
 
             <span class="k">if</span> <span class="p">(</span><span class="n">Z_sup</span> <span class="o">&gt;</span> <span class="mf">0.</span><span class="p">):</span>
                 <span class="n">ind</span>          <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">_Z</span> <span class="o">==</span> <span class="n">Z_sup</span><span class="p">)</span>
                 <span class="n">i</span><span class="p">,</span> <span class="n">w</span>         <span class="o">=</span> <span class="n">__interp__</span><span class="p">(</span><span class="n">T0</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">_T</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">_g</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">dT_max</span><span class="p">,</span> <span class="n">eps</span><span class="p">)</span>
                 <span class="n">index</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span>   <span class="o">=</span> <span class="n">ind</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
-                <span class="n">weights</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="n">w</span>
+                <span class="n">weights</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
                 <span class="n">Z</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span>       <span class="o">=</span> <span class="p">[</span><span class="n">Z_sup</span><span class="p">]</span> <span class="o">*</span> <span class="mi">4</span>
 
             <span class="k">if</span> <span class="p">((</span><span class="n">Z_inf</span> <span class="o">&gt;</span> <span class="mf">0.</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">Z_sup</span> <span class="o">&gt;</span> <span class="mf">0.</span><span class="p">)):</span>
@@ -657,66 +736,111 @@
                     <span class="n">weights</span><span class="p">[:</span><span class="mi">8</span><span class="p">]</span>  <span class="o">*=</span> <span class="mf">0.5</span>
 
         <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">weights</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">index</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="mi">10</span> <span class="o">**</span> <span class="n">L0</span> <span class="o">*</span> <span class="n">weight</span> <span class="o">*</span> <span class="n">weights</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span>  <span class="c1"># / (weights[ind].sum()) #, Z[ind]</span></div>
-
-<div class="viewcode-block" id="LejeuneInterpolator.interp_single"><a class="viewcode-back" href="../../../pystellibs.interpolator.html#pystellibs.interpolator.lejeune.LejeuneInterpolator.interp_single">[docs]</a>    <span class="k">def</span> <span class="nf">interp_single</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; proxy to interp with a list of arguements &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>
-                                      <span class="n">args</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span>
-                                      <span class="n">args</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">9</span><span class="p">]))</span><span class="o">.</span><span class="n">T</span></div>
-
-<div class="viewcode-block" id="LejeuneInterpolator.interp_many"><a class="viewcode-back" href="../../../pystellibs.interpolator.html#pystellibs.interpolator.lejeune.LejeuneInterpolator.interp_many">[docs]</a>    <span class="k">def</span> <span class="nf">interp_many</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">oSL</span><span class="p">,</span> <span class="n">logT</span><span class="p">,</span> <span class="n">logg</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">logL</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">pool</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">nthreads</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Interpolate multiple stars at the same time (optionally in parallel)</span>
-
+        <span class="k">return</span> <span class="n">index</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">weights</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span>  <span class="c1"># / (weights[ind].sum()) #, Z[ind]</span>
+        
+        
+    <span class="k">def</span> <span class="nf">_interp_weights</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">aps</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; returns interpolation nodes and weights </span>
+<span class="sd">        </span>
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
-<span class="sd">        oSL: Stellib instance</span>
-<span class="sd">            spectral library to interpolate</span>
-
-<span class="sd">        logT: ndarray, dtype=float</span>
-<span class="sd">            log-effective temperature to get</span>
-
-<span class="sd">        logg: ndarray, dtype=float</span>
-<span class="sd">            log-surface gravity to get</span>
-
-<span class="sd">        Z: float</span>
-<span class="sd">            metallicity target</span>
-
-<span class="sd">        logL: ndarray</span>
-<span class="sd">            log-luminosity to get</span>
-
-<span class="sd">        weights: ndarray, dtype=float, optional</span>
-<span class="sd">            optional weighting scheme for each star</span>
-
-<span class="sd">        pool: Pool instance, optional</span>
-<span class="sd">            pool that can be used to do the computation (expecting a map attribute)</span>
-
-<span class="sd">        nthreads: int, optiona</span>
-<span class="sd">            if set without providing a pool arguement, configure a new Pool object</span>
-<span class="sd">            to do the computations</span>
-
+<span class="sd">        aps: ndarray</span>
+<span class="sd">            (logT, logg, logZ) sequence. </span>
+<span class="sd">            Or appropriately defined similarly to self.osl.get_interpolation_data</span>
+<span class="sd">        weights: ndarray</span>
+<span class="sd">            optional weights of each ap vector to apply during the interpolation</span>
+<span class="sd">            </span>
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">        (idx, w): tuples</span>
-<span class="sd">            idx: ndarray, dtype=int, size=4</span>
-<span class="sd">                4 star indexes</span>
-
-<span class="sd">            w: ndarray, dtype=float, size=4</span>
-<span class="sd">                4 associated weights</span>
+<span class="sd">        node_weights: array</span>
+<span class="sd">            osl grid node indices and interpolation weights</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">weights</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-            <span class="n">seq</span> <span class="o">=</span> <span class="p">[(</span><span class="n">logT</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">logg</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">Z</span><span class="p">,</span> <span class="n">logL</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">oSL</span><span class="o">.</span><span class="n">logT</span><span class="p">,</span> <span class="n">oSL</span><span class="o">.</span><span class="n">logg</span><span class="p">,</span> <span class="n">oSL</span><span class="o">.</span><span class="n">Z</span><span class="p">,</span> <span class="mf">1.</span><span class="p">)</span>
-                   <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">logT</span><span class="p">))</span> <span class="p">]</span>
+        <span class="n">_aps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">aps</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">weights</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">_weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">_aps</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">np</span><span class="o">.</span><span class="n">ndim</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">_weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">_aps</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span> <span class="o">*</span> <span class="n">weights</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">seq</span> <span class="o">=</span> <span class="p">[</span> <span class="p">(</span><span class="n">logT</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">logg</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">Z</span><span class="p">,</span> <span class="n">logL</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">oSL</span><span class="o">.</span><span class="n">logT</span><span class="p">,</span> <span class="n">oSL</span><span class="o">.</span><span class="n">logg</span><span class="p">,</span> <span class="n">oSL</span><span class="o">.</span><span class="n">Z</span><span class="p">,</span>
-                     <span class="n">weights</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">logT</span><span class="p">))</span> <span class="p">]</span>
-
-        <span class="k">if</span> <span class="p">(</span><span class="n">pool</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">):</span>
-            <span class="n">r</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">map</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">interp_single</span><span class="p">,</span> <span class="n">seq</span> <span class="p">)</span>
+            <span class="n">_weights</span> <span class="o">=</span> <span class="n">weights</span>
+            
+        <span class="n">node_weights</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">current_weight</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">_aps</span><span class="p">,</span> <span class="n">_weights</span><span class="p">):</span>
+            <span class="n">logT</span><span class="p">,</span> <span class="n">logg</span><span class="p">,</span> <span class="n">logZ</span> <span class="o">=</span> <span class="n">s</span>
+            <span class="n">Z</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="n">logZ</span>
+            <span class="n">current_nodes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_osl_interp_weights</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">osl</span><span class="p">,</span> <span class="n">logT</span><span class="p">,</span> <span class="n">logg</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
+            <span class="n">current_nodes</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*=</span> <span class="n">current_weight</span>
+            <span class="n">node_weights</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">current_nodes</span><span class="p">)</span>
+            
+        <span class="k">return</span> <span class="n">node_weights</span>
+    
+    <span class="k">def</span> <span class="nf">_evaluate_from_weights</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Evaluate the interpolation from interpolation nodes and weights </span>
+<span class="sd">        </span>
+<span class="sd">        Basically do a weighted sum on the grid using the interpolation weights</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        node_weights: array</span>
+<span class="sd">            osl grid node indices and interpolation weights</span>
+<span class="sd">            result of interp_weights</span>
+<span class="sd">        </span>
+<span class="sd">        other: array</span>
+<span class="sd">            values to interpolate</span>
+<span class="sd">        </span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        interpolated: ndarray (size(node_weights), )</span>
+<span class="sd">            interpolated values</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">ndim</span><span class="p">(</span><span class="n">other</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">([</span><span class="n">other</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="c1"># using ezmap map function this takes care of closing the pool</span>
-            <span class="n">r</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interp_single</span><span class="p">,</span> <span class="n">seq</span><span class="p">,</span> <span class="n">ncpu</span><span class="o">=</span><span class="n">nthreads</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">(</span><span class="n">r</span><span class="p">)</span></div></div>
+            <span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+        <span class="n">interpolated</span> <span class="o">=</span> <span class="p">[(((</span><span class="n">values</span><span class="p">[</span><span class="n">rk</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)]</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="o">*</span> <span class="n">rk</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]))</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">rk</span> <span class="ow">in</span> <span class="n">r</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">interpolated</span><span class="p">)</span>
+    
+<div class="viewcode-block" id="LejeuneInterpolator.interp"><a class="viewcode-back" href="../../../pystellibs.interpolator.html#pystellibs.interpolator.lejeune.LejeuneInterpolator.interp">[docs]</a>    <span class="k">def</span> <span class="nf">interp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">aps</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Interpolate spectra</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        aps: ndarray</span>
+<span class="sd">            (logT, logg, logZ) sequence. </span>
+<span class="sd">            Or appropriately defined similarly to self.osl.get_interpolation_data</span>
+<span class="sd">        weights: ndarray</span>
+<span class="sd">            optional weights of each ap vector to apply during the interpolation</span>
+<span class="sd">            </span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        s0: ndarray (len(aps), len(l0))</span>
+<span class="sd">            interpolated spectra</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">s0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interp_other</span><span class="p">(</span><span class="n">aps</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">osl</span><span class="o">.</span><span class="n">spectra</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">s0</span></div>
+    
+<div class="viewcode-block" id="LejeuneInterpolator.interp_other"><a class="viewcode-back" href="../../../pystellibs.interpolator.html#pystellibs.interpolator.lejeune.LejeuneInterpolator.interp_other">[docs]</a>    <span class="k">def</span> <span class="nf">interp_other</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">aps</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Interpolate other grid values  </span>
+<span class="sd">        </span>
+<span class="sd">        Basically do a weighted sum on the grid using the interpolation weights</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        aps: ndarray</span>
+<span class="sd">            (logT, logg, logZ) sequence. </span>
+<span class="sd">            Or appropriately defined similarly to self.osl.get_interpolation_data</span>
+<span class="sd">        weights: ndarray</span>
+<span class="sd">            optional weights of each ap vector to apply during the interpolation</span>
+<span class="sd">        </span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        interpolated: ndarray (size(node_weights), )</span>
+<span class="sd">            interpolated values</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interp_weights</span><span class="p">(</span><span class="n">aps</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">interpolated</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_evaluate_from_weights</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">interpolated</span></div></div>
 </pre></div>
 
           </div>
@@ -728,6 +852,8 @@
 <ul>
   <li><a href="../../../index.html">Documentation overview</a><ul>
   <li><a href="../../index.html">Module code</a><ul>
+  <li><a href="../interpolator.html">pystellibs.interpolator</a><ul>
+  </ul></li>
   </ul></li>
   </ul></li>
 </ul>
@@ -735,8 +861,8 @@
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -750,8 +876,8 @@
       &copy;2016, M. Fouesneau.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
     </div>
 

@@ -1,38 +1,37 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>pystellibs.ezmap &mdash; pystellibs 1.0 documentation</title>
-    
+    <title>pystellibs.ezmap &#8212; pystellibs 1.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
         VERSION:     '1.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="pystellibs 1.0 documentation" href="../../index.html" />
-    <link rel="up" title="Module code" href="../index.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body role="document">
+  <body>
   
 
     <div class="document">
@@ -55,15 +54,15 @@
 <span class="sd">    &gt;&gt;&gt; print map(partial(fn, a=1, c=2, b=2, allkeywords=True), (3, 4, 5), ncpu=-1)</span>
 <span class="sd">    [(1, 2, (3,), {&#39;c&#39;: 2}), (1, 2, (4,), {&#39;c&#39;: 2}), (1, 2, (5,), {&#39;c&#39;: 2})]</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="kn">import</span> <span class="nn">multiprocessing</span> <span class="kn">as</span> <span class="nn">_mp</span>
-<span class="kn">import</span> <span class="nn">functools</span> <span class="kn">as</span> <span class="nn">_fntools</span>
-<span class="kn">import</span> <span class="nn">inspect</span> <span class="kn">as</span> <span class="nn">_inspect</span>
-<span class="kn">import</span> <span class="nn">time</span> <span class="kn">as</span> <span class="nn">_time</span>
-<span class="kn">from</span> <span class="nn">multiprocessing.pool</span> <span class="kn">import</span> <span class="n">Pool</span> <span class="k">as</span> <span class="n">_Pool</span>
-<span class="kn">from</span> <span class="nn">inspect</span> <span class="kn">import</span> <span class="n">getmodule</span> <span class="k">as</span> <span class="n">_getmodule</span>
-<span class="kn">import</span> <span class="nn">signal</span> <span class="kn">as</span> <span class="nn">_signal</span>
-<span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">TimeoutError</span>
-<span class="kn">from</span> <span class="nn">.pbar</span> <span class="kn">import</span> <span class="n">Pbar</span> <span class="k">as</span> <span class="n">_PBar</span>
+<span class="kn">import</span> <span class="nn">multiprocessing</span> <span class="k">as</span> <span class="nn">_mp</span>
+<span class="kn">import</span> <span class="nn">functools</span> <span class="k">as</span> <span class="nn">_fntools</span>
+<span class="kn">import</span> <span class="nn">inspect</span> <span class="k">as</span> <span class="nn">_inspect</span>
+<span class="kn">import</span> <span class="nn">time</span> <span class="k">as</span> <span class="nn">_time</span>
+<span class="kn">from</span> <span class="nn">multiprocessing.pool</span> <span class="k">import</span> <span class="n">Pool</span> <span class="k">as</span> <span class="n">_Pool</span>
+<span class="kn">from</span> <span class="nn">inspect</span> <span class="k">import</span> <span class="n">getmodule</span> <span class="k">as</span> <span class="n">_getmodule</span>
+<span class="kn">import</span> <span class="nn">signal</span> <span class="k">as</span> <span class="nn">_signal</span>
+<span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="k">import</span> <span class="ne">TimeoutError</span>
+<span class="kn">from</span> <span class="nn">.pbar</span> <span class="k">import</span> <span class="n">Pbar</span> <span class="k">as</span> <span class="n">_PBar</span>
 
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;map&#39;</span><span class="p">,</span> <span class="s1">&#39;map_async&#39;</span><span class="p">,</span> <span class="s1">&#39;Partial&#39;</span><span class="p">,</span> <span class="s1">&#39;allkeywords&#39;</span><span class="p">,</span> <span class="s1">&#39;PicklableLambda&#39;</span><span class="p">,</span> <span class="s1">&#39;async&#39;</span><span class="p">]</span>
@@ -80,11 +79,11 @@
 <span class="sd">    manually killing us with that signal, well... nothing will happen.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">_signal</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="n">_signal</span><span class="o">.</span><span class="n">SIGINT</span><span class="p">,</span> <span class="n">_signal</span><span class="o">.</span><span class="n">SIG_IGN</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">actual_initializer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">actual_initializer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">actual_initializer</span><span class="p">(</span><span class="o">*</span><span class="n">rest</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="map"><a class="viewcode-back" href="../../pystellibs.html#pystellibs.ezmap.map">[docs]</a><span class="k">def</span> <span class="nf">map</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">iterable</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">ncpu</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<div class="viewcode-block" id="map"><a class="viewcode-back" href="../../pystellibs.html#pystellibs.ezmap.map">[docs]</a><span class="k">def</span> <span class="nf">map</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">iterable</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ncpu</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Equivalent of `map()` builtin</span>
 
@@ -132,7 +131,7 @@
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">progress</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
                 <span class="n">txt</span> <span class="o">=</span> <span class="n">progress</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="n">txt</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="n">__name__</span>
+                <span class="n">txt</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span>
             <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">_PBar</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="n">txt</span><span class="p">)</span><span class="o">.</span><span class="n">iterover</span><span class="p">(</span><span class="n">iterable</span><span class="p">):</span>
                 <span class="n">r</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
             <span class="k">return</span> <span class="n">r</span>
@@ -141,7 +140,7 @@
         <span class="k">if</span> <span class="p">(</span><span class="n">ncpu</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">):</span>
             <span class="c1"># use all available cpus</span>
             <span class="n">p</span> <span class="o">=</span> <span class="n">_mp</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">_n</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="p">(</span><span class="n">ncpu</span> <span class="o">&gt;</span> <span class="n">_n</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">limit</span> <span class="ow">is</span> <span class="bp">True</span><span class="p">):</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="n">ncpu</span> <span class="o">&gt;</span> <span class="n">_n</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">limit</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">):</span>
             <span class="n">p</span> <span class="o">=</span> <span class="n">_mp</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">_n</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">p</span> <span class="o">=</span> <span class="n">_mp</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">ncpu</span><span class="p">)</span>
@@ -153,7 +152,7 @@
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">progress</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
             <span class="n">txt</span> <span class="o">=</span> <span class="n">progress</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">txt</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="n">__name__</span>
+            <span class="n">txt</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span>
 
         <span class="k">with</span> <span class="n">_PBar</span><span class="p">(</span><span class="n">ntasks</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="n">txt</span><span class="p">)</span> <span class="k">as</span> <span class="n">pb</span><span class="p">:</span>
             <span class="c1"># get the pool working asynchronously</span>
@@ -171,7 +170,7 @@
         <span class="k">return</span> <span class="n">map_async</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">iterable</span><span class="p">,</span> <span class="n">chunksize</span><span class="p">,</span> <span class="n">ncpu</span><span class="o">=</span><span class="n">ncpu</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="n">limit</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">()</span></div>
 
 
-<div class="viewcode-block" id="map_async"><a class="viewcode-back" href="../../pystellibs.html#pystellibs.ezmap.map_async">[docs]</a><span class="k">def</span> <span class="nf">map_async</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">iterable</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">ncpu</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="map_async"><a class="viewcode-back" href="../../pystellibs.html#pystellibs.ezmap.map_async">[docs]</a><span class="k">def</span> <span class="nf">map_async</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">iterable</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ncpu</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Asynchronous equivalent of `map()` builtin</span>
 <span class="sd">    A variant of the map() method which returns a result object.</span>
@@ -219,7 +218,7 @@
     <span class="k">if</span> <span class="p">(</span><span class="n">ncpu</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">):</span>
         <span class="c1"># use all available cpus</span>
         <span class="n">p</span> <span class="o">=</span> <span class="n">_mp</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">_n</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="p">(</span><span class="n">ncpu</span> <span class="o">&gt;</span> <span class="n">_n</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">limit</span> <span class="ow">is</span> <span class="bp">True</span><span class="p">):</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">ncpu</span> <span class="o">&gt;</span> <span class="n">_n</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">limit</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">):</span>
         <span class="n">p</span> <span class="o">=</span> <span class="n">_mp</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">_n</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">p</span> <span class="o">=</span> <span class="n">_mp</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">ncpu</span><span class="p">)</span>
@@ -280,12 +279,12 @@
         <span class="n">_fntools</span><span class="o">.</span><span class="n">update_wrapper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;Partial({}), args={}, kwargs={}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">+</span> <span class="nb">object</span><span class="o">.</span><span class="n">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s1">&#39;Partial(</span><span class="si">{}</span><span class="s1">), args=</span><span class="si">{}</span><span class="s1">, kwargs=</span><span class="si">{}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">+</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">fargs</span><span class="p">,</span> <span class="o">**</span><span class="n">fkeywords</span><span class="p">):</span>
         <span class="n">newkeywords</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
         <span class="n">newkeywords</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">fkeywords</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">newkeywords</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;allkeywords&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">newkeywords</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;allkeywords&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
             <span class="n">newkeywords</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;allkeywords&#39;</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">allkeywords</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">)(</span><span class="o">*</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">+</span> <span class="n">fargs</span><span class="p">),</span> <span class="o">**</span><span class="n">newkeywords</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
@@ -303,7 +302,7 @@
 <span class="sd">    &gt;&gt;&gt; print partial(allkeywords(fn), a=1, c=2, b=2)(3, 4, 5, 6, 7)</span>
 <span class="sd">        # normally: TypeError but works now</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="nd">@_fntools.wraps</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="nd">@_fntools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">k</span><span class="p">):</span>
         <span class="n">a</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">arg</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">_inspect</span><span class="o">.</span><span class="n">getargspec</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="o">-</span><span class="n">_inspect</span><span class="o">.</span><span class="n">ismethod</span><span class="p">(</span><span class="n">f</span><span class="p">)):</span>  <span class="c1"># or [0] in 2.5</span>
@@ -318,7 +317,7 @@
 
 <span class="k">def</span> <span class="nf">islambda</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; Test if the function func is a lambda (&quot;anonymous&quot; function) &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="s1">&#39;func_name&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;&lt;lambda&gt;&#39;</span>
+    <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="s1">&#39;func_name&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;&lt;lambda&gt;&#39;</span>
 
 
 <div class="viewcode-block" id="PicklableLambda"><a class="viewcode-back" href="../../pystellibs.html#pystellibs.ezmap.PicklableLambda">[docs]</a><span class="k">class</span> <span class="nc">PicklableLambda</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -344,10 +343,10 @@
         <span class="k">if</span> <span class="ow">not</span> <span class="n">islambda</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;Object not a lambda function&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">func_code</span> <span class="o">=</span> <span class="n">_inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">__name__</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func_code</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func_code</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">func_code</span> <span class="o">+</span> <span class="nb">object</span><span class="o">.</span><span class="n">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">func_code</span> <span class="o">+</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="n">func</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">func_code</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
@@ -395,8 +394,8 @@
     <span class="c1"># under a name consistent to its __name__ attribute. This is necessary for</span>
     <span class="c1"># the multiprocessing pickling machinery to work properly.</span>
     <span class="n">module</span> <span class="o">=</span> <span class="n">_getmodule</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-    <span class="n">func</span><span class="o">.</span><span class="n">__name__</span> <span class="o">+=</span> <span class="s1">&#39;_original&#39;</span>
-    <span class="nb">setattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">func</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">func</span><span class="p">)</span>
+    <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">+=</span> <span class="s1">&#39;_original&#39;</span>
+    <span class="nb">setattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">func</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">islambda</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
         <span class="n">_func</span> <span class="o">=</span> <span class="n">PicklableLambda</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
@@ -404,8 +403,8 @@
         <span class="n">_func</span> <span class="o">=</span> <span class="n">func</span>
 
     <span class="k">def</span> <span class="nf">send</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">):</span>
-        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">async</span><span class="p">,</span> <span class="s1">&#39;pool&#39;</span><span class="p">):</span>
-            <span class="k">return</span> <span class="n">async</span><span class="o">.</span><span class="n">pool</span><span class="o">.</span><span class="n">apply_async</span><span class="p">(</span><span class="n">_func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="k">async</span><span class="p">,</span> <span class="s1">&#39;pool&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="k">async</span><span class="o">.</span><span class="n">pool</span><span class="o">.</span><span class="n">apply_async</span><span class="p">(</span><span class="n">_func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">Pool</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">apply_async</span><span class="p">(</span><span class="n">_func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
 
@@ -420,8 +419,8 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">wait_timeout</span> <span class="o">=</span> <span class="mi">3600</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ncpu</span><span class="p">,</span> <span class="n">initializer</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">initargs</span><span class="o">=</span><span class="p">(),</span>
-                 <span class="n">maxtasksperchild</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ncpu</span><span class="p">,</span> <span class="n">initializer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">initargs</span><span class="o">=</span><span class="p">(),</span>
+                 <span class="n">maxtasksperchild</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        INPUTS</span>
 <span class="sd">        ------</span>
@@ -453,16 +452,16 @@
         <span class="n">_n</span> <span class="o">=</span> <span class="n">_mp</span><span class="o">.</span><span class="n">cpu_count</span><span class="p">()</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">ncpu</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">):</span>   <span class="c1"># use all available cpus</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_n</span> <span class="o">=</span> <span class="n">_n</span>
-        <span class="k">elif</span> <span class="p">(</span><span class="n">ncpu</span> <span class="o">&gt;</span> <span class="n">_n</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">limit</span> <span class="ow">is</span> <span class="bp">True</span><span class="p">):</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="n">ncpu</span> <span class="o">&gt;</span> <span class="n">_n</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">limit</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_n</span> <span class="o">=</span> <span class="n">_n</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_n</span> <span class="o">=</span> <span class="n">ncpu</span>
 
         <span class="n">new_initializer</span> <span class="o">=</span> <span class="n">Partial</span><span class="p">(</span><span class="n">_initializer_wrapper</span><span class="p">,</span> <span class="n">initializer</span><span class="p">)</span>
-        <span class="n">_Pool</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">processes</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_n</span><span class="p">,</span> <span class="n">initializer</span><span class="o">=</span><span class="n">new_initializer</span><span class="p">,</span>
+        <span class="n">_Pool</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">processes</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_n</span><span class="p">,</span> <span class="n">initializer</span><span class="o">=</span><span class="n">new_initializer</span><span class="p">,</span>
                        <span class="n">initargs</span><span class="o">=</span><span class="n">initargs</span><span class="p">,</span> <span class="n">maxtasksperchild</span><span class="o">=</span><span class="n">maxtasksperchild</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">iterable</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">iterable</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Equivalent of ``map()`` built-in, without swallowing</span>
 <span class="sd">        ``KeyboardInterrupt``.</span>
@@ -475,10 +474,10 @@
         <span class="c1"># a Condition.wait() without a timeout swallows KeyboardInterrupts.</span>
         <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_async</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">iterable</span><span class="p">,</span> <span class="n">chunksize</span><span class="p">)</span>
 
-        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">r</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wait_timeout</span><span class="p">)</span>
-            <span class="k">except</span> <span class="n">TimeoutError</span><span class="p">:</span>
+            <span class="k">except</span> <span class="ne">TimeoutError</span><span class="p">:</span>
                 <span class="k">pass</span>
             <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">terminate</span><span class="p">()</span>
@@ -493,10 +492,10 @@
         <span class="k">pass</span>
 
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;Pool (ncpu={})</span><span class="se">\n</span><span class="s1">{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">_n</span><span class="p">,</span> <span class="n">_Pool</span><span class="o">.</span><span class="n">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="p">)</span>
+        <span class="k">return</span> <span class="s1">&#39;Pool (ncpu=</span><span class="si">{}</span><span class="s1">)</span><span class="se">\n</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">_n</span><span class="p">,</span> <span class="n">_Pool</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="p">)</span>
 
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="nd">@async</span>
     <span class="k">def</span> <span class="nf">printsum</span><span class="p">(</span><span class="n">uid</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
         <span class="n">summed</span> <span class="o">=</span> <span class="mi">0</span>
@@ -504,14 +503,14 @@
             <span class="c1">#_time.sleep(0.1)</span>
             <span class="n">summed</span> <span class="o">+=</span> <span class="n">value</span>
 
-        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Worker </span><span class="si">%i</span><span class="s2">: sum value is </span><span class="si">%i</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">uid</span><span class="p">,</span> <span class="n">summed</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Worker </span><span class="si">%i</span><span class="s2">: sum value is </span><span class="si">%i</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">uid</span><span class="p">,</span> <span class="n">summed</span><span class="p">))</span>
 
         <span class="k">return</span> <span class="p">(</span><span class="n">uid</span><span class="p">,</span> <span class="n">summed</span><span class="p">)</span>
 
-    <span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">sample</span>
+    <span class="kn">from</span> <span class="nn">random</span> <span class="k">import</span> <span class="n">sample</span>
     <span class="n">pool</span> <span class="o">=</span> <span class="n">Pool</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
-    <span class="n">async</span><span class="o">.</span><span class="n">pool</span> <span class="o">=</span> <span class="n">pool</span>
+    <span class="k">async</span><span class="o">.</span><span class="n">pool</span> <span class="o">=</span> <span class="n">pool</span>
 
     <span class="n">p</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
     <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
@@ -520,7 +519,7 @@
         <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
     <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Worker </span><span class="si">%i</span><span class="s2">: sum value is </span><span class="si">%i</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Worker </span><span class="si">%i</span><span class="s2">: sum value is </span><span class="si">%i</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
 </pre></div>
 
           </div>
@@ -539,8 +538,8 @@
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -554,8 +553,8 @@
       &copy;2016, M. Fouesneau.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
     </div>
 
