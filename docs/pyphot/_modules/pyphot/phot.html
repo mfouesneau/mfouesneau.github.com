@@ -1,38 +1,37 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>pyphot.phot &mdash; pyphot 1.0 documentation</title>
-    
+    <title>pyphot.phot &#8212; pyphot 1.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
         VERSION:     '1.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="pyphot 1.0 documentation" href="../../index.html" />
-    <link rel="up" title="Module code" href="../index.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body role="document">
+  <body>
   
 
     <div class="document">
@@ -57,15 +56,15 @@
 <span class="sd">    edges, the error due to this &quot;interpolation&quot; are extremely large in</span>
 <span class="sd">    comparison to the uncertainties induced by trapeze integration.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span><span class="p">,</span> <span class="n">division</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">print_function</span><span class="p">,</span> <span class="n">division</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">tables</span>
-<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">trapz</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="k">import</span> <span class="n">trapz</span>
 
-<span class="kn">from</span> <span class="nn">.simpletable</span> <span class="kn">import</span> <span class="n">SimpleTable</span>
-<span class="kn">from</span> <span class="nn">.ezunits</span> <span class="kn">import</span> <span class="n">hasUnit</span><span class="p">,</span> <span class="n">unit</span>
-<span class="kn">from</span> <span class="nn">.vega</span> <span class="kn">import</span> <span class="n">Vega</span>
-<span class="kn">from</span> <span class="nn">.config</span> <span class="kn">import</span> <span class="n">libsdir</span>
+<span class="kn">from</span> <span class="nn">.simpletable</span> <span class="k">import</span> <span class="n">SimpleTable</span>
+<span class="kn">from</span> <span class="nn">.ezunits</span> <span class="k">import</span> <span class="n">hasUnit</span><span class="p">,</span> <span class="n">unit</span>
+<span class="kn">from</span> <span class="nn">.vega</span> <span class="k">import</span> <span class="n">Vega</span>
+<span class="kn">from</span> <span class="nn">.config</span> <span class="k">import</span> <span class="n">libsdir</span>
 
 <span class="kn">import</span> <span class="nn">os</span>
 
@@ -116,7 +115,7 @@
 <span class="sd">    unit: str</span>
 <span class="sd">        wavelength units</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">,</span> <span class="n">transmit</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;photon&quot;</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">,</span> <span class="n">transmit</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;photon&quot;</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Constructor&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span>       <span class="o">=</span> <span class="n">name</span>
         <span class="k">try</span><span class="p">:</span>   <span class="c1"># get units from the inputs</span>
@@ -139,44 +138,44 @@
         <span class="k">elif</span> <span class="s2">&quot;ener&quot;</span> <span class="ow">in</span> <span class="n">_d</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">dtype</span> <span class="o">=</span> <span class="s2">&quot;energy&quot;</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Unknown detector type {0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dtype</span><span class="p">))</span></div>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Unknown detector type </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dtype</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="Filter.info"><a class="viewcode-back" href="../../pyphot.html#pyphot.phot.Filter.info">[docs]</a>    <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">show_zeropoints</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+<div class="viewcode-block" id="Filter.info"><a class="viewcode-back" href="../../pyphot.html#pyphot.phot.Filter.info">[docs]</a>    <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">show_zeropoints</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; display information about the current filter&quot;&quot;&quot;</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Filter object information:</span>
-<span class="s2">    name:                 {s.name:s}</span>
-<span class="s2">    detector type:        {s.dtype:s}</span>
-<span class="s2">    wavelength units:     {s.wavelength_unit}</span>
-<span class="s2">    central wavelength:   {s.cl:f}</span>
-<span class="s2">    pivot wavelength:     {s.lpivot:f}</span>
-<span class="s2">    effective wavelength: {s.leff:f}</span>
-<span class="s2">    norm:                 {s.norm:f}</span>
-<span class="s2">    definition contains {s.transmit.size:d} points&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;None&#39;</span><span class="p">,</span> <span class="s1">&#39;unknown&#39;</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Filter object information:</span>
+<span class="s2">    name:                 </span><span class="si">{s.name:s}</span><span class="s2"></span>
+<span class="s2">    detector type:        </span><span class="si">{s.dtype:s}</span><span class="s2"></span>
+<span class="s2">    wavelength units:     </span><span class="si">{s.wavelength_unit}</span><span class="s2"></span>
+<span class="s2">    central wavelength:   </span><span class="si">{s.cl:f}</span><span class="s2"></span>
+<span class="s2">    pivot wavelength:     </span><span class="si">{s.lpivot:f}</span><span class="s2"></span>
+<span class="s2">    effective wavelength: </span><span class="si">{s.leff:f}</span><span class="s2"></span>
+<span class="s2">    norm:                 </span><span class="si">{s.norm:f}</span><span class="s2"></span>
+<span class="s2">    definition contains </span><span class="si">{s.transmit.size:d}</span><span class="s2"> points&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;None&#39;</span><span class="p">,</span> <span class="s1">&#39;unknown&#39;</span><span class="p">))</span>
 
         <span class="c1"># zero points only if units</span>
-        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="ow">not</span> <span class="n">show_zeropoints</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="ow">not</span> <span class="n">show_zeropoints</span><span class="p">):</span>
             <span class="k">return</span>
 
-        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">    Zeropoints</span>
-<span class="s2">        Vega: {s.Vega_zero_mag:f} mag,</span>
-<span class="s2">              {s.Vega_zero_flux},</span>
-<span class="s2">              {s.Vega_zero_Jy}</span>
-<span class="s2">          AB: {s.AB_zero_mag:f} mag,</span>
-<span class="s2">              {s.AB_zero_flux},</span>
-<span class="s2">              {s.AB_zero_Jy}</span>
-<span class="s2">          ST: {s.ST_zero_mag:f} mag,</span>
-<span class="s2">              {s.ST_zero_flux},</span>
-<span class="s2">              {s.ST_zero_Jy}</span>
+<span class="s2">        Vega: </span><span class="si">{s.Vega_zero_mag:f}</span><span class="s2"> mag,</span>
+<span class="s2">              </span><span class="si">{s.Vega_zero_flux}</span><span class="s2">,</span>
+<span class="s2">              </span><span class="si">{s.Vega_zero_Jy}</span><span class="s2"></span>
+<span class="s2">          AB: </span><span class="si">{s.AB_zero_mag:f}</span><span class="s2"> mag,</span>
+<span class="s2">              </span><span class="si">{s.AB_zero_flux}</span><span class="s2">,</span>
+<span class="s2">              </span><span class="si">{s.AB_zero_Jy}</span><span class="s2"></span>
+<span class="s2">          ST: </span><span class="si">{s.ST_zero_mag:f}</span><span class="s2"> mag,</span>
+<span class="s2">              </span><span class="si">{s.ST_zero_flux}</span><span class="s2">,</span>
+<span class="s2">              </span><span class="si">{s.ST_zero_Jy}</span><span class="s2"></span>
 <span class="s2">        &quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="o">=</span><span class="bp">self</span><span class="p">))</span></div>
 
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s2">&quot;Filter: {0:s}, {1:s}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="nb">object</span><span class="o">.</span><span class="n">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+        <span class="k">return</span> <span class="s2">&quot;Filter: </span><span class="si">{0:s}</span><span class="s2">, </span><span class="si">{1:s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">wavelength</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Unitwise wavelength definition &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wavelength</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span><span class="p">]</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wavelength</span>
@@ -184,7 +183,7 @@
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">lpivot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Unitwise wavelength definition &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lpivot</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span><span class="p">]</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lpivot</span>
@@ -192,7 +191,7 @@
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">cl</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Unitwise wavelength definition &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cl</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span><span class="p">]</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cl</span>
@@ -207,17 +206,17 @@
             <span class="n">w</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">_wavelength</span>
             <span class="n">leff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">w</span> <span class="o">*</span> <span class="n">s</span><span class="o">.</span><span class="n">transmit</span> <span class="o">*</span> <span class="n">v</span><span class="o">.</span><span class="n">flux</span><span class="o">.</span><span class="n">magnitude</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
             <span class="n">leff</span> <span class="o">/=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">transmit</span> <span class="o">*</span> <span class="n">v</span><span class="o">.</span><span class="n">flux</span><span class="o">.</span><span class="n">magnitude</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">leff</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span><span class="p">]</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">leff</span>
 
-    <span class="k">def</span> <span class="nf">_get_filter_in_units_of</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">slamb</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_get_filter_in_units_of</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">slamb</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">w</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength</span>
         <span class="k">if</span> <span class="n">hasUnit</span><span class="p">(</span><span class="n">slamb</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">hasUnit</span><span class="p">(</span><span class="n">w</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">w</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">slamb</span><span class="o">.</span><span class="n">units</span><span class="p">))</span><span class="o">.</span><span class="n">magnitude</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Warning: assuming units are consistent&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Warning: assuming units are consistent&quot;</span><span class="p">)</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wavelength</span>
 
 <div class="viewcode-block" id="Filter.getFlux"><a class="viewcode-back" href="../../pyphot.html#pyphot.phot.Filter.getFlux">[docs]</a>    <span class="k">def</span> <span class="nf">getFlux</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">slamb</span><span class="p">,</span> <span class="n">sflux</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
@@ -242,7 +241,7 @@
         <span class="n">_wavelength</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_filter_in_units_of</span><span class="p">(</span><span class="n">slamb</span><span class="p">)</span>
         <span class="n">_slamb</span> <span class="o">=</span> <span class="n">_drop_units</span><span class="p">(</span><span class="n">slamb</span><span class="p">)</span>
         <span class="c1">#clean data for inf values by interpolation</span>
-        <span class="k">if</span> <span class="bp">True</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">sflux</span><span class="p">):</span>
+        <span class="k">if</span> <span class="kc">True</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">sflux</span><span class="p">):</span>
             <span class="n">indinf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">sflux</span><span class="p">))</span>
             <span class="n">indfin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">sflux</span><span class="p">))</span>
             <span class="n">sflux</span><span class="p">[</span><span class="n">indinf</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">_slamb</span><span class="p">[</span><span class="n">indinf</span><span class="p">],</span> <span class="n">_slamb</span><span class="p">[</span><span class="n">indfin</span><span class="p">],</span> <span class="n">sflux</span><span class="p">[</span><span class="n">indfin</span><span class="p">])</span>
@@ -251,22 +250,27 @@
         <span class="n">ifT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">_slamb</span><span class="p">,</span> <span class="n">_wavelength</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">transmit</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
 
         <span class="c1"># if the filter is null on that wavelength range flux is then 0</span>
-        <span class="k">if</span> <span class="bp">True</span> <span class="ow">in</span> <span class="p">(</span><span class="n">ifT</span> <span class="o">&gt;</span> <span class="mf">0.</span><span class="p">):</span>
+        <span class="n">ind</span> <span class="o">=</span> <span class="n">ifT</span> <span class="o">&gt;</span> <span class="mf">0.</span>
+        <span class="k">if</span> <span class="kc">True</span> <span class="ow">in</span> <span class="n">ind</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">_sflux</span> <span class="o">=</span> <span class="n">sflux</span><span class="p">[:,</span> <span class="n">ind</span><span class="p">]</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="n">_sflux</span> <span class="o">=</span> <span class="n">sflux</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span>
             <span class="c1"># limit integrals to where necessary</span>
-            <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ifT</span> <span class="o">&gt;</span> <span class="mf">0.</span><span class="p">)</span>
+            <span class="n">ind</span> <span class="o">=</span> <span class="n">ifT</span> <span class="o">&gt;</span> <span class="mf">0.</span>
             <span class="k">if</span> <span class="s1">&#39;photon&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">:</span>
-                <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">_slamb</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">*</span> <span class="n">ifT</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">*</span> <span class="n">sflux</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">_slamb</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span>
-                <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">_slamb</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">*</span> <span class="n">ifT</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">_slamb</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span> <span class="p">)</span>
+                <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">_slamb</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">*</span> <span class="n">ifT</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">*</span> <span class="n">_sflux</span><span class="p">,</span> <span class="n">_slamb</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span>
+                <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">_slamb</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">*</span> <span class="n">ifT</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">_slamb</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="p">)</span>
             <span class="k">elif</span> <span class="s1">&#39;energy&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">:</span>
-                <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span> <span class="n">ifT</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">*</span> <span class="n">sflux</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">_slamb</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span> <span class="p">)</span>
-                <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span> <span class="n">ifT</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">_slamb</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span> <span class="p">)</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">|</span> <span class="n">np</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">b</span><span class="p">)):</span>
-                <span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;Warn for inf value&quot;</span><span class="p">)</span>
+                <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span> <span class="n">ifT</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">*</span> <span class="n">_sflux</span><span class="p">,</span> <span class="n">_slamb</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span> <span class="p">)</span>
+                <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span> <span class="n">ifT</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">_slamb</span><span class="p">[</span><span class="n">ind</span><span class="p">])</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">()</span> <span class="o">|</span> <span class="n">np</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">()):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;Warn for inf value&quot;</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="mf">0.</span></div>
 
-<div class="viewcode-block" id="Filter.get_flux"><a class="viewcode-back" href="../../pyphot.html#pyphot.phot.Filter.get_flux">[docs]</a>    <span class="k">def</span> <span class="nf">get_flux</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">slamb</span><span class="p">,</span> <span class="n">sflux</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<div class="viewcode-block" id="Filter.get_flux"><a class="viewcode-back" href="../../pyphot.html#pyphot.phot.Filter.get_flux">[docs]</a>    <span class="k">def</span> <span class="nf">get_flux</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">slamb</span><span class="p">,</span> <span class="n">sflux</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;getFlux</span>
 <span class="sd">        Integrate the flux within the filter and return the integrated energy</span>
 <span class="sd">        If you consider applying the filter to many spectra, you might want to</span>
@@ -296,7 +300,7 @@
         <span class="k">except</span><span class="p">:</span>
             <span class="n">_unit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span>
         <span class="n">ifT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">_lamb</span><span class="p">,</span> <span class="n">_wavelength</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">transmit</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="n">_lamb</span><span class="p">,</span> <span class="n">ifT</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">_unit</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="n">_lamb</span><span class="p">,</span> <span class="n">ifT</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">_unit</span><span class="p">)</span></div>
 
     <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">slamb</span><span class="p">,</span> <span class="n">sflux</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">applyTo</span><span class="p">(</span><span class="n">slamb</span><span class="p">,</span> <span class="n">sflux</span><span class="p">)</span>
@@ -327,13 +331,13 @@
         <span class="sd">&quot;&quot;&quot; For compatibility but bad name &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_transmission</span><span class="p">(</span><span class="n">slamb</span><span class="p">,</span> <span class="n">sflux</span><span class="p">)</span></div>
 
-    <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="Filter.from_ascii"><a class="viewcode-back" href="../../pyphot.html#pyphot.phot.Filter.from_ascii">[docs]</a>    <span class="k">def</span> <span class="nf">from_ascii</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;csv&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="Filter.from_ascii"><a class="viewcode-back" href="../../pyphot.html#pyphot.phot.Filter.from_ascii">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_ascii</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;csv&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Load filter from ascii file &quot;&quot;&quot;</span>
-        <span class="n">lamb</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;lamb&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
-        <span class="n">name</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="n">lamb</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;lamb&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
         <span class="n">detector</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;detector&#39;</span><span class="p">,</span> <span class="s1">&#39;photon&#39;</span><span class="p">)</span>
-        <span class="n">unit</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;unit&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="n">unit</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;unit&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 
         <span class="n">t</span> <span class="o">=</span> <span class="n">SimpleTable</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="n">w</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="s1">&#39;WAVELENGTH&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
@@ -344,19 +348,19 @@
         <span class="n">unit</span>     <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;WAVELENGTH_UNIT&#39;</span><span class="p">,</span> <span class="n">unit</span><span class="p">)</span>
 
         <span class="c1"># try from the comments in the header first</span>
-        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="s1">&#39;None&#39;</span><span class="p">,</span> <span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;None&#39;</span><span class="p">,</span> <span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">):</span>
             <span class="n">name</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
                     <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">t</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;COMMENT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
                     <span class="k">if</span> <span class="s1">&#39;COMPNAME&#39;</span> <span class="ow">in</span> <span class="n">k</span><span class="p">]</span>
             <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;&quot;&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
         <span class="c1"># if that did not work try the table header directly</span>
-        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="s1">&#39;None&#39;</span><span class="p">,</span> <span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;None&#39;</span><span class="p">,</span> <span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">):</span>
             <span class="n">name</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;NAME&#39;</span><span class="p">]</span>
 
         <span class="n">_filter</span> <span class="o">=</span> <span class="n">Filter</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">detector</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">unit</span><span class="p">)</span>
 
         <span class="c1"># reinterpolate if requested</span>
-        <span class="k">if</span> <span class="n">lamb</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">lamb</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">_filter</span> <span class="o">=</span> <span class="n">_filter</span><span class="o">.</span><span class="n">reinterp</span><span class="p">(</span><span class="n">lamb</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">_filter</span></div>
@@ -387,7 +391,7 @@
         <span class="n">data</span> <span class="o">=</span> <span class="n">SimpleTable</span><span class="p">({</span><span class="s1">&#39;WAVELENGTH&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wavelength</span><span class="p">,</span>
                             <span class="s1">&#39;THROUGHPUT&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">transmit</span><span class="p">})</span>
 
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">data</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;WAVELENGTH_UNIT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span>
         <span class="n">data</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;DETECTOR&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dtype</span>
         <span class="n">data</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;COMPNAME&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
@@ -400,7 +404,7 @@
 <div class="viewcode-block" id="Filter.to_dict"><a class="viewcode-back" href="../../pyphot.html#pyphot.phot.Filter.to_dict">[docs]</a>    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Return a dictionary of the filter &quot;&quot;&quot;</span>
         <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;WAVELENGTH&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wavelength</span><span class="p">,</span> <span class="s1">&#39;THROUGHPUT&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">transmit</span><span class="p">}</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">data</span><span class="p">[</span><span class="s1">&#39;WAVELENGTH_UNIT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span>
         <span class="n">data</span><span class="p">[</span><span class="s1">&#39;DETECTOR&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dtype</span>
         <span class="n">data</span><span class="p">[</span><span class="s1">&#39;NAME&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
@@ -410,8 +414,8 @@
         <span class="n">data</span><span class="p">[</span><span class="s1">&#39;NORM&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">norm</span>
         <span class="k">return</span> <span class="n">data</span></div>
 
-    <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="Filter.make_integration_filter"><a class="viewcode-back" href="../../pyphot.html#pyphot.phot.Filter.make_integration_filter">[docs]</a>    <span class="k">def</span> <span class="nf">make_integration_filter</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">lmin</span><span class="p">,</span> <span class="n">lmax</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;photon&#39;</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Filter.make_integration_filter"><a class="viewcode-back" href="../../pyphot.html#pyphot.phot.Filter.make_integration_filter">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">make_integration_filter</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">lmin</span><span class="p">,</span> <span class="n">lmax</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;photon&#39;</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Generate an heavyside filter between lmin and lmax &quot;&quot;&quot;</span>
         <span class="n">dyn</span> <span class="o">=</span> <span class="n">lmax</span> <span class="o">-</span> <span class="n">lmin</span>
         <span class="k">try</span><span class="p">:</span>
@@ -430,7 +434,7 @@
 <span class="sd">              = -2.5 * log10(f_lamb) - 2.5 * log10(lpivot ** 2 / c) - 48.60</span>
 <span class="sd">              = -2.5 * log10(f_lamb) - zpts</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s1">&#39;Needs wavelength units&#39;</span><span class="p">)</span>
 
         <span class="n">C1</span> <span class="o">=</span> <span class="n">unit</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;AA&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="n">unit</span><span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;AA/s&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span>
@@ -448,7 +452,7 @@
     <span class="k">def</span> <span class="nf">AB_zero_Jy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; AB flux zero point in Jansky (Jy) &quot;&quot;&quot;</span>
         <span class="n">c</span> <span class="o">=</span> <span class="n">unit</span><span class="p">[</span><span class="s1">&#39;1e-8 * c&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;m/s&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span>
-        <span class="n">f</span> <span class="o">=</span> <span class="mf">1e5</span> <span class="o">/</span> <span class="n">c</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">leff</span><span class="o">.</span><span class="n">magnitude</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">AB_zero_flux</span><span class="o">.</span><span class="n">magnitude</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="mf">1e5</span> <span class="o">/</span> <span class="n">c</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">lpivot</span><span class="o">.</span><span class="n">magnitude</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">AB_zero_flux</span><span class="o">.</span><span class="n">magnitude</span>
         <span class="k">return</span> <span class="n">f</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s1">&#39;Jy&#39;</span><span class="p">]</span>
 
     <span class="nd">@property</span>
@@ -457,7 +461,7 @@
 <span class="sd">        Vegamag = -2.5 * log10(f_lamb) + 2.5 * log10(f_vega)</span>
 <span class="sd">        Vegamag = -2.5 * log10(f_lamb) - zpts</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s1">&#39;Needs wavelength units&#39;</span><span class="p">)</span>
 
         <span class="k">with</span> <span class="n">Vega</span><span class="p">()</span> <span class="k">as</span> <span class="n">v</span><span class="p">:</span>
@@ -473,7 +477,7 @@
     <span class="k">def</span> <span class="nf">Vega_zero_Jy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Vega flux zero point in Jansky (Jy) &quot;&quot;&quot;</span>
         <span class="n">c</span> <span class="o">=</span> <span class="n">unit</span><span class="p">[</span><span class="s1">&#39;1e-8 * c&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;m/s&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span>
-        <span class="n">f</span> <span class="o">=</span> <span class="mf">1e5</span> <span class="o">/</span> <span class="n">c</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">leff</span><span class="o">.</span><span class="n">magnitude</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">Vega_zero_flux</span><span class="o">.</span><span class="n">magnitude</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="mf">1e5</span> <span class="o">/</span> <span class="n">c</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">lpivot</span><span class="o">.</span><span class="n">magnitude</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">Vega_zero_flux</span><span class="o">.</span><span class="n">magnitude</span>
         <span class="k">return</span> <span class="n">f</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s1">&#39;Jy&#39;</span><span class="p">]</span>
 
     <span class="nd">@property</span>
@@ -492,7 +496,7 @@
     <span class="k">def</span> <span class="nf">ST_zero_Jy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; ST flux zero point in Jansky (Jy) &quot;&quot;&quot;</span>
         <span class="n">c</span> <span class="o">=</span> <span class="n">unit</span><span class="p">[</span><span class="s1">&#39;1e-8 * c&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;m/s&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span>
-        <span class="n">f</span> <span class="o">=</span> <span class="mf">1e5</span> <span class="o">/</span> <span class="n">c</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">leff</span><span class="o">.</span><span class="n">magnitude</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">ST_zero_flux</span><span class="o">.</span><span class="n">magnitude</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="mf">1e5</span> <span class="o">/</span> <span class="n">c</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">lpivot</span><span class="o">.</span><span class="n">magnitude</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">ST_zero_flux</span><span class="o">.</span><span class="n">magnitude</span>
         <span class="k">return</span> <span class="n">f</span> <span class="o">*</span> <span class="n">unit</span><span class="p">[</span><span class="s1">&#39;Jy&#39;</span><span class="p">]</span></div>
 
 
@@ -504,7 +508,7 @@
         <span class="k">pass</span>
 
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s2">&quot;Filter Library: {0}</span><span class="se">\n</span><span class="s2">{1:s}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source</span><span class="p">,</span> <span class="nb">object</span><span class="o">.</span><span class="n">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+        <span class="k">return</span> <span class="s2">&quot;Filter Library: </span><span class="si">{0}</span><span class="se">\n</span><span class="si">{1:s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source</span><span class="p">,</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="nf">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Enter context &quot;&quot;&quot;</span>
@@ -512,13 +516,13 @@
 
     <span class="k">def</span> <span class="nf">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>  <span class="o">*</span><span class="n">exc_info</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; end context &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">False</span>
+        <span class="k">return</span> <span class="kc">False</span>
 
     <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Size of the library &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
 
-<div class="viewcode-block" id="Library.to_csv"><a class="viewcode-back" href="../../pyphot.html#pyphot.phot.Library.to_csv">[docs]</a>    <span class="k">def</span> <span class="nf">to_csv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;./&#39;</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="Library.to_csv"><a class="viewcode-back" href="../../pyphot.html#pyphot.phot.Library.to_csv">[docs]</a>    <span class="k">def</span> <span class="nf">to_csv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;./&#39;</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Export each filter into a csv file with its own name</span>
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -527,7 +531,7 @@
 <span class="sd">        progress: bool</span>
 <span class="sd">            show progress if set</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">.helpers</span> <span class="kn">import</span> <span class="n">progress_enumerate</span>
+        <span class="kn">from</span> <span class="nn">.helpers</span> <span class="k">import</span> <span class="n">progress_enumerate</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">os</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
         <span class="k">except</span><span class="p">:</span>
@@ -535,12 +539,12 @@
         <span class="k">with</span> <span class="bp">self</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">progress_enumerate</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s1">&#39;export&#39;</span><span class="p">,</span> <span class="n">show_progress</span><span class="o">=</span><span class="n">progress</span><span class="p">):</span>
                 <span class="n">f</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
-                <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                     <span class="n">f</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="o">=</span> <span class="s1">&#39;AA&#39;</span>
-                <span class="n">f</span><span class="o">.</span><span class="n">write_to</span><span class="p">(</span><span class="s2">&quot;{0:s}/{1:s}.csv&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write_to</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0:s}</span><span class="s2">/</span><span class="si">{1:s}</span><span class="s2">.csv&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span>
                            <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%.6f</span><span class="s2">&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Library.to_hdf"><a class="viewcode-back" href="../../pyphot.html#pyphot.phot.Library.to_hdf">[docs]</a>    <span class="k">def</span> <span class="nf">to_hdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="o">=</span><span class="s1">&#39;filters.hd5&#39;</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="Library.to_hdf"><a class="viewcode-back" href="../../pyphot.html#pyphot.phot.Library.to_hdf">[docs]</a>    <span class="k">def</span> <span class="nf">to_hdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="o">=</span><span class="s1">&#39;filters.hd5&#39;</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Export each filter into a csv file with its own name</span>
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -549,22 +553,22 @@
 <span class="sd">        progress: bool</span>
 <span class="sd">            show progress if set</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">.helpers</span> <span class="kn">import</span> <span class="n">progress_enumerate</span>
+        <span class="kn">from</span> <span class="nn">.helpers</span> <span class="k">import</span> <span class="n">progress_enumerate</span>
         <span class="k">with</span> <span class="bp">self</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">progress_enumerate</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s1">&#39;export&#39;</span><span class="p">,</span> <span class="n">show_progress</span><span class="o">=</span><span class="n">progress</span><span class="p">):</span>
                 <span class="n">f</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
-                <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                     <span class="n">f</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="o">=</span> <span class="s1">&#39;AA&#39;</span>
-                <span class="n">f</span><span class="o">.</span><span class="n">write_to</span><span class="p">(</span><span class="s2">&quot;{0:s}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fname</span><span class="p">),</span>
-                           <span class="n">tablename</span><span class="o">=</span><span class="s1">&#39;/filters/{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">),</span>
-                           <span class="n">createparents</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+                <span class="n">f</span><span class="o">.</span><span class="n">write_to</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0:s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fname</span><span class="p">),</span>
+                           <span class="n">tablename</span><span class="o">=</span><span class="s1">&#39;/filters/</span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">),</span>
+                           <span class="n">createparents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
-    <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="Library.from_hd5"><a class="viewcode-back" href="../../pyphot.html#pyphot.phot.Library.from_hd5">[docs]</a>    <span class="k">def</span> <span class="nf">from_hd5</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="Library.from_hd5"><a class="viewcode-back" href="../../pyphot.html#pyphot.phot.Library.from_hd5">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_hd5</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">HDF_Library</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
-    <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="Library.from_ascci"><a class="viewcode-back" href="../../pyphot.html#pyphot.phot.Library.from_ascci">[docs]</a>    <span class="k">def</span> <span class="nf">from_ascci</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="Library.from_ascci"><a class="viewcode-back" href="../../pyphot.html#pyphot.phot.Library.from_ascci">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_ascci</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">Ascii_Library</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
     <span class="nd">@property</span>
@@ -589,7 +593,7 @@
         <span class="sd">&quot;&quot;&quot; get the content of the library &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="bp">NotImplemented</span></div>
 
-<div class="viewcode-block" id="Library.load_all_filters"><a class="viewcode-back" href="../../pyphot.html#pyphot.phot.Library.load_all_filters">[docs]</a>    <span class="k">def</span> <span class="nf">load_all_filters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interp</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">lamb</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Library.load_all_filters"><a class="viewcode-back" href="../../pyphot.html#pyphot.phot.Library.load_all_filters">[docs]</a>    <span class="k">def</span> <span class="nf">load_all_filters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interp</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">lamb</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; load all filters from the library &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="bp">NotImplemented</span></div>
 
@@ -597,7 +601,7 @@
         <span class="sd">&quot;&quot;&quot; add a filter to the library &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="bp">NotImplemented</span></div>
 
-<div class="viewcode-block" id="Library.find"><a class="viewcode-back" href="../../pyphot.html#pyphot.phot.Library.find">[docs]</a>    <span class="k">def</span> <span class="nf">find</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+<div class="viewcode-block" id="Library.find"><a class="viewcode-back" href="../../pyphot.html#pyphot.phot.Library.find">[docs]</a>    <span class="k">def</span> <span class="nf">find</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="n">r</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">if</span> <span class="n">case_sensitive</span><span class="p">:</span>
             <span class="n">_n</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
@@ -619,7 +623,7 @@
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="n">source</span>
 
-    <span class="k">def</span> <span class="nf">_load_filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">interp</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">lamb</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_load_filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">interp</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">lamb</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Load a given filter from the library &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">fil</span> <span class="o">=</span> <span class="n">Filter</span><span class="o">.</span><span class="n">from_ascii</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -631,44 +635,44 @@
                 <span class="n">r</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">content</span> <span class="k">if</span> <span class="n">fname</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">k</span><span class="p">]</span>
 
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-                <span class="k">print</span><span class="p">(</span><span class="s2">&quot;auto correction found multiple choices&quot;</span><span class="p">)</span>
-                <span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Refine name to one of {0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;auto correction found multiple choices&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Refine name to one of </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
             <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Cannot find filter {0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fname</span><span class="p">))</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Cannot find filter </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fname</span><span class="p">))</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">fil</span> <span class="o">=</span> <span class="n">Filter</span><span class="o">.</span><span class="n">from_ascii</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">interp</span> <span class="ow">is</span> <span class="bp">True</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">lamb</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">interp</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">lamb</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">fil</span><span class="o">.</span><span class="n">reinterp</span><span class="p">(</span><span class="n">lamb</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">fil</span>
 
 <div class="viewcode-block" id="Ascii_Library.get_library_content"><a class="viewcode-back" href="../../pyphot.html#pyphot.phot.Ascii_Library.get_library_content">[docs]</a>    <span class="k">def</span> <span class="nf">get_library_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; get the content of the library &quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">glob</span> <span class="kn">import</span> <span class="n">glob</span>
+        <span class="kn">from</span> <span class="nn">glob</span> <span class="k">import</span> <span class="n">glob</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source</span><span class="p">)</span>
             <span class="n">lst</span> <span class="o">=</span> <span class="n">glob</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source</span> <span class="o">+</span> <span class="s1">&#39;/*&#39;</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
             <span class="n">lst</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">source</span>
-        <span class="n">dircheck</span> <span class="o">=</span> <span class="bp">True</span>
-        <span class="k">while</span> <span class="n">dircheck</span> <span class="ow">is</span> <span class="bp">True</span><span class="p">:</span>
-            <span class="n">dircheck</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="n">dircheck</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">while</span> <span class="n">dircheck</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">dircheck</span> <span class="o">=</span> <span class="kc">False</span>
             <span class="n">newlst</span> <span class="o">=</span> <span class="p">[]</span>
             <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">entry</span><span class="p">):</span>
                     <span class="n">newlst</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="n">entry</span> <span class="o">+</span> <span class="s1">&#39;/*&#39;</span><span class="p">))</span>
-                    <span class="n">dircheck</span> <span class="o">=</span> <span class="bp">True</span>
+                    <span class="n">dircheck</span> <span class="o">=</span> <span class="kc">True</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">newlst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
             <span class="n">lst</span> <span class="o">=</span> <span class="n">newlst</span>
         <span class="k">return</span> <span class="n">lst</span></div>
 
-<div class="viewcode-block" id="Ascii_Library.load_all_filters"><a class="viewcode-back" href="../../pyphot.html#pyphot.phot.Ascii_Library.load_all_filters">[docs]</a>    <span class="k">def</span> <span class="nf">load_all_filters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interp</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">lamb</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Ascii_Library.load_all_filters"><a class="viewcode-back" href="../../pyphot.html#pyphot.phot.Ascii_Library.load_all_filters">[docs]</a>    <span class="k">def</span> <span class="nf">load_all_filters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interp</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">lamb</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; load all filters from the library &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_load_filter</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">interp</span><span class="o">=</span><span class="n">interp</span><span class="p">,</span> <span class="n">lamb</span><span class="o">=</span><span class="n">lamb</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">content</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="Ascii_Library.load_filters"><a class="viewcode-back" href="../../pyphot.html#pyphot.phot.Ascii_Library.load_filters">[docs]</a>    <span class="k">def</span> <span class="nf">load_filters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">names</span><span class="p">,</span> <span class="n">interp</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">lamb</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">filterLib</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Ascii_Library.load_filters"><a class="viewcode-back" href="../../pyphot.html#pyphot.phot.Ascii_Library.load_filters">[docs]</a>    <span class="k">def</span> <span class="nf">load_filters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">names</span><span class="p">,</span> <span class="n">interp</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">lamb</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filterLib</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; load a limited set of filters</span>
 
 <span class="sd">            Parameters</span>
@@ -702,34 +706,34 @@
 <span class="sd">            filter to add</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">Filter</span><span class="p">):</span>
-            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Argument of type Filter expected. Got type {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">)))</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Argument of type Filter expected. Got type </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">)))</span>
 
-        <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;Filter wavelength must have units for storage.&quot;</span><span class="p">)</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write_to</span><span class="p">(</span><span class="s2">&quot;{0:s}/{1:s}.csv&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">fmt</span><span class="o">=</span><span class="n">fmt</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div></div>
+        <span class="n">f</span><span class="o">.</span><span class="n">write_to</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0:s}</span><span class="s2">/</span><span class="si">{1:s}</span><span class="s2">.csv&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">fmt</span><span class="o">=</span><span class="n">fmt</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div></div>
 
 
 <div class="viewcode-block" id="HDF_Library"><a class="viewcode-back" href="../../pyphot.html#pyphot.phot.HDF_Library">[docs]</a><span class="k">class</span> <span class="nc">HDF_Library</span><span class="p">(</span><span class="n">Library</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">__default__</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="n">source</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">hdf</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hdf</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="n">mode</span>
 
     <span class="k">def</span> <span class="nf">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Enter context &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">hdf</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">hdf</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">openFile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">hdf</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">hdf</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="bp">self</span>
 
     <span class="k">def</span> <span class="nf">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>  <span class="o">*</span><span class="n">exc_info</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; end context &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">hdf</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">hdf</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">hdf</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">hdf</span> <span class="o">=</span> <span class="bp">None</span>
-        <span class="k">return</span> <span class="bp">False</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">hdf</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="kc">False</span>
 
-    <span class="k">def</span> <span class="nf">_load_filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">interp</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">lamb</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_load_filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">interp</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">lamb</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Load a given filter from the library</span>
 
 <span class="sd">        Parameters</span>
@@ -754,13 +758,13 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">ftab</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hdf</span>
         <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;decode&#39;</span><span class="p">):</span>
-            <span class="n">fnode</span>    <span class="o">=</span> <span class="n">ftab</span><span class="o">.</span><span class="n">getNode</span><span class="p">(</span><span class="s1">&#39;/filters/&#39;</span> <span class="o">+</span> <span class="n">fname</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">))</span>
+            <span class="n">fnode</span>    <span class="o">=</span> <span class="n">ftab</span><span class="o">.</span><span class="n">get_node</span><span class="p">(</span><span class="s1">&#39;/filters/&#39;</span> <span class="o">+</span> <span class="n">fname</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">))</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">fnode</span>    <span class="o">=</span> <span class="n">ftab</span><span class="o">.</span><span class="n">getNode</span><span class="p">(</span><span class="s1">&#39;/filters/&#39;</span> <span class="o">+</span> <span class="n">fname</span><span class="p">)</span>
+            <span class="n">fnode</span>    <span class="o">=</span> <span class="n">ftab</span><span class="o">.</span><span class="n">get_node</span><span class="p">(</span><span class="s1">&#39;/filters/&#39;</span> <span class="o">+</span> <span class="n">fname</span><span class="p">)</span>
         <span class="n">flamb</span>    <span class="o">=</span> <span class="n">fnode</span><span class="p">[:][</span><span class="s1">&#39;WAVELENGTH&#39;</span><span class="p">]</span>
         <span class="n">transmit</span> <span class="o">=</span> <span class="n">fnode</span><span class="p">[:][</span><span class="s1">&#39;THROUGHPUT&#39;</span><span class="p">]</span>
         <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;photon&#39;</span>
-        <span class="n">unit</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="n">unit</span> <span class="o">=</span> <span class="kc">None</span>
 
         <span class="n">attrs</span> <span class="o">=</span> <span class="n">fnode</span><span class="o">.</span><span class="n">attrs</span>
         <span class="k">if</span> <span class="s1">&#39;DETECTOR&#39;</span> <span class="ow">in</span> <span class="n">attrs</span><span class="p">:</span>
@@ -770,7 +774,7 @@
 
         <span class="n">fil</span> <span class="o">=</span> <span class="n">Filter</span><span class="p">(</span><span class="n">flamb</span><span class="p">,</span> <span class="n">transmit</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">fnode</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">unit</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">interp</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">lamb</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">interp</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">lamb</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
             <span class="n">fil</span> <span class="o">=</span> <span class="n">fil</span><span class="o">.</span><span class="n">reinterp</span><span class="p">(</span><span class="n">lamb</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">fil</span>
 
@@ -785,7 +789,7 @@
             <span class="n">filters</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">filters</span><span class="p">]</span>
         <span class="k">return</span><span class="p">(</span><span class="n">filters</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="HDF_Library.load_all_filters"><a class="viewcode-back" href="../../pyphot.html#pyphot.phot.HDF_Library.load_all_filters">[docs]</a>    <span class="k">def</span> <span class="nf">load_all_filters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interp</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">lamb</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="HDF_Library.load_all_filters"><a class="viewcode-back" href="../../pyphot.html#pyphot.phot.HDF_Library.load_all_filters">[docs]</a>    <span class="k">def</span> <span class="nf">load_all_filters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interp</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">lamb</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; load all filters from the library</span>
 
 <span class="sd">        Parameters</span>
@@ -806,7 +810,7 @@
                        <span class="k">for</span> <span class="n">fname</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">content</span> <span class="p">]</span>
         <span class="k">return</span><span class="p">(</span><span class="n">filters</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="HDF_Library.load_filters"><a class="viewcode-back" href="../../pyphot.html#pyphot.phot.HDF_Library.load_filters">[docs]</a>    <span class="k">def</span> <span class="nf">load_filters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">names</span><span class="p">,</span> <span class="n">interp</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">lamb</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">filterLib</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="HDF_Library.load_filters"><a class="viewcode-back" href="../../pyphot.html#pyphot.phot.HDF_Library.load_filters">[docs]</a>    <span class="k">def</span> <span class="nf">load_filters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">names</span><span class="p">,</span> <span class="n">interp</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">lamb</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filterLib</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; load a limited set of filters</span>
 
 <span class="sd">            Parameters</span>
@@ -842,14 +846,14 @@
 <span class="sd">            filter to add</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">Filter</span><span class="p">):</span>
-            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Argument of type Filter expected. Got type {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">)))</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Argument of type Filter expected. Got type </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">)))</span>
 
-        <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">wavelength_unit</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;Filter wavelength must have units for storage.&quot;</span><span class="p">)</span>
 
-        <span class="n">f</span><span class="o">.</span><span class="n">write_to</span><span class="p">(</span><span class="s2">&quot;{0:s}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source</span><span class="p">),</span>
-                   <span class="n">tablename</span><span class="o">=</span><span class="s1">&#39;/filters/{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">),</span>
-                   <span class="n">createparents</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write_to</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0:s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source</span><span class="p">),</span>
+                   <span class="n">tablename</span><span class="o">=</span><span class="s1">&#39;/filters/</span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">),</span>
+                   <span class="n">createparents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                    <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div></div>
 
 
@@ -877,8 +881,8 @@
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -892,11 +896,15 @@
       &copy;2016, M. Fouesneau.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
     </div>
 
+    
+    <a href="https://github.com/mfouesneau/pyphot" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
     
 
     

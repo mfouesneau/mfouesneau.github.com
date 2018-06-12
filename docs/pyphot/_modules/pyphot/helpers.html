@@ -1,38 +1,37 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>pyphot.helpers &mdash; pyphot 1.0 documentation</title>
-    
+    <title>pyphot.helpers &#8212; pyphot 1.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
         VERSION:     '1.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="pyphot 1.0 documentation" href="../../index.html" />
-    <link rel="up" title="Module code" href="../index.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body role="document">
+  <body>
   
 
     <div class="document">
@@ -41,11 +40,11 @@
           <div class="body" role="main">
             
   <h1>Source code for pyphot.helpers</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span><span class="p">,</span> <span class="n">division</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">trapz</span>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">print_function</span><span class="p">,</span> <span class="n">division</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="n">trapz</span>
 
-<span class="kn">from</span> <span class="nn">.pbar</span> <span class="kn">import</span> <span class="n">Pbar</span>
+<span class="kn">from</span> <span class="nn">.pbar</span> <span class="k">import</span> <span class="n">Pbar</span>
 
 <span class="c1"># this is used to convert from bolometric luminosities to abs fluxes</span>
 <span class="c1"># object to 10parsecs -- abs mag.</span>
@@ -60,8 +59,8 @@
 <span class="sd">    show_progress: bool</span>
 <span class="sd">        set to show progress</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">progress</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;show_progress&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">progress</span> <span class="ow">is</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">progress</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;show_progress&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">progress</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">Pbar</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">iterover</span><span class="p">(</span><span class="n">it</span><span class="p">),</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
             <span class="k">yield</span> <span class="n">a</span>
     <span class="k">else</span><span class="p">:</span>
@@ -69,7 +68,7 @@
             <span class="k">yield</span> <span class="n">a</span></div>
 
 
-<div class="viewcode-block" id="extractPhotometry"><a class="viewcode-back" href="../../pyphot.html#pyphot.helpers.extractPhotometry">[docs]</a><span class="k">def</span> <span class="nf">extractPhotometry</span><span class="p">(</span><span class="n">lamb</span><span class="p">,</span> <span class="n">spec</span><span class="p">,</span> <span class="n">flist</span><span class="p">,</span> <span class="n">absFlux</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+<div class="viewcode-block" id="extractPhotometry"><a class="viewcode-back" href="../../pyphot.html#pyphot.helpers.extractPhotometry">[docs]</a><span class="k">def</span> <span class="nf">extractPhotometry</span><span class="p">(</span><span class="n">lamb</span><span class="p">,</span> <span class="n">spec</span><span class="p">,</span> <span class="n">flist</span><span class="p">,</span> <span class="n">absFlux</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Extract seds from a one single spectrum</span>
 
 <span class="sd">    Parameters</span>
@@ -97,7 +96,7 @@
 <span class="sd">    seds: ndarray[float, ndim=1]</span>
 <span class="sd">        integrated sed</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">cls</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">flist</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="bp">cls</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">seds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">flist</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">e</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">progress_enumerate</span><span class="p">(</span><span class="n">flist</span><span class="p">,</span> <span class="n">show_progress</span><span class="o">=</span><span class="n">progress</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s1">&#39;Photometry&#39;</span><span class="p">):</span>
         <span class="n">xl</span>  <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">transmit</span> <span class="o">&gt;</span> <span class="mf">0.</span>
@@ -106,14 +105,14 @@
         <span class="c1"># apply absolute flux conversion if requested</span>
         <span class="k">if</span> <span class="n">absFlux</span><span class="p">:</span>
             <span class="n">s0</span> <span class="o">/=</span> <span class="n">distc</span>
-        <span class="n">a</span> <span class="o">=</span> <span class="n">trapz</span><span class="p">(</span> <span class="n">tmp</span><span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="p">:]</span> <span class="o">*</span> <span class="n">s0</span><span class="p">,</span> <span class="n">lamb</span><span class="p">[</span><span class="n">xl</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span> <span class="p">)</span>
-        <span class="n">seds</span><span class="p">[</span><span class="n">e</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">k</span><span class="o">.</span><span class="n">lT</span>   <span class="c1"># divide by integral (lambda T dlambda)</span>
-        <span class="n">cls</span><span class="p">[</span><span class="n">e</span><span class="p">]</span>  <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">cl</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">trapz</span><span class="p">(</span> <span class="n">tmp</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:]</span> <span class="o">*</span> <span class="n">s0</span><span class="p">,</span> <span class="n">lamb</span><span class="p">[</span><span class="n">xl</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span> <span class="p">)</span>
+        <span class="n">seds</span><span class="p">[</span><span class="n">e</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">k</span><span class="o">.</span><span class="n">_lT</span>   <span class="c1"># divide by integral (lambda T dlambda)</span>
+        <span class="bp">cls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">cl</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">cls</span><span class="p">,</span> <span class="n">seds</span></div>
+    <span class="k">return</span> <span class="bp">cls</span><span class="p">,</span> <span class="n">seds</span></div>
 
 
-<div class="viewcode-block" id="extractSEDs"><a class="viewcode-back" href="../../pyphot.html#pyphot.helpers.extractSEDs">[docs]</a><span class="k">def</span> <span class="nf">extractSEDs</span><span class="p">(</span><span class="n">lamb</span><span class="p">,</span> <span class="n">specs</span><span class="p">,</span> <span class="n">flist</span><span class="p">,</span> <span class="n">absFlux</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+<div class="viewcode-block" id="extractSEDs"><a class="viewcode-back" href="../../pyphot.html#pyphot.helpers.extractSEDs">[docs]</a><span class="k">def</span> <span class="nf">extractSEDs</span><span class="p">(</span><span class="n">lamb</span><span class="p">,</span> <span class="n">specs</span><span class="p">,</span> <span class="n">flist</span><span class="p">,</span> <span class="n">absFlux</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; Extract seds from a grid</span>
 
 <span class="sd">    Parameters</span>
@@ -142,7 +141,7 @@
 <span class="sd">        SED grid properties table from g0 (g0.grid)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">seds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span> <span class="nb">len</span><span class="p">(</span><span class="n">specs</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">flist</span><span class="p">)</span> <span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
-    <span class="n">cls</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">flist</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="bp">cls</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">e</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">progress_enumerate</span><span class="p">(</span><span class="n">flist</span><span class="p">,</span> <span class="n">show_progress</span><span class="o">=</span><span class="n">progress</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s1">&#39;Photometry&#39;</span><span class="p">):</span>
         <span class="n">xl</span>  <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">transmit</span> <span class="o">&gt;</span> <span class="mf">0.</span>
         <span class="n">tmp</span> <span class="o">=</span> <span class="n">lamb</span><span class="p">[</span><span class="n">xl</span><span class="p">]</span> <span class="o">*</span> <span class="n">k</span><span class="o">.</span><span class="n">transmit</span><span class="p">[</span><span class="n">xl</span><span class="p">]</span>
@@ -150,11 +149,11 @@
         <span class="c1"># apply absolute flux conversion if requested</span>
         <span class="k">if</span> <span class="n">absFlux</span><span class="p">:</span>
             <span class="n">s0</span> <span class="o">/=</span> <span class="n">distc</span>
-        <span class="n">a</span> <span class="o">=</span> <span class="n">trapz</span><span class="p">(</span> <span class="n">tmp</span><span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="p">:]</span> <span class="o">*</span> <span class="n">s0</span><span class="p">,</span> <span class="n">lamb</span><span class="p">[</span><span class="n">xl</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span> <span class="p">)</span>
-        <span class="n">seds</span><span class="p">[:,</span> <span class="n">e</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">k</span><span class="o">.</span><span class="n">lT</span>
-        <span class="n">cls</span><span class="p">[</span><span class="n">e</span><span class="p">]</span> <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">cl</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">trapz</span><span class="p">(</span> <span class="n">tmp</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:]</span> <span class="o">*</span> <span class="n">s0</span><span class="p">,</span> <span class="n">lamb</span><span class="p">[</span><span class="n">xl</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span> <span class="p">)</span>
+        <span class="n">seds</span><span class="p">[:,</span> <span class="n">e</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">k</span><span class="o">.</span><span class="n">_lT</span>
+        <span class="bp">cls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">cl</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">cls</span><span class="p">,</span> <span class="n">seds</span></div>
+    <span class="k">return</span> <span class="bp">cls</span><span class="p">,</span> <span class="n">seds</span></div>
 
 
 <div class="viewcode-block" id="STmag_to_flux"><a class="viewcode-back" href="../../pyphot.html#pyphot.helpers.STmag_to_flux">[docs]</a><span class="k">def</span> <span class="nf">STmag_to_flux</span><span class="p">(</span> <span class="n">v</span> <span class="p">):</span>
@@ -300,8 +299,8 @@
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -315,11 +314,15 @@
       &copy;2016, M. Fouesneau.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
     </div>
 
+    
+    <a href="https://github.com/mfouesneau/pyphot" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
     
 
     
