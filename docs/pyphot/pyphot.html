@@ -4,24 +4,17 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>pyphot package &#8212; pyphot 1.0 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '1.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="pyphot.ezunits package" href="pyphot.ezunits.html" />
@@ -32,13 +25,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body>
+  </head><body>
   
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <div class="section" id="pyphot-package">
@@ -74,7 +68,7 @@
 <dt id="pyphot.helpers.STmag_from_flux">
 <code class="descclassname">pyphot.helpers.</code><code class="descname">STmag_from_flux</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/helpers.html#STmag_from_flux"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.helpers.STmag_from_flux" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert to ST magnitude from erg/s/cm2/AA (Flambda)</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[ \begin{align}\begin{aligned}mag = -2.5 \log_{10}(F) - 21.10\\M0 = 21.10
 F0 = 3.6307805477010028 10^{-9} erg/s/cm2/AA\end{aligned}\end{align} \]</div>
 <dl class="docutils">
@@ -91,7 +85,7 @@ F0 = 3.6307805477010028 10^{-9} erg/s/cm2/AA\end{aligned}\end{align} \]</div>
 <dt id="pyphot.helpers.STmag_to_flux">
 <code class="descclassname">pyphot.helpers.</code><code class="descname">STmag_to_flux</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/helpers.html#STmag_to_flux"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.helpers.STmag_to_flux" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert an ST magnitude to erg/s/cm2/AA (Flambda)</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[ \begin{align}\begin{aligned}mag = -2.5 \log_{10}(F) - 21.10\\M0 = 21.10
 F0 = 3.6307805477010028 10^{-9} erg/s/cm2/AA\end{aligned}\end{align} \]</div>
 <dl class="docutils">
@@ -250,7 +244,7 @@ standard system.</p>
 <dl class="class">
 <dt id="pyphot.licks.LickIndex">
 <em class="property">class </em><code class="descclassname">pyphot.licks.</code><code class="descname">LickIndex</code><span class="sig-paren">(</span><em>name</em>, <em>lick</em>, <em>unit='AA'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/licks.html#LickIndex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.licks.LickIndex" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Define a Lick Index similarily to a Filter object</p>
 <dl class="attribute">
 <dt id="pyphot.licks.LickIndex.band">
@@ -342,7 +336,7 @@ range</p>
 <dl class="class">
 <dt id="pyphot.licks.LickLibrary">
 <em class="property">class </em><code class="descclassname">pyphot.licks.</code><code class="descname">LickLibrary</code><span class="sig-paren">(</span><em>fname='/Users/fouesneau/Work/pyphot/pyphot/libs/licks.dat'</em>, <em>comment='#'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/licks.html#LickLibrary"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.licks.LickLibrary" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Collection of Lick indices</p>
 <dl class="attribute">
 <dt id="pyphot.licks.LickLibrary.content">
@@ -369,7 +363,7 @@ range</p>
 
 <dl class="function">
 <dt id="pyphot.licks.reduce_resolution">
-<code class="descclassname">pyphot.licks.</code><code class="descname">reduce_resolution</code><span class="sig-paren">(</span><em>wi</em>, <em>fi</em>, <em>sigma0=0.55</em>, <em>sigma_floor=0.2</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/licks.html#reduce_resolution"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.licks.reduce_resolution" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">pyphot.licks.</code><code class="descname">reduce_resolution</code><span class="sig-paren">(</span><em>wi</em>, <em>fi</em>, <em>fwhm0=0.55</em>, <em>sigma_floor=0.2</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/licks.html#reduce_resolution"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.licks.reduce_resolution" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adapt the resolution of the spectra to match the lick definitions</p>
 <blockquote>
 <div>Lick definitions have different resolution elements as function
@@ -379,7 +373,7 @@ of wavelength. These definition are hard-coded in this function</div></blockquot
 <dd>wavelength definition</dd>
 <dt>fi: ndarray (nspec, n) or (n, )</dt>
 <dd>spectra to convert</dd>
-<dt>sigma0: float</dt>
+<dt>fwhm0: float</dt>
 <dd>initial broadening in the spectra <cite>fi</cite></dd>
 <dt>sigma_floor: float</dt>
 <dd>minimal dispersion to consider</dd>
@@ -406,9 +400,9 @@ meter, the running time, an eta, and the rate of the iterations.</p>
 <dl class="class">
 <dt id="pyphot.pbar.Pbar">
 <em class="property">class </em><code class="descclassname">pyphot.pbar.</code><code class="descname">Pbar</code><span class="sig-paren">(</span><em>maxval=None</em>, <em>desc=None</em>, <em>time=True</em>, <em>eta=True</em>, <em>rate=True</em>, <em>length=None</em>, <em>file=None</em>, <em>keep=True</em>, <em>mininterval=0.5</em>, <em>miniters=1</em>, <em>units='iters'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/pbar.html#Pbar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.pbar.Pbar" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>make a progress string  in a shape of:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">----------</span><span class="p">]</span> <span class="n">k</span><span class="o">/</span><span class="n">n</span>  <span class="mi">10</span><span class="o">%</span> <span class="p">[</span><span class="n">time</span><span class="p">:</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">,</span> <span class="n">eta</span><span class="p">:</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">,</span> <span class="mf">2.7</span> <span class="n">iters</span><span class="o">/</span><span class="n">sec</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">----------</span><span class="p">]</span> <span class="n">k</span><span class="o">/</span><span class="n">n</span>  <span class="mi">10</span><span class="o">%</span> <span class="p">[</span><span class="n">time</span><span class="p">:</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">,</span> <span class="n">eta</span><span class="p">:</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">,</span> <span class="mf">2.7</span> <span class="n">iters</span><span class="o">/</span><span class="n">sec</span><span class="p">]</span>
 </pre></div>
 </div>
 <dl class="docutils">
@@ -438,7 +432,7 @@ if None, the meter will adapt to the buffer width</p>
 <dt id="pyphot.pbar.Pbar.build_str_meter">
 <code class="descname">build_str_meter</code><span class="sig-paren">(</span><em>n</em>, <em>total</em>, <em>elapsed</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/pbar.html#Pbar.build_str_meter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.pbar.Pbar.build_str_meter" title="Permalink to this definition">¶</a></dt>
 <dd><p>make a progress string  in a shape of:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">----------</span><span class="p">]</span> <span class="n">k</span><span class="o">/</span><span class="n">n</span>  <span class="mi">10</span><span class="o">%</span> <span class="p">[</span><span class="n">time</span><span class="p">:</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">,</span> <span class="n">eta</span><span class="p">:</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">,</span> <span class="mf">2.7</span> <span class="n">iters</span><span class="o">/</span><span class="n">sec</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">----------</span><span class="p">]</span> <span class="n">k</span><span class="o">/</span><span class="n">n</span>  <span class="mi">10</span><span class="o">%</span> <span class="p">[</span><span class="n">time</span><span class="p">:</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">,</span> <span class="n">eta</span><span class="p">:</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">,</span> <span class="mf">2.7</span> <span class="n">iters</span><span class="o">/</span><span class="n">sec</span><span class="p">]</span>
 </pre></div>
 </div>
 <dl class="docutils">
@@ -539,7 +533,7 @@ case, total can be set to define the number of iterations.</dd>
 <p>This also include functions to keep libraries up to date</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">integrations are done using <code class="xref py py-func docutils literal"><span class="pre">trapz()</span></code>
+<p class="last">integrations are done using <code class="xref py py-func docutils literal notranslate"><span class="pre">trapz()</span></code>
 Why not Simpsons? Simpsons principle is to take sequence of 3 points to
 make a quadratic interpolation. Which in the end, when filters have sharp
 edges, the error due to this “interpolation” are extremely large in
@@ -548,9 +542,9 @@ comparison to the uncertainties induced by trapeze integration.</p>
 <dl class="class">
 <dt id="pyphot.phot.Ascii_Library">
 <em class="property">class </em><code class="descclassname">pyphot.phot.</code><code class="descname">Ascii_Library</code><span class="sig-paren">(</span><em>source</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#Ascii_Library"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.Ascii_Library" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#pyphot.phot.Library" title="pyphot.phot.Library"><code class="xref py py-class docutils literal"><span class="pre">pyphot.phot.Library</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#pyphot.phot.Library" title="pyphot.phot.Library"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyphot.phot.Library</span></code></a></p>
 <p>Interface one or multiple directory or many files as a filter library</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lib</span> <span class="o">=</span> <span class="n">Ascii_Library</span><span class="p">([</span><span class="s1">&#39;ground&#39;</span><span class="p">,</span> <span class="s1">&#39;hst&#39;</span><span class="p">,</span> <span class="s1">&#39;myfilter.csv&#39;</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lib</span> <span class="o">=</span> <span class="n">Ascii_Library</span><span class="p">([</span><span class="s1">&#39;ground&#39;</span><span class="p">,</span> <span class="s1">&#39;hst&#39;</span><span class="p">,</span> <span class="s1">&#39;myfilter.csv&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 <dl class="method">
@@ -600,7 +594,7 @@ comparison to the uncertainties induced by trapeze integration.</p>
 <dl class="class">
 <dt id="pyphot.phot.Filter">
 <em class="property">class </em><code class="descclassname">pyphot.phot.</code><code class="descname">Filter</code><span class="sig-paren">(</span><em>wavelength</em>, <em>transmit</em>, <em>name=''</em>, <em>dtype='photon'</em>, <em>unit=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#Filter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.Filter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Class filter</p>
 <p>Define a filter by its name, wavelength and transmission
 The type of detector (energy or photon counter) can be specified for
@@ -684,6 +678,16 @@ Vegamag = -2.5 * log10(f_lamb) + 2.5 * log10(f_vega)
 Vegamag = -2.5 * log10(f_lamb) - zpts</p>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="pyphot.phot.Filter.Vega_zero_photons">
+<code class="descname">Vega_zero_photons</code><a class="headerlink" href="#pyphot.phot.Filter.Vega_zero_photons" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vega number of photons per wavelength unit</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">see <cite>self.get_Nphotons</cite></p>
+</div>
+</dd></dl>
+
 <dl class="method">
 <dt id="pyphot.phot.Filter.applyTo">
 <code class="descname">applyTo</code><span class="sig-paren">(</span><em>slamb</em>, <em>sflux</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#Filter.applyTo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.Filter.applyTo" title="Permalink to this definition">¶</a></dt>
@@ -718,6 +722,18 @@ Vegamag = -2.5 * log10(f_lamb) - zpts</p>
 <dd><p>Load filter from ascii file</p>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="pyphot.phot.Filter.fwhm">
+<code class="descname">fwhm</code><a class="headerlink" href="#pyphot.phot.Filter.fwhm" title="Permalink to this definition">¶</a></dt>
+<dd><p>the difference between the two wavelengths for which filter
+transmission is half maximum</p>
+<dl class="docutils">
+<dt>..note::</dt>
+<dd>This calculation is not exact but rounded to the nearest passband
+data points</dd>
+</dl>
+</dd></dl>
+
 <dl class="method">
 <dt id="pyphot.phot.Filter.getFlux">
 <code class="descname">getFlux</code><span class="sig-paren">(</span><em>slamb</em>, <em>sflux</em>, <em>axis=-1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#Filter.getFlux"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.Filter.getFlux" title="Permalink to this definition">¶</a></dt>
@@ -733,6 +749,24 @@ consider extractSEDs.</p>
 <dl class="docutils">
 <dt>flux: float</dt>
 <dd>Energy of the spectrum within the filter</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyphot.phot.Filter.get_Nphotons">
+<code class="descname">get_Nphotons</code><span class="sig-paren">(</span><em>slamb</em>, <em>sflux</em>, <em>axis=-1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#Filter.get_Nphotons"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.Filter.get_Nphotons" title="Permalink to this definition">¶</a></dt>
+<dd><p>getNphot the number of photons through the filter
+(Ntot / width  in the documentation)</p>
+<p>getflux() * leff / hc</p>
+<dl class="docutils">
+<dt>slamb: ndarray(dtype=float, ndim=1)</dt>
+<dd>spectrum wavelength definition domain</dd>
+<dt>sflux: ndarray(dtype=float, ndim=1)</dt>
+<dd>associated flux in erg/s/cm2/AA</dd>
+</dl>
+<dl class="docutils">
+<dt>N: float</dt>
+<dd>Number of photons of the spectrum within the filter</dd>
 </dl>
 </dd></dl>
 
@@ -769,6 +803,29 @@ leff = int (lamb * T * Vega dlamb) / int(T * Vega dlamb)</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="pyphot.phot.Filter.lmax">
+<code class="descname">lmax</code><a class="headerlink" href="#pyphot.phot.Filter.lmax" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculated as the last value with a transmission at least 1% of
+maximum transmission</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyphot.phot.Filter.lmin">
+<code class="descname">lmin</code><a class="headerlink" href="#pyphot.phot.Filter.lmin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate das the first value with a transmission at least 1% of
+maximum transmission</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyphot.phot.Filter.lphot">
+<code class="descname">lphot</code><a class="headerlink" href="#pyphot.phot.Filter.lphot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Photon distribution based effective wavelength. Defined as</p>
+<p>lphot = int(lamb ** 2 * T * Vega dlamb) / int(lamb * T * Vega dlamb)</p>
+<p>which we calculate as</p>
+<p>lphot = get_flux(lamb * vega) / get_flux(vega)</p>
+</dd></dl>
+
+<dl class="attribute">
 <dt id="pyphot.phot.Filter.lpivot">
 <code class="descname">lpivot</code><a class="headerlink" href="#pyphot.phot.Filter.lpivot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Unitwise wavelength definition</p>
@@ -789,7 +846,14 @@ leff = int (lamb * T * Vega dlamb) / int(T * Vega dlamb)</p>
 <dl class="method">
 <dt id="pyphot.phot.Filter.set_dtype">
 <code class="descname">set_dtype</code><span class="sig-paren">(</span><em>dtype</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#Filter.set_dtype"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.Filter.set_dtype" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Set the detector type (photon or energy)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyphot.phot.Filter.set_wavelength_unit">
+<code class="descname">set_wavelength_unit</code><span class="sig-paren">(</span><em>unit</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#Filter.set_wavelength_unit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.Filter.set_wavelength_unit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the wavelength units</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="pyphot.phot.Filter.to_Table">
@@ -814,6 +878,16 @@ leff = int (lamb * T * Vega dlamb) / int(T * Vega dlamb)</p>
 <dd><p>Unitwise wavelength definition</p>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="pyphot.phot.Filter.width">
+<code class="descname">width</code><a class="headerlink" href="#pyphot.phot.Filter.width" title="Permalink to this definition">¶</a></dt>
+<dd><p>Effective width
+Equivalent to the horizontal size of a rectangle with height equal
+to maximum transmission and with the same area that the one covered by
+the filter transmission curve.</p>
+<p>W = int(T dlamb) / max(T)</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="pyphot.phot.Filter.write_to">
 <code class="descname">write_to</code><span class="sig-paren">(</span><em>fname</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#Filter.write_to"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.Filter.write_to" title="Permalink to this definition">¶</a></dt>
@@ -830,7 +904,7 @@ leff = int (lamb * T * Vega dlamb) / int(T * Vega dlamb)</p>
 <dl class="class">
 <dt id="pyphot.phot.HDF_Library">
 <em class="property">class </em><code class="descclassname">pyphot.phot.</code><code class="descname">HDF_Library</code><span class="sig-paren">(</span><em>source='/Users/fouesneau/Work/pyphot/pyphot/libs/new_filters.hd5'</em>, <em>mode='r'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#HDF_Library"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.HDF_Library" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#pyphot.phot.Library" title="pyphot.phot.Library"><code class="xref py py-class docutils literal"><span class="pre">pyphot.phot.Library</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#pyphot.phot.Library" title="pyphot.phot.Library"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyphot.phot.Library</span></code></a></p>
 <dl class="method">
 <dt id="pyphot.phot.HDF_Library.add_filter">
 <code class="descname">add_filter</code><span class="sig-paren">(</span><em>f</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#HDF_Library.add_filter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.HDF_Library.add_filter" title="Permalink to this definition">¶</a></dt>
@@ -888,7 +962,7 @@ leff = int (lamb * T * Vega dlamb) / int(T * Vega dlamb)</p>
 <dl class="class">
 <dt id="pyphot.phot.Library">
 <em class="property">class </em><code class="descclassname">pyphot.phot.</code><code class="descname">Library</code><span class="sig-paren">(</span><em>source='/Users/fouesneau/Work/pyphot/pyphot/libs/new_filters.hd5'</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#Library"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.Library" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Common grounds for filter libraries</p>
 <dl class="method">
 <dt id="pyphot.phot.Library.add_filter">
@@ -1005,7 +1079,7 @@ package.</p>
 <dl class="class">
 <dt id="pyphot.simpletable.AstroHelpers">
 <em class="property">class </em><code class="descclassname">pyphot.simpletable.</code><code class="descname">AstroHelpers</code><a class="reference internal" href="_modules/pyphot/simpletable.html#AstroHelpers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.simpletable.AstroHelpers" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Helpers related to astronomy data</p>
 <dl class="staticmethod">
 <dt id="pyphot.simpletable.AstroHelpers.conesearch">
@@ -1207,7 +1281,7 @@ Converted from IDL to numerical Python: Erin Sheldon, NYU, 2008-07-02</p>
 <dl class="class">
 <dt id="pyphot.simpletable.AstroTable">
 <em class="property">class </em><code class="descclassname">pyphot.simpletable.</code><code class="descname">AstroTable</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/simpletable.html#AstroTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.simpletable.AstroTable" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#pyphot.simpletable.SimpleTable" title="pyphot.simpletable.SimpleTable"><code class="xref py py-class docutils literal"><span class="pre">pyphot.simpletable.SimpleTable</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#pyphot.simpletable.SimpleTable" title="pyphot.simpletable.SimpleTable"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyphot.simpletable.SimpleTable</span></code></a></p>
 <p>Derived from the Table, this class add implementations of common astro
 tools especially conesearch</p>
 <dl class="method">
@@ -1263,7 +1337,8 @@ tools especially conesearch</p>
 <dl class="method">
 <dt id="pyphot.simpletable.AstroTable.info">
 <code class="descname">info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/simpletable.html#AstroTable.info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.simpletable.AstroTable.info" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>prints information on the table</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="pyphot.simpletable.AstroTable.selectWhere">
@@ -1300,7 +1375,7 @@ includes mathematical operations and attribute names</dd>
 <dd>A dictionary that replaces the local operands in current frame.</dd>
 </dl>
 <p>out: ndarray/ tuple of ndarrays
-result equivalent to <code class="xref py py-func docutils literal"><span class="pre">np.where()</span></code></p>
+result equivalent to <code class="xref py py-func docutils literal notranslate"><span class="pre">np.where()</span></code></p>
 </dd></dl>
 
 <dl class="method">
@@ -1335,7 +1410,7 @@ result equivalent to <code class="xref py py-func docutils literal"><span class=
 <dl class="class">
 <dt id="pyphot.simpletable.SimpleTable">
 <em class="property">class </em><code class="descclassname">pyphot.simpletable.</code><code class="descname">SimpleTable</code><span class="sig-paren">(</span><em>fname</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/simpletable.html#SimpleTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.simpletable.SimpleTable" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Table class that is designed to be the basis of any format wrapping
 around numpy recarrays</p>
 <dl class="docutils">
@@ -1351,11 +1426,11 @@ you can try by providing an object.__</p>
 <dt>caseless: bool</dt>
 <dd>if set, column names will be caseless during operations</dd>
 <dt>aliases: dict</dt>
-<dd>set of column aliases (can be defined later <a class="reference internal" href="#pyphot.simpletable.SimpleTable.set_alias" title="pyphot.simpletable.SimpleTable.set_alias"><code class="xref py py-func docutils literal"><span class="pre">set_alias()</span></code></a>)</dd>
+<dd>set of column aliases (can be defined later <a class="reference internal" href="#pyphot.simpletable.SimpleTable.set_alias" title="pyphot.simpletable.SimpleTable.set_alias"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_alias()</span></code></a>)</dd>
 <dt>units: dict</dt>
-<dd>set of column units (can be defined later <a class="reference internal" href="#pyphot.simpletable.SimpleTable.set_unit" title="pyphot.simpletable.SimpleTable.set_unit"><code class="xref py py-func docutils literal"><span class="pre">set_unit()</span></code></a>)</dd>
+<dd>set of column units (can be defined later <a class="reference internal" href="#pyphot.simpletable.SimpleTable.set_unit" title="pyphot.simpletable.SimpleTable.set_unit"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_unit()</span></code></a>)</dd>
 <dt>desc: dict</dt>
-<dd>set of column description or comments (can be defined later <a class="reference internal" href="#pyphot.simpletable.SimpleTable.set_comment" title="pyphot.simpletable.SimpleTable.set_comment"><code class="xref py py-func docutils literal"><span class="pre">set_comment()</span></code></a>)</dd>
+<dd>set of column description or comments (can be defined later <a class="reference internal" href="#pyphot.simpletable.SimpleTable.set_comment" title="pyphot.simpletable.SimpleTable.set_comment"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_comment()</span></code></a>)</dd>
 <dt>header: dict</dt>
 <dd>key, value pair corresponding to the attributes of the table</dd>
 </dl>
@@ -1388,7 +1463,7 @@ Requires plotter add-on to work</p>
 <dt id="pyphot.simpletable.SimpleTable.addLine">
 <code class="descname">addLine</code><span class="sig-paren">(</span><em>iterable</em><span class="sig-paren">)</span><a class="headerlink" href="#pyphot.simpletable.SimpleTable.addLine" title="Permalink to this definition">¶</a></dt>
 <dd><p>Append one row in this table.</p>
-<p>see also: <a class="reference internal" href="#pyphot.simpletable.SimpleTable.stack" title="pyphot.simpletable.SimpleTable.stack"><code class="xref py py-func docutils literal"><span class="pre">stack()</span></code></a></p>
+<p>see also: <a class="reference internal" href="#pyphot.simpletable.SimpleTable.stack" title="pyphot.simpletable.SimpleTable.stack"><code class="xref py py-func docutils literal notranslate"><span class="pre">stack()</span></code></a></p>
 <dl class="docutils">
 <dt>iterable: iterable</dt>
 <dd>line to add</dd>
@@ -1417,7 +1492,7 @@ Requires plotter add-on to work</p>
 <dt id="pyphot.simpletable.SimpleTable.append_row">
 <code class="descname">append_row</code><span class="sig-paren">(</span><em>iterable</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/simpletable.html#SimpleTable.append_row"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.simpletable.SimpleTable.append_row" title="Permalink to this definition">¶</a></dt>
 <dd><p>Append one row in this table.</p>
-<p>see also: <a class="reference internal" href="#pyphot.simpletable.SimpleTable.stack" title="pyphot.simpletable.SimpleTable.stack"><code class="xref py py-func docutils literal"><span class="pre">stack()</span></code></a></p>
+<p>see also: <a class="reference internal" href="#pyphot.simpletable.SimpleTable.stack" title="pyphot.simpletable.SimpleTable.stack"><code class="xref py py-func docutils literal notranslate"><span class="pre">stack()</span></code></a></p>
 <dl class="docutils">
 <dt>iterable: iterable</dt>
 <dd>line to add</dd>
@@ -1512,13 +1587,13 @@ elements Only works at this time is 2 lines are <em>the same entry</em> not if
 <dt id="pyphot.simpletable.SimpleTable.get">
 <code class="descname">get</code><span class="sig-paren">(</span><em>v</em>, <em>full_match=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/simpletable.html#SimpleTable.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.simpletable.SimpleTable.get" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns a table from columns given as v</p>
-<p>this function is equivalent to <code class="xref py py-func docutils literal"><span class="pre">__getitem__()</span></code> but preserve the
+<p>this function is equivalent to <code class="xref py py-func docutils literal notranslate"><span class="pre">__getitem__()</span></code> but preserve the
 Table format and associated properties (units, description, header)</p>
 <dl class="docutils">
 <dt>v: str</dt>
 <dd>pattern to filter the keys with</dd>
 <dt>full_match: bool</dt>
-<dd>if set, use <code class="xref py py-func docutils literal"><span class="pre">re.fullmatch()</span></code> instead of <code class="xref py py-func docutils literal"><span class="pre">re.match()</span></code></dd>
+<dd>if set, use <code class="xref py py-func docutils literal notranslate"><span class="pre">re.fullmatch()</span></code> instead of <code class="xref py py-func docutils literal notranslate"><span class="pre">re.match()</span></code></dd>
 </dl>
 </dd></dl>
 
@@ -1620,7 +1695,7 @@ Matching is not preserved if there are some duplicates…</li>
 <dt>regexp: str</dt>
 <dd>pattern to filter the keys with</dd>
 <dt>full_match: bool</dt>
-<dd>if set, use <code class="xref py py-func docutils literal"><span class="pre">re.fullmatch()</span></code> instead of <code class="xref py py-func docutils literal"><span class="pre">re.match()</span></code></dd>
+<dd>if set, use <code class="xref py py-func docutils literal notranslate"><span class="pre">re.fullmatch()</span></code> instead of <code class="xref py py-func docutils literal notranslate"><span class="pre">re.match()</span></code></dd>
 </dl>
 <p>Try to apply the pattern at the start of the string, returning
 a match object, or None if no match was found.</p>
@@ -1965,7 +2040,7 @@ metadata are fully supported.</p>
 <dt>copy <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional</span></dt>
 <dd>Copy the input data (default=True).</dd>
 <dt>rows <span class="classifier-delimiter">:</span> <span class="classifier">numpy ndarray, list of lists, optional</span></dt>
-<dd>Row-oriented data for table instead of <code class="docutils literal"><span class="pre">data</span></code> argument</dd>
+<dd>Row-oriented data for table instead of <code class="docutils literal notranslate"><span class="pre">data</span></code> argument</dd>
 <dt>copy_indices <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional</span></dt>
 <dd>Copy any indices in the input data (default=True)</dd>
 <dt><a href="#id1"><span class="problematic" id="id2">**</span></a>kwargs <span class="classifier-delimiter">:</span> <span class="classifier">dict, optional</span></dt>
@@ -2100,7 +2175,7 @@ includes mathematical operations and attribute names</dd>
 <dd>A dictionary that replaces the local operands in current frame.</dd>
 </dl>
 <p>out: ndarray/ tuple of ndarrays
-result equivalent to <code class="xref py py-func docutils literal"><span class="pre">np.where()</span></code></p>
+result equivalent to <code class="xref py py-func docutils literal notranslate"><span class="pre">np.where()</span></code></p>
 </dd></dl>
 
 <dl class="method">
@@ -2114,8 +2189,8 @@ result equivalent to <code class="xref py py-func docutils literal"><span class=
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">additional keywords are forwarded to the corresponding libraries
-<code class="xref py py-func docutils literal"><span class="pre">pyfits.writeto()</span></code> or <code class="xref py py-func docutils literal"><span class="pre">pyfits.append()</span></code>
-<code class="xref py py-func docutils literal"><span class="pre">np.savetxt()</span></code></p>
+<code class="xref py py-func docutils literal notranslate"><span class="pre">pyfits.writeto()</span></code> or <code class="xref py py-func docutils literal notranslate"><span class="pre">pyfits.append()</span></code>
+<code class="xref py py-func docutils literal notranslate"><span class="pre">np.savetxt()</span></code></p>
 </div>
 </dd></dl>
 
@@ -2124,7 +2199,7 @@ result equivalent to <code class="xref py py-func docutils literal"><span class=
 <dl class="class">
 <dt id="pyphot.simpletable.stats">
 <em class="property">class </em><code class="descclassname">pyphot.simpletable.</code><code class="descname">stats</code><a class="reference internal" href="_modules/pyphot/simpletable.html#stats"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.simpletable.stats" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="classmethod">
 <dt id="pyphot.simpletable.stats.has_nan">
 <em class="property">classmethod </em><code class="descname">has_nan</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/simpletable.html#stats.has_nan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.simpletable.stats.has_nan" title="Permalink to this definition">¶</a></dt>
@@ -2182,7 +2257,7 @@ result equivalent to <code class="xref py py-func docutils literal"><span class=
 <dl class="class">
 <dt id="pyphot.vega.Vega">
 <em class="property">class </em><code class="descclassname">pyphot.vega.</code><code class="descname">Vega</code><span class="sig-paren">(</span><em>source='/Users/fouesneau/Work/pyphot/pyphot/libs/vega.hd5'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/vega.html#Vega"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.vega.Vega" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Class that handles vega spectrum and references.  This class know where to
 find the Vega synthetic spectrum (Bohlin 2007) in order to compute fluxes
 and magnitudes in given filters</p>
@@ -2199,7 +2274,7 @@ and magnitudes in given filters</p>
 <dd>flux(wavelength) values (with units when provided)</dd>
 </dl>
 <p>An instance can be used as a context manager as:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">filters</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;HST_WFC3_F275W&#39;</span><span class="p">,</span> <span class="s1">&#39;HST_WFC3_F336W&#39;</span><span class="p">,</span> <span class="s1">&#39;HST_WFC3_F475W&#39;</span><span class="p">,</span>                   <span class="s1">&#39;HST_WFC3_F814W&#39;</span><span class="p">,</span> <span class="s1">&#39;HST_WFC3_F110W&#39;</span><span class="p">,</span> <span class="s1">&#39;HST_WFC3_F160W&#39;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">filters</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;HST_WFC3_F275W&#39;</span><span class="p">,</span> <span class="s1">&#39;HST_WFC3_F336W&#39;</span><span class="p">,</span> <span class="s1">&#39;HST_WFC3_F475W&#39;</span><span class="p">,</span>                   <span class="s1">&#39;HST_WFC3_F814W&#39;</span><span class="p">,</span> <span class="s1">&#39;HST_WFC3_F110W&#39;</span><span class="p">,</span> <span class="s1">&#39;HST_WFC3_F160W&#39;</span><span class="p">]</span>
 <span class="go">    with Vega() as v:</span>
 <span class="go">        vega_f, vega_mag, flamb = v.getSed(filters)</span>
 <span class="go">    print vega_f, vega_mag, flamb</span>
@@ -2250,7 +2325,7 @@ and magnitudes in given filters</p>
 <dl class="class">
 <dt id="pyphot.sun.Sun">
 <em class="property">class </em><code class="descclassname">pyphot.sun.</code><code class="descname">Sun</code><span class="sig-paren">(</span><em>source=None</em>, <em>distance=&lt;Quantity(1</em>, <em>'astronomical_unit')&gt;</em>, <em>flavor='theoretical'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/sun.html#Sun"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.sun.Sun" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Class that handles the Sun’s spectrum and references.</p>
 <p>Observed solar spectrum comes from:
 <a class="reference external" href="ftp://ftp.stsci.edu/cdbs/current_calspec/sun_reference_stis_001.fits">ftp://ftp.stsci.edu/cdbs/current_calspec/sun_reference_stis_001.fits</a></p>
@@ -2302,36 +2377,34 @@ or  ‘theoretical’ for the Kurucz model.</dd>
 
 
           </div>
+          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">pyphot package</a><ul>
-<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
-<li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#module-pyphot.config">pyphot.config module</a></li>
-<li><a class="reference internal" href="#module-pyphot.helpers">pyphot.helpers module</a></li>
-<li><a class="reference internal" href="#module-pyphot.licks">pyphot.licks module</a></li>
-<li><a class="reference internal" href="#module-pyphot.pbar">pyphot.pbar module</a><ul>
-<li><a class="reference internal" href="#simple-progressbar">Simple progressbar</a></li>
+<h1 class="logo"><a href="index.html">pyphot</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=mfouesneau&repo=pyphot&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="libcontent.html">Provided Filter library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="licks.html">Extention to Lick indices</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">API</a></li>
 </ul>
-</li>
-<li><a class="reference internal" href="#module-pyphot.phot">pyphot.phot module</a><ul>
-<li><a class="reference internal" href="#photometric-package">Photometric package</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-pyphot.simpletable">pyphot.simpletable module</a><ul>
-<li><a class="reference internal" href="#requirements">Requirements</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-pyphot.vega">pyphot.vega module</a></li>
-<li><a class="reference internal" href="#module-pyphot.sun">pyphot.sun module</a></li>
-<li><a class="reference internal" href="#module-pyphot">Module contents</a></li>
-</ul>
-</li>
-</ul>
+
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
@@ -2343,23 +2416,26 @@ or  ‘theoretical’ for the Kurucz model.</dd>
   </ul></li>
 </ul>
 </div>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/pyphot.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
         </div>
       </div>
       <div class="clearer"></div>
@@ -2368,8 +2444,8 @@ or  ‘theoretical’ for the Kurucz model.</dd>
       &copy;2016, M. Fouesneau.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
       <a href="_sources/pyphot.rst.txt"
