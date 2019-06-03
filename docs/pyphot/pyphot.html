@@ -549,10 +549,10 @@ comparison to the uncertainties induced by trapeze integration.</p>
 </div>
 <dl class="method">
 <dt id="pyphot.phot.Ascii_Library.add_filters">
-<code class="descname">add_filters</code><span class="sig-paren">(</span><em>f</em>, <em>fmt='%.6f'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#Ascii_Library.add_filters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.Ascii_Library.add_filters" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_filters</code><span class="sig-paren">(</span><em>filter_object</em>, <em>fmt='%.6f'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#Ascii_Library.add_filters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.Ascii_Library.add_filters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a filter to the library permanently</p>
 <dl class="docutils">
-<dt>f: Filter object</dt>
+<dt>filter_object: Filter object</dt>
 <dd>filter to add</dd>
 </dl>
 </dd></dl>
@@ -588,6 +588,23 @@ comparison to the uncertainties induced by trapeze integration.</p>
 <dd>list of filter objects</dd>
 </dl>
 </dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyphot.phot.Constants">
+<em class="property">class </em><code class="descclassname">pyphot.phot.</code><code class="descname">Constants</code><a class="reference internal" href="_modules/pyphot/phot.html#Constants"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.Constants" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A namespace for constants</p>
+<dl class="attribute">
+<dt id="pyphot.phot.Constants.c">
+<code class="descname">c</code><em class="property"> = &lt;Quantity(2.99792458e+18, 'angstrom / second')&gt;</em><a class="headerlink" href="#pyphot.phot.Constants.c" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pyphot.phot.Constants.h">
+<code class="descname">h</code><em class="property"> = &lt;Quantity(6.62607554e-27, 'erg * second')&gt;</em><a class="headerlink" href="#pyphot.phot.Constants.h" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -673,9 +690,9 @@ STmag = -2.5 * log10(f_lamb) -21.1</p>
 <dl class="attribute">
 <dt id="pyphot.phot.Filter.Vega_zero_mag">
 <code class="descname">Vega_zero_mag</code><a class="headerlink" href="#pyphot.phot.Filter.Vega_zero_mag" title="Permalink to this definition">¶</a></dt>
-<dd><p>Vega magnitude zero point
-Vegamag = -2.5 * log10(f_lamb) + 2.5 * log10(f_vega)
-Vegamag = -2.5 * log10(f_lamb) - zpts</p>
+<dd><p>vega magnitude zero point
+vegamag = -2.5 * log10(f_lamb) + 2.5 * log10(f_vega)
+vegamag = -2.5 * log10(f_lamb) - zpts</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -905,6 +922,7 @@ the filter transmission curve.</p>
 <dt id="pyphot.phot.HDF_Library">
 <em class="property">class </em><code class="descclassname">pyphot.phot.</code><code class="descname">HDF_Library</code><span class="sig-paren">(</span><em>source='/Users/fouesneau/Work/pyphot/pyphot/libs/new_filters.hd5'</em>, <em>mode='r'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#HDF_Library"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.HDF_Library" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pyphot.phot.Library" title="pyphot.phot.Library"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyphot.phot.Library</span></code></a></p>
+<p>Storage based on HDF</p>
 <dl class="method">
 <dt id="pyphot.phot.HDF_Library.add_filter">
 <code class="descname">add_filter</code><span class="sig-paren">(</span><em>f</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#HDF_Library.add_filter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.HDF_Library.add_filter" title="Permalink to this definition">¶</a></dt>
@@ -982,8 +1000,8 @@ the filter transmission curve.</p>
 <dd></dd></dl>
 
 <dl class="classmethod">
-<dt id="pyphot.phot.Library.from_ascci">
-<em class="property">classmethod </em><code class="descname">from_ascci</code><span class="sig-paren">(</span><em>filename</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#Library.from_ascci"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.Library.from_ascci" title="Permalink to this definition">¶</a></dt>
+<dt id="pyphot.phot.Library.from_ascii">
+<em class="property">classmethod </em><code class="descname">from_ascii</code><span class="sig-paren">(</span><em>filename</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#Library.from_ascii"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.Library.from_ascii" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="classmethod">
@@ -1035,10 +1053,310 @@ directory: str</p>
 
 </dd></dl>
 
+<dl class="class">
+<dt id="pyphot.phot.UncertainFilter">
+<em class="property">class </em><code class="descclassname">pyphot.phot.</code><code class="descname">UncertainFilter</code><span class="sig-paren">(</span><em>wavelength</em>, <em>mean_transmit</em>, <em>samples</em>, <em>name=''</em>, <em>dtype='photon'</em>, <em>unit=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#UncertainFilter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.UncertainFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyphot.phot.Filter" title="pyphot.phot.Filter"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyphot.phot.Filter</span></code></a></p>
+<p>What could be a filter with uncertainties</p>
+<dl class="docutils">
+<dt>wavelength: ndarray</dt>
+<dd>wavelength sequence defining the filter transmission curve</dd>
+<dt><a href="#id5"><span class="problematic" id="id6">mean_</span></a>: Filter</dt>
+<dd>mean passband transmission</dd>
+<dt><a href="#id7"><span class="problematic" id="id8">samples_</span></a>: sequence(Filter)</dt>
+<dd>samples from the uncertain passband transmission model</dd>
+<dt>name: string</dt>
+<dd>name of the passband</dd>
+<dt>dtype: str</dt>
+<dd>detector type, either “photon” or “energy” counter</dd>
+<dt>unit: str</dt>
+<dd>wavelength units</dd>
+</dl>
+<dl class="attribute">
+<dt id="pyphot.phot.UncertainFilter.AB_zero_Jy">
+<code class="descname">AB_zero_Jy</code><a class="headerlink" href="#pyphot.phot.UncertainFilter.AB_zero_Jy" title="Permalink to this definition">¶</a></dt>
+<dd><p>AB flux zero point in Jansky (Jy)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyphot.phot.UncertainFilter.AB_zero_flux">
+<code class="descname">AB_zero_flux</code><a class="headerlink" href="#pyphot.phot.UncertainFilter.AB_zero_flux" title="Permalink to this definition">¶</a></dt>
+<dd><p>AB flux zero point in erg/s/cm2/AA</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyphot.phot.UncertainFilter.AB_zero_mag">
+<code class="descname">AB_zero_mag</code><a class="headerlink" href="#pyphot.phot.UncertainFilter.AB_zero_mag" title="Permalink to this definition">¶</a></dt>
+<dd><p>AB magnitude zero point
+ABmag = -2.5 * log10(f_nu) - 48.60</p>
+<blockquote>
+<div>= -2.5 * log10(f_lamb) - 2.5 * log10(lpivot ** 2 / c) - 48.60
+= -2.5 * log10(f_lamb) - zpts</div></blockquote>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyphot.phot.UncertainFilter.ST_zero_Jy">
+<code class="descname">ST_zero_Jy</code><a class="headerlink" href="#pyphot.phot.UncertainFilter.ST_zero_Jy" title="Permalink to this definition">¶</a></dt>
+<dd><p>ST flux zero point in Jansky (Jy)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyphot.phot.UncertainFilter.ST_zero_flux">
+<code class="descname">ST_zero_flux</code><a class="headerlink" href="#pyphot.phot.UncertainFilter.ST_zero_flux" title="Permalink to this definition">¶</a></dt>
+<dd><p>ST flux zero point in erg/s/cm2/AA</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyphot.phot.UncertainFilter.ST_zero_mag">
+<code class="descname">ST_zero_mag</code><a class="headerlink" href="#pyphot.phot.UncertainFilter.ST_zero_mag" title="Permalink to this definition">¶</a></dt>
+<dd><p>ST magnitude zero point
+STmag = -2.5 * log10(f_lamb) -21.1</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyphot.phot.UncertainFilter.Vega_zero_Jy">
+<code class="descname">Vega_zero_Jy</code><a class="headerlink" href="#pyphot.phot.UncertainFilter.Vega_zero_Jy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vega flux zero point in Jansky (Jy)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyphot.phot.UncertainFilter.Vega_zero_flux">
+<code class="descname">Vega_zero_flux</code><a class="headerlink" href="#pyphot.phot.UncertainFilter.Vega_zero_flux" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vega flux zero point in erg/s/cm2/AA</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyphot.phot.UncertainFilter.Vega_zero_mag">
+<code class="descname">Vega_zero_mag</code><a class="headerlink" href="#pyphot.phot.UncertainFilter.Vega_zero_mag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vega magnitude zero point
+Vegamag = -2.5 * log10(f_lamb) + 2.5 * log10(f_vega)
+Vegamag = -2.5 * log10(f_lamb) - zpts</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyphot.phot.UncertainFilter.Vega_zero_photons">
+<code class="descname">Vega_zero_photons</code><a class="headerlink" href="#pyphot.phot.UncertainFilter.Vega_zero_photons" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vega number of photons per wavelength unit</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">see <cite>self.get_Nphotons</cite></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyphot.phot.UncertainFilter.apply_transmission">
+<code class="descname">apply_transmission</code><span class="sig-paren">(</span><em>slamb</em>, <em>sflux</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#UncertainFilter.apply_transmission"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.UncertainFilter.apply_transmission" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply filter transmission to a spectrum (with reinterpolation of the filter)</p>
+<dl class="docutils">
+<dt>slamb: ndarray</dt>
+<dd>spectrum wavelength definition domain</dd>
+<dt>sflux: ndarray</dt>
+<dd>associated flux</dd>
+</dl>
+<dl class="docutils">
+<dt>flux: float</dt>
+<dd>new spectrum values accounting for the filter</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyphot.phot.UncertainFilter.cl">
+<code class="descname">cl</code><a class="headerlink" href="#pyphot.phot.UncertainFilter.cl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unitwise wavelength definition</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="pyphot.phot.UncertainFilter.from_ascii">
+<em class="property">classmethod </em><code class="descname">from_ascii</code><span class="sig-paren">(</span><em>fname</em>, <em>dtype='csv'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#UncertainFilter.from_ascii"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.UncertainFilter.from_ascii" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load filter from ascii file</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="pyphot.phot.UncertainFilter.from_gp_model">
+<em class="property">classmethod </em><code class="descname">from_gp_model</code><span class="sig-paren">(</span><em>model</em>, <em>xprime=None</em>, <em>n_samples=10</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#UncertainFilter.from_gp_model"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.UncertainFilter.from_gp_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a filter object from a sklearn GP model</p>
+<dl class="docutils">
+<dt>model: sklearn.gaussian_process.GaussianProcessRegressor</dt>
+<dd>model of the passband</dd>
+<dt>xprime: ndarray</dt>
+<dd>wavelength to express the model in addition to the training points</dd>
+<dt>n_samples: int</dt>
+<dd>number of samples to generate from the model.</dd>
+<dt><a href="#id1"><span class="problematic" id="id2">**</span></a>kwawrgs: dict</dt>
+<dd>UncertainFilter keywords</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyphot.phot.UncertainFilter.fwhm">
+<code class="descname">fwhm</code><a class="headerlink" href="#pyphot.phot.UncertainFilter.fwhm" title="Permalink to this definition">¶</a></dt>
+<dd><p>the difference between the two wavelengths for which filter
+transmission is half maximum</p>
+<dl class="docutils">
+<dt>..note::</dt>
+<dd>This calculation is not exact but rounded to the nearest passband
+data points</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyphot.phot.UncertainFilter.getFlux">
+<code class="descname">getFlux</code><span class="sig-paren">(</span><em>slamb</em>, <em>sflux</em>, <em>axis=-1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#UncertainFilter.getFlux"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.UncertainFilter.getFlux" title="Permalink to this definition">¶</a></dt>
+<dd><p>Integrate the flux within the filter and return the integrated energy
+If you consider applying the filter to many spectra, you might want to
+consider extractSEDs.</p>
+<dl class="docutils">
+<dt>slamb: ndarray(dtype=float, ndim=1)</dt>
+<dd>spectrum wavelength definition domain</dd>
+<dt>sflux: ndarray(dtype=float, ndim=1)</dt>
+<dd>associated flux</dd>
+</dl>
+<dl class="docutils">
+<dt>flux: float</dt>
+<dd>Energy of the spectrum within the filter</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyphot.phot.UncertainFilter.get_Nphotons">
+<code class="descname">get_Nphotons</code><span class="sig-paren">(</span><em>slamb</em>, <em>sflux</em>, <em>axis=-1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#UncertainFilter.get_Nphotons"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.UncertainFilter.get_Nphotons" title="Permalink to this definition">¶</a></dt>
+<dd><p>getNphot the number of photons through the filter
+(Ntot / width  in the documentation)</p>
+<p>getflux() * leff / hc</p>
+<dl class="docutils">
+<dt>slamb: ndarray(dtype=float, ndim=1)</dt>
+<dd>spectrum wavelength definition domain</dd>
+<dt>sflux: ndarray(dtype=float, ndim=1)</dt>
+<dd>associated flux in erg/s/cm2/AA</dd>
+</dl>
+<dl class="docutils">
+<dt>N: float</dt>
+<dd>Number of photons of the spectrum within the filter</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyphot.phot.UncertainFilter.info">
+<code class="descname">info</code><span class="sig-paren">(</span><em>show_zeropoints=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#UncertainFilter.info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.UncertainFilter.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>display information about the current filter</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyphot.phot.UncertainFilter.leff">
+<code class="descname">leff</code><a class="headerlink" href="#pyphot.phot.UncertainFilter.leff" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unitwise Effective wavelength
+leff = int (lamb * T * Vega dlamb) / int(T * Vega dlamb)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyphot.phot.UncertainFilter.lmax">
+<code class="descname">lmax</code><a class="headerlink" href="#pyphot.phot.UncertainFilter.lmax" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculated as the last value with a transmission at least 1% of
+maximum transmission</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyphot.phot.UncertainFilter.lmin">
+<code class="descname">lmin</code><a class="headerlink" href="#pyphot.phot.UncertainFilter.lmin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate das the first value with a transmission at least 1% of
+maximum transmission</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyphot.phot.UncertainFilter.lphot">
+<code class="descname">lphot</code><a class="headerlink" href="#pyphot.phot.UncertainFilter.lphot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Photon distribution based effective wavelength. Defined as</p>
+<p>lphot = int(lamb ** 2 * T * Vega dlamb) / int(lamb * T * Vega dlamb)</p>
+<p>which we calculate as</p>
+<p>lphot = get_flux(lamb * vega) / get_flux(vega)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyphot.phot.UncertainFilter.lpivot">
+<code class="descname">lpivot</code><a class="headerlink" href="#pyphot.phot.UncertainFilter.lpivot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unitwise wavelength definition</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyphot.phot.UncertainFilter.reinterp">
+<code class="descname">reinterp</code><span class="sig-paren">(</span><em>lamb</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#UncertainFilter.reinterp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.UncertainFilter.reinterp" title="Permalink to this definition">¶</a></dt>
+<dd><p>reinterpolate filter onto a different wavelength definition</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyphot.phot.UncertainFilter.set_dtype">
+<code class="descname">set_dtype</code><span class="sig-paren">(</span><em>dtype</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#UncertainFilter.set_dtype"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.UncertainFilter.set_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the detector type (photon or energy)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyphot.phot.UncertainFilter.set_wavelength_unit">
+<code class="descname">set_wavelength_unit</code><span class="sig-paren">(</span><em>unit</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#UncertainFilter.set_wavelength_unit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.UncertainFilter.set_wavelength_unit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the wavelength units</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyphot.phot.UncertainFilter.to_Table">
+<code class="descname">to_Table</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#UncertainFilter.to_Table"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.UncertainFilter.to_Table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export filter to a SimpleTable object</p>
+<dl class="docutils">
+<dt>fname: str</dt>
+<dd>filename</dd>
+</dl>
+<p>Uses <cite>SimpleTable</cite> parameters</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyphot.phot.UncertainFilter.transmit">
+<code class="descname">transmit</code><a class="headerlink" href="#pyphot.phot.UncertainFilter.transmit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transmission curves</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyphot.phot.UncertainFilter.wavelength">
+<code class="descname">wavelength</code><a class="headerlink" href="#pyphot.phot.UncertainFilter.wavelength" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unitwise wavelength definition</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyphot.phot.UncertainFilter.wavelength_unit">
+<code class="descname">wavelength_unit</code><a class="headerlink" href="#pyphot.phot.UncertainFilter.wavelength_unit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unit wavelength definition</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyphot.phot.UncertainFilter.width">
+<code class="descname">width</code><a class="headerlink" href="#pyphot.phot.UncertainFilter.width" title="Permalink to this definition">¶</a></dt>
+<dd><p>Effective width
+Equivalent to the horizontal size of a rectangle with height equal
+to maximum transmission and with the same area that the one covered by
+the filter transmission curve.</p>
+<p>W = int(T dlamb) / max(T)</p>
+</dd></dl>
+
+</dd></dl>
+
 <dl class="function">
 <dt id="pyphot.phot.get_library">
 <code class="descclassname">pyphot.phot.</code><code class="descname">get_library</code><span class="sig-paren">(</span><em>fname='/Users/fouesneau/Work/pyphot/pyphot/libs/new_filters.hd5'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#get_library"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.get_library" title="Permalink to this definition">¶</a></dt>
 <dd><p>Finds the appropriate class to load the library</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyphot.phot.set_method_default_units">
+<em class="property">class </em><code class="descclassname">pyphot.phot.</code><code class="descname">set_method_default_units</code><span class="sig-paren">(</span><em>wavelength_unit</em>, <em>flux_unit</em>, <em>output_unit=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#set_method_default_units"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.set_method_default_units" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Decorator for classmethods that makes sure that
+the inputs of slamb, sflux are in given units</p>
+<dl class="docutils">
+<dt>expects the decorated method to be defined as</dt>
+<dd>&gt;&gt; def methodname(self, lamb, flux)</dd>
+</dl>
+<dl class="classmethod">
+<dt id="pyphot.phot.set_method_default_units.force_units">
+<em class="property">classmethod </em><code class="descname">force_units</code><span class="sig-paren">(</span><em>value</em>, <em>unit</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/phot.html#set_method_default_units.force_units"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.phot.set_method_default_units.force_units" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -2043,7 +2361,7 @@ metadata are fully supported.</p>
 <dd>Row-oriented data for table instead of <code class="docutils literal notranslate"><span class="pre">data</span></code> argument</dd>
 <dt>copy_indices <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional</span></dt>
 <dd>Copy any indices in the input data (default=True)</dd>
-<dt><a href="#id1"><span class="problematic" id="id2">**</span></a>kwargs <span class="classifier-delimiter">:</span> <span class="classifier">dict, optional</span></dt>
+<dt><a href="#id3"><span class="problematic" id="id4">**</span></a>kwargs <span class="classifier-delimiter">:</span> <span class="classifier">dict, optional</span></dt>
 <dd>Additional keyword args when converting table-like object</dd>
 </dl>
 <dl class="docutils">
@@ -2370,6 +2688,198 @@ or  ‘theoretical’ for the Kurucz model.</dd>
 </dd></dl>
 
 </div>
+<div class="section" id="module-pyphot.sandbox">
+<span id="pyphot-sandbox-module"></span><h2>pyphot.sandbox module<a class="headerlink" href="#module-pyphot.sandbox" title="Permalink to this headline">¶</a></h2>
+<p>Sandbox of new developments</p>
+<p>Use at your own risks</p>
+<dl class="class">
+<dt id="pyphot.sandbox.UnitAscii_Library">
+<em class="property">class </em><code class="descclassname">pyphot.sandbox.</code><code class="descname">UnitAscii_Library</code><span class="sig-paren">(</span><em>source</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/sandbox.html#UnitAscii_Library"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.sandbox.UnitAscii_Library" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyphot.phot.Ascii_Library" title="pyphot.phot.Ascii_Library"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyphot.phot.Ascii_Library</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyphot.sandbox.UnitFilter">
+<em class="property">class </em><code class="descclassname">pyphot.sandbox.</code><code class="descname">UnitFilter</code><span class="sig-paren">(</span><em>wavelength</em>, <em>transmit</em>, <em>name=''</em>, <em>dtype='photon'</em>, <em>unit=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/sandbox.html#UnitFilter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.sandbox.UnitFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyphot.phot.Filter" title="pyphot.phot.Filter"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyphot.phot.Filter</span></code></a></p>
+<p>Evolution of Filter that makes sure the input spectra and output fluxes
+have units to avoid mis-interpretation.</p>
+<dl class="docutils">
+<dt>Note the usual (non SI) units of flux definitions:</dt>
+<dd>flam     = erg/s/cm**2/AA
+fnu      = erg/s/cm**2/Hz
+photflam = photon/s/cm**2/AA
+photnu   = photon/s/cm**2/Hz</dd>
+</dl>
+<dl class="attribute">
+<dt id="pyphot.sandbox.UnitFilter.Vega_zero_flux">
+<code class="descname">Vega_zero_flux</code><a class="headerlink" href="#pyphot.sandbox.UnitFilter.Vega_zero_flux" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vega flux zero point in erg/s/cm2/AA</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyphot.sandbox.UnitFilter.Vega_zero_mag">
+<code class="descname">Vega_zero_mag</code><a class="headerlink" href="#pyphot.sandbox.UnitFilter.Vega_zero_mag" title="Permalink to this definition">¶</a></dt>
+<dd><p>vega magnitude zero point
+vegamag = -2.5 * log10(f_lamb) + 2.5 * log10(f_vega)
+vegamag = -2.5 * log10(f_lamb) - zpts</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyphot.sandbox.UnitFilter.getFlux">
+<code class="descname">getFlux</code><span class="sig-paren">(</span><em>slamb</em>, <em>sflux</em>, <em>axis=-1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/sandbox.html#UnitFilter.getFlux"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.sandbox.UnitFilter.getFlux" title="Permalink to this definition">¶</a></dt>
+<dd><p>Integrate the flux within the filter and return the integrated energy
+If you consider applying the filter to many spectra, you might want to
+consider extractSEDs.</p>
+<dl class="docutils">
+<dt>slamb: ndarray(dtype=float, ndim=1)</dt>
+<dd>spectrum wavelength definition domain</dd>
+<dt>sflux: ndarray(dtype=float, ndim=1)</dt>
+<dd>associated flux</dd>
+</dl>
+<dl class="docutils">
+<dt>flux: float</dt>
+<dd>Energy of the spectrum within the filter</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyphot.sandbox.UnitFilter.get_Nphotons">
+<code class="descname">get_Nphotons</code><span class="sig-paren">(</span><em>slamb</em>, <em>sflux</em>, <em>axis=-1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/sandbox.html#UnitFilter.get_Nphotons"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.sandbox.UnitFilter.get_Nphotons" title="Permalink to this definition">¶</a></dt>
+<dd><p>getNphot the number of photons through the filter
+(Ntot / width  in the documentation)</p>
+<p>getflux() * leff / hc</p>
+<dl class="docutils">
+<dt>slamb: ndarray(dtype=float, ndim=1)</dt>
+<dd>spectrum wavelength definition domain</dd>
+<dt>sflux: ndarray(dtype=float, ndim=1)</dt>
+<dd>associated flux in erg/s/cm2/AA</dd>
+</dl>
+<dl class="docutils">
+<dt>N: float</dt>
+<dd>Number of photons of the spectrum within the filter</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyphot.sandbox.UnitFilter.get_flux">
+<code class="descname">get_flux</code><span class="sig-paren">(</span><em>slamb</em>, <em>sflux</em>, <em>axis=-1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/sandbox.html#UnitFilter.get_flux"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.sandbox.UnitFilter.get_flux" title="Permalink to this definition">¶</a></dt>
+<dd><p>getFlux
+Integrate the flux within the filter and return the integrated energy
+If you consider applying the filter to many spectra, you might want to
+consider extractSEDs.</p>
+<dl class="docutils">
+<dt>slamb: ndarray(dtype=float, ndim=1)</dt>
+<dd>spectrum wavelength definition domain</dd>
+<dt>sflux: ndarray(dtype=float, ndim=1)</dt>
+<dd>associated flux</dd>
+</dl>
+<dl class="docutils">
+<dt>flux: float</dt>
+<dd>Energy of the spectrum within the filter</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyphot.sandbox.UnitFilter.lphot">
+<code class="descname">lphot</code><a class="headerlink" href="#pyphot.sandbox.UnitFilter.lphot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Photon distribution based effective wavelength. Defined as</p>
+<p>lphot = int(lamb ** 2 * T * Vega dlamb) / int(lamb * T * Vega dlamb)</p>
+<p>which we calculate as</p>
+<p>lphot = get_flux(lamb * vega) / get_flux(vega)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyphot.sandbox.UnitHDF_Library">
+<em class="property">class </em><code class="descclassname">pyphot.sandbox.</code><code class="descname">UnitHDF_Library</code><span class="sig-paren">(</span><em>source='/Users/fouesneau/Work/pyphot/pyphot/libs/new_filters.hd5'</em>, <em>mode='r'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/sandbox.html#UnitHDF_Library"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.sandbox.UnitHDF_Library" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyphot.phot.HDF_Library" title="pyphot.phot.HDF_Library"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyphot.phot.HDF_Library</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyphot.sandbox.UnitLibray">
+<em class="property">class </em><code class="descclassname">pyphot.sandbox.</code><code class="descname">UnitLibray</code><span class="sig-paren">(</span><em>source='/Users/fouesneau/Work/pyphot/pyphot/libs/new_filters.hd5'</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/sandbox.html#UnitLibray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.sandbox.UnitLibray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyphot.phot.Library" title="pyphot.phot.Library"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyphot.phot.Library</span></code></a></p>
+<dl class="classmethod">
+<dt id="pyphot.sandbox.UnitLibray.from_ascii">
+<em class="property">classmethod </em><code class="descname">from_ascii</code><span class="sig-paren">(</span><em>filename</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/sandbox.html#UnitLibray.from_ascii"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.sandbox.UnitLibray.from_ascii" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="pyphot.sandbox.UnitLibray.from_hd5">
+<em class="property">classmethod </em><code class="descname">from_hd5</code><span class="sig-paren">(</span><em>filename</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/sandbox.html#UnitLibray.from_hd5"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.sandbox.UnitLibray.from_hd5" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyphot.sandbox.UnitLickIndex">
+<em class="property">class </em><code class="descclassname">pyphot.sandbox.</code><code class="descname">UnitLickIndex</code><span class="sig-paren">(</span><em>name</em>, <em>lick</em>, <em>unit='AA'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/sandbox.html#UnitLickIndex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.sandbox.UnitLickIndex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyphot.licks.LickIndex" title="pyphot.licks.LickIndex"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyphot.licks.LickIndex</span></code></a></p>
+<p>Define a Lick Index similarily to a Filter object</p>
+<dl class="method">
+<dt id="pyphot.sandbox.UnitLickIndex.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>wave</em>, <em>flux</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/sandbox.html#UnitLickIndex.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.sandbox.UnitLickIndex.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>compute spectral index after continuum subtraction</p>
+<dl class="docutils">
+<dt>w: ndarray (nw, )</dt>
+<dd>array of wavelengths in AA</dd>
+<dt>flux: ndarray (N, nw)</dt>
+<dd>array of flux values for different spectra in the series</dd>
+<dt>degree: int (default 1)</dt>
+<dd>degree of the polynomial fit to the continuum</dd>
+<dt>nocheck: bool</dt>
+<dd>set to silently pass on spectral domain mismatch.
+otherwise raises an error when index is not covered</dd>
+</dl>
+<dl class="docutils">
+<dt>ew: ndarray (N,)</dt>
+<dd>equivalent width or magnitude array</dd>
+</dl>
+<p>ValueError: when the spectral coverage wave does not cover the index
+range</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyphot.sandbox.UnitLickLibrary">
+<em class="property">class </em><code class="descclassname">pyphot.sandbox.</code><code class="descname">UnitLickLibrary</code><span class="sig-paren">(</span><em>fname='/Users/fouesneau/Work/pyphot/pyphot/libs/licks.dat'</em>, <em>comment='#'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/sandbox.html#UnitLickLibrary"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.sandbox.UnitLickLibrary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyphot.licks.LickLibrary" title="pyphot.licks.LickLibrary"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyphot.licks.LickLibrary</span></code></a></p>
+<p>Collection of Lick indices</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyphot.sandbox.get_library">
+<code class="descclassname">pyphot.sandbox.</code><code class="descname">get_library</code><span class="sig-paren">(</span><em>fname='/Users/fouesneau/Work/pyphot/pyphot/libs/new_filters.hd5'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/sandbox.html#get_library"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.sandbox.get_library" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds the appropriate class to load the library</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyphot.sandbox.reduce_resolution">
+<code class="descclassname">pyphot.sandbox.</code><code class="descname">reduce_resolution</code><span class="sig-paren">(</span><em>wi</em>, <em>fi</em>, <em>fwhm0=&lt;Quantity(0.55</em>, <em>'angstrom')&gt;</em>, <em>sigma_floor=&lt;Quantity(0.2</em>, <em>'angstrom')&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyphot/sandbox.html#reduce_resolution"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyphot.sandbox.reduce_resolution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adapt the resolution of the spectra to match the lick definitions</p>
+<blockquote>
+<div>Lick definitions have different resolution elements as function
+of wavelength. These definition are hard-coded in this function</div></blockquote>
+<dl class="docutils">
+<dt>wi: ndarray (n, )</dt>
+<dd>wavelength definition</dd>
+<dt>fi: ndarray (nspec, n) or (n, )</dt>
+<dd>spectra to convert</dd>
+<dt>fwhm0: float</dt>
+<dd>initial broadening in the spectra <cite>fi</cite></dd>
+<dt>sigma_floor: float</dt>
+<dd>minimal dispersion to consider</dd>
+</dl>
+<dl class="docutils">
+<dt>flux_red: ndarray (nspec, n) or (n, )</dt>
+<dd>reduced spectra</dd>
+</dl>
+</dd></dl>
+
+</div>
 <div class="section" id="module-pyphot">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pyphot" title="Permalink to this headline">¶</a></h2>
 </div>
@@ -2400,9 +2910,21 @@ or  ‘theoretical’ for the Kurucz model.</dd>
 
 <h3>Navigation</h3>
 <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Home</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#package-main-content">Package main content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#quick-start">Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#internal-vega-reference">Internal Vega reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="more_examples.html">More example usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="photometry.html">Details on predicting photometry</a></li>
 <li class="toctree-l1"><a class="reference internal" href="libcontent.html">Provided Filter library</a></li>
 <li class="toctree-l1"><a class="reference internal" href="licks.html">Extention to Lick indices</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">API</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">pyphot package</a></li>
+</ul>
+</li>
 </ul>
 
 <div class="relations">

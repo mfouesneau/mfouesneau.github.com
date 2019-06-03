@@ -17,7 +17,7 @@
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Provided Filter library" href="libcontent.html" />
+    <link rel="next" title="More example usage" href="more_examples.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -55,6 +55,8 @@ also handled for the computations.</p>
 <p class="last">All provided filters have defined units and detector type
 that are used transparently throughout the package.</p>
 </div>
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/mfouesneau/pyphot/master?filepath=examples%2FQuickStart.ipynb"><img alt="https://mybinder.org/badge.svg" src="https://mybinder.org/badge.svg" /></a>
+<a class="reference external image-reference" href="https://nbviewer.jupyter.org/github/mfouesneau/pyphot/tree/master/examples/"><img alt="https://img.shields.io/badge/render%20on-nbviewer-orange.svg" src="https://img.shields.io/badge/render%20on-nbviewer-orange.svg" /></a>
 <div class="section" id="package-main-content">
 <h2>Package main content<a class="headerlink" href="#package-main-content" title="Permalink to this headline">¶</a></h2>
 <p>This package is mostly organized around 2 main classes:</p>
@@ -71,22 +73,63 @@ that are used transparently throughout the package.</p>
 <a class="reference internal" href="pyphot.html#pyphot.phot.HDF_Library" title="pyphot.phot.HDF_Library"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyphot.phot.HDF_Library</span></code></a>.</li>
 <li><a class="reference internal" href="pyphot.html#pyphot.vega.Vega" title="pyphot.vega.Vega"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyphot.vega.Vega</span></code></a> provides an interface to a synthetic reference of
 Vega.</li>
+<li><a class="reference internal" href="pyphot.html#pyphot.sun.Sun" title="pyphot.sun.Sun"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyphot.sun.Sun</span></code></a> provides an interface to a synthetic and empirical reference of
+the Sun spectrum.</li>
 <li><a class="reference internal" href="pyphot.html#module-pyphot.licks" title="pyphot.licks"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyphot.licks</span></code></a> provides an extension to computing lick indices.</li>
 </ul>
 <div class="section" id="contents">
 <h3>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h3>
 <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="libcontent.html">Provided Filter library</a></li>
-<li class="toctree-l1"><a class="reference internal" href="licks.html">Extention to Lick indices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">API</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Home</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#package-main-content">Package main content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#quick-start">Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#internal-vega-reference">Internal Vega reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="more_examples.html">More example usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="more_examples.html#notebooks">Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more_examples.html#basic-example">Basic example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more_examples.html#unit-conversions">Unit conversions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more_examples.html#number-of-photons-through-a-given-passband">Number of photons through a given passband</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more_examples.html#defining-your-own-passband">Defining your own passband</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more_examples.html#dust-attenuated-sed-modeling">Dust attenuated SED modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more_examples.html#flux-density-units">Flux density units</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="photometry.html">Details on predicting photometry</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="photometry.html#vega-magnitude-system">Vega magnitude system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="photometry.html#johnson-system">Johnson system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="photometry.html#ab-magnitude-system">AB magnitude system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="photometry.html#st-magnitude-system">ST magnitude system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="photometry.html#jansky-definition">Jansky definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="photometry.html#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="libcontent.html">Provided Filter library</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="libcontent.html#table-description">Table description</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="licks.html">Extention to Lick indices</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="licks.html#lick-index">Lick index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="licks.html#quick-start-example">Quick start example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="licks.html#calculations">Calculations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="licks.html#library-content">Library content</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyphot.html">pyphot package</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
+</div>
 <div class="section" id="installation">
-<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h3>
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Using pip:</li>
+<li>Using pip: Use the <cite>–user</cite> option if you don’t have permissions to install libraries</li>
 </ul>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install git+https://github.com/mfouesneau/pyphot
 </pre></div>
@@ -98,7 +141,6 @@ Vega.</li>
 cd pyphot
 python setup.py intall
 </pre></div>
-</div>
 </div>
 </div>
 <div class="section" id="quick-start">
@@ -165,194 +207,6 @@ throug the HST WFC3 F110W passband,</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="details-on-predicting-photometry">
-<h2>Details on predicting photometry<a class="headerlink" href="#details-on-predicting-photometry" title="Permalink to this headline">¶</a></h2>
-<p>It is sometimes not obvious that there are important differences between
-photometric systems. But even less known the difference between detector
-count types (energy or photons) which requires also special care.</p>
-<p>In this section, we review the important details for computing the luminosity
-and the magnitude of a star through a photometric passband filter. We do not
-discuss calibration, which in principle is covered by instrument documentations.</p>
-<p>If we consider a filter throughput (a.k.a, transmission curve, or response
-function) defined in wavelength by the dimensionless function <span class="math notranslate nohighlight">\(T(\lambda)\)</span>,
-this function tells you what fraction of the arriving photons at wavelength
-<span class="math notranslate nohighlight">\(\lambda\)</span> actually get through the instrument.  Therefore, the total number of
-photons, per unit time per unit area, received in this filter is</p>
-<div class="math notranslate nohighlight">
-\[\begin{equation}
-N_{tot} = \frac{1}{hc} \int_\lambda f_\lambda\,\lambda\,T(\lambda)\,d\lambda,
-\end{equation}\]</div>
-<p>where <span class="math notranslate nohighlight">\(f_\lambda\)</span> is the wavelength dependent flux density of an object
-given in energy per unit time per unit area per unit wavelength.</p>
-<p>Consequently, interpreting <span class="math notranslate nohighlight">\(\lambda T(\lambda)\)</span> as a distribution leads to
-the statistical mean of the flux density, <span class="math notranslate nohighlight">\(\overline{f_\lambda}\)</span></p>
-<div class="math notranslate nohighlight">
-\[\begin{equation}
-\overline{f_\lambda}(T) = \frac{\int_\lambda \lambda f_\lambda T(\lambda) d\lambda}{\int_\lambda \lambda T(\lambda) d\lambda}.
-\end{equation}\]</div>
-<p>Note that this is not the mean flux density because of the <span class="math notranslate nohighlight">\(\lambda\)</span> factor in
-the integrals, it is the mean photon rate density in this filter commonly
-expressed in stellar physics literature as <span class="math notranslate nohighlight">\(erg/s/cm^2/\unicode{x212B}\)</span> or
-<span class="math notranslate nohighlight">\(W/m^2/\unicode{x212B}\)</span>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># computing the flux of a spectrum</span>
-<span class="n">flux</span> <span class="o">=</span> <span class="n">lib</span><span class="p">[</span><span class="s1">&#39;hst_wfc3_f110w&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get_flux</span><span class="p">(</span><span class="n">lamb</span><span class="p">,</span> <span class="n">spec</span><span class="p">)</span>
-<span class="c1"># lamb may have units, otherwise assuming consistent definitions.</span>
-
-<span class="c1"># computing the flux of many spectra</span>
-<span class="n">fluxes</span> <span class="o">=</span> <span class="n">lib</span><span class="p">[</span><span class="s1">&#39;hst_wfc3_f110w&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get_flux</span><span class="p">(</span><span class="n">lamb</span><span class="p">,</span> <span class="n">spectra</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Finally, at least for instruments using CCD or CCD-like cameras, i.e., counting
-photons, we obtain the usual definition of magnitude</p>
-<div class="math notranslate nohighlight">
-\[\begin{equation}
-mag_\lambda(T) = -2.5\,\log_{10}\left(\overline{f_\lambda}\right) - ZP\left(\overline{f_\lambda}\right),
-\end{equation}\]</div>
-<p>where <span class="math notranslate nohighlight">\(ZP(\overline{f_\lambda})\)</span> gives the pass-band reference value
-(zeropoint) for a given photometric/magnitude system.</p>
-<p>However, the zeropoints themselves depend on the adopted photometric system used
-to report the measurements. They may vary fundamentally from one to another.
-Below we briefly describe the main systems used in large surveys.</p>
-<div class="section" id="vega-magnitude-system">
-<h3>Vega magnitude system<a class="headerlink" href="#vega-magnitude-system" title="Permalink to this headline">¶</a></h3>
-<p>This system is defined such that the star Alpha Lyr (Vega) has magnitude 0 in
-any pass-band filter. In other words, the zeropoints are set by the magnitude of
-vega, <span class="math notranslate nohighlight">\(-2.5 \log_{10} \overline{f_\lambda}(Vega)\)</span>, or</p>
-<div class="math notranslate nohighlight">
-\[\begin{equation}
-mag_{Vega}(T) = -2.5\,\log_{10}\left(\overline{f_\lambda} / \overline{f_\lambda}(Vega)\right).
-\end{equation}\]</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># convert to magnitudes</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">lib</span><span class="p">[</span><span class="s1">&#39;hst_wfc3_f110w&#39;</span><span class="p">]</span>
-<span class="n">fluxes</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">get_flux</span><span class="p">(</span><span class="n">lamb</span><span class="p">,</span> <span class="n">spectra</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">mags</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">fluxes</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="o">.</span><span class="n">Vega_zero_mag</span>
-<span class="c1"># or similarly</span>
-<span class="n">mags</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">fluxes</span> <span class="o">/</span> <span class="n">f</span><span class="o">.</span><span class="n">Vega_zero_flux</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="johnson-system">
-<h3>Johnson system<a class="headerlink" href="#johnson-system" title="Permalink to this headline">¶</a></h3>
-<p>The Johson system is defined such that the star Alpha Lyr (Vega) has <span class="math notranslate nohighlight">\(V=0.03\)</span>
-and all colors equal to zero. It is very similar to the Vega magnitude system,
-but using mean flux definition (instead of photon counts), i.e., <strong>energy
-counter</strong> detectors</p>
-<div class="math notranslate nohighlight">
-\[\begin{equation}
-\widetilde{f_\lambda}(T) = \frac{\int_\lambda f_\lambda T(\lambda) d\lambda}{\int_\lambda T(\lambda) d\lambda},
-\label{eq:Johnsonmag}
-\end{equation}\]</div>
-<p>(the true definition of mean flux throughout a given transmission filter.)</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Table A2 of Bessell et al. 1998 gives zero points for the UBVRIJHKL(+Kp and L’) filters in the Counsins-Glass-Johnson system.</p>
-</div>
-<p>If one defines the <strong>effective wavelength</strong> <span class="math notranslate nohighlight">\(\lambda_{\rm eff}\)</span> as the
-photon weighted mean wavelength:</p>
-<div class="math notranslate nohighlight">
-\[\lambda_{\rm eff} = \frac{\int \lambda f_\lambda T(\lambda) d\lambda}{\int f_\lambda T(\lambda) d\lambda},\]</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># the effective wavelength for vega is given by</span>
-<span class="n">lib</span><span class="p">[</span><span class="s1">&#39;ground_johnson_u&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">leff</span>
-</pre></div>
-</div>
-<p>then the difference between the Johnson and Vega systems within the same filter is given by</p>
-<div class="math notranslate nohighlight">
-\[\begin{equation}
-\widetilde{mag}_\lambda - \overline{mag}_\lambda = 0.03 - 2.5 \log_{10} \frac{\lambda_{\rm eff}(Vega)}{\lambda_{\rm eff}(star)},
-\end{equation}\]</div>
-<p>where we explicit which equation was used to compute magnitudes.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># The switch between the energy and the photon count equation is done</span>
-<span class="c1"># through the `Filter.set_dtype` method, and becomes transparent for any</span>
-<span class="c1"># use. So if you define you own filter either use the constructor or the</span>
-<span class="c1"># method</span>
-
-<span class="c1"># define a constant filter in energy count from 100 to 110 AA</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">Filter</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">110</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> \
-                <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;energy&#39;</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;AA&#39;</span><span class="p">)</span>
-<span class="c1"># manually set the detector type</span>
-<span class="n">f</span><span class="o">.</span><span class="n">set_dtype</span><span class="p">(</span><span class="s1">&#39;photon&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="ab-magnitude-system">
-<h3>AB magnitude system<a class="headerlink" href="#ab-magnitude-system" title="Permalink to this headline">¶</a></h3>
-<p>This system is defined such that, when monochromatic flux <span class="math notranslate nohighlight">\(f_\nu\)</span> is measured in
-<span class="math notranslate nohighlight">\(erg\,s^{-1}\,cm^{-2} Hz^{-1}\)</span>,</p>
-<div class="math notranslate nohighlight">
-\[mag_{AB}(T) = -2.5\, \log_{10}(\overline{f_\nu}) - 48.60\]</div>
-<p>where the value of the constant is selected to define <span class="math notranslate nohighlight">\(m_{AB}=V\)</span> for a
-flat-spectrum source. In this system, an object with constant flux per unit
-frequency interval has zero color.</p>
-<p>Koornneef et al. gives the respective definition of <span class="math notranslate nohighlight">\(\overline{f_\nu}(T)\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[\begin{equation}
-\overline{f_\nu}(T) = \frac{\int_\nu f_\nu T(\nu) d\nu / \nu}{\int_\nu T(\nu) d\nu / \nu}
- = \frac{\int_\lambda f_\nu T(\lambda) d\lambda / \lambda}{\int_\lambda T(\lambda) d\lambda / \lambda}
-\end{equation}\]</div>
-<p>To go back to wavelength units, we have <span class="math notranslate nohighlight">\(d\nu = (c/\lambda^2) d\lambda\)</span>.</p>
-<p>If one defines the <strong>pivot wavelength</strong> <span class="math notranslate nohighlight">\(\lambda_p\)</span> to convert between
-<span class="math notranslate nohighlight">\(\overline{f_\nu}\)</span> and <span class="math notranslate nohighlight">\(\overline{f_\lambda}\)</span> as</p>
-<div class="math notranslate nohighlight">
-\[\begin{equation}
-\overline{f_\nu} = \frac{\lambda_p^2}{c} \overline{f_\lambda},
-\end{equation}\]</div>
-<p>one can easily show that</p>
-<div class="math notranslate nohighlight">
-\[\begin{equation}
-\lambda_p^2 = \frac{\int_\lambda T(\lambda)\,\lambda\,d\lambda}{\int_\lambda T(\lambda)\,d\lambda /\lambda}.
-\end{equation}\]</div>
-<p>Therefore for filters with AB magnitudes, one can compute</p>
-<div class="math notranslate nohighlight">
-\[\begin{equation}
-mag_{AB}(T) = -2.5\, \log_{10}(\overline{f_\lambda}) - 2.5\log_{10}\left(\lambda_p^2/c\right) - 48.6,
-\end{equation}\]</div>
-<p>where care must be taken to use the speed of light <span class="math notranslate nohighlight">\(c\)</span> and <span class="math notranslate nohighlight">\(\lambda_p\)</span> in matching units.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># convert to magnitudes</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">lib</span><span class="p">[</span><span class="s1">&#39;hst_wfc3_f110w&#39;</span><span class="p">]</span>
-<span class="n">fluxes</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">get_flux</span><span class="p">(</span><span class="n">lamb</span><span class="p">,</span> <span class="n">spectra</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">mags</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">fluxes</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="o">.</span><span class="n">AB_zero_mag</span>
-<span class="c1"># or similarly</span>
-<span class="n">mags</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">fluxes</span> <span class="o">/</span> <span class="n">f</span><span class="o">.</span><span class="n">AB_zero_flux</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="st-magnitude-system">
-<h3>ST magnitude system<a class="headerlink" href="#st-magnitude-system" title="Permalink to this headline">¶</a></h3>
-<p>This system is defined such as a source with flat <span class="math notranslate nohighlight">\(f_\lambda\)</span> will have
-the same magnitude in every filter.</p>
-<p>Koornneef et al. (1986; same as above) defines</p>
-<div class="math notranslate nohighlight">
-\[\begin{equation}
-mag_{ST}(T) = -2.5\, \log_{10}(\overline{f_\lambda}) - 21.1,
-\end{equation}\]</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># convert to magnitudes</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">lib</span><span class="p">[</span><span class="s1">&#39;hst_wfc3_f110w&#39;</span><span class="p">]</span>
-<span class="n">fluxes</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">get_flux</span><span class="p">(</span><span class="n">lamb</span><span class="p">,</span> <span class="n">spectra</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">mags</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">fluxes</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="o">.</span><span class="n">ST_zero_mag</span>
-<span class="c1"># or similarly</span>
-<span class="n">mags</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">fluxes</span> <span class="o">/</span> <span class="n">f</span><span class="o">.</span><span class="n">ST_zero_flux</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="jansky-definition">
-<h3>Jansky definition<a class="headerlink" href="#jansky-definition" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="references">
-<h3>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>Bessel, M. S. 1990, PASP, 91, 589;</li>
-<li>Bessel, M. S. 1983, PASP, 95, 480;</li>
-<li>Bessel, M. S. 1990, PASP, 102, 1181;</li>
-<li>Hayes, D. S., &amp; Latham, D. W. 1975, ApJ, 197, 593;</li>
-<li>Johnson, H. L. &amp; Morgan, W. W. 1953, ApJ, 117, 313</li>
-<li>Oke, J.B. 1974, ApJS, 27, 21;</li>
-<li>Koornneef, Bohlin, Buser, Horne, Turnshek : Synthetic photometry and the calibration of HST.</li>
-</ul>
-</div>
-</div>
 <div class="section" id="internal-vega-reference">
 <h2>Internal Vega reference<a class="headerlink" href="#internal-vega-reference" title="Permalink to this headline">¶</a></h2>
 <p>As mentioned in the above, sometimes a spectrum of reference of Vega is
@@ -360,15 +214,15 @@ necessary.</p>
 <p>We use the synthetic spectrum provided by Bohlin 2007, a common reference
 througout many photometric suites.</p>
 <p>The interface to the Vega template is given through the <a class="reference internal" href="pyphot.html#pyphot.vega.Vega" title="pyphot.vega.Vega"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyphot.vega.Vega</span></code></a> class.</p>
-</div>
-</div>
 <div class="section" id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<h3>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
 <li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
 <li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
 </ul>
+</div>
+</div>
 </div>
 
 
@@ -395,7 +249,16 @@ througout many photometric suites.</p>
 
 
 <h3>Navigation</h3>
-<ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Home</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#package-main-content">Package main content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#quick-start">Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#internal-vega-reference">Internal Vega reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="more_examples.html">More example usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="photometry.html">Details on predicting photometry</a></li>
 <li class="toctree-l1"><a class="reference internal" href="libcontent.html">Provided Filter library</a></li>
 <li class="toctree-l1"><a class="reference internal" href="licks.html">Extention to Lick indices</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">API</a></li>
@@ -405,7 +268,7 @@ througout many photometric suites.</p>
 <h3>Related Topics</h3>
 <ul>
   <li><a href="#">Documentation overview</a><ul>
-      <li>Next: <a href="libcontent.html" title="next chapter">Provided Filter library</a></li>
+      <li>Next: <a href="more_examples.html" title="next chapter">More example usage</a></li>
   </ul></li>
 </ul>
 </div>
