@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal website">
+    <meta name="author" content="M Fouesneau">
+
+    <title>Morgan Fouesneau</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,300italic,100,100italic,300,500,700,500italic,700italic' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,100italic,300italic,400italic,700italic' rel='stylesheet' type='text/css' />
+
+    <!-- Custom Theme CSS -->
+    <link href="css/grayscale.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet" type="text/css">
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+
+    <nav class="navbar navbar-custom navbar-fixed-top darken-bg-40" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#page-top">
+                    <i class="fa fa-chevron-circle-up"></i>
+                    &nbsp;&nbsp;
+                    <span class="light">
+                        Morgan L. M. Fouesneau
+			<!-- &nbsp;&nbsp;&#8857;&#8853; -->
+                    </span>
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#research">Research</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#codes">Codes</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#publications">Publications</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#cv">CV</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#contact">contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Intro -->
+    <section id="intro" class="full-page intro">
+        <div class="section-body">
+	    <div class="container" style="padding-top:100px;">
+                <div class="row" >
+                    <div class="col-lg-8 col-lg-offset-2 light">
+                        <p class="intro-text">
+                            <a href="https://github.com/mfouesneau"><i class="fa fa-github fa-3x"></i></a>
+                            <a href="https://twitter.com/mfouesneau"><i class="fa fa-twitter fa-3x"></i></a>
+                            <a href="http://arxiv.org/find/all/1/au:+fouesneau/0/1/0/all/0/1"><i class="fa fa-pencil fa-3x"></i></a>
+                        </p>
+                    </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="page-scroll">
+                            <a href="#about" class="btn btn-circle">
+                                <i class="fa fa-angle-double-down"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- about -->
+    <section id="about" class="full-page about">
+        <div class="section-body">
+	    <div class="container" style="padding-top:100px;">
+                <div class="row darken-bg-50" >
+                    <div class="col-lg-8 col-lg-offset-2 light">
+                        <h2 class="italic">About Me</h2>
+                        <hr width="25%" />
+		    </div>
+                    <div class="col-lg-7 col-lg-offset-2 light">
+    			{ABOUTME:s}
+		    </div>
+                    <div class="col-lg-3 light">
+			<img class="right" width="100%" src="img/face_profile_picture.png" alt=""><br>
+			<img class="right" width="100%" src="img/cvcloud_alpha.png" alt="">
+			<a href='https://github.com/mfouesneau/adsstat'>made with adsstat</a>
+                    </div>
+                </div>
+		<div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="page-scroll">
+                            <a href="#research" class="btn btn-circle">
+                                <i class="fa fa-angle-double-down"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research -->
+    <section id="research" class="full-page research">
+        <div class="section-body">
+            <div class="container">
+                <div class="row darken-bg-50">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <h2 class="italic">Recent Selected Research</h2>
+                        <hr width="25%" />
+			<p>
+			A small selection of current projects and research.
+			</p>
+                    </div>
+		    <div class="col-sm-10 col-sm-offset-1">
+			    {RESEARCH_MENU:s}
+                    </div>
+                </div>
+		    {RESEARCH_TEXT:s}
+                <!-- -->
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="page-scroll">
+                            <a href="#codes" class="btn btn-circle">
+                                <i class="fa fa-angle-double-down"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Codes -->
+    <section id="codes" class="full-page codes">
+        <div class="section-body">
+            <div class="container">
+                <div class="row darken-bg-50">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <h2 class="italic">Codes</h2>
+                        <hr width="25%" />
+			<p>
+			A small selection of scientific codes
+			</p>
+                    </div>
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <a class="btn btn-default" id="select-pegase"
+				row="codes-pegase">PyPegase</a>
+                        <a class="btn btn-default" id="select-beast"
+				row="codes-beast">BEAST</a>
+                        <a class="btn btn-default" id="select-python"
+				row="codes-python">Python Various</a>
+                    </div>
+                </div>
+
+                <div class="row darken-bg-50" id="codes-pegase">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <a href="" class="topic">PyPegase</a> <hr width="60%" />
+			<div class="col-sm-7">
+
+			<p class='description'>
+			PyPegase is a stellar population synthesis suite in
+			python that aims at generating integrated
+			spectra of discrete populations.  
+			It may be easily used by anyone, familiar or
+			not with spectral evolution questions. Further
+			improvements will also be available as PEGASE is still
+			under active development.
+			</p>
+			<p class='description'>
+			This code upgrades the latest version of the
+			spectro-photometric model of galaxy evolution PEGASE.2
+			(<a href="http://adsabs.harvard.edu/abs/1997A%26A...326..950F">Fioc and
+	Rocca-Volmerange 1997</a>) with  a new initial
+			mass function considerations which explicitly account
+			for stochastic fluctuations due to finite and small
+			number of stars in populations of stellar cluster
+			scales.
+			</p>
+			<p class='description'>
+			The code sources, including input data, and stellar
+			libraries are currently available on demand .
+			</p>
+			</div>
+
+			<div class="col-sm-5 light">
+			<p class='description'>
+				<a href="img/figure_sto_5myr-crop.png">
+				<img class="right" width="100%" src="img/figure_sto_5myr-crop.png" alt="">
+				</a>
+				<a href="img/figure_sto_70myr-crop.png">
+				<img class="right" width="100%" src="img/figure_sto_70myr-crop.png" alt="">
+				</a>
+
+			<br>
+			<!--
+			<a href="http://adsabs.harvard.edu/abs/2010A%26A...521A..22F">
+				Fouesneau, M., Lan&ccedil;on, A., 2010
+			</a> 
+			-->
+			</p>
+			</div>
+		    </div>
+                </div>
+                <div class="row darken-bg-50" id="codes-beast">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <a href="" class="topic">Beast</a> <hr width="60%" />
+			<p>
+			(Under construction)
+			</p>
+			<div class="col-sm-12">
+			<p class='description'>
+			Bayesian Extinction And Stellar Tool (BEAST), a
+			probabilistic approach to modeling the dust extinguished
+			photometric spectral energy distribution of an
+			individual star while accounting for observational
+			uncertainties common to large resolved star surveys.
+			Given a set of photometric measurements and an
+			observational uncertainty model, the BEAST infers the
+			physical properties of the stellar source using stellar
+			evolution and atmosphere models and constrains the line
+			of sight extinction using a newly developed mixture
+			model that encompasses the full range of dust extinction
+			curves seen in the Local Group. 
+			
+			The BEAST is specifically formulated for use with large
+			multi-band surveys of resolved stellar populations. Our
+			approach accounts for measurement uncertainties and any
+			covariance between them due to stellar crowding (both
+			systematic biases and uncertainties in the bias) and
+			absolute flux calibration, thereby incorporating the
+			full information content of the measurement. We
+			illustrate the accuracy and precision possible with the
+			BEAST using data from the Panchromatic Hubble Andromeda
+			Treasury. While the BEAST has been developed for this
+			survey, it can be easily applied to similar existing and
+			planned resolved star surveys.
+			(<a href="http://adsabs.harvard.edu/abs/2016ApJ...826..104G">Gordon et al, 2016</a>)
+			</p>
+
+			</div>
+                    </div>
+                </div>
+                <div class="row darken-bg-50" id="codes-python">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <a href="" class="topic">Various Python Tools</a> <hr width="60%" />
+			<p>
+			(check github for more)
+			All codes should work with python 2.6+ and 3.
+			</p>
+			<div class="col-sm-6">
+				<b><a href='https://github.com/mfouesneau/faststats'>FASTSTATS</a></b>
+			<p class='description'>
+			Fast algorithms to do statistics <br>
+			This package is my current exploration on how to make
+			fast statistics on big data. Functions are typically
+			several orders of magnitude faster, or so they claim.
+			</p>
+				<b><a href='https://github.com/mfouesneau/ezpadova'>EZPADOVA</a></b>
+			<p class='description'>
+			direct interface to the PADOVA/PARSEC isochrone 
+			<a href='http://stev.oapd.inaf.it/cgi-bin/cmd'> webpage</a> 
+			It compiles the URL needed to query the website and
+			retrives the data into a python table variable easy to
+			manipulate.<br> Works with all their available models.
+			</p>
+				<b><a href='https://github.com/mfouesneau/ezmist'>EZMIST</a></b>
+			<p class='description'>
+			direct interface to the MESA/MIST isochrone 
+			<a href='http://waps.cfa.harvard.edu/MIST/'> webpage</a> 
+			It compiles the URL needed to query the website and
+			retrives the data into a python table variable easy to
+			manipulate.<br> Works with all their available models.
+			</p>
+				<b><a href='https://github.com/mfouesneau/ezdart'>EZDART</a></b>
+			<p class='description'>
+			direct interface to the Dartmouth isochrone 
+			<a href='http://stellar.dartmouth.edu/models/isolf_new.html'> webpage</a> 
+			It compiles the URL needed to query the website and
+			retrives the data into a python table variable easy to
+			manipulate.<br> Works with all their available models.
+			</p>
+				<b><a href='https://github.com/mfouesneau/ezsamp'>EZSAMP</a></b>
+			<p class='description'>
+			SAMPy Client package providing a very small VO
+			interactivity using the SAMP protocol. This allows
+			anyone to easily send and receive data to VO
+			applications such as Aladin, Topcat or DS9.
+			</p>
+			<b><a href='https://github.com/mfouesneau/ezmap'>EZMAP</a></b>
+			<p class='description'>
+			make python parallel mapping even simpler
+			Everything goes through the same command: <i>map</i>!
+			which also includes a progress indicator.
+			</p>
+
+			</div>
+			<div class="col-sm-6">
+
+			<b><a href='https://github.com/mfouesneau/pyphot'>pyphot</a></b>
+			<p class='description'>
+			Makes predicting passband photometry from spectra less
+			of a headache.
+			</p>
+
+			<b><a
+					href='https://github.com/mfouesneau/pystellibs'>pystellibs</a></b>
+			<p class='description'>
+			Computes synthetic spectra in a simple way from various
+			spectral libraries (Basel, Kurucz, Munary...)
+			</p>
+
+			<b><a href='https://github.com/mfouesneau/NUTS'>NUTS</a></b>
+			<p class='description'>
+			No-U-Turn Sampler (NUTS) as in  <a
+				href='http://arxiv.org/abs/1111.4246'> Hoffman
+				and Gelman, (2011)</a>
+			</p>
+			<b><a
+			href='https://github.com/mfouesneau/DE'>Differential Evolution</a></b>
+			<p class='description'>
+			Differential evolution optimization method by 
+			<a href='https://bitbucket.org/12er/pso/src/b448ff0db375c1ac0c55855e9f19aced08b44ca6/doc/literature/heuristic%20Search/Differential%20Evolution%20-%20a%20simple%20and%20efficient%20heuristic%20for%20global%20optimization%20over%20continuous%20spaces.pdf'> Storn and Price (1997)</a>
+			</p>
+
+				<b><a href='https://github.com/mfouesneau/bgls'>BGLS</a></b>
+			<p class='description'>
+			Bayesian Generalized Lomb-Scargle periodogram as in
+			described in 
+			<a href='http://arxiv.org/abs/1412.0467'> Mortier et al.
+				(2014)</a>.
+			</p>
+				<b><a href='https://github.com/mfouesneau/mpl_contourc'>MPL contour add-on</a></b>
+			<p class='description'>
+			a low-level contour computation for Matplotlib that
+			could give me the polygones without the need to make an
+			actual figure and extract the curves from the contour
+			object.
+			</p>
+
+
+
+
+			</div>
+                    </div>
+                </div>
+                <!-- -->
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="page-scroll">
+                            <a href="#publications" class="btn btn-circle">
+                                <i class="fa fa-angle-double-down"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications" class="full-page publications">
+        <div class="section-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h2 class="italic">Publications</h2>
+                        <hr width="60%" />
+			<p>
+<a
+	href="http://adsabs.harvard.edu/cgi-bin/nph-abs_connect?db_key=AST&amp;db_key=PRE&amp;qform=AST&amp;arxiv_sel=astro-ph&amp;arxiv_sel=cond-mat&amp;arxiv_sel=cs&amp;arxiv_sel=gr-qc&amp;arxiv_sel=hep-ex&amp;arxiv_sel=hep-lat&amp;arxiv_sel=hep-ph&amp;arxiv_sel=hep-th&amp;arxiv_sel=math&amp;arxiv_sel=math-ph&amp;arxiv_sel=nlin&amp;arxiv_sel=nucl-ex&amp;arxiv_sel=nucl-th&amp;arxiv_sel=physics&amp;arxiv_sel=quant-ph&amp;arxiv_sel=q-bio&amp;sim_query=YES&amp;ned_query=YES&amp;adsobj_query=YES&amp;aut_logic=OR&amp;obj_logic=OR&amp;author=fouesneau&amp;object=&amp;start_mon=&amp;start_year=&amp;end_mon=&amp;end_year=&amp;ttl_logic=OR&amp;title=&amp;txt_logic=OR&amp;text=&amp;nr_to_return=200&amp;start_nr=1&amp;jou_pick=ALL&amp;ref_stems=&amp;data_and=ALL&amp;group_and=ALL&amp;start_entry_day=&amp;start_entry_mon=&amp;start_entry_year=&amp;end_entry_day=&amp;end_entry_mon=&amp;end_entry_year=&amp;min_score=&amp;sort=SCORE&amp;data_type=SHORT&amp;aut_syn=YES&amp;ttl_syn=YES&amp;txt_syn=YES&amp;aut_wt=1.0&amp;obj_wt=1.0&amp;ttl_wt=0.3&amp;txt_wt=3.0&amp;aut_wgt=YES&amp;obj_wgt=YES&amp;ttl_wgt=YES&amp;txt_wgt=YES&amp;ttl_sco=YES&amp;txt_sco=YES&amp;version=1" class="btn btn-default btn-lg">ADS search</a>
+
+<a href=" http://arxiv.org/find/all/1/au:+fouesneau/0/1/0/all/0/1" class="btn btn-default btn-lg">arXiv search</a>
+			</p>
+		    </div>
+		    <div class="col-lg-8 col-lg-offset-2 publications" align="left">
+			    <i>(updated: {PUBLIST_DATE:s} - Not showing consortia papers)</i>
+
+			   <ul style='list-style-position:outside; padding-left: 4em; text-indent: -3em; list-style-type: None;'>
+
+{PUBLIST:s}
+			   </ul>
+ 		    </div>
+	        </div>
+                <div class="row">
+                    <div class="col-sm-8 col-md-offset-2">
+                        <div class="page-scroll">
+                            <a href="#cv" class="btn btn-circle">
+                                <i class="fa fa-angle-double-down"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- CV -->
+    <section id="cv" class="full-page cv">
+        <div class="section-body">
+            <div class="container">
+                <div class="row darken-bg-50">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <h2 class="italic">Academic CV</h2>
+                        <hr width="25%" />
+                        <div id="CV"></div>
+                    </div>
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <a class="btn btn-default" id="select-cv-education"
+				row="cv-education">Education</a>
+                        <a class="btn btn-default" id="select-cv-current"
+				row="cv-current">Current Projects</a>
+                        <a class="btn btn-default" id="select-cv-other"
+				row="cv-other">Other projects</a>
+                        <a class="btn btn-default" id="select-cv-teaching"
+				row="cv-teaching">Teaching</a>
+                        <a class="btn btn-default" id="select-cv-talks"
+				row="cv-talks">Talks</a>
+                    </div>
+                </div>
+                <!-- -->
+                <div class="row darken-bg-50" id="cv-education">
+                    <div class="col-lg-8 col-lg-offset-2">
+			{CV_EDUCATION:s}
+                    </div>
+                </div>
+                <!-- -->
+                <div class="row darken-bg-50" id="cv-current">
+                    <div class="col-sm-8 col-sm-offset-2">
+		        {CV_CURRENT_PROJECTS:s}
+		    </div>
+
+                </div>
+                <!-- -->
+                <div class="row darken-bg-50" id="cv-other">
+                    <div class="col-sm-8 col-sm-offset-2">
+			{CV_OTHER_PROJECTS:s}
+		    </div>
+                </div>
+                <!-- -->
+                <div class="row darken-bg-50" id="cv-teaching">
+                    <div class="col-sm-8 col-sm-offset-2">
+			{CV_TEACHING:s}
+		    </div>
+                </div>
+                <div class="row darken-bg-50" id="cv-talks">
+                    <div class="col-lg-8 col-lg-offset-2">
+			{CV_TALKS:s}
+                    </div>
+                </div>
+                <!-- -->
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="page-scroll">
+                            <a href="#contact" class="btn btn-circle">
+                                <i class="fa fa-angle-double-down"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </section>
+    <!-- People -->
+
+
+    <!-- Contact -->
+    <section id="contact" class="full-page contact">
+        <div class="section-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <h2 class="italic">Contact</h2>
+                        <hr width="25%" />
+                        <p>
+                            <a id='email'><i class="fa fa-envelope h-spacer-16"></i>fouesneau@mpia</a>
+                        </p>
+                        <p>
+			Max-Planck-Institut für Astronomie<br/>
+			Königstuhl 17<br/>
+			D-69117 Heidelberg, Germany
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {SCRIPTS:s}
+
+ </body>
+
+</html>

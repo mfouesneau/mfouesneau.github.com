@@ -1,0 +1,137 @@
+    <!-- Core JavaScript Files -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/grayscale.js"></script>
+
+    <!-- My JS stuff -->
+    <script src="js/writing.js"></script>
+    <script src="js/utils.js"></script>
+
+    <script type="text/javascript">
+
+        function setupCVSections() {
+            // highlight initially selected survey topic
+            $("#cv .row .btn").each(function(j,elem) {
+                rowID = $(elem).attr("row");
+                $("#" + rowID).hide();
+            });
+
+            // Default selection
+            $("#select-cv-education").addClass("btn-filled");
+            rowID = $("#select-cv-education").attr("row");
+            $("#" + rowID).show(400);
+
+            $("#cv .row .btn").click(function() {
+                if ($(this).hasClass("btn-filled"))
+                    return;
+
+                // trigger all stops
+                $(".fa-stop").trigger("click");
+                $("#cv .row .btn").each(function(j,elem) {
+                    if ($(elem).hasClass("btn-filled")) {
+                        $(elem).removeClass("btn-filled");
+                        rowID = $(elem).attr("row");
+                        $("#" + rowID).hide(400);
+                    }
+                });
+
+                $(this).addClass("btn-filled");
+                rowID = $(this).attr("row");
+                $("#" + rowID).show(400);
+            });
+
+        }
+
+        function setupResearchSections() {
+            // highlight initially selected topic
+            $("#research .row .btn").each(function(j,elem) {
+                rowID = $(elem).attr("row");
+                $("#" + rowID).hide();
+            });
+
+            // Default selection
+            $("#select-stochastic").addClass("btn-filled");
+            rowID = $("#select-stochastic").attr("row");
+            $("#" + rowID).show(400);
+
+            $("#research .row .btn").click(function() {
+                if ($(this).hasClass("btn-filled"))
+                    return;
+
+                // trigger all stops
+                $(".fa-stop").trigger("click");
+                $("#research .row .btn").each(function(j,elem) {
+                    if ($(elem).hasClass("btn-filled")) {
+                        $(elem).removeClass("btn-filled");
+                        rowID = $(elem).attr("row");
+                        $("#" + rowID).hide(400);
+                    }
+                });
+
+                $(this).addClass("btn-filled");
+                rowID = $(this).attr("row");
+                $("#" + rowID).show(400);
+            });
+
+        }
+        function setupCodeSections() {
+            // highlight initially selected topic
+            $("#codes .row .btn").each(function(j,elem) {
+                rowID = $(elem).attr("row");
+                $("#" + rowID).hide();
+            });
+
+            // Default selection
+            $("#select-pegase").addClass("btn-filled");
+            rowID = $("#select-pegase").attr("row");
+            $("#" + rowID).show(400);
+
+            $("#codes .row .btn").click(function() {
+                if ($(this).hasClass("btn-filled"))
+                    return;
+
+                // trigger all stops
+                $(".fa-stop").trigger("click");
+                $("#codes .row .btn").each(function(j,elem) {
+                    if ($(elem).hasClass("btn-filled")) {
+                        $(elem).removeClass("btn-filled");
+                        rowID = $(elem).attr("row");
+                        $("#" + rowID).hide(400);
+                    }
+                });
+
+                $(this).addClass("btn-filled");
+                rowID = $(this).attr("row");
+                $("#" + rowID).show(400);
+            });
+
+        }
+
+        $(document).ready(function() {
+            $(".full-page").height(window.innerHeight);
+            $(".canvas-container").height(window.innerHeight/1.5*0.9);
+
+            if (window.matchMedia('(min-width: 767px)').matches) {
+                // browser is at least 767px wide
+                $(".canvas-container").width(window.innerWidth/2*0.95);
+            } else {
+                // the width of browser is less then 767px
+                $(".canvas-container").width(window.innerWidth*0.9);
+            }
+
+            setupWriting();
+            setupCVSections();
+            setupResearchSections();
+            setupCodeSections();
+
+            var name = "fouesneau",
+                address = "mpia.de";
+            $("#email").click(function() {
+                window.location.href = "mailto:" + name + "@" + address;
+            })
+	});
+
+    </script>
