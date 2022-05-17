@@ -55,7 +55,7 @@ cv:
       date: 2010
       keywords: Python, Probabilistic Modeling, Forward modeling
       description: |
-        "Study of stellar cluster populations in galaxies, a Bayesian approach" [manuscript](http://mfouesneau.github.io/docs/other/PhD_Manuscript.pdf)
+        "Study of stellar cluster populations in galaxies, a Bayesian approach" [manuscript](http://mfouesneau.github.io/static/docs/PhD_Manuscript.pdf)
     - title: Master degree in Astrophysics
       where: University of Strasbourg, France
       date: 2007
