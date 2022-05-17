@@ -25,7 +25,10 @@ cv:
     date: "2021 - Present"
     description: |
       * Building the data science department at MPIA
-      * ...TODO more descriptions, update keywords
+      * Supports MPIA scientists to carry out novel, cutting-edge research
+      * Solidify foundational hacking & coding skills
+      * Provide a space to explore and develop data science skills
+      * Networking, outside presence and broader impact
       * Tenure position
     keywords: C++, Python, Java, IntelliJ Idea, Eclipse, HPC, Machine Learning, project management, databases
   - title: Postdoc | Gaia & 4MOST unit manager
