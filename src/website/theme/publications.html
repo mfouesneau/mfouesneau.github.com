@@ -1,0 +1,58 @@
+<!-- ======= Publication Section ======= -->
+<style type="text/css">
+    .tg  {border-collapse:collapse;border-spacing:0;}
+    .tg td{border-style:solid;border-width:0px;overflow:hidden; padding:0px 1px;word-break:normal;}
+    .tg th{border-style:solid;border-width:0px;overflow:hidden; padding:0px 1px;word-break:normal;}
+    .tg .tg-dvpl{border-color:inherit;text-align:right;vertical-align:top}
+    .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<section id="{{name}}" class="resume">
+    <div class="container" data-aos="fade-up">
+        <div class="section-title">
+            <h2>{{title}}</h2>
+        </div>
+        <div style="display: flex;">
+            <div class="col-lg-3">
+                <h4>
+                    {{links}}
+                </h4>
+                <br>
+                <table class="tg">
+                    <colgroup>
+                        <col style="width: 3rem;">
+                        <col style="width: auto;">
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th class="tg-dvpl"></th>
+                        <th class="tg-0pky">h-index: {{hindex}}</th>
+                      </tr>
+                      <tr>
+                        <td class="tg-dvpl">{{nrefereed}}</td>
+                        <td class="tg-0pky">refereed publications</td>
+                      </tr>
+                      <tr>
+                        <td class="tg-dvpl">{{ncolab}}</td>
+                        <td class="tg-0pky">publications from large collaborations</td>
+                      </tr>
+                      <tr>
+                        <td class="tg-dvpl">{{nother}}</td>
+                        <td class="tg-0pky">other publications</td>
+                      </tr>
+                      <tr>
+                        <td class="tg-dvpl">{{ncite}}</td>
+                        <td class="tg-0pky">citations<br>(<i>from non-collaboration papers</i>)</td>
+                      </tr>
+                    </tbody>
+                </table>
+                <br>
+                <h4><a href="{{fulllist-url}}" class="portfolio-details-lightbox" data-glightbox="type: external" title="Details"><i class="bx bx-link"></i>View all publications</a></h4>
+            </div>
+
+            <div class="col-lg-8">
+                {{description}}
+            </div>
+
+        </div>
+    </div>
+</section><!-- End Resume Section -->
