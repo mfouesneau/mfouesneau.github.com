@@ -24,7 +24,7 @@ cv:
     where: Max Planck Institute for Astronomy, Germany
     date: "2021 - Present"
     description: |
-      * Building the data science department at MPIA
+      * Building the [data science department at MPIA](http://www.mpia.de/institute/research-and-development/data-science)
       * Supports MPIA scientists to carry out novel, cutting-edge research
       * Solidify foundational hacking & coding skills
       * Provide a space to explore and develop data science skills
