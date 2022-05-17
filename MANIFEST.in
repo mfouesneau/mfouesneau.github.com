@@ -1,1 +1,1 @@
-recursive-include src/website/themes/ *.*
+recursive-include src/website/theme/ *.*
