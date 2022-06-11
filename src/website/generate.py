@@ -553,11 +553,10 @@ class Publications(Content):
 
         # check if you have to run the publication generator
         if self['meta']['publication-list'].get('regenerate', False):
-            print("Generating publications...")
+            print(f"Generating publications... {indata:s}")
             generate_publication_list(
                 indata,
                 author=self['meta']['publication-list']['author'],
-                content_dir=self['source_dir']
                 )
 
         with open(self.template, 'r') as f:
