@@ -16,7 +16,7 @@ links:
 
 publication-list:
     filename: publication_list
-    regenerate: false
+    regenerate: true
     author: fouesneau
 
 

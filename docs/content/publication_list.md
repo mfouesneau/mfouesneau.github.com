@@ -3,6 +3,69 @@
 type: null
 active: false
 article:
+- abstract: "The C-19 stream is the most metal poor stellar system ever discovered,\
+    \ with a mean metallicity [Fe/H] = -3.38 \xB1 0.06. Its low metallicity dispersion\
+    \ (\u03C3<SUB>[Fe/H]</SUB> &lt; 0.18 at the 95% confidence level) as well as variations\
+    \ in sodium abundances strongly suggest a globular cluster origin. In this work,\
+    \ we use VLT/UVES spectra of seven C-19 stars to derive more precise velocity\
+    \ measurements for member stars, and to identify two new members with radial velocities\
+    \ and metallicities consistent with the stream's properties. One of these new\
+    \ member stars is located 30<SUP>\u25CB</SUP> away from the previously identified\
+    \ body of C-19, implying that the stream is significantly more extended than previously\
+    \ known and that more members likely await discovery. In the main part of C-19,\
+    \ we measure a radial velocity dispersion \u03C3<SUB>v</SUB> = 6.2$^{+2.0}_{-1.4}{\\\
+    rm \\, km\\, s^{-1}}$ from nine members, and a stream width of 0.56<SUP>\u25CB\
+    </SUP> \xB1 0.08<SUP>\u25CB</SUP>, equivalent to ~158 pc at a heliocentric distance\
+    \ of 18 kpc. These confirm that C-19 is comparatively hotter, dynamically, than\
+    \ other known globular cluster streams and shares the properties of faint dwarf\
+    \ galaxy streams. On the other hand, the variations in the Na abundances of the\
+    \ three newly observed bright member stars, the variations in Mg and Al for two\
+    \ of them, and the normal Ba abundance of the one star where it can be measured\
+    \ provide further evidence for a globular cluster origin. The tension between\
+    \ the dynamical and chemical properties of C-19 suggests that its progenitor experienced\
+    \ a complex birth environment or disruption history."
+  author:
+  - Yuan, Zhen
+  - Martin, Nicolas F.
+  - Ibata, Rodrigo A.
+  - Caffau, Elisabetta
+  - Bonifacio, Piercarlo
+  - Mashonkina, Lyudmila I.
+  - "Errani, Rapha\xEBl"
+  - Doliva-Dolinsky, Amandine
+  - Starkenburg, Else
+  - Venn, Kim A.
+  - Arentsen, Anke
+  - Aguado, David S.
+  - Bellazzini, Michele
+  - Famaey, Benoit
+  - Fouesneau, Morgan
+  - "Gonz\xE1lez Hern\xE1ndez, Jonay I."
+  - Jablonka, Pascale
+  - Lardo, Carmela
+  - Malhan, Khyati
+  - Navarro, Julio F.
+  - "S\xE1nchez Janssen, Rub\xE9n"
+  - Sestito, Federico
+  - Thomas, Guillaume F.
+  - Viswanathan, Akshara
+  - Vitali, Sara
+  bibcode: 2022MNRAS.tmp.1369Y
+  category: article
+  citation_count: 0
+  doctype: article
+  identifier:
+  - 10.1093/mnras/stac1399
+  - arXiv:2203.02512
+  - 2022arXiv220302512Y
+  - 2022MNRAS.tmp.1369Y
+  page: '-'
+  pub: Monthly Notices of the Royal Astronomical Society
+  title: The Pristine survey - XVII. The C-19 stream is dynamically hot and more extended
+    than previously thought
+  url: null
+  volume: null
+  year: 2022
 - abstract: "White dwarfs (WDs) offer unrealized potential in solving two problems\
     \ in astrophysics: stellar age accuracy and precision. WD cooling ages can be\
     \ inferred from surface temperatures and radii, which can be constrained with\
@@ -39,7 +102,7 @@ article:
   - Moticska, Natalie
   bibcode: 2022ApJ...929...26M
   category: article
-  citation_count: 0
+  citation_count: 1
   doctype: article
   identifier:
   - 2022ApJ...929...26M
@@ -52,67 +115,6 @@ article:
     Metallicities
   url: null
   volume: '929'
-  year: 2022
-- abstract: "The C-19 stream is the most metal poor stellar system ever discovered,\
-    \ with a mean metallicity $[Fe/H] = -3.38\\pm0.06$. Its low metallicity dispersion\
-    \ ($\\sigma_{\\rm [Fe/H]}$ $&lt;$ 0.18 at the 95\\% confidence level) as well\
-    \ as variations in sodium abundances strongly suggest a globular cluster origin.\
-    \ In this work, we use VLT/UVES spectra of seven C-19 stars to derive more precise\
-    \ velocity measurements for member stars, and to identify two new members with\
-    \ radial velocities and metallicities consistent with the stream's properties.\
-    \ One of these new member stars is located 30 $\xB0$ away from the previously\
-    \ identified body of C-19, implying that the stream is significantly more extended\
-    \ than previously known and that more members likely await discovery. In the main\
-    \ part of C-19, we measure a radial velocity dispersion $\\sigma_v$ = 6.2$^{+2.0}_{-1.4}$\
-    \ km s$^{-1}$ from nine members, and a stream width of 0.56$\xB0\\pm0.08\xB0$,\
-    \ equivalent to $\\sim$158 pc at a heliocentric distance of 18 kpc. These confirm\
-    \ that C-19 is comparatively hotter, dynamically, than other known globular cluster\
-    \ streams and shares the properties of faint dwarf galaxy streams. On the other\
-    \ hand, the variations in the Na abundances of the three newly observed bright\
-    \ member stars, the variations in Mg and Al for two of them, and the normal Ba\
-    \ abundance of the one star where it can be measured provide further evidence\
-    \ for a globular cluster origin. The tension between the dynamical and chemical\
-    \ properties of C-19 suggests that its progenitor experienced a complex birth\
-    \ environment or disruption history."
-  author:
-  - Yuan, Zhen
-  - Martin, Nicolas F.
-  - Ibata, Rodrigo A.
-  - Caffau, Elisabetta
-  - Bonifacio, Piercarlo
-  - Mashonkina, Lyudmila I.
-  - "Errani, Rapha\xEBl"
-  - Doliva-Dolinsky, Amandine
-  - Starkenburg, Else
-  - Venn, Kim A.
-  - Arentsen, Anke
-  - Aguado, David S.
-  - Bellazzini, Michele
-  - Famaey, Benoit
-  - Fouesneau, Morgan
-  - "Gonz\xE1lez Hern\xE1ndez, Jonay I."
-  - Jablonka, Pascale
-  - Lardo, Carmela
-  - Malhan, Khyati
-  - Navarro, Julio F.
-  - "S\xE1nchez Janssen, Rub\xE9n"
-  - Sestito, Federico
-  - Thomas, Guillaume F.
-  - Viswanathan, Akshara
-  - Vitali, Sara
-  bibcode: 2022arXiv220302512Y
-  category: article
-  citation_count: 0
-  doctype: eprint
-  identifier:
-  - 2022arXiv220302512Y
-  - arXiv:2203.02512
-  page: '-'
-  pub: arXiv e-prints
-  title: The Pristine survey -- XVII. The C-19 stream is dynamically hot and more
-    extended than previously thought
-  url: null
-  volume: null
   year: 2022
 - abstract: Interstellar dust affects many astronomical observations through absorption
     and reddening, yet this extinction is also a powerful tool for studying interstellar
@@ -212,7 +214,7 @@ article:
   - Mucciarelli, Alessio
   bibcode: 2022Natur.601...45M
   category: article
-  citation_count: 6
+  citation_count: 7
   doctype: article
   identifier:
   - 2022Natur.601...45M
@@ -255,7 +257,7 @@ article:
   - Demleitner, M.
   bibcode: 2022arXiv220103252F
   category: article
-  citation_count: 0
+  citation_count: 1
   doctype: eprint
   identifier:
   - arXiv:2201.03252
@@ -302,7 +304,7 @@ article:
   - Sordo, Rosanna
   bibcode: 2021A&A...656A..93G
   category: article
-  citation_count: 0
+  citation_count: 1
   doctype: article
   identifier:
   - 2022arXiv220109211G
@@ -352,7 +354,7 @@ article:
   - Price-Whelan, Adrian M.
   bibcode: 2021AJ....162..142R
   category: article
-  citation_count: 8
+  citation_count: 9
   doctype: article
   identifier:
   - 2021arXiv210607653R
@@ -410,7 +412,7 @@ article:
   - "Romero-G\xF3mez, M."
   bibcode: 2021A&A...651A.104P
   category: article
-  citation_count: 25
+  citation_count: 30
   doctype: article
   identifier:
   - 10.1051/0004-6361/202140687
@@ -445,7 +447,7 @@ article:
   - Rix, Hans-Walter
   bibcode: 2021ApJS..253...58Q
   category: article
-  citation_count: 3
+  citation_count: 5
   doctype: article
   identifier:
   - 10.3847/1538-4365/abe468
@@ -486,7 +488,7 @@ article:
   - Andrae, R.
   bibcode: 2021AJ....161..147B
   category: article
-  citation_count: 293
+  citation_count: 335
   doctype: article
   identifier:
   - 2021AJ....161..147B
@@ -532,7 +534,7 @@ article:
   - Speagle, Joshua
   bibcode: 2021ApJ...907...57G
   category: article
-  citation_count: 1
+  citation_count: 2
   doctype: article
   identifier:
   - arXiv:2006.16258
@@ -762,7 +764,7 @@ article:
   - Sharma, Sanjib
   bibcode: 2020PASP..132g4501R
   category: article
-  citation_count: 18
+  citation_count: 19
   doctype: article
   identifier:
   - 10.1088/1538-3873/ab8cb0
@@ -852,7 +854,7 @@ article:
   - Andrae, Rene
   bibcode: 2019MNRAS.490.5615B
   category: article
-  citation_count: 25
+  citation_count: 27
   doctype: article
   identifier:
   - 2019MNRAS.tmp.2551B
@@ -904,7 +906,7 @@ article:
   - Venn, Kim A.
   bibcode: 2019MNRAS.484.2166S
   category: article
-  citation_count: 50
+  citation_count: 52
   doctype: article
   identifier:
   - 2019MNRAS.484.2166S
@@ -946,7 +948,7 @@ article:
   - Tian, Haijun
   bibcode: 2019ApJ...870....9F
   category: article
-  citation_count: 20
+  citation_count: 23
   doctype: article
   identifier:
   - arXiv:1802.06663
@@ -1002,7 +1004,7 @@ article:
   - Navarro, Julio F.
   bibcode: 2018MNRAS.481.3838S
   category: article
-  citation_count: 38
+  citation_count: 40
   doctype: article
   identifier:
   - 2018arXiv180704292S
@@ -1047,7 +1049,7 @@ article:
   - Seabroke, G. M.
   bibcode: 2018MNRAS.481L..21P
   category: article
-  citation_count: 59
+  citation_count: 62
   doctype: article
   identifier:
   - arXiv:1805.03171
@@ -1106,7 +1108,7 @@ article:
   - Bailer-Jones, Coryn A. L.
   bibcode: 2018A&A...616A...8A
   category: article
-  citation_count: 336
+  citation_count: 341
   doctype: article
   identifier:
   - 2018arXiv180409374A
@@ -1152,7 +1154,7 @@ article:
   - Fouesneau, M.
   bibcode: 2018A&A...616A..37B
   category: article
-  citation_count: 34
+  citation_count: 37
   doctype: article
   identifier:
   - 2018arXiv180507581B
@@ -1220,7 +1222,7 @@ article:
   - Andrae, R.
   bibcode: 2018AJ....156...58B
   category: article
-  citation_count: 1346
+  citation_count: 1361
   doctype: article
   identifier:
   - 2018arXiv180410121B
@@ -1257,7 +1259,7 @@ article:
   - "Andrae, Ren\xE9"
   bibcode: 2018PASP..130g4101R
   category: article
-  citation_count: 48
+  citation_count: 49
   doctype: article
   identifier:
   - 10.1088/1538-3873/aabd70
@@ -1338,7 +1340,7 @@ article:
   - Roman-Lopes, Alexandre
   bibcode: 2018ApJ...853..198N
   category: article
-  citation_count: 68
+  citation_count: 70
   doctype: article
   identifier:
   - 2017arXiv170107829N
@@ -1446,7 +1448,7 @@ article:
   - Venn, Kim A.
   bibcode: 2017MNRAS.471.2587S
   category: article
-  citation_count: 109
+  citation_count: 111
   doctype: article
   identifier:
   - arXiv:1705.01113
@@ -1534,7 +1536,7 @@ article:
   - Williams, Benjamin F.
   bibcode: 2017ApJ...839...78J
   category: article
-  citation_count: 61
+  citation_count: 62
   doctype: article
   identifier:
   - 2017arXiv170310312J
@@ -1776,7 +1778,7 @@ article:
   - Rix, Hans-Walter
   bibcode: 2016ApJ...831..139M
   category: article
-  citation_count: 65
+  citation_count: 66
   doctype: article
   identifier:
   - 10.3847/0004-637X/831/2/139
@@ -1819,7 +1821,7 @@ article:
   - Zamora, Olga
   bibcode: 2016MNRAS.456.3655M
   category: article
-  citation_count: 158
+  citation_count: 160
   doctype: article
   identifier:
   - 2015arXiv151108203M
@@ -2102,7 +2104,7 @@ article:
   - Sarajedini, Ata
   bibcode: 2015ApJ...802..127J
   category: article
-  citation_count: 53
+  citation_count: 55
   doctype: article
   identifier:
   - arXiv:1501.04966
@@ -2164,7 +2166,7 @@ article:
   - Wyse, Rosemary F. G.
   bibcode: 2015ApJ...809...59S
   category: article
-  citation_count: 27
+  citation_count: 28
   doctype: article
   identifier:
   - 2015ApJ...809...59S
@@ -2204,7 +2206,7 @@ article:
   - Skillman, Evan
   bibcode: 2015ApJ...806...48W
   category: article
-  citation_count: 28
+  citation_count: 29
   doctype: article
   identifier:
   - 2015ApJ...806...48W
@@ -2254,7 +2256,7 @@ article:
   - Olsen, Knut
   bibcode: 2015AJ....150..189G
   category: article
-  citation_count: 26
+  citation_count: 27
   doctype: article
   identifier:
   - 2015AJ....150..189G
@@ -2673,7 +2675,7 @@ article:
   - Williams, Benjamin F.
   bibcode: 2014ApJ...786..117F
   category: article
-  citation_count: 50
+  citation_count: 51
   doctype: article
   identifier:
   - 10.1088/0004-637X/786/2/117
@@ -3662,7 +3664,7 @@ collaboration:
   - Zwitter, T.
   bibcode: 2022arXiv220412574G
   category: collaboration
-  citation_count: 0
+  citation_count: 1
   doctype: eprint
   identifier:
   - 2022arXiv220412574G
@@ -4103,7 +4105,7 @@ collaboration:
   - Zwitter, T.
   bibcode: 2021A&A...650C...3G
   category: collaboration
-  citation_count: 28
+  citation_count: 29
   doctype: article
   identifier:
   - 10.1051/0004-6361/202039657e
@@ -4569,7 +4571,7 @@ collaboration:
   - Zwitter, T.
   bibcode: 2021A&A...649A...6G
   category: collaboration
-  citation_count: 87
+  citation_count: 93
   doctype: article
   identifier:
   - arXiv:2012.02061
@@ -5044,7 +5046,7 @@ collaboration:
   - Zwitter, T.
   bibcode: 2021A&A...649A...1G
   category: collaboration
-  citation_count: 1194
+  citation_count: 1302
   doctype: article
   identifier:
   - 10.1051/0004-6361/202039657
@@ -5500,7 +5502,7 @@ collaboration:
   - Zwitter, T.
   bibcode: 2021A&A...649A...9G
   category: collaboration
-  citation_count: 43
+  citation_count: 45
   doctype: article
   identifier:
   - 10.1051/0004-6361/202039734
@@ -5968,7 +5970,7 @@ collaboration:
   - Zwitter, T.
   bibcode: 2021A&A...649A...8G
   category: collaboration
-  citation_count: 32
+  citation_count: 36
   doctype: article
   identifier:
   - 2021arXiv210105811G
@@ -8511,7 +8513,7 @@ collaboration:
   - Zucker, D.
   bibcode: 2019Msngr.175....3D
   category: collaboration
-  citation_count: 173
+  citation_count: 179
   doctype: article
   identifier:
   - 2019Msngr.175....3D
@@ -8575,7 +8577,7 @@ collaboration:
   - 4MIDABLE-Lr Team
   bibcode: 2019Msngr.175...30C
   category: collaboration
-  citation_count: 17
+  citation_count: 18
   doctype: article
   identifier:
   - 2019arXiv190302469C
@@ -9554,7 +9556,7 @@ collaboration:
   - Zwitter, T.
   bibcode: 2019A&A...623A.110G
   category: collaboration
-  citation_count: 98
+  citation_count: 101
   doctype: article
   identifier:
   - 2018arXiv180409382G
@@ -10051,7 +10053,7 @@ collaboration:
   - Zwitter, T.
   bibcode: 2018A&A...616A..14G
   category: collaboration
-  citation_count: 130
+  citation_count: 131
   doctype: article
   identifier:
   - 10.1051/0004-6361/201832916
@@ -11991,7 +11993,7 @@ collaboration:
   - Zwitter, T.
   bibcode: 2018A&A...616A..10G
   category: collaboration
-  citation_count: 531
+  citation_count: 541
   doctype: article
   identifier:
   - arXiv:1804.09378
@@ -12485,7 +12487,7 @@ collaboration:
   - Zwitter, T.
   bibcode: 2018A&A...616A..12G
   category: collaboration
-  citation_count: 441
+  citation_count: 444
   doctype: article
   identifier:
   - 2018A&A...616A..12G
@@ -12992,7 +12994,7 @@ collaboration:
   - Zwitter, T.
   bibcode: 2018A&A...616A..11G
   category: collaboration
-  citation_count: 269
+  citation_count: 275
   doctype: article
   identifier:
   - 2018A&A...616A..11G
@@ -13495,7 +13497,7 @@ collaboration:
   - Zwitter, T.
   bibcode: 2018A&A...616A...1G
   category: collaboration
-  citation_count: 5740
+  citation_count: 5838
   doctype: article
   identifier:
   - 2018arXiv180409365G
@@ -14143,7 +14145,7 @@ collaboration:
   - Zschocke, S.
   bibcode: 2017A&A...605A..79G
   category: collaboration
-  citation_count: 82
+  citation_count: 83
   doctype: article
   identifier:
   - arXiv:1705.00688
@@ -15389,7 +15391,7 @@ collaboration:
   - Zschocke, S.
   bibcode: 2017A&A...601A..19G
   category: collaboration
-  citation_count: 85
+  citation_count: 86
   doctype: article
   identifier:
   - 2017A&A...601A..19G
@@ -16051,7 +16053,7 @@ collaboration:
   - Zschocke, S.
   bibcode: 2016A&A...595A...1G
   category: collaboration
-  citation_count: 3433
+  citation_count: 3513
   doctype: article
   identifier:
   - 2016arXiv160904153G
@@ -16690,7 +16692,7 @@ collaboration:
   - Zschocke, S.
   bibcode: 2016A&A...595A...2G
   category: collaboration
-  citation_count: 1607
+  citation_count: 1622
   doctype: article
   identifier:
   - arXiv:1609.04172
@@ -16812,7 +16814,7 @@ other:
   - Andrae, R.
   bibcode: 2021yCat.1352....0B
   category: other
-  citation_count: 13
+  citation_count: 16
   doctype: catalog
   identifier:
   - 2021yCat.1352....0B
@@ -17929,7 +17931,7 @@ summary:
     number: 40
   ncite:
     description: number of citations (non-collaboration papers)
-    number: 4079
+    number: 4188
   other:
     description: other publications
     number: 34
