@@ -173,7 +173,7 @@ def get_additional_papers():
 
 
 def main(filename='publication_list.md',
-         author='fouesneau', content_dir='content'):
+         author='fouesneau'):
 
     print(f"Generating the publication list for author {author}")
 
@@ -251,7 +251,7 @@ def main(filename='publication_list.md',
 
     myarticles['summary'] = summary
 
-    with open(os.path.join(content_dir, filename), 'w') as fout:
+    with open(os.path.join(filename), 'w') as fout:
         fout.write("---\n")
         fout.write("# Publication list data\n")
         fout.write("type: null\n")
