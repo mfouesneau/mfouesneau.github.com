@@ -93,6 +93,8 @@ social:
   link: '/#contact'
 - icon: fab fa-twitter big-icon
   link: https://twitter.com/mfouesneau
+- icon: fab fa-mastodon big-icon
+  link: https://mastodon.online/@mfouesneau
 - icon: ai ai-ads big-icon
   link: https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0001-9256-5516
 - icon: ai ai-arxiv big-icon
