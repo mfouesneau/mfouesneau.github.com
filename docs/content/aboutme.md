@@ -90,7 +90,7 @@ cv:
 # Social/Academic Networking
 social:
 - icon: fas fa-envelope big-icon
-  link: '/#contact'
+  link: '/#contacts'
 - icon: fab fa-twitter big-icon
   link: https://twitter.com/mfouesneau
 - icon: fab fa-mastodon big-icon
