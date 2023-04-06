@@ -1,6 +1,21 @@
 name: generate pages
 
-on: [push, pull_request, workflow_dispatch]
+on: 
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+  #https://jasonet.co/posts/scheduled-actions/
+  #       ┌───────────── minute (0 - 59)
+  #       │ ┌───────────── hour (0 - 23)
+  #       │ │ ┌───────────── day of the month (1 - 31)
+  #       │ │ │ ┌───────────── month (1 - 12)
+  #       │ │ │ │ ┌───────────── day of the week (0 - 6) Sun-Mon...Sat
+  #       │ │ │ │ │
+  #       │ │ │ │ │
+  #       │ │ │ │ │
+  #       * * * * *
+  - cron: '0 0 1 * *'
 
 jobs:
   build:
