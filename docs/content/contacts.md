@@ -19,5 +19,5 @@ contact:
 - icon: bi bi-calendar-check
   title: Book an appointment
   description: |
-    [simplymeet](https://app.simplymeet.me/mfouesneau)
+    [reclaim.ai](https://app.reclaim.ai/m/mfouesneau)
 ---
