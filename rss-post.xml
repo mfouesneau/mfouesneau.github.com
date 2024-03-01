@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <rss version="2.0">
+
+    <channel>
+    <title>Posts</title>
+    <link>https://mfouesneau.github.io</link>
+    <description>New posts</description>
+
+    <item>
+        <title>Gaia Data Release 3</title>
+        <link>https://mfouesneau.github.ioposts/gaia_dr3.html</link>
+        <description><p>achivement of five years of intense work through adversity.</p>
+<p>Finally, after many years of hard work, we made it! the <a href="https://www.cosmos.esa.int/web/gaia/data-release-3">Gaia Data Release 3</a> (Gaia DR3) is out. GDR3 is the work of the <a href="https://www.cosmos.esa.int/web/gaia/dpac/consortium">Gaia DPAC</a> (data processing and analysis consortium), i.e. over 400 European scientists and engineers.</p>
+<h3>We overcame unforeseen complicated challenges</h3>
+<p>Gaia DR3 was marked by a very complicated context of unforeseen events and a pandemic context.
+As a result, we decided to <a href="https://www.cosmos.esa.int/web/gaia/news-2019#GaiaDR3Announcement">split</a> the release and the first part of GDR3 was published as EDR3 (early DR3) in December 2020.  This early release catalog contained information about <strong>1.81 billion stars</strong>: astrometry, and integrated broad band photometry.
+This new part contains what the community has been waiting for eagerly: the dispersed light spectra (BP/RP) for 220 million objects, and 1 million high-resolution spectra (RVS).</p>
+<h3>The CU8 data release: the astrophysical parameters</h3>
+<p>But the second part -- Gaia DR3 -- contains much more. It contains in particular the astrophysical paramters (APs), the work I took part in with the CU8 team. CU8 comprises more than 75 scientists and engineers across 15 cells and 8 countries and their work span a large variety of tasks: for instance software development, data management, refinement of stellar atmosphere, spectroscopy, and cosmology. In Gaia DR3, CU8 provides</p>
+<ul>
+<li>classifications for 1.6 billion sources,</li>
+<li>temperatures, gravities, distances, and radii for 470 million stars using BP/RP, and for 6 million using RVS,</li>
+<li>130 million ages and masses,</li>
+<li>5 million chemical abundances,</li>
+<li>2 million chromospheric activity indices rotation velocities,</li>
+<li>and extinction maps.</li>
+</ul>
+<p>The details, it is all described in the three main CU8 papers</p>
+<ul>
+<li><a href="">Creevey et al. 2022</a>, an overview of the CU8 products and where to find them;</li>
+<li><a href="">Fouesneau et al. 2022</a>, the performance summary on the stellar objects;</li>
+<li><a href="">Delchambre et al. 2022</a>, the performance summary on the extragalactic sources and the Galactic interstellar medium.</li>
+</ul>
+<p>This represents of course only a (not so) brief overview of the work that CU8 undertook.
+<strong>CU8 led 12 of the <a href="https://www.cosmos.esa.int/web/gaia/dr3-papers">45 papers</a></strong> coming with Gaia DR3 and they had major contributions to a dozen more.</p>
+<h3>What's next?</h3>
+<p>GDR3 spans 34 months of observations taken from July 2014 to May 2017.
+The Gaia mission was initially planned for 5 years (until 2020) and Gaia has not stopped observing our Galaxy. We expect the mission to successfully pass the 10-year mark.</p>
+<p>Gaia DR4 expected in ~2025 will contain all data products from the nominal 5-year mission:</p>
+<ul>
+<li>updated astrometry: parallax and proper motions</li>
+<li>all BP/RP and RVS spectra</li>
+<li>New astrophysical parameters (not only updated values)</li>
+<li>epoch astrometry</li>
+<li>epoch photometry</li>
+<li>and the raw data</li>
+</ul>
+<p>And Gaia DR5 will mark the end of the mission with all 10-year+ data products.</p>
+<h3>A human adventure through storms and bad weather conditions</h3>
+<p>Gaia DR3 was an adventure in many aspects. It was a long journey, but it is a very rewarding one.</p>
+<p>I was a postdoc (until 2021) at the <a href="https://www.mpia-hd.mpg.de/">MPIA</a> and I was part of the management team of CU8. I was leading the validation of the scientific products, but I also had technical responsibilities (e.g., data model, data management, software development).</p>
+<p>It was far from smooth sailing. We went through a lot of storms and bad weather conditions. COVID-19 had a major impact on the timeline but most importantly on the mental health of the team. We had to deal with a lot of stress and we had to deal with a lot of work. But the team found the energy to adapt to the conditions and made it through for a successful release.</p>
+<p>I learned a lot about managing a team and how to deal with my stress and the stress of others. I discovered why all this mindfulness thing is so important. I also realized aspects of academia that I had never seen before, and not all of them are healthy in my opinion.</p>
+<p>I may write a retrospective on the human side of the journey.</p></description>
+    </item>
+
+
+    <item>
+        <title>Updating my website, blogging perspective</title>
+        <link>https://mfouesneau.github.ioposts/new_website.html</link>
+        <description><p>New year, new role, new resolutions. I am planning to write a bit more and I need a good setup.</p>
+<p>Last November, I started my <em>tenure</em> job (yay! 🥳) of data scientist at <a href="https://www.mpia.de/en/">MPIA</a>.
+In this new role, I want to support scientists to carry out novel, cutting-edge research and to establish MPIA as a world-wide leader in astronomical data science.</p>
+<ul>
+<li>Solidify foundational hacking &amp; coding skill.</li>
+<li>Provide a space to explore and develop data science skills.</li>
+<li>Networking, outside presence and broader impact</li>
+<li>Help the career development of my colleagues.</li>
+</ul>
+<p>I felt that I should have a place to store and publish notes and ideas. I am therefore creating this new website which offers blog type publications.</p>
+<p>I am very inspired by <a href="https://gohugo.io/">Hugo</a> in particular the <a href="https://academic-demo.netlify.app/">Academic</a> template. However, my first impression is that the structure of the repository is cluttered, or too complex for my taste. Also I am not a bit fan of using a third party service to publish the website. By default you are guided to use <a href="netlify.com">Netlify</a>. I'm sure it is a very powerful platform, but I'm happy to remain simple and keep using GitHub.</p>
+<p>This new website is a work in progress. My goals are to:</p>
+<ul>
+<li>Make a more modern and cleaner version of what I had before. (in particular update the js libraries 😉)</li>
+<li>Provide a space to share ideas and notes.</li>
+<li>Make a site that is super easy to maintain: compiling it from pure markdown! (and some python scripts)</li>
+</ul>
+<p>My solution was to revamp my old content and adapt the
+design using the template from <a href="https://bootstrapmade.com/">BootstrapMade</a> - <a href="https://bootstrapmade.com/free-html-bootstrap-template-my-resume/">MyResume</a></p>
+<p>Some realizations in this project:</p>
+<ul>
+<li>Markdown is so powerful for this game. You can add meta data to the files and use it to generate information.</li>
+<li>Why did I not use templating more before? 🤦</li>
+<li>HTML/CSS flex is such a game changer in aranging web content. I am a fan of it.</li>
+</ul></description>
+    </item>
+
+
+    <item>
+        <title>Estimating an article's reading time in python</title>
+        <link>https://mfouesneau.github.ioposts/python_readtime_estimate.html</link>
+        <description><p>Offering reading time estimation can contribute greatly to the end users' experience. I use it on my website and here is how I implemented it.</p>
+<p>As part of my website, I wanted to provide reading time estimation. I find this gesture very useful from other websites. It allows a reader to guest the post length and to prepare the time they need to read an article in full.</p>
+<p><strong>The principle is very basic</strong>: I count the number of words in the article and divide it by the average word per minute (WPM). This is the average reading time for an article.</p>
+<p><strong>Estimating words per </strong>minute**
+WPM measures words _processed__ in a minute. It has many meanings and complications. First and foremost, the average reading time is subjective. Secondly, the length or duration of words is variable, as some words are quick to read (e.g. 'dog') while others take much longer (like 'Incomprehensibility'). Other parameters affect the reading time, such as font type and size, your age, reading on a monitor or paper, paragraphs, images, etc.</p>
+<p>Based on research done in this field (e.g., <a href="https://irisreading.com/average-reading-speed-by-age-are-you-fast-enough/">irisreading.com</a>), adults read English at around 200 WPM on paper and 180 WPM on a monitor (the record is 290 WPM).</p>
+<p><strong>Code</strong>: The following code counts the number of words in the text and averages it to the 200 WPM speed.</p>
+<pre><code class="language-python">import re
+
+def estimate_reading_time(text: str, WPM: int = 200) -&gt; int:
+    total_words = len(re.findall(r'\w+', text))
+    time_minute = total_words // WPM + 1
+    if time_minute == 0:
+        time_minute = 1
+    elif time_minute &gt; 60:
+        return str(time_minute // 60) + 'h'
+    return str(time_minute) + 'min'
+</code></pre></description>
+    </item>
+
+
+    <item>
+        <title>Empirical flux calibration of Coronagraph observations</title>
+        <link>https://mfouesneau.github.ioposts/empirical_corona_fluxcalibration.html</link>
+        <description><p>A problem that requires flux calibration of low spectral resolution time series data.</p>
+<p><a href="https://www2.mpia-hd.mpg.de/~samland/">Matthias Samland</a> (MPIA) came to discuss his calibration of coronagraphic observations with <a href="https://www.eso.org/sci/facilities/paranal/instruments/sphere/overview.html">SPHERE</a>. These are typically spectroscopic data (low-resolution) at a relatively high cadence with and without the occulation of the star for the characterization of planetary systems.</p>
+<p>However in constrast with the direct observations, the spectra with the occulation have well established relative calibration but unknown absolute flux scaling. To solve the issue, the traditional way is to observe the star without the occulation before and after the scientific sequence to have an absolute flux reference. He is trying to use the three timeseries to implement a robust flux scaling factors (estimate and uncertainties). One of his first examples showed a an observation affected by clouds during the sequence. This problem is not a simple scaling constant number.</p>
+<p>As many discussions, this discussion spent a significant time defining a common vocabulary and phrasing the question.</p>
+<p>We discussed directions to explore. I offered to try toy models on my side.</p></description>
+    </item>
+
+
+    <item>
+        <title>MPIA Arxiv Display</title>
+        <link>https://mfouesneau.github.ioposts/arxiv_display.html</link>
+        <description><p>I spent a significant amount of time to update the way we show ArXiv papers at the institute. I decided to completely outsource the process to GitHub using the GitHub Actions.</p>
+<p><a href="https://github.com/mpi-astronomy/arxiv_display">arxiv_display</a> is a hack born during a science coffee at MPIA between <a href="https://github.com/iskren-y-g">Iskren Georgiev (@iskreng-y-g)</a> and <a href="https://github.com/mfouesneau">Morgan Fouesneau (@mfouesneau)</a>. This repository generates the screen content for the corridors of the institute. It is a sort of Arxiver for institutes or groups.</p>
+<p>This repository "only" hosts a website that supports the institute's displays.</p>
+<p>The main goal is to provide summaries of daily papers authored or co-authored by MPIA members. Only for those, the summary contains the title, authors, abstract, and figures (with captions).</p>
+<p>This evolution heavily relies on <a href="https://mfouesneau.github.io/arxiv_on_deck_2">arXiv on deck 2</a>, a package that searches for new articles on <a href="https://arxiv.org/">ArXiv</a> and renders their summary as Markdown documents. It does not compile the original LaTeX documents and only extracts the relevant information into Markdown files.</p></description>
+    </item>
+
+    </channel>
+
+    </rss>
