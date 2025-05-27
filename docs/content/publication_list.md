@@ -3,27 +3,2388 @@
 type: null
 active: false
 article:
-- abstract: "The C-19 stream is the most metal poor stellar system ever discovered,\
+- abstract: "There has been growing evidence that the rich star clusters in the Magellanic\
+    \ Clouds contain significant fractions of rapidly rotating stars. In this work,\
+    \ we aim to constrain these fractions by studying the colour\u2013magnitude diagrams\
+    \ of four star clusters, selected among those with the most striking signatures\
+    \ of fast rotators. Using isochrones derived from PARSEC V2.0 stellar tracks,\
+    \ we generate distinct stellar populations, each covering a limited interval of\
+    \ initial rotation rates <inline-formula><tex-math>$\\rm{\\omega _\\mathrm{i}}$</tex-math></inline-formula>,\
+    \ referred to as 'Partial Models' (PMs). Using optimization algorithms and Monte\
+    \ Carlo Markov Chains, PMs are combined to create the final best-fitting model.\
+    \ In our analysis, we adopt two key assumptions: a uniform age and an isotropic\
+    \ distribution of stellar spin axes within each cluster. The solutions are allowed\
+    \ to explore the entire range of <inline-formula><tex-math>$\\rm{\\omega _\\mathrm{i}}$</tex-math></inline-formula>,\
+    \ and different values of age, metallicity, distance, and foreground extinction.\
+    \ We find that the rotational velocity distributions in all four clusters reveal\
+    \ a high fraction of stars with <inline-formula><tex-math>$\\rm{\\omega _\\mathrm{i}}$</tex-math></inline-formula>\
+    \ close to the break-up value, in all cases. Specifically, the fraction of stars\
+    \ with <inline-formula><tex-math>$\\rm{\\omega _\\mathrm{i}}&gt;0.7$</tex-math></inline-formula>\
+    \ exceeds 80 per cent in the clusters NGC 419 of the Small Magellanic Cloud (SMC)\
+    \ and NGC 1831 and NGC 1866 of the Large Magellanic Cloud (LMC). For NGC 2203\
+    \ of the LMC, this fraction is smaller, although it still exceeds 50 per cent,\
+    \ confirming that also this cluster is mainly populated by fast-rotating stars."
+  author:
+  - Ettorre, Greta
+  - Mazzi, Alessandro
+  - "Girardi, L\xE9o"
+  - Marigo, Paola
+  - Pastorelli, Giada
+  - Goudfrooij, Paul
+  - Williams, Benjamin F.
+  - Bellini, Andrea
+  - Bressan, Alessandro
+  - Chen, Yang
+  - Correnti, Matteo
+  - Costa, Guglielmo
+  - Dalcanton, Julianne J.
+  - Facchini, Pietro
+  - Fouesneau, Morgan
+  - Nguyen, Chi Thanh
+  - Volpato, Guglielmo
+  bibcode: 2025MNRAS.539.2537E
+  category: article
+  citation_count: 0
+  doctype: article
+  identifier:
+  - 10.48550/arXiv.2504.02035
+  - arXiv:2504.02035
+  - 2025MNRAS.tmp..559E
+  - 2025MNRAS.539.2537E
+  - 10.1093/mnras/staf591
+  - 2025arXiv250402035E
+  page: '2537'
+  pub: Monthly Notices of the Royal Astronomical Society
+  title: Strikingly high fraction of fast rotators in Magellanic Cloud star clusters
+  url: null
+  volume: '539'
+  year: 2025
+- abstract: "Early B-type stars ($M_i=8-15$ M$_\\odot$) are frequently in multiple\
+    \ systems, as evidenced by spectroscopic campaigns in the Milky Way (MW) and the\
+    \ Large Magellanic Cloud (LMC). Previous studies have shown no strong metallicity\
+    \ dependence in the close-binary (a&gt;10 au) fraction or orbital-period distributions\
+    \ between the MW's solar metallicity (Z$_\\odot$) and that of the LMC (Z=0.5 Z$_\\\
+    odot$). However, similar analyses in more metal-poor environments are still scarce.\
+    \ We focus on 309 early B-type stars (luminosity classes III-V) from the Binarity\
+    \ at LOw Metallicity campaign in the Small Magellanic Cloud (SMC, Z=0.2 Z$_\\\
+    odot$) using VLT/FLAMES multi-epoch spectroscopy. By applying binary detection\
+    \ criteria consistent with previous works, we identify 153 stars (91 SB1, 59 SB2,\
+    \ 3 SB3) exhibiting significant radial-velocity (RV) variations, resulting in\
+    \ an observed multiplicity fraction of $f^{obs}_{mult}=50\\pm3\\%$. Using Monte\
+    \ Carlo simulations to account for observational biases, we infer an intrinsic\
+    \ close-binary fraction of $f_{mult}=80\\pm8\\%$. A Markov chain Monte Carlo analysis\
+    \ of the peak-to-peak RV distribution ($\u0394{\\rm RV}_{\\rm max}$) confirms\
+    \ a high multiplicity fraction of $f_{mult}=78\\pm5\\%$. These findings suggest\
+    \ a possible anti-correlation between metallicity and the fraction of close B-type\
+    \ binaries, with the SMC multiplicity fraction significantly exceeding previous\
+    \ measurements in the LMC and MW. The enhanced fraction of close binaries at SMC's\
+    \ low metallicity may have broad implications for massive-star evolution in the\
+    \ early Universe. More frequent mass transfer and envelope stripping could boost\
+    \ the production of exotic transients, stripped supernovae, gravitational-wave\
+    \ progenitors, and sustained UV ionising flux, potentially affecting cosmic reionisation.\
+    \ Theoretical predictions of binary evolution under metal-poor conditions will\
+    \ provide a key test of our results."
+  author:
+  - "Villase\xF1or, J. I."
+  - Sana, H.
+  - Mahy, L.
+  - Shenar, T.
+  - Bodensteiner, J.
+  - Britavskiy, N.
+  - Lennon, D. J.
+  - Moe, M.
+  - Patrick, L. R.
+  - Pawlak, M.
+  - Bowman, D. M.
+  - Crowther, P. A.
+  - de Mink, S. E.
+  - Deshmukh, K.
+  - Evans, C. J.
+  - Fabry, M.
+  - Fouesneau, M.
+  - Herrero, A.
+  - Holgado, G.
+  - Langer, N.
+  - "Ma\xEDz Apell\xE1niz, J."
+  - Mandel, I.
+  - Oskinova, L. M.
+  - Pauli, D.
+  - Ramachandran, V.
+  - Renzo, M.
+  - Rix, H. -W.
+  - Rocha, D. F.
+  - Sander, A. A. C. S.
+  - Schneider, F. R. N.
+  - Sen, K.
+  - "Sim\xF3n-D\xEDaz, S."
+  - van Loon, J. Th.
+  - Toonen, S.
+  - Vink, J. S.
+  bibcode: 2025arXiv250321936V
+  category: article
+  citation_count: 1
+  doctype: eprint
+  identifier:
+  - 2025arXiv250321936V
+  - 10.48550/arXiv.2503.21936
+  - arXiv:2503.21936
+  page: '-'
+  pub: arXiv e-prints
+  title: 'Binarity at LOw Metallicity (BLOeM): Enhanced multiplicity of early B-type
+    dwarfs and giants at $Z=0.2\,{\rm Z}_\odot$'
+  url: null
+  volume: null
+  year: 2025
+- abstract: null
+  author:
+  - "Acu\xF1a, Lorena"
+  - Kreidberg, Laura
+  - Zhai, Meng
+  - "Molli\xE8re, Paul"
+  - Fouesneau, Morgan
+  bibcode: 2025JOSS...10.7288A
+  category: article
+  citation_count: 0
+  doctype: article
+  identifier:
+  - 2025JOSS...10.7288A
+  - 10.21105/joss.07288
+  page: '7288'
+  pub: The Journal of Open Source Software
+  title: "GASTLI: A Python package for coupled interior\u2013atmosphere modelling\
+    \ of volatile-rich planets"
+  url: null
+  volume: '10'
+  year: 2025
+- abstract: "Context. The C-19 stellar stream is the most metal-poor stream known\
+    \ to date. While its wth and velocity dispersion indicate a dwarf galaxy origin,\
+    \ its metallicity spread and abundance patterns are more similar to those of globular\
+    \ clusters (GCs). If it is indeed of GC origin, its extremely low metallicity\
+    \ ([Fe/H]=\u20113.4, estimated from giant stars) implies that these stellar systems\
+    \ can form out of gas that is as extremely poor in metals as this. Previously,\
+    \ only giant stream stars were observed spectroscopically, although the majority\
+    \ of stream stars are unevolved stars. Aims. We pushed the spectroscopic observations\
+    \ to the subgiant branch stars (G \u2248 20) in order to consolate the chemical\
+    \ and dynamical properties of C-19. Methods. We used the high-efficiency spectrograph\
+    \ X-shooter fed by the ESO 8.2m VLT telescope to observe 15 candate subgiant C-19\
+    \ members. The spectra were used to measure radial velocities and to determine\
+    \ chemical abundances using the MyGIsFOS code. Results. We developed a likelihood\
+    \ model that takes metallicity and radial velocities into account. We conclude\
+    \ that 12 stars are likely members of C-19, while 3 stars (S05, S12, and S13)\
+    \ are likely contaminants. When these 3 stars are excluded, our model implies\
+    \ a mean metallicity &lt;[Fe/H]&gt; = \u20113.1 \xB1 0.1, the mean radial velocity\
+    \ is &lt;v<SUB>r</SUB>&gt; = \u2011192 \xB1 3km s<SUP>\u20111</SUP>, and the velocity\
+    \ dispersion is \u03C3<SUB>vr</SUB> = 5.9<SUB>\u20115.9</SUB><SUP>+3.6</SUP> km\
+    \ s<SUP>\u20111</SUP>. This all agrees within errors with previous studies. The\
+    \ A(Mg) of a sample of 15 C-19 members, including 6 giant stars, shows a standard\
+    \ deviation of 0.44 dex, and the mean uncertainty on Mg is 0.25 dex. Conclusions.\
+    \ Our preferred interpretation of the current data is that C-19 is a disrupted\
+    \ GC. We cannot completely rule out the possibility that the GC could have belonged\
+    \ to a dwarf galaxy that contained more metal-rich stars, however. This scenario\
+    \ would explain the radial velocity members at higher metallicity, as well as\
+    \ the wth and velocity dispersion of the stream. In either case, a GC formed out\
+    \ of gas as poor in metals as these stars seems necessary to explain the existence\
+    \ of C-19. The possibility that no GC was associated with C-19 cannot be ruled\
+    \ out either."
+  author:
+  - Bonifacio, P.
+  - Caffau, E.
+  - "Fran\xE7ois, P."
+  - Martin, N.
+  - Ibata, R.
+  - Yuan, Z.
+  - Kordopatis, G.
+  - "Gonz\xE1lez Hern\xE1ndez, J. I."
+  - Aguado, D. S.
+  - Thomas, G. F.
+  - Viswanathan, A.
+  - Dodd, E.
+  - Gran, F.
+  - Starkenburg, E.
+  - Lardo, C.
+  - Errani, R.
+  - Fouesneau, M.
+  - Navarro, J. F.
+  - Venn, K. A.
+  - Malhan, K.
+  bibcode: 2025A&A...695A.113B
+  category: article
+  citation_count: 2
+  doctype: article
+  identifier:
+  - 10.48550/arXiv.2412.20776
+  - 2024arXiv241220776B
+  - 2025A&A...695A.113B
+  - 10.1051/0004-6361/202451517
+  - arXiv:2412.20776
+  page: A113
+  pub: Astronomy and Astrophysics
+  title: 'The Pristine survey: XXVI. Chemical abundances of subgiant stars of the
+    extremely metal-poor stream C-19'
+  url: null
+  volume: '695'
+  year: 2025
+- abstract: "The Local Ultraviolet to Infrared Treasury (LUVIT) is a Hubble Space\
+    \ Telescope program that combines newly acquired data in the near-ultraviolet\
+    \ (NUV), optical, and near-infrared (NIR) with archival optical and NIR imaging\
+    \ to produce multiband panchromatic resolved stellar catalogs for 23 pointings\
+    \ in 22 low-mass, star-forming galaxies ranging in distance from the outskirts\
+    \ of the Local Group to \u223C3.8 Mpc. We describe the survey design, detail the\
+    \ LUVIT broadband filter observations and the archival data sets included in the\
+    \ LUVIT reductions, and summarize the simultaneous multiband data reduction steps.\
+    \ The spatial distributions and color\u2013magnitude diagrams (CMDs) from the\
+    \ resulting stellar catalogs are presented for each target, from the NUV to the\
+    \ NIR. We demonstrate in which regions of the CMDs stars with NUV and optical,\
+    \ optical and NIR, and NUV through NIR detections reside. For each target, we\
+    \ use the results from artificial star tests to measure representative completeness,\
+    \ bias, and total photometric uncertainty as a function of magnitude in each broadband\
+    \ filter. We also assess which LUVIT targets have significant spatial variation\
+    \ in the fraction of stars recovered at a given magnitude. The panchromatic LUVIT\
+    \ stellar catalogs will provide a rich legacy data set for a host of resolved\
+    \ stellar population studies."
+  author:
+  - Gilbert, Karoline M.
+  - Choi, Yumi
+  - Boyer, Martha L.
+  - Williams, Benjamin F.
+  - Weisz, Daniel R.
+  - Bell, Eric F.
+  - Dalcanton, Julianne J.
+  - McQuinn, Kristen B. W.
+  - Skillman, Evan D.
+  - Costa, Guglielmo
+  - Dolphin, Andrew E.
+  - Fouesneau, Morgan
+  - "Girardi, L\xE9o"
+  - Goldman, Steven R.
+  - Gordon, Karl D.
+  - Guhathakurta, Puragra
+  - Gull, Maude
+  - Hagen, Lea
+  - Huynh, Ky
+  - Lindberg, Christina W.
+  - Marigo, Paola
+  - Murray, Claire E.
+  - Pastorelli, Giada
+  - Yanchulova Merica-Jones, Petia
+  bibcode: 2025ApJS..276....8G
+  category: article
+  citation_count: 2
+  doctype: article
+  identifier:
+  - 2024arXiv241020454G
+  - arXiv:2410.20454
+  - 2025ApJS..276....8G
+  - 10.3847/1538-4365/ad76af
+  - 10.48550/arXiv.2410.20454
+  page: '8'
+  pub: The Astrophysical Journal Supplement Series
+  title: The Local Ultraviolet to Infrared Treasury. I. Survey Overview of the Broadband
+    Imaging
+  url: null
+  volume: '276'
+  year: 2025
+- abstract: "We used the spectro-photometric information of \u223C219 million stars\
+    \ from Gaia's Data Release 3 (DR3) to calculate synthetic, narrowband, metallicity-sensitive\
+    \ CaHK magnitudes that mimic the observations of the Pristine survey, a survey\
+    \ of photometric metallicities of Milky Way stars that has been mapping more than\
+    \ 6500 deg<SUP>2</SUP> of the northern sky with the Canada\u2013France\u2013Hawaii\
+    \ Telescope since 2015. These synthetic magnitudes were used for an absolute recalibration\
+    \ of the deeper Pristine photometry and, combined with broadband Gaia information,\
+    \ synthetic and Pristine CaHK magnitudes were used to estimate photometric metallicities\
+    \ over the whole sky. The resulting metallicity catalogue is accurate down to\
+    \ [Fe/H]\u223C\u20113.5 and is particularly suited for the exploration of the\
+    \ metalpoor Milky Way ([Fe/H] &lt; \u20111.0). We make available here the catalogue\
+    \ of synthetic CaHK<SUB>syn</SUB> magnitudes for all stars with BP/RP information\
+    \ in Gaia DR3, as well as an associated catalogue of more than \u223C30 million\
+    \ photometric metallicities for high signal-to-noise FGK stars. This paper further\
+    \ provides the first public data release of the Pristine catalogue in the form\
+    \ of higher quality recalibrated Pristine CaHK magnitudes and photometric metallicities\
+    \ for all stars in common with the BP/RP spectro-photometric information in Gaia\
+    \ DR3. We demonstrate that, when available, the much deeper Pristine data greatly\
+    \ enhance the quality of the derived metallicities, in particular at the faint\
+    \ end of the catalogue (G<SUB>BP</SUB> \u2273 16). Combined, both photometric\
+    \ metallicity catalogues include more than two million metal-poor star candidates\
+    \ ([Fe/H]<SUB>phot</SUB> &lt; \u20111.0) as well as more than 200 000 and \u223C\
+    8000 very and extremely metal-poor candidates ([Fe/H]<SUB>phot</SUB> &lt; \u2011\
+    2.0 and &lt; \u20113.0, respectively). Finally, we show that these metallicity\
+    \ catalogues can be used efficiently, among other applications, for Galactic archaeology,\
+    \ to hunt for the most metal-poor stars, and to study how the structure of the\
+    \ Milky Way varies with metallicity, from the flat distribution of disk stars\
+    \ to the spheroid-shaped metal-poor halo."
+  author:
+  - Martin, Nicolas F.
+  - Starkenburg, Else
+  - Yuan, Zhen
+  - Fouesneau, Morgan
+  - Ardern-Arentsen, Anke
+  - De Angeli, Francesca
+  - Gran, Felipe
+  - Montelius, Martin
+  - Rusterucci, Samuel
+  - "Andrae, Ren\xE9"
+  - Bellazzini, Michele
+  - Montegriffo, Paolo
+  - Esselink, Anna F.
+  - Zhang, Hanyuan
+  - Venn, Kim A.
+  - Viswanathan, Akshara
+  - Aguado, David S.
+  - Battaglia, Giuseppina
+  - Bayer, Manuel
+  - Bonifacio, Piercarlo
+  - Caffau, Elisabetta
+  - "C\xF4t\xE9, Patrick"
+  - Carlberg, Raymond
+  - "Fabbro, S\xE9bastien"
+  - "Fern\xE1ndez-Alvar, Emma"
+  - "Gonz\xE1lez Hern\xE1ndez, Jonay I."
+  - "Gonz\xE1lez Rivera de La Vernhe, Isaure"
+  - Hill, Vanessa
+  - Ibata, Rodrigo A.
+  - Jablonka, Pascale
+  - Kordopatis, Georges
+  - Lardo, Carmela
+  - McConnachie, Alan W.
+  - Navarrete, Camila
+  - Navarro, Julio
+  - Recio-Blanco, Alejandra
+  - "S\xE1nchez-Janssen, Rub\xE9n"
+  - Sestito, Federico
+  - Thomas, Guillaume F.
+  - Vitali, Sara
+  - Youakim, Kristopher
+  bibcode: 2024A&A...692A.115M
+  category: article
+  citation_count: 49
+  doctype: article
+  identifier:
+  - 10.48550/arXiv.2308.01344
+  - 10.1051/0004-6361/202347633
+  - arXiv:2308.01344
+  - 2023arXiv230801344M
+  - 2024A&A...692A.115M
+  page: A115
+  pub: Astronomy and Astrophysics
+  title: 'The Pristine survey: XXIII. Data Release 1 and an all-sky metallicity catalogue
+    based on Gaia DR3 BP/RP spectro-photometry'
+  url: null
+  volume: '692'
+  year: 2024
+- abstract: The innermost portions of the Milky Way's stellar halo have avoided scrutiny
+    until recently. The lack of wide-area survey data, made it difficult to reconstruct
+    an uninterrupted view of the density distribution of the metal-poor stars inside
+    the Solar radius. In this study, we utilize red giant branch (RGB) stars from
+    Gaia, with metallicities estimated using spectro-photometry from Gaia Data Release
+    3. Accounting for Gaia's selection function, we examine the spatial distribution
+    of metal-poor ([M/H]&lt;-1.3) RGB stars, from the Galactic centre (r~1 kpc) out
+    to beyond the Solar radius (r~18 kpc). Our best-fitting single-component cored
+    power-law model shows a vertical flattening of ~0.5 and a slope -3.4, consistent
+    with previous studies. Motivated by the mounting evidence for two distinct stellar
+    populations in the inner halo, we additionally test a range of two-component models.
+    One of the components models the tidal debris from the Gaia Sausage/Enceladus
+    merger, while the other captures the Aurora population -- stars that predate the
+    Galactic disk formation. Our best-fit two-component model suggests that both populations
+    contribute equally around the Solar radius, but Aurora dominates the inner halo
+    with a steeper power-law index of -4.5, in agreement with the nitrogen-rich star
+    distribution measured by Horta et al. (2021).
+  author:
+  - Kurbatov, Evgeny P.
+  - Belokurov, Vasily
+  - Koposov, Sergey
+  - Kravtsov, Andrey
+  - Davies, Elliot Y.
+  - Brown, Anthony G. A.
+  - Cantat-Gaudin, Tristan
+  - Castro-Ginard, Alfred
+  - Casey, Andrew R.
+  - Drimmel, Ronald
+  - Fouesneau, Morgan
+  - Khanna, Shourya
+  - Rix, Hans-Walter
+  - Wallace, Alex
+  bibcode: 2024arXiv241022250K
+  category: article
+  citation_count: 4
+  doctype: eprint
+  identifier:
+  - arXiv:2410.22250
+  - 2024arXiv241022250K
+  - 10.48550/arXiv.2410.22250
+  page: '-'
+  pub: arXiv e-prints
+  title: The realm of Aurora. Density distribution of metal-poor giants in the heart
+    of the Galaxy
+  url: null
+  volume: null
+  year: 2024
+- abstract: We present an exploration of the Milky Way's structural parameters using
+    an all-sky sample of RC giants to map the stellar density from the inner to the
+    outer parts of the Galactic disc. These evolved giants are considered to be standard
+    candles due to their low intrinsic variance in their absolute luminosities, allowing
+    us to estimate their distances with reasonable confidence. We exploit all-sky
+    photometry from the AllWISE mid-infrared survey and the Gaia survey, along with
+    astrometry from Gaia Data Release 3 and recent 3D extinction maps, to develop
+    a probabilistic scheme in order to select with high confidence \rc{}-like stars.
+    Our curated catalogue contains about 10 million sources, for which we estimate
+    photometric distances based on the WISE $W1$ photometry. We then derive the selection
+    function for our sample, which is the combined selection function of sources with
+    both \gaia{} and \allwise{} photometry. Using the distances and accounting for
+    the full selection function of our observables, we are able to fit a two-disc,
+    multi-parameter model to constrain the scale height (\hz{}), scale-length (\rd{}),
+    flaring, and the relative mass ratios of the two disc components. We illustrate
+    and verify our methodology using mock catalogues of \rc{} stars. We find that
+    the \rc{} population is best described by a flared thin disc with scale length
+    \rd{}=$3.56\pm0.32$ kpc and scale height at the Sun of \hzsun{}=$0.17\pm0.01$
+    kpc, and a shorter and thicker disc with \rd{}=$2.59\pm0.11$ kpc, \hzsun{}=$0.45\pm0.11$
+    kpc, with no flare. The thicker disc constitutes 64\% of the \rc{} stellar mass
+    beyond 3 kpc, while the thin disk shows evidence of being warped beyond 9 kpc
+    from the Galactic center. The residuals between the predicted number density of
+    RC stars from our axisymmetric model and the measured counts show possible evidence
+    of a two-armed spiral perturbation in the disc of the Milky Way.
+  author:
+  - Khanna, Shourya
+  - Yu, Jie
+  - Drimmel, Ronald
+  - Poggio, Eloisa
+  - Cantat-Gaudin, Tristan
+  - Castro-Ginard, Alfred
+  - Kurbatov, Evgeny
+  - Belokurov, Vasily
+  - Brown, Anthony
+  - Fouesneau, Morgan
+  - Casey, Andrew
+  - Rix, Hans-Walter
+  bibcode: 2024arXiv241022036K
+  category: article
+  citation_count: 11
+  doctype: eprint
+  identifier:
+  - arXiv:2410.22036
+  - 2024arXiv241022036K
+  - 10.48550/arXiv.2410.22036
+  page: '-'
+  pub: arXiv e-prints
+  title: 'GaiaUnlimited: The old stellar disc of the Milky Way as traced by the Red
+    Clump'
+  url: null
+  volume: null
+  year: 2024
+- abstract: ChatGPT and other state-of-the-art large language models (LLMs) are rapidly
+    transforming multiple fields, offering powerful tools for a wide range of applications.
+    These models, commonly trained on vast datasets, exhibit human-like text generation
+    capabilities, making them useful for research tasks such as ideation, literature
+    review, coding, drafting, and outreach. We conducted a study involving 13 astronomers
+    at different career stages and research fields to explore LLM applications across
+    diverse tasks over several months and to evaluate their performance in research-related
+    activities. This work was accompanied by an anonymous survey assessing participants'
+    experiences and attitudes towards LLMs. We provide a detailed analysis of the
+    tasks attempted and the survey answers, along with specific output examples. Our
+    findings highlight both the potential and limitations of LLMs in supporting research
+    while also addressing general and research-specific ethical considerations. We
+    conclude with a series of recommendations, emphasizing the need for researchers
+    to complement LLMs with critical thinking and domain expertise, ensuring these
+    tools serve as aids rather than substitutes for rigorous scientific inquiry.
+  author:
+  - Fouesneau, Morgan
+  - Momcheva, Ivelina G.
+  - Chadayammuri, Urmila
+  - Demianenko, Mariia
+  - Dumont, Antoine
+  - Hviding, Raphael E.
+  - Kahle, K. Angelique
+  - Pulatova, Nadiia
+  - Rajpoot, Bhavesh
+  - Scheuck, Marten B.
+  - Seeburger, Rhys
+  - Semenov, Dmitry
+  - "Villase\xF1or, Jaime I."
+  bibcode: 2024arXiv240920252F
+  category: article
+  citation_count: 3
+  doctype: eprint
+  identifier:
+  - 10.48550/arXiv.2409.20252
+  - arXiv:2409.20252
+  - 2024arXiv240920252F
+  page: '-'
+  pub: arXiv e-prints
+  title: What is the Role of Large Language Models in the Evolution of Astronomy Research?
+  url: null
+  volume: null
+  year: 2024
+- abstract: 'Context: In the context of Galactic archaeology, the outer halo remains
+    relatively unexplored with respect to its metallicity distribution, merger debris,
+    and the abundance of known very/extremely metal-poor ([Fe/H]&lt;-2.5) stars. Aim:
+    We utilize the Pristine survey''s publicly available, Pristine data release 1
+    (PDR1) and Pristine-Gaia synthetic (PGS) catalogues of photometric metallicities,
+    to select Red Giant Branch (RGB) stars in the outer halo. Methods: The RGB selection
+    pipeline selects giants based on the absence of a well-measured parallax in the
+    brightness range where dwarfs have reasonable parallax estimate from Gaia DR3
+    data. The photometric distances are calculated using a BaSTI-isochrone fitting
+    code and the photometric metallicities. Results: Photometric distances derived
+    from PDR1- and PGS-giants show typical uncertainties of 12% and a scatter of up
+    to 20% and 40% respectively, when validated against inverted-parallax and Starhorse-code
+    distances. The PDR1-giants catalogue provides a low-to-no bias view of the metallicity
+    structure versus distance compared to the PGS-giants catalogue (with a distance-metallicity
+    selection bias), while the PGS-giants catalogue provides an all-sky view of the
+    outer halo, especially in the VMP end. The PDR1-giants catalogue is used to study
+    the metallicity distribution function of the halo out to ~100 kpc, using Gaussian
+    Mixture Model decomposition. Additionally, we use the PDR1-giants with radial
+    velocities from spectroscopic surveys to map the metallicity view of the integrals-of-motion
+    space where accreted dwarf galaxy debris conserve their orbital parameters for
+    a long time. Using the PGS-giants catalogue, we associate 41 stars tentatively
+    to the stellar counterpart of the Magellanic stream in the VMP end, out to 70
+    kpc. Conclusions: We publish two RGB catalogues between -4.0&lt;[Fe/H]&lt;+0.1
+    with reliable photometric distances and metallicities.'
+  author:
+  - Viswanathan, Akshara
+  - "Bystr\xF6m, Amanda"
+  - Starkenburg, Else
+  - Foppen, Anne
+  - Straat, Jill
+  - Montelius, Martin
+  - Sestito, Federico
+  - Venn, Kim A.
+  - Navarrete, Camila
+  - Matsuno, Tadafumi
+  - Martin, Nicolas F.
+  - Thomas, Guillaume F.
+  - Ardern-Arentsen, Anke
+  - Battaglia, Giuseppina
+  - Fouesneau, Morgan
+  - Navarro, Julio
+  - Vitali, Sara
+  bibcode: 2024arXiv240817250V
+  category: article
+  citation_count: 3
+  doctype: eprint
+  identifier:
+  - 10.48550/arXiv.2408.17250
+  - 2024arXiv240817250V
+  - arXiv:2408.17250
+  page: '-'
+  pub: arXiv e-prints
+  title: The Pristine Survey -- XXVII. Journey to the Galactic outskirts -- Mapping
+    the outer halo red giant stars down to the very metal-poor end
+  url: null
+  volume: null
+  year: 2024
+- abstract: 'Context.Gaia cannot individually resolve very close binary systems; however,
+    the collected data can still be used to identify them. A powerful indicator of
+    stellar multiplicity is the sources'' reported re-normalised unit weight error
+    (RUWE), which effectively captures the astrometric deviations from single-source
+    solutions. <BR /> Aims: We aim to characterise the impact of binarity on the RUWE.
+    By flagging potential binary systems based on RUWE, we aim to determine which
+    of their properties will contribute the most to their detectability. <BR /> Methods:
+    We developed a model to estimate the RUWEs for observations of Gaia sources, based
+    on the biases to the single-source astrometric track arising from the presence
+    of an unseen companion. Then, using the recipes from previous GaiaUnlimited selection
+    functions, we estimated the selection probability of sources with high RUWEs,
+    and discussed what binary properties contribute to increasing the sources'' RUWEs.
+    <BR /> Results: We computed the maximum RUWE that is compatible with single-source
+    solutions as a function of their location on-sky. We see that binary systems selected
+    as sources with a RUWE higher than this sky-varying threshold have a strong detectability
+    window in their orbital period distribution, which peaks at periods equal to the
+    Gaia observation time baseline. <BR /> Conclusions: We demonstrate how our sky-varying
+    RUWE threshold provides a more complete sample of binary systems when compared
+    to single sky-averaged values by studying the unresolved binary population in
+    the Gaia Catalogue of Nearby Stars. We provide the code and tools used in this
+    study, as well as the sky-varying RUWE threshold, through the GaiaUnlimited Python
+    package.'
+  author:
+  - Castro-Ginard, Alfred
+  - Penoyre, Zephyr
+  - Casey, Andrew R.
+  - Brown, Anthony G. A.
+  - Belokurov, Vasily
+  - Cantat-Gaudin, Tristan
+  - Drimmel, Ronald
+  - Fouesneau, Morgan
+  - Khanna, Shourya
+  - Kurbatov, Evgeny P.
+  - Price-Whelan, Adrian M.
+  - Rix, Hans-Walter
+  - Smart, Richard L.
+  bibcode: 2024A&A...688A...1C
+  category: article
+  citation_count: 26
+  doctype: article
+  identifier:
+  - 2024A&A...688A...1C
+  - arXiv:2404.14127
+  - 2024arXiv240414127C
+  - 10.1051/0004-6361/202450172
+  - 10.48550/arXiv.2404.14127
+  page: A1
+  pub: Astronomy and Astrophysics
+  title: Gaia DR3 detectability of unresolved binary systems
+  url: null
+  volume: '688'
+  year: 2024
+- abstract: "Three-dimensional dust density maps are crucial for understanding the\
+    \ structure of the interstellar medium of the Milky Way and the processes that\
+    \ shape it. However, constructing these maps requires large data sets and the\
+    \ methods used to analyse them are computationally expensive and difficult to\
+    \ scale up. As a result, it has only recently become possible to map kiloparsec-scale\
+    \ regions of our Galaxy at parsec-scale grid sampling. We present all-sky three-dimensional\
+    \ dust density and extinction maps of the Milky Way out to 2.8 kpc in distance\
+    \ from the Sun using the fast and scalable Gaussian Process algorithm Dustribution.\
+    \ The sampling of the three-dimensional map is l, b, d = 1\xB0 \xD7 1\xB0 \xD7\
+    \ 1.7 pc. The input extinction and distance catalogue contains 120 million stars\
+    \ with photometry and astrometry from Gaia DR2, 2MASS and AllWISE. This combines\
+    \ the strengths of optical and infrared data to probe deeper into the dusty regions\
+    \ of the Milky Way. We compare our maps with other published 3D dust maps. All\
+    \ maps quantitatively agree at the 0.001 mag pc<SUP>-1</SUP> scale with many qualitatively\
+    \ similar features, although each map also has its own features. We recover Galactic\
+    \ features previously identified in the literature. Moreover, we also see a large\
+    \ under-density that may correspond to an inter-arm or -spur gap towards the Galactic\
+    \ Centre."
+  author:
+  - Dharmawardena, T. E.
+  - Bailer-Jones, C. A. L.
+  - Fouesneau, M.
+  - Foreman-Mackey, D.
+  - Coronica, P.
+  - Colnaghi, T.
+  - "M\xFCller, T."
+  - Wilson, A. G.
+  bibcode: 2024MNRAS.532.3480D
+  category: article
+  citation_count: 9
+  doctype: article
+  identifier:
+  - 2024arXiv240606740D
+  - 2024MNRAS.tmp.1504D
+  - 10.48550/arXiv.2406.06740
+  - 2024MNRAS.532.3480D
+  - 10.1093/mnras/stae1474
+  - arXiv:2406.06740
+  page: '3480'
+  pub: Monthly Notices of the Royal Astronomical Society
+  title: All-sky three-dimensional dust density and extinction Maps of the Milky Way
+    out to 2.8 kpc
+  url: null
+  volume: '532'
+  year: 2024
+- abstract: 'A suite of spectroscopic surveys is producing vast sets of stellar spectra
+    with the goal of advancing stellar physics and Galactic evolution by determining
+    their basic physical properties. A substantial fraction of these stars are in
+    binary systems, but almost all large-survey modelling pipelines treat them as
+    single stars. For sets of multi-epoch spectra, spectral disentangling is a powerful
+    technique to recover or constrain the individual components'' spectra of a multiple
+    system. So far, this approach has focused on small samples or individual objects,
+    usually with high-resolution ($R \gtrsim 10.000$) spectra and many epochs ($\gtrsim
+    8$). Here, we present a disentangling implementation that accounts for several
+    aspects of few-epoch spectra from large surveys: that vast sample sizes require
+    automatic determination of starting guesses; that some of the most extensive spectroscopic
+    surveys have a resolution of only $\approx 2000$; that few epochs preclude unique
+    orbit fitting; that one needs effective regularization of the disentangled solution
+    to ensure resulting spectra are smooth. We describe the implementation of this
+    code and show with simulated spectra how well spectral recovery can work for hot
+    and cool stars at $R \approx 2000$. Moreover, we verify the code on two established
+    binary systems, the ''Unicorn'' and ''Giraffe''. This code can serve to explore
+    new regimes in survey disentangling in search of massive stars with massive dark
+    companions, for example, the $\gtrsim 200\,000$ hot stars of the SDSS-V survey.'
+  author:
+  - Seeburger, Rhys
+  - Rix, Hans-Walter
+  - El-Badry, Kareem
+  - Xiang, Maosheng
+  - Fouesneau, Morgan
+  bibcode: 2024MNRAS.530.1935S
+  category: article
+  citation_count: 3
+  doctype: article
+  identifier:
+  - 10.48550/arXiv.2405.19391
+  - 10.1093/mnras/stae982
+  - 2024MNRAS.tmp..996S
+  - arXiv:2405.19391
+  - 2024arXiv240519391S
+  - 2024MNRAS.530.1935S
+  page: '1935'
+  pub: Monthly Notices of the Royal Astronomical Society
+  title: Autonomous disentangling for spectroscopic surveys
+  url: null
+  volume: '530'
+  year: 2024
+- abstract: "The spatial distribution of Galactic stars with different chemical abundances\
+    \ encodes information on the processes that drove the formation and evolution\
+    \ of the Milky Way. Survey selection functions are indispensable for analysing\
+    \ astronomical catalogues produced by large-scale surveys. The use of these selection\
+    \ functions in data modelling is more complex when data from different surveys\
+    \ are to be modelled simultaneously. We introduce a procedure for constructing\
+    \ the selection function of a sample of red clump stars that have parallaxes and\
+    \ elemental abundances from the Gaia mission. We separately constructed the selection\
+    \ function of the APOGEE DR17 red clump stars, which depends on very different\
+    \ observables and has a very different spatial coverage. We combined the two surveys\
+    \ and accounted for their joint selection function to provide strong constraints\
+    \ on the radial and vertical density distribution of mono-abundance populations,\
+    \ with Gaia offering a dense coverage of the solar neighbourhood, while APOGEE\
+    \ reaches larger distances near the Galactic plane. We confirm that the radial\
+    \ density profile steepens with increasing metallicity. The combined sample also\
+    \ indicates a metallicity-dependent flaring of the \u03B1-poor disc. We provide\
+    \ the code for constructing the Gaia selection function we used in this study\
+    \ through the GaiaUnlimited Python package."
+  author:
+  - Cantat-Gaudin, Tristan
+  - Fouesneau, Morgan
+  - Rix, Hans-Walter
+  - Brown, Anthony G. A.
+  - Drimmel, Ronald
+  - Castro-Ginard, Alfred
+  - Khanna, Shourya
+  - Belokurov, Vasily
+  - Casey, Andrew R.
+  bibcode: 2024A&A...683A.128C
+  category: article
+  citation_count: 11
+  doctype: article
+  identifier:
+  - 10.48550/arXiv.2401.05023
+  - 2024A&A...683A.128C
+  - arXiv:2401.05023
+  - 10.1051/0004-6361/202348018
+  - 2024arXiv240105023C
+  page: A128
+  pub: Astronomy and Astrophysics
+  title: Uniting Gaia and APOGEE to unveil the cosmic chemistry of the Milky Way disc
+  url: null
+  volume: '683'
+  year: 2024
+- abstract: Starting from the Gaia DR3 HR diagram, we derive the star formation history
+    (SFH) as a function of distance from the Galactic plane within a cylinder centred
+    on the Sun with a 200 pc radius and spanning 1.3 kpc above and below the Galaxy's
+    midplane. We quantify both the concentration of the more recent star formation
+    in the Galactic plane, and the age-related increase in the scale height of the
+    Galactic disc stellar component, which is well-described by power laws with indices
+    ranging from 1/2 to 2/3. The vertically-integrated star formation rate falls from
+    $(1.147 \pm 0.039)\times 10^{-8}\, \text{M}_\odot \, \text{yr}^{-1} \, \text{pc}^{-2}$
+    at earlier times down to $(6.2 \pm 3.0) \times 10^{-9}\, \text{M}_\odot \, \text{yr}^{-1}
+    \, \text{pc}^{-2}$ at present times, but we find a significant peak of star formation
+    in the 2-3 Gyr age bin. The total mass of stars formed per unit area over time
+    is $118.7 \pm 6.2\, \text{M}_\odot \, \text{pc}^{-2}$, which is nearly twice the
+    present stellar mass derived from kinematics within 1 kpc from the Galactic plane,
+    implying a high degree of matter recycling in successive generations of stars.
+    The method is then modified by adopting an age-dependent correlation between the
+    SFH across the different slices, which results in less noisy and more symmetrical
+    results without significantly changing the previously mentioned quantities. This
+    appears to be a promising way to improve SFH recovery in external galaxies.
+  author:
+  - Mazzi, Alessandro
+  - "Girardi, L\xE9o"
+  - Trabucchi, Michele
+  - Dalcanton, Julianne J.
+  - Luger, Rodrigo
+  - Marigo, Paola
+  - Miglio, Andrea
+  - Costa, Guglielmo
+  - Chen, Yang
+  - Pastorelli, Giada
+  - Fouesneau, Morgan
+  - Zaggia, Simone
+  - Bressan, Alessandro
+  - Dal Tio, Piero
+  bibcode: 2024MNRAS.527..583M
+  category: article
+  citation_count: 13
+  doctype: article
+  identifier:
+  - 2023arXiv230913453M
+  - 10.1093/mnras/stad2952
+  - 2024MNRAS.527..583M
+  - arXiv:2309.13453
+  - 10.48550/arXiv.2309.13453
+  - 2023MNRAS.tmp.2848M
+  page: '583'
+  pub: Monthly Notices of the Royal Astronomical Society
+  title: Dissecting the Gaia HR diagram - II. The vertical structure of the star formation
+    history across the solar cylinder
+  url: null
+  volume: '527'
+  year: 2024
+- abstract: Machine learning has rapidly become a tool of choice for the astronomical
+    community. It is being applied across a wide range of wavelengths and problems,
+    from the classification of transients to neural network emulators of cosmological
+    simulations, and is shifting paradigms about how we generate and report scientific
+    results. At the same time, this class of method comes with its own set of best
+    practices, challenges, and drawbacks, which, at present, are often reported on
+    incompletely in the astrophysical literature. With this paper, we aim to provide
+    a primer to the astronomical community, including authors, reviewers, and editors,
+    on how to implement machine learning models and report their results in a way
+    that ensures the accuracy of the results, reproducibility of the findings, and
+    usefulness of the method.
+  author:
+  - Huppenkothen, D.
+  - Ntampaka, M.
+  - Ho, M.
+  - Fouesneau, M.
+  - Nord, B.
+  - Peek, J. E. G.
+  - Walmsley, M.
+  - Wu, J. F.
+  - Avestruz, C.
+  - Buck, T.
+  - Brescia, M.
+  - Finkbeiner, D. P.
+  - Goulding, A. D.
+  - Kacprzak, T.
+  - Melchior, P.
+  - Pasquato, M.
+  - Ramachandra, N.
+  - Ting, Y. -S.
+  - van de Ven, G.
+  - Villar, S.
+  - Villar, V. A.
+  - Zinger, E.
+  bibcode: 2023arXiv231012528H
+  category: article
+  citation_count: 4
+  doctype: eprint
+  identifier:
+  - arXiv:2310.12528
+  - 2023arXiv231012528H
+  - 10.48550/arXiv.2310.12528
+  page: '-'
+  pub: arXiv e-prints
+  title: 'Constructing Impactful Machine Learning Research for Astronomy: Best Practices
+    for Researchers and Reviewers'
+  url: null
+  volume: null
+  year: 2023
+- abstract: 'Context. Understanding the intricacies behind the presence and absence
+    of sources in an astronomical catalogue is crucial for the accurate interpretation
+    of astronomical data. In particular, for the multi-dimensional Gaia data, filters
+    and cuts on different parameters or measurements introduce a selection function
+    that may unintentionally alter scientific conclusions in subtle ways. <BR /> Aims:
+    We aim to develop a methodology to estimate the selection function for different
+    subsamples of stars in the Gaia catalogue. <BR /> Methods: Comparing the number
+    of stars in a given subsample to that in the overall Gaia catalogue provides an
+    estimate of the subsample membership probability as a function of sky position,
+    magnitude, and colour. The method used to make this estimate must differentiate
+    the stochastic absence of subsample stars from selection effects. When multiplied
+    with the overall Gaia catalogue selection function, this provides the total selection
+    function of the subsample. <BR /> Results: We present our new method for estimating
+    the selection function by applying it to the sources in Gaia DR3 with heliocentric
+    radial velocity measurements. We also compute the selection function for the stars
+    in the Gaia-Sausage/Enceladus sample, confirming that the apparent asymmetry of
+    its debris across the sky is merely caused by selection effects. <BR /> Conclusions:
+    The method we have developed estimates the selection function of the stars present
+    in a subsample of Gaia data, given that the subsample is completely contained
+    in the Gaia parent catalogue (for which the selection function is known). This
+    tool is made available in a GaiaUnlimited Python package.'
+  author:
+  - Castro-Ginard, Alfred
+  - Brown, Anthony G. A.
+  - Kostrzewa-Rutkowska, Zuzanna
+  - Cantat-Gaudin, Tristan
+  - Drimmel, Ronald
+  - Oh, Semyeong
+  - Belokurov, Vasily
+  - Casey, Andrew R.
+  - Fouesneau, Morgan
+  - Khanna, Shourya
+  - Price-Whelan, Adrian M.
+  - Rix, Hans-Walter
+  bibcode: 2023A&A...677A..37C
+  category: article
+  citation_count: 28
+  doctype: article
+  identifier:
+  - 2023A&A...677A..37C
+  - arXiv:2303.17738
+  - 10.1051/0004-6361/202346547
+  - 2023arXiv230317738C
+  - 10.48550/arXiv.2303.17738
+  page: A37
+  pub: Astronomy and Astrophysics
+  title: Estimating the selection function of Gaia DR3 subsamples
+  url: null
+  volume: '677'
+  year: 2023
+- abstract: "We present a new approach to measuring the thickness of a partially face-on\
+    \ stellar disk, using dust geometry. In a moderately-inclined disk galaxy, the\
+    \ fraction of reddened stars is expected to be 50% everywhere, assuming that dust\
+    \ lies in a thin midplane. In a thickened disk, however, a wide range of radii\
+    \ project onto the line of sight. Assuming stellar density declines with radius,\
+    \ this geometrical projection leads to differences in the numbers of stars on\
+    \ the near and far sides of the thin dust layer. The fraction of reddened stars\
+    \ will thus differ from the 50% prediction, with a deviation that becomes larger\
+    \ for puffier disks. We map the fraction of reddened red giant branch (RGB) stars\
+    \ across M31, which shows prominent dust lanes on only one side of the major axis.\
+    \ The fraction of reddened stars varies systematically from 20% to 80%, which\
+    \ requires that these stars have an exponential scale height h <SUB> z </SUB>\
+    \ that is 0.14 \xB1 0.015 times the exponential scale length (h <SUB> r </SUB>\
+    \ \u2248 5.5 kpc). M31's RGB stars must therefore have h <SUB> z </SUB> = 770\
+    \ \xB1 80 pc, which is far thicker than the Milky Way's thin disk, but comparable\
+    \ to its thick disk. The lack of a significant thin disk in M31 is unexpected,\
+    \ but consistent with its interaction history and high disk velocity dispersion.\
+    \ We suggest that asymmetric reddening be used as a generic criterion for identifying\
+    \ \"thick disk\"-dominated systems, and discuss prospects for future 3D tomographic\
+    \ mapping of the gas and stars in M31."
+  author:
+  - Dalcanton, Julianne J.
+  - Bell, Eric F.
+  - Choi, Yumi
+  - Dolphin, Andrew E.
+  - Fouesneau, Morgan
+  - "Girardi, L\xE9o"
+  - Hogg, David W.
+  - Seth, Anil C.
+  - Williams, Benjamin F.
+  bibcode: 2023AJ....166...80D
+  category: article
+  citation_count: 12
+  doctype: article
+  identifier:
+  - 10.3847/1538-3881/accc83
+  - 2023arXiv230408613D
+  - arXiv:2304.08613
+  - 2023AJ....166...80D
+  - 10.48550/arXiv.2304.08613
+  page: '80'
+  pub: The Astronomical Journal
+  title: The Panchromatic Hubble Andromeda Treasury. XX. The Disk of M31 is Thick
+  url: null
+  volume: '166'
+  year: 2023
+- abstract: We performed spectroscopic observations of eight member stars with two
+    telescopes and two spectrographs (Gemini and the Gemini Remote Access to CFHT
+    ESPaDOnS Spectrograph (GRACES), and Gran Telescopio Canarias (GTC) and the Optical
+    System for Imaging and low-Intermediate-Resolution Integrated Spectroscopy (OSIRIS))
+    to determine the nature of the C-19 progenitor and refine the orbit of the stream.
+    <P />(5 data files).
+  author:
+  - Martin, N. F.
+  - Venn, K. A.
+  - Aguado, D. S.
+  - Starkenburg, E.
+  - Gonzalez Hernandez, J. I.
+  - Ibata, R. A.
+  - Bonifacio, P.
+  - Caffau, E.
+  - Sestito, F.
+  - Arentsen, A.
+  - Allende Prieto, C.
+  - Carlberg, R. G.
+  - Fabbro, S.
+  - Fouesneau, M.
+  - Hill, V.
+  - Jablonka, P.
+  - Kordopatis, G.
+  - Lardo, C.
+  - Malhan, K.
+  - Mashonkina, L. I.
+  - McConnachie, A. W.
+  - Navarro, J. F.
+  - Sanchez-Janssen, R.
+  - Thomas, G. F.
+  - Yuan, Z.
+  - Mucciarelli, A.
+  bibcode: 2023yCatp038060102M
+  category: article
+  citation_count: 0
+  doctype: article
+  identifier:
+  - 2023yCatp038060102M
+  page: J/other/Nat/601
+  pub: VizieR Online Data Catalog (other)
+  title: 'VizieR Online Data Catalog: C-19 stream members (Martin+, 2022)'
+  url: null
+  volume: 0380
+  year: 2023
+- abstract: "Context. As part of the third Gaia Data Release, we present the contributions\
+    \ of the non-stellar and classification modules from the eighth coordination unit\
+    \ (CU8) of the Data Processing and Analysis Consortium, which is responsible for\
+    \ the determination of source astrophysical parameters using Gaia data. This is\
+    \ the third in a series of three papers describing the work done within CU8 for\
+    \ this release. <BR /> Aims: For each of the five relevant modules from CU8, we\
+    \ summarise their objectives, the methods they employ, their performance, and\
+    \ the results they produce for Gaia DR3. We further advise how to use these data\
+    \ products and highlight some limitations. <BR /> Methods: The Discrete Source\
+    \ Classifier (DSC) module provides classification probabilities associated with\
+    \ five types of sources: quasars, galaxies, stars, white dwarfs, and physical\
+    \ binary stars. A subset of these sources are processed by the Outlier Analysis\
+    \ (OA) module, which performs an unsupervised clustering analysis, and then associates\
+    \ labels with the clusters to complement the DSC classification. The Quasi Stellar\
+    \ Object Classifier (QSOC) and the Unresolved Galaxy Classifier (UGC) determine\
+    \ the redshifts of the sources classified as quasar and galaxy by the DSC module.\
+    \ Finally, the Total Galactic Extinction (TGE) module uses the extinctions of\
+    \ individual stars determined by another CU8 module to determine the asymptotic\
+    \ extinction along all lines of sight for Galactic latitudes |b|&gt; 5\xB0. Results.Gaia\
+    \ DR3 includes 1591 million sources with DSC classifications; 56 million sources\
+    \ to which the OA clustering is applied; 1.4 million sources with redshift estimates\
+    \ from UGC; 6.4 million sources with QSOC redshift; and 3.1 million level 9 HEALPixes\
+    \ of size 0.013 deg<SUP>2</SUP> where the extinction is evaluated by TGE. <BR\
+    \ /> Conclusions: Validation shows that results are in good agreement with values\
+    \ from external catalogues; for example 90% of the QSOC redshifts have absolute\
+    \ error lower than 0.1 for sources with empty warning flags, while UGC redshifts\
+    \ have a mean error of 0.008 \xB1 0.037 if evaluated on a clean set of spectra.\
+    \ An internal validation of the OA results further shows that 30 million sources\
+    \ are located in high confidence regions of the clustering map."
+  author:
+  - Delchambre, L.
+  - Bailer-Jones, C. A. L.
+  - Bellas-Velidis, I.
+  - Drimmel, R.
+  - Garabato, D.
+  - Carballo, R.
+  - Hatzidimitriou, D.
+  - Marshall, D. J.
+  - Andrae, R.
+  - Dafonte, C.
+  - Livanou, E.
+  - Fouesneau, M.
+  - Licata, E. L.
+  - "Lindstr\xF8m, H. E. P."
+  - Manteiga, M.
+  - Robin, C.
+  - Silvelo, A.
+  - Abreu Aramburu, A.
+  - "\xC1lvarez, M. A."
+  - Bakker, J.
+  - Bijaoui, A.
+  - Brouillet, N.
+  - Brugaletta, E.
+  - Burlacu, A.
+  - Casamiquela, L.
+  - Chaoul, L.
+  - Chiavassa, A.
+  - Contursi, G.
+  - Cooper, W. J.
+  - Creevey, O. L.
+  - Dapergolas, A.
+  - de Laverny, P.
+  - Demouchy, C.
+  - Dharmawardena, T. E.
+  - Edvardsson, B.
+  - "Fr\xE9mat, Y."
+  - "Garc\xEDa-Lario, P."
+  - "Garc\xEDa-Torres, M."
+  - Gavel, A.
+  - Gomez, A.
+  - "Gonz\xE1lez-Santamar\xEDa, I."
+  - Heiter, U.
+  - Jean-Antoine Piccolo, A.
+  - Kontizas, M.
+  - Kordopatis, G.
+  - Korn, A. J.
+  - Lanzafame, A. C.
+  - Lebreton, Y.
+  - Lobel, A.
+  - Lorca, A.
+  - Magdaleno Romeo, A.
+  - Marocco, F.
+  - Mary, N.
+  - Nicolas, C.
+  - Ordenovic, C.
+  - Pailler, F.
+  - Palicio, P. A.
+  - Pallas-Quintela, L.
+  - Panem, C.
+  - Pichon, B.
+  - Poggio, E.
+  - Recio-Blanco, A.
+  - Riclet, F.
+  - Rybizki, J.
+  - "Santove\xF1a, R."
+  - Sarro, L. M.
+  - Schultheis, M. S.
+  - Segol, M.
+  - Slezak, I.
+  - Smart, R. L.
+  - Sordo, R.
+  - Soubiran, C.
+  - "S\xFCveges, M."
+  - "Th\xE9venin, F."
+  - Torralba Elipe, G.
+  - Ulla, A.
+  - Utrilla, E.
+  - Vallenari, A.
+  - van Dillen, E.
+  - Zhao, H.
+  - Zorec, J.
+  bibcode: 2023A&A...674A..31D
+  category: article
+  citation_count: 61
+  doctype: article
+  identifier:
+  - 10.1051/0004-6361/202243423
+  - 10.48550/arXiv.2206.06710
+  - 2023A&A...674A..31D
+  - 2022arXiv220606710D
+  - arXiv:2206.06710
+  page: A31
+  pub: Astronomy and Astrophysics
+  title: Gaia Data Release 3. Apsis. III. Non-stellar content and source classification
+  url: null
+  volume: '674'
+  year: 2023
+- abstract: "Context. The Gaia Radial Velocity Spectrometer (RVS) provides the unique\
+    \ opportunity of a spectroscopic analysis of millions of stars at medium resolution\
+    \ (\u03BB/\u0394\u03BB \u223C 11 500) in the near-infrared (845\u2212872 nm).\
+    \ This wavelength range includes the Ca II infrared triplet (IRT) at 850.03, 854.44,\
+    \ and 866.45 nm, which is a good indicator of magnetic activity in the chromosphere\
+    \ of late-type stars. <BR /> Aims: Here we present the method devised for inferring\
+    \ the Gaia stellar activity index from the analysis of the Ca II IRT in the RVS\
+    \ spectrum, together with its scientific validation. <BR /> Methods: The Gaia\
+    \ stellar activity index is derived from the Ca II IRT excess equivalent width\
+    \ with respect to a reference spectrum, taking the projected rotational velocity\
+    \ (vsini) into account. We performed scientific validation of the Gaia stellar\
+    \ activity index by deriving a R<SUP>\u2032</SUP><SUB>IRT</SUB> index, which is\
+    \ largely independent of the photospheric parameters, and considering the correlation\
+    \ with the R<SUP>\u2032</SUP><SUB>HK</SUB> index for a sample of stars. A sample\
+    \ of well-studied pre-main-sequence (PMS) stars is considered to identify the\
+    \ regime in which the Gaia stellar activity index may be affected by mass accretion.\
+    \ The position of these stars in the colour-magnitude diagram and the correlation\
+    \ with the amplitude of the photometric rotational modulation is also scrutinised.\
+    \ Results.Gaia DR3 contains a stellar activity index derived from the Ca II IRT\
+    \ for some 2 \xD7 10<SUP>6</SUP> stars in the Galaxy. This represents a `gold\
+    \ mine' for studies on stellar magnetic activity and mass accretion in the solar\
+    \ vicinity. Three regimes of the chromospheric stellar activity are identified,\
+    \ confirming suggestions made by previous authors based on much smaller R<SUP>\u2032\
+    </SUP><SUB>HK</SUB> datasets. The highest stellar activity regime is associated\
+    \ with PMS stars and RS CVn systems, in which activity is enhanced by tidal interaction.\
+    \ Some evidence of a bimodal distribution in main sequence (MS) stars with T<SUB>eff</SUB>\
+    \ \u2273 5000 K is also found, which defines the two other regimes, without a\
+    \ clear gap in between. Stars with 3500 K \u2272 T<SUB>eff</SUB> \u2272 5000 K\
+    \ are found to be either very active PMS stars or active MS stars with a unimodal\
+    \ distribution in chromospheric activity. A dramatic change in the activity distribution\
+    \ is found for T<SUB>eff</SUB> \u2272 3500 K, with a dominance of low activity\
+    \ stars close to the transition between partially- and fully convective stars\
+    \ and a rise in activity down into the fully convective regime."
+  author:
+  - Lanzafame, A. C.
+  - Brugaletta, E.
+  - "Fr\xE9mat, Y."
+  - Sordo, R.
+  - Creevey, O. L.
+  - Andretta, V.
+  - Scandariato, G.
+  - "Bus\xE0, I."
+  - Distefano, E.
+  - Korn, A. J.
+  - de Laverny, P.
+  - Recio-Blanco, A.
+  - Abreu Aramburu, A.
+  - "\xC1lvarez, M. A."
+  - Andrae, R.
+  - Bailer-Jones, C. A. L.
+  - Bakker, J.
+  - Bellas-Velidis, I.
+  - Bijaoui, A.
+  - Brouillet, N.
+  - Burlacu, A.
+  - Carballo, R.
+  - Casamiquela, L.
+  - Chaoul, L.
+  - Chiavassa, A.
+  - Contursi, G.
+  - Cooper, W. J.
+  - Dafonte, C.
+  - Dapergolas, A.
+  - Delchambre, L.
+  - Demouchy, C.
+  - Dharmawardena, T. E.
+  - Drimmel, R.
+  - Edvardsson, B.
+  - Fouesneau, M.
+  - Garabato, D.
+  - "Garc\xEDa-Lario, P."
+  - "Garc\xEDa-Torres, M."
+  - Gavel, A.
+  - Gomez, A.
+  - "Gonz\xE1lez-Santamar\xEDa, I."
+  - Hatzidimitriou, D.
+  - Heiter, U.
+  - Jean-Antoine Piccolo, A.
+  - Kontizas, M.
+  - Kordopatis, G.
+  - Lebreton, Y.
+  - Licata, E. L.
+  - "Lindstr\xF8m, H. E. P."
+  - Livanou, E.
+  - Lobel, A.
+  - Lorca, A.
+  - Magdaleno Romeo, A.
+  - Manteiga, M.
+  - Marocco, F.
+  - Marshall, D. J.
+  - Mary, N.
+  - Nicolas, C.
+  - Ordenovic, C.
+  - Pailler, F.
+  - Palicio, P. A.
+  - Pallas-Quintela, L.
+  - Panem, C.
+  - Pichon, B.
+  - Poggio, E.
+  - Riclet, F.
+  - Robin, C.
+  - Rybizki, J.
+  - "Santove\xF1a, R."
+  - Sarro, L. M.
+  - Schultheis, M. S.
+  - Segol, M.
+  - Silvelo, A.
+  - Slezak, I.
+  - Smart, R. L.
+  - Soubiran, C.
+  - "S\xFCveges, M."
+  - "Th\xE9venin, F."
+  - Torralba Elipe, G.
+  - Ulla, A.
+  - Utrilla, E.
+  - Vallenari, A.
+  - van Dillen, E.
+  - Zhao, H.
+  - Zorec, J.
+  bibcode: 2023A&A...674A..30L
+  category: article
+  citation_count: 22
+  doctype: article
+  identifier:
+  - 2022arXiv220605766L
+  - 10.1051/0004-6361/202244156
+  - arXiv:2206.05766
+  - 2023A&A...674A..30L
+  - 10.48550/arXiv.2206.05766
+  page: A30
+  pub: Astronomy and Astrophysics
+  title: Gaia Data Release 3. Stellar chromospheric activity and mass accretion from
+    Ca II IRT observed by the Radial Velocity Spectrometer
+  url: null
+  volume: '674'
+  year: 2023
+- abstract: 'Context. The chemo-physical parametrisation of stellar spectra is essential
+    for understanding the nature and evolution of stars and of Galactic stellar populations.
+    A worldwide observational effort from the ground has provided, in one century,
+    an extremely heterogeneous collection of chemical abundances for about two million
+    stars in total, with fragmentary sky coverage. <BR /> Aims: This situation is
+    revolutionised by the Gaia third data release (DR3), which contains the parametrisation
+    of Radial Velocity Spectrometer (RVS) data performed by the General Stellar Parametriser-spectroscopy,
+    GSP-Spec, module. Here we describe the parametrisation of the first 34 months
+    of Gaia RVS observations. <BR /> Methods: GSP-Spec estimates the chemo-physical
+    parameters from combined RVS spectra of single stars, without additional inputs
+    from astrometric, photometric, or spectro-photometric BP/RP data. The main analysis
+    workflow described here, MatisseGauguin, is based on projection and optimisation
+    methods and provides the stellar atmospheric parameters; the individual chemical
+    abundances of N, Mg, Si, S, Ca, Ti, Cr, Fe I, Fe II, Ni, Zr, Ce and Nd; the differential
+    equivalent width of a cyanogen line; and the parameters of a diffuse interstellar
+    band (DIB) feature. Another workflow, based on an artificial neural network (ANN)
+    and referred to with the same acronym, provides a second set of atmospheric parameters
+    that are useful for classification control. For both workflows, we implement a
+    detailed quality flag chain considering different error sources. <BR /> Results:
+    With about 5.6 million stars, the Gaia DR3 GSP-Spec all-sky catalogue is the largest
+    compilation of stellar chemo-physical parameters ever published and the first
+    one from space data. Internal and external biases have been studied taking into
+    account the implemented flags. In some cases, simple calibrations with low degree
+    polynomials are suggested. The homogeneity and quality of the estimated parameters
+    enables chemo-dynamical studies of Galactic stellar populations, interstellar
+    extinction studies from individual spectra, and clear constraints on stellar evolution
+    models. We highly recommend that users adopt the provided quality flags for scientific
+    exploitation. <BR /> Conclusions: The Gaia DR3 GSP-Spec catalogue is a major step
+    in the scientific exploration of Milky Way stellar populations. It will be followed
+    by increasingly large and higher quality catalogues in future data releases, confirming
+    the Gaia promise of a new Galactic vision.'
+  author:
+  - Recio-Blanco, A.
+  - de Laverny, P.
+  - Palicio, P. A.
+  - Kordopatis, G.
+  - "\xC1lvarez, M. A."
+  - Schultheis, M.
+  - Contursi, G.
+  - Zhao, H.
+  - Torralba Elipe, G.
+  - Ordenovic, C.
+  - Manteiga, M.
+  - Dafonte, C.
+  - Oreshina-Slezak, I.
+  - Bijaoui, A.
+  - "Fr\xE9mat, Y."
+  - Seabroke, G.
+  - Pailler, F.
+  - Spitoni, E.
+  - Poggio, E.
+  - Creevey, O. L.
+  - Abreu Aramburu, A.
+  - Accart, S.
+  - Andrae, R.
+  - Bailer-Jones, C. A. L.
+  - Bellas-Velidis, I.
+  - Brouillet, N.
+  - Brugaletta, E.
+  - Burlacu, A.
+  - Carballo, R.
+  - Casamiquela, L.
+  - Chiavassa, A.
+  - Cooper, W. J.
+  - Dapergolas, A.
+  - Delchambre, L.
+  - Dharmawardena, T. E.
+  - Drimmel, R.
+  - Edvardsson, B.
+  - Fouesneau, M.
+  - Garabato, D.
+  - "Garc\xEDa-Lario, P."
+  - "Garc\xEDa-Torres, M."
+  - Gavel, A.
+  - Gomez, A.
+  - "Gonz\xE1lez-Santamar\xEDa, I."
+  - Hatzidimitriou, D.
+  - Heiter, U.
+  - Jean-Antoine Piccolo, A.
+  - Kontizas, M.
+  - Korn, A. J.
+  - Lanzafame, A. C.
+  - Lebreton, Y.
+  - Le Fustec, Y.
+  - Licata, E. L.
+  - "Lindstr\xF8m, H. E. P."
+  - Livanou, E.
+  - Lobel, A.
+  - Lorca, A.
+  - Magdaleno Romeo, A.
+  - Marocco, F.
+  - Marshall, D. J.
+  - Mary, N.
+  - Nicolas, C.
+  - Pallas-Quintela, L.
+  - Panem, C.
+  - Pichon, B.
+  - Riclet, F.
+  - Robin, C.
+  - Rybizki, J.
+  - "Santove\xF1a, R."
+  - Silvelo, A.
+  - Smart, R. L.
+  - Sarro, L. M.
+  - Sordo, R.
+  - Soubiran, C.
+  - "S\xFCveges, M."
+  - Ulla, A.
+  - Vallenari, A.
+  - Zorec, J.
+  - Utrilla, E.
+  - Bakker, J.
+  bibcode: 2023A&A...674A..29R
+  category: article
+  citation_count: 202
+  doctype: article
+  identifier:
+  - 2023A&A...674A..29R
+  - 2022arXiv220605541R
+  - 10.48550/arXiv.2206.05541
+  - 10.1051/0004-6361/202243750
+  - arXiv:2206.05541
+  page: A29
+  pub: Astronomy and Astrophysics
+  title: Gaia Data Release 3. Analysis of RVS spectra using the General Stellar Parametriser
+    from spectroscopy
+  url: null
+  volume: '674'
+  year: 2023
+- abstract: "Context. The third Gaia data release (Gaia DR3) contains, beyond the\
+    \ astrometry and photometry, dispersed light for hundreds of millions of sources\
+    \ from the Gaia prism spectra (BP and RP) and the spectrograph (RVS). This data\
+    \ release opens a new window on the chemo-dynamical properties of stars in our\
+    \ Galaxy, essential knowledge for understanding the structure, formation, and\
+    \ evolution of the Milky Way. <BR /> Aims: To provide insight into the physical\
+    \ properties of Milky Way stars, we used these data to produce a uniformly derived\
+    \ all-sky catalogue of stellar astrophysical parameters: atmospheric properties\
+    \ (T<SUB>eff</SUB>, log g, [M/H], [\u03B1/Fe], activity index, emission lines,\
+    \ and rotation), 13 chemical abundance estimates, evolution characteristics (radius,\
+    \ age, mass, and bolometric luminosity), distance, and dust extinction. <BR />\
+    \ Methods: We developed the astrophysical parameter inference system (Apsis) pipeline\
+    \ to infer astrophysical parameters of Gaia objects by analysing their astrometry,\
+    \ photometry, BP/RP, and RVS spectra. We validate our results against those from\
+    \ other works in the literature, including benchmark stars, interferometry, and\
+    \ asteroseismology. Here we assess the stellar analysis performance from Apsis\
+    \ statistically. <BR /> Results: We describe the quantities we obtained, including\
+    \ the underlying assumptions and the limitations of our results. We provide guidance\
+    \ and identify regimes in which our parameters should and should not be used.\
+    \ <BR /> Conclusions: Despite some limitations, this is the most extensive catalogue\
+    \ of uniformly inferred stellar parameters to date. They comprise T<SUB>eff</SUB>,\
+    \ log g, and [M/H] (470 million using BP/RP, 6 million using RVS), radius (470\
+    \ million), mass (140 million), age (120 million), chemical abundances (5 million),\
+    \ diffuse interstellar band analysis (half a million), activity indices (2 million),\
+    \ H\u03B1 equivalent widths (200 million), and further classifications of spectral\
+    \ types (220 million) and emission-line stars (50 thousand). More precise and\
+    \ detailed astrophysical parameters based on epoch BP, RP, and RVS spectrophotometry\
+    \ are planned for the next Gaia data release. <P />Our catalogue is available\
+    \ from the Gaia Archive and partner data centres <A href=\"https://gea.esac.esa.int/archive/documentation/GDR3/\"\
+    >https://gea.esac.esa.int/archive/documentation/GDR3/</A>."
+  author:
+  - Fouesneau, M.
+  - "Fr\xE9mat, Y."
+  - Andrae, R.
+  - Korn, A. J.
+  - Soubiran, C.
+  - Kordopatis, G.
+  - Vallenari, A.
+  - Heiter, U.
+  - Creevey, O. L.
+  - Sarro, L. M.
+  - de Laverny, P.
+  - Lanzafame, A. C.
+  - Lobel, A.
+  - Sordo, R.
+  - Rybizki, J.
+  - Slezak, I.
+  - "\xC1lvarez, M. A."
+  - Drimmel, R.
+  - Garabato, D.
+  - Delchambre, L.
+  - Bailer-Jones, C. A. L.
+  - Hatzidimitriou, D.
+  - Lorca, A.
+  - Le Fustec, Y.
+  - Pailler, F.
+  - Mary, N.
+  - Robin, C.
+  - Utrilla, E.
+  - Abreu Aramburu, A.
+  - Bakker, J.
+  - Bellas-Velidis, I.
+  - Bijaoui, A.
+  - Blomme, R.
+  - Bouret, J. -C.
+  - Brouillet, N.
+  - Brugaletta, E.
+  - Burlacu, A.
+  - Carballo, R.
+  - Casamiquela, L.
+  - Chaoul, L.
+  - Chiavassa, A.
+  - Contursi, G.
+  - Cooper, W. J.
+  - Dafonte, C.
+  - Demouchy, C.
+  - Dharmawardena, T. E.
+  - "Garc\xEDa-Lario, P."
+  - "Garc\xEDa-Torres, M."
+  - Gomez, A.
+  - "Gonz\xE1lez-Santamar\xEDa, I."
+  - Jean-Antoine Piccolo, A.
+  - Kontizas, M.
+  - Lebreton, Y.
+  - Licata, E. L.
+  - "Lindstr\xF8m, H. E. P."
+  - Livanou, E.
+  - Magdaleno Romeo, A.
+  - Manteiga, M.
+  - Marocco, F.
+  - Martayan, C.
+  - Marshall, D. J.
+  - Nicolas, C.
+  - Ordenovic, C.
+  - Palicio, P. A.
+  - Pallas-Quintela, L.
+  - Pichon, B.
+  - Poggio, E.
+  - Recio-Blanco, A.
+  - Riclet, F.
+  - "Santove\xF1a, R."
+  - Schultheis, M. S.
+  - Segol, M.
+  - Silvelo, A.
+  - Smart, R. L.
+  - "S\xFCveges, M."
+  - "Th\xE9venin, F."
+  - Torralba Elipe, G.
+  - Ulla, A.
+  - van Dillen, E.
+  - Zhao, H.
+  - Zorec, J.
+  bibcode: 2023A&A...674A..28F
+  category: article
+  citation_count: 143
+  doctype: article
+  identifier:
+  - 10.1051/0004-6361/202243919
+  - arXiv:2206.05992
+  - 10.48550/arXiv.2206.05992
+  - 2022arXiv220605992F
+  - 2023A&A...674A..28F
+  page: A28
+  pub: Astronomy and Astrophysics
+  title: Gaia Data Release 3. Apsis. II. Stellar parameters
+  url: null
+  volume: '674'
+  year: 2023
+- abstract: "Context. The astrophysical characterisation of sources is among the major\
+    \ new data products in the third Gaia Data Release (DR3). In particular, there\
+    \ are stellar parameters for 471 million sources estimated from low-resolution\
+    \ BP/RP spectra. <BR /> Aims: We present the General Stellar Parameterizer from\
+    \ Photometry (GSP-Phot), which is part of the astrophysical parameters inference\
+    \ system (Apsis). GSP-Phot is designed to produce a homogeneous catalogue of parameters\
+    \ for hundreds of millions of single non-variable stars based on their astrometry,\
+    \ photometry, and low-resolution BP/RP spectra. These parameters are effective\
+    \ temperature, surface gravity, metallicity, absolute M<SUB>G</SUB> magnitude,\
+    \ radius, distance, and extinction for each star. <BR /> Methods: GSP-Phot uses\
+    \ a Bayesian forward-modelling approach to simultaneously fit the BP/RP spectrum,\
+    \ parallax, and apparent G magnitude. A major design feature of GSP-Phot is the\
+    \ use of the apparent flux levels of BP/RP spectra to derive, in combination with\
+    \ isochrone models, tight observational constraints on radii and distances. We\
+    \ carefully validate the uncertainty estimates by exploiting repeat Gaia observations\
+    \ of the same source. <BR /> Results: The data release includes GSP-Phot results\
+    \ for 471 million sources with G &lt; 19. Typical differences to literature values\
+    \ are 110 K for T<SUB>eff</SUB> and 0.2-0.25 for log g, but these depend strongly\
+    \ on data quality. In particular, GSP-Phot results are significantly better for\
+    \ stars with good parallax measurements (\u03D6/\u03C3<SUB>\u03D6</SUB> &gt; 20),\
+    \ mostly within 2 kpc. Metallicity estimates exhibit substantial biases compared\
+    \ to literature values and are only useful at a qualitative level. However, we\
+    \ provide an empirical calibration of our metallicity estimates that largely removes\
+    \ these biases. Extinctions A<SUB>0</SUB> and A<SUB>BP</SUB> show typical differences\
+    \ from reference values of 0.07-0.09 mag. MCMC samples of the parameters are also\
+    \ available for 95% of the sources. <BR /> Conclusions: GSP-Phot provides a homogeneous\
+    \ catalogue of stellar parameters, distances, and extinctions that can be used\
+    \ for various purposes, such as sample selections (OB stars, red giants, solar\
+    \ analogues etc.). In the context of asteroseismology or ground-based interferometry,\
+    \ where targets are usually bright and have good parallax measurements, GSP-Phot\
+    \ results should be particularly useful for combined analysis or target selection."
+  author:
+  - Andrae, R.
+  - Fouesneau, M.
+  - Sordo, R.
+  - Bailer-Jones, C. A. L.
+  - Dharmawardena, T. E.
+  - Rybizki, J.
+  - De Angeli, F.
+  - "Lindstr\xF8m, H. E. P."
+  - Marshall, D. J.
+  - Drimmel, R.
+  - Korn, A. J.
+  - Soubiran, C.
+  - Brouillet, N.
+  - Casamiquela, L.
+  - Rix, H. -W.
+  - Abreu Aramburu, A.
+  - "\xC1lvarez, M. A."
+  - Bakker, J.
+  - Bellas-Velidis, I.
+  - Bijaoui, A.
+  - Brugaletta, E.
+  - Burlacu, A.
+  - Carballo, R.
+  - Chaoul, L.
+  - Chiavassa, A.
+  - Contursi, G.
+  - Cooper, W. J.
+  - Creevey, O. L.
+  - Dafonte, C.
+  - Dapergolas, A.
+  - de Laverny, P.
+  - Delchambre, L.
+  - Demouchy, C.
+  - Edvardsson, B.
+  - "Fr\xE9mat, Y."
+  - Garabato, D.
+  - "Garc\xEDa-Lario, P."
+  - "Garc\xEDa-Torres, M."
+  - Gavel, A.
+  - Gomez, A.
+  - "Gonz\xE1lez-Santamar\xEDa, I."
+  - Hatzidimitriou, D.
+  - Heiter, U.
+  - Jean-Antoine Piccolo, A.
+  - Kontizas, M.
+  - Kordopatis, G.
+  - Lanzafame, A. C.
+  - Lebreton, Y.
+  - Licata, E. L.
+  - Livanou, E.
+  - Lobel, A.
+  - Lorca, A.
+  - Magdaleno Romeo, A.
+  - Manteiga, M.
+  - Marocco, F.
+  - Mary, N.
+  - Nicolas, C.
+  - Ordenovic, C.
+  - Pailler, F.
+  - Palicio, P. A.
+  - Pallas-Quintela, L.
+  - Panem, C.
+  - Pichon, B.
+  - Poggio, E.
+  - Recio-Blanco, A.
+  - Riclet, F.
+  - Robin, C.
+  - "Santove\xF1a, R."
+  - Sarro, L. M.
+  - Schultheis, M. S.
+  - Segol, M.
+  - Silvelo, A.
+  - Slezak, I.
+  - Smart, R. L.
+  - "S\xFCveges, M."
+  - "Th\xE9venin, F."
+  - Torralba Elipe, G.
+  - Ulla, A.
+  - Utrilla, E.
+  - Vallenari, A.
+  - van Dillen, E.
+  - Zhao, H.
+  - Zorec, J.
+  bibcode: 2023A&A...674A..27A
+  category: article
+  citation_count: 183
+  doctype: article
+  identifier:
+  - 2023A&A...674A..27A
+  - 2022arXiv220606138A
+  - 10.1051/0004-6361/202243462
+  - arXiv:2206.06138
+  - 10.48550/arXiv.2206.06138
+  page: A27
+  pub: Astronomy and Astrophysics
+  title: Gaia Data Release 3. Analysis of the Gaia BP/RP spectra using the General
+    Stellar Parameterizer from Photometry
+  url: null
+  volume: '674'
+  year: 2023
+- abstract: "Gaia Data Release 3 contains a wealth of new data products for the community.\
+    \ Astrophysical parameters are a major component of this release, and were produced\
+    \ by the Astrophysical parameters inference system (Apsis) within the Gaia Data\
+    \ Processing and Analysis Consortium (DPAC). The aim of this paper is to describe\
+    \ the overall content of the astrophysical parameters in Gaia DR3 and how they\
+    \ were produced. In Apsis, we use the mean BP/RP and mean RVS spectra along with\
+    \ astrometry and photometry, and we derive the following parameters: source classification\
+    \ and probabilities for 1.6 billion objects; interstellar medium characterisation\
+    \ and distances for up to 470 million sources, including a 2D total Galactic extinction\
+    \ map; 6 million redshifts of quasar candidates; 1.4 million redshifts of galaxy\
+    \ candidates; and an analysis of 50 million outlier sources through an unsupervised\
+    \ classification. The astrophysical parameters also include many stellar spectroscopic\
+    \ and evolutionary parameters for up to 470 million sources. These comprise T<SUB>eff</SUB>,\
+    \ log g, and [M/H] (470 million using BP/RP, 6 million using RVS), radius (470\
+    \ million), mass (140 million), age (120 million), chemical abundances (up to\
+    \ 5 million), diffuse interstellar band analysis (0.5 million), activity indices\
+    \ (2 million), H\u03B1 equivalent widths (200 million), and further classification\
+    \ of spectral types (220 million) and emission-line stars (50 000). This paper\
+    \ is the first in a series of three papers, and focusses on describing the global\
+    \ content of the parameters in Gaia DR3. The accompanying Papers II and III focus\
+    \ on the validation and use of the stellar and non-stellar products, respectively.\
+    \ This catalogue is the most extensive homogeneous database of astrophysical parameters\
+    \ to date, and is based uniquely on Gaia data. It will only be superseded by Gaia\
+    \ Data Release 4, and will therefore remain a key reference over the next four\
+    \ years, providing astrophysical parameters independent of other ground- and space-based\
+    \ data."
+  author:
+  - Creevey, O. L.
+  - Sordo, R.
+  - Pailler, F.
+  - "Fr\xE9mat, Y."
+  - Heiter, U.
+  - "Th\xE9venin, F."
+  - Andrae, R.
+  - Fouesneau, M.
+  - Lobel, A.
+  - Bailer-Jones, C. A. L.
+  - Garabato, D.
+  - Bellas-Velidis, I.
+  - Brugaletta, E.
+  - Lorca, A.
+  - Ordenovic, C.
+  - Palicio, P. A.
+  - Sarro, L. M.
+  - Delchambre, L.
+  - Drimmel, R.
+  - Rybizki, J.
+  - Torralba Elipe, G.
+  - Korn, A. J.
+  - Recio-Blanco, A.
+  - Schultheis, M. S.
+  - De Angeli, F.
+  - Montegriffo, P.
+  - Abreu Aramburu, A.
+  - Accart, S.
+  - "\xC1lvarez, M. A."
+  - Bakker, J.
+  - Brouillet, N.
+  - Burlacu, A.
+  - Carballo, R.
+  - Casamiquela, L.
+  - Chiavassa, A.
+  - Contursi, G.
+  - Cooper, W. J.
+  - Dafonte, C.
+  - Dapergolas, A.
+  - de Laverny, P.
+  - Dharmawardena, T. E.
+  - Edvardsson, B.
+  - Le Fustec, Y.
+  - "Garc\xEDa-Lario, P."
+  - "Garc\xEDa-Torres, M."
+  - Gomez, A.
+  - "Gonz\xE1lez-Santamar\xEDa, I."
+  - Hatzidimitriou, D.
+  - Jean-Antoine Piccolo, A.
+  - Kontiza, M.
+  - Kordopatis, G.
+  - Lanzafame, A. C.
+  - Lebreton, Y.
+  - Licata, E. L.
+  - "Lindstr\xF8m, H. E. P."
+  - Livanou, E.
+  - Magdaleno Romeo, A.
+  - Manteiga, M.
+  - Marocco, F.
+  - Marshall, D. J.
+  - Mary, N.
+  - Nicolas, C.
+  - Pallas-Quintela, L.
+  - Panem, C.
+  - Pichon, B.
+  - Poggio, E.
+  - Riclet, F.
+  - Robin, C.
+  - "Santove\xF1a, R."
+  - Silvelo, A.
+  - Slezak, I.
+  - Smart, R. L.
+  - Soubiran, C.
+  - "S\xFCveges, M."
+  - Ulla, A.
+  - Utrilla, E.
+  - Vallenari, A.
+  - Zhao, H.
+  - Zorec, J.
+  - Barrado, D.
+  - Bijaoui, A.
+  - Bouret, J. -C.
+  - Blomme, R.
+  - Brott, I.
+  - Cassisi, S.
+  - Kochukhov, O.
+  - Martayan, C.
+  - Shulyak, D.
+  - Silvester, J.
+  bibcode: 2023A&A...674A..26C
+  category: article
+  citation_count: 182
+  doctype: article
+  identifier:
+  - 2022arXiv220605864C
+  - 10.1051/0004-6361/202243688
+  - 2023A&A...674A..26C
+  - 10.48550/arXiv.2206.05864
+  - arXiv:2206.05864
+  page: A26
+  pub: Astronomy and Astrophysics
+  title: Gaia Data Release 3. Astrophysical parameters inference system (Apsis). I.
+    Methods and content overview
+  url: null
+  volume: '674'
+  year: 2023
+- abstract: 'Context.Gaia Data Release 3 contains astrometry and photometry results
+    for about 1.8 billion sources based on observations collected by the European
+    Space Agency (ESA) Gaia satellite during the first 34 months of its operational
+    phase (the same period covered by Gaia early Data Release 3; Gaia EDR3). Low-resolution
+    spectra for 220 million sources are one of the important new data products included
+    in this release. <BR /> Aims: In this paper, we focus on the external calibration
+    of low-resolution spectroscopic content, describing the input data, algorithms,
+    data processing, and the validation of the results. Particular attention is given
+    to the quality of the data and to a number of features that users may need to
+    take into account to make the best use of the catalogue. <BR /> Methods: We calibrated
+    an instrument model to relate mean Gaia spectra to the corresponding spectral
+    energy distributions (SEDs) using an extended set of calibrators: this includes
+    modelling of the instrument dispersion relation, transmission, and line spread
+    functions. Optimisation of the model is achieved through total least-squares regression,
+    accounting for errors in Gaia and external spectra. <BR /> Results: The resulting
+    instrument model can be used for forward modelling of Gaia spectra or for inverse
+    modelling of externally calibrated spectra in absolute flux units. <BR /> Conclusions:
+    The absolute calibration derived in this paper provides an essential ingredient
+    for users of BP/RP spectra. It allows users to connect BP/RP spectra to absolute
+    fluxes and physical wavelengths.'
+  author:
+  - Montegriffo, P.
+  - De Angeli, F.
+  - Andrae, R.
+  - Riello, M.
+  - Pancino, E.
+  - Sanna, N.
+  - Bellazzini, M.
+  - Evans, D. W.
+  - Carrasco, J. M.
+  - Sordo, R.
+  - Busso, G.
+  - Cacciari, C.
+  - Jordi, C.
+  - van Leeuwen, F.
+  - Vallenari, A.
+  - Altavilla, G.
+  - Barstow, M. A.
+  - Brown, A. G. A.
+  - Burgess, P. W.
+  - Castellani, M.
+  - Cowell, S.
+  - Davidson, M.
+  - De Luise, F.
+  - Delchambre, L.
+  - Diener, C.
+  - Fabricius, C.
+  - "Fr\xE9mat, Y."
+  - Fouesneau, M.
+  - Gilmore, G.
+  - Giuffrida, G.
+  - Hambly, N. C.
+  - Harrison, D. L.
+  - Hidalgo, S.
+  - Hodgkin, S. T.
+  - Holland, G.
+  - Marinoni, S.
+  - Osborne, P. J.
+  - Pagani, C.
+  - Palaversa, L.
+  - Piersimoni, A. M.
+  - Pulone, L.
+  - Ragaini, S.
+  - Rainer, M.
+  - Richards, P. J.
+  - Rowell, N.
+  - Ruz-Mieres, D.
+  - Sarro, L. M.
+  - Walton, N. A.
+  - Yoldas, A.
+  bibcode: 2023A&A...674A...3M
+  category: article
+  citation_count: 119
+  doctype: article
+  identifier:
+  - 10.1051/0004-6361/202243880
+  - 10.48550/arXiv.2206.06205
+  - 2022arXiv220606205M
+  - 2023A&A...674A...3M
+  - arXiv:2206.06205
+  page: A3
+  pub: Astronomy and Astrophysics
+  title: Gaia Data Release 3. External calibration of BP/RP low-resolution spectroscopic
+    data
+  url: null
+  volume: '674'
+  year: 2023
+- abstract: 'Context. Blue (BP) and Red (RP) Photometer low-resolution spectral data
+    are one of the exciting new products in Gaia Data Release 3 (Gaia DR3). These
+    data have also been used to derive astrometry and integrated photometry in Gaia
+    Early Data Release 3 and astrophysical parameters and Solar System object reflectance
+    spectra in Gaia DR3. <BR /> Aims: In this paper, we give an overview of the processing
+    techniques that allow raw satellite data of multiple transits per source to be
+    converted into combined spectra calibrated to an internal reference system, resulting
+    in low-resolution BP and RP mean spectra. We describe how we overcome challenges
+    due to the complexity of the on-board instruments and to the various observation
+    strategies. Furthermore, we show highlights from our scientific validation of
+    the results. This work covers the internal calibration of BP/RP spectra to a self-consistent
+    mean instrument, while the calibration of the BP/RP spectra to the absolute reference
+    system of physical flux and wavelength is covered by one of the accompanying Gaia
+    DR3 papers. <BR /> Methods: We calibrate about 65 billion individual transit spectra
+    onto the same mean BP/RP instrument through a series of calibration steps, including
+    background subtraction, calibration of the CCD geometry, and an iterative procedure
+    for the calibration of CCD efficiency as well as variations of the line-spread
+    function and dispersion across the focal plane and in time. The calibrated transit
+    spectra are then combined for each source in terms of an expansion into continuous
+    basis functions. We discuss the configuration of these basis functions. <BR />
+    Results: Time-averaged mean spectra covering the optical to near-infrared wavelength
+    range [330, 1050] nm are published for approximately 220 million objects. Most
+    of these are brighter than G = 17.65 but some BP/RP spectra are published for
+    sources down to G = 21.43. Their signal-to-noise ratio (S/N) varies significantly
+    over the wavelength range covered, and with magnitude and colour of the observed
+    objects, with sources around G = 15 having a S/N above 100 in some wavelength
+    ranges. The top-quality BP/RP spectra are achieved for sources with magnitudes
+    9 &lt; G &lt; 12, with S/N reaching 1000 in the central part of the RP wavelength
+    range. Scientific validation suggests that the internal calibration was generally
+    successful. However, there is some evidence for imperfect calibrations at the
+    bright end G &lt; 11, where calibrated BP/RP spectra can exhibit systematic flux
+    variations that exceed their estimated flux uncertainties. We also report that,
+    due to long-range noise correlations, BP/RP spectra can exhibit wiggles when sampled
+    in pseudo-wavelength. <BR /> Conclusions: The Gaia DR3 data products are the expansion
+    coefficients and corresponding covariance matrices for BP and RP separately. Users
+    are encouraged to work with the data in this format, with full covariance information
+    showing that correlations between coefficients are typically very low. Documentation
+    and instructions on how to access and use BP/RP spectral data from the archive
+    are also provided.'
+  author:
+  - De Angeli, F.
+  - Weiler, M.
+  - Montegriffo, P.
+  - Evans, D. W.
+  - Riello, M.
+  - Andrae, R.
+  - Carrasco, J. M.
+  - Busso, G.
+  - Burgess, P. W.
+  - Cacciari, C.
+  - Davidson, M.
+  - Harrison, D. L.
+  - Hodgkin, S. T.
+  - Jordi, C.
+  - Osborne, P. J.
+  - Pancino, E.
+  - Altavilla, G.
+  - Barstow, M. A.
+  - Bailer-Jones, C. A. L.
+  - Bellazzini, M.
+  - Brown, A. G. A.
+  - Castellani, M.
+  - Cowell, S.
+  - Delchambre, L.
+  - De Luise, F.
+  - Diener, C.
+  - Fabricius, C.
+  - Fouesneau, M.
+  - "Fr\xE9mat, Y."
+  - Gilmore, G.
+  - Giuffrida, G.
+  - Hambly, N. C.
+  - Hidalgo, S.
+  - Holland, G.
+  - Kostrzewa-Rutkowska, Z.
+  - van Leeuwen, F.
+  - Lobel, A.
+  - Marinoni, S.
+  - Miller, N.
+  - Pagani, C.
+  - Palaversa, L.
+  - Piersimoni, A. M.
+  - Pulone, L.
+  - Ragaini, S.
+  - Rainer, M.
+  - Richards, P. J.
+  - Rixon, G. T.
+  - Ruz-Mieres, D.
+  - Sanna, N.
+  - Sarro, L. M.
+  - Rowell, N.
+  - Sordo, R.
+  - Walton, N. A.
+  - Yoldas, A.
+  bibcode: 2023A&A...674A...2D
+  category: article
+  citation_count: 182
+  doctype: article
+  identifier:
+  - 2023A&A...674A...2D
+  - 10.48550/arXiv.2206.06143
+  - arXiv:2206.06143
+  - 2022arXiv220606143D
+  - 10.1051/0004-6361/202243680
+  page: A2
+  pub: Astronomy and Astrophysics
+  title: Gaia Data Release 3. Processing and validation of BP/RP low-resolution spectral
+    data
+  url: null
+  volume: '674'
+  year: 2023
+- abstract: Modern astrometric and spectroscopic surveys have revealed a wealth of
+    structure in the phase space of stars in the Milky Way, with evidence of resonance
+    features and non-equilibrium processes. Using the third Gaia data release, we
+    present evidence of a new resonance-like feature in the outer disc of the Milky
+    Way. The feature is most evident in the angular momentum distribution of the young
+    classical Cepheids, a population for which we can derive accurate distances over
+    much of the Galactic disc. We then searched for similar features in the outer
+    disc using a much larger sample of red giant stars, as well as a compiled list
+    of over 31 million stars with spectroscopic line-of-sight velocity measurements.
+    While much less evident in these two older samples, the distribution of stars
+    in action-configuration space suggests that resonance features are present here
+    as well. The position of the feature in action-configuration space suggests that
+    the new feature may be related to the Galactic bar, but other possibilities are
+    discussed.
+  author:
+  - Drimmel, R.
+  - Khanna, S.
+  - D'Onghia, E.
+  - "Tepper-Garc\xEDa, T."
+  - Bland-Hawthorn, J.
+  - Chemin, L.
+  - Ripepi, V.
+  - "Romero-G\xF3mez, M."
+  - Ramos, P.
+  - Poggio, E.
+  - Andrae, R.
+  - Blomme, R.
+  - Cantat-Gaudin, T.
+  - Castro-Ginard, A.
+  - Clementini, G.
+  - Figueras, F.
+  - Fouesneau, M.
+  - "Fr\xE9mat, Y."
+  - Lobel, A.
+  - Marshall, D.
+  - Muraveva, T.
+  bibcode: 2023A&A...670A..10D
+  category: article
+  citation_count: 17
+  doctype: article
+  identifier:
+  - 2022arXiv220712977D
+  - 2023A&A...670A..10D
+  - arXiv:2207.12977
+  - 10.48550/arXiv.2207.12977
+  - 10.1051/0004-6361/202244605
+  page: A10
+  pub: Astronomy and Astrophysics
+  title: A new resonance-like feature in the outer disc of the Milky Way
+  url: null
+  volume: '670'
+  year: 2023
+- abstract: 'Context. Previous Gaia data releases offered the opportunity to uncover
+    ultracool dwarfs (UCDs) through astrometric, rather than purely photometric, selection.
+    The most recent, the third data release (DR3), offers in addition the opportunity
+    to use low-resolution spectra to refine and widen the selection. <BR /> Aims:
+    In this work we use the Gaia DR3 set of UCD candidates and complement the Gaia
+    spectrophotometry with additional photometry in order to characterise the global
+    properties of the set. This includes the inference of the distances, their locus
+    in the Gaia colour-absolute magnitude diagram, and the (biased through selection)
+    luminosity function at the faint end of the main sequence. We study the overall
+    changes in the Gaia RP spectra as a function of spectral type. We study the UCDs
+    in binary systems, we attempt to identify low-mass members of nearby young associations,
+    star-forming regions, and clusters, and we analyse their variability properties.
+    <BR /> Methods: We used a forward model and the Bayesian inference framework to
+    produce posterior probabilities for the distribution parameters and a calibration
+    of the colour index as a function of the absolute magnitude in the form of a Gaussian
+    process. Additionally, we applied the hierarchical mode association clustering
+    (HMAC) unsupervised classification algorithm for the detection and characterisation
+    of overdensities in the space of celestial coordinates, projected velocities,
+    and parallaxes. <BR /> Results: We detect 57 young, kinematically homogeneous
+    groups, some of which are identified as well-known star-forming regions, associations,
+    and clusters of different ages. We find that the primary members of the 880 binary
+    systems with a UCD belong to the thin and thick disc components of the Milky Way.
+    We identify 1109 variable UCDs using the variability tables in the Gaia archive,
+    728 of which belong to the star-forming regions defined by HMAC. We define two
+    groups of variable UCDs with extreme bright or faint outliers. <BR /> Conclusions:
+    The set of sources identified as UCDs in the Gaia archive contains a wealth of
+    information that will require focused follow-up studies and observations. It will
+    help advance our understanding of the nature of the faint end of the main sequence
+    and the stellar-substellar transition. <P />Full Table 4 is also available at
+    the CDS via anonymous ftp to <A href="https://cdsarc.cds.unistra.fr">cdsarc.cds.unistra.fr</A>
+    (ftp://130.79.128.5) or via <A href="https://cdsarc.cds.unistra.fr/viz-bin/cat/J/A+A/669/A139">https://cdsarc.cds.unistra.fr/viz-bin/cat/J/A+A/669/A139</A>'
+  author:
+  - Sarro, L. M.
+  - Berihuete, A.
+  - Smart, R. L.
+  - "Reyl\xE9, C."
+  - Barrado, D.
+  - "Garc\xEDa-Torres, M."
+  - Cooper, W. J.
+  - Jones, H. R. A.
+  - Marocco, F.
+  - Creevey, O. L.
+  - Sordo, R.
+  - Bailer-Jones, C. A. L.
+  - Montegriffo, P.
+  - Carballo, R.
+  - Andrae, R.
+  - Fouesneau, M.
+  - Lanzafame, A. C.
+  - Pailler, F.
+  - "Th\xE9venin, F."
+  - Lobel, A.
+  - Delchambre, L.
+  - Korn, A. J.
+  - Recio-Blanco, A.
+  - Schultheis, M. S.
+  - De Angeli, F.
+  - Brouillet, N.
+  - Casamiquela, L.
+  - Contursi, G.
+  - de Laverny, P.
+  - "Garc\xEDa-Lario, P."
+  - Kordopatis, G.
+  - Lebreton, Y.
+  - Livanou, E.
+  - Lorca, A.
+  - Palicio, P. A.
+  - Slezak-Oreshina, I.
+  - Soubiran, C.
+  - Ulla, A.
+  - Zhao, H.
+  bibcode: 2023A&A...669A.139S
+  category: article
+  citation_count: 14
+  doctype: article
+  identifier:
+  - 2022arXiv221103641S
+  - 10.48550/arXiv.2211.03641
+  - 2023A&A...669A.139S
+  - 10.1051/0004-6361/202244507
+  - arXiv:2211.03641
+  page: A139
+  pub: Astronomy and Astrophysics
+  title: Ultracool dwarfs in Gaia DR3
+  url: null
+  volume: '669'
+  year: 2023
+- abstract: "Interpreting and modelling astronomical catalogues requires an understanding\
+    \ of the catalogues' completeness or selection function: what properties determine\
+    \ an object's probability of being including in the catalogue? Here we set out\
+    \ to empirically quantify the completeness of the overall catalogue of Gaia's\
+    \ third data release (DR3). This task is not straightforward because Gaia is the\
+    \ all-sky optical survey with the highest angular resolution to date and no consistent\
+    \ ground truth exists to allow direct comparisons. However, well-characterised\
+    \ deeper imaging enables an empirical assessment of Gaia's G-band completeness\
+    \ across parts of the sky. On this basis, we devised a simple analytical completeness\
+    \ model of Gaia as a function of the observed G magnitude and position over the\
+    \ sky, which accounts for both the effects of crowding and the complex Gaia scanning\
+    \ law. Our model only depends on a single quantity: the median magnitude M<SUB>10</SUB>\
+    \ in a patch of the sky of catalogued sources with astrometric_matched_transits\
+    \ \u226410. We note that M<SUB>10</SUB> reflects elementary completeness decisions\
+    \ in the Gaia pipeline and is computable from the Gaia DR3 catalogue itself and\
+    \ therefore applicable across the whole sky. We calibrated our model using the\
+    \ Dark Energy Camera Plane Survey (DECaPS) and tested its predictions against\
+    \ Hubble Space Telescope observations of globular clusters. We found that our\
+    \ model predicts Gaia's completeness values to a few per cent (RMS) across the\
+    \ sky. We make the model available as a part of the gaiaunlimited Python package\
+    \ built and maintained by the GaiaUnlimited project."
+  author:
+  - Cantat-Gaudin, Tristan
+  - Fouesneau, Morgan
+  - Rix, Hans-Walter
+  - Brown, Anthony G. A.
+  - Castro-Ginard, Alfred
+  - Kostrzewa-Rutkowska, Zuzanna
+  - Drimmel, Ronald
+  - Hogg, David W.
+  - Casey, Andrew R.
+  - Khanna, Shourya
+  - Oh, Semyeong
+  - Price-Whelan, Adrian M.
+  - Belokurov, Vasily
+  - Saydjari, Andrew K.
+  - Green, G.
+  bibcode: 2023A&A...669A..55C
+  category: article
+  citation_count: 65
+  doctype: article
+  identifier:
+  - 2023A&A...669A..55C
+  - arXiv:2208.09335
+  - 10.1051/0004-6361/202244784
+  - 2022arXiv220809335C
+  - 10.48550/arXiv.2208.09335
+  page: A55
+  pub: Astronomy and Astrophysics
+  title: An empirical model of the Gaia DR3 selection function
+  url: null
+  volume: '669'
+  year: 2023
+- abstract: "Although diffuse interstellar bands (DIBs) were discovered over 100 yr\
+    \ ago, for most of them, their origins are still unknown. Investigation on the\
+    \ correlations between different DIBs is an important way to study the behaviour\
+    \ and distributions of their carriers. Based on stacking thousands of spectra\
+    \ from the Pristine Inner Galaxy Survey, we study the correlations between two\
+    \ DIBs at 442.8 nm (\u03BB442.8) and 862.1 nm (\u03BB862.1), as well as the dust\
+    \ grains, in a range of latitude spanning ~22\xB0 ($4^{\\circ }\\, {\\lt }\\,\
+    \ |b|\\, {\\lt }\\, 15^{\\circ }$) toward the Galactic Centre ($|\\ell |\\, {\\\
+    lt }\\, 11^{\\circ }$). Tight linear intensity correlations can be found between\
+    \ \u03BB442.8, \u03BB862.1, and dust grains for $|b|\\, {\\lt }\\, 12^{\\circ\
+    \ }$ or $E(B\\, {-}\\, V)\\, {\\gt }\\, 0.3$ mag. For $|b|\\, {\\gt }\\, 12^{\\\
+    circ }$, \u03BB442.8 and \u03BB862.1 present larger relative strength with respect\
+    \ to the dust grains. A systematic variation of the relative strength between\
+    \ \u03BB442.8 and \u03BB862.1 with |b| and $E(B\\, {-}\\, V)$ concludes that the\
+    \ two DIBs do not share a common carrier. Furthermore, the carrier of \u03BB862.1\
+    \ is more abundant at high latitudes than that of \u03BB442.8. This work can be\
+    \ treated as an example showing the significance and potentials to the DIB research\
+    \ covering a large latitude range."
+  author:
+  - Zhao, He
+  - Schultheis, Mathias
+  - Arentsen, Anke
+  - Kordopatis, Georges
+  - Fouesneau, Morgan
+  - Starkenburg, Else
+  - Sestito, Federico
+  - Hill, Vanessa
+  - Martin, Nicolas F.
+  - "Fabbro, S\xE9bastien"
+  - Queiroz, A. B. A.
+  bibcode: 2023MNRAS.519..754Z
+  category: article
+  citation_count: 2
+  doctype: article
+  identifier:
+  - 2022MNRAS.tmp.3356Z
+  - 2022arXiv221115224Z
+  - arXiv:2211.15224
+  - 2023MNRAS.519..754Z
+  - 10.48550/arXiv.2211.15224
+  - 10.1093/mnras/stac3510
+  page: '754'
+  pub: Monthly Notices of the Royal Astronomical Society
+  title: The Pristine Inner Galaxy Survey (PIGS) - VI. Different vertical distributions
+    between two DIBs at 442.8 nm and 862.1 nm
+  url: null
+  volume: '519'
+  year: 2023
+- abstract: Knowledge of the three-dimensional structure of Galactic molecular clouds
+    is important for understanding how clouds are affected by processes such as turbulence
+    and magnetic fields and how this structure affects star formation within them.
+    Great progress has been made in this field with the arrival of the Gaia mission,
+    which provides accurate distances to ~10<SUP>9</SUP> stars. Combining these distances
+    with extinctions inferred from optical-infrared, we recover the three-dimensional
+    structure of 16 Galactic molecular cloud complexes at ~1 pc resolution using our
+    novel three-dimensional dust mapping algorithm DUSTRIBUTION. Using ASTRODENDRO,
+    we derive a catalogue of physical parameters for each complex. We recover structures
+    with aspect ratios between 1 and 11, i.e. everything from near-spherical to very
+    elongated shapes. We find a large variation in cloud environments that is not
+    apparent when studying them in two dimensions. For example, the nearby California
+    and Orion A clouds look similar on sky, but we find California to be more sheet-like,
+    and massive, which could explain their different star formation rates. By calculating
+    the total mass of these individual clouds, we demonstrate that it is necessary
+    to define cloud boundaries in three dimensions in order to obtain an accurate
+    mass; simply integrating the extinction overestimates masses. We find that Larson's
+    relationship on mass versus radius holds true whether you assume a spherical shape
+    for the cloud or take their true extents.
+  author:
+  - Dharmawardena, T. E.
+  - Bailer-Jones, C. A. L.
+  - Fouesneau, M.
+  - Foreman-Mackey, D.
+  - Coronica, P.
+  - Colnaghi, T.
+  - "M\xFCller, T."
+  - Henshaw, J.
+  bibcode: 2023MNRAS.519..228D
+  category: article
+  citation_count: 16
+  doctype: article
+  identifier:
+  - 2023MNRAS.519..228D
+  - 2022MNRAS.tmp.2592D
+  - 10.48550/arXiv.2210.03615
+  - 10.1093/mnras/stac2790
+  - 2022arXiv221003615D
+  - arXiv:2210.03615
+  page: '228'
+  pub: Monthly Notices of the Royal Astronomical Society
+  title: The three-dimensional structure of galactic molecular cloud complexes out
+    to 2.5 kpc
+  url: null
+  volume: '519'
+  year: 2023
+- abstract: "Our Milky Way should host an ancient, metal-poor, and centrally concentrated\
+    \ stellar population, which reflects the star formation and enrichment in the\
+    \ few most massive progenitors that coalesced at high redshift to form the proto-Galaxy.\
+    \ While metal-poor stars are known to reside in the inner few kiloparsecs of our\
+    \ Galaxy, current data do not yet provide a comprehensive picture of such a metal-poor\
+    \ \"heart\" of the Milky Way. We use information from Gaia Data Release 3, especially\
+    \ the XP spectra, to construct a sample of 2 million bright (G <SUB>BP</SUB> &lt;\
+    \ 15.5 mag) giant stars within 30\xB0 of the Galactic center (GC) with robust\
+    \ [M/H] estimates, \u03B4[M/H] \u2272 0.1. For ~1.25 million stars we calculate\
+    \ orbits from Gaia Radial Velocity Spectrometer velocities and astrometry. This\
+    \ sample reveals an extensive, ancient, and metal-poor population that includes\
+    \ ~18,000 stars with -2.7 &lt; [M/H] &lt; -1.5, representing a stellar mass of\
+    \ \u22735 \xD7 10<SUP>7</SUP> M <SUB>\u2299</SUB>. The spatial distribution of\
+    \ these [M/H] &lt; -1.5 stars has a Gaussian extent of only ${\\sigma }_{{{R}}_{{\\\
+    rm{GC}}}}\\sim 2.7\\,\\mathrm{kpc}$ around the GC, with most orbits confined to\
+    \ the inner Galaxy. At high orbital eccentricities, there is clear evidence for\
+    \ accreted halo stars in their pericentral orbit phase. Most stars show [\u03B1\
+    /Fe] enhancement and [Al/Fe]-[Mn/Fe] abundances expected for an origin in the\
+    \ more massive portions of the proto-Galaxy. Stars with [M/H] &lt; -2 show no\
+    \ net rotation, whereas those with [M/H] ~ -1 are rotation dominated. These central,\
+    \ metal-poor stars most likely predate the oldest disk population (\u03C4 <SUB>age</SUB>\
+    \ \u2248 12.5 Gyr), which implies that they formed at z \u2273 5, forging the\
+    \ proto-Milky Way."
+  author:
+  - Rix, Hans-Walter
+  - Chandra, Vedant
+  - "Andrae, Ren\xE9"
+  - Price-Whelan, Adrian M.
+  - Weinberg, David H.
+  - Conroy, Charlie
+  - Fouesneau, Morgan
+  - Hogg, David W.
+  - De Angeli, Francesca
+  - Naidu, Rohan P.
+  - Xiang, Maosheng
+  - Ruz-Mieres, Daniela
+  bibcode: 2022ApJ...941...45R
+  category: article
+  citation_count: 102
+  doctype: article
+  identifier:
+  - 10.48550/arXiv.2209.02722
+  - arXiv:2209.02722
+  - 2022arXiv220902722R
+  - 10.3847/1538-4357/ac9e01
+  - 2022ApJ...941...45R
+  page: '45'
+  pub: The Astrophysical Journal
+  title: The Poor Old Heart of the Milky Way
+  url: null
+  volume: '941'
+  year: 2022
+- abstract: 'Context. Physical and dynamical stellar properties are essential knowledge
+    for understanding the structure, formation, and evolution of our Galaxy. <BR />
+    Aims: We produced a uniformly derived all-sky catalog of stellar astrophysical
+    parameters (APs; age, mass, temperature, bolometric luminosity, distance, and
+    dust extinction) to provide insight into the physical properties of Milky Way
+    stars. <BR /> Methods: Exploiting the power of multiwavelength and multi-survey
+    observations from Gaia DR2 parallaxes and integrated photometry along with 2MASS
+    and AllWISE photometry, we introduce a uniformly derived all-sky catalog of stellar
+    APs, including dust extinction (A<SUB>0</SUB>) average grain size (R<SUB>0</SUB>)
+    along the line of sight, for 123 076 271 stars. In contrast with previous works,
+    we do not use a Galactic model as a prior in our analysis. <BR /> Results: We
+    validate our results against other work in the literature (e.g., benchmark stars,
+    interferometry, Bayestar, and StarHorse). The limited optical information in the
+    Gaia photometric bands or the lack of ultraviolet or spectroscopic information
+    renders the chemistry inference prior-dominated. We demonstrate that Gaia parallaxes
+    bring sufficient leverage to explore the detailed structures of the interstellar
+    medium in our Milky Way. <BR /> Conclusions: In Gaia DR3, we will obtain the dispersed
+    optical light information that will help us break through some limitations of
+    this analysis, allowing us to infer stellar chemistry in particular. Gaia promises
+    us data that we can use to construct the most detailed view of the chemo-dynamics
+    of field star populations in our Galaxy. <P />Our catalog is available from the
+    German Astrophysical Virtual Observatory (GAVO) at <A href="http://dc.g-vo.org/tableinfo/gdr2ap.main">http://dc.g-vo.org/tableinfo/gdr2ap.main</A>,
+    where one can query it via ADQL and TAP. It is also available in the Gaia Archive
+    and at the CDS via anonymous ftp to <A href="http://cdsarc.u-strasbg.fr/">cdsarc.u-strasbg.fr</A>
+    (ftp://130.79.128.5) or via <A href="http://cdsarc.u-strasbg.fr/viz-bin/cat/J/A+A/662/A125">http://cdsarc.u-strasbg.fr/viz-bin/cat/J/A+A/662/A125</A>'
+  author:
+  - Fouesneau, M.
+  - Andrae, R.
+  - Dharmawardena, T.
+  - Rybizki, J.
+  - Bailer-Jones, C. A. L.
+  - Demleitner, M.
+  bibcode: 2022A&A...662A.125F
+  category: article
+  citation_count: 20
+  doctype: article
+  identifier:
+  - arXiv:2201.03252
+  - 2022A&A...662A.125F
+  - 10.1051/0004-6361/202141828
+  - 2022arXiv220103252F
+  - 10.48550/arXiv.2201.03252
+  page: A125
+  pub: Astronomy and Astrophysics
+  title: Astrophysical parameters from Gaia DR2, 2MASS, and AllWISE
+  url: null
+  volume: '662'
+  year: 2022
+- abstract: "The C-19 stream is the most metal-poor stellar system ever discovered,\
     \ with a mean metallicity [Fe/H] = -3.38 \xB1 0.06. Its low metallicity dispersion\
-    \ (\u03C3<SUB>[Fe/H]</SUB> &lt; 0.18 at the 95% confidence level) as well as variations\
-    \ in sodium abundances strongly suggest a globular cluster origin. In this work,\
-    \ we use VLT/UVES spectra of seven C-19 stars to derive more precise velocity\
-    \ measurements for member stars, and to identify two new members with radial velocities\
-    \ and metallicities consistent with the stream's properties. One of these new\
-    \ member stars is located 30<SUP>\u25CB</SUP> away from the previously identified\
-    \ body of C-19, implying that the stream is significantly more extended than previously\
-    \ known and that more members likely await discovery. In the main part of C-19,\
-    \ we measure a radial velocity dispersion \u03C3<SUB>v</SUB> = 6.2$^{+2.0}_{-1.4}{\\\
-    rm \\, km\\, s^{-1}}$ from nine members, and a stream width of 0.56<SUP>\u25CB\
-    </SUP> \xB1 0.08<SUP>\u25CB</SUP>, equivalent to ~158 pc at a heliocentric distance\
-    \ of 18 kpc. These confirm that C-19 is comparatively hotter, dynamically, than\
-    \ other known globular cluster streams and shares the properties of faint dwarf\
-    \ galaxy streams. On the other hand, the variations in the Na abundances of the\
-    \ three newly observed bright member stars, the variations in Mg and Al for two\
-    \ of them, and the normal Ba abundance of the one star where it can be measured\
-    \ provide further evidence for a globular cluster origin. The tension between\
-    \ the dynamical and chemical properties of C-19 suggests that its progenitor experienced\
-    \ a complex birth environment or disruption history."
+    \ (\u03C3<SUB>[Fe/H]</SUB> &lt; 0.18 at the 95 per cent confidence level) and\
+    \ variations in sodium abundances strongly suggest a globular cluster origin.\
+    \ In this work, we use Very Large Telescope (VLT)/UV-Visual Echelle Spectrograph\
+    \ (UVES) spectra of seven C-19 stars to derive more precise velocity measurements\
+    \ for member stars, and to identify two new members with radial velocities and\
+    \ metallicities consistent with the stream's properties. One of these new member\
+    \ stars is located 30\xB0 away from the previously identified body of C-19, implying\
+    \ that the stream is significantly more extended than previously known and that\
+    \ more members likely await discovery. In the main part of C-19, we measure a\
+    \ radial velocity dispersion \u03C3<SUB>v</SUB> = 6.2$^{+2.0}_{-1.4}{\\rm \\,\
+    \ km\\, s^{-1}}$ from nine members, and a stream width of 0.56\xB0 \xB1 0.08\xB0\
+    , equivalent to ~158 pc at a heliocentric distance of 18 kpc. These confirm that\
+    \ C-19 is comparatively hotter, dynamically, than other known globular cluster\
+    \ streams and shares the properties of faint dwarf galaxy streams. On the other\
+    \ hand, the variations in the Na abundances of the three newly observed bright\
+    \ member stars, the variations in Mg and Al for two of them, and the normal Ba\
+    \ abundance of the one star where it can be measured provide further evidence\
+    \ for a globular cluster origin. The tension between the dynamical and chemical\
+    \ properties of C-19 suggests that its progenitor experienced a complex birth\
+    \ environment or disruption history."
   author:
   - Yuan, Zhen
   - Martin, Nicolas F.
@@ -50,21 +2411,23 @@ article:
   - Thomas, Guillaume F.
   - Viswanathan, Akshara
   - Vitali, Sara
-  bibcode: 2022MNRAS.tmp.1369Y
+  bibcode: 2022MNRAS.514.1664Y
   category: article
-  citation_count: 0
+  citation_count: 17
   doctype: article
   identifier:
   - 10.1093/mnras/stac1399
-  - arXiv:2203.02512
   - 2022arXiv220302512Y
+  - 10.48550/arXiv.2203.02512
+  - 2022MNRAS.514.1664Y
   - 2022MNRAS.tmp.1369Y
-  page: '-'
+  - arXiv:2203.02512
+  page: '1664'
   pub: Monthly Notices of the Royal Astronomical Society
   title: The Pristine survey - XVII. The C-19 stream is dynamically hot and more extended
     than previously thought
   url: null
-  volume: null
+  volume: '514'
   year: 2022
 - abstract: "White dwarfs (WDs) offer unrealized potential in solving two problems\
     \ in astrophysics: stellar age accuracy and precision. WD cooling ages can be\
@@ -102,13 +2465,14 @@ article:
   - Moticska, Natalie
   bibcode: 2022ApJ...929...26M
   category: article
-  citation_count: 1
+  citation_count: 11
   doctype: article
   identifier:
   - 2022ApJ...929...26M
   - 2022arXiv220308971M
   - arXiv:2203.08971
   - 10.3847/1538-4357/ac5ac0
+  - 10.48550/arXiv.2203.08971
   page: '26'
   pub: The Astrophysical Journal
   title: Improving White Dwarfs as Chronometers with Gaia Parallaxes and Spectroscopic
@@ -153,11 +2517,12 @@ article:
   - Foreman-Mackey, D.
   bibcode: 2022A&A...658A.166D
   category: article
-  citation_count: 0
+  citation_count: 25
   doctype: article
   identifier:
   - arXiv:2111.06672
   - 2022A&A...658A.166D
+  - 10.48550/arXiv.2111.06672
   - 2021arXiv211106672D
   - 10.1051/0004-6361/202141298
   page: A166
@@ -173,13 +2538,13 @@ article:
     \ stars with metal content below 1,000th of the solar iron content are known in\
     \ the Galaxy<SUP>2-4</SUP>, none of them inhabit globular clusters, some of the\
     \ oldest known stellar structures. These show metal content of at least approximately\
-    \ 0.2% of the solar metallicity ([Fe /H ]\u2273\u22122.7 )?. This metallicity\
-    \ floor appears universal<SUP>5,6</SUP>, and it has been proposed that protogalaxies\
+    \ 0.2% of the solar metallicity ([Fe /H ]\u2273\u22122.7 ). This metallicity floor\
+    \ appears universal<SUP>5,6</SUP>, and it has been proposed that protogalaxies\
     \ that merged into the galaxies we observe today were simply not massive enough\
     \ to form clusters that survived to the present day<SUP>7</SUP>. Here we report\
     \ observations of a stellar stream, C-19, whose metallicity is less than 0.05%\
     \ of the solar metallicity ([F e / H ]=\u22123.38 \xB10.06 (s t a t i s t i c\
-    \ a l )\xB10.20 (s y s t e m a t i c ))?. The low metallicity dispersion and the\
+    \ a l )\xB10.20 (s y s t e m a t i c )). The low metallicity dispersion and the\
     \ chemical abundances of the C-19 stars show that this stream is the tidal remnant\
     \ of the most metal-poor globular cluster ever discovered, and is significantly\
     \ below the purported metallicity floor: clusters with significantly lower metallicities\
@@ -214,59 +2579,19 @@ article:
   - Mucciarelli, Alessio
   bibcode: 2022Natur.601...45M
   category: article
-  citation_count: 7
+  citation_count: 50
   doctype: article
   identifier:
   - 2022Natur.601...45M
   - 10.1038/s41586-021-04162-2
   - arXiv:2201.01309
   - 2022arXiv220101309M
+  - 10.48550/arXiv.2201.01309
   page: '45'
   pub: Nature
   title: A stellar stream remnant of a globular cluster below the metallicity floor
   url: null
   volume: '601'
-  year: 2022
-- abstract: Stellar physical and dynamical properties are essential knowledge to understanding
-    the structure, formation, and evolution of our Galaxy. We produced an all-sky
-    uniformly derived catalog of stellar astrophysical parameters (APs; age, mass,
-    temperature, bolometric luminosity, distance, dust extinction) to give insight
-    into the physical properties of Milky-Way stars. Exploiting the power of multi-wavelength
-    and multi-survey observations from Gaia DR2 parallaxes and integrated photometry
-    along with 2MASS and AllWISE photometry, we introduce an all-sky uniformly derived
-    catalog of stellar astrophysical parameters, including dust extinction (A0) and
-    average grain size (R0) along the line of sight, for 123,097,070 stars. In contrast
-    with previous works, we do not use a Galactic model as prior in our analysis.
-    We validate our results against other literature (e.g., benchmark stars, interferometry,
-    Bayestar, StarHorse). The limited optical information in the Gaia photometric
-    bands or the lack of ultraviolet or spectroscopic information renders the chemistry
-    inference prior dominated. We demonstrate that Gaia parallaxes bring sufficient
-    leverage to explore the detailed structures of the interstellar medium in our
-    Milky Way. In Gaia DR3, we will obtain the dispersed optical light information
-    to break through some limitations of this analysis, allowing us to infer stellar
-    chemistry in particular. Gaia promises us data to construct the most detailed
-    view of the chemo-dynamics of field star populations in our Galaxy. Our catalog
-    is available from GAVO at http://dc.g-vo.org/tableinfo/gdr2ap.main (soon Gaia
-    Archive and VizieR)
-  author:
-  - Fouesneau, M.
-  - Andrae, R.
-  - Dharmawardena, T.
-  - Rybizki, J.
-  - Bailer-Jones, C. A. L.
-  - Demleitner, M.
-  bibcode: 2022arXiv220103252F
-  category: article
-  citation_count: 1
-  doctype: eprint
-  identifier:
-  - arXiv:2201.03252
-  - 2022arXiv220103252F
-  page: '-'
-  pub: arXiv e-prints
-  title: Astrophysical Parameters from Gaia DR2, 2MASS &amp; AllWISE
-  url: null
-  volume: null
   year: 2022
 - abstract: "Context. Gaia Data Release 3 will contain more than a billion sources\
     \ with positions, parallaxes, and proper motions. In addition, for hundreds of\
@@ -304,11 +2629,12 @@ article:
   - Sordo, Rosanna
   bibcode: 2021A&A...656A..93G
   category: article
-  citation_count: 1
+  citation_count: 12
   doctype: article
   identifier:
   - 2022arXiv220109211G
   - 10.1051/0004-6361/202141589
+  - 10.48550/arXiv.2201.09211
   - arXiv:2201.09211
   - 2021A&A...656A..93G
   page: A93
@@ -354,11 +2680,12 @@ article:
   - Price-Whelan, Adrian M.
   bibcode: 2021AJ....162..142R
   category: article
-  citation_count: 9
+  citation_count: 31
   doctype: article
   identifier:
   - 2021arXiv210607653R
   - 10.3847/1538-3881/ac0c13
+  - 10.48550/arXiv.2106.07653
   - arXiv:2106.07653
   - 2021AJ....162..142R
   page: '142'
@@ -412,10 +2739,11 @@ article:
   - "Romero-G\xF3mez, M."
   bibcode: 2021A&A...651A.104P
   category: article
-  citation_count: 30
+  citation_count: 110
   doctype: article
   identifier:
   - 10.1051/0004-6361/202140687
+  - 10.48550/arXiv.2103.01970
   - arXiv:2103.01970
   - 2021A&A...651A.104P
   - 2021arXiv210301970P
@@ -447,9 +2775,10 @@ article:
   - Rix, Hans-Walter
   bibcode: 2021ApJS..253...58Q
   category: article
-  citation_count: 5
+  citation_count: 17
   doctype: article
   identifier:
+  - 10.48550/arXiv.2012.04890
   - 10.3847/1538-4365/abe468
   - 2020arXiv201204890Q
   - arXiv:2012.04890
@@ -488,12 +2817,13 @@ article:
   - Andrae, R.
   bibcode: 2021AJ....161..147B
   category: article
-  citation_count: 335
+  citation_count: 1555
   doctype: article
   identifier:
   - 2021AJ....161..147B
   - arXiv:2012.05220
   - 10.3847/1538-3881/abd806
+  - 10.48550/arXiv.2012.05220
   - 2020arXiv201205220B
   page: '147'
   pub: The Astronomical Journal
@@ -534,11 +2864,12 @@ article:
   - Speagle, Joshua
   bibcode: 2021ApJ...907...57G
   category: article
-  citation_count: 2
+  citation_count: 12
   doctype: article
   identifier:
   - arXiv:2006.16258
   - 10.3847/1538-4357/abd1dd
+  - 10.48550/arXiv.2006.16258
   - 2020arXiv200616258G
   - 2021ApJ...907...57G
   page: '57'
@@ -578,12 +2909,13 @@ article:
   - Gilbert, Karoline M.
   bibcode: 2020ApJ...902...54C
   category: article
-  citation_count: 9
+  citation_count: 31
   doctype: article
   identifier:
   - 10.3847/1538-4357/abb467
   - 2020ApJ...902...54C
   - 2020arXiv200901844C
+  - 10.48550/arXiv.2009.01844
   - arXiv:2009.01844
   page: '54'
   pub: The Astrophysical Journal
@@ -639,13 +2971,14 @@ article:
   - Trabucchi, Michele
   bibcode: 2020ApJ...901...19G
   category: article
-  citation_count: 4
+  citation_count: 8
   doctype: article
   identifier:
   - 10.3847/1538-4357/abad3a
   - 2020ApJ...901...19G
   - arXiv:2008.07184
   - 2020arXiv200807184G
+  - 10.48550/arXiv.2008.07184
   page: '19'
   pub: The Astrophysical Journal
   title: PHAT XX. AGB Stars and Other Cool Giants in M31 Star Clusters
@@ -672,11 +3005,12 @@ article:
   - Rix, Hans-Walter
   bibcode: 2020NatAs...4..812J
   category: article
-  citation_count: 13
+  citation_count: 34
   doctype: article
   identifier:
   - 2020arXiv200911307J
   - 10.1038/s41550-020-1202-4
+  - 10.48550/arXiv.2009.11307
   - 2020NatAs...4..812J
   - arXiv:2009.11307
   page: '812'
@@ -713,14 +3047,15 @@ article:
   - Spagna, A.
   bibcode: 2020NatAs...4..590P
   category: article
-  citation_count: 22
+  citation_count: 64
   doctype: article
   identifier:
   - arXiv:1912.10471
-  - 2020NatAs.tmp....1P
+  - 10.48550/arXiv.1912.10471
   - 10.1038/s41550-020-1017-3
-  - 2020NatAs...4..590P
   - 2019arXiv191210471P
+  - 2020NatAs.tmp....1P
+  - 2020NatAs...4..590P
   page: '590'
   pub: Nature Astronomy
   title: Evidence of a dynamically evolving Galactic warp
@@ -764,10 +3099,11 @@ article:
   - Sharma, Sanjib
   bibcode: 2020PASP..132g4501R
   category: article
-  citation_count: 19
+  citation_count: 39
   doctype: article
   identifier:
   - 10.1088/1538-3873/ab8cb0
+  - 10.48550/arXiv.2004.09991
   - arXiv:2004.09991
   - 2020PASP..132g4501R
   - 2020arXiv200409991R
@@ -810,11 +3146,12 @@ article:
   - Fouesneau, Morgan
   bibcode: 2019ApJ...887..199G
   category: article
-  citation_count: 20
+  citation_count: 43
   doctype: article
   identifier:
   - 2019arXiv190711251G
   - arXiv:1907.11251
+  - 10.48550/arXiv.1907.11251
   - 10.3847/1538-4357/ab5717
   - 2019ApJ...887..199G
   page: '199'
@@ -854,15 +3191,16 @@ article:
   - Andrae, Rene
   bibcode: 2019MNRAS.490.5615B
   category: article
-  citation_count: 27
+  citation_count: 54
   doctype: article
   identifier:
   - 2019MNRAS.tmp.2551B
   - 2019MNRAS.490.5615B
   - 10.1093/mnras/stz2947
   - arXiv:1910.05255
-  - 2019MNRAS.tmp.2721B
+  - 10.48550/arXiv.1910.05255
   - 2019arXiv191005255B
+  - 2019MNRAS.tmp.2721B
   page: '5615'
   pub: Monthly Notices of the Royal Astronomical Society
   title: Quasar and galaxy classification in Gaia Data Release 2
@@ -906,14 +3244,15 @@ article:
   - Venn, Kim A.
   bibcode: 2019MNRAS.484.2166S
   category: article
-  citation_count: 52
+  citation_count: 101
   doctype: article
   identifier:
   - 2019MNRAS.484.2166S
-  - 2019MNRAS.tmp...46S
-  - arXiv:1811.03099
   - 2018arXiv181103099S
   - 10.1093/mnras/stz043
+  - 2019MNRAS.tmp...46S
+  - arXiv:1811.03099
+  - 10.48550/arXiv.1811.03099
   page: '2166'
   pub: Monthly Notices of the Royal Astronomical Society
   title: Tracing the formation of the Milky Way through ultra metal-poor stars
@@ -948,9 +3287,10 @@ article:
   - Tian, Haijun
   bibcode: 2019ApJ...870....9F
   category: article
-  citation_count: 23
+  citation_count: 37
   doctype: article
   identifier:
+  - 10.48550/arXiv.1802.06663
   - arXiv:1802.06663
   - 10.3847/1538-4357/aaee74
   - 2018arXiv180206663F
@@ -1004,14 +3344,15 @@ article:
   - Navarro, Julio F.
   bibcode: 2018MNRAS.481.3838S
   category: article
-  citation_count: 40
+  citation_count: 66
   doctype: article
   identifier:
-  - 2018arXiv180704292S
-  - arXiv:1807.04292
-  - 2018MNRAS.481.3838S
   - 10.1093/mnras/sty2276
+  - arXiv:1807.04292
+  - 2018arXiv180704292S
   - 2018MNRAS.tmp.2167S
+  - 10.48550/arXiv.1807.04292
+  - 2018MNRAS.481.3838S
   page: '3838'
   pub: Monthly Notices of the Royal Astronomical Society
   title: 'The Pristine survey IV: approaching the Galactic metallicity floor with
@@ -1049,12 +3390,13 @@ article:
   - Seabroke, G. M.
   bibcode: 2018MNRAS.481L..21P
   category: article
-  citation_count: 62
+  citation_count: 107
   doctype: article
   identifier:
-  - arXiv:1805.03171
   - 10.1093/mnrasl/sly148
+  - arXiv:1805.03171
   - 2018MNRAS.tmpL.152P
+  - 10.48550/arXiv.1805.03171
   - 2018MNRAS.481L..21P
   - 2018arXiv180503171P
   page: L21
@@ -1108,10 +3450,11 @@ article:
   - Bailer-Jones, Coryn A. L.
   bibcode: 2018A&A...616A...8A
   category: article
-  citation_count: 341
+  citation_count: 432
   doctype: article
   identifier:
   - 2018arXiv180409374A
+  - 10.48550/arXiv.1804.09374
   - arXiv:1804.09374
   - 10.1051/0004-6361/201732516
   - 2018A&A...616A...8A
@@ -1154,10 +3497,11 @@ article:
   - Fouesneau, M.
   bibcode: 2018A&A...616A..37B
   category: article
-  citation_count: 37
+  citation_count: 57
   doctype: article
   identifier:
   - 2018arXiv180507581B
+  - 10.48550/arXiv.1805.07581
   - 2018A&A...616A..37B
   - arXiv:1805.07581
   - 10.1051/0004-6361/201833456
@@ -1187,7 +3531,7 @@ article:
   - Fouesneau, M.
   bibcode: 2018A&A...616A..44R
   category: article
-  citation_count: 10
+  citation_count: 16
   doctype: article
   identifier:
   - 2018A&A...616A..44R
@@ -1222,13 +3566,14 @@ article:
   - Andrae, R.
   bibcode: 2018AJ....156...58B
   category: article
-  citation_count: 1361
+  citation_count: 1658
   doctype: article
   identifier:
   - 2018arXiv180410121B
   - 10.3847/1538-3881/aacb21
   - 2018AJ....156...58B
   - arXiv:1804.10121
+  - 10.48550/arXiv.1804.10121
   page: '58'
   pub: The Astronomical Journal
   title: Estimating Distance from Parallaxes. IV. Distances to 1.33 Billion Stars
@@ -1259,13 +3604,14 @@ article:
   - "Andrae, Ren\xE9"
   bibcode: 2018PASP..130g4101R
   category: article
-  citation_count: 49
+  citation_count: 53
   doctype: article
   identifier:
   - 10.1088/1538-3873/aabd70
   - 2018arXiv180401427R
   - arXiv:1804.01427
   - 2018PASP..130g4101R
+  - 10.48550/arXiv.1804.01427
   page: '074101'
   pub: Publications of the Astronomical Society of the Pacific
   title: A Gaia DR2 Mock Stellar Catalog
@@ -1295,6 +3641,7 @@ article:
   citation_count: 1
   doctype: eprint
   identifier:
+  - 10.48550/arXiv.1804.03681
   - 2018arXiv180403681R
   - arXiv:1804.03681
   page: '-'
@@ -1340,11 +3687,12 @@ article:
   - Roman-Lopes, Alexandre
   bibcode: 2018ApJ...853..198N
   category: article
-  citation_count: 70
+  citation_count: 90
   doctype: article
   identifier:
   - 2017arXiv170107829N
   - 2018ApJ...853..198N
+  - 10.48550/arXiv.1701.07829
   - arXiv:1701.07829
   - 10.3847/1538-4357/aa9d8e
   page: '198'
@@ -1381,13 +3729,14 @@ article:
   - Rix, Hans-Walter
   bibcode: 2017ApJ...838..107S
   category: article
-  citation_count: 44
+  citation_count: 48
   doctype: article
   identifier:
   - arXiv:1611.07035
-  - 2016arXiv161107035S
+  - 10.48550/arXiv.1611.07035
   - 2017ApJ...838..107S
   - 10.3847/1538-4357/aa643b
+  - 2016arXiv161107035S
   page: '107'
   pub: The Astrophysical Journal
   title: A Probabilistic Approach to Fitting Period-luminosity Relations and Validating
@@ -1448,12 +3797,13 @@ article:
   - Venn, Kim A.
   bibcode: 2017MNRAS.471.2587S
   category: article
-  citation_count: 111
+  citation_count: 227
   doctype: article
   identifier:
   - arXiv:1705.01113
   - 10.1093/mnras/stx1068
   - 2017MNRAS.471.2587S
+  - 10.48550/arXiv.1705.01113
   - 2017arXiv170501113S
   page: '2587'
   pub: Monthly Notices of the Royal Astronomical Society
@@ -1490,13 +3840,14 @@ article:
   - Kalirai, Jason
   bibcode: 2017ApJ...841...69R
   category: article
-  citation_count: 10
+  citation_count: 19
   doctype: article
   identifier:
   - 10.3847/1538-4357/aa70a2
+  - 2017arXiv170500618R
   - 2017ApJ...841...69R
   - arXiv:1705.00618
-  - 2017arXiv170500618R
+  - 10.48550/arXiv.1705.00618
   page: '69'
   pub: The Astrophysical Journal
   title: 'A New Approach to Convective Core Overshooting: Probabilistic Constraints
@@ -1536,13 +3887,14 @@ article:
   - Williams, Benjamin F.
   bibcode: 2017ApJ...839...78J
   category: article
-  citation_count: 62
+  citation_count: 88
   doctype: article
   identifier:
   - 2017arXiv170310312J
   - arXiv:1703.10312
   - 2017ApJ...839...78J
   - 10.3847/1538-4357/aa6a1f
+  - 10.48550/arXiv.1703.10312
   page: '78'
   pub: The Astrophysical Journal
   title: Panchromatic Hubble Andromeda Treasury. XVIII. The High-mass Truncation of
@@ -1598,12 +3950,13 @@ article:
   - Schruba, Andreas
   bibcode: 2017ApJ...834...70L
   category: article
-  citation_count: 8
+  citation_count: 13
   doctype: article
   identifier:
   - 2017ApJ...834...70L
   - 10.3847/1538-4357/834/1/70
   - arXiv:1611.00061
+  - 10.48550/arXiv.1611.00061
   - 2016arXiv161100061L
   page: '70'
   pub: The Astrophysical Journal
@@ -1633,13 +3986,14 @@ article:
   - Fouesneau, M.
   bibcode: 2017A&A...598A.125R
   category: article
-  citation_count: 29
+  citation_count: 39
   doctype: article
   identifier:
-  - 2016arXiv160908917R
+  - 10.48550/arXiv.1609.08917
   - 2017A&A...598A.125R
   - arXiv:1609.08917
   - 10.1051/0004-6361/201628885
+  - 2016arXiv160908917R
   page: A125
   pub: Astronomy and Astrophysics
   title: Inferring the three-dimensional distribution of dust in the Galaxy with a
@@ -1681,12 +4035,13 @@ article:
   - Venn, K.
   bibcode: 2017MNRAS.472.2963Y
   category: article
-  citation_count: 40
+  citation_count: 59
   doctype: article
   identifier:
   - 2017MNRAS.472.2963Y
   - arXiv:1708.01264
   - 10.1093/mnras/stx2005
+  - 10.48550/arXiv.1708.01264
   - 2017arXiv170801264Y
   page: '2963'
   pub: Monthly Notices of the Royal Astronomical Society
@@ -1737,11 +4092,12 @@ article:
   - Skillman, Evan D.
   bibcode: 2016ApJ...826..104G
   category: article
-  citation_count: 27
+  citation_count: 62
   doctype: article
   identifier:
   - arXiv:1606.06182
   - 10.3847/0004-637X/826/2/104
+  - 10.48550/arXiv.1606.06182
   - 2016arXiv160606182G
   - 2016ApJ...826..104G
   page: '104'
@@ -1778,12 +4134,13 @@ article:
   - Rix, Hans-Walter
   bibcode: 2016ApJ...831..139M
   category: article
-  citation_count: 66
+  citation_count: 86
   doctype: article
   identifier:
   - 10.3847/0004-637X/831/2/139
   - 2016ApJ...831..139M
   - arXiv:1609.01168
+  - 10.48550/arXiv.1609.01168
   - 2016arXiv160901168M
   page: '139'
   pub: The Astrophysical Journal
@@ -1821,10 +4178,11 @@ article:
   - Zamora, Olga
   bibcode: 2016MNRAS.456.3655M
   category: article
-  citation_count: 160
+  citation_count: 214
   doctype: article
   identifier:
   - 2015arXiv151108203M
+  - 10.48550/arXiv.1511.08203
   - arXiv:1511.08203
   - 2016MNRAS.456.3655M
   - 10.1093/mnras/stv2830
@@ -1871,13 +4229,14 @@ article:
   - Skillman, Evan D.
   bibcode: 2016ApJ...827...33J
   category: article
-  citation_count: 73
+  citation_count: 95
   doctype: article
   identifier:
   - arXiv:1606.05349
   - 10.3847/0004-637X/827/1/33
   - 2016arXiv160605349J
   - 2016ApJ...827...33J
+  - 10.48550/arXiv.1606.05349
   page: '33'
   pub: The Astrophysical Journal
   title: Panchromatic Hubble Andromeda Treasury. XVI. Star Cluster Formation Efficiency
@@ -1927,12 +4286,13 @@ article:
   - Skillman, Evan D.
   bibcode: 2015ApJ...814....3D
   category: article
-  citation_count: 61
+  citation_count: 89
   doctype: article
   identifier:
   - 2015ApJ...814....3D
   - 10.1088/0004-637X/814/1/3
   - 2015arXiv150906988D
+  - 10.48550/arXiv.1509.06988
   - arXiv:1509.06988
   page: '3'
   pub: The Astrophysical Journal
@@ -1976,12 +4336,13 @@ article:
   - Fouesneau, M.
   bibcode: 2015ApJ...798...24K
   category: article
-  citation_count: 30
+  citation_count: 34
   doctype: article
   identifier:
   - 10.1088/0004-637X/798/1/24
   - 2015ApJ...798...24K
   - 2014arXiv1410.6158K
+  - 10.48550/arXiv.1410.6158
   - arXiv:1410.6158
   page: '24'
   pub: The Astrophysical Journal
@@ -2012,11 +4373,12 @@ article:
   - Dolphin, Andrew E.
   bibcode: 2015ApJ...810....9C
   category: article
-  citation_count: 16
+  citation_count: 25
   doctype: article
   identifier:
   - 2015arXiv150707000C
   - 2015ApJ...810....9C
+  - 10.48550/arXiv.1507.07000
   - arXiv:1507.07000
   - 10.1088/0004-637X/810/1/9
   page: '9'
@@ -2049,13 +4411,14 @@ article:
   - "Larsen, S\xF8ren S."
   bibcode: 2015ApJ...813...31S
   category: article
-  citation_count: 14
+  citation_count: 20
   doctype: article
   identifier:
   - 2015ApJ...813...31S
   - arXiv:1509.04791
-  - 2015arXiv150904791S
+  - 10.48550/arXiv.1509.04791
   - 10.1088/0004-637X/813/1/31
+  - 2015arXiv150904791S
   page: '31'
   pub: The Astrophysical Journal
   title: Panchromatic Hubble Andromeda Treasury. XIV. The Period-Age Relationship
@@ -2104,11 +4467,12 @@ article:
   - Sarajedini, Ata
   bibcode: 2015ApJ...802..127J
   category: article
-  citation_count: 55
+  citation_count: 74
   doctype: article
   identifier:
   - arXiv:1501.04966
   - 2015ApJ...802..127J
+  - 10.48550/arXiv.1501.04966
   - 10.1088/0004-637X/802/2/127
   - 2015arXiv150104966J
   page: '127'
@@ -2166,12 +4530,13 @@ article:
   - Wyse, Rosemary F. G.
   bibcode: 2015ApJ...809...59S
   category: article
-  citation_count: 28
+  citation_count: 31
   doctype: article
   identifier:
   - 2015ApJ...809...59S
-  - arXiv:1501.00581
   - 2015arXiv150100581S
+  - arXiv:1501.00581
+  - 10.48550/arXiv.1501.00581
   - 10.1088/0004-637X/809/1/59
   page: '59'
   pub: The Astrophysical Journal
@@ -2206,12 +4571,13 @@ article:
   - Skillman, Evan
   bibcode: 2015ApJ...806...48W
   category: article
-  citation_count: 29
+  citation_count: 37
   doctype: article
   identifier:
   - 2015ApJ...806...48W
   - 10.1088/0004-637X/806/1/48
   - arXiv:1504.02120
+  - 10.48550/arXiv.1504.02120
   - 2015arXiv150402120W
   page: '48'
   pub: The Astrophysical Journal
@@ -2256,10 +4622,11 @@ article:
   - Olsen, Knut
   bibcode: 2015AJ....150..189G
   category: article
-  citation_count: 27
+  citation_count: 44
   doctype: article
   identifier:
   - 2015AJ....150..189G
+  - 10.48550/arXiv.1511.00006
   - arXiv:1511.00006
   - 2015arXiv151100006G
   - 10.1088/0004-6256/150/6/189
@@ -2325,11 +4692,12 @@ article:
   - Schruba, Andreas
   bibcode: 2015ApJ...805..183L
   category: article
-  citation_count: 80
+  citation_count: 117
   doctype: article
   identifier:
   - 2015ApJ...805..183L
   - 10.1088/0004-637X/805/2/183
+  - 10.48550/arXiv.1504.03338
   - 2015arXiv150403338L
   - arXiv:1504.03338
   page: '183'
@@ -2399,13 +4767,14 @@ article:
   - Skillman, Evan D.
   bibcode: 2015ApJ...806..198W
   category: article
-  citation_count: 43
+  citation_count: 70
   doctype: article
   identifier:
   - 10.1088/0004-637X/806/2/198
   - 2015ApJ...806..198W
   - 2015arXiv150206621W
   - arXiv:1502.06621
+  - 10.48550/arXiv.1502.06621
   page: '198'
   pub: The Astrophysical Journal
   title: The High-mass Stellar Initial Mass Function in M31 Clusters
@@ -2413,20 +4782,20 @@ article:
   volume: '806'
   year: 2015
 - abstract: We investigate the clustering of early-type stars younger than 300 Myr
-    on galactic scales in M31. Based on the stellar photometric catalogs of the Panchromatic
+    on galactic scales in M 31. Based on the stellar photometric catalogs of the Panchromatic
     Hubble Andromeda Treasury program that also provides stellar parameters derived
-    from the individual energy distributions, our analysis is focused on the young
-    stars in three star-forming regions, located at galactocentric distances of about
-    5, 10, and 15 kpc, corresponding to the inner spiral arms, the ring structure,
-    and the outer arm, respectively. We apply the two-point correlation function to
-    our selected sample to investigate the clustering behavior of these stars across
-    different time- and length-scales. We find that young stellar structure survives
-    across the whole extent of M31 longer than 300 Myr. Stellar distribution in all
-    regions appears to be self-similar, with younger stars being systematically more
-    strongly clustered than the older, which are more dispersed. The observed clustering
-    is interpreted as being induced by turbulence, the driving source for which is
-    probably gravitational instabilities driven by the spiral arms, which are stronger
-    closer to the galactic centre.
+    from the individual energy distributions, our analysis focused on the young stars
+    in three star-forming regions, located at galactocentric distances of about 5,
+    10, and 15 kpc, corresponding to the inner spiral arms, the ring structure, and
+    the outer arm, respectively. We apply the two-point correlation function to our
+    selected sample to investigate the clustering behavior of these stars across different
+    time- and length-scales. We find that young stellar structure survives across
+    the whole extent of M 31 for at least 300 Myr. Stellar distribution in all regions
+    appears to be self-similar, with younger stars being systematically more strongly
+    clustered than the older, which are more dispersed. The observed clustering is
+    interpreted as being induced by turbulence, the driving source for which is probably
+    gravitational instabilities driven by the spiral arms, which are stronger closer
+    to the galactic centre.
   author:
   - Gouliermis, Dimitrios A.
   - Beerman, Lori C.
@@ -2448,14 +4817,16 @@ article:
   doctype: inbook
   identifier:
   - 2014arXiv1407.0829G
+  - 10.48550/arXiv.1407.0829
   - 2015llg..book..289G
   - arXiv:1407.0829
   - 10.1007/978-3-319-10614-4_24
   page: '289'
   pub: 'Lessons from the Local Group: A Conference in honor of David Block and Bruce
     Elmegreen'
-  title: The Panchromatic Hubble Andromeda Treasury. Progression of Large-Scale Star
-    Formation Across Space and Time in M 31
+  title: 'The Panchromatic Hubble Andromeda Treasury. Progression of Large-Scale Star
+    Formation Across Space and Time in M 31: A Conference in honour of David Block
+    and Bruce Elmegreen'
   url: null
   volume: null
   year: 2015
@@ -2489,14 +4860,15 @@ article:
   - Zackrisson, E.
   bibcode: 2014MNRAS.440L.116S
   category: article
-  citation_count: 48
+  citation_count: 52
   doctype: article
   identifier:
   - arXiv:1402.3595
+  - 10.48550/arXiv.1402.3595
+  - 2014MNRAS.tmpL..47S
   - 2014arXiv1402.3595S
   - 2014MNRAS.440L.116S
   - 10.1093/mnrasl/slu028
-  - 2014MNRAS.tmpL..47S
   page: L116
   pub: Monthly Notices of the Royal Astronomical Society
   title: The age distribution of stellar clusters in M83.
@@ -2531,11 +4903,12 @@ article:
   - Watkins, Laura L.
   bibcode: 2014arXiv1403.3091D
   category: article
-  citation_count: 11
+  citation_count: 15
   doctype: eprint
   identifier:
   - 2014arXiv1403.3091D
   - arXiv:1403.3091
+  - 10.48550/arXiv.1403.3091
   page: '-'
   pub: arXiv e-prints
   title: Studying Gender in Conference Talks -- data from the 223rd meeting of the
@@ -2574,11 +4947,12 @@ article:
   - Fouesneau, Morgan
   bibcode: 2014ApJ...795..170J
   category: article
-  citation_count: 49
+  citation_count: 64
   doctype: article
   identifier:
   - 10.1088/0004-637X/795/2/170
   - 2014ApJ...795..170J
+  - 10.48550/arXiv.1410.0018
   - arXiv:1410.0018
   - 2014arXiv1410.0018J
   page: '170'
@@ -2618,11 +4992,12 @@ article:
   - Seth, Anil C.
   bibcode: 2014ApJ...792..121V
   category: article
-  citation_count: 9
+  citation_count: 12
   doctype: article
   identifier:
   - arXiv:1407.4391
   - 10.1088/0004-637X/792/2/121
+  - 10.48550/arXiv.1407.4391
   - 2014arXiv1407.4391V
   - 2014ApJ...792..121V
   page: '121'
@@ -2675,12 +5050,13 @@ article:
   - Williams, Benjamin F.
   bibcode: 2014ApJ...786..117F
   category: article
-  citation_count: 51
+  citation_count: 57
   doctype: article
   identifier:
   - 10.1088/0004-637X/786/2/117
   - 2014ApJ...786..117F
   - 2014arXiv1402.7264F
+  - 10.48550/arXiv.1402.7264
   - arXiv:1402.7264
   page: '117'
   pub: The Astrophysical Journal
@@ -2722,13 +5098,14 @@ article:
   - Bianchi, Luciana
   bibcode: 2014ApJ...785..136D
   category: article
-  citation_count: 29
+  citation_count: 34
   doctype: article
   identifier:
   - 10.1088/0004-637X/785/2/136
   - 2014ApJ...785..136D
   - arXiv:1403.2691
   - 2014arXiv1403.2691D
+  - 10.48550/arXiv.1403.2691
   page: '136'
   pub: The Astrophysical Journal
   title: The Panchromatic Hubble Andromeda Treasury. VII. The Steep Mid-ultraviolet
@@ -2790,13 +5167,14 @@ article:
   - Williams, Benjamin F.
   bibcode: 2013ApJ...762..123W
   category: article
-  citation_count: 31
+  citation_count: 35
   doctype: article
   identifier:
   - 2012arXiv1211.6105W
   - 10.1088/0004-637X/762/2/123
   - 2013ApJ...762..123W
   - arXiv:1211.6105
+  - 10.48550/arXiv.1211.6105
   page: '123'
   pub: The Astrophysical Journal
   title: The Panchromatic Hubble Andromeda Treasury. IV. A Probabilistic Approach
@@ -2839,12 +5217,13 @@ article:
   - Whitmore, Bradley C.
   bibcode: 2012ApJ...750...60F
   category: article
-  citation_count: 45
+  citation_count: 60
   doctype: article
   identifier:
   - 2012ApJ...750...60F
   - 2012arXiv1202.3135F
   - arXiv:1202.3135
+  - 10.48550/arXiv.1202.3135
   - 10.1088/0004-637X/750/1/60
   page: '60'
   pub: The Astrophysical Journal
@@ -2891,9 +5270,10 @@ article:
   - Weisz, Daniel R.
   bibcode: 2012ApJ...761...26J
   category: article
-  citation_count: 40
+  citation_count: 45
   doctype: article
   identifier:
+  - 10.48550/arXiv.1210.6353
   - arXiv:1210.6353
   - 2012ApJ...761...26J
   - 2012arXiv1210.6353J
@@ -2930,13 +5310,14 @@ article:
   - Dalcanton, Julianne J.
   bibcode: 2012ApJ...751..100C
   category: article
-  citation_count: 47
+  citation_count: 56
   doctype: article
   identifier:
   - 10.1088/0004-637X/751/2/100
   - 2012ApJ...751..100C
   - arXiv:1203.4826
   - 2012arXiv1203.4826C
+  - 10.48550/arXiv.1203.4826
   page: '100'
   pub: The Astrophysical Journal
   title: The ACS Nearby Galaxy Survey Treasury. X. Quantifying the Star Cluster Formation
@@ -2987,9 +5368,10 @@ article:
   - Skillman, Evan D.
   bibcode: 2012ApJ...752...95J
   category: article
-  citation_count: 63
+  citation_count: 71
   doctype: article
   identifier:
+  - 10.48550/arXiv.1204.3091
   - 2012ApJ...752...95J
   - 2012arXiv1204.3091J
   - arXiv:1204.3091
@@ -3037,12 +5419,13 @@ article:
   - Skillman, Evan D.
   bibcode: 2012ApJ...760..104B
   category: article
-  citation_count: 17
+  citation_count: 20
   doctype: article
   identifier:
-  - 2012arXiv1209.5395B
+  - 10.48550/arXiv.1209.5395
   - arXiv:1209.5395
   - 10.1088/0004-637X/760/2/104
+  - 2012arXiv1209.5395B
   - 2012ApJ...760..104B
   page: '104'
   pub: The Astrophysical Journal
@@ -3091,11 +5474,12 @@ article:
   - Gieles, M.
   bibcode: 2012A&A...541A..25B
   category: article
-  citation_count: 15
+  citation_count: 17
   doctype: article
   identifier:
   - 10.1051/0004-6361/201219079
   - 2012A&A...541A..25B
+  - 10.48550/arXiv.1203.5825
   - 2012arXiv1203.5825B
   - arXiv:1203.5825
   page: A25
@@ -3137,10 +5521,11 @@ article:
   - "Lan\xE7on, A."
   bibcode: 2010A&A...521A..22F
   category: article
-  citation_count: 95
+  citation_count: 109
   doctype: article
   identifier:
   - 10.1051/0004-6361/201014084
+  - 10.48550/arXiv.1003.2334
   - 2010arXiv1003.2334F
   - arXiv:1003.2334
   - 2010A&A...521A..22F
@@ -3176,7 +5561,7 @@ article:
   - Leroy, Y.
   bibcode: 2008AnGeo..26..243A
   category: article
-  citation_count: 11
+  citation_count: 14
   doctype: article
   identifier:
   - 10.5194/angeo-26-243-2008
@@ -3188,28 +5573,10012 @@ article:
   volume: '26'
   year: 2008
 collaboration:
-- abstract: Gaia-CRF3 is the celestial reference frame for positions and proper motions
-    in the third release of data from the Gaia mission, Gaia DR3 (and for the early
-    third release, Gaia EDR3, which contains identical astrometric results). The reference
-    frame is defined by the positions and proper motions at epoch 2016.0 for a specific
-    set of extragalactic sources in the (E)DR3 catalogue. We describe the construction
-    of Gaia-CRF3, and its properties in terms of the distributions in magnitude, colour,
-    and astrometric quality. Compact extragalactic sources in Gaia DR3 were identified
-    by positional cross-matching with 17 external catalogues of quasars (QSO) and
-    active galactic nuclei (AGN), followed by astrometric filtering designed to remove
-    stellar contaminants. Selecting a clean sample was favoured over including a higher
-    number of extragalactic sources. For the final sample, the random and systematic
-    errors in the proper motions are analysed, as well as the radio-optical offsets
-    in position for sources in the third realisation of the International Celestial
-    Reference Frame (ICRF3). The Gaia-CRF3 comprises about 1.6 million QSO-like sources,
-    of which 1.2 million have five-parameter astrometric solutions in Gaia DR3 and
-    0.4 million have six-parameter solutions. The sources span the magnitude range
-    G = 13 to 21 with a peak density at 20.6 mag, at which the typical positional
-    uncertainty is about 1 mas. The proper motions show systematic errors on the level
-    of 12 ${\mu}$as yr${}^{-1}$ on angular scales greater than 15 deg. For the 3142
-    optical counterparts of ICRF3 sources in the S/X frequency bands, the median offset
-    from the radio positions is about 0.5 mas, but exceeds 4 mas in either coordinate
-    for 127 sources. We outline the future of the Gaia-CRF in the next Gaia data releases.
+- abstract: We provide here the Gaia epoch astrometry and epoch radial velocity data
+    for the Gaia BH3 system. <P />The epoch astrometry table (tableb1.dat) presents
+    the individual astrometric Gaia measurements used to produce the binary-orbit
+    solution of Gaia BH3. As explained in the discovery paper, these measurements
+    are derived from preliminary runs of the Gaia Consortium's data reduction pipelines
+    in the development and preparation for Gaia's Data Release 4 (DR4). They used
+    provisional instrument models and calibrations; thus they will not be identical
+    (but similar to) the corresponding data to be produced and published for this
+    star with DR4. Furthermore, the final epoch astrometry table in DR4 will contain
+    many additional details and quality diagnostics on the individual measurements
+    than the present table does. Each row of the present table gives the minimum necessary
+    data for one of the 622 individual astrometric measurements used in the BH3 discovery
+    paper. A Gaia epoch astrometry entry does not give a full 2-dimensional position
+    on the sky, but only a 1-dimensional measurement. Each of these 1-dimensional
+    measurements (denoted centroid<SUB>pos</SUB>al) corresponds to the longitude of
+    the observed object in a 2-dimensional coordinate system having its origin at
+    the mean position of the star under consideration, and having the axis of its
+    longitude coordinate rotated with respect to local ICRS North by a precisely known
+    angle (denoted scan<SUB>pos</SUB>angle). This angle, as well as the times of the
+    observations, are determined by the rotational motion of the Gaia spacecraft,
+    which closely follows a pre-defined sky coverage pattern known as the Gaia nominal
+    scanning law (NSL). <P />The details of the definition of scan<SUB>pos</SUB>angle
+    and centroid<SUB>pos</SUB>al, and thus the precise meaning of the 1-dimensional
+    measurements in the table, are described in the public Gaia Consortium document
+    LL-061 (L. Lindegren &amp; U. Bastian, 'Local plane coordinates for the detailed
+    analysis of complex Gaia sources', https://dms.cosmos.esa.int/COSMOS/doc_fetch.php?id=504573).
+    The mathematical background and the usage of the data in the modelling of astrometric
+    source parameters is described in the publication by L. Lindegren et al., 'The
+    astrometric core solution for the Gaia mission', Lindegren et al. (2012A&amp;A...538A..78L),
+    more specifically in Section 5.1 of that publication. <P />The epoch RVS radial
+    velocities (tableb2.dat), were produced with the final pipeline, but not finalized
+    with the post-processing; their value or uncertainties may slightly differ from
+    the final DR4 values. Like for astrometry, the final epoch radial velocity table
+    in DR4 will contain additional details and quality diagnostics on the individual
+    measurements. Each epoch radial velocity record corresponds to a transit of the
+    source on the RVS CCDs. The provided observation time of the radial velocity corresponds
+    to the mean of the observation times of the three CCDs used to collect spectra
+    in the RVS during the transit. <P />(2 data files).
+  author:
+  - Gaia Collaboration
+  - Panuzzo, P.
+  - Mazeh, T.
+  - Arenou, F.
+  - Holl, B.
+  - Caffau, E.
+  - Jorissen, A.
+  - Babusiaux, C.
+  - Gavras, P.
+  - Sahlmann, J.
+  - Bastian, U.
+  - Wyrzykowski, L.
+  - Eyer, L.
+  - Leclerc, N.
+  - Bauchet, N.
+  - Bombrun, A.
+  - Mowlavi, N.
+  - Seabroke, G. M.
+  - Teyssier, D.
+  - Balbinot, E.
+  - Helmi, A.
+  - Brown, A. G. A.
+  - Vallenari, A.
+  - Prusti, T.
+  - de Bruijne, J. H. J.
+  - Barbier, A.
+  - Biermann, M.
+  - Creevey, O. L.
+  - Ducourant, C.
+  - Evans, D. W.
+  - Guerra, R.
+  - Hutton, A.
+  - Jordi, C.
+  - Klioner, S. A.
+  - Lammers, U.
+  - Lindegren, L.
+  - Luri, X.
+  - Mignard, F.
+  - Nicolas, C.
+  - Randich, S.
+  - Sartoretti, P.
+  - Smiljanic, R.
+  - Tanga, P.
+  - Walton, N. A.
+  - Aerts, C.
+  - Bailer-Jones, C. A. L.
+  - Cropper, M.
+  - Drimmel, R.
+  - Jansen, F.
+  - Katz, D.
+  - Lattanzi, M. G.
+  - Soubiran, C.
+  - Thevenin, F.
+  - van Leeuwen, F.
+  - Andrae, R.
+  - Audard, M.
+  - Bakker, J.
+  - Blomme, R.
+  - Castaneda, J.
+  - de Angeli, F.
+  - Fabricius, C.
+  - Fouesneau, M.
+  - Fremat, Y.
+  - Galluccio, L.
+  - Guerrier, A.
+  - Heiter, U.
+  - Masana, E.
+  - Messineo, R.
+  - Nienartowicz, K.
+  - Pailler, F.
+  - Riclet, F.
+  - Roux, W.
+  - Sordo, R.
+  - Gracia-Abril, G.
+  - Portell, J.
+  - Altmann, M.
+  - Benson, K.
+  - Berthier, J.
+  - Burgess, P. W.
+  - Busonero, D.
+  - Busso, G.
+  - Cacciari, C.
+  - Canovas, H.
+  - Carrasco, J. M.
+  - Carry, B.
+  - Cellino, A.
+  - Cheek, N.
+  - Clementini, G.
+  - Damerdji, Y.
+  - Davidson, M.
+  - de Teodoro, P.
+  - Delchambre, L.
+  - Dell'Oro, A.
+  - Fraile Garcia, E.
+  - Garabato, D.
+  - Garcia-Lario, P.
+  - Haigron, R.
+  - Hambly, N. C.
+  - Harrison, D. L.
+  - Hatzidimitriou, D.
+  - Hernandez, J.
+  - Hestroffer, D.
+  - Hodgkin, S. T.
+  - Jamal, S.
+  - Jevardat de Fombelle, G.
+  - Jordan, S.
+  - Krone-Martins, A.
+  - Lanzafame, A. C.
+  - Loeffler, W.
+  - Lorca, A.
+  - Marchal, O.
+  - Marrese, P. M.
+  - Moitinho, A.
+  - Muinonen, K.
+  - Nunez Campos, M.
+  - Oreshina-Slezak, I.
+  - Osborne, P.
+  - Pancino, E.
+  - Pauwels, T.
+  - Recio-Blanco, A.
+  - Riello, M.
+  - Rimoldini, L.
+  - Robin, A. C.
+  - Roegiers, T.
+  - Sarro, L. M.
+  - Schultheis, M.
+  - Smith, M.
+  - Sozzetti, A.
+  - Utrilla, E.
+  - van Leeuwen, M.
+  - Weingrill, K.
+  - Abbas, U.
+  - Abraham, P.
+  - Abreu Aramburu, A.
+  - Ahmed, S.
+  - Altavilla, G.
+  - Alvarez, M. A.
+  - Anders, F.
+  - Anderson, R. I.
+  - Anglada Varela, E.
+  - Antoja, T.
+  - Baig, S.
+  - Baines, D.
+  - Baker, S. G.
+  - Balaguer-Nunez, L.
+  - Balog, Z.
+  - Barache, C.
+  - Barros, M.
+  - Barstow, M. A.
+  - Bartolome, S.
+  - Bashi, D.
+  - Bassilana, J. -L.
+  - Baudeau, N.
+  - Becciani, U.
+  - Bedin, L. R.
+  - Bellas-Velidis, I.
+  - Bellazzini, M.
+  - Beordo, W.
+  - Bernet, M.
+  - Bertolotto, C.
+  - Bertone, S.
+  - Bianchi, L.
+  - Binnenfeld, A.
+  - Blanco-Cuaresma, S.
+  - Bland-Hawthorn, J.
+  - Blazere, A.
+  - Boch, T.
+  - Bossini, D.
+  - Bouquillon, S.
+  - Bragaglia, A.
+  - Braine, J.
+  - Bratsolis, E.
+  - Breedt, E.
+  - Bressan, A.
+  - Brouillet, N.
+  - Brugaletta, E.
+  - Bucciarelli, B.
+  - Butkevich, A. G.
+  - Buzzi, R.
+  - Camut, A.
+  - Cancelliere, R.
+  - Cantat-Gaudin, T.
+  - Capilla Guilarte, D.
+  - Carballo, R.
+  - Carlucci, T.
+  - Carnerero, M. I.
+  - Carretero, J.
+  - Carton, S.
+  - Casamiquela, L.
+  - Casey, A.
+  - Castellani, M.
+  - Castro-Ginard, A.
+  - Ceraj, L.
+  - Cesare, V.
+  - Charlot, P.
+  - Chaudet, C.
+  - Chemin, L.
+  - Chiavassa, A.
+  - Chornay, N.
+  - Chosson, D.
+  - Cooper, W. J.
+  - Cornez, T.
+  - Cowell, S.
+  - Crosta, M.
+  - Crowley, C.
+  - Cruz Reyes, M.
+  - Dafonte, C.
+  - Dal Ponte, M.
+  - David, M.
+  - de Laverny, P.
+  - de Luise, F.
+  - de March, R.
+  - de Torres, A.
+  - Del Peloso, E. F.
+  - Delbo, M.
+  - Delgado, A.
+  - Delisle, J. -B.
+  - Demouchy, C.
+  - Denis, E.
+  - Dharmawardena, T. E.
+  - di Giacomo, F.
+  - Diener, C.
+  - Distefano, E.
+  - Dolding, C.
+  - Dsilva, K.
+  - Enke, H.
+  - Fabre, C.
+  - Fabrizio, M.
+  - Faigler, S.
+  - Fatovic, M.
+  - Fedorets, G.
+  - Fernandez-Hernandez, J.
+  - Fernique, P.
+  - Figueras, F.
+  - Fouron, C.
+  - Fragkoudi, F.
+  - Gai, M.
+  - Galinier, M.
+  - Garcia-Serrano, A.
+  - Garcia-Torres, M.
+  - Garofalo, A.
+  - Gerlach, E.
+  - Geyer, R.
+  - Giacobbe, P.
+  - Gilmore, G.
+  - Girona, S.
+  - Giuffrida, G.
+  - Gomboc, A.
+  - Gomez, A.
+  - Gonzalez-Santamaria, I.
+  - Gosset, E.
+  - Granvik, M.
+  - Gregori Barrera, V.
+  - Gutierrez-Sanchez, R.
+  - Haywood, M.
+  - Helmer, A.
+  - Hidalgo, S. L.
+  - Hilger, T.
+  - Hobbs, D.
+  - Hottier, C.
+  - Huckle, H. E.
+  - Jimenez-Arranz, O.
+  - Juaristi Campillo, J.
+  - Kaczmarek, Z.
+  - Kervella, P.
+  - Khanna, S.
+  - Kontizas, M.
+  - Kordopatis, G.
+  - Korn, A. J.
+  - Kospal, A.
+  - Kostrzewa-Rutkowska, Z.
+  - Kruszynska, K.
+  - Kun, M.
+  - Lambert, S.
+  - Lanza, A. F.
+  - Lebreton, Y.
+  - Lebzelter, T.
+  - Leccia, S.
+  - Lecoutre, G.
+  - Liao, S.
+  - Liberato, L.
+  - Licata, E.
+  - Livanou, E.
+  - Lobel, A.
+  - Lopez-Miralles, J.
+  - Loup, C.
+  - Madarasz, M.
+  - Mahy, L.
+  - Mann, R. G.
+  - Manteiga, M.
+  - Marcellino, C. P.
+  - Marchant, J. M.
+  - Marconi, M.
+  - Marin Pina, D.
+  - Marinoni, S.
+  - Marshall, D. J.
+  - Martin Lozano, J.
+  - Martin Polo, L.
+  - Martin-Fleitas, J. M.
+  - Marton, G.
+  - Mas Carenhas, D.
+  - Masip, A.
+  - Mastrobuono-Battisti, A.
+  - McMillan, P. J.
+  - Meichsner, J.
+  - Merc, J.
+  - Messina, S.
+  - Millar, N. R.
+  - Mints, A.
+  - Mohamed, D.
+  - Molina, D.
+  - Molinaro, R.
+  - Molnar, L.
+  - Monguio, M.
+  - Montegriffo, P.
+  - Monti, L.
+  - Mora, A.
+  - Morbidelli, R.
+  - Morris, D.
+  - Mudimadugula, R.
+  - Muraveva, T.
+  - Musella, I.
+  - Nagy, Z.
+  - Nardetto, N.
+  - Navarrete, C.
+  - Oh, S.
+  - Ordenovic, C.
+  - Orenstein, O.
+  - Pagani, C.
+  - Pagano, I.
+  - Palaversa, L.
+  - Palicio, P. A.
+  - Pallas-Quintela, L.
+  - Pawlak, M.
+  - Penttilae, A.
+  - Pesciullesi, P.
+  - Pinamonti, M.
+  - Plachy, E.
+  - Planquart, L.
+  - Plum, G.
+  - Poggio, E.
+  - Pourbaix, D.
+  - Price-Whelan, A. M.
+  - Pulone, L.
+  - Rabin, V.
+  - Rainer, M.
+  - Raiteri, C. M.
+  - Ramos, P.
+  - Ramos-Lerate, M.
+  - Ratajczak, M.
+  - Re Fiorentin, P.
+  - Regibo, S.
+  - Reyle, C.
+  - Ripepi, V.
+  - Riva, A.
+  - Rix, H. -W.
+  - Rixon, G.
+  - Robert, G.
+  - Robichon, N.
+  - Robin, C.
+  - Romero-Gomez, M.
+  - Rowell, N.
+  - Ruz Mieres, D.
+  - Rybicki, K. A.
+  - Sadowski, G.
+  - Sagrista Selles, A.
+  - Sanna, N.
+  - Santovena, R.
+  - Sarasso, M.
+  - Sarmiento, M. H.
+  - Sarrate Riera, C.
+  - Sciacca, E.
+  - Segransan, D.
+  - Semczuk, M.
+  - Shahaf, S.
+  - Siebert, A.
+  - Slezak, E.
+  - Smart, R. L.
+  - Snaith, O. N.
+  - Solano, E.
+  - Solitro, F.
+  - Souami, D.
+  - Souchay, J.
+  - Spitoni, E.
+  - Spoto, F.
+  - Squillante, L. A.
+  - Steele, I. A.
+  - Steidelmueller, H.
+  - Surdej, J.
+  - Szabados, L.
+  - Taris, F.
+  - Taylor, M. B.
+  - Teixeira, R.
+  - Tepper-Garcia, T.
+  - Thuillot, W.
+  - Tolomei, L.
+  - Tonello, N.
+  - Torra, F.
+  - Torralba Elipe, G.
+  - Trabucchi, M.
+  - Trentin, E.
+  - Tsantaki, M.
+  - Turon, C.
+  - Ulla, A.
+  - Unger, N.
+  - Valtchanov, I.
+  - Vanel, O.
+  - Vecchiato, A.
+  - Vicente, D.
+  - Villar, E.
+  - Weiler, M.
+  - Zhao, H.
+  - Zorec, J.
+  - Zucker, S.
+  - Zupic, A.
+  - Zwitter, T.
+  bibcode: 2024yCat..36869002G
+  category: collaboration
+  citation_count: 0
+  doctype: dataset
+  identifier:
+  - 2024yCat..36869002G
+  page: J/A+A/686/L2
+  pub: VizieR Online Data Catalog
+  title: 'VizieR Online Data Catalog: Dormant 33 solar-masses black hole (Gaia Collaboration,
+    2024)'
+  url: null
+  volume: '368'
+  year: 2024
+- abstract: "Context. Gravitational waves from black-hole (BH) merging events have\
+    \ revealed a population of extra-galactic BHs residing in short-period binaries\
+    \ with masses that are higher than expected based on most stellar evolution models\
+    \ - and also higher than known stellar-origin black holes in our Galaxy. It has\
+    \ been proposed that those high-mass BHs are the remnants of massive metal-poor\
+    \ stars. <BR /> Aims: Gaia astrometry is expected to uncover many Galactic wide-binary\
+    \ systems containing dormant BHs, which may not have been detected before. The\
+    \ study of this population will provide new information on the BH-mass distribution\
+    \ in binaries and shed light on their formation mechanisms and progenitors. <BR\
+    \ /> Methods: As part of the validation efforts in preparation for the fourth\
+    \ Gaia data release (DR4), we analysed the preliminary astrometric binary solutions,\
+    \ obtained by the Gaia Non-Single Star pipeline, to verify their significance\
+    \ and to minimise false-detection rates in high-mass-function orbital solutions.\
+    \ <BR /> Results: The astrometric binary solution of one source, Gaia BH3, implies\
+    \ the presence of a 32.70 \xB1 0.82 M<SUB>\u2299</SUB> BH in a binary system with\
+    \ a period of 11.6 yr. Gaia radial velocities independently validate the astrometric\
+    \ orbit. Broad-band photometric and spectroscopic data show that the visible component\
+    \ is an old, very metal-poor giant of the Galactic halo, at a distance of 590\
+    \ pc. <BR /> Conclusions: The BH in the Gaia BH3 system is more massive than any\
+    \ other Galactic stellar-origin BH known thus far. The low metallicity of the\
+    \ star companion supports the scenario that metal-poor massive stars are progenitors\
+    \ of the high-mass BHs detected by gravitational-wave telescopes. The Galactic\
+    \ orbit of the system and its metallicity indicate that it might belong to the\
+    \ Sequoia halo substructure. Alternatively, and more plausibly, it could belong\
+    \ to the ED-2 stream, which likely originated from a globular cluster that had\
+    \ been disrupted by the Milky Way. <P />Full Table B.1 and Table B.2 with Gaia\
+    \ epoch data are available at the CDS via anonymous ftp to <A href=\"https://cdsarc.cds.unistra.fr\"\
+    >cdsarc.cds.unistra.fr</A> (ftp://130.79.128.5) or via <A href=\"https://cdsarc.cds.unistra.fr/viz-bin/cat/J/A+A/686/L2\"\
+    >https://cdsarc.cds.unistra.fr/viz-bin/cat/J/A+A/686/L2</A>"
+  author:
+  - Gaia Collaboration
+  - Panuzzo, P.
+  - Mazeh, T.
+  - Arenou, F.
+  - Holl, B.
+  - Caffau, E.
+  - Jorissen, A.
+  - Babusiaux, C.
+  - Gavras, P.
+  - Sahlmann, J.
+  - Bastian, U.
+  - "Wyrzykowski, \u0141."
+  - Eyer, L.
+  - Leclerc, N.
+  - Bauchet, N.
+  - Bombrun, A.
+  - Mowlavi, N.
+  - Seabroke, G. M.
+  - Teyssier, D.
+  - Balbinot, E.
+  - Helmi, A.
+  - Brown, A. G. A.
+  - Vallenari, A.
+  - Prusti, T.
+  - de Bruijne, J. H. J.
+  - Barbier, A.
+  - Biermann, M.
+  - Creevey, O. L.
+  - Ducourant, C.
+  - Evans, D. W.
+  - Guerra, R.
+  - Hutton, A.
+  - Jordi, C.
+  - Klioner, S. A.
+  - Lammers, U.
+  - Lindegren, L.
+  - Luri, X.
+  - Mignard, F.
+  - Nicolas, C.
+  - Randich, S.
+  - Sartoretti, P.
+  - Smiljanic, R.
+  - Tanga, P.
+  - Walton, N. A.
+  - Aerts, C.
+  - Bailer-Jones, C. A. L.
+  - Cropper, M.
+  - Drimmel, R.
+  - Jansen, F.
+  - Katz, D.
+  - Lattanzi, M. G.
+  - Soubiran, C.
+  - "Th\xE9venin, F."
+  - van Leeuwen, F.
+  - Andrae, R.
+  - Audard, M.
+  - Bakker, J.
+  - Blomme, R.
+  - "Casta\xF1eda, J."
+  - De Angeli, F.
+  - Fabricius, C.
+  - Fouesneau, M.
+  - "Fr\xE9mat, Y."
+  - Galluccio, L.
+  - Guerrier, A.
+  - Heiter, U.
+  - Masana, E.
+  - Messineo, R.
+  - Nienartowicz, K.
+  - Pailler, F.
+  - Riclet, F.
+  - Roux, W.
+  - Sordo, R.
+  - Gracia-Abril, G.
+  - Portell, J.
+  - Altmann, M.
+  - Benson, K.
+  - Berthier, J.
+  - Burgess, P. W.
+  - Busonero, D.
+  - Busso, G.
+  - Cacciari, C.
+  - "C\xE1novas, H."
+  - Carrasco, J. M.
+  - Carry, B.
+  - Cellino, A.
+  - Cheek, N.
+  - Clementini, G.
+  - Damerdji, Y.
+  - Davidson, M.
+  - de Teodoro, P.
+  - Delchambre, L.
+  - Dell'Oro, A.
+  - Fraile Garcia, E.
+  - Garabato, D.
+  - "Garc\xEDa-Lario, P."
+  - Haigron, R.
+  - Hambly, N. C.
+  - Harrison, D. L.
+  - Hatzidimitriou, D.
+  - "Hern\xE1ndez, J."
+  - Hestroffer, D.
+  - Hodgkin, S. T.
+  - Jamal, S.
+  - Jevardat de Fombelle, G.
+  - Jordan, S.
+  - Krone-Martins, A.
+  - Lanzafame, A. C.
+  - "L\xF6ffler, W."
+  - Lorca, A.
+  - Marchal, O.
+  - Marrese, P. M.
+  - Moitinho, A.
+  - Muinonen, K.
+  - "Nu\xF1ez Campos, M."
+  - Oreshina-Slezak, I.
+  - Osborne, P.
+  - Pancino, E.
+  - Pauwels, T.
+  - Recio-Blanco, A.
+  - Riello, M.
+  - Rimoldini, L.
+  - Robin, A. C.
+  - Roegiers, T.
+  - Sarro, L. M.
+  - Schultheis, M.
+  - Smith, M.
+  - Sozzetti, A.
+  - Utrilla, E.
+  - van Leeuwen, M.
+  - Weingrill, K.
+  - Abbas, U.
+  - "\xC1brah\xE1m, P."
+  - Abreu Aramburu, A.
+  - Ahmed, S.
+  - Altavilla, G.
+  - "\xC1lvarez, M. A."
+  - Anders, F.
+  - Anderson, R. I.
+  - Anglada Varela, E.
+  - Antoja, T.
+  - Baig, S.
+  - Baines, D.
+  - Baker, S. G.
+  - "Balaguer-N\xFA\xF1ez, L."
+  - Balog, Z.
+  - Barache, C.
+  - Barros, M.
+  - Barstow, M. A.
+  - "Bartolom\xE9, S."
+  - Bashi, D.
+  - Bassilana, J. -L.
+  - Baudeau, N.
+  - Becciani, U.
+  - Bedin, L. R.
+  - Bellas-Velidis, I.
+  - Bellazzini, M.
+  - Beordo, W.
+  - Bernet, M.
+  - Bertolotto, C.
+  - Bertone, S.
+  - Bianchi, L.
+  - Binnenfeld, A.
+  - Blanco-Cuaresma, S.
+  - Bland-Hawthorn, J.
+  - Blazere, A.
+  - Boch, T.
+  - Bossini, D.
+  - Bouquillon, S.
+  - Bragaglia, A.
+  - Braine, J.
+  - Bratsolis, E.
+  - Breedt, E.
+  - Bressan, A.
+  - Brouillet, N.
+  - Brugaletta, E.
+  - Bucciarelli, B.
+  - Butkevich, A. G.
+  - Buzzi, R.
+  - Camut, A.
+  - Cancelliere, R.
+  - Cantat-Gaudin, T.
+  - Capilla Guilarte, D.
+  - Carballo, R.
+  - Carlucci, T.
+  - Carnerero, M. I.
+  - Carretero, J.
+  - Carton, S.
+  - Casamiquela, L.
+  - Casey, A.
+  - Castellani, M.
+  - Castro-Ginard, A.
+  - Ceraj, L.
+  - Cesare, V.
+  - Charlot, P.
+  - Chaudet, C.
+  - Chemin, L.
+  - Chiavassa, A.
+  - Chornay, N.
+  - Chosson, D.
+  - Cooper, W. J.
+  - Cornez, T.
+  - Cowell, S.
+  - Crosta, M.
+  - Crowley, C.
+  - Cruz Reyes, M.
+  - Dafonte, C.
+  - Dal Ponte, M.
+  - David, M.
+  - de Laverny, P.
+  - De Luise, F.
+  - De March, R.
+  - de Torres, A.
+  - del Peloso, E. F.
+  - Delbo, M.
+  - Delgado, A.
+  - Delisle, J. -B.
+  - Demouchy, C.
+  - Denis, E.
+  - Dharmawardena, T. E.
+  - Di Giacomo, F.
+  - Diener, C.
+  - Distefano, E.
+  - Dolding, C.
+  - Dsilva, K.
+  - Enke, H.
+  - Fabre, C.
+  - Fabrizio, M.
+  - Faigler, S.
+  - "Fatovi\u0107, M."
+  - Fedorets, G.
+  - "Fern\xE1ndez-Hern\xE1ndez, J."
+  - Fernique, P.
+  - Figueras, F.
+  - Fouron, C.
+  - Fragkoudi, F.
+  - Gai, M.
+  - Galinier, M.
+  - Garcia-Serrano, A.
+  - "Garc\xEDa-Torres, M."
+  - Garofalo, A.
+  - Gerlach, E.
+  - Geyer, R.
+  - Giacobbe, P.
+  - Gilmore, G.
+  - Girona, S.
+  - Giuffrida, G.
+  - Gomboc, A.
+  - Gomez, A.
+  - "Gonz\xE1lez-Santamar\xEDa, I."
+  - Gosset, E.
+  - Granvik, M.
+  - Gregori Barrera, V.
+  - "Guti\xE9rrez-S\xE1nchez, R."
+  - Haywood, M.
+  - Helmer, A.
+  - Hidalgo, S. L.
+  - Hilger, T.
+  - Hobbs, D.
+  - Hottier, C.
+  - Huckle, H. E.
+  - "Jim\xE9nez-Arranz, \xD3."
+  - Juaristi Campillo, J.
+  - Kaczmarek, Z.
+  - Kervella, P.
+  - Khanna, S.
+  - Kontizas, M.
+  - Kordopatis, G.
+  - Korn, A. J.
+  - "K\xF3sp\xE1l, \xC1."
+  - Kostrzewa-Rutkowska, Z.
+  - "Kruszy\u0144ska, K."
+  - Kun, M.
+  - Lambert, S.
+  - Lanza, A. F.
+  - Lebreton, Y.
+  - Lebzelter, T.
+  - Leccia, S.
+  - Lecoutre, G.
+  - Liao, S.
+  - Liberato, L.
+  - Licata, E.
+  - Livanou, E.
+  - Lobel, A.
+  - "L\xF3pez-Miralles, J."
+  - Loup, C.
+  - "Madar\xE1sz, M."
+  - Mahy, L.
+  - Mann, R. G.
+  - Manteiga, M.
+  - Marcellino, C. P.
+  - Marchant, J. M.
+  - Marconi, M.
+  - "Mar\xEDn Pina, D."
+  - Marinoni, S.
+  - Marshall, D. J.
+  - "Mart\xEDn Lozano, J."
+  - Martin Polo, L.
+  - "Mart\xEDn-Fleitas, J. M."
+  - Marton, G.
+  - Mascarenhas, D.
+  - Masip, A.
+  - Mastrobuono-Battisti, A.
+  - McMillan, P. J.
+  - Meichsner, J.
+  - Merc, J.
+  - Messina, S.
+  - Millar, N. R.
+  - Mints, A.
+  - Mohamed, D.
+  - Molina, D.
+  - Molinaro, R.
+  - "Moln\xE1r, L."
+  - "Mongui\xF3, M."
+  - Montegriffo, P.
+  - Monti, L.
+  - Mora, A.
+  - Morbidelli, R.
+  - Morris, D.
+  - Mudimadugula, R.
+  - Muraveva, T.
+  - Musella, I.
+  - Nagy, Z.
+  - Nardetto, N.
+  - Navarrete, C.
+  - Oh, S.
+  - Ordenovic, C.
+  - Orenstein, O.
+  - Pagani, C.
+  - Pagano, I.
+  - Palaversa, L.
+  - Palicio, P. A.
+  - Pallas-Quintela, L.
+  - Pawlak, M.
+  - "Penttil\xE4, A."
+  - Pesciullesi, P.
+  - Pinamonti, M.
+  - Plachy, E.
+  - Planquart, L.
+  - Plum, G.
+  - Poggio, E.
+  - Pourbaix, D.
+  - Price-Whelan, A. M.
+  - Pulone, L.
+  - Rabin, V.
+  - Rainer, M.
+  - Raiteri, C. M.
+  - Ramos, P.
+  - Ramos-Lerate, M.
+  - Ratajczak, M.
+  - Re Fiorentin, P.
+  - Regibo, S.
+  - "Reyl\xE9, C."
+  - Ripepi, V.
+  - Riva, A.
+  - Rix, H. -W.
+  - Rixon, G.
+  - Robert, G.
+  - Robichon, N.
+  - Robin, C.
+  - "Romero-G\xF3mez, M."
+  - Rowell, N.
+  - Ruz Mieres, D.
+  - Rybicki, K. A.
+  - Sadowski, G.
+  - "Sagrist\xE0 Sell\xE9s, A."
+  - Sanna, N.
+  - "Santove\xF1a, R."
+  - Sarasso, M.
+  - Sarmiento, M. H.
+  - Sarrate Riera, C.
+  - Sciacca, E.
+  - "S\xE9gransan, D."
+  - Semczuk, M.
+  - Shahaf, S.
+  - Siebert, A.
+  - Slezak, E.
+  - Smart, R. L.
+  - Snaith, O. N.
+  - Solano, E.
+  - Solitro, F.
+  - Souami, D.
+  - Souchay, J.
+  - Spitoni, E.
+  - Spoto, F.
+  - Squillante, L. A.
+  - Steele, I. A.
+  - "Steidelm\xFCller, H."
+  - Surdej, J.
+  - Szabados, L.
+  - Taris, F.
+  - Taylor, M. B.
+  - Teixeira, R.
+  - Tepper-Garcia, T.
+  - Thuillot, W.
+  - Tolomei, L.
+  - Tonello, N.
+  - Torra, F.
+  - Torralba Elipe, G.
+  - Trabucchi, M.
+  - Trentin, E.
+  - Tsantaki, M.
+  - Turon, C.
+  - Ulla, A.
+  - Unger, N.
+  - Valtchanov, I.
+  - Vanel, O.
+  - Vecchiato, A.
+  - Vicente, D.
+  - Villar, E.
+  - Weiler, M.
+  - Zhao, H.
+  - Zorec, J.
+  - Zucker, S.
+  - "\u017Dupi\u0107, A."
+  - Zwitter, T.
+  bibcode: 2024A&A...686L...2G
+  category: collaboration
+  citation_count: 89
+  doctype: article
+  identifier:
+  - 2024A&A...686L...2G
+  - 10.48550/arXiv.2404.10486
+  - 10.1051/0004-6361/202449763
+  - 2024arXiv240410486G
+  - arXiv:2404.10486
+  page: L2
+  pub: Astronomy and Astrophysics
+  title: Discovery of a dormant 33 solar-mass black hole in pre-release Gaia astrometry
+  url: null
+  volume: '686'
+  year: 2024
+- abstract: 'The Gaia Focus Product Release (FPR) provides a catalogue of the quasars
+    environment for the search of gravitational lenses (I/361/lenscand). This catalogue
+    contains 501385 multiplets found within 6" of known quasars (I/361/lenscatn).
+    We analyse the combinations of the components of 476207 such multiplets with 2-6
+    components in table2.dat and report the most promising candidates in table3.dat.
+    <P />The analysis done in table2.dat relies on four different methods: <P />i)
+    When Gaia spectra are available for all the components in the combination, a comparison
+    of the component spectra is done using a reduced chi-square approach, described
+    in Equations 1 (Chi2r) and 2 (Gof) of (Gaia Collaboration+, 2024). This approach
+    is complemented by another technique based on the Wasserstein distance presented
+    in Equation 3 (SWd) of the same manuscript. Auxiliary data computed along this
+    comparison (integrated flux, colours, resampling chi-square and S/N of the spectra)
+    are concurrently provided in table2.dat. <P />ii) For combinations composed of
+    three or four components, we compute a discriminant value, called the extremely
+    randomized trees (ERT) score. This score reflects the ability for the combination
+    to be matched to the image positions and relative magnitudes produced through
+    simulations of gravitational lens systems. See (Delchambre et al., 2019A&amp;A...622A.165D)
+    for details. <P />iii) For the 3 760 032 QSOs contained in our input list of quasars,
+    we compute a lens score based on Gaia DR3 (2023A&amp;A...674A...1G) and unWISE
+    (2014AJ....147..108L) data. The handling of missing data in these catalogues and
+    the subsequent imputation of a lens score is done using the Heuristical Ensemble
+    Splitting Imputation and Organization of Data (HESIOD) outlier detection method.
+    <P />iv) Finally, we combine the spectra comparison scores (Chi2r, Gof and SWd);
+    the ERT scores (SertABCD, SertABC, SertABD, SertACD and SertBCD) and the HESIOD
+    score (SHesiod) with the galactic latitude, (GLAT); maximal separation between
+    pair of components (Size); G magnitudes (GmagMin and GmagMax); minimal S/N (SnrMin);
+    integrated fluxes (Fmin and Fmax) and maximal absolute difference in colours (Dcolor)
+    into a combined score (Scomb) using a Random Forest classifier (2001MachL..45....5B).
+    <P />The 381 lens candidates considered as promising (ranked ''A'') or plausible
+    candidates (ranked ''B'') are provided in table3.dat along with their lens scores.
+    <P />(2 data files).'
+  author:
+  - Gaia Collaboration
+  - Krone-Martins, A.
+  - Ducourant, C.
+  - Galluccio, L.
+  - Delchambre, L.
+  - Oreshina-Slezak, I.
+  - Teixeira, R.
+  - Braine, J.
+  - Le Campion, J. -F.
+  - Mignard, F.
+  - Roux, W.
+  - Blazere, A.
+  - Pegoraro, L.
+  - Brown, A. G. A.
+  - Vallenari, A.
+  - Prusti, T.
+  - de Bruijne, J. H. J.
+  - Arenou, F.
+  - Babusiaux, C.
+  - Barbier, A.
+  - Biermann, M.
+  - Creevey, O. L.
+  - Evans, D. W.
+  - Eyer, L.
+  - Guerra, R.
+  - Hutton, A.
+  - Jordi, C.
+  - Klioner, S. A.
+  - Lammers, U.
+  - Lindegren, L.
+  - Luri, X.
+  - Randich, S.
+  - Sartoretti, P.
+  - Smiljanic, R.
+  - Tanga, P.
+  - Walton, N. A.
+  - Bailer-Jones, C. A. L.
+  - Bastian, U.
+  - Cropper, M.
+  - Drimmel, R.
+  - Katz, D.
+  - Soubiran, C.
+  - van Leeuwen, F.
+  - Audard, M.
+  - Bakker, J.
+  - Blomme, R.
+  - Castaneda, J.
+  - de Angeli, F.
+  - Fabricius, C.
+  - Fouesneau, M.
+  - Fremat, Y.
+  - Guerrier, A.
+  - Masana, E.
+  - Messineo, R.
+  - Nicolas, C.
+  - Nienartowicz, K.
+  - Pailler, F.
+  - Panuzzo, P.
+  - Riclet, F.
+  - Seabroke, G. M.
+  - Sordo, R.
+  - Thevenin, F.
+  - Gracia-Abril, G.
+  - Portell, J.
+  - Teyssier, D.
+  - Altmann, M.
+  - Benson, K.
+  - Berthier, J.
+  - Burgess, P. W.
+  - Busonero, D.
+  - Busso, G.
+  - Canovas, H.
+  - Carry, B.
+  - Cheek, N.
+  - Clementini, G.
+  - Damerdji, Y.
+  - Davidson, M.
+  - de Teodoro, P.
+  - Dell'Oro, A.
+  - Fraile Garcia, E.
+  - Garabato, D.
+  - Garcia-Lario, P.
+  - Garralda Torres, N.
+  - Gavras, P.
+  - Haigron, R.
+  - Hambly, N. C.
+  - Harrison, D. L.
+  - Hatzidimitriou, D.
+  - Hernandez, J.
+  - Hodgkin, S. T.
+  - Holl, B.
+  - Jamal, S.
+  - Jordan, S.
+  - Lanzafame, A. C.
+  - Loeffler, W.
+  - Lorca, A.
+  - Marchal, O.
+  - Marrese, P. M.
+  - Moitinho, A.
+  - Muinonen, K.
+  - Nunez Campos, M.
+  - Osborne, P.
+  - Pancino, E.
+  - Pauwels, T.
+  - Recio-Blanco, A.
+  - Riello, M.
+  - Rimoldini, L.
+  - Robin, A. C.
+  - Roegiers, T.
+  - Sarro, L. M.
+  - Schultheis, M.
+  - Siopis, C.
+  - Smith, M.
+  - Sozzetti, A.
+  - Utrilla, E.
+  - van Leeuwen, M.
+  - Weingrill, K.
+  - Abbas, U.
+  - Abraham, P.
+  - Abreu Aramburu, A.
+  - Aerts, C.
+  - Altavilla, G.
+  - Alvarez, M. A.
+  - Alves, J.
+  - Anderson, R. I.
+  - Antoja, T.
+  - Baines, D.
+  - Baker, S. G.
+  - Balog, Z.
+  - Barache, C.
+  - Barbato, D.
+  - Barros, M.
+  - Barstow, M. A.
+  - Bartolome, S.
+  - Bashi, D.
+  - Bauchet, N.
+  - Baudeau, N.
+  - Becciani, U.
+  - Bedin, L. R.
+  - Bellas-Velidis, I.
+  - Bellazzini, M.
+  - Beordo, W.
+  - Berihuete, A.
+  - Bernet, M.
+  - Bertolotto, C.
+  - Bertone, S.
+  - Bianchi, L.
+  - Binnenfeld, A.
+  - Boch, T.
+  - Bombrun, A.
+  - Bouquillon, S.
+  - Bragaglia, A.
+  - Bramante, L.
+  - Breedt, E.
+  - Bressan, A.
+  - Brouillet, N.
+  - Brugaletta, E.
+  - Bucciarelli, B.
+  - Butkevich, A. G.
+  - Buzzi, R.
+  - Caffau, E.
+  - Cancelliere, R.
+  - Cannizzo, S.
+  - Carballo, R.
+  - Carlucci, T.
+  - Carnerero, M. I.
+  - Carrasco, J. M.
+  - Carretero, J.
+  - Carton, S.
+  - Casamiquela, L.
+  - Castellani, M.
+  - Castro-Ginard, A.
+  - Cesare, V.
+  - Charlot, P.
+  - Chemin, L.
+  - Chiaramida, V.
+  - Chiavassa, A.
+  - Chornay, N.
+  - Collins, R.
+  - Contursi, G.
+  - Cooper, W. J.
+  - Cornez, T.
+  - Crosta, M.
+  - Crowley, C.
+  - Dafonte, C.
+  - de Laverny, P.
+  - de Luise, F.
+  - de March, R.
+  - de Souza, R.
+  - de Torres, A.
+  - Del Peloso, E. F.
+  - Delbo, M.
+  - Delgado, A.
+  - Dharmawardena, T. E.
+  - Diakite, S.
+  - Diener, C.
+  - Distefano, E.
+  - Dolding, C.
+  - Dsilva, K.
+  - Duran, J.
+  - Enke, H.
+  - Esquej, P.
+  - Fabre, C.
+  - Fabrizio, M.
+  - Faigler, S.
+  - Fatovi'C, M.
+  - Fedorets, G.
+  - Fernandez-Hernandez, J.
+  - Fernique, P.
+  - Figueras, F.
+  - Fournier, Y.
+  - Fouron, C.
+  - Gai, M.
+  - Galinier, M.
+  - Garcia-Gutierrez, A.
+  - Garcia-Torres, M.
+  - Garofalo, A.
+  - Gerlach, E.
+  - Geyer, R.
+  - Giacobbe, P.
+  - Gilmore, G.
+  - Girona, S.
+  - Giuffrida, G.
+  - Gomel, R.
+  - Gomez, A.
+  - Gonzalez-Nunez, J.
+  - Gonzalez-Santamaria, I.
+  - Gosset, E.
+  - Granvik, M.
+  - Gregori Barrera, V.
+  - Gutierrez-Sanchez, R.
+  - Haywood, M.
+  - Helmer, A.
+  - Helmi, A.
+  - Henares, K.
+  - Hidalgo, S. L.
+  - Hilger, T.
+  - Hobbs, D.
+  - Hottier, C.
+  - Huckle, H. E.
+  - Jablonska, M.
+  - Jansen, F.
+  - Jimenez-Arranz, O.
+  - Juaristi Campillo, J.
+  - Khanna, S.
+  - Kordopatis, G.
+  - Kospal, A.
+  - Kostrzewa-Rutkowska, Z.
+  - Kun, M.
+  - Lambert, S.
+  - Lanza, A. F.
+  - Lebreton, Y.
+  - Lebzelter, T.
+  - Leccia, S.
+  - Lecoeur-Taibi, I.
+  - Lecoutre, G.
+  - Liao, S.
+  - Liberato, L.
+  - Licata, E.
+  - Lindstrom, H. E. P.
+  - Lister, T. A.
+  - Livanou, E.
+  - Lobel, A.
+  - Loup, C.
+  - Mahy, L.
+  - Mann, R. G.
+  - Manteiga, M.
+  - Marchant, J. M.
+  - Marconi, M.
+  - Marin Pina, D.
+  - Marinoni, S.
+  - Marshall, D. J.
+  - Martin Lozano, J.
+  - Martin-Fleitas, J. M.
+  - Marton, G.
+  - Mary, N.
+  - Masip, A.
+  - Massari, D.
+  - Mastrobuono-Battisti, A.
+  - Mazeh, T.
+  - McMillan, P. J.
+  - Meichsner, J.
+  - Messina, S.
+  - Michalik, D.
+  - Millar, N. R.
+  - Mints, A.
+  - Molina, D.
+  - Molinaro, R.
+  - Molnar, L.
+  - Monari, G.
+  - Monguio, M.
+  - Montegriffo, P.
+  - Montero, A.
+  - Mor, R.
+  - Mora, A.
+  - Morbidelli, R.
+  - Morel, T.
+  - Morris, D.
+  - Mowlavi, N.
+  - Munoz, D.
+  - Muraveva, T.
+  - Murphy, C. P.
+  - Musella, I.
+  - Nagy, Z.
+  - Nieto, S.
+  - Noval, L.
+  - Ogden, A.
+  - Ordenovic, C.
+  - Pagani, C.
+  - Pagano, I.
+  - Palaversa, L.
+  - Palicio, P. A.
+  - Pallas-Quintela, L.
+  - Panahi, A.
+  - Panem, C.
+  - Payne-Wardenaar, S.
+  - Penttilae, A.
+  - Pesciullesi, P.
+  - Piersimoni, A. M.
+  - Pinamonti, M.
+  - Pineau, F. -X.
+  - Plachy, E.
+  - Plum, G.
+  - Poggio, E.
+  - Pourbaix+, D.
+  - Prsa, A.
+  - Pulone, L.
+  - Racero, E.
+  - Rainer, M.
+  - Raiteri, C. M.
+  - Ramos, P.
+  - Ramos-Lerate, M.
+  - Ratajczak, M.
+  - Re Fiorentin, P.
+  - Regibo, S.
+  - Reyle, C.
+  - Ripepi, V.
+  - Riva, A.
+  - Rix, H. -W.
+  - Rixon, G.
+  - Robichon, N.
+  - Robin, C.
+  - Romero-Gomez, M.
+  - Rowell, N.
+  - Royer, F.
+  - Ruz Mieres, D.
+  - Rybicki, K. A.
+  - Sadowski, G.
+  - Saez Nunez, A.
+  - Sagrista Selles, A.
+  - Sahlmann, J.
+  - Sanchez Gimenez, V.
+  - Sanna, N.
+  - Santovena, R.
+  - Sarasso, M.
+  - Sarrate Riera, C.
+  - Sciacca, E.
+  - Segovia, J. C.
+  - Segransan, D.
+  - Shahaf, S.
+  - Siebert, A.
+  - Siltala, L.
+  - Slezak, E.
+  - Smart, R. L.
+  - Snaith, O. N.
+  - Solano, E.
+  - Solitro, F.
+  - Souami, D.
+  - Souchay, J.
+  - Spina, L.
+  - Spitoni, E.
+  - Spoto, F.
+  - Squillante, L. A.
+  - Steele, I. A.
+  - Steidelmueller, H.
+  - Surdej, J.
+  - Szabados, L.
+  - Taris, F.
+  - Taylor, M. B.
+  - Tisanic, K.
+  - Tolomei, L.
+  - Torra, F.
+  - Torralba Elipe, G.
+  - Trabucchi, M.
+  - Tsantaki, M.
+  - Ulla, A.
+  - Unger, N.
+  - Vanel, O.
+  - Vecchiato, A.
+  - Vicente, D.
+  - Voutsinas, S.
+  - Weiler, M.
+  - Wyrzykowski, L.
+  - Zhao, H.
+  - Zorec, J.
+  - Zwitter, T.
+  - Balaguer-Nunez, L.
+  - Leclerc, N.
+  - Morgenthaler, S.
+  - Robert, G.
+  - Zucker, S.
+  bibcode: 2024yCat..36850130G
+  category: collaboration
+  citation_count: 0
+  doctype: dataset
+  identifier:
+  - 2024yCat..36850130G
+  page: J/A+A/685/A130
+  pub: VizieR Online Data Catalog
+  title: 'VizieR Online Data Catalog: Gaia FPR. Analysis of QSO environment (Gaia
+    Collaboration+, 2024)'
+  url: null
+  volume: '368'
+  year: 2024
+- abstract: "Context. Strongly lensed quasars are fundamental sources for cosmology.\
+    \ The Gaia space mission covers the entire sky with the unprecedented resolution\
+    \ of 0.18\u2033 in the optical, making it an ideal instrument to search for gravitational\
+    \ lenses down to the limiting magnitude of 21. Nevertheless, the previous Gaia\
+    \ Data Releases are known to be incomplete for small angular separations such\
+    \ as those expected for most lenses. <BR /> Aims: We present the Data Processing\
+    \ and Analysis Consortium GravLens pipeline, which was built to analyse all Gaia\
+    \ detections around quasars and to cluster them into sources, thus producing a\
+    \ catalogue of secondary sources around each quasar. We analysed the resulting\
+    \ catalogue to produce scores that indicate source configurations that are compatible\
+    \ with strongly lensed quasars. <BR /> Methods: GravLens uses the DBSCAN unsupervised\
+    \ clustering algorithm to detect sources around quasars. The resulting catalogue\
+    \ of multiplets is then analysed with several methods to identify potential gravitational\
+    \ lenses. We developed and applied an outlier scoring method, a comparison between\
+    \ the average BP and RP spectra of the components, and we also used an extremely\
+    \ randomised tree algorithm. These methods produce scores to identify the most\
+    \ probable configurations and to establish a list of lens candidates. <BR /> Results:\
+    \ We analysed the environment of 3 760 032 quasars. A total of 4 760 920 sources,\
+    \ including the quasars, were found within 6\u2033 of the quasar positions. This\
+    \ list is given in the Gaia archive. In 87% of cases, the quasar remains a single\
+    \ source, and in 501 385 cases neighbouring sources were detected. We propose\
+    \ a list of 381 lensed candidates, of which we identified 49 as the most promising\
+    \ ones. Beyond these candidates, the associate tables in this Focused Product\
+    \ Release allow the entire community to explore the unique Gaia data for strong\
+    \ lensing studies further. <P />Full Tables 2 and 3 are available at the CDS via\
+    \ anonymous ftp to <A href=\"https://cdsarc.cds.unistra.fr\">cdsarc.cds.unistra.fr</A>\
+    \ (ftp://130.79.128.5) or via <A href=\"https://cdsarc.cds.unistra.fr/viz-bin/cat/J/A+A/685/A130\"\
+    >https://cdsarc.cds.unistra.fr/viz-bin/cat/J/A+A/685/A130</A>"
+  author:
+  - Gaia Collaboration
+  - Krone-Martins, A.
+  - Ducourant, C.
+  - Galluccio, L.
+  - Delchambre, L.
+  - Oreshina-Slezak, I.
+  - Teixeira, R.
+  - Braine, J.
+  - Le Campion, J. -F.
+  - Mignard, F.
+  - Roux, W.
+  - Blazere, A.
+  - Pegoraro, L.
+  - Brown, A. G. A.
+  - Vallenari, A.
+  - Prusti, T.
+  - de Bruijne, J. H. J.
+  - Arenou, F.
+  - Babusiaux, C.
+  - Barbier, A.
+  - Biermann, M.
+  - Creevey, O. L.
+  - Evans, D. W.
+  - Eyer, L.
+  - Guerra, R.
+  - Hutton, A.
+  - Jordi, C.
+  - Klioner, S. A.
+  - Lammers, U.
+  - Lindegren, L.
+  - Luri, X.
+  - Randich, S.
+  - Sartoretti, P.
+  - Smiljanic, R.
+  - Tanga, P.
+  - Walton, N. A.
+  - Bailer-Jones, C. A. L.
+  - Bastian, U.
+  - Cropper, M.
+  - Drimmel, R.
+  - Katz, D.
+  - Soubiran, C.
+  - van Leeuwen, F.
+  - Audard, M.
+  - Bakker, J.
+  - Blomme, R.
+  - "Casta\xF1eda, J."
+  - De Angeli, F.
+  - Fabricius, C.
+  - Fouesneau, M.
+  - "Fr\xE9mat, Y."
+  - Guerrier, A.
+  - Masana, E.
+  - Messineo, R.
+  - Nicolas, C.
+  - Nienartowicz, K.
+  - Pailler, F.
+  - Panuzzo, P.
+  - Riclet, F.
+  - Seabroke, G. M.
+  - Sordo, R.
+  - "Th\xE9venin, F."
+  - Gracia-Abril, G.
+  - Portell, J.
+  - Teyssier, D.
+  - Altmann, M.
+  - Benson, K.
+  - Berthier, J.
+  - Burgess, P. W.
+  - Busonero, D.
+  - Busso, G.
+  - "C\xE1novas, H."
+  - Carry, B.
+  - Cheek, N.
+  - Clementini, G.
+  - Damerdji, Y.
+  - Davidson, M.
+  - de Teodoro, P.
+  - Dell'Oro, A.
+  - Fraile Garcia, E.
+  - Garabato, D.
+  - "Garc\xEDa-Lario, P."
+  - Garralda Torres, N.
+  - Gavras, P.
+  - Haigron, R.
+  - Hambly, N. C.
+  - Harrison, D. L.
+  - Hatzidimitriou, D.
+  - "Hern\xE1ndez, J."
+  - Hodgkin, S. T.
+  - Holl, B.
+  - Jamal, S.
+  - Jordan, S.
+  - Lanzafame, A. C.
+  - "L\xF6ffler, W."
+  - Lorca, A.
+  - Marchal, O.
+  - Marrese, P. M.
+  - Moitinho, A.
+  - Muinonen, K.
+  - "Nu\xF1ez Campos, M."
+  - Osborne, P.
+  - Pancino, E.
+  - Pauwels, T.
+  - Recio-Blanco, A.
+  - Riello, M.
+  - Rimoldini, L.
+  - Robin, A. C.
+  - Roegiers, T.
+  - Sarro, L. M.
+  - Schultheis, M.
+  - Siopis, C.
+  - Smith, M.
+  - Sozzetti, A.
+  - Utrilla, E.
+  - van Leeuwen, M.
+  - Weingrill, K.
+  - Abbas, U.
+  - "\xC1brah\xE1m, P."
+  - Abreu Aramburu, A.
+  - Aerts, C.
+  - Altavilla, G.
+  - "\xC1lvarez, M. A."
+  - Alves, J.
+  - Anderson, R. I.
+  - Antoja, T.
+  - Baines, D.
+  - Baker, S. G.
+  - Balog, Z.
+  - Barache, C.
+  - Barbato, D.
+  - Barros, M.
+  - Barstow, M. A.
+  - "Bartolom\xE9, S."
+  - Bashi, D.
+  - Bauchet, N.
+  - Baudeau, N.
+  - Becciani, U.
+  - Bedin, L. R.
+  - Bellas-Velidis, I.
+  - Bellazzini, M.
+  - Beordo, W.
+  - Berihuete, A.
+  - Bernet, M.
+  - Bertolotto, C.
+  - Bertone, S.
+  - Bianchi, L.
+  - Binnenfeld, A.
+  - Boch, T.
+  - Bombrun, A.
+  - Bouquillon, S.
+  - Bragaglia, A.
+  - Bramante, L.
+  - Breedt, E.
+  - Bressan, A.
+  - Brouillet, N.
+  - Brugaletta, E.
+  - Bucciarelli, B.
+  - Butkevich, A. G.
+  - Buzzi, R.
+  - Caffau, E.
+  - Cancelliere, R.
+  - Cannizzo, S.
+  - Carballo, R.
+  - Carlucci, T.
+  - Carnerero, M. I.
+  - Carrasco, J. M.
+  - Carretero, J.
+  - Carton, S.
+  - Casamiquela, L.
+  - Castellani, M.
+  - Castro-Ginard, A.
+  - Cesare, V.
+  - Charlot, P.
+  - Chemin, L.
+  - Chiaramida, V.
+  - Chiavassa, A.
+  - Chornay, N.
+  - Collins, R.
+  - Contursi, G.
+  - Cooper, W. J.
+  - Cornez, T.
+  - Crosta, M.
+  - Crowley, C.
+  - Dafonte, C.
+  - de Laverny, P.
+  - De Luise, F.
+  - De March, R.
+  - de Souza, R.
+  - de Torres, A.
+  - del Peloso, E. F.
+  - Delbo, M.
+  - Delgado, A.
+  - Dharmawardena, T. E.
+  - Diakite, S.
+  - Diener, C.
+  - Distefano, E.
+  - Dolding, C.
+  - Dsilva, K.
+  - "Dur\xE1n, J."
+  - Enke, H.
+  - Esquej, P.
+  - Fabre, C.
+  - Fabrizio, M.
+  - Faigler, S.
+  - "Fatovi\u0107, M."
+  - Fedorets, G.
+  - "Fern\xE1ndez-Hern\xE1ndez, J."
+  - Fernique, P.
+  - Figueras, F.
+  - Fournier, Y.
+  - Fouron, C.
+  - Gai, M.
+  - Galinier, M.
+  - Garcia-Gutierrez, A.
+  - "Garc\xEDa-Torres, M."
+  - Garofalo, A.
+  - Gerlach, E.
+  - Geyer, R.
+  - Giacobbe, P.
+  - Gilmore, G.
+  - Girona, S.
+  - Giuffrida, G.
+  - Gomel, R.
+  - Gomez, A.
+  - "Gonz\xE1lez-N\xFA\xF1ez, J."
+  - "Gonz\xE1lez-Santamar\xEDa, I."
+  - Gosset, E.
+  - Granvik, M.
+  - Gregori Barrera, V.
+  - "Guti\xE9rrez-S\xE1nchez, R."
+  - Haywood, M.
+  - Helmer, A.
+  - Helmi, A.
+  - Henares, K.
+  - Hidalgo, S. L.
+  - Hilger, T.
+  - Hobbs, D.
+  - Hottier, C.
+  - Huckle, H. E.
+  - "Jab\u0142o\u0144ska, M."
+  - Jansen, F.
+  - "Jim\xE9nez-Arranz, \xD3."
+  - Juaristi Campillo, J.
+  - Khanna, S.
+  - Kordopatis, G.
+  - "K\xF3sp\xE1l, \xC1."
+  - Kostrzewa-Rutkowska, Z.
+  - Kun, M.
+  - Lambert, S.
+  - Lanza, A. F.
+  - Lebreton, Y.
+  - Lebzelter, T.
+  - Leccia, S.
+  - Lecoeur-Taibi, I.
+  - Lecoutre, G.
+  - Liao, S.
+  - Liberato, L.
+  - Licata, E.
+  - "Lindstr\xF8m, H. E. P."
+  - Lister, T. A.
+  - Livanou, E.
+  - Lobel, A.
+  - Loup, C.
+  - Mahy, L.
+  - Mann, R. G.
+  - Manteiga, M.
+  - Marchant, J. M.
+  - Marconi, M.
+  - "Mar\xEDn Pina, D."
+  - Marinoni, S.
+  - Marshall, D. J.
+  - "Mart\xEDn Lozano, J."
+  - "Mart\xEDn-Fleitas, J. M."
+  - Marton, G.
+  - Mary, N.
+  - Masip, A.
+  - Massari, D.
+  - Mastrobuono-Battisti, A.
+  - Mazeh, T.
+  - McMillan, P. J.
+  - Meichsner, J.
+  - Messina, S.
+  - Michalik, D.
+  - Millar, N. R.
+  - Mints, A.
+  - Molina, D.
+  - Molinaro, R.
+  - "Moln\xE1r, L."
+  - Monari, G.
+  - "Mongui\xF3, M."
+  - Montegriffo, P.
+  - Montero, A.
+  - Mor, R.
+  - Mora, A.
+  - Morbidelli, R.
+  - Morel, T.
+  - Morris, D.
+  - Mowlavi, N.
+  - Munoz, D.
+  - Muraveva, T.
+  - Murphy, C. P.
+  - Musella, I.
+  - Nagy, Z.
+  - Nieto, S.
+  - Noval, L.
+  - Ogden, A.
+  - Ordenovic, C.
+  - Pagani, C.
+  - Pagano, I.
+  - Palaversa, L.
+  - Palicio, P. A.
+  - Pallas-Quintela, L.
+  - Panahi, A.
+  - Panem, C.
+  - Payne-Wardenaar, S.
+  - "Penttil\xE4, A."
+  - Pesciullesi, P.
+  - Piersimoni, A. M.
+  - Pinamonti, M.
+  - Pineau, F. -X.
+  - Plachy, E.
+  - Plum, G.
+  - Poggio, E.
+  - Pourbaix, D.
+  - "Pr\u0161a, A."
+  - Pulone, L.
+  - Racero, E.
+  - Rainer, M.
+  - Raiteri, C. M.
+  - Ramos, P.
+  - Ramos-Lerate, M.
+  - Ratajczak, M.
+  - Re Fiorentin, P.
+  - Regibo, S.
+  - "Reyl\xE9, C."
+  - Ripepi, V.
+  - Riva, A.
+  - Rix, H. -W.
+  - Rixon, G.
+  - Robichon, N.
+  - Robin, C.
+  - "Romero-G\xF3mez, M."
+  - Rowell, N.
+  - Royer, F.
+  - Ruz Mieres, D.
+  - Rybicki, K. A.
+  - Sadowski, G.
+  - "S\xE1ez N\xFA\xF1ez, A."
+  - "Sagrist\xE0 Sell\xE9s, A."
+  - Sahlmann, J.
+  - Sanchez Gimenez, V.
+  - Sanna, N.
+  - "Santove\xF1a, R."
+  - Sarasso, M.
+  - Sarrate Riera, C.
+  - Sciacca, E.
+  - Segovia, J. C.
+  - "S\xE9gransan, D."
+  - Shahaf, S.
+  - Siebert, A.
+  - Siltala, L.
+  - Slezak, E.
+  - Smart, R. L.
+  - Snaith, O. N.
+  - Solano, E.
+  - Solitro, F.
+  - Souami, D.
+  - Souchay, J.
+  - Spina, L.
+  - Spitoni, E.
+  - Spoto, F.
+  - Squillante, L. A.
+  - Steele, I. A.
+  - "Steidelm\xFCller, H."
+  - Surdej, J.
+  - Szabados, L.
+  - Taris, F.
+  - Taylor, M. B.
+  - "Tisani\u0107, K."
+  - Tolomei, L.
+  - Torra, F.
+  - Torralba Elipe, G.
+  - Trabucchi, M.
+  - Tsantaki, M.
+  - Ulla, A.
+  - Unger, N.
+  - Vanel, O.
+  - Vecchiato, A.
+  - Vicente, D.
+  - Voutsinas, S.
+  - Weiler, M.
+  - "Wyrzykowski, \u0141."
+  - Zhao, H.
+  - Zorec, J.
+  - Zwitter, T.
+  - "Balaguer-N\xFA\xF1ez, L."
+  - Leclerc, N.
+  - Morgenthaler, S.
+  - Robert, G.
+  - Zucker, S.
+  bibcode: 2024A&A...685A.130G
+  category: collaboration
+  citation_count: 5
+  doctype: article
+  identifier:
+  - 10.48550/arXiv.2310.06295
+  - 2024A&A...685A.130G
+  - 10.1051/0004-6361/202347273
+  - arXiv:2310.06295
+  - 2023arXiv231006295G
+  page: A130
+  pub: Astronomy and Astrophysics
+  title: 'Gaia Focused Product Release: A catalogue of sources around quasars to search
+    for strongly lensed quasars'
+  url: null
+  volume: '685'
+  year: 2024
+- abstract: Although the initial plan was to exclude from Gaia Focused Product Release
+    (FPR) all sources within 160mas from known DR3 sources, it turned out that in
+    379 cases this requirement was not fulfilled. The reasons are explained in the
+    paper. Here we provide a list of these pairs, together with the reason for this
+    match to appear. For this match, we shifted DR3 sources to 2017.5 (SIF epoch)
+    positions using their proper motions. <P />List of matches between Gaia SIF CF
+    and DR3 sources within 160mas. <P />(1 data file).
+  author:
+  - Gaia Collaboration
+  - Weingrill, K.
+  - Mints, A.
+  - Castaneda, J.
+  - Kostrzewa-Rutkowska, Z.
+  - Davidson, M.
+  - de Angeli, F.
+  - Hernandez, J.
+  - Torra, F.
+  - Ramos-Lerate, M.
+  - Babusiaux, C.
+  - Biermann, M.
+  - Crowley, C.
+  - Evans, D. W.
+  - Lindegren, L.
+  - Martin-Fleitas, J. M.
+  - Palaversa, L.
+  - Ruz Mieres, D.
+  - Tisanic, K.
+  - Brown, A. G. A.
+  - Vallenari, A.
+  - Prusti, T.
+  - de Bruijne, J. H. J.
+  - Arenou, F.
+  - Barbier, A.
+  - Creevey, O. L.
+  - Ducourant, C.
+  - Eyer, L.
+  - Guerra, R.
+  - Hutton, A.
+  - Jordi, C.
+  - Klioner, S. A.
+  - Lammers, U.
+  - Luri, X.
+  - Mignard, F.
+  - Randich, S.
+  - Sartoretti, P.
+  - Smiljanic, R.
+  - Tanga, P.
+  - Walton, N. A.
+  - Bailer-Jones, C. A. L.
+  - Bastian, U.
+  - Cropper, M.
+  - Drimmel, R.
+  - Katz, D.
+  - Soubiran, C.
+  - van Leeuwen, F.
+  - Audard, M.
+  - Bakker, J.
+  - Blomme, R.
+  - Fabricius, C.
+  - Fouesneau, M.
+  - Fremat, Y.
+  - Galluccio, L.
+  - Guerrier, A.
+  - Masana, E.
+  - Messineo, R.
+  - Nicolas, C.
+  - Nienartowicz, K.
+  - Pailler, F.
+  - Panuzzo, P.
+  - Riclet, F.
+  - Roux, W.
+  - Seabroke, G. M.
+  - Sordo, R.
+  - Thevenin, F.
+  - Gracia-Abril, G.
+  - Portell, J.
+  - Teyssier, D.
+  - Altmann, M.
+  - Benson, K.
+  - Berthier, J.
+  - Burgess, P. W.
+  - Busonero, D.
+  - Busso, G.
+  - Cano! Vas, H.
+  - C Arry, B.
+  - Cheek, N.
+  - Clementini, G.
+  - Damerdji, Y.
+  - de Teodoro, P.
+  - Delchambre, L.
+  - Dell'Oro, A.
+  - Fraile Garcia, E.
+  - Garabato, D.
+  - Garcia-Lario, P.
+  - Garralda Torres, N.
+  - Gavras, P.
+  - Haigron, R.
+  - Hambly, N. C.
+  - Harrison, D. L.
+  - Hatzidimitriou, D.
+  - Hodgkin, S. T.
+  - Holl, B.
+  - Jamal, S.
+  - Jordan, S.
+  - Krone-Martins, A.
+  - Lanzafame, A. C.
+  - Loeffler, W.
+  - Lorca, A.
+  - Marchal, O.
+  - Marrese, P. M.
+  - Moitinho, A.
+  - Muinonen, K.
+  - Nunez Campos, M.
+  - Oreshina-Slezak, I.
+  - Osborne, P.
+  - Pancino, E.
+  - Pauwels, T.
+  - Recio-Blanco, A.
+  - Riello, M.
+  - Rimoldini, L.
+  - Robin, A. C.
+  - Roegiers, T.
+  - Sarro, L. M.
+  - Schultheis, M.
+  - Siopis, C.
+  - Smith, M.
+  - Sozzetti, A.
+  - Utrilla, E.
+  - van Leeuwen, M.
+  - Abbas, U.
+  - Abraham, P.
+  - Abreu Aramburu, A.
+  - Aerts, C.
+  - Altavilla, G.
+  - Alvarez, M. A.
+  - Alves, J.
+  - Anders, F.
+  - Anderson, R. I.
+  - Antoja, T.
+  - Baines, D.
+  - Baker, S. G.
+  - Balog, Z.
+  - Barache, C.
+  - Barbato, D.
+  - Barros, M.
+  - Barstow, M. A.
+  - Bartolome, S.
+  - Bashi, D.
+  - Bauchet, N.
+  - Baudeau, N.
+  - Becciani, U.
+  - Bedin, L. R.
+  - Bellas-Velidis, I.
+  - Bellazzini, M.
+  - Beordo, W.
+  - Berihuete, A.
+  - Bernet, M.
+  - Bertolotto, C.
+  - Bertone, S.
+  - '! Bianchi, L.'
+  - Binnenfeld, A.
+  - Blazere, A.
+  - Boch, T.
+  - Bombrun, A.
+  - Bouquillon, S.
+  - Bragaglia, A.
+  - Braine, J.
+  - Bramante, L.
+  - Breedt, E.
+  - Bressan, A.
+  - Brouillet, N.
+  - Brugaletta, E.
+  - Bucciarelli, B.
+  - Butkevich, A. G.
+  - Buzzi, R.
+  - Caffau, E.
+  - Cancelliere, R.
+  - Cannizzo, S.
+  - Cantat-Gaudin, T.
+  - Carballo, R.
+  - Carlucci, T.
+  - Carnerero, M. I.
+  - Carrasco, J. M.
+  - Carretero, J.
+  - Carton, S.
+  - Casamiquela, L.
+  - Castellani, M.
+  - Castro-Ginard, A.
+  - Cesare, V.
+  - Charlot, P.
+  - Chemin, L.
+  - Chiaramida, V.
+  - Chiavassa, A.
+  - Chornay, N.
+  - Collins, R.
+  - Contursi, G.
+  - Cooper, W. J.
+  - Cornez, T.
+  - Crosta, M.
+  - Dafonte, C.
+  - de Laverny, P.
+  - de Luise, F.
+  - de March, R.
+  - de Souza, R.
+  - de Torres, A.
+  - Del Peloso, E. F.
+  - Delbo, M.
+  - Delgado, A.
+  - Dharmawardena, T. E.
+  - Diakite, S.
+  - Diener, C.
+  - Distefano, E.
+  - Dolding, C.
+  - Dsilva, K.
+  - Duran, J.
+  - Enke, H.
+  - Esquej, P.
+  - Fabre, C.
+  - Fabrizio, M.
+  - Faigler, S.
+  - Fatovic, M.
+  - Fedorets, G.
+  - Fernandez-Hernandez, J.
+  - Fernique, P.
+  - Figueras, F.
+  - Fournier, Y.
+  - Fouron, C.
+  - Gai, M.
+  - Galinier, M.
+  - Garcia-Gutierrez, A.
+  - Garcia-Torres, M.
+  - Garofalo, A.
+  - Gerlach, E.
+  - Geyer, R.
+  - Giacobbe!, P.
+  - Gilm Ore, G.
+  - Girona, S.
+  - Giuffrida, G.
+  - Gomel, R.
+  - Gomez, A.
+  - Gonzalez-Nunez, J.
+  - Gonzalez-Santamaria, I.
+  - Gosset, E.
+  - Granvik, M.
+  - Gregori Barrera, V.
+  - Gutierrez-Sanchez, R.
+  - Haywood, M.
+  - Helmer, A.
+  - Helmi, A.
+  - Henares, K.
+  - Hidalgo, S. L.
+  - Hilger, T.
+  - Hobbs, D.
+  - Hottier, C.
+  - Huckle, H. E.
+  - Jablonska, M.
+  - Jansen, F.
+  - Jimenez-Arranz, O.
+  - Juaristi Campillo, J.
+  - Khanna, S.
+  - Kordopatis, G.
+  - Kospal, A.
+  - Kun, M.
+  - Lambert, S.
+  - Lanza, A. F.
+  - Le Campion, J. -F.
+  - Lebreton, Y.
+  - Lebzelter, T.
+  - Leccia, S.
+  - Lecoeur-Taibi, I.
+  - Lecoutre, G.
+  - Liao, S.
+  - Liberato, L.
+  - Licata, E.
+  - Lindstrom, H. E. P.
+  - Lister, T. A.
+  - Livanou, E.
+  - Lobel, A.
+  - Loup, C.
+  - Mahy, L.
+  - Mann, R. G.
+  - Manteiga, M.
+  - Marchant, J. M.
+  - Marconi, M.
+  - Marin Pina, D.
+  - Marinoni, S.
+  - Marshall, D. J.
+  - Martin Lozano, J.
+  - Marton, G.
+  - Mary, N.
+  - Masip, A.
+  - Massari, D.
+  - Mastrobuono-Battisti, A.
+  - Mazeh, T.
+  - McMillan, P. J.
+  - Meichsner, J.
+  - Messina, S.
+  - Michalik, D.
+  - Millar, N. R.
+  - Molina, D.
+  - Molinaro, R.
+  - Molnar, L.
+  - Monari, G.
+  - Monguio, M.
+  - Montegriffo, P.
+  - Montero, A.
+  - Mor, R.
+  - Mora, A.
+  - Morbidelli, R.
+  - Morel, T.
+  - Morris, D.
+  - M! Owlavi, N.
+  - Munoz, D.
+  - Muraveva, T.
+  - Murphy, C. P.
+  - Musella, I.
+  - Nagy, Z.
+  - Nieto, S.
+  - Noval, L.
+  - Ogden, A.
+  - Ordenovic, C.
+  - Pagani, C.
+  - Pagano, I.
+  - Palicio, P. A.
+  - Pallas-Quintela, L.
+  - Panahi, A.
+  - Panem, C.
+  - Payne-Wardenaar, S.
+  - Pegoraro, L.
+  - Penttilae, A.
+  - Pesciullesi, P.
+  - Piersimoni, A. M.
+  - Pinamonti, M.
+  - Pineau, F. -X.
+  - Plachy, E.
+  - Plum, G.
+  - Poggio, E.
+  - Pourbaix, D.
+  - Prsa, A.
+  - Pulone, L.
+  - Racero, E.
+  - Rainer, M.
+  - Raiteri, C. M.
+  - Ramos, P.
+  - Ratajczak, M.
+  - Re Fiorentin, P.
+  - Regibo, S.
+  - Reyle, C.
+  - Ripepi, V.
+  - Riva, A.
+  - Rix, H. -W.
+  - Rixon, G.
+  - Robichon, N.
+  - Robin, C.
+  - Romero-Gomez, M.
+  - Rowell, N.
+  - Royer, F.
+  - Rybicki, K. A.
+  - Sadowski, G.
+  - Saez Nunez, A.
+  - Sagrista Selles, A.
+  - Sahlmann, J.
+  - Sanchez Gimenez, V.
+  - Sanna, N.
+  - Santovena, R.
+  - Sarasso, M.
+  - Sarrate Riera, C.
+  - Sciacca, E.
+  - Segovia, J. C.
+  - Segransan, D.
+  - Shahaf, S.
+  - Siebert, A.
+  - Siltala, L.
+  - Slezak, E.
+  - Smart, R. L.
+  - Snaith, O. N.
+  - Solano, E.
+  - Solitro, F.
+  - Souami, D.
+  - Souchay, J.
+  - Spina, L.
+  - Spitoni, E.
+  - Spoto, F.
+  - Squillante, L. A.
+  - Steele, I. A.
+  - Steidelmueller, H.
+  - Surdej, J.
+  - Szabados, L.
+  - Taris, F.
+  - Taylor, M. B.
+  - Te! Ixeira, R.
+  - Tolomei, L.
+  - Torralba Elipe, G.
+  - Trabucchi, M.
+  - Tsantaki, M.
+  - Ulla, A.
+  - Unger, N.
+  - Vanel, O.
+  - Vecchiato, A.
+  - Vicente, D.
+  - Voutsinas, S.
+  - Weiler, M.
+  - Wyrzykowski, L.
+  - Zhao, H.
+  - Zorec, J.
+  - Zwitter, T.
+  - Balaguer-Nunez, L.
+  - Leclerc, N.
+  - Morgenthaler, S.
+  - Robert, G.
+  - Zucker, S.
+  bibcode: 2023yCat..36800035G
+  category: collaboration
+  citation_count: 0
+  doctype: dataset
+  identifier:
+  - 2023yCat..36800035G
+  page: J/A+A/680/A35
+  pub: VizieR Online Data Catalog
+  title: 'VizieR Online Data Catalog: Gaia Focused Product Release (Gaia Collaboration,
+    2023)'
+  url: null
+  volume: '368'
+  year: 2023
+- abstract: "Diffuse interstellar bands (DIBs) are absorption features seen in optical\
+    \ and infrared spectra of stars and extragalactic objects that are probably caused\
+    \ by large and complex molecules in the galactic interstellar medium (ISM). Here\
+    \ we investigate the Galactic distribution and properties of two DIBs identified\
+    \ in almost six million stellar spectra collected by the Gaia Radial Velocity\
+    \ Spectrometer. These measurements constitute a part of the Gaia Focused Product\
+    \ Release to be made public between the Gaia DR3 and DR4 data releases. In order\
+    \ to isolate the DIB signal from the stellar features in each individual spectrum,\
+    \ we identified a set of 160 000 spectra at high Galactic latitudes (|b| \u2A7E\
+    \ 65\xB0) covering a range of stellar parameters which we consider to be the DIB-free\
+    \ reference sample. Matching each target spectrum to its closest reference spectra\
+    \ in stellar parameter space allowed us to remove the stellar spectrum empirically,\
+    \ without reference to stellar models, leaving a set of six million ISM spectra.\
+    \ Using the star's parallax and sky coordinates, we then allocated each ISM spectrum\
+    \ to a voxel (VOlume piXEL) on a contiguous three-dimensional grid with an angular\
+    \ size of 1.8\xB0 (level 5 HEALPix) and 29 unequally sized distance bins. Identifying\
+    \ the two DIBs at 862.1 nm (\u03BB862.1) and 864.8 nm (\u03BB864.8) in the stacked\
+    \ spectra, we modelled their shapes and report the depth, central wavelength,\
+    \ width, and equivalent width (EW) for each, along with confidence bounds on these\
+    \ measurements. We then explored the properties and distributions of these quantities\
+    \ and compared them with similar measurements from other surveys. Our main results\
+    \ are as follows: (1) the strength and spatial distribution of the DIB \u03BB\
+    862.1 are very consistent with what was found in Gaia DR3, but for this work we\
+    \ attained a higher signal-to-noise ratio in the stacked spectra to larger distances,\
+    \ which allowed us to trace DIBs in the outer spiral arm and beyond the Scutum-Centaurus\
+    \ spiral arm; (2) we produced an all-sky map below \xB165\xB0 of Galactic latitude\
+    \ to ~4000 pc of both DIB features and their correlations; (3) we detected the\
+    \ signals of DIB \u03BB862.1 inside the Local Bubble (\u2272200 pc); and (4) there\
+    \ is a reasonable correlation with the dust reddening found from stellar absorption\
+    \ and EWs of both DIBs with a correlation coefficient of 0.90 for \u03BB862.1\
+    \ and 0.77 for \u03BB864.8."
+  author:
+  - Gaia Collaboration
+  - Schultheis, M.
+  - Zhao, H.
+  - Zwitter, T.
+  - Bailer-Jones, C. A. L.
+  - Carballo, R.
+  - Sordo, R.
+  - Drimmel, R.
+  - Ordenovic, C.
+  - Pailler, F.
+  - Fouesneau, M.
+  - Creevey, O. L.
+  - Heiter, U.
+  - Recio-Blanco, A.
+  - Kordopatis, G.
+  - de Laverny, P.
+  - Marshall, D. J.
+  - Dharmawardena, T. E.
+  - Brown, A. G. A.
+  - Vallenari, A.
+  - Prusti, T.
+  - de Bruijne, J. H. J.
+  - Arenou, F.
+  - Babusiaux, C.
+  - Barbier, A.
+  - Biermann, M.
+  - Ducourant, C.
+  - Evans, D. W.
+  - Eyer, L.
+  - Guerra, R.
+  - Hutton, A.
+  - Jordi, C.
+  - Klioner, S. A.
+  - Lammers, U.
+  - Lindegren, L.
+  - Luri, X.
+  - Mignard, F.
+  - Randich, S.
+  - Sartoretti, P.
+  - Smiljanic, R.
+  - Tanga, P.
+  - Walton, N. A.
+  - Bastian, U.
+  - Cropper, M.
+  - Katz, D.
+  - Soubiran, C.
+  - van Leeuwen, F.
+  - Andrae, R.
+  - Audard, M.
+  - Bakker, J.
+  - Blomme, R.
+  - "Casta\xF1eda, J."
+  - De Angeli, F.
+  - Fabricius, C.
+  - "Fr\xE9mat, Y."
+  - Galluccio, L.
+  - Guerrier, A.
+  - Masana, E.
+  - Messineo, R.
+  - Nicolas, C.
+  - Nienartowicz, K.
+  - Panuzzo, P.
+  - Riclet, F.
+  - Roux, W.
+  - Seabroke, G. M.
+  - "Th\xE9venin, F."
+  - Gracia-Abril, G.
+  - Portell, J.
+  - Teyssier, D.
+  - Altmann, M.
+  - Benson, K.
+  - Berthier, J.
+  - Burgess, P. W.
+  - Busonero, D.
+  - Busso, G.
+  - "C\xE1novas, H."
+  - Carry, B.
+  - Cheek, N.
+  - Clementini, G.
+  - Damerdji, Y.
+  - Davidson, M.
+  - de Teodoro, P.
+  - Delchambre, L.
+  - Dell'Oro, A.
+  - Fraile Garcia, E.
+  - Garabato, D.
+  - "Garc\xEDa-Lario, P."
+  - Garralda Torres, N.
+  - Gavras, P.
+  - Haigron, R.
+  - Hambly, N. C.
+  - Harrison, D. L.
+  - Hatzidimitriou, D.
+  - "Hern\xE1ndez, J."
+  - Hodgkin, S. T.
+  - Holl, B.
+  - Jamal, S.
+  - Jordan, S.
+  - Krone-Martins, A.
+  - Lanzafame, A. C.
+  - "L\xF6ffler, W."
+  - Lorca, A.
+  - Marchal, O.
+  - Marrese, P. M.
+  - Moitinho, A.
+  - Muinonen, K.
+  - "Nu\xF1ez Campos, M."
+  - Oreshina-Slezak, I.
+  - Osborne, P.
+  - Pancino, E.
+  - Pauwels, T.
+  - Riello, M.
+  - Rimoldini, L.
+  - Robin, A. C.
+  - Roegiers, T.
+  - Sarro, L. M.
+  - Siopis, C.
+  - Smith, M.
+  - Sozzetti, A.
+  - Utrilla, E.
+  - van Leeuwen, M.
+  - Weingrill, K.
+  - Abbas, U.
+  - "\xC1brah\xE1m, P."
+  - Abreu Aramburu, A.
+  - Aerts, C.
+  - Altavilla, G.
+  - "\xC1lvarez, M. A."
+  - Alves, J.
+  - Anders, F.
+  - Anderson, R. I.
+  - Antoja, T.
+  - Baines, D.
+  - Baker, S. G.
+  - Balog, Z.
+  - Barache, C.
+  - Barbato, D.
+  - Barros, M.
+  - Barstow, M. A.
+  - "Bartolom\xE9, S."
+  - Bashi, D.
+  - Bauchet, N.
+  - Baudeau, N.
+  - Becciani, U.
+  - Bedin, L. R.
+  - Bellas-Velidis, I.
+  - Bellazzini, M.
+  - Beordo, W.
+  - Berihuete, A.
+  - Bernet, M.
+  - Bertolotto, C.
+  - Bertone, S.
+  - Bianchi, L.
+  - Binnenfeld, A.
+  - Blazere, A.
+  - Boch, T.
+  - Bombrun, A.
+  - Bouquillon, S.
+  - Bragaglia, A.
+  - Braine, J.
+  - Bramante, L.
+  - Breedt, E.
+  - Bressan, A.
+  - Brouillet, N.
+  - Brugaletta, E.
+  - Bucciarelli, B.
+  - Butkevich, A. G.
+  - Buzzi, R.
+  - Caffau, E.
+  - Cancelliere, R.
+  - Cannizzo, S.
+  - Carlucci, T.
+  - Carnerero, M. I.
+  - Carrasco, J. M.
+  - Carretero, J.
+  - Carton, S.
+  - Casamiquela, L.
+  - Castellani, M.
+  - Castro-Ginard, A.
+  - Cesare, V.
+  - Charlot, P.
+  - Chemin, L.
+  - Chiaramida, V.
+  - Chiavassa, A.
+  - Chornay, N.
+  - Collins, R.
+  - Contursi, G.
+  - Cooper, W. J.
+  - Cornez, T.
+  - Crosta, M.
+  - Crowley, C.
+  - Dafonte, C.
+  - De Luise, F.
+  - De March, R.
+  - de Souza, R.
+  - de Torres, A.
+  - del Peloso, E. F.
+  - Delbo, M.
+  - Delgado, A.
+  - Diakite, S.
+  - Diener, C.
+  - Distefano, E.
+  - Dolding, C.
+  - Dsilva, K.
+  - "Dur\xE1n, J."
+  - Enke, H.
+  - Esquej, P.
+  - Fabre, C.
+  - Fabrizio, M.
+  - Faigler, S.
+  - "Fatovi\u0107, M."
+  - Fedorets, G.
+  - "Fern\xE1ndez-Hern\xE1ndez, J."
+  - Fernique, P.
+  - Figueras, F.
+  - Fournier, Y.
+  - Fouron, C.
+  - Gai, M.
+  - Galinier, M.
+  - Garcia-Gutierrez, A.
+  - "Garc\xEDa-Torres, M."
+  - Garofalo, A.
+  - Gerlach, E.
+  - Geyer, R.
+  - Giacobbe, P.
+  - Gilmore, G.
+  - Girona, S.
+  - Giuffrida, G.
+  - Gomel, R.
+  - Gomez, A.
+  - "Gonz\xE1lez-N\xFA\xF1ez, J."
+  - "Gonz\xE1lez-Santamar\xEDa, I."
+  - Gosset, E.
+  - Granvik, M.
+  - Gregori Barrera, V.
+  - "Guti\xE9rrez-S\xE1nchez, R."
+  - Haywood, M.
+  - Helmer, A.
+  - Helmi, A.
+  - Henares, K.
+  - Hidalgo, S. L.
+  - Hilger, T.
+  - Hobbs, D.
+  - Hottier, C.
+  - Huckle, H. E.
+  - "Jab\u0142o\u0144ska, M."
+  - Jansen, F.
+  - "Jim\xE9nez-Arranz, \xD3."
+  - Juaristi Campillo, J.
+  - Khanna, S.
+  - Korn, A. J.
+  - "K\xF3sp\xE1l, \xC1."
+  - Kostrzewa-Rutkowska, Z.
+  - Kun, M.
+  - Lambert, S.
+  - Lanza, A. F.
+  - Le Campion, J. -F.
+  - Lebreton, Y.
+  - Lebzelter, T.
+  - Leccia, S.
+  - Lecoeur-Taibi, I.
+  - Lecoutre, G.
+  - Liao, S.
+  - Liberato, L.
+  - Licata, E.
+  - "Lindstr\xF8m, H. E. P."
+  - Lister, T. A.
+  - Livanou, E.
+  - Lobel, A.
+  - Loup, C.
+  - Mahy, L.
+  - Mann, R. G.
+  - Manteiga, M.
+  - Marchant, J. M.
+  - Marconi, M.
+  - "Mar\xEDn Pina, D."
+  - Marinoni, S.
+  - "Mart\xEDn Lozano, J."
+  - "Mart\xEDn-Fleitas, J. M."
+  - Marton, G.
+  - Mary, N.
+  - Masip, A.
+  - Massari, D.
+  - Mastrobuono-Battisti, A.
+  - Mazeh, T.
+  - McMillan, P. J.
+  - Meichsner, J.
+  - Messina, S.
+  - Michalik, D.
+  - Millar, N. R.
+  - Mints, A.
+  - Molina, D.
+  - Molinaro, R.
+  - "Moln\xE1r, L."
+  - Monari, G.
+  - "Mongui\xF3, M."
+  - Montegriffo, P.
+  - Montero, A.
+  - Mor, R.
+  - Mora, A.
+  - Morbidelli, R.
+  - Morel, T.
+  - Morris, D.
+  - Mowlavi, N.
+  - Munoz, D.
+  - Muraveva, T.
+  - Murphy, C. P.
+  - Musella, I.
+  - Nagy, Z.
+  - Nieto, S.
+  - Noval, L.
+  - Ogden, A.
+  - Pagani, C.
+  - Pagano, I.
+  - Palaversa, L.
+  - Palicio, P. A.
+  - Pallas-Quintela, L.
+  - Panahi, A.
+  - Panem, C.
+  - Payne-Wardenaar, S.
+  - Pegoraro, L.
+  - "Penttil\xE4, A."
+  - Pesciullesi, P.
+  - Piersimoni, A. M.
+  - Pinamonti, M.
+  - Pineau, F. -X.
+  - Plachy, E.
+  - Plum, G.
+  - Poggio, E.
+  - Pourbaix, D.
+  - "Pr\u0161a, A."
+  - Pulone, L.
+  - Racero, E.
+  - Rainer, M.
+  - Raiteri, C. M.
+  - Ramos, P.
+  - Ramos-Lerate, M.
+  - Ratajczak, M.
+  - Re Fiorentin, P.
+  - Regibo, S.
+  - "Reyl\xE9, C."
+  - Ripepi, V.
+  - Riva, A.
+  - Rix, H. -W.
+  - Rixon, G.
+  - Robichon, N.
+  - Robin, C.
+  - "Romero-G\xF3mez, M."
+  - Rowell, N.
+  - Royer, F.
+  - Ruz Mieres, D.
+  - Rybicki, K. A.
+  - Sadowski, G.
+  - "S\xE1ez N\xFA\xF1ez, A."
+  - "Sagrist\xE0 Sell\xE9s, A."
+  - Sahlmann, J.
+  - Sanchez Gimenez, V.
+  - Sanna, N.
+  - "Santove\xF1a, R."
+  - Sarasso, M.
+  - Sarrate Riera, C.
+  - Sciacca, E.
+  - Segovia, J. C.
+  - "S\xE9gransan, D."
+  - Shahaf, S.
+  - Siebert, A.
+  - Siltala, L.
+  - Slezak, E.
+  - Smart, R. L.
+  - Snaith, O. N.
+  - Solano, E.
+  - Solitro, F.
+  - Souami, D.
+  - Souchay, J.
+  - Spina, L.
+  - Spitoni, E.
+  - Spoto, F.
+  - Squillante, L. A.
+  - Steele, I. A.
+  - "Steidelm\xFCller, H."
+  - Surdej, J.
+  - Szabados, L.
+  - Taris, F.
+  - Taylor, M. B.
+  - Teixeira, R.
+  - "Tisani\u0107, K."
+  - Tolomei, L.
+  - Torra, F.
+  - Torralba Elipe, G.
+  - Trabucchi, M.
+  - Tsantaki, M.
+  - Ulla, A.
+  - Unger, N.
+  - Vanel, O.
+  - Vecchiato, A.
+  - Vicente, D.
+  - Voutsinas, S.
+  - Weiler, M.
+  - Wyrzykowski, L.
+  - Zorec, J.
+  - "Balaguer-N\xFA\xF1ez, L."
+  - Leclerc, N.
+  - Morgenthaler, S.
+  - Robert, G.
+  - Zucker, S.
+  bibcode: 2023A&A...680A..38G
+  category: collaboration
+  citation_count: 3
+  doctype: article
+  identifier:
+  - 10.48550/arXiv.2310.06175
+  - 2023A&A...680A..38G
+  - 2023arXiv231006175G
+  - 10.1051/0004-6361/202347103
+  - 2023arXiv231006175S
+  - arXiv:2310.06175
+  page: A38
+  pub: Astronomy and Astrophysics
+  title: 'Gaia Focused Product Release: Spatial distribution of two diffuse interstellar
+    bands'
+  url: null
+  volume: '680'
+  year: 2023
+- abstract: "Context. We report the exploitation of a sample of Solar System observations\
+    \ based on data from the third Gaia Data Release (Gaia DR3) of nearly 157 000\
+    \ asteroids. It extends the epoch astrometric solution over the time coverage\
+    \ planned for the Gaia DR4, which is not expected before the end of 2025. This\
+    \ data set covers more than one full orbital period for the vast majority of these\
+    \ asteroids. The orbital solutions are derived from the Gaia data alone over a\
+    \ relatively short arc compared to the observation history of many of these asteroids.\
+    \ <BR /> Aims: The work aims to produce orbital elements for a large set of asteroids\
+    \ based on 66 months of accurate astrometry provided by Gaia and to assess the\
+    \ accuracy of these orbital solutions with a comparison to the best available\
+    \ orbits derived from independent observations. A second validation is performed\
+    \ with accurate occultation timings. <BR /> Methods: We processed the raw astrometric\
+    \ measurements of Gaia to obtain astrometric positions of moving objects with\
+    \ 1D sub-mas accuracy at the bright end. For each asteroid that we matched to\
+    \ the data, an orbit fitting was attempted in the form of the best fit of the\
+    \ initial conditions at the median epoch. The force model included Newtonian and\
+    \ relativistic accelerations to derive the observation equations, which were solved\
+    \ with a linear least-squares fit. <BR /> Results: Orbits are provided in the\
+    \ form of state vectors in the International Celestial Reference Frame for 156\
+    \ 764 asteroids, including near-Earth objects, main-belt asteroids, and Trojans.\
+    \ For the asteroids with the best observations, the (formal) relative uncertainty\
+    \ \u03C3<SUB>a</SUB>/a is better than 10<SUP>\u221210</SUP>. Results are compared\
+    \ to orbits available from the Jet Propulsion Laboratory and MPC. Their orbits\
+    \ are based on much longer data arcs, but from positions of lower quality. The\
+    \ relative differences in semi-major axes have a mean of 5 \xD7 10<SUP>\u2212\
+    10</SUP> and a scatter of 5 \xD7 10<SUP>\u22129</SUP>."
+  author:
+  - Gaia Collaboration
+  - David, P.
+  - Mignard, F.
+  - Hestroffer, D.
+  - Tanga, P.
+  - Spoto, F.
+  - Berthier, J.
+  - Pauwels, T.
+  - Roux, W.
+  - Barbier, A.
+  - Cellino, A.
+  - Carry, B.
+  - Delbo, M.
+  - Dell'Oro, A.
+  - Fouron, C.
+  - Galluccio, L.
+  - Klioner, S. A.
+  - Mary, N.
+  - Muinonen, K.
+  - Ordenovic, C.
+  - Oreshina-Slezak, I.
+  - Panem, C.
+  - Petit, J. -M.
+  - Portell, J.
+  - Brown, A. G. A.
+  - Thuillot, W.
+  - Vallenari, A.
+  - Prusti, T.
+  - de Bruijne, J. H. J.
+  - Arenou, F.
+  - Babusiaux, C.
+  - Biermann, M.
+  - Creevey, O. L.
+  - Ducourant, C.
+  - Evans, D. W.
+  - Eyer, L.
+  - Guerra, R.
+  - Hutton, A.
+  - Jordi, C.
+  - Lammers, U.
+  - Lindegren, L.
+  - Luri, X.
+  - Randich, S.
+  - Sartoretti, P.
+  - Smiljanic, R.
+  - Walton, N. A.
+  - Bailer-Jones, C. A. L.
+  - Bastian, U.
+  - Cropper, M.
+  - Drimmel, R.
+  - Katz, D.
+  - Soubiran, C.
+  - van Leeuwen, F.
+  - Audard, M.
+  - Bakker, J.
+  - Blomme, R.
+  - "Casta\xF1eda, J."
+  - De Angeli, F.
+  - Fabricius, C.
+  - Fouesneau, M.
+  - "Fr\xE9mat, Y."
+  - Guerrier, A.
+  - Masana, E.
+  - Messineo, R.
+  - Nicolas, C.
+  - Nienartowicz, K.
+  - Pailler, F.
+  - Panuzzo, P.
+  - Riclet, F.
+  - Seabroke, G. M.
+  - Sordo, R.
+  - "Th\xE9venin, F."
+  - Gracia-Abril, G.
+  - Teyssier, D.
+  - Altmann, M.
+  - Benson, K.
+  - Burgess, P. W.
+  - Busonero, D.
+  - Busso, G.
+  - "C\xE1novas, H."
+  - Cheek, N.
+  - Clementini, G.
+  - Damerdji, Y.
+  - Davidson, M.
+  - de Teodoro, P.
+  - Delchambre, L.
+  - Fraile Garcia, E.
+  - Garabato, D.
+  - "Garc\xEDa-Lario, P."
+  - Garralda Torres, N.
+  - Gavras, P.
+  - Haigron, R.
+  - Hambly, N. C.
+  - Harrison, D. L.
+  - Hatzidimitriou, D.
+  - "Hern\xE1ndez, J."
+  - Hodgkin, S. T.
+  - Holl, B.
+  - Jamal, S.
+  - Jordan, S.
+  - Krone-Martins, A.
+  - Lanzafame, A. C.
+  - "L\xF6ffler, W."
+  - Lorca, A.
+  - Marchal, O.
+  - Marrese, P. M.
+  - Moitinho, A.
+  - "Nu\xF1ez Campos, M."
+  - Osborne, P.
+  - Pancino, E.
+  - Recio-Blanco, A.
+  - Riello, M.
+  - Rimoldini, L.
+  - Robin, A. C.
+  - Roegiers, T.
+  - Sarro, L. M.
+  - Schultheis, M.
+  - Siopis, C.
+  - Smith, M.
+  - Sozzetti, A.
+  - Utrilla, E.
+  - van Leeuwen, M.
+  - Weingrill, K.
+  - Abbas, U.
+  - "\xC1brah\xE1m, P."
+  - Abreu Aramburu, A.
+  - Aerts, C.
+  - Altavilla, G.
+  - "\xC1lvarez, M. A."
+  - Alves, J.
+  - Anderson, R. I.
+  - Antoja, T.
+  - Baines, D.
+  - Baker, S. G.
+  - Balog, Z.
+  - Barache, C.
+  - Barbato, D.
+  - Barros, M.
+  - Barstow, M. A.
+  - "Bartolom\xE9, S."
+  - Bashi, D.
+  - Bauchet, N.
+  - Baudeau, N.
+  - Becciani, U.
+  - Bedin, L. R.
+  - Bellas-Velidis, I.
+  - Bellazzini, M.
+  - Beordo, W.
+  - Berihuete, A.
+  - Bernet, M.
+  - Bertolotto, C.
+  - Bertone, S.
+  - Bianchi, L.
+  - Binnenfeld, A.
+  - Blazere, A.
+  - Boch, T.
+  - Bombrun, A.
+  - Bouquillon, S.
+  - Bragaglia, A.
+  - Braine, J.
+  - Bramante, L.
+  - Breedt, E.
+  - Bressan, A.
+  - Brouillet, N.
+  - Brugaletta, E.
+  - Bucciarelli, B.
+  - Butkevich, A. G.
+  - Buzzi, R.
+  - Caffau, E.
+  - Cancelliere, R.
+  - Cannizzo, S.
+  - Carballo, R.
+  - Carlucci, T.
+  - Carnerero, M. I.
+  - Carrasco, J. M.
+  - Carretero, J.
+  - Carton, S.
+  - Casamiquela, L.
+  - Castellani, M.
+  - Castro-Ginard, A.
+  - Cesare, V.
+  - Charlot, P.
+  - Chemin, L.
+  - Chiaramida, V.
+  - Chiavassa, A.
+  - Chornay, N.
+  - Collins, R.
+  - Contursi, G.
+  - Cooper, W. J.
+  - Cornez, T.
+  - Crosta, M.
+  - Crowley, C.
+  - Dafonte, C.
+  - de Laverny, P.
+  - De Luise, F.
+  - De March, R.
+  - de Souza, R.
+  - de Torres, A.
+  - del Peloso, E. F.
+  - Delgado, A.
+  - Dharmawardena, T. E.
+  - Diakite, S.
+  - Diener, C.
+  - Distefano, E.
+  - Dolding, C.
+  - Dsilva, K.
+  - "Dur\xE1n, J."
+  - Enke, H.
+  - Esquej, P.
+  - Fabre, C.
+  - Fabrizio, M.
+  - Faigler, S.
+  - "Fatovi\u0107, M."
+  - Fedorets, G.
+  - "Fern\xE1ndez-Hern\xE1ndez, J."
+  - Fernique, P.
+  - Figueras, F.
+  - Fournier, Y.
+  - Gai, M.
+  - Galinier, M.
+  - Garcia-Gutierrez, A.
+  - "Garc\xEDa-Torres, M."
+  - Garofalo, A.
+  - Gerlach, E.
+  - Geyer, R.
+  - Giacobbe, P.
+  - Gilmore, G.
+  - Girona, S.
+  - Giuffrida, G.
+  - Gomel, R.
+  - Gomez, A.
+  - "Gonz\xE1lez-N\xFA\xF1ez, J."
+  - "Gonz\xE1lez-Santamar\xEDa, I."
+  - Gosset, E.
+  - Granvik, M.
+  - Gregori Barrera, V.
+  - "Guti\xE9rrez-S\xE1nchez, R."
+  - Haywood, M.
+  - Helmer, A.
+  - Helmi, A.
+  - Henares, K.
+  - Hidalgo, S. L.
+  - Hilger, T.
+  - Hobbs, D.
+  - Hottier, C.
+  - Huckle, H. E.
+  - "Jab\u0142o\u0144ska, M."
+  - Jansen, F.
+  - "Jim\xE9nez-Arranz, \xD3."
+  - Juaristi Campillo, J.
+  - Khanna, S.
+  - Kordopatis, G.
+  - "K\xF3sp\xE1l, \xC1."
+  - Kostrzewa-Rutkowska, Z.
+  - Kun, M.
+  - Lambert, S.
+  - Lanza, A. F.
+  - Le Campion, J. -F.
+  - Lebreton, Y.
+  - Lebzelter, T.
+  - Leccia, S.
+  - Lecoeur-Taibi, I.
+  - Lecoutre, G.
+  - Liao, S.
+  - Liberato, L.
+  - Licata, E.
+  - "Lindstr\xF8m, H. E. P."
+  - Lister, T. A.
+  - Livanou, E.
+  - Lobel, A.
+  - Loup, C.
+  - Mahy, L.
+  - Mann, R. G.
+  - Manteiga, M.
+  - Marchant, J. M.
+  - Marconi, M.
+  - "Mar\xEDn Pina, D."
+  - Marinoni, S.
+  - Marshall, D. J.
+  - "Mart\xEDn Lozano, J."
+  - "Mart\xEDn-Fleitas, J. M."
+  - Marton, G.
+  - Masip, A.
+  - Massari, D.
+  - Mastrobuono-Battisti, A.
+  - Mazeh, T.
+  - McMillan, P. J.
+  - Meichsner, J.
+  - Messina, S.
+  - Michalik, D.
+  - Millar, N. R.
+  - Mints, A.
+  - Molina, D.
+  - Molinaro, R.
+  - "Moln\xE1r, L."
+  - Monari, G.
+  - "Mongui\xF3, M."
+  - Montegriffo, P.
+  - Montero, A.
+  - Mor, R.
+  - Mora, A.
+  - Morbidelli, R.
+  - Morel, T.
+  - Morris, D.
+  - Mowlavi, N.
+  - Munoz, D.
+  - Muraveva, T.
+  - Murphy, C. P.
+  - Musella, I.
+  - Nagy, Z.
+  - Nieto, S.
+  - Noval, L.
+  - Ogden, A.
+  - Pagani, C.
+  - Pagano, I.
+  - Palaversa, L.
+  - Palicio, P. A.
+  - Pallas-Quintela, L.
+  - Panahi, A.
+  - Payne-Wardenaar, S.
+  - Pegoraro, L.
+  - "Penttil\xE4, A."
+  - Pesciullesi, P.
+  - Piersimoni, A. M.
+  - Pinamonti, M.
+  - Pineau, F. -X.
+  - Plachy, E.
+  - Plum, G.
+  - Poggio, E.
+  - Pourbaix, D.
+  - "Pr\u0161a, A."
+  - Pulone, L.
+  - Racero, E.
+  - Rainer, M.
+  - Raiteri, C. M.
+  - Ramos, P.
+  - Ramos-Lerate, M.
+  - Ratajczak, M.
+  - Re Fiorentin, P.
+  - Regibo, S.
+  - "Reyl\xE9, C."
+  - Ripepi, V.
+  - Riva, A.
+  - Rix, H. -W.
+  - Rixon, G.
+  - Robichon, N.
+  - Robin, C.
+  - "Romero-G\xF3mez, M."
+  - Rowell, N.
+  - Royer, F.
+  - Ruz Mieres, D.
+  - Rybicki, K. A.
+  - Sadowski, G.
+  - "S\xE1ez N\xFA\xF1ez, A."
+  - "Sagrist\xE0 Sell\xE9s, A."
+  - Sahlmann, J.
+  - Sanchez Gimenez, V.
+  - Sanna, N.
+  - "Santove\xF1a, R."
+  - Sarasso, M.
+  - Sarrate Riera, C.
+  - Sciacca, E.
+  - Segovia, J. C.
+  - "S\xE9gransan, D."
+  - Shahaf, S.
+  - Siebert, A.
+  - Siltala, L.
+  - Slezak, E.
+  - Smart, R. L.
+  - Snaith, O. N.
+  - Solano, E.
+  - Solitro, F.
+  - Souami, D.
+  - Souchay, J.
+  - Spina, L.
+  - Spitoni, E.
+  - Squillante, L. A.
+  - Steele, I. A.
+  - "Steidelm\xFCller, H."
+  - Surdej, J.
+  - Szabados, L.
+  - Taris, F.
+  - Taylor, M. B.
+  - Teixeira, R.
+  - "Tisani\u0107, K."
+  - Tolomei, L.
+  - Torra, F.
+  - Torralba Elipe, G.
+  - Trabucchi, M.
+  - Tsantaki, M.
+  - Ulla, A.
+  - Unger, N.
+  - Vanel, O.
+  - Vecchiato, A.
+  - Vicente, D.
+  - Voutsinas, S.
+  - Weiler, M.
+  - "Wyrzykowski, \u0141."
+  - Zhao, H.
+  - Zorec, J.
+  - Zwitter, T.
+  - "Balaguer-N\xFA\xF1ez, L."
+  - Leclerc, N.
+  - Morgenthaler, S.
+  - Robert, G.
+  - Zucker, S.
+  bibcode: 2023A&A...680A..37G
+  category: collaboration
+  citation_count: 10
+  doctype: article
+  identifier:
+  - arXiv:2310.14699
+  - 2023A&A...680A..37G
+  - 2023arXiv231014699G
+  - 10.48550/arXiv.2310.14699
+  - 10.1051/0004-6361/202347270
+  page: A37
+  pub: Astronomy and Astrophysics
+  title: 'Gaia Focused Product Release: Asteroid orbital solution. Properties and
+    assessment'
+  url: null
+  volume: '680'
+  year: 2023
+- abstract: "Context. The third Gaia Data Release (DR3) provided photometric time\
+    \ series of more than 2 million long-period variable (LPV) candidates. Anticipating\
+    \ the publication of full radial-velocity data planned with Data Release 4, this\
+    \ Focused Product Release (FPR) provides radial-velocity time series for a selection\
+    \ of LPV candidates with high-quality observations. <BR /> Aims: We describe the\
+    \ production and content of the Gaia catalog of LPV radial-velocity time series,\
+    \ and the methods used to compute the variability parameters published as part\
+    \ of the Gaia FPR. <BR /> Methods: Starting from the DR3 catalog of LPV candidates,\
+    \ we applied several filters to construct a sample of sources with high-quality\
+    \ radial-velocity measurements. We modeled their radial-velocity and photometric\
+    \ time series to derive their periods and amplitudes, and further refined the\
+    \ sample by requiring compatibility between the radial-velocity period and at\
+    \ least one of the G, G<SUB>BP</SUB>, or G<SUB>RP</SUB> photometric periods. <BR\
+    \ /> Results: The catalog includes radial-velocity time series and variability\
+    \ parameters for 9614 sources in the magnitude range 6 \u2272 G/mag \u2272 14,\
+    \ including a flagged top-quality subsample of 6093 stars whose radial-velocity\
+    \ periods are fully compatible with the values derived from the G, G<SUB>BP</SUB>,\
+    \ and G<SUB>RP</SUB> photometric time series. The radial-velocity time series\
+    \ contain a mean of 24 measurements per source taken unevenly over a duration\
+    \ of about three years. We identify the great majority of the sources (88%) as\
+    \ genuine LPV candidates, with about half of them showing a pulsation period and\
+    \ the other half displaying a long secondary period. The remaining 12% of the\
+    \ catalog consists of candidate ellipsoidal binaries. Quality checks against radial\
+    \ velocities available in the literature show excellent agreement. We provide\
+    \ some illustrative examples and cautionary remarks. <BR /> Conclusions: The publication\
+    \ of radial-velocity time series for almost ten thousand LPV candidates constitutes,\
+    \ by far, the largest such database available to date in the literature. The availability\
+    \ of simultaneous photometric measurements gives a unique added value to the Gaia\
+    \ catalog."
+  author:
+  - Gaia Collaboration
+  - Trabucchi, M.
+  - Mowlavi, N.
+  - Lebzelter, T.
+  - Lecoeur-Taibi, I.
+  - Audard, M.
+  - Eyer, L.
+  - "Garc\xEDa-Lario, P."
+  - Gavras, P.
+  - Holl, B.
+  - Jevardat de Fombelle, G.
+  - Nienartowicz, K.
+  - Rimoldini, L.
+  - Sartoretti, P.
+  - Blomme, R.
+  - "Fr\xE9mat, Y."
+  - Marchal, O.
+  - Damerdji, Y.
+  - Brown, A. G. A.
+  - Guerrier, A.
+  - Panuzzo, P.
+  - Katz, D.
+  - Seabroke, G. M.
+  - Benson, K.
+  - Haigron, R.
+  - Smith, M.
+  - Lobel, A.
+  - Vallenari, A.
+  - Prusti, T.
+  - de Bruijne, J. H. J.
+  - Arenou, F.
+  - Babusiaux, C.
+  - Barbier, A.
+  - Biermann, M.
+  - Creevey, O. L.
+  - Ducourant, C.
+  - Evans, D. W.
+  - Guerra, R.
+  - Hutton, A.
+  - Jordi, C.
+  - Klioner, S. A.
+  - Lammers, U.
+  - Lindegren, L.
+  - Luri, X.
+  - Mignard, F.
+  - Randich, S.
+  - Smiljanic, R.
+  - Tanga, P.
+  - Walton, N. A.
+  - Bailer-Jones, C. A. L.
+  - Bastian, U.
+  - Cropper, M.
+  - Drimmel, R.
+  - Lattanzi, M. G.
+  - Soubiran, C.
+  - van Leeuwen, F.
+  - Bakker, J.
+  - "Casta\xF1eda, J."
+  - De Angeli, F.
+  - Fabricius, C.
+  - Fouesneau, M.
+  - Galluccio, L.
+  - Masana, E.
+  - Messineo, R.
+  - Nicolas, C.
+  - Pailler, F.
+  - Riclet, F.
+  - Roux, W.
+  - Sordo, R.
+  - "Th\xE9venin, F."
+  - Gracia-Abril, G.
+  - Portell, J.
+  - Teyssier, D.
+  - Altmann, M.
+  - Berthier, J.
+  - Burgess, P. W.
+  - Busonero, D.
+  - Busso, G.
+  - "C\xE1novas, H."
+  - Carry, B.
+  - Cheek, N.
+  - Clementini, G.
+  - Davidson, M.
+  - de Teodoro, P.
+  - Delchambre, L.
+  - Dell'Oro, A.
+  - Fraile Garcia, E.
+  - Garabato, D.
+  - Garralda Torres, N.
+  - Hambly, N. C.
+  - Harrison, D. L.
+  - Hatzidimitriou, D.
+  - "Hern\xE1ndez, J."
+  - Hodgkin, S. T.
+  - Jamal, S.
+  - Jordan, S.
+  - Krone-Martins, A.
+  - Lanzafame, A. C.
+  - "L\xF6ffler, W."
+  - Lorca, A.
+  - Marrese, P. M.
+  - Moitinho, A.
+  - Muinonen, K.
+  - "Nu\xF1ez Campos, M."
+  - Oreshina-Slezak, I.
+  - Osborne, P.
+  - Pancino, E.
+  - Pauwels, T.
+  - Recio-Blanco, A.
+  - Riello, M.
+  - Robin, A. C.
+  - Roegiers, T.
+  - Sarro, L. M.
+  - Schultheis, M.
+  - Siopis, C.
+  - Sozzetti, A.
+  - Utrilla, E.
+  - van Leeuwen, M.
+  - Weingrill, K.
+  - Abbas, U.
+  - "\xC1brah\xE1m, P."
+  - Abreu Aramburu, A.
+  - Aerts, C.
+  - Altavilla, G.
+  - "\xC1lvarez, M. A."
+  - Alves, J.
+  - Anders, F.
+  - Anderson, R. I.
+  - Antoja, T.
+  - Baines, D.
+  - Baker, S. G.
+  - Balog, Z.
+  - Barache, C.
+  - Barbato, D.
+  - Barros, M.
+  - Barstow, M. A.
+  - "Bartolom\xE9, S."
+  - Bashi, D.
+  - Bauchet, N.
+  - Baudeau, N.
+  - Becciani, U.
+  - Bedin, L. R.
+  - Bellas-Velidis, I.
+  - Bellazzini, M.
+  - Beordo, W.
+  - Berihuete, A.
+  - Bernet, M.
+  - Bertolotto, C.
+  - Bertone, S.
+  - Bianchi, L.
+  - Binnenfeld, A.
+  - Blazere, A.
+  - Boch, T.
+  - Bombrun, A.
+  - Bouquillon, S.
+  - Bragaglia, A.
+  - Braine, J.
+  - Bramante, L.
+  - Breedt, E.
+  - Bressan, A.
+  - Brouillet, N.
+  - Brugaletta, E.
+  - Bucciarelli, B.
+  - Butkevich, A. G.
+  - Buzzi, R.
+  - Caffau, E.
+  - Cancelliere, R.
+  - Cannizzo, S.
+  - Carballo, R.
+  - Carlucci, T.
+  - Carnerero, M. I.
+  - Carrasco, J. M.
+  - Carretero, J.
+  - Carton, S.
+  - Casamiquela, L.
+  - Castellani, M.
+  - Castro-Ginard, A.
+  - Cesare, V.
+  - Charlot, P.
+  - Chemin, L.
+  - Chiaramida, V.
+  - Chiavassa, A.
+  - Chornay, N.
+  - Collins, R.
+  - Contursi, G.
+  - Cooper, W. J.
+  - Cornez, T.
+  - Crosta, M.
+  - Crowley, C.
+  - Dafonte, C.
+  - David, M.
+  - de Laverny, P.
+  - De Luise, F.
+  - De March, R.
+  - De Ridder, J.
+  - de Souza, R.
+  - de Torres, A.
+  - del Peloso, E. F.
+  - Delbo, M.
+  - Delgado, A.
+  - Dharmawardena, T. E.
+  - Diakite, S.
+  - Diener, C.
+  - Distefano, E.
+  - Dolding, C.
+  - Dsilva, K.
+  - "Dur\xE1n, J."
+  - Enke, H.
+  - Esquej, P.
+  - Fabre, C.
+  - Fabrizio, M.
+  - Faigler, S.
+  - "Fatovi\u0107, M."
+  - Fedorets, G.
+  - "Fern\xE1ndez-Hern\xE1ndez, J."
+  - Fernique, P.
+  - Figueras, F.
+  - Fournier, Y.
+  - Fouron, C.
+  - Gai, M.
+  - Galinier, M.
+  - Garcia-Gutierrez, A.
+  - "Garc\xEDa-Torres, M."
+  - Garofalo, A.
+  - Gerlach, E.
+  - Geyer, R.
+  - Giacobbe, P.
+  - Gilmore, G.
+  - Girona, S.
+  - Giuffrida, G.
+  - Gomel, R.
+  - Gomez, A.
+  - "Gonz\xE1lez-N\xFA\xF1ez, J."
+  - "Gonz\xE1lez-Santamar\xEDa, I."
+  - Gosset, E.
+  - Granvik, M.
+  - Gregori Barrera, V.
+  - "Guti\xE9rrez-S\xE1nchez, R."
+  - Haywood, M.
+  - Helmer, A.
+  - Helmi, A.
+  - Henares, K.
+  - Hidalgo, S. L.
+  - Hilger, T.
+  - Hobbs, D.
+  - Hottier, C.
+  - Huckle, H. E.
+  - "Jab\u0142o\u0144ska, M."
+  - Jansen, F.
+  - "Jim\xE9nez-Arranz, \xD3."
+  - Juaristi Campillo, J.
+  - Khanna, S.
+  - Kordopatis, G.
+  - "K\xF3sp\xE1l, \xC1."
+  - Kostrzewa-Rutkowska, Z.
+  - Kun, M.
+  - Lambert, S.
+  - Lanza, A. F.
+  - Le Campion, J. -F.
+  - Lebreton, Y.
+  - Leccia, S.
+  - Lecoutre, G.
+  - Liao, S.
+  - Liberato, L.
+  - Licata, E.
+  - "Lindstr\xF8m, H. E. P."
+  - Lister, T. A.
+  - Livanou, E.
+  - Loup, C.
+  - Mahy, L.
+  - Mann, R. G.
+  - Manteiga, M.
+  - Marchant, J. M.
+  - Marconi, M.
+  - "Mar\xEDn Pina, D."
+  - Marinoni, S.
+  - Marshall, D. J.
+  - "Mart\xEDn Lozano, J."
+  - "Mart\xEDn-Fleitas, J. M."
+  - Marton, G.
+  - Mary, N.
+  - Masip, A.
+  - Massari, D.
+  - Mastrobuono-Battisti, A.
+  - Mazeh, T.
+  - McMillan, P. J.
+  - Meichsner, J.
+  - Messina, S.
+  - Michalik, D.
+  - Millar, N. R.
+  - Mints, A.
+  - Molina, D.
+  - Molinaro, R.
+  - "Moln\xE1r, L."
+  - Monari, G.
+  - "Mongui\xF3, M."
+  - Montegriffo, P.
+  - Montero, A.
+  - Mor, R.
+  - Mora, A.
+  - Morbidelli, R.
+  - Morel, T.
+  - Morris, D.
+  - Munoz, D.
+  - Muraveva, T.
+  - Murphy, C. P.
+  - Musella, I.
+  - Nagy, Z.
+  - Nieto, S.
+  - Noval, L.
+  - Ogden, A.
+  - Ordenovic, C.
+  - Pagani, C.
+  - Pagano, I.
+  - Palaversa, L.
+  - Palicio, P. A.
+  - Pallas-Quintela, L.
+  - Panahi, A.
+  - Panem, C.
+  - Payne-Wardenaar, S.
+  - Pegoraro, L.
+  - "Penttil\xE4, A."
+  - Pesciullesi, P.
+  - Piersimoni, A. M.
+  - Pinamonti, M.
+  - Pineau, F. -X.
+  - Plachy, E.
+  - Plum, G.
+  - Poggio, E.
+  - Pourbaix, D.
+  - "Pr\u0161a, A."
+  - Pulone, L.
+  - Racero, E.
+  - Rainer, M.
+  - Raiteri, C. M.
+  - Ramos, P.
+  - Ramos-Lerate, M.
+  - Ratajczak, M.
+  - Re Fiorentin, P.
+  - Regibo, S.
+  - "Reyl\xE9, C."
+  - Ripepi, V.
+  - Riva, A.
+  - Rix, H. -W.
+  - Rixon, G.
+  - Robichon, N.
+  - Robin, C.
+  - "Romero-G\xF3mez, M."
+  - Rowell, N.
+  - Royer, F.
+  - Ruz Mieres, D.
+  - Rybicki, K. A.
+  - Sadowski, G.
+  - "S\xE1ez N\xFA\xF1ez, A."
+  - "Sagrist\xE0 Sell\xE9s, A."
+  - Sahlmann, J.
+  - Sanchez Gimenez, V.
+  - Sanna, N.
+  - "Santove\xF1a, R."
+  - Sarasso, M.
+  - Sarrate Riera, C.
+  - Sciacca, E.
+  - Segovia, J. C.
+  - "S\xE9gransan, D."
+  - Shahaf, S.
+  - Siebert, A.
+  - Siltala, L.
+  - Slezak, E.
+  - Smart, R. L.
+  - Snaith, O. N.
+  - Solano, E.
+  - Solitro, F.
+  - Souami, D.
+  - Souchay, J.
+  - Spina, L.
+  - Spitoni, E.
+  - Spoto, F.
+  - Squillante, L. A.
+  - Steele, I. A.
+  - "Steidelm\xFCller, H."
+  - Surdej, J.
+  - Szabados, L.
+  - Taris, F.
+  - Taylor, M. B.
+  - Teixeira, R.
+  - "Tisani\u0107, K."
+  - Tolomei, L.
+  - Torra, F.
+  - Torralba Elipe, G.
+  - Tsantaki, M.
+  - Ulla, A.
+  - Unger, N.
+  - Vanel, O.
+  - Vecchiato, A.
+  - Vicente, D.
+  - Voutsinas, S.
+  - Weiler, M.
+  - "Wyrzykowski, \u0141."
+  - Zhao, H.
+  - Zorec, J.
+  - Zwitter, T.
+  - Balaguer-Nunez, L.
+  - Leclerc, N.
+  - Morgenthaler, S.
+  - Robert, G.
+  - Zucker, S.
+  bibcode: 2023A&A...680A..36G
+  category: collaboration
+  citation_count: 8
+  doctype: article
+  identifier:
+  - arXiv:2310.06051
+  - 2023arXiv231006051G
+  - 10.48550/arXiv.2310.06051
+  - 2023A&A...680A..36G
+  - 10.1051/0004-6361/202347287
+  page: A36
+  pub: Astronomy and Astrophysics
+  title: 'Gaia Focused Product Release: Radial velocity time series of long-period
+    variables'
+  url: null
+  volume: '680'
+  year: 2023
+- abstract: "Context. Gaia's readout window strategy is challenged by very dense fields\
+    \ in the sky. Therefore, in addition to standard Gaia observations, full Sky Mapper\
+    \ (SM) images were recorded for nine selected regions in the sky. A new software\
+    \ pipeline exploits these Service Interface Function (SIF) images of crowded fields\
+    \ (CFs), making use of the availability of the full two-dimensional (2D) information.\
+    \ This new pipeline produced half a million additional Gaia sources in the region\
+    \ of the omega Centauri (\u03C9 Cen) cluster, which are published with this Focused\
+    \ Product Release. We discuss the dedicated SIF CF data reduction pipeline, validate\
+    \ its data products, and introduce their Gaia archive table. <BR /> Aims: Our\
+    \ aim is to improve the completeness of the Gaia source inventory in a very dense\
+    \ region in the sky, \u03C9 Cen. <BR /> Methods: An adapted version of Gaia's\
+    \ Source Detection and Image Parameter Determination software located sources\
+    \ in the 2D SIF CF images. These source detections were clustered and assigned\
+    \ to new SIF CF or existing Gaia sources by Gaia s cross-match software. For the\
+    \ new sources, astrometry was calculated using the Astrometric Global Iterative\
+    \ Solution software, and photometry was obtained in the Gaia DR3 reference system.\
+    \ We validated the results by comparing them to the public Gaia DR3 catalogue\
+    \ and external Hubble Space Telescope data. <BR /> Results: With this Focused\
+    \ Product Release, 526 587 new sources have been added to the Gaia catalogue in\
+    \ \u03C9 Cen. Apart from positions and brightnesses, the additional catalogue\
+    \ contains parallaxes and proper motions, but no meaningful colour information.\
+    \ While SIF CF source parameters generally have a lower precision than nominal\
+    \ Gaia sources, in the cluster centre they increase the depth of the combined\
+    \ catalogue by three magnitudes and improve the source density by a factor of\
+    \ ten. <BR /> Conclusions: This first SIF CF data publication already adds great\
+    \ value to the Gaia catalogue. It demonstrates what to expect for the fourth Gaia\
+    \ catalogue, which will contain additional sources for all nine SIF CF regions.\
+    \ <P />A table listing remaining duplicates between the SIF CF and Gaia DR3 catalogue\
+    \ (see Sect. 4.10) is available at the CDS via anonymous ftp to <A href=\"https://cdsarc.cds.unistra.fr/\"\
+    >cdsarc.cds.unistra.fr</A> (ftp://130.79.128.5)or via <A href=\"https://cdsarc.cds.unistra.fr/viz-bin/cat/J/A+A/680/A35\"\
+    >https://cdsarc.cds.unistra.fr/viz-bin/cat/J/A+A/680/A35</A>"
+  author:
+  - Gaia Collaboration
+  - Weingrill, K.
+  - Mints, A.
+  - "Casta\xF1eda, J."
+  - Kostrzewa-Rutkowska, Z.
+  - Davidson, M.
+  - De Angeli, F.
+  - "Hern\xE1ndez, J."
+  - Torra, F.
+  - Ramos-Lerate, M.
+  - Babusiaux, C.
+  - Biermann, M.
+  - Crowley, C.
+  - Evans, D. W.
+  - Lindegren, L.
+  - "Mart\xEDn-Fleitas, J. M."
+  - Palaversa, L.
+  - Ruz Mieres, D.
+  - "Tisani\u0107, K."
+  - Brown, A. G. A.
+  - Vallenari, A.
+  - Prusti, T.
+  - de Bruijne, J. H. J.
+  - Arenou, F.
+  - Barbier, A.
+  - Creevey, O. L.
+  - Ducourant, C.
+  - Eyer, L.
+  - Guerra, R.
+  - Hutton, A.
+  - Jordi, C.
+  - Klioner, S. A.
+  - Lammers, U.
+  - Luri, X.
+  - Mignard, F.
+  - Randich, S.
+  - Sartoretti, P.
+  - Smiljanic, R.
+  - Tanga, P.
+  - Walton, N. A.
+  - Bailer-Jones, C. A. L.
+  - Bastian, U.
+  - Cropper, M.
+  - Drimmel, R.
+  - Katz, D.
+  - Soubiran, C.
+  - van Leeuwen, F.
+  - Audard, M.
+  - Bakker, J.
+  - Blomme, R.
+  - Fabricius, C.
+  - Fouesneau, M.
+  - "Fr\xE9mat, Y."
+  - Galluccio, L.
+  - Guerrier, A.
+  - Masana, E.
+  - Messineo, R.
+  - Nicolas, C.
+  - Nienartowicz, K.
+  - Pailler, F.
+  - Panuzzo, P.
+  - Riclet, F.
+  - Roux, W.
+  - Seabroke, G. M.
+  - Sordo, R.
+  - "Th\xE9venin, F."
+  - Gracia-Abril, G.
+  - Portell, J.
+  - Teyssier, D.
+  - Altmann, M.
+  - Benson, K.
+  - Berthier, J.
+  - Burgess, P. W.
+  - Busonero, D.
+  - Busso, G.
+  - "C\xE1novas, H."
+  - Carry, B.
+  - Cheek, N.
+  - Clementini, G.
+  - Damerdji, Y.
+  - de Teodoro, P.
+  - Delchambre, L.
+  - Dell'Oro, A.
+  - Fraile Garcia, E.
+  - Garabato, D.
+  - "Garc\xEDa-Lario, P."
+  - Garralda Torres, N.
+  - Gavras, P.
+  - Haigron, R.
+  - Hambly, N. C.
+  - Harrison, D. L.
+  - Hatzidimitriou, D.
+  - Hodgkin, S. T.
+  - Holl, B.
+  - Jamal, S.
+  - Jordan, S.
+  - Krone-Martins, A.
+  - Lanzafame, A. C.
+  - "L\xF6ffler, W."
+  - Lorca, A.
+  - Marchal, O.
+  - Marrese, P. M.
+  - Moitinho, A.
+  - Muinonen, K.
+  - "Nu\xF1ez Campos, M."
+  - Oreshina-Slezak, I.
+  - Osborne, P.
+  - Pancino, E.
+  - Pauwels, T.
+  - Recio-Blanco, A.
+  - Riello, M.
+  - Rimoldini, L.
+  - Robin, A. C.
+  - Roegiers, T.
+  - Sarro, L. M.
+  - Schultheis, M.
+  - Siopis, C.
+  - Smith, M.
+  - Sozzetti, A.
+  - Utrilla, E.
+  - van Leeuwen, M.
+  - Abbas, U.
+  - "\xC1brah\xE1m, P."
+  - Abreu Aramburu, A.
+  - Aerts, C.
+  - Altavilla, G.
+  - "\xC1lvarez, M. A."
+  - Alves, J.
+  - Anders, F.
+  - Anderson, R. I.
+  - Antoja, T.
+  - Baines, D.
+  - Baker, S. G.
+  - Balog, Z.
+  - Barache, C.
+  - Barbato, D.
+  - Barros, M.
+  - Barstow, M. A.
+  - "Bartolom\xE9, S."
+  - Bashi, D.
+  - Bauchet, N.
+  - Baudeau, N.
+  - Becciani, U.
+  - Bedin, L. R.
+  - Bellas-Velidis, I.
+  - Bellazzini, M.
+  - Beordo, W.
+  - Berihuete, A.
+  - Bernet, M.
+  - Bertolotto, C.
+  - Bertone, S.
+  - Bianchi, L.
+  - Binnenfeld, A.
+  - Blazere, A.
+  - Boch, T.
+  - Bombrun, A.
+  - Bouquillon, S.
+  - Bragaglia, A.
+  - Braine, J.
+  - Bramante, L.
+  - Breedt, E.
+  - Bressan, A.
+  - Brouillet, N.
+  - Brugaletta, E.
+  - Bucciarelli, B.
+  - Butkevich, A. G.
+  - Buzzi, R.
+  - Caffau, E.
+  - Cancelliere, R.
+  - Cannizzo, S.
+  - Cantat-Gaudin, T.
+  - Carballo, R.
+  - Carlucci, T.
+  - Carnerero, M. I.
+  - Carrasco, J. M.
+  - Carretero, J.
+  - Carton, S.
+  - Casamiquela, L.
+  - Castellani, M.
+  - Castro-Ginard, A.
+  - Cesare, V.
+  - Charlot, P.
+  - Chemin, L.
+  - Chiaramida, V.
+  - Chiavassa, A.
+  - Chornay, N.
+  - Collins, R.
+  - Contursi, G.
+  - Cooper, W. J.
+  - Cornez, T.
+  - Crosta, M.
+  - Dafonte, C.
+  - de Laverny, P.
+  - De Luise, F.
+  - De March, R.
+  - de Souza, R.
+  - de Torres, A.
+  - del Peloso, E. F.
+  - Delbo, M.
+  - Delgado, A.
+  - Dharmawardena, T. E.
+  - Diakite, S.
+  - Diener, C.
+  - Distefano, E.
+  - Dolding, C.
+  - Dsilva, K.
+  - "Dur\xE1n, J."
+  - Enke, H.
+  - Esquej, P.
+  - Fabre, C.
+  - Fabrizio, M.
+  - Faigler, S.
+  - "Fatovi\u0107, M."
+  - Fedorets, G.
+  - "Fern\xE1ndez-Hern\xE1ndez, J."
+  - Fernique, P.
+  - Figueras, F.
+  - Fournier, Y.
+  - Fouron, C.
+  - Gai, M.
+  - Galinier, M.
+  - Garcia-Gutierrez, A.
+  - "Garc\xEDa-Torres, M."
+  - Garofalo, A.
+  - Gerlach, E.
+  - Geyer, R.
+  - Giacobbe, P.
+  - Gilmore, G.
+  - Girona, S.
+  - Giuffrida, G.
+  - Gomel, R.
+  - Gomez, A.
+  - "Gonz\xE1lez-N\xFA\xF1ez, J."
+  - "Gonz\xE1lez-Santamar\xEDa, I."
+  - Gosset, E.
+  - Granvik, M.
+  - Gregori Barrera, V.
+  - "Guti\xE9rrez-S\xE1nchez, R."
+  - Haywood, M.
+  - Helmer, A.
+  - Helmi, A.
+  - Henares, K.
+  - Hidalgo, S. L.
+  - Hilger, T.
+  - Hobbs, D.
+  - Hottier, C.
+  - Huckle, H. E.
+  - "Jab\u0142o\u0144ska, M."
+  - Jansen, F.
+  - "Jim\xE9nez-Arranz, \xD3."
+  - Juaristi Campillo, J.
+  - Khanna, S.
+  - Kordopatis, G.
+  - "K\xF3sp\xE1l, \xC1."
+  - Kun, M.
+  - Lambert, S.
+  - Lanza, A. F.
+  - Le Campion, J. -F.
+  - Lebreton, Y.
+  - Lebzelter, T.
+  - Leccia, S.
+  - Lecoeur-Taibi, I.
+  - Lecoutre, G.
+  - Liao, S.
+  - Liberato, L.
+  - Licata, E.
+  - "Lindstr\xF8m, H. E. P."
+  - Lister, T. A.
+  - Livanou, E.
+  - Lobel, A.
+  - Loup, C.
+  - Mahy, L.
+  - Mann, R. G.
+  - Manteiga, M.
+  - Marchant, J. M.
+  - Marconi, M.
+  - "Mar\xEDn Pina, D."
+  - Marinoni, S.
+  - Marshall, D. J.
+  - "Mart\xEDn Lozano, J."
+  - Marton, G.
+  - Mary, N.
+  - Masip, A.
+  - Massari, D.
+  - Mastrobuono-Battisti, A.
+  - Mazeh, T.
+  - McMillan, P. J.
+  - Meichsner, J.
+  - Messina, S.
+  - Michalik, D.
+  - Millar, N. R.
+  - Molina, D.
+  - Molinaro, R.
+  - "Moln\xE1r, L."
+  - Monari, G.
+  - "Mongui\xF3, M."
+  - Montegriffo, P.
+  - Montero, A.
+  - Mor, R.
+  - Mora, A.
+  - Morbidelli, R.
+  - Morel, T.
+  - Morris, D.
+  - Mowlavi, N.
+  - Munoz, D.
+  - Muraveva, T.
+  - Murphy, C. P.
+  - Musella, I.
+  - Nagy, Z.
+  - Nieto, S.
+  - Noval, L.
+  - Ogden, A.
+  - Ordenovic, C.
+  - Pagani, C.
+  - Pagano, I.
+  - Palicio, P. A.
+  - Pallas-Quintela, L.
+  - Panahi, A.
+  - Panem, C.
+  - Payne-Wardenaar, S.
+  - Pegoraro, L.
+  - "Penttil\xE4, A."
+  - Pesciullesi, P.
+  - Piersimoni, A. M.
+  - Pinamonti, M.
+  - Pineau, F. -X.
+  - Plachy, E.
+  - Plum, G.
+  - Poggio, E.
+  - Pourbaix, D.
+  - "Pr\u0161a, A."
+  - Pulone, L.
+  - Racero, E.
+  - Rainer, M.
+  - Raiteri, C. M.
+  - Ramos, P.
+  - Ratajczak, M.
+  - Re Fiorentin, P.
+  - Regibo, S.
+  - "Reyl\xE9, C."
+  - Ripepi, V.
+  - Riva, A.
+  - Rix, H. -W.
+  - Rixon, G.
+  - Robichon, N.
+  - Robin, C.
+  - "Romero-G\xF3mez, M."
+  - Rowell, N.
+  - Royer, F.
+  - Rybicki, K. A.
+  - Sadowski, G.
+  - "S\xE1ez N\xFA\xF1ez, A."
+  - "Sagrist\xE0 Sell\xE9s, A."
+  - Sahlmann, J.
+  - Sanchez Gimenez, V.
+  - Sanna, N.
+  - "Santove\xF1a, R."
+  - Sarasso, M.
+  - Sarrate Riera, C.
+  - Sciacca, E.
+  - Segovia, J. C.
+  - "S\xE9gransan, D."
+  - Shahaf, S.
+  - Siebert, A.
+  - Siltala, L.
+  - Slezak, E.
+  - Smart, R. L.
+  - Snaith, O. N.
+  - Solano, E.
+  - Solitro, F.
+  - Souami, D.
+  - Souchay, J.
+  - Spina, L.
+  - Spitoni, E.
+  - Spoto, F.
+  - Squillante, L. A.
+  - Steele, I. A.
+  - "Steidelm\xFCller, H."
+  - Surdej, J.
+  - Szabados, L.
+  - Taris, F.
+  - Taylor, M. B.
+  - Teixeira, R.
+  - Tolomei, L.
+  - Torralba Elipe, G.
+  - Trabucchi, M.
+  - Tsantaki, M.
+  - Ulla, A.
+  - Unger, N.
+  - Vanel, O.
+  - Vecchiato, A.
+  - Vicente, D.
+  - Voutsinas, S.
+  - Weiler, M.
+  - "Wyrzykowski, \u0141."
+  - Zhao, H.
+  - Zorec, J.
+  - Zwitter, T.
+  - "Balaguer-N\xFA\xF1ez, L."
+  - Leclerc, N.
+  - Morgenthaler, S.
+  - Robert, G.
+  - Zucker, S.
+  bibcode: 2023A&A...680A..35G
+  category: collaboration
+  citation_count: 11
+  doctype: article
+  identifier:
+  - arXiv:2310.06551
+  - 10.1051/0004-6361/202347203
+  - 2023A&A...680A..35G
+  - 2023arXiv231006551G
+  - 10.48550/arXiv.2310.06551
+  page: A35
+  pub: Astronomy and Astrophysics
+  title: 'Gaia Focused Product Release: Sources from Service Interface Function image
+    analysis. Half a million new sources in omega Centauri'
+  url: null
+  volume: '680'
+  year: 2023
+- abstract: "The Gaia Galactic survey mission is designed and optimized to obtain\
+    \ astrometry, photometry, and spectroscopy of nearly two billion stars in our\
+    \ Galaxy. Yet as an all-sky multi-epoch survey, Gaia also observes several million\
+    \ extragalactic objects down to a magnitude of G \u223C 21 mag. Due to the nature\
+    \ of the Gaia onboard-selection algorithms, these are mostly point-source-like\
+    \ objects. Using data provided by the satellite, we have identified quasar and\
+    \ galaxy candidates via supervised machine learning methods, and estimate their\
+    \ redshifts using the low resolution BP/RP spectra. We further characterise the\
+    \ surface brightness profiles of host galaxies of quasars and of galaxies from\
+    \ pre-defined input lists. Here we give an overview of the processing of extragalactic\
+    \ objects, describe the data products in Gaia DR3, and analyse their properties.\
+    \ Two integrated tables contain the main results for a high completeness, but\
+    \ low purity (50\u221270%), set of 6.6 million candidate quasars and 4.8 million\
+    \ candidate galaxies. We provide queries that select purer sub-samples of these\
+    \ containing 1.9 million probable quasars and 2.9 million probable galaxies (both\
+    \ \u223C95% purity). We also use high quality BP/RP spectra of 43 thousand high\
+    \ probability quasars over the redshift range 0.05\u22124.36 to construct a composite\
+    \ quasar spectrum spanning restframe wavelengths from 72\u22121000 nm. <P />Full\
+    \ Table 8 is only available at the CDS via anonymous ftp to <A href=\"https://cdsarc.cds.unistra.fr\"\
+    >cdsarc.cds.unistra.fr</A> (ftp://130.79.128.5) or via <A href=\"https://cdsarc.cds.unistra.fr/viz-bin/cat/J/A+A/674/A41\"\
+    >https://cdsarc.cds.unistra.fr/viz-bin/cat/J/A+A/674/A41</A>."
+  author:
+  - Gaia Collaboration
+  - Bailer-Jones, C. A. L.
+  - Teyssier, D.
+  - Delchambre, L.
+  - Ducourant, C.
+  - Garabato, D.
+  - Hatzidimitriou, D.
+  - Klioner, S. A.
+  - Rimoldini, L.
+  - Bellas-Velidis, I.
+  - Carballo, R.
+  - Carnerero, M. I.
+  - Diener, C.
+  - Fouesneau, M.
+  - Galluccio, L.
+  - Gavras, P.
+  - Krone-Martins, A.
+  - Raiteri, C. M.
+  - Teixeira, R.
+  - Brown, A. G. A.
+  - Vallenari, A.
+  - Prusti, T.
+  - de Bruijne, J. H. J.
+  - Arenou, F.
+  - Babusiaux, C.
+  - Biermann, M.
+  - Creevey, O. L.
+  - Evans, D. W.
+  - Eyer, L.
+  - Guerra, R.
+  - Hutton, A.
+  - Jordi, C.
+  - Lammers, U. L.
+  - Lindegren, L.
+  - Luri, X.
+  - Mignard, F.
+  - Panem, C.
+  - Pourbaix, D.
+  - Randich, S.
+  - Sartoretti, P.
+  - Soubiran, C.
+  - Tanga, P.
+  - Walton, N. A.
+  - Bastian, U.
+  - Drimmel, R.
+  - Jansen, F.
+  - Katz, D.
+  - Lattanzi, M. G.
+  - van Leeuwen, F.
+  - Bakker, J.
+  - Cacciari, C.
+  - "Casta\xF1eda, J."
+  - De Angeli, F.
+  - Fabricius, C.
+  - "Fr\xE9mat, Y."
+  - Guerrier, A.
+  - Heiter, U.
+  - Masana, E.
+  - Messineo, R.
+  - Mowlavi, N.
+  - Nicolas, C.
+  - Nienartowicz, K.
+  - Pailler, F.
+  - Panuzzo, P.
+  - Riclet, F.
+  - Roux, W.
+  - Seabroke, G. M.
+  - Sordo, R.
+  - "Th\xE9venin, F."
+  - Gracia-Abril, G.
+  - Portell, J.
+  - Altmann, M.
+  - Andrae, R.
+  - Audard, M.
+  - Benson, K.
+  - Berthier, J.
+  - Blomme, R.
+  - Burgess, P. W.
+  - Busonero, D.
+  - Busso, G.
+  - "C\xE1novas, H."
+  - Carry, B.
+  - Cellino, A.
+  - Cheek, N.
+  - Clementini, G.
+  - Damerdji, Y.
+  - Davidson, M.
+  - de Teodoro, P.
+  - "Nu\xF1ez Campos, M."
+  - Dell'Oro, A.
+  - Esquej, P.
+  - "Fern\xE1ndez-Hern\xE1ndez, J."
+  - Fraile, E.
+  - "Garc\xEDa-Lario, P."
+  - Gosset, E.
+  - Haigron, R.
+  - Halbwachs, J. -L.
+  - Hambly, N. C.
+  - Harrison, D. L.
+  - "Hern\xE1ndez, J."
+  - Hestroffer, D.
+  - Hodgkin, S. T.
+  - Holl, B.
+  - "Jan\xDFen, K."
+  - Jevardat de Fombelle, G.
+  - Jordan, S.
+  - Lanzafame, A. C.
+  - "L\xF6ffler, W."
+  - Marchal, O.
+  - Marrese, P. M.
+  - Moitinho, A.
+  - Muinonen, K.
+  - Osborne, P.
+  - Pancino, E.
+  - Pauwels, T.
+  - Recio-Blanco, A.
+  - "Reyl\xE9, C."
+  - Riello, M.
+  - Roegiers, T.
+  - Rybizki, J.
+  - Sarro, L. M.
+  - Siopis, C.
+  - Smith, M.
+  - Sozzetti, A.
+  - Utrilla, E.
+  - van Leeuwen, M.
+  - Abbas, U.
+  - "\xC1brah\xE1m, P."
+  - Abreu Aramburu, A.
+  - Aerts, C.
+  - Aguado, J. J.
+  - Ajaj, M.
+  - Aldea-Montero, F.
+  - Altavilla, G.
+  - "\xC1lvarez, M. A."
+  - Alves, J.
+  - Anderson, R. I.
+  - Anglada Varela, E.
+  - Antoja, T.
+  - Baines, D.
+  - Baker, S. G.
+  - "Balaguer-N\xFA\xF1ez, L."
+  - Balbinot, E.
+  - Balog, Z.
+  - Barache, C.
+  - Barbato, D.
+  - Barros, M.
+  - Barstow, M. A.
+  - "Bartolom\xE9, S."
+  - Bassilana, J. -L.
+  - Bauchet, N.
+  - Becciani, U.
+  - Bellazzini, M.
+  - Berihuete, A.
+  - Bernet, M.
+  - Bertone, S.
+  - Bianchi, L.
+  - Binnenfeld, A.
+  - Blanco-Cuaresma, S.
+  - Boch, T.
+  - Bombrun, A.
+  - Bossini, D.
+  - Bouquillon, S.
+  - Bragaglia, A.
+  - Bramante, L.
+  - Breedt, E.
+  - Bressan, A.
+  - Brouillet, N.
+  - Brugaletta, E.
+  - Bucciarelli, B.
+  - Burlacu, A.
+  - Butkevich, A. G.
+  - Buzzi, R.
+  - Caffau, E.
+  - Cancelliere, R.
+  - Cantat-Gaudin, T.
+  - Carlucci, T.
+  - Carrasco, J. M.
+  - Casamiquela, L.
+  - Castellani, M.
+  - Castro-Ginard, A.
+  - Chaoul, L.
+  - Charlot, P.
+  - Chemin, L.
+  - Chiaramida, V.
+  - Chiavassa, A.
+  - Chornay, N.
+  - Comoretto, G.
+  - Contursi, G.
+  - Cooper, W. J.
+  - Cornez, T.
+  - Cowell, S.
+  - Crifo, F.
+  - Cropper, M.
+  - Crosta, M.
+  - Crowley, C.
+  - Dafonte, C.
+  - Dapergolas, A.
+  - David, P.
+  - de Laverny, P.
+  - De Luise, F.
+  - De March, R.
+  - De Ridder, J.
+  - de Souza, R.
+  - de Torres, A.
+  - del Peloso, E. F.
+  - del Pozo, E.
+  - Delbo, M.
+  - Delgado, A.
+  - Delisle, J. -B.
+  - Demouchy, C.
+  - Dharmawardena, T. E.
+  - Diakite, S.
+  - Distefano, E.
+  - Dolding, C.
+  - Enke, H.
+  - Fabre, C.
+  - Fabrizio, M.
+  - Faigler, S.
+  - Fedorets, G.
+  - Fernique, P.
+  - Figueras, F.
+  - Fournier, Y.
+  - Fouron, C.
+  - Fragkoudi, F.
+  - Gai, M.
+  - Garcia-Gutierrez, A.
+  - Garcia-Reinaldos, M.
+  - "Garc\xEDa-Torres, M."
+  - Garofalo, A.
+  - Gavel, A.
+  - Gerlach, E.
+  - Geyer, R.
+  - Giacobbe, P.
+  - Gilmore, G.
+  - Girona, S.
+  - Giuffrida, G.
+  - Gomel, R.
+  - Gomez, A.
+  - "Gonz\xE1lez-N\xFA\xF1ez, J."
+  - "Gonz\xE1lez-Santamar\xEDa, I."
+  - "Gonz\xE1lez-Vidal, J. J."
+  - Granvik, M.
+  - Guillout, P.
+  - Guiraud, J.
+  - "Guti\xE9rrez-S\xE1nchez, R."
+  - Guy, L. P.
+  - Hauser, M.
+  - Haywood, M.
+  - Helmer, A.
+  - Helmi, A.
+  - Sarmiento, M. H.
+  - Hidalgo, S. L.
+  - Hilger, T.
+  - "H\u0142adczuk, N."
+  - Hobbs, D.
+  - Holland, G.
+  - Huckle, H. E.
+  - Jardine, K.
+  - Jasniewicz, G.
+  - Jean-Antoine Piccolo, A.
+  - "Jim\xE9nez-Arranz, \xD3."
+  - Juaristi Campillo, J.
+  - Julbe, F.
+  - Karbevska, L.
+  - Kervella, P.
+  - Khanna, S.
+  - Kontizas, M.
+  - Kordopatis, G.
+  - Korn, A. J.
+  - "K\xF3sp\xE1l, \xC1."
+  - Kostrzewa-Rutkowska, Z.
+  - "Kruszy\u0144ska, K."
+  - Kun, M.
+  - Laizeau, P.
+  - Lambert, S.
+  - Lanza, A. F.
+  - Lasne, Y.
+  - Le Campion, J. -F.
+  - Lebreton, Y.
+  - Lebzelter, T.
+  - Leccia, S.
+  - Leclerc, N.
+  - Lecoeur-Taibi, I.
+  - Liao, S.
+  - Licata, E. L.
+  - "Lindstr\xF8m, H. E. P."
+  - Lister, T. A.
+  - Livanou, E.
+  - Lobel, A.
+  - Lorca, A.
+  - Loup, C.
+  - Madrero Pardo, P.
+  - Magdaleno Romeo, A.
+  - Managau, S.
+  - Mann, R. G.
+  - Manteiga, M.
+  - Marchant, J. M.
+  - Marconi, M.
+  - Marcos, J.
+  - Marcos Santos, M. M. S.
+  - "Mar\xEDn Pina, D."
+  - Marinoni, S.
+  - Marocco, F.
+  - Marshall, D. J.
+  - Martin Polo, L.
+  - "Mart\xEDn-Fleitas, J. M."
+  - Marton, G.
+  - Mary, N.
+  - Masip, A.
+  - Massari, D.
+  - Mastrobuono-Battisti, A.
+  - Mazeh, T.
+  - McMillan, P. J.
+  - Messina, S.
+  - Michalik, D.
+  - Millar, N. R.
+  - Mints, A.
+  - Molina, D.
+  - Molinaro, R.
+  - "Moln\xE1r, L."
+  - Monari, G.
+  - "Mongui\xF3, M."
+  - Montegriffo, P.
+  - Montero, A.
+  - Mor, R.
+  - Mora, A.
+  - Morbidelli, R.
+  - Morel, T.
+  - Morris, D.
+  - Muraveva, T.
+  - Murphy, C. P.
+  - Musella, I.
+  - Nagy, Z.
+  - Noval, L.
+  - "Oca\xF1a, F."
+  - Ogden, A.
+  - Ordenovic, C.
+  - Osinde, J. O.
+  - Pagani, C.
+  - Pagano, I.
+  - Palaversa, L.
+  - Palicio, P. A.
+  - Pallas-Quintela, L.
+  - Panahi, A.
+  - Payne-Wardenaar, S.
+  - "Pe\xF1alosa Esteller, X."
+  - "Penttil\xE4, A."
+  - Pichon, B.
+  - Piersimoni, A. M.
+  - Pineau, F. -X.
+  - Plachy, E.
+  - Plum, G.
+  - Poggio, E.
+  - "Pr\u0161a, A."
+  - Pulone, L.
+  - Racero, E.
+  - Ragaini, S.
+  - Rainer, M.
+  - Ramos, P.
+  - Ramos-Lerate, M.
+  - Re Fiorentin, P.
+  - Regibo, S.
+  - Richards, P. J.
+  - Rios Diaz, C.
+  - Ripepi, V.
+  - Riva, A.
+  - Rix, H. -W.
+  - Rixon, G.
+  - Robichon, N.
+  - Robin, A. C.
+  - Robin, C.
+  - Roelens, M.
+  - Rogues, H. R. O.
+  - Rohrbasser, L.
+  - "Romero-G\xF3mez, M."
+  - Rowell, N.
+  - Royer, F.
+  - Ruz Mieres, D.
+  - Rybicki, K. A.
+  - Sadowski, G.
+  - "S\xE1ez N\xFA\xF1ez, A."
+  - "Sagrist\xE0 Sell\xE9s, A."
+  - Sahlmann, J.
+  - Salguero, E.
+  - Samaras, N.
+  - Sanchez Gimenez, V.
+  - Sanna, N.
+  - "Santove\xF1a, R."
+  - Sarasso, M.
+  - Schultheis, M.
+  - Sciacca, E.
+  - Segol, M.
+  - Segovia, J. C.
+  - "S\xE9gransan, D."
+  - Semeux, D.
+  - Shahaf, S.
+  - Siddiqui, H. I.
+  - Siebert, A.
+  - Siltala, L.
+  - Silvelo, A.
+  - Slezak, E.
+  - Slezak, I.
+  - Smart, R. L.
+  - Snaith, O. N.
+  - Solano, E.
+  - Solitro, F.
+  - Souami, D.
+  - Souchay, J.
+  - Spagna, A.
+  - Spina, L.
+  - Spoto, F.
+  - Steele, I. A.
+  - "Steidelm\xFCller, H."
+  - Stephenson, C. A.
+  - "S\xFCveges, M."
+  - Surdej, J.
+  - Szabados, L.
+  - Szegedi-Elek, E.
+  - Taris, F.
+  - Taylor, M. B.
+  - Tolomei, L.
+  - Tonello, N.
+  - Torra, F.
+  - Torra, J.
+  - Torralba Elipe, G.
+  - Trabucchi, M.
+  - Tsounis, A. T.
+  - Turon, C.
+  - Ulla, A.
+  - Unger, N.
+  - Vaillant, M. V.
+  - van Dillen, E.
+  - van Reeven, W.
+  - Vanel, O.
+  - Vecchiato, A.
+  - Viala, Y.
+  - Vicente, D.
+  - Voutsinas, S.
+  - Weiler, M.
+  - Wevers, T.
+  - "Wyrzykowski, \u0141."
+  - Yoldas, A.
+  - Yvard, P.
+  - Zhao, H.
+  - Zorec, J.
+  - Zucker, S.
+  - Zwitter, T.
+  bibcode: 2023A&A...674A..41G
+  category: collaboration
+  citation_count: 68
+  doctype: article
+  identifier:
+  - arXiv:2206.05681
+  - 10.1051/0004-6361/202243232
+  - 10.48550/arXiv.2206.05681
+  - 2022arXiv220605681G
+  - 2023A&A...674A..41G
+  page: A41
+  pub: Astronomy and Astrophysics
+  title: Gaia Data Release 3. The extragalactic content
+  url: null
+  volume: '674'
+  year: 2023
+- abstract: "Context. Diffuse interstellar bands (DIBs) are common interstellar absorption\
+    \ features in spectroscopic observations but their origins remain unclear. DIBs\
+    \ play an important role in the life cycle of the interstellar medium (ISM) and\
+    \ can also be used to trace Galactic structure. <BR /> Aims: Here, we demonstrate\
+    \ the capacity of the Gaia-Radial Velocity Spectrometer (RVS) in Gaia DR3 to reveal\
+    \ the spatial distribution of the unknown molecular species responsible for the\
+    \ most prominent DIB at 862 nm in the RVS passband, exploring the Galactic ISM\
+    \ within a few kiloparsecs from the Sun. <BR /> Methods: The DIBs are measured\
+    \ within the GSP-Spec module using a Gaussian profile fit for cool stars and a\
+    \ Gaussian process for hot stars. In addition to the equivalent widths and their\
+    \ uncertainties, Gaia DR3 provides their characteristic central wavelength, width,\
+    \ and quality flags. <BR /> Results: We present an extensive sample of 476 117\
+    \ individual DIB measurements obtained in a homogeneous way covering the entire\
+    \ sky. We compare spatial distributions of the DIB carrier with interstellar reddening\
+    \ and find evidence that DIB carriers are present in a local bubble around the\
+    \ Sun which contains nearly no dust. We characterised the DIB equivalent width\
+    \ with a local density of 0.19 \xB1 0.04 \xC5 kpc<SUP>\u22121</SUP> and a scale\
+    \ height of 98.60<SUB>\u22128.46</SUB><SUP>+11.10</SUP> pc. The latter is smaller\
+    \ than the dust scale height, indicating that DIBs are more concentrated towards\
+    \ the Galactic plane. We determine the rest-frame wavelength with unprecedented\
+    \ precision (\u03BB<SUB>0</SUB> = 8620.86 \xB1 0.019 \xC5 in air) and reveal a\
+    \ remarkable correspondence between the DIB velocities and the CO gas velocities,\
+    \ suggesting that the 862 nm DIB carrier is related to macro-molecules. <BR />\
+    \ Conclusions: We demonstrate the unique capacity of Gaia to trace the spatial\
+    \ structure of the Galactic ISM using the 862 nm DIB."
+  author:
+  - Gaia Collaboration
+  - Schultheis, M.
+  - Zhao, H.
+  - Zwitter, T.
+  - Marshall, D. J.
+  - Drimmel, R.
+  - "Fr\xE9mat, Y."
+  - Bailer-Jones, C. A. L.
+  - Recio-Blanco, A.
+  - Kordopatis, G.
+  - de Laverny, P.
+  - Andrae, R.
+  - Dharmawardena, T. E.
+  - Fouesneau, M.
+  - Sordo, R.
+  - Brown, A. G. A.
+  - Vallenari, A.
+  - Prusti, T.
+  - de Bruijne, J. H. J.
+  - Arenou, F.
+  - Babusiaux, C.
+  - Biermann, M.
+  - Creevey, O. L.
+  - Ducourant, C.
+  - Evans, D. W.
+  - Eyer, L.
+  - Guerra, R.
+  - Hutton, A.
+  - Jordi, C.
+  - Klioner, S. A.
+  - Lammers, U. L.
+  - Lindegren, L.
+  - Luri, X.
+  - Mignard, F.
+  - Panem, C.
+  - Pourbaix, D.
+  - Randich, S.
+  - Sartoretti, P.
+  - Soubiran, C.
+  - Tanga, P.
+  - Walton, N. A.
+  - Bastian, U.
+  - Jansen, F.
+  - Katz, D.
+  - Lattanzi, M. G.
+  - van Leeuwen, F.
+  - Bakker, J.
+  - Cacciari, C.
+  - "Casta\xF1eda, J."
+  - De Angeli, F.
+  - Fabricius, C.
+  - Galluccio, L.
+  - Guerrier, A.
+  - Heiter, U.
+  - Masana, E.
+  - Messineo, R.
+  - Mowlavi, N.
+  - Nicolas, C.
+  - Nienartowicz, K.
+  - Pailler, F.
+  - Panuzzo, P.
+  - Riclet, F.
+  - Roux, W.
+  - Seabroke, G. M.
+  - "Th\xE9venin, F."
+  - Gracia-Abril, G.
+  - Portell, J.
+  - Teyssier, D.
+  - Altmann, M.
+  - Audard, M.
+  - Bellas-Velidis, I.
+  - Benson, K.
+  - Berthier, J.
+  - Blomme, R.
+  - Burgess, P. W.
+  - Busonero, D.
+  - Busso, G.
+  - "C\xE1novas, H."
+  - Carry, B.
+  - Cellino, A.
+  - Cheek, N.
+  - Clementini, G.
+  - Damerdji, Y.
+  - Davidson, M.
+  - de Teodoro, P.
+  - "Nu\xF1ez Campos, M."
+  - Delchambre, L.
+  - Dell'Oro, A.
+  - Esquej, P.
+  - "Fern\xE1ndez-Hern\xE1ndez, J."
+  - Fraile, E.
+  - Garabato, D.
+  - "Garc\xEDa-Lario, P."
+  - Gosset, E.
+  - Haigron, R.
+  - Halbwachs, J. -L.
+  - Hambly, N. C.
+  - Harrison, D. L.
+  - "Hern\xE1ndez, J."
+  - Hestroffer, D.
+  - Hodgkin, S. T.
+  - Holl, B.
+  - "Jan\xDFen, K."
+  - Jevardat de Fombelle, G.
+  - Jordan, S.
+  - Krone-Martins, A.
+  - Lanzafame, A. C.
+  - "L\xF6ffler, W."
+  - Marchal, O.
+  - Marrese, P. M.
+  - Moitinho, A.
+  - Muinonen, K.
+  - Osborne, P.
+  - Pancino, E.
+  - Pauwels, T.
+  - "Reyl\xE9, C."
+  - Riello, M.
+  - Rimoldini, L.
+  - Roegiers, T.
+  - Rybizki, J.
+  - Sarro, L. M.
+  - Siopis, C.
+  - Smith, M.
+  - Sozzetti, A.
+  - Utrilla, E.
+  - van Leeuwen, M.
+  - Abbas, U.
+  - "\xC1brah\xE1m, P."
+  - Abreu Aramburu, A.
+  - Aerts, C.
+  - Aguado, J. J.
+  - Ajaj, M.
+  - Aldea-Montero, F.
+  - Altavilla, G.
+  - "\xC1lvarez, M. A."
+  - Alves, J.
+  - Anders, F.
+  - Anderson, R. I.
+  - Anglada Varela, E.
+  - Antoja, T.
+  - Baines, D.
+  - Baker, S. G.
+  - "Balaguer-N\xFA\xF1ez, L."
+  - Balbinot, E.
+  - Balog, Z.
+  - Barache, C.
+  - Barbato, D.
+  - Barros, M.
+  - Barstow, M. A.
+  - "Bartolom\xE9, S."
+  - Bassilana, J. -L.
+  - Bauchet, N.
+  - Becciani, U.
+  - Bellazzini, M.
+  - Berihuete, A.
+  - Bernet, M.
+  - Bertone, S.
+  - Bianchi, L.
+  - Binnenfeld, A.
+  - Blanco-Cuaresma, S.
+  - Boch, T.
+  - Bombrun, A.
+  - Bossini, D.
+  - Bouquillon, S.
+  - Bragaglia, A.
+  - Bramante, L.
+  - Breedt, E.
+  - Bressan, A.
+  - Brouillet, N.
+  - Brugaletta, E.
+  - Bucciarelli, B.
+  - Burlacu, A.
+  - Butkevich, A. G.
+  - Buzzi, R.
+  - Caffau, E.
+  - Cancelliere, R.
+  - Cantat-Gaudin, T.
+  - Carballo, R.
+  - Carlucci, T.
+  - Carnerero, M. I.
+  - Carrasco, J. M.
+  - Casamiquela, L.
+  - Castellani, M.
+  - Castro-Ginard, A.
+  - Chaoul, L.
+  - Charlot, P.
+  - Chemin, L.
+  - Chiaramida, V.
+  - Chiavassa, A.
+  - Chornay, N.
+  - Comoretto, G.
+  - Contursi, G.
+  - Cooper, W. J.
+  - Cornez, T.
+  - Cowell, S.
+  - Crifo, F.
+  - Cropper, M.
+  - Crosta, M.
+  - Crowley, C.
+  - Dafonte, C.
+  - Dapergolas, A.
+  - David, P.
+  - De Luise, F.
+  - De March, R.
+  - De Ridder, J.
+  - de Souza, R.
+  - de Torres, A.
+  - del Peloso, E. F.
+  - del Pozo, E.
+  - Delbo, M.
+  - Delgado, A.
+  - Delisle, J. -B.
+  - Demouchy, C.
+  - Diakite, S.
+  - Diener, C.
+  - Distefano, E.
+  - Dolding, C.
+  - Enke, H.
+  - Fabre, C.
+  - Fabrizio, M.
+  - Faigler, S.
+  - Fedorets, G.
+  - Fernique, P.
+  - Figueras, F.
+  - Fournier, Y.
+  - Fouron, C.
+  - Fragkoudi, F.
+  - Gai, M.
+  - Garcia-Gutierrez, A.
+  - Garcia-Reinaldos, M.
+  - "Garc\xEDa-Torres, M."
+  - Garofalo, A.
+  - Gavel, A.
+  - Gavras, P.
+  - Gerlach, E.
+  - Geyer, R.
+  - Giacobbe, P.
+  - Gilmore, G.
+  - Girona, S.
+  - Giuffrida, G.
+  - Gomel, R.
+  - Gomez, A.
+  - "Gonz\xE1lez-N\xFA\xF1ez, J."
+  - "Gonz\xE1lez-Santamar\xEDa, I."
+  - "Gonz\xE1lez-Vidal, J. J."
+  - Granvik, M.
+  - Guillout, P.
+  - Guiraud, J.
+  - "Guti\xE9rrez-S\xE1nchez, R."
+  - Guy, L. P.
+  - Hatzidimitriou, D.
+  - Hauser, M.
+  - Haywood, M.
+  - Helmer, A.
+  - Helmi, A.
+  - Sarmiento, M. H.
+  - Hidalgo, S. L.
+  - "H\u0142adczuk, N."
+  - Hobbs, D.
+  - Holland, G.
+  - Huckle, H. E.
+  - Jardine, K.
+  - Jasniewicz, G.
+  - Jean-Antoine Piccolo, A.
+  - "Jim\xE9nez-Arranz, \xD3."
+  - Juaristi Campillo, J.
+  - Julbe, F.
+  - Karbevska, L.
+  - Kervella, P.
+  - Khanna, S.
+  - Korn, A. J.
+  - "K\xF3sp\xE1l, \xC1."
+  - Kostrzewa-Rutkowska, Z.
+  - "Kruszy\u0144ska, K."
+  - Kun, M.
+  - Laizeau, P.
+  - Lambert, S.
+  - Lanza, A. F.
+  - Lasne, Y.
+  - Le Campion, J. -F.
+  - Lebreton, Y.
+  - Lebzelter, T.
+  - Leccia, S.
+  - Leclerc, N.
+  - Lecoeur-Taibi, I.
+  - Liao, S.
+  - Licata, E. L.
+  - "Lindstr\xF8m, H. E. P."
+  - Lister, T. A.
+  - Livanou, E.
+  - Lobel, A.
+  - Lorca, A.
+  - Loup, C.
+  - Madrero Pardo, P.
+  - Magdaleno Romeo, A.
+  - Managau, S.
+  - Mann, R. G.
+  - Manteiga, M.
+  - Marchant, J. M.
+  - Marconi, M.
+  - Marcos, J.
+  - Marcos Santos, M. M. S.
+  - "Mar\xEDn Pina, D."
+  - Marinoni, S.
+  - Marocco, F.
+  - Martin Polo, L.
+  - "Mart\xEDn-Fleitas, J. M."
+  - Marton, G.
+  - Mary, N.
+  - Masip, A.
+  - Massari, D.
+  - Mastrobuono-Battisti, A.
+  - Mazeh, T.
+  - McMillan, P. J.
+  - Messina, S.
+  - Michalik, D.
+  - Millar, N. R.
+  - Mints, A.
+  - Molina, D.
+  - Molinaro, R.
+  - "Moln\xE1r, L."
+  - Monari, G.
+  - "Mongui\xF3, M."
+  - Montegriffo, P.
+  - Montero, A.
+  - Mor, R.
+  - Mora, A.
+  - Morbidelli, R.
+  - Morel, T.
+  - Morris, D.
+  - Muraveva, T.
+  - Murphy, C. P.
+  - Musella, I.
+  - Nagy, Z.
+  - Noval, L.
+  - "Oca\xF1a, F."
+  - Ogden, A.
+  - Ordenovic, C.
+  - Osinde, J. O.
+  - Pagani, C.
+  - Pagano, I.
+  - Palaversa, L.
+  - Palicio, P. A.
+  - Pallas-Quintela, L.
+  - Panahi, A.
+  - Payne-Wardenaar, S.
+  - "Pe\xF1alosa Esteller, X."
+  - "Penttil\xE4, A."
+  - Pichon, B.
+  - Piersimoni, A. M.
+  - Pineau, F. -X.
+  - Plachy, E.
+  - Plum, G.
+  - Poggio, E.
+  - "Pr\u0161a, A."
+  - Pulone, L.
+  - Racero, E.
+  - Ragaini, S.
+  - Rainer, M.
+  - Raiteri, C. M.
+  - Ramos, P.
+  - Ramos-Lerate, M.
+  - Re Fiorentin, P.
+  - Regibo, S.
+  - Richards, P. J.
+  - Rios Diaz, C.
+  - Ripepi, V.
+  - Riva, A.
+  - Rix, H. -W.
+  - Rixon, G.
+  - Robichon, N.
+  - Robin, A. C.
+  - Robin, C.
+  - Roelens, M.
+  - Rogues, H. R. O.
+  - Rohrbasser, L.
+  - "Romero-G\xF3mez, M."
+  - Rowell, N.
+  - Royer, F.
+  - Ruz Mieres, D.
+  - Rybicki, K. A.
+  - Sadowski, G.
+  - "S\xE1ez N\xFA\xF1ez, A."
+  - "Sagrist\xE0 Sell\xE9s, A."
+  - Sahlmann, J.
+  - Salguero, E.
+  - Samaras, N.
+  - Sanchez Gimenez, V.
+  - Sanna, N.
+  - "Santove\xF1a, R."
+  - Sarasso, M.
+  - Sciacca, E.
+  - Segol, M.
+  - Segovia, J. C.
+  - "S\xE9gransan, D."
+  - Semeux, D.
+  - Shahaf, S.
+  - Siddiqui, H. I.
+  - Siebert, A.
+  - Siltala, L.
+  - Silvelo, A.
+  - Slezak, E.
+  - Slezak, I.
+  - Smart, R. L.
+  - Snaith, O. N.
+  - Solano, E.
+  - Solitro, F.
+  - Souami, D.
+  - Souchay, J.
+  - Spagna, A.
+  - Spina, L.
+  - Spoto, F.
+  - Steele, I. A.
+  - "Steidelm\xFCller, H."
+  - Stephenson, C. A.
+  - "S\xFCveges, M."
+  - Surdej, J.
+  - Szabados, L.
+  - Szegedi-Elek, E.
+  - Taris, F.
+  - Taylor, M. B.
+  - Teixeira, R.
+  - Tolomei, L.
+  - Tonello, N.
+  - Torra, F.
+  - Torra, J.
+  - Torralba Elipe, G.
+  - Trabucchi, M.
+  - Tsounis, A. T.
+  - Turon, C.
+  - Ulla, A.
+  - Unger, N.
+  - Vaillant, M. V.
+  - van Dillen, E.
+  - van Reeven, W.
+  - Vanel, O.
+  - Vecchiato, A.
+  - Viala, Y.
+  - Vicente, D.
+  - Voutsinas, S.
+  - Weiler, M.
+  - Wevers, T.
+  - "Wyrzykowski, \u0141."
+  - Yoldas, A.
+  - Yvard, P.
+  - Zorec, J.
+  - Zucker, S.
+  bibcode: 2023A&A...674A..40G
+  category: collaboration
+  citation_count: 20
+  doctype: article
+  identifier:
+  - 10.1051/0004-6361/202243283
+  - 2023A&A...674A..40G
+  - 2022arXiv220605536G
+  - 10.48550/arXiv.2206.05536
+  - arXiv:2206.05536
+  page: A40
+  pub: Astronomy and Astrophysics
+  title: Gaia Data Release 3. Exploring and mapping the diffuse interstellar band
+    at 862 nm
+  url: null
+  volume: '674'
+  year: 2023
+- abstract: 'Context.Gaia Data Release 3 (DR3) provides a wealth of new data products
+    for the astronomical community to exploit, including astrophysical parameters
+    for half a billion stars. In this work, we demonstrate the high quality of these
+    data products and illustrate their use in different astrophysical contexts. <BR
+    /> Aims: We produce homogeneous samples of stars with high-quality astrophysical
+    parameters by exploiting Gaia DR3, while focusing on many regimes across the Hertzsprung-Russell
+    (HR) diagram; spectral types OBA, FGKM, and ultracool dwarfs (UCDs). We also focus
+    on specific subsamples of particular interest to the community: solar analogues,
+    carbon stars, and the Gaia spectrophotometric standard stars (SPSS). <BR /> Methods:
+    We query the astrophysical parameter tables along with other tables in Gaia DR3
+    to derive the samples of the stars of interest. We validate our results using
+    the Gaia catalogue itself and by comparison with external data. <BR /> Results:
+    We produced six homogeneous samples of stars with high-quality astrophysical parameters
+    across the HR diagram for the community to exploit. We first focus on three samples
+    that span a large parameter space: young massive disc stars (OBA; about 3 Million),
+    FGKM spectral type stars (about 3 Million), and UCDs (about 20 000). We provide
+    these sources along with additional information (either a flag or complementary
+    parameters) as tables that are made available in the Gaia archive. We also identify
+    15 740 bone fide carbon stars and 5863 solar analogues, and provide the first
+    homogeneous set of stellar parameters of the SPSS sample. We demonstrate some
+    applications of these samples in different astrophysical contexts. We use a subset
+    of the OBA sample to illustrate its usefulness in analysing the Milky Way rotation
+    curve. We then use the properties of the FGKM stars to analyse known exoplanet
+    systems. We also analyse the ages of some unseen UCD-companions to the FGKM stars.
+    We additionally predict the colours of the Sun in various passbands (Gaia, 2MASS,
+    WISE) using the solar-analogue sample. Conclusions.Gaia DR3 contains a wealth
+    of new high-quality astrophysical parameters for the community to exploit. <P
+    />Full Table 8 is only available at the CDS via anonymous ftp to <A href="http://cdsarc.u-strasbg.fr/">cdsarc.u-strasbg.fr</A>
+    ( ftp://130.79.128.5 ) or via <A href="http://cdsarc.u-strasbg.fr/viz-bin/cat/J/A+A/674/A39">http://cdsarc.u-strasbg.fr/viz-bin/cat/J/A+A/674/A39</A>
+    <P />This paper contains tables that are made available only through the Gaia
+    archive under Performance verification.'
+  author:
+  - Gaia Collaboration
+  - Creevey, O. L.
+  - Sarro, L. M.
+  - Lobel, A.
+  - Pancino, E.
+  - Andrae, R.
+  - Smart, R. L.
+  - Clementini, G.
+  - Heiter, U.
+  - Korn, A. J.
+  - Fouesneau, M.
+  - "Fr\xE9mat, Y."
+  - De Angeli, F.
+  - Vallenari, A.
+  - Harrison, D. L.
+  - "Th\xE9venin, F."
+  - "Reyl\xE9, C."
+  - Sordo, R.
+  - Garofalo, A.
+  - Brown, A. G. A.
+  - Eyer, L.
+  - Prusti, T.
+  - de Bruijne, J. H. J.
+  - Arenou, F.
+  - Babusiaux, C.
+  - Biermann, M.
+  - Ducourant, C.
+  - Evans, D. W.
+  - Guerra, R.
+  - Hutton, A.
+  - Jordi, C.
+  - Klioner, S. A.
+  - Lammers, U. L.
+  - Lindegren, L.
+  - Luri, X.
+  - Mignard, F.
+  - Panem, C.
+  - Pourbaix, D.
+  - Randich, S.
+  - Sartoretti, P.
+  - Soubiran, C.
+  - Tanga, P.
+  - Walton, N. A.
+  - Bailer-Jones, C. A. L.
+  - Bastian, U.
+  - Drimmel, R.
+  - Jansen, F.
+  - Katz, D.
+  - Lattanzi, M. G.
+  - van Leeuwen, F.
+  - Bakker, J.
+  - Cacciari, C.
+  - "Casta\xF1eda, J."
+  - Fabricius, C.
+  - Galluccio, L.
+  - Guerrier, A.
+  - Masana, E.
+  - Messineo, R.
+  - Mowlavi, N.
+  - Nicolas, C.
+  - Nienartowicz, K.
+  - Pailler, F.
+  - Panuzzo, P.
+  - Riclet, F.
+  - Roux, W.
+  - Seabroke, G. M.
+  - Gracia-Abril, G.
+  - Portell, J.
+  - Teyssier, D.
+  - Altmann, M.
+  - Audard, M.
+  - Bellas-Velidis, I.
+  - Benson, K.
+  - Berthier, J.
+  - Blomme, R.
+  - Burgess, P. W.
+  - Busonero, D.
+  - Busso, G.
+  - "C\xE1novas, H."
+  - Carry, B.
+  - Cellino, A.
+  - Cheek, N.
+  - Damerdji, Y.
+  - Davidson, M.
+  - de Teodoro, P.
+  - "Nu\xF1ez Campos, M."
+  - Delchambre, L.
+  - Dell'Oro, A.
+  - Esquej, P.
+  - "Fern\xE1ndez-Hern\xE1ndez, J."
+  - Fraile, E.
+  - Garabato, D.
+  - "Garc\xEDa-Lario, P."
+  - Gosset, E.
+  - Haigron, R.
+  - Halbwachs, J. -L.
+  - Hambly, N. C.
+  - "Hern\xE1ndez, J."
+  - Hestroffer, D.
+  - Hodgkin, S. T.
+  - Holl, B.
+  - "Jan\xDFen, K."
+  - Jevardat de Fombelle, G.
+  - Jordan, S.
+  - Krone-Martins, A.
+  - Lanzafame, A. C.
+  - "L\xF6ffler, W."
+  - Marchal, O.
+  - Marrese, P. M.
+  - Moitinho, A.
+  - Muinonen, K.
+  - Osborne, P.
+  - Pauwels, T.
+  - Recio-Blanco, A.
+  - Riello, M.
+  - Rimoldini, L.
+  - Roegiers, T.
+  - Rybizki, J.
+  - Siopis, C.
+  - Smith, M.
+  - Sozzetti, A.
+  - Utrilla, E.
+  - van Leeuwen, M.
+  - Abbas, U.
+  - "\xC1brah\xE1m, P."
+  - Abreu Aramburu, A.
+  - Aerts, C.
+  - Aguado, J. J.
+  - Ajaj, M.
+  - Aldea-Montero, F.
+  - Altavilla, G.
+  - "\xC1lvarez, M. A."
+  - Alves, J.
+  - Anders, F.
+  - Anderson, R. I.
+  - Anglada Varela, E.
+  - Antoja, T.
+  - Baines, D.
+  - Baker, S. G.
+  - "Balaguer-N\xFA\xF1ez, L."
+  - Balbinot, E.
+  - Balog, Z.
+  - Barache, C.
+  - Barbato, D.
+  - Barros, M.
+  - Barstow, M. A.
+  - "Bartolom\xE9, S."
+  - Bassilana, J. -L.
+  - Bauchet, N.
+  - Becciani, U.
+  - Bellazzini, M.
+  - Berihuete, A.
+  - Bernet, M.
+  - Bertone, S.
+  - Bianchi, L.
+  - Binnenfeld, A.
+  - Blanco-Cuaresma, S.
+  - Boch, T.
+  - Bombrun, A.
+  - Bossini, D.
+  - Bouquillon, S.
+  - Bragaglia, A.
+  - Bramante, L.
+  - Breedt, E.
+  - Bressan, A.
+  - Brouillet, N.
+  - Brugaletta, E.
+  - Bucciarelli, B.
+  - Burlacu, A.
+  - Butkevich, A. G.
+  - Buzzi, R.
+  - Caffau, E.
+  - Cancelliere, R.
+  - Cantat-Gaudin, T.
+  - Carballo, R.
+  - Carlucci, T.
+  - Carnerero, M. I.
+  - Carrasco, J. M.
+  - Casamiquela, L.
+  - Castellani, M.
+  - Castro-Ginard, A.
+  - Chaoul, L.
+  - Charlot, P.
+  - Chemin, L.
+  - Chiaramida, V.
+  - Chiavassa, A.
+  - Chornay, N.
+  - Comoretto, G.
+  - Contursi, G.
+  - Cooper, W. J.
+  - Cornez, T.
+  - Cowell, S.
+  - Crifo, F.
+  - Cropper, M.
+  - Crosta, M.
+  - Crowley, C.
+  - Dafonte, C.
+  - Dapergolas, A.
+  - David, P.
+  - de Laverny, P.
+  - De Luise, F.
+  - De March, R.
+  - De Ridder, J.
+  - de Souza, R.
+  - de Torres, A.
+  - del Peloso, E. F.
+  - del Pozo, E.
+  - Delbo, M.
+  - Delgado, A.
+  - Delisle, J. -B.
+  - Demouchy, C.
+  - Dharmawardena, T. E.
+  - Di Matteo, P.
+  - Diakite, S.
+  - Diener, C.
+  - Distefano, E.
+  - Dolding, C.
+  - Enke, H.
+  - Fabre, C.
+  - Fabrizio, M.
+  - Faigler, S.
+  - Fedorets, G.
+  - Fernique, P.
+  - Figueras, F.
+  - Fournier, Y.
+  - Fouron, C.
+  - Fragkoudi, F.
+  - Gai, M.
+  - Garcia-Gutierrez, A.
+  - Garcia-Reinaldos, M.
+  - "Garc\xEDa-Torres, M."
+  - Gavel, A.
+  - Gavras, P.
+  - Gerlach, E.
+  - Geyer, R.
+  - Giacobbe, P.
+  - Gilmore, G.
+  - Girona, S.
+  - Giuffrida, G.
+  - Gomel, R.
+  - Gomez, A.
+  - "Gonz\xE1lez-N\xFA\xF1ez, J."
+  - "Gonz\xE1lez-Santamar\xEDa, I."
+  - "Gonz\xE1lez-Vidal, J. J."
+  - Granvik, M.
+  - Guillout, P.
+  - Guiraud, J.
+  - "Guti\xE9rrez-S\xE1nchez, R."
+  - Guy, L. P.
+  - Hatzidimitriou, D.
+  - Hauser, M.
+  - Haywood, M.
+  - Helmer, A.
+  - Helmi, A.
+  - Hilger, T.
+  - Sarmiento, M. H.
+  - Hidalgo, S. L.
+  - "H\u0142adczuk, N."
+  - Hobbs, D.
+  - Holland, G.
+  - Huckle, H. E.
+  - Jardine, K.
+  - Jasniewicz, G.
+  - Jean-Antoine Piccolo, A.
+  - "Jim\xE9nez-Arranz, \xD3."
+  - Juaristi Campillo, J.
+  - Julbe, F.
+  - Karbevska, L.
+  - Kervella, P.
+  - Khanna, S.
+  - Kordopatis, G.
+  - "K\xF3sp\xE1l, \xC1."
+  - Kostrzewa-Rutkowska, Z.
+  - "Kruszy\u0144ska, K."
+  - Kun, M.
+  - Laizeau, P.
+  - Lambert, S.
+  - Lanza, A. F.
+  - Lasne, Y.
+  - Le Campion, J. -F.
+  - Lebreton, Y.
+  - Lebzelter, T.
+  - Leccia, S.
+  - Leclerc, N.
+  - Lecoeur-Taibi, I.
+  - Liao, S.
+  - Licata, E. L.
+  - "Lindstr\xF8m, H. E. P."
+  - Lister, T. A.
+  - Livanou, E.
+  - Lorca, A.
+  - Loup, C.
+  - Madrero Pardo, P.
+  - Magdaleno Romeo, A.
+  - Managau, S.
+  - Mann, R. G.
+  - Manteiga, M.
+  - Marchant, J. M.
+  - Marconi, M.
+  - Marcos, J.
+  - Marcos Santos, M. M. S.
+  - "Mar\xEDn Pina, D."
+  - Marinoni, S.
+  - Marocco, F.
+  - Marshall, D. J.
+  - Martin Polo, L.
+  - "Mart\xEDn-Fleitas, J. M."
+  - Marton, G.
+  - Mary, N.
+  - Masip, A.
+  - Massari, D.
+  - Mastrobuono-Battisti, A.
+  - Mazeh, T.
+  - McMillan, P. J.
+  - Messina, S.
+  - Michalik, D.
+  - Millar, N. R.
+  - Mints, A.
+  - Molina, D.
+  - Molinaro, R.
+  - "Moln\xE1r, L."
+  - Monari, G.
+  - "Mongui\xF3, M."
+  - Montegriffo, P.
+  - Montero, A.
+  - Mor, R.
+  - Mora, A.
+  - Morbidelli, R.
+  - Morel, T.
+  - Morris, D.
+  - Muraveva, T.
+  - Murphy, C. P.
+  - Musella, I.
+  - Nagy, Z.
+  - Noval, L.
+  - "Oca\xF1a, F."
+  - Ogden, A.
+  - Ordenovic, C.
+  - Osinde, J. O.
+  - Pagani, C.
+  - Pagano, I.
+  - Palaversa, L.
+  - Palicio, P. A.
+  - Pallas-Quintela, L.
+  - Panahi, A.
+  - Payne-Wardenaar, S.
+  - "Pe\xF1alosa Esteller, X."
+  - "Penttil\xE4, A."
+  - Pichon, B.
+  - Piersimoni, A. M.
+  - Pineau, F. -X.
+  - Plachy, E.
+  - Plum, G.
+  - Poggio, E.
+  - "Pr\u0161a, A."
+  - Pulone, L.
+  - Racero, E.
+  - Ragaini, S.
+  - Rainer, M.
+  - Raiteri, C. M.
+  - Ramos, P.
+  - Ramos-Lerate, M.
+  - Re Fiorentin, P.
+  - Regibo, S.
+  - Richards, P. J.
+  - Rios Diaz, C.
+  - Ripepi, V.
+  - Riva, A.
+  - Rix, H. -W.
+  - Rixon, G.
+  - Robichon, N.
+  - Robin, A. C.
+  - Robin, C.
+  - Roelens, M.
+  - Rogues, H. R. O.
+  - Rohrbasser, L.
+  - "Romero-G\xF3mez, M."
+  - Rowell, N.
+  - Royer, F.
+  - Ruz Mieres, D.
+  - Rybicki, K. A.
+  - Sadowski, G.
+  - "S\xE1ez N\xFA\xF1ez, A."
+  - "Sagrist\xE0 Sell\xE9s, A."
+  - Sahlmann, J.
+  - Salguero, E.
+  - Samaras, N.
+  - Sanchez Gimenez, V.
+  - Sanna, N.
+  - "Santove\xF1a, R."
+  - Sarasso, M.
+  - Schultheis, M.
+  - Sciacca, E.
+  - Segol, M.
+  - Segovia, J. C.
+  - "S\xE9gransan, D."
+  - Semeux, D.
+  - Shahaf, S.
+  - Siddiqui, H. I.
+  - Siebert, A.
+  - Siltala, L.
+  - Silvelo, A.
+  - Slezak, E.
+  - Slezak, I.
+  - Snaith, O. N.
+  - Solano, E.
+  - Solitro, F.
+  - Souami, D.
+  - Souchay, J.
+  - Spagna, A.
+  - Spina, L.
+  - Spoto, F.
+  - Steele, I. A.
+  - "Steidelm\xFCller, H."
+  - Stephenson, C. A.
+  - "S\xFCveges, M."
+  - Surdej, J.
+  - Szabados, L.
+  - Szegedi-Elek, E.
+  - Taris, F.
+  - Taylor, M. B.
+  - Teixeira, R.
+  - Tolomei, L.
+  - Tonello, N.
+  - Torra, F.
+  - Torra, J.
+  - Torralba Elipe, G.
+  - Trabucchi, M.
+  - Tsounis, A. T.
+  - Turon, C.
+  - Ulla, A.
+  - Unger, N.
+  - Vaillant, M. V.
+  - van Dillen, E.
+  - van Reeven, W.
+  - Vanel, O.
+  - Vecchiato, A.
+  - Viala, Y.
+  - Vicente, D.
+  - Voutsinas, S.
+  - Weiler, M.
+  - Wevers, T.
+  - "Wyrzykowski, \u0141."
+  - Yoldas, A.
+  - Yvard, P.
+  - Zhao, H.
+  - Zorec, J.
+  - Zucker, S.
+  - Zwitter, T.
+  bibcode: 2023A&A...674A..39G
+  category: collaboration
+  citation_count: 60
+  doctype: article
+  identifier:
+  - 2022arXiv220605870G
+  - 2023A&A...674A..39G
+  - 10.48550/arXiv.2206.05870
+  - arXiv:2206.05870
+  - 10.1051/0004-6361/202243800
+  page: A39
+  pub: Astronomy and Astrophysics
+  title: Gaia Data Release 3. A golden sample of astrophysical parameters
+  url: null
+  volume: '674'
+  year: 2023
+- abstract: "Context. The motion of stars has been used to reveal details of the complex\
+    \ history of the Milky Way, in constant interaction with its environment. Nevertheless,\
+    \ to reconstruct the Galactic history puzzle in its entirety, the chemo-physical\
+    \ characterisation of stars is essential. Previous Gaia data releases were supported\
+    \ by a smaller, heterogeneous, and spatially biased mixture of chemical data from\
+    \ ground-based observations. <BR /> Aims: Gaia Data Release 3 opens a new era\
+    \ of all-sky spectral analysis of stellar populations thanks to the nearly 5.6\
+    \ million stars observed by the Radial Velocity Spectrometer (RVS) and parametrised\
+    \ by the GSP-Spec module. In this work, we aim to demonstrate the scientific quality\
+    \ of Gaia's Milky Way chemical cartography through a chemo-dynamical analysis\
+    \ of disc and halo populations. <BR /> Methods: Stellar atmospheric parameters\
+    \ and chemical abundances provided by Gaia DR3 spectroscopy are combined with\
+    \ DR3 radial velocities and EDR3 astrometry to analyse the relationships between\
+    \ chemistry and Milky Way structure, stellar kinematics, and orbital parameters.\
+    \ <BR /> Results: The all-sky Gaia chemical cartography allows a powerful and\
+    \ precise chemo-dynamical view of the Milky Way with unprecedented spatial coverage\
+    \ and statistical robustness. First, it reveals the strong vertical symmetry of\
+    \ the Galaxy and the flared structure of the disc. Second, the observed kinematic\
+    \ disturbances of the disc - seen as phase space correlations - and kinematic\
+    \ or orbital substructures are associated with chemical patterns that favour stars\
+    \ with enhanced metallicities and lower [\u03B1/Fe] abundance ratios compared\
+    \ to the median values in the radial distributions. This is detected both for\
+    \ young objects that trace the spiral arms and older populations. Several \u03B1\
+    , iron-peak elements and at least one heavy element trace the thin and thick disc\
+    \ properties in the solar cylinder. Third, young disc stars show a recent chemical\
+    \ impoverishment in several elements. Fourth, the largest chemo-dynamical sample\
+    \ of open clusters analysed so far shows a steepening of the radial metallicity\
+    \ gradient with age, which is also observed in the young field population. Finally,\
+    \ the Gaia chemical data have the required coverage and precision to unveil galaxy\
+    \ accretion debris and heated disc stars on halo orbits through their [\u03B1\
+    /Fe] ratio, and to allow the study of the chemo-dynamical properties of globular\
+    \ clusters. <BR /> Conclusions: Gaia DR3 chemo-dynamical diagnostics open new\
+    \ horizons before the era of ground-based wide-field spectroscopic surveys. They\
+    \ unveil a complex Milky Way that is the outcome of an eventful evolution, shaping\
+    \ it to the present day."
+  author:
+  - Gaia Collaboration
+  - Recio-Blanco, A.
+  - Kordopatis, G.
+  - de Laverny, P.
+  - Palicio, P. A.
+  - Spagna, A.
+  - Spina, L.
+  - Katz, D.
+  - Re Fiorentin, P.
+  - Poggio, E.
+  - McMillan, P. J.
+  - Vallenari, A.
+  - Lattanzi, M. G.
+  - Seabroke, G. M.
+  - Casamiquela, L.
+  - Bragaglia, A.
+  - Antoja, T.
+  - Bailer-Jones, C. A. L.
+  - Schultheis, M.
+  - Andrae, R.
+  - Fouesneau, M.
+  - Cropper, M.
+  - Cantat-Gaudin, T.
+  - Bijaoui, A.
+  - Heiter, U.
+  - Brown, A. G. A.
+  - Prusti, T.
+  - de Bruijne, J. H. J.
+  - Arenou, F.
+  - Babusiaux, C.
+  - Biermann, M.
+  - Creevey, O. L.
+  - Ducourant, C.
+  - Evans, D. W.
+  - Eyer, L.
+  - Guerra, R.
+  - Hutton, A.
+  - Jordi, C.
+  - Klioner, S. A.
+  - Lammers, U. L.
+  - Lindegren, L.
+  - Luri, X.
+  - Mignard, F.
+  - Panem, C.
+  - Pourbaix, D.
+  - Randich, S.
+  - Sartoretti, P.
+  - Soubiran, C.
+  - Tanga, P.
+  - Walton, N. A.
+  - Bastian, U.
+  - Drimmel, R.
+  - Jansen, F.
+  - van Leeuwen, F.
+  - Bakker, J.
+  - Cacciari, C.
+  - "Casta\xF1eda, J."
+  - De Angeli, F.
+  - Fabricius, C.
+  - "Fr\xE9mat, Y."
+  - Galluccio, L.
+  - Guerrier, A.
+  - Masana, E.
+  - Messineo, R.
+  - Mowlavi, N.
+  - Nicolas, C.
+  - Nienartowicz, K.
+  - Pailler, F.
+  - Panuzzo, P.
+  - Riclet, F.
+  - Roux, W.
+  - Sordo, R.
+  - "Th\xE9venin, F."
+  - Gracia-Abril, G.
+  - Portell, J.
+  - Teyssier, D.
+  - Altmann, M.
+  - Audard, M.
+  - Bellas-Velidis, I.
+  - Benson, K.
+  - Berthier, J.
+  - Blomme, R.
+  - Burgess, P. W.
+  - Busonero, D.
+  - Busso, G.
+  - "C\xE1novas, H."
+  - Carry, B.
+  - Cellino, A.
+  - Cheek, N.
+  - Clementini, G.
+  - Damerdji, Y.
+  - Davidson, M.
+  - de Teodoro, P.
+  - "Nu\xF1ez Campos, M."
+  - Delchambre, L.
+  - Dell'Oro, A.
+  - Esquej, P.
+  - "Fern\xE1ndez-Hern\xE1ndez, J."
+  - Fraile, E.
+  - Garabato, D.
+  - "Garc\xEDa-Lario, P."
+  - Gosset, E.
+  - Haigron, R.
+  - Halbwachs, J. -L.
+  - Hambly, N. C.
+  - Harrison, D. L.
+  - "Hern\xE1ndez, J."
+  - Hestroffer, D.
+  - Hodgkin, S. T.
+  - Holl, B.
+  - "Jan\xDFen, K."
+  - Jevardat de Fombelle, G.
+  - Jordan, S.
+  - Krone-Martins, A.
+  - Lanzafame, A. C.
+  - "L\xF6ffler, W."
+  - Marchal, O.
+  - Marrese, P. M.
+  - Moitinho, A.
+  - Muinonen, K.
+  - Osborne, P.
+  - Pancino, E.
+  - Pauwels, T.
+  - "Reyl\xE9, C."
+  - Riello, M.
+  - Rimoldini, L.
+  - Roegiers, T.
+  - Rybizki, J.
+  - Sarro, L. M.
+  - Siopis, C.
+  - Smith, M.
+  - Sozzetti, A.
+  - Utrilla, E.
+  - van Leeuwen, M.
+  - Abbas, U.
+  - "\xC1brah\xE1m, P."
+  - Abreu Aramburu, A.
+  - Aerts, C.
+  - Aguado, J. J.
+  - Ajaj, M.
+  - Aldea-Montero, F.
+  - Altavilla, G.
+  - "\xC1lvarez, M. A."
+  - Alves, J.
+  - Anders, F.
+  - Anderson, R. I.
+  - Anglada Varela, E.
+  - Baines, D.
+  - Baker, S. G.
+  - "Balaguer-N\xFA\xF1ez, L."
+  - Balbinot, E.
+  - Balog, Z.
+  - Barache, C.
+  - Barbato, D.
+  - Barros, M.
+  - Barstow, M. A.
+  - "Bartolom\xE9, S."
+  - Bassilana, J. -L.
+  - Bauchet, N.
+  - Becciani, U.
+  - Bellazzini, M.
+  - Berihuete, A.
+  - Bernet, M.
+  - Bertone, S.
+  - Bianchi, L.
+  - Binnenfeld, A.
+  - Blanco-Cuaresma, S.
+  - Boch, T.
+  - Bombrun, A.
+  - Bossini, D.
+  - Bouquillon, S.
+  - Bramante, L.
+  - Breedt, E.
+  - Bressan, A.
+  - Brouillet, N.
+  - Brugaletta, E.
+  - Bucciarelli, B.
+  - Burlacu, A.
+  - Butkevich, A. G.
+  - Buzzi, R.
+  - Caffau, E.
+  - Cancelliere, R.
+  - Carballo, R.
+  - Carlucci, T.
+  - Carnerero, M. I.
+  - Carrasco, J. M.
+  - Castellani, M.
+  - Castro-Ginard, A.
+  - Chaoul, L.
+  - Charlot, P.
+  - Chemin, L.
+  - Chiaramida, V.
+  - Chiavassa, A.
+  - Chornay, N.
+  - Comoretto, G.
+  - Contursi, G.
+  - Cooper, W. J.
+  - Cornez, T.
+  - Cowell, S.
+  - Crifo, F.
+  - Crosta, M.
+  - Crowley, C.
+  - Dafonte, C.
+  - Dapergolas, A.
+  - David, P.
+  - De Luise, F.
+  - De March, R.
+  - De Ridder, J.
+  - de Souza, R.
+  - de Torres, A.
+  - del Peloso, E. F.
+  - del Pozo, E.
+  - Delbo, M.
+  - Delgado, A.
+  - Delisle, J. -B.
+  - Demouchy, C.
+  - Dharmawardena, T. E.
+  - Di Matteo, P.
+  - Diakite, S.
+  - Diener, C.
+  - Distefano, E.
+  - Dolding, C.
+  - Edvardsson, B.
+  - Enke, H.
+  - Fabre, C.
+  - Fabrizio, M.
+  - Faigler, S.
+  - Fedorets, G.
+  - Fernique, P.
+  - Figueras, F.
+  - Fournier, Y.
+  - Fouron, C.
+  - Fragkoudi, F.
+  - Gai, M.
+  - Garcia-Gutierrez, A.
+  - Garcia-Reinaldos, M.
+  - "Garc\xEDa-Torres, M."
+  - Garofalo, A.
+  - Gavel, A.
+  - Gavras, P.
+  - Gerlach, E.
+  - Geyer, R.
+  - Giacobbe, P.
+  - Gilmore, G.
+  - Girona, S.
+  - Giuffrida, G.
+  - Gomel, R.
+  - Gomez, A.
+  - "Gonz\xE1lez-N\xFA\xF1ez, J."
+  - "Gonz\xE1lez-Santamar\xEDa, I."
+  - "Gonz\xE1lez-Vidal, J. J."
+  - Granvik, M.
+  - Guillout, P.
+  - Guiraud, J.
+  - "Guti\xE9rrez-S\xE1nchez, R."
+  - Guy, L. P.
+  - Hatzidimitriou, D.
+  - Hauser, M.
+  - Haywood, M.
+  - Helmer, A.
+  - Helmi, A.
+  - Sarmiento, M. H.
+  - Hidalgo, S. L.
+  - "H\u0142adczuk, N."
+  - Hobbs, D.
+  - Holland, G.
+  - Huckle, H. E.
+  - Jardine, K.
+  - Jasniewicz, G.
+  - Jean-Antoine Piccolo, A.
+  - "Jim\xE9nez-Arranz, \xD3."
+  - Juaristi Campillo, J.
+  - Julbe, F.
+  - Karbevska, L.
+  - Kervella, P.
+  - Khanna, S.
+  - Korn, A. J.
+  - "K\xF3sp\xE1l, \xC1."
+  - Kostrzewa-Rutkowska, Z.
+  - "Kruszy\u0144ska, K."
+  - Kun, M.
+  - Laizeau, P.
+  - Lambert, S.
+  - Lanza, A. F.
+  - Lasne, Y.
+  - Le Campion, J. -F.
+  - Lebreton, Y.
+  - Lebzelter, T.
+  - Leccia, S.
+  - Leclerc, N.
+  - Lecoeur-Taibi, I.
+  - Liao, S.
+  - Licata, E. L.
+  - "Lindstr\xF8m, H. E. P."
+  - Lister, T. A.
+  - Livanou, E.
+  - Lobel, A.
+  - Lorca, A.
+  - Loup, C.
+  - Madrero Pardo, P.
+  - Magdaleno Romeo, A.
+  - Managau, S.
+  - Mann, R. G.
+  - Manteiga, M.
+  - Marchant, J. M.
+  - Marconi, M.
+  - Marcos, J.
+  - Marcos Santos, M. M. S.
+  - "Mar\xEDn Pina, D."
+  - Marinoni, S.
+  - Marocco, F.
+  - Marshall, D. J.
+  - Martin Polo, L.
+  - "Mart\xEDn-Fleitas, J. M."
+  - Marton, G.
+  - Mary, N.
+  - Masip, A.
+  - Massari, D.
+  - Mastrobuono-Battisti, A.
+  - Mazeh, T.
+  - Messina, S.
+  - Michalik, D.
+  - Millar, N. R.
+  - Mints, A.
+  - Molina, D.
+  - Molinaro, R.
+  - "Moln\xE1r, L."
+  - Monari, G.
+  - "Mongui\xF3, M."
+  - Montegriffo, P.
+  - Montero, A.
+  - Mor, R.
+  - Mora, A.
+  - Morbidelli, R.
+  - Morel, T.
+  - Morris, D.
+  - Muraveva, T.
+  - Murphy, C. P.
+  - Musella, I.
+  - Nagy, Z.
+  - Noval, L.
+  - "Oca\xF1a, F."
+  - Ogden, A.
+  - Ordenovic, C.
+  - Osinde, J. O.
+  - Pagani, C.
+  - Pagano, I.
+  - Palaversa, L.
+  - Pallas-Quintela, L.
+  - Panahi, A.
+  - Payne-Wardenaar, S.
+  - "Pe\xF1alosa Esteller, X."
+  - "Penttil\xE4, A."
+  - Pichon, B.
+  - Piersimoni, A. M.
+  - Pineau, F. -X.
+  - Plachy, E.
+  - Plum, G.
+  - "Pr\u0161a, A."
+  - Pulone, L.
+  - Racero, E.
+  - Ragaini, S.
+  - Rainer, M.
+  - Raiteri, C. M.
+  - Ramos, P.
+  - Ramos-Lerate, M.
+  - Regibo, S.
+  - Richards, P. J.
+  - Rios Diaz, C.
+  - Ripepi, V.
+  - Riva, A.
+  - Rix, H. -W.
+  - Rixon, G.
+  - Robichon, N.
+  - Robin, A. C.
+  - Robin, C.
+  - Roelens, M.
+  - Rogues, H. R. O.
+  - Rohrbasser, L.
+  - "Romero-G\xF3mez, M."
+  - Rowell, N.
+  - Royer, F.
+  - Ruz Mieres, D.
+  - Rybicki, K. A.
+  - Sadowski, G.
+  - "S\xE1ez N\xFA\xF1ez, A."
+  - "Sagrist\xE0 Sell\xE9s, A."
+  - Sahlmann, J.
+  - Salguero, E.
+  - Samaras, N.
+  - Sanchez Gimenez, V.
+  - Sanna, N.
+  - "Santove\xF1a, R."
+  - Sarasso, M.
+  - Sciacca, E.
+  - Segol, M.
+  - Segovia, J. C.
+  - "S\xE9gransan, D."
+  - Semeux, D.
+  - Shahaf, S.
+  - Siddiqui, H. I.
+  - Siebert, A.
+  - Siltala, L.
+  - Silvelo, A.
+  - Slezak, E.
+  - Slezak, I.
+  - Smart, R. L.
+  - Snaith, O. N.
+  - Solano, E.
+  - Solitro, F.
+  - Souami, D.
+  - Souchay, J.
+  - Spoto, F.
+  - Steele, I. A.
+  - "Steidelm\xFCller, H."
+  - Stephenson, C. A.
+  - "S\xFCveges, M."
+  - Surdej, J.
+  - Szabados, L.
+  - Szegedi-Elek, E.
+  - Taris, F.
+  - Taylor, M. B.
+  - Teixeira, R.
+  - Tolomei, L.
+  - Tonello, N.
+  - Torra, F.
+  - Torra, J.
+  - Torralba Elipe, G.
+  - Trabucchi, M.
+  - Tsounis, A. T.
+  - Turon, C.
+  - Ulla, A.
+  - Unger, N.
+  - Vaillant, M. V.
+  - van Dillen, E.
+  - van Reeven, W.
+  - Vanel, O.
+  - Vecchiato, A.
+  - Viala, Y.
+  - Vicente, D.
+  - Voutsinas, S.
+  - Weiler, M.
+  - Wevers, T.
+  - "Wyrzykowski, \u0141."
+  - Yoldas, A.
+  - Yvard, P.
+  - Zhao, H.
+  - Zorec, J.
+  - Zucker, S.
+  - Zwitter, T.
+  bibcode: 2023A&A...674A..38G
+  category: collaboration
+  citation_count: 115
+  doctype: article
+  identifier:
+  - arXiv:2206.05534
+  - 10.48550/arXiv.2206.05534
+  - 10.1051/0004-6361/202243511
+  - 2023A&A...674A..38G
+  - 2022arXiv220605534G
+  page: A38
+  pub: Astronomy and Astrophysics
+  title: Gaia Data Release 3. Chemical cartography of the Milky Way
+  url: null
+  volume: '674'
+  year: 2023
+- abstract: "Context. With the most recent Gaia data release, the number of sources\
+    \ with complete 6D phase space information (position and velocity) has increased\
+    \ to well over 33 million stars, while stellar astrophysical parameters are provided\
+    \ for more than 470 million sources, and more than 11 million variable stars are\
+    \ identified. <BR /> Aims: Using the astrophysical parameters and variability\
+    \ classifications provided in Gaia DR3, we selected various stellar populations\
+    \ to explore and identify non-axisymmetric features in the disc of the Milky Way\
+    \ in configuration and velocity space. <BR /> Methods: Using more about 580 000\
+    \ sources identified as hot OB stars, together with 988 known open clusters younger\
+    \ than 100 Myr, we mapped the spiral structure associated with star formation\
+    \ 4\u22125 kpc from the Sun. We selected over 2800 Classical Cepheids younger\
+    \ than 200 Myr that show spiral features extending as far as 10 kpc from the Sun\
+    \ in the outer disc. We also identified more than 8.7 million sources on the red\
+    \ giant branch (RGB), of which 5.7 million have line-of-sight velocities. This\
+    \ later sample allows the velocity field of the Milky Way to be mapped as far\
+    \ as 8 kpc from the Sun, including the inner disc. <BR /> Results: The spiral\
+    \ structure revealed by the young populations is consistent with recent results\
+    \ using Gaia EDR3 astrometry and source lists based on near-infrared photometry,\
+    \ showing the Local (Orion) Arm to be at least 8 kpc long, and an outer arm consistent\
+    \ with what is seen in HI surveys, which seems to be a continuation of the Perseus\
+    \ arm into the third quadrant. The subset of RGB stars with velocities clearly\
+    \ reveals the large-scale kinematic signature of the bar in the inner disc, as\
+    \ well as evidence of streaming motions in the outer disc that might be associated\
+    \ with spiral arms or bar resonances. A local comparison of the velocity field\
+    \ of the OB stars reveals similarities and differences with the RGB sample. <BR\
+    \ /> Conclusions: This cursory study of Gaia DR3 data shows there is a rich bounty\
+    \ of kinematic information to be explored more deeply, which will undoubtedly\
+    \ lead us to a clearer understanding of the dynamical nature of the non-axisymmetric\
+    \ structures of the Milky Way. <P />The data for Tables 1 and 2, Figs. 16, 17,\
+    \ 21, and B.1 are only available at the CDS via anonymous ftp at <A href=\"http://cdsarc.cds.unistra.fr\"\
+    >cdsarc.cds.unistra.fr</A> (ftp://130.79.128.5) or via <A href=\"https://cdsarc.cds.unistra.fr/viz-bin/cat/J/A+A/674/A37\"\
+    >https://cdsarc.cds.unistra.fr/viz-bin/cat/J/A+A/674/A37</A>"
+  author:
+  - Gaia Collaboration
+  - Drimmel, R.
+  - "Romero-G\xF3mez, M."
+  - Chemin, L.
+  - Ramos, P.
+  - Poggio, E.
+  - Ripepi, V.
+  - Andrae, R.
+  - Blomme, R.
+  - Cantat-Gaudin, T.
+  - Castro-Ginard, A.
+  - Clementini, G.
+  - Figueras, F.
+  - Fouesneau, M.
+  - "Fr\xE9mat, Y."
+  - Jardine, K.
+  - Khanna, S.
+  - Lobel, A.
+  - Marshall, D. J.
+  - Muraveva, T.
+  - Brown, A. G. A.
+  - Vallenari, A.
+  - Prusti, T.
+  - de Bruijne, J. H. J.
+  - Arenou, F.
+  - Babusiaux, C.
+  - Biermann, M.
+  - Creevey, O. L.
+  - Ducourant, C.
+  - Evans, D. W.
+  - Eyer, L.
+  - Guerra, R.
+  - Hutton, A.
+  - Jordi, C.
+  - Klioner, S. A.
+  - Lammers, U. L.
+  - Lindegren, L.
+  - Luri, X.
+  - Mignard, F.
+  - Panem, C.
+  - Pourbaix, D.
+  - Randich, S.
+  - Sartoretti, P.
+  - Soubiran, C.
+  - Tanga, P.
+  - Walton, N. A.
+  - Bailer-Jones, C. A. L.
+  - Bastian, U.
+  - Jansen, F.
+  - Katz, D.
+  - Lattanzi, M. G.
+  - van Leeuwen, F.
+  - Bakker, J.
+  - Cacciari, C.
+  - "Casta\xF1eda, J."
+  - De Angeli, F.
+  - Fabricius, C.
+  - Galluccio, L.
+  - Guerrier, A.
+  - Heiter, U.
+  - Masana, E.
+  - Messineo, R.
+  - Mowlavi, N.
+  - Nicolas, C.
+  - Nienartowicz, K.
+  - Pailler, F.
+  - Panuzzo, P.
+  - Riclet, F.
+  - Roux, W.
+  - Seabroke, G. M.
+  - Sordo, R.
+  - "Th\xE9venin, F."
+  - Gracia-Abril, G.
+  - Portell, J.
+  - Teyssier, D.
+  - Altmann, M.
+  - Audard, M.
+  - Bellas-Velidis, I.
+  - Benson, K.
+  - Berthier, J.
+  - Burgess, P. W.
+  - Busonero, D.
+  - Busso, G.
+  - "C\xE1novas, H."
+  - Carry, B.
+  - Cellino, A.
+  - Cheek, N.
+  - Damerdji, Y.
+  - Davidson, M.
+  - de Teodoro, P.
+  - "Nu\xF1ez Campos, M."
+  - Delchambre, L.
+  - Dell'Oro, A.
+  - Esquej, P.
+  - "Fern\xE1ndez-Hern\xE1ndez, J."
+  - Fraile, E.
+  - Garabato, D.
+  - "Garc\xEDa-Lario, P."
+  - Gosset, E.
+  - Haigron, R.
+  - Halbwachs, J. -L.
+  - Hambly, N. C.
+  - Harrison, D. L.
+  - "Hern\xE1ndez, J."
+  - Hestroffer, D.
+  - Hodgkin, S. T.
+  - Holl, B.
+  - "Jan\xDFen, K."
+  - Jevardat de Fombelle, G.
+  - Jordan, S.
+  - Krone-Martins, A.
+  - Lanzafame, A. C.
+  - "L\xF6ffler, W."
+  - Marchal, O.
+  - Marrese, P. M.
+  - Moitinho, A.
+  - Muinonen, K.
+  - Osborne, P.
+  - Pancino, E.
+  - Pauwels, T.
+  - Recio-Blanco, A.
+  - "Reyl\xE9, C."
+  - Riello, M.
+  - Rimoldini, L.
+  - Roegiers, T.
+  - Rybizki, J.
+  - Sarro, L. M.
+  - Siopis, C.
+  - Smith, M.
+  - Sozzetti, A.
+  - Utrilla, E.
+  - van Leeuwen, M.
+  - Abbas, U.
+  - "\xC1brah\xE1m, P."
+  - Abreu Aramburu, A.
+  - Aerts, C.
+  - Aguado, J. J.
+  - Ajaj, M.
+  - Aldea-Montero, F.
+  - Altavilla, G.
+  - "\xC1lvarez, M. A."
+  - Alves, J.
+  - Anders, F.
+  - Anderson, R. I.
+  - Anglada Varela, E.
+  - Antoja, T.
+  - Baines, D.
+  - Baker, S. G.
+  - "Balaguer-N\xFA\xF1ez, L."
+  - Balbinot, E.
+  - Balog, Z.
+  - Barache, C.
+  - Barbato, D.
+  - Barros, M.
+  - Barstow, M. A.
+  - "Bartolom\xE9, S."
+  - Bassilana, J. -L.
+  - Bauchet, N.
+  - Becciani, U.
+  - Bellazzini, M.
+  - Berihuete, A.
+  - Bernet, M.
+  - Bertone, S.
+  - Bianchi, L.
+  - Binnenfeld, A.
+  - Blanco-Cuaresma, S.
+  - Boch, T.
+  - Bombrun, A.
+  - Bossini, D.
+  - Bouquillon, S.
+  - Bragaglia, A.
+  - Bramante, L.
+  - Breedt, E.
+  - Bressan, A.
+  - Brouillet, N.
+  - Brugaletta, E.
+  - Bucciarelli, B.
+  - Burlacu, A.
+  - Butkevich, A. G.
+  - Buzzi, R.
+  - Caffau, E.
+  - Cancelliere, R.
+  - Carballo, R.
+  - Carlucci, T.
+  - Carnerero, M. I.
+  - Carrasco, J. M.
+  - Casamiquela, L.
+  - Castellani, M.
+  - Chaoul, L.
+  - Charlot, P.
+  - Chiaramida, V.
+  - Chiavassa, A.
+  - Chornay, N.
+  - Comoretto, G.
+  - Contursi, G.
+  - Cooper, W. J.
+  - Cornez, T.
+  - Cowell, S.
+  - Crifo, F.
+  - Cropper, M.
+  - Crosta, M.
+  - Crowley, C.
+  - Dafonte, C.
+  - Dapergolas, A.
+  - David, P.
+  - de Laverny, P.
+  - De Luise, F.
+  - De March, R.
+  - De Ridder, J.
+  - de Souza, R.
+  - de Torres, A.
+  - del Peloso, E. F.
+  - del Pozo, E.
+  - Delbo, M.
+  - Delgado, A.
+  - Delisle, J. -B.
+  - Demouchy, C.
+  - Dharmawardena, T. E.
+  - Di Matteo, P.
+  - Diakite, S.
+  - Diener, C.
+  - Distefano, E.
+  - Dolding, C.
+  - Enke, H.
+  - Fabre, C.
+  - Fabrizio, M.
+  - Faigler, S.
+  - Fedorets, G.
+  - Fernique, P.
+  - Fournier, Y.
+  - Fouron, C.
+  - Fragkoudi, F.
+  - Gai, M.
+  - Garcia-Gutierrez, A.
+  - Garcia-Reinaldos, M.
+  - "Garc\xEDa-Torres, M."
+  - Garofalo, A.
+  - Gavel, A.
+  - Gavras, P.
+  - Gerlach, E.
+  - Geyer, R.
+  - Giacobbe, P.
+  - Gilmore, G.
+  - Girona, S.
+  - Giuffrida, G.
+  - Gomel, R.
+  - Gomez, A.
+  - "Gonz\xE1lez-N\xFA\xF1ez, J."
+  - "Gonz\xE1lez-Santamar\xEDa, I."
+  - "Gonz\xE1lez-Vidal, J. J."
+  - Granvik, M.
+  - Guillout, P.
+  - Guiraud, J.
+  - "Guti\xE9rrez-S\xE1nchez, R."
+  - Guy, L. P.
+  - Hatzidimitriou, D.
+  - Hauser, M.
+  - Haywood, M.
+  - Helmer, A.
+  - Helmi, A.
+  - Sarmiento, M. H.
+  - Hidalgo, S. L.
+  - "H\u0142adczuk, N."
+  - Hobbs, D.
+  - Holland, G.
+  - Huckle, H. E.
+  - Jasniewicz, G.
+  - Jean-Antoine Piccolo, A.
+  - "Jim\xE9nez-Arranz, \xD3."
+  - Juaristi Campillo, J.
+  - Julbe, F.
+  - Karbevska, L.
+  - Kervella, P.
+  - Kordopatis, G.
+  - Korn, A. J.
+  - "K\xF3sp\xE1l, \xC1."
+  - Kostrzewa-Rutkowska, Z.
+  - "Kruszy\u0144ska, K."
+  - Kun, M.
+  - Laizeau, P.
+  - Lambert, S.
+  - Lanza, A. F.
+  - Lasne, Y.
+  - Le Campion, J. -F.
+  - Lebreton, Y.
+  - Lebzelter, T.
+  - Leccia, S.
+  - Leclerc, N.
+  - Lecoeur-Taibi, I.
+  - Liao, S.
+  - Licata, E. L.
+  - "Lindstr\xF8m, H. E. P."
+  - Lister, T. A.
+  - Livanou, E.
+  - Lorca, A.
+  - Loup, C.
+  - Madrero Pardo, P.
+  - Magdaleno Romeo, A.
+  - Managau, S.
+  - Mann, R. G.
+  - Manteiga, M.
+  - Marchant, J. M.
+  - Marconi, M.
+  - Marcos, J.
+  - Marcos Santos, M. M. S.
+  - "Mar\xEDn Pina, D."
+  - Marinoni, S.
+  - Marocco, F.
+  - Martin Polo, L.
+  - "Mart\xEDn-Fleitas, J. M."
+  - Marton, G.
+  - Mary, N.
+  - Masip, A.
+  - Massari, D.
+  - Mastrobuono-Battisti, A.
+  - Mazeh, T.
+  - McMillan, P. J.
+  - Messina, S.
+  - Michalik, D.
+  - Millar, N. R.
+  - Mints, A.
+  - Molina, D.
+  - Molinaro, R.
+  - "Moln\xE1r, L."
+  - Monari, G.
+  - "Mongui\xF3, M."
+  - Montegriffo, P.
+  - Montero, A.
+  - Mor, R.
+  - Mora, A.
+  - Morbidelli, R.
+  - Morel, T.
+  - Morris, D.
+  - Murphy, C. P.
+  - Musella, I.
+  - Nagy, Z.
+  - Noval, L.
+  - "Oca\xF1a, F."
+  - Ogden, A.
+  - Ordenovic, C.
+  - Osinde, J. O.
+  - Pagani, C.
+  - Pagano, I.
+  - Palaversa, L.
+  - Palicio, P. A.
+  - Pallas-Quintela, L.
+  - Panahi, A.
+  - Payne-Wardenaar, S.
+  - "Pe\xF1alosa Esteller, X."
+  - "Penttil\xE4, A."
+  - Pichon, B.
+  - Piersimoni, A. M.
+  - Pineau, F. -X.
+  - Plachy, E.
+  - Plum, G.
+  - "Pr\u0161a, A."
+  - Pulone, L.
+  - Racero, E.
+  - Ragaini, S.
+  - Rainer, M.
+  - Raiteri, C. M.
+  - Ramos-Lerate, M.
+  - Re Fiorentin, P.
+  - Regibo, S.
+  - Richards, P. J.
+  - Rios Diaz, C.
+  - Riva, A.
+  - Rix, H. -W.
+  - Rixon, G.
+  - Robichon, N.
+  - Robin, A. C.
+  - Robin, C.
+  - Roelens, M.
+  - Rogues, H. R. O.
+  - Rohrbasser, L.
+  - Rowell, N.
+  - Royer, F.
+  - Ruz Mieres, D.
+  - Rybicki, K. A.
+  - Sadowski, G.
+  - "S\xE1ez N\xFA\xF1ez, A."
+  - "Sagrist\xE0 Sell\xE9s, A."
+  - Sahlmann, J.
+  - Salguero, E.
+  - Samaras, N.
+  - Sanchez Gimenez, V.
+  - Sanna, N.
+  - "Santove\xF1a, R."
+  - Sarasso, M.
+  - Schultheis, M. S.
+  - Sciacca, E.
+  - Segol, M.
+  - Segovia, J. C.
+  - "S\xE9gransan, D."
+  - Semeux, D.
+  - Shahaf, S.
+  - Siddiqui, H. I.
+  - Siebert, A.
+  - Siltala, L.
+  - Silvelo, A.
+  - Slezak, E.
+  - Slezak, I.
+  - Smart, R. L.
+  - Snaith, O. N.
+  - Solano, E.
+  - Solitro, F.
+  - Souami, D.
+  - Souchay, J.
+  - Spagna, A.
+  - Spina, L.
+  - Spoto, F.
+  - Steele, I. A.
+  - "Steidelm\xFCller, H."
+  - Stephenson, C. A.
+  - "S\xFCveges, M."
+  - Surdej, J.
+  - Szabados, L.
+  - Szegedi-Elek, E.
+  - Taris, F.
+  - Taylor, M. B.
+  - Teixeira, R.
+  - Tolomei, L.
+  - Tonello, N.
+  - Torra, F.
+  - Torra, J.
+  - Torralba Elipe, G.
+  - Trabucchi, M.
+  - Tsounis, A. T.
+  - Turon, C.
+  - Ulla, A.
+  - Unger, N.
+  - Vaillant, M. V.
+  - van Dillen, E.
+  - van Reeven, W.
+  - Vanel, O.
+  - Vecchiato, A.
+  - Viala, Y.
+  - Vicente, D.
+  - Voutsinas, S.
+  - Weiler, M.
+  - Wevers, T.
+  - "Wyrzykowski, \u0141."
+  - Yoldas, A.
+  - Yvard, P.
+  - Zhao, H.
+  - Zorec, J.
+  - Zucker, S.
+  - Zwitter, T.
+  bibcode: 2023A&A...674A..37G
+  category: collaboration
+  citation_count: 124
+  doctype: article
+  identifier:
+  - 10.48550/arXiv.2206.06207
+  - arXiv:2206.06207
+  - 2022arXiv220606207G
+  - 10.1051/0004-6361/202243797
+  - 2023A&A...674A..37G
+  page: A37
+  pub: Astronomy and Astrophysics
+  title: Gaia Data Release 3. Mapping the asymmetric disc of the Milky Way
+  url: null
+  volume: '674'
+  year: 2023
+- abstract: "Context. The third Gaia data release provides photometric time series\
+    \ covering 34 months for about 10 million stars. For many of those stars, a characterisation\
+    \ in Fourier space and their variability classification are also provided. This\
+    \ paper focuses on intermediate- to high-mass (IHM) main sequence pulsators (M\
+    \ \u2265 1.3 M<SUB>\u2299</SUB>) of spectral types O, B, A, or F, known as \u03B2\
+    \ Cep, slowly pulsating B (SPB), \u03B4 Sct, and \u03B3 Dor stars. These stars\
+    \ are often multi-periodic and display low amplitudes, making them challenging\
+    \ targets to analyse with sparse time series. <BR /> Aims: We investigate the\
+    \ extent to which the sparse Gaia DR3 data can be used to detect OBAF-type pulsators\
+    \ and discriminate them from other types of variables. We aim to probe the empirical\
+    \ instability strips and compare them with theoretical predictions. The most populated\
+    \ variability class is that of the \u03B4 Sct variables. For these stars, we aim\
+    \ to confirm their empirical period-luminosity (PL) relation, and verify the relation\
+    \ between their oscillation amplitude and rotation. <BR /> Methods: All datasets\
+    \ used in this analysis are part of the Gaia DR3 data release. The photometric\
+    \ time series were used to perform a Fourier analysis, while the global astrophysical\
+    \ parameters necessary for the empirical instability strips were taken from the\
+    \ Gaia DR3 gspphot tables, and the v sin i data were taken from the Gaia DR3 esphs\
+    \ tables. The \u03B4 Sct PL relation was derived using the same photometric parallax\
+    \ method as the one recently used to establish the PL relation for classical Cepheids\
+    \ using Gaia data. <BR /> Results: We show that for nearby OBAF-type pulsators,\
+    \ the Gaia DR3 data are precise and accurate enough to pinpoint them in the Hertzsprung-Russell\
+    \ (HR) diagram. We find empirical instability strips covering broader regions\
+    \ than theoretically predicted. In particular, our study reveals the presence\
+    \ of fast rotating gravity-mode pulsators outside the strips, as well as the co-existence\
+    \ of rotationally modulated variables inside the strips as reported before in\
+    \ the literature. We derive an extensive period-luminosity relation for \u03B4\
+    \ Sct stars and provide evidence that the relation features different regimes\
+    \ depending on the oscillation period. We demonstrate how stellar rotation attenuates\
+    \ the amplitude of the dominant oscillation mode of \u03B4 Sct stars. <BR /> Conclusions:\
+    \ The Gaia DR3 time-series photometry already allows for the detection of the\
+    \ dominant (non-)radial oscillation mode in about 100 000 intermediate- and high-mass\
+    \ dwarfs across the entire sky. This detection capability will increase as the\
+    \ time series becomes longer, allowing the additional delivery of frequencies\
+    \ and amplitudes of secondary pulsation modes."
+  author:
+  - Gaia Collaboration
+  - De Ridder, J.
+  - Ripepi, V.
+  - Aerts, C.
+  - Palaversa, L.
+  - Eyer, L.
+  - Holl, B.
+  - Audard, M.
+  - Rimoldini, L.
+  - Brown, A. G. A.
+  - Vallenari, A.
+  - Prusti, T.
+  - de Bruijne, J. H. J.
+  - Arenou, F.
+  - Babusiaux, C.
+  - Biermann, M.
+  - Creevey, O. L.
+  - Ducourant, C.
+  - Evans, D. W.
+  - Guerra, R.
+  - Hutton, A.
+  - Jordi, C.
+  - Klioner, S. A.
+  - Lammers, U. L.
+  - Lindegren, L.
+  - Luri, X.
+  - Mignard, F.
+  - Panem, C.
+  - Pourbaix, D.
+  - Randich, S.
+  - Sartoretti, P.
+  - Soubiran, C.
+  - Tanga, P.
+  - Walton, N. A.
+  - Bailer-Jones, C. A. L.
+  - Bastian, U.
+  - Drimmel, R.
+  - Jansen, F.
+  - Katz, D.
+  - Lattanzi, M. G.
+  - van Leeuwen, F.
+  - Bakker, J.
+  - Cacciari, C.
+  - "Casta\xF1eda, J."
+  - De Angeli, F.
+  - Fabricius, C.
+  - Fouesneau, M.
+  - "Fr\xE9mat, Y."
+  - Galluccio, L.
+  - Guerrier, A.
+  - Heiter, U.
+  - Masana, E.
+  - Messineo, R.
+  - Mowlavi, N.
+  - Nicolas, C.
+  - Nienartowicz, K.
+  - Pailler, F.
+  - Panuzzo, P.
+  - Riclet, F.
+  - Roux, W.
+  - Seabroke, G. M.
+  - Sordo, R.
+  - "Th\xE9venin, F."
+  - Gracia-Abril, G.
+  - Portell, J.
+  - Teyssier, D.
+  - Altmann, M.
+  - Andrae, R.
+  - Bellas-Velidis, I.
+  - Benson, K.
+  - Berthier, J.
+  - Blomme, R.
+  - Burgess, P. W.
+  - Busonero, D.
+  - Busso, G.
+  - "C\xE1novas, H."
+  - Carry, B.
+  - Cellino, A.
+  - Cheek, N.
+  - Clementini, G.
+  - Damerdji, Y.
+  - Davidson, M.
+  - de Teodoro, P.
+  - "Nu\xF1ez Campos, M."
+  - Delchambre, L.
+  - Dell'Oro, A.
+  - Esquej, P.
+  - "Fern\xE1ndez-Hern\xE1ndez, J."
+  - Fraile, E.
+  - Garabato, D.
+  - "Garc\xEDa-Lario, P."
+  - Gosset, E.
+  - Haigron, R.
+  - Halbwachs, J. -L.
+  - Hambly, N. C.
+  - Harrison, D. L.
+  - "Hern\xE1ndez, J."
+  - Hestroffer, D.
+  - Hilger, T.
+  - Hodgkin, S. T.
+  - "Jan\xDFen, K."
+  - Jevardat de Fombelle, G.
+  - Jordan, S.
+  - Krone-Martins, A.
+  - Lanzafame, A. C.
+  - "L\xF6ffler, W."
+  - Marchal, O.
+  - Marrese, P. M.
+  - Moitinho, A.
+  - Muinonen, K.
+  - Osborne, P.
+  - Pancino, E.
+  - Pauwels, T.
+  - Recio-Blanco, A.
+  - "Reyl\xE9, C."
+  - Riello, M.
+  - Roegiers, T.
+  - Rybizki, J.
+  - Sarro, L. M.
+  - Siopis, C.
+  - Smith, M.
+  - Sozzetti, A.
+  - Utrilla, E.
+  - van Leeuwen, M.
+  - Abbas, U.
+  - "\xC1brah\xE1m, P."
+  - Abreu Aramburu, A.
+  - Aguado, J. J.
+  - Ajaj, M.
+  - Aldea-Montero, F.
+  - Altavilla, G.
+  - "\xC1lvarez, M. A."
+  - Alves, J.
+  - Anders, F.
+  - Anderson, R. I.
+  - Anglada Varela, E.
+  - Antoja, T.
+  - Baines, D.
+  - Baker, S. G.
+  - "Balaguer-N\xFA\xF1ez, L."
+  - Balbinot, E.
+  - Balog, Z.
+  - Barache, C.
+  - Barbato, D.
+  - Barros, M.
+  - Barstow, M. A.
+  - "Bartolom\xE9, S."
+  - Bassilana, J. -L.
+  - Bauchet, N.
+  - Becciani, U.
+  - Bellazzini, M.
+  - Berihuete, A.
+  - Bernet, M.
+  - Bertone, S.
+  - Bianchi, L.
+  - Binnenfeld, A.
+  - Blanco-Cuaresma, S.
+  - Boch, T.
+  - Bombrun, A.
+  - Bossini, D.
+  - Bouquillon, S.
+  - Bragaglia, A.
+  - Bramante, L.
+  - Breedt, E.
+  - Bressan, A.
+  - Brouillet, N.
+  - Brugaletta, E.
+  - Bucciarelli, B.
+  - Burlacu, A.
+  - Butkevich, A. G.
+  - Buzzi, R.
+  - Caffau, E.
+  - Cancelliere, R.
+  - Cantat-Gaudin, T.
+  - Carballo, R.
+  - Carlucci, T.
+  - Carnerero, M. I.
+  - Carrasco, J. M.
+  - Casamiquela, L.
+  - Castellani, M.
+  - Castro-Ginard, A.
+  - Chaoul, L.
+  - Charlot, P.
+  - Chemin, L.
+  - Chiaramida, V.
+  - Chiavassa, A.
+  - Chornay, N.
+  - Comoretto, G.
+  - Contursi, G.
+  - Cooper, W. J.
+  - Cornez, T.
+  - Cowell, S.
+  - Crifo, F.
+  - Cropper, M.
+  - Crosta, M.
+  - Crowley, C.
+  - Dafonte, C.
+  - Dapergolas, A.
+  - David, P.
+  - de Laverny, P.
+  - De Luise, F.
+  - De March, R.
+  - de Souza, R.
+  - de Torres, A.
+  - del Peloso, E. F.
+  - del Pozo, E.
+  - Delbo, M.
+  - Delgado, A.
+  - Delisle, J. -B.
+  - Demouchy, C.
+  - Dharmawardena, T. E.
+  - Diakite, S.
+  - Diener, C.
+  - Distefano, E.
+  - Dolding, C.
+  - Enke, H.
+  - Fabre, C.
+  - Fabrizio, M.
+  - Faigler, S.
+  - Fedorets, G.
+  - Fernique, P.
+  - Figueras, F.
+  - Fournier, Y.
+  - Fouron, C.
+  - Fragkoudi, F.
+  - Gai, M.
+  - Garcia-Gutierrez, A.
+  - Garcia-Reinaldos, M.
+  - "Garc\xEDa-Torres, M."
+  - Garofalo, A.
+  - Gavel, A.
+  - Gavras, P.
+  - Gerlach, E.
+  - Geyer, R.
+  - Giacobbe, P.
+  - Gilmore, G.
+  - Girona, S.
+  - Giuffrida, G.
+  - Gomel, R.
+  - Gomez, A.
+  - "Gonz\xE1lez-N\xFA\xF1ez, J."
+  - "Gonz\xE1lez-Santamar\xEDa, I."
+  - "Gonz\xE1lez-Vidal, J. J."
+  - Granvik, M.
+  - Guillout, P.
+  - Guiraud, J.
+  - "Guti\xE9rrez-S\xE1nchez, R."
+  - Guy, L. P.
+  - Hatzidimitriou, D.
+  - Hauser, M.
+  - Haywood, M.
+  - Helmer, A.
+  - Helmi, A.
+  - Sarmiento, M. H.
+  - Hidalgo, S. L.
+  - "H\u0142adczuk, N."
+  - Hobbs, D.
+  - Holland, G.
+  - Huckle, H. E.
+  - Jardine, K.
+  - Jasniewicz, G.
+  - Jean-Antoine Piccolo, A.
+  - "Jim\xE9nez-Arranz, \xD3."
+  - Juaristi Campillo, J.
+  - Julbe, F.
+  - Karbevska, L.
+  - Kervella, P.
+  - Khanna, S.
+  - Kordopatis, G.
+  - Korn, A. J.
+  - "K\xF3sp\xE1l, \xC1."
+  - Kostrzewa-Rutkowska, Z.
+  - "Kruszy\u0144ska, K."
+  - Kun, M.
+  - Laizeau, P.
+  - Lambert, S.
+  - Lanza, A. F.
+  - Lasne, Y.
+  - Le Campion, J. -F.
+  - Lebreton, Y.
+  - Lebzelter, T.
+  - Leccia, S.
+  - Leclerc, N.
+  - Lecoeur-Taibi, I.
+  - Liao, S.
+  - Licata, E. L.
+  - "Lindstr\xF8m, H. E. P."
+  - Lister, T. A.
+  - Livanou, E.
+  - Lobel, A.
+  - Lorca, A.
+  - Loup, C.
+  - Madrero Pardo, P.
+  - Magdaleno Romeo, A.
+  - Managau, S.
+  - Mann, R. G.
+  - Manteiga, M.
+  - Marchant, J. M.
+  - Marconi, M.
+  - Marcos, J.
+  - Marcos Santos, M. M. S.
+  - "Mar\xEDn Pina, D."
+  - Marinoni, S.
+  - Marocco, F.
+  - Marshall, D. J.
+  - Martin Polo, L.
+  - "Mart\xEDn-Fleitas, J. M."
+  - Marton, G.
+  - Mary, N.
+  - Masip, A.
+  - Massari, D.
+  - Mastrobuono-Battisti, A.
+  - Mazeh, T.
+  - McMillan, P. J.
+  - Messina, S.
+  - Michalik, D.
+  - Millar, N. R.
+  - Mints, A.
+  - Molina, D.
+  - Molinaro, R.
+  - "Moln\xE1r, L."
+  - Monari, G.
+  - "Mongui\xF3, M."
+  - Montegriffo, P.
+  - Montero, A.
+  - Mor, R.
+  - Mora, A.
+  - Morbidelli, R.
+  - Morel, T.
+  - Morris, D.
+  - Muraveva, T.
+  - Murphy, C. P.
+  - Musella, I.
+  - Nagy, Z.
+  - Noval, L.
+  - "Oca\xF1a, F."
+  - Ogden, A.
+  - Ordenovic, C.
+  - Osinde, J. O.
+  - Pagani, C.
+  - Pagano, I.
+  - Palicio, P. A.
+  - Pallas-Quintela, L.
+  - Panahi, A.
+  - Payne-Wardenaar, S.
+  - "Pe\xF1alosa Esteller, X."
+  - "Penttil\xE4, A."
+  - Pichon, B.
+  - Piersimoni, A. M.
+  - Pineau, F. -X.
+  - Plachy, E.
+  - Plum, G.
+  - Poggio, E.
+  - "Pr\u0161a, A."
+  - Pulone, L.
+  - Racero, E.
+  - Ragaini, S.
+  - Rainer, M.
+  - Raiteri, C. M.
+  - Ramos, P.
+  - Ramos-Lerate, M.
+  - Re Fiorentin, P.
+  - Regibo, S.
+  - Richards, P. J.
+  - Rios Diaz, C.
+  - Riva, A.
+  - Rix, H. -W.
+  - Rixon, G.
+  - Robichon, N.
+  - Robin, A. C.
+  - Robin, C.
+  - Roelens, M.
+  - Rogues, H. R. O.
+  - Rohrbasser, L.
+  - "Romero-G\xF3mez, M."
+  - Rowell, N.
+  - Royer, F.
+  - Ruz Mieres, D.
+  - Rybicki, K. A.
+  - Sadowski, G.
+  - "S\xE1ez N\xFA\xF1ez, A."
+  - "Sagrist\xE0 Sell\xE9s, A."
+  - Sahlmann, J.
+  - Salguero, E.
+  - Samaras, N.
+  - Sanchez Gimenez, V.
+  - Sanna, N.
+  - "Santove\xF1a, R."
+  - Sarasso, M.
+  - Schultheis, M.
+  - Sciacca, E.
+  - Segol, M.
+  - Segovia, J. C.
+  - "S\xE9gransan, D."
+  - Semeux, D.
+  - Shahaf, S.
+  - Siddiqui, H. I.
+  - Siebert, A.
+  - Siltala, L.
+  - Silvelo, A.
+  - Slezak, E.
+  - Slezak, I.
+  - Smart, R. L.
+  - Snaith, O. N.
+  - Solano, E.
+  - Solitro, F.
+  - Souami, D.
+  - Souchay, J.
+  - Spagna, A.
+  - Spina, L.
+  - Spoto, F.
+  - Steele, I. A.
+  - "Steidelm\xFCller, H."
+  - Stephenson, C. A.
+  - "S\xFCveges, M."
+  - Surdej, J.
+  - Szabados, L.
+  - Szegedi-Elek, E.
+  - Taris, F.
+  - Taylor, M. B.
+  - Teixeira, R.
+  - Tolomei, L.
+  - Tonello, N.
+  - Torra, F.
+  - Torra, J.
+  - Torralba Elipe, G.
+  - Trabucchi, M.
+  - Tsounis, A. T.
+  - Turon, C.
+  - Ulla, A.
+  - Unger, N.
+  - Vaillant, M. V.
+  - vanDillen, E.
+  - van Reeven, W.
+  - Vanel, O.
+  - Vecchiato, A.
+  - Viala, Y.
+  - Vicente, D.
+  - Voutsinas, S.
+  - Weiler, M.
+  - Wevers, T.
+  - "Wyrzykowski, \u0141."
+  - Yoldas, A.
+  - Yvard, P.
+  - Zhao, H.
+  - Zorec, J.
+  - Zucker, S.
+  - Zwitter, T.
+  bibcode: 2023A&A...674A..36G
+  category: collaboration
+  citation_count: 44
+  doctype: article
+  identifier:
+  - 2022arXiv220606075G
+  - 2023A&A...674A..36G
+  - 10.48550/arXiv.2206.06075
+  - arXiv:2206.06075
+  - 10.1051/0004-6361/202243767
+  page: A36
+  pub: Astronomy and Astrophysics
+  title: Gaia Data Release 3. Pulsations in main sequence OBAF-type stars
+  url: null
+  volume: '674'
+  year: 2023
+- abstract: "Context. The Gaia mission of the European Space Agency (ESA) has been\
+    \ routinely observing Solar System objects (SSOs) since the beginning of its operations\
+    \ in August 2014. The Gaia data release three (DR3) includes, for the first time,\
+    \ the mean reflectance spectra of a selected sample of 60 518 SSOs, primarily\
+    \ asteroids, observed between August 5, 2014, and May 28, 2017. Each reflectance\
+    \ spectrum was derived from measurements obtained by means of the Blue and Red\
+    \ photometers (BP/RP), which were binned in 16 discrete wavelength bands. For\
+    \ every spectrum, the DR3 also contains additional information about the data\
+    \ quality for each band. <BR /> Aims: We describe the processing of the Gaia spectral\
+    \ data of SSOs, explaining both the criteria used to select the subset of asteroid\
+    \ spectra published in Gaia DR3, and the different steps of our internal validation\
+    \ procedures. In order to further assess the quality of Gaia SSO reflectance spectra,\
+    \ we carried out external validation against SSO reflectance spectra obtained\
+    \ from ground-based and space-borne telescopes and available in the literature;\
+    \ we present our validation approach. <BR /> Methods: For each selected SSO, an\
+    \ epoch reflectance was computed by dividing the calibrated spectrum observed\
+    \ by the BP/RP at each transit on the focal plane by the mean spectrum of a solar\
+    \ analogue. The latter was obtained by averaging the Gaia spectral measurements\
+    \ of a selected sample of stars known to have very similar spectra to that of\
+    \ the Sun. Finally, a mean of the epoch reflectance spectra was calculated in\
+    \ 16 spectral bands for each SSO. Results.Gaia SSO reflectance spectra are in\
+    \ general agreement with those obtained from a ground-based spectroscopic campaign\
+    \ specifically designed to cover the same spectral interval as Gaia and mimic\
+    \ the illumination and observing geometry characterising Gaia SSO observations.\
+    \ In addition, the agreement between Gaia mean reflectance spectra and those available\
+    \ in the literature is good for bright SSOs, regardless of their taxonomic spectral\
+    \ class. We identify an increase in the spectral slope of S-type SSOs with increasing\
+    \ phase angle. Moreover, we show that the spectral slope increases and the depth\
+    \ of the 1 \u03BCm absorption band decreases for increasing ages of S-type asteroid\
+    \ families. The latter can be interpreted as proof of progressive ageing of S-type\
+    \ asteroid surfaces due to their exposure to space weathering effects. <P />This\
+    \ article is dedicated to the memory of Dimitri Pourbaix, who laid the foundations\
+    \ and directed thef Coordination Unit 4 (CU4) of the Data Processing and Analysis\
+    \ Consortium (DPAC) of the ESA mission Gaia."
+  author:
+  - Gaia Collaboration
+  - Galluccio, L.
+  - Delbo, M.
+  - De Angeli, F.
+  - Pauwels, T.
+  - Tanga, P.
+  - Mignard, F.
+  - Cellino, A.
+  - Brown, A. G. A.
+  - Muinonen, K.
+  - "Penttil\xE4, A."
+  - Jordan, S.
+  - Vallenari, A.
+  - Prusti, T.
+  - de Bruijne, J. H. J.
+  - Arenou, F.
+  - Babusiaux, C.
+  - Biermann, M.
+  - Creevey, O. L.
+  - Ducourant, C.
+  - Evans, D. W.
+  - Eyer, L.
+  - Guerra, R.
+  - Hutton, A.
+  - Jordi, C.
+  - Klioner, S. A.
+  - Lammers, U. L.
+  - Lindegren, L.
+  - Luri, X.
+  - Panem, C.
+  - Pourbaix, D.
+  - Randich, S.
+  - Sartoretti, P.
+  - Soubiran, C.
+  - Walton, N. A.
+  - Bailer-Jones, C. A. L.
+  - Bastian, U.
+  - Drimmel, R.
+  - Jansen, F.
+  - Katz, D.
+  - Lattanzi, M. G.
+  - van Leeuwen, F.
+  - Bakker, J.
+  - Cacciari, C.
+  - "Casta\xF1eda, J."
+  - Fabricius, C.
+  - Fouesneau, M.
+  - "Fr\xE9mat, Y."
+  - Guerrier, A.
+  - Heiter, U.
+  - Masana, E.
+  - Messineo, R.
+  - Mowlavi, N.
+  - Nicolas, C.
+  - Nienartowicz, K.
+  - Pailler, F.
+  - Panuzzo, P.
+  - Riclet, F.
+  - Roux, W.
+  - Seabroke, G. M.
+  - Sordo, R.
+  - "Th\xE9venin, F."
+  - Gracia-Abril, G.
+  - Portell, J.
+  - Teyssier, D.
+  - Altmann, M.
+  - Andrae, R.
+  - Audard, M.
+  - Bellas-Velidis, I.
+  - Benson, K.
+  - Berthier, J.
+  - Blomme, R.
+  - Burgess, P. W.
+  - Busonero, D.
+  - Busso, G.
+  - "C\xE1novas, H."
+  - Carry, B.
+  - Cheek, N.
+  - Clementini, G.
+  - Damerdji, Y.
+  - Davidson, M.
+  - de Teodoro, P.
+  - "Nu\xF1ez Campos, M."
+  - Delchambre, L.
+  - Dell'Oro, A.
+  - Esquej, P.
+  - "Fern\xE1ndez-Hern\xE1ndez, J."
+  - Fraile, E.
+  - Garabato, D.
+  - "Garc\xEDa-Lario, P."
+  - Gosset, E.
+  - Haigron, R.
+  - Halbwachs, J. -L.
+  - Hambly, N. C.
+  - Harrison, D. L.
+  - "Hern\xE1ndez, J."
+  - Hestroffer, D.
+  - Hodgkin, S. T.
+  - Holl, B.
+  - "Jan\xDFen, K."
+  - Jevardat de Fombelle, G.
+  - Krone-Martins, A.
+  - Lanzafame, A. C.
+  - "L\xF6ffler, W."
+  - Marchal, O.
+  - Marrese, P. M.
+  - Moitinho, A.
+  - Osborne, P.
+  - Pancino, E.
+  - Recio-Blanco, A.
+  - "Reyl\xE9, C."
+  - Riello, M.
+  - Rimoldini, L.
+  - Roegiers, T.
+  - Rybizki, J.
+  - Sarro, L. M.
+  - Siopis, C.
+  - Smith, M.
+  - Sozzetti, A.
+  - Utrilla, E.
+  - van Leeuwen, M.
+  - Abbas, U.
+  - "\xC1brah\xE1m, P."
+  - Abreu Aramburu, A.
+  - Aerts, C.
+  - Aguado, J. J.
+  - Ajaj, M.
+  - Aldea-Montero, F.
+  - Altavilla, G.
+  - "\xC1lvarez, M. A."
+  - Alves, J.
+  - Anderson, R. I.
+  - Anglada Varela, E.
+  - Antoja, T.
+  - Baines, D.
+  - Baker, S. G.
+  - "Balaguer-N\xFA\xF1ez, L."
+  - Balbinot, E.
+  - Balog, Z.
+  - Barache, C.
+  - Barbato, D.
+  - Barros, M.
+  - Barstow, M. A.
+  - "Bartolom\xE9, S."
+  - Bassilana, J. -L.
+  - Bauchet, N.
+  - Becciani, U.
+  - Bellazzini, M.
+  - Berihuete, A.
+  - Bernet, M.
+  - Bertone, S.
+  - Bianchi, L.
+  - Binnenfeld, A.
+  - Blanco-Cuaresma, S.
+  - Boch, T.
+  - Bombrun, A.
+  - Bossini, D.
+  - Bouquillon, S.
+  - Bragaglia, A.
+  - Bramante, L.
+  - Breedt, E.
+  - Bressan, A.
+  - Brouillet, N.
+  - Brugaletta, E.
+  - Bucciarelli, B.
+  - Burlacu, A.
+  - Butkevich, A. G.
+  - Buzzi, R.
+  - Caffau, E.
+  - Cancelliere, R.
+  - Cantat-Gaudin, T.
+  - Carballo, R.
+  - Carlucci, T.
+  - Carnerero, M. I.
+  - Carrasco, J. M.
+  - Casamiquela, L.
+  - Castellani, M.
+  - Castro-Ginard, A.
+  - Chaoul, L.
+  - Charlot, P.
+  - Chemin, L.
+  - Chiaramida, V.
+  - Chiavassa, A.
+  - Chornay, N.
+  - Comoretto, G.
+  - Contursi, G.
+  - Cooper, W. J.
+  - Cornez, T.
+  - Cowell, S.
+  - Crifo, F.
+  - Cropper, M.
+  - Crosta, M.
+  - Crowley, C.
+  - Dafonte, C.
+  - Dapergolas, A.
+  - David, P.
+  - de Laverny, P.
+  - De Luise, F.
+  - De March, R.
+  - De Ridder, J.
+  - de Souza, R.
+  - de Torres, A.
+  - del Peloso, E. F.
+  - del Pozo, E.
+  - Delgado, A.
+  - Delisle, J. -B.
+  - Demouchy, C.
+  - Dharmawardena, T. E.
+  - Diakite, S.
+  - Diener, C.
+  - Distefano, E.
+  - Dolding, C.
+  - Enke, H.
+  - Fabre, C.
+  - Fabrizio, M.
+  - Faigler, S.
+  - Fedorets, G.
+  - Fernique, P.
+  - Figueras, F.
+  - Fournier, Y.
+  - Fouron, C.
+  - Fragkoudi, F.
+  - Gai, M.
+  - Garcia-Gutierrez, A.
+  - Garcia-Reinaldos, M.
+  - "Garc\xEDa-Torres, M."
+  - Garofalo, A.
+  - Gavel, A.
+  - Gavras, P.
+  - Gerlach, E.
+  - Geyer, R.
+  - Giacobbe, P.
+  - Gilmore, G.
+  - Girona, S.
+  - Giuffrida, G.
+  - Gomel, R.
+  - Gomez, A.
+  - "Gonz\xE1lez-N\xFA\xF1ez, J."
+  - "Gonz\xE1lez-Santamar\xEDa, I."
+  - "Gonz\xE1lez-Vidal, J. J."
+  - Granvik, M.
+  - Guillout, P.
+  - Guiraud, J.
+  - "Guti\xE9rrez-S\xE1nchez, R."
+  - Guy, L. P.
+  - Hatzidimitriou, D.
+  - Hauser, M.
+  - Haywood, M.
+  - Helmer, A.
+  - Helmi, A.
+  - Sarmiento, M. H.
+  - Hidalgo, S. L.
+  - "H\u0142adczuk, N."
+  - Hobbs, D.
+  - Holland, G.
+  - Huckle, H. E.
+  - Jardine, K.
+  - Jasniewicz, G.
+  - Jean-Antoine Piccolo, A.
+  - "Jim\xE9nez-Arranz, \xD3."
+  - Juaristi Campillo, J.
+  - Julbe, F.
+  - Karbevska, L.
+  - Kervella, P.
+  - Khanna, S.
+  - Kordopatis, G.
+  - Korn, A. J.
+  - "K\xF3sp\xE1l, \xC1."
+  - Kostrzewa-Rutkowska, Z.
+  - "Kruszy\u0144ska, K."
+  - Kun, M.
+  - Laizeau, P.
+  - Lambert, S.
+  - Lanza, A. F.
+  - Lasne, Y.
+  - Le Campion, J. -F.
+  - Lebreton, Y.
+  - Lebzelter, T.
+  - Leccia, S.
+  - Leclerc, N.
+  - Lecoeur-Taibi, I.
+  - Liao, S.
+  - Licata, E. L.
+  - "Lindstr\xF8m, H. E. P."
+  - Lister, T. A.
+  - Livanou, E.
+  - Lobel, A.
+  - Lorca, A.
+  - Loup, C.
+  - Madrero Pardo, P.
+  - Magdaleno Romeo, A.
+  - Managau, S.
+  - Mann, R. G.
+  - Manteiga, M.
+  - Marchant, J. M.
+  - Marconi, M.
+  - Marcos, J.
+  - Marcos Santos, M. M. S.
+  - "Mar\xEDn Pina, D."
+  - Marinoni, S.
+  - Marocco, F.
+  - Marshall, D. J.
+  - Martin Polo, L.
+  - "Mart\xEDn-Fleitas, J. M."
+  - Marton, G.
+  - Mary, N.
+  - Masip, A.
+  - Massari, D.
+  - Mastrobuono-Battisti, A.
+  - Mazeh, T.
+  - McMillan, P. J.
+  - Messina, S.
+  - Michalik, D.
+  - Millar, N. R.
+  - Mints, A.
+  - Molina, D.
+  - Molinaro, R.
+  - "Moln\xE1r, L."
+  - Monari, G.
+  - "Mongui\xF3, M."
+  - Montegriffo, P.
+  - Montero, A.
+  - Mor, R.
+  - Mora, A.
+  - Morbidelli, R.
+  - Morel, T.
+  - Morris, D.
+  - Muraveva, T.
+  - Murphy, C. P.
+  - Musella, I.
+  - Nagy, Z.
+  - Noval, L.
+  - "Oca\xF1a, F."
+  - Ogden, A.
+  - Ordenovic, C.
+  - Osinde, J. O.
+  - Pagani, C.
+  - Pagano, I.
+  - Palaversa, L.
+  - Palicio, P. A.
+  - Pallas-Quintela, L.
+  - Panahi, A.
+  - Payne-Wardenaar, S.
+  - "Pe\xF1alosa Esteller, X."
+  - Petit, J. -M.
+  - Pichon, B.
+  - Piersimoni, A. M.
+  - Pineau, F. -X.
+  - Plachy, E.
+  - Plum, G.
+  - Poggio, E.
+  - "Pr\u0161a, A."
+  - Pulone, L.
+  - Racero, E.
+  - Ragaini, S.
+  - Rainer, M.
+  - Raiteri, C. M.
+  - Ramos, P.
+  - Ramos-Lerate, M.
+  - Re Fiorentin, P.
+  - Regibo, S.
+  - Richards, P. J.
+  - Rios Diaz, C.
+  - Ripepi, V.
+  - Riva, A.
+  - Rix, H. -W.
+  - Rixon, G.
+  - Robichon, N.
+  - Robin, A. C.
+  - Robin, C.
+  - Roelens, M.
+  - Rogues, H. R. O.
+  - Rohrbasser, L.
+  - "Romero-G\xF3mez, M."
+  - Rowell, N.
+  - Royer, F.
+  - Ruz Mieres, D.
+  - Rybicki, K. A.
+  - Sadowski, G.
+  - "S\xE1ez N\xFA\xF1ez, A."
+  - "Sagrist\xE0 Sell\xE9s, A."
+  - Sahlmann, J.
+  - Salguero, E.
+  - Samaras, N.
+  - Sanchez Gimenez, V.
+  - Sanna, N.
+  - "Santove\xF1a, R."
+  - Sarasso, M.
+  - Schultheis, M.
+  - Sciacca, E.
+  - Segol, M.
+  - Segovia, J. C.
+  - "S\xE9gransan, D."
+  - Semeux, D.
+  - Shahaf, S.
+  - Siddiqui, H. I.
+  - Siebert, A.
+  - Siltala, L.
+  - Silvelo, A.
+  - Slezak, E.
+  - Slezak, I.
+  - Smart, R. L.
+  - Snaith, O. N.
+  - Solano, E.
+  - Solitro, F.
+  - Souami, D.
+  - Souchay, J.
+  - Spagna, A.
+  - Spina, L.
+  - Spoto, F.
+  - Steele, I. A.
+  - "Steidelm\xFCller, H."
+  - Stephenson, C. A.
+  - "S\xFCveges, M."
+  - Surdej, J.
+  - Szabados, L.
+  - Szegedi-Elek, E.
+  - Taris, F.
+  - Taylor, M. B.
+  - Teixeira, R.
+  - Tolomei, L.
+  - Tonello, N.
+  - Torra, F.
+  - Torra, J.
+  - Torralba Elipe, G.
+  - Trabucchi, M.
+  - Tsounis, A. T.
+  - Turon, C.
+  - Ulla, A.
+  - Unger, N.
+  - Vaillant, M. V.
+  - van Dillen, E.
+  - van Reeven, W.
+  - Vanel, O.
+  - Vecchiato, A.
+  - Viala, Y.
+  - Vicente, D.
+  - Voutsinas, S.
+  - Weiler, M.
+  - Wevers, T.
+  - "Wyrzykowski, \u0141."
+  - Yoldas, A.
+  - Yvard, P.
+  - Zhao, H.
+  - Zorec, J.
+  - Zucker, S.
+  - Zwitter, T.
+  bibcode: 2023A&A...674A..35G
+  category: collaboration
+  citation_count: 32
+  doctype: article
+  identifier:
+  - 10.1051/0004-6361/202243791
+  - 2022arXiv220612174G
+  - 10.48550/arXiv.2206.12174
+  - 2023A&A...674A..35G
+  - arXiv:2206.12174
+  page: A35
+  pub: Astronomy and Astrophysics
+  title: Gaia Data Release 3. Reflectance spectra of Solar System small bodies
+  url: null
+  volume: '674'
+  year: 2023
+- abstract: 'Context. The Gaia DR3 catalogue contains, for the first time, about 800
+    000 solutions with either orbital elements or trend parameters for astrometric,
+    spectroscopic, and eclipsing binaries, and combinations of these three. <BR />
+    Aims: With this paper, we aim to illustrate the huge potential of this large non-single-star
+    catalogue. <BR /> Methods: Using the orbital solutions and models of the binaries,
+    we have built a catalogue of tens of thousands of stellar masses or lower limits
+    thereof, some with consistent flux ratios. Properties concerning the completeness
+    of the binary catalogues are discussed, statistical features of the orbital elements
+    are explained, and a comparison with other catalogues is performed. <BR /> Results:
+    Illustrative applications are proposed for binaries across the Hertzsprung-Russell
+    Diagram (HRD). Binarity is studied in the giant branch and a search for genuine
+    spectroscopic binaries among long-period variables is performed. The discovery
+    of new EL CVn systems illustrates the potential of combining variability and binarity
+    catalogues. Potential compact object companions are presented, mainly white dwarf
+    companions or double degenerates, but one candidate neutron star is also found.
+    Towards the bottom of the main sequence, the orbits of previously suspected binary
+    ultracool dwarfs are determined and new candidate binaries are discovered. The
+    long awaited contribution of Gaia to the analysis of the substellar regime shows
+    the brown dwarf desert around solar-type stars using true rather than minimum
+    masses, and provides new important constraints on the occurrence rates of substellar
+    companions to M dwarfs. Several dozen new exoplanets are proposed, including two
+    with validated orbital solutions and one super-Jupiter orbiting a white dwarf,
+    all being candidates requiring confirmation. Besides binarity, higher order multiple
+    systems are also found. <BR /> Conclusions: By increasing the number of known
+    binary orbits by more than one order of magnitude, Gaia DR3 will provide a rich
+    reservoir of dynamical masses and an important contribution to the analysis of
+    stellar multiplicity.'
+  author:
+  - Gaia Collaboration
+  - Arenou, F.
+  - Babusiaux, C.
+  - Barstow, M. A.
+  - Faigler, S.
+  - Jorissen, A.
+  - Kervella, P.
+  - Mazeh, T.
+  - Mowlavi, N.
+  - Panuzzo, P.
+  - Sahlmann, J.
+  - Shahaf, S.
+  - Sozzetti, A.
+  - Bauchet, N.
+  - Damerdji, Y.
+  - Gavras, P.
+  - Giacobbe, P.
+  - Gosset, E.
+  - Halbwachs, J. -L.
+  - Holl, B.
+  - Lattanzi, M. G.
+  - Leclerc, N.
+  - Morel, T.
+  - Pourbaix, D.
+  - Re Fiorentin, P.
+  - Sadowski, G.
+  - "S\xE9gransan, D."
+  - Siopis, C.
+  - Teyssier, D.
+  - Zwitter, T.
+  - Planquart, L.
+  - Brown, A. G. A.
+  - Vallenari, A.
+  - Prusti, T.
+  - de Bruijne, J. H. J.
+  - Biermann, M.
+  - Creevey, O. L.
+  - Ducourant, C.
+  - Evans, D. W.
+  - Eyer, L.
+  - Guerra, R.
+  - Hutton, A.
+  - Jordi, C.
+  - Klioner, S. A.
+  - Lammers, U. L.
+  - Lindegren, L.
+  - Luri, X.
+  - Mignard, F.
+  - Panem, C.
+  - Randich, S.
+  - Sartoretti, P.
+  - Soubiran, C.
+  - Tanga, P.
+  - Walton, N. A.
+  - Bailer-Jones, C. A. L.
+  - Bastian, U.
+  - Drimmel, R.
+  - Jansen, F.
+  - Katz, D.
+  - van Leeuwen, F.
+  - Bakker, J.
+  - Cacciari, C.
+  - "Casta\xF1eda, J."
+  - De Angeli, F.
+  - Fabricius, C.
+  - Fouesneau, M.
+  - "Fr\xE9mat, Y."
+  - Galluccio, L.
+  - Guerrier, A.
+  - Heiter, U.
+  - Masana, E.
+  - Messineo, R.
+  - Nicolas, C.
+  - Nienartowicz, K.
+  - Pailler, F.
+  - Riclet, F.
+  - Roux, W.
+  - Seabroke, G. M.
+  - Sordo, R.
+  - "Th\xE9venin, F."
+  - Gracia-Abril, G.
+  - Portell, J.
+  - Altmann, M.
+  - Andrae, R.
+  - Audard, M.
+  - Bellas-Velidis, I.
+  - Benson, K.
+  - Berthier, J.
+  - Blomme, R.
+  - Burgess, P. W.
+  - Busonero, D.
+  - Busso, G.
+  - "C\xE1novas, H."
+  - Carry, B.
+  - Cellino, A.
+  - Cheek, N.
+  - Clementini, G.
+  - Davidson, M.
+  - de Teodoro, P.
+  - "Nu\xF1ez Campos, M."
+  - Delchambre, L.
+  - Dell'Oro, A.
+  - Esquej, P.
+  - "Fern\xE1ndez-Hern\xE1ndez, J."
+  - Fraile, E.
+  - Garabato, D.
+  - "Garc\xEDa-Lario, P."
+  - Haigron, R.
+  - Hambly, N. C.
+  - Harrison, D. L.
+  - "Hern\xE1ndez, J."
+  - Hestroffer, D.
+  - Hodgkin, S. T.
+  - "Jan\xDFen, K."
+  - Jevardat de Fombelle, G.
+  - Jordan, S.
+  - Krone-Martins, A.
+  - Lanzafame, A. C.
+  - "L\xF6ffler, W."
+  - Marchal, O.
+  - Marrese, P. M.
+  - Moitinho, A.
+  - Muinonen, K.
+  - Osborne, P.
+  - Pancino, E.
+  - Pauwels, T.
+  - Recio-Blanco, A.
+  - "Reyl\xE9, C."
+  - Riello, M.
+  - Rimoldini, L.
+  - Roegiers, T.
+  - Rybizki, J.
+  - Sarro, L. M.
+  - Smith, M.
+  - Utrilla, E.
+  - van Leeuwen, M.
+  - Abbas, U.
+  - "\xC1brah\xE1m, P."
+  - Abreu Aramburu, A.
+  - Aerts, C.
+  - Aguado, J. J.
+  - Ajaj, M.
+  - Aldea-Montero, F.
+  - Altavilla, G.
+  - "\xC1lvarez, M. A."
+  - Alves, J.
+  - Anders, F.
+  - Anderson, R. I.
+  - Anglada Varela, E.
+  - Antoja, T.
+  - Baines, D.
+  - Baker, S. G.
+  - "Balaguer-N\xFA\xF1ez, L."
+  - Balbinot, E.
+  - Balog, Z.
+  - Barache, C.
+  - Barbato, D.
+  - Barros, M.
+  - "Bartolom\xE9, S."
+  - Bassilana, J. -L.
+  - Becciani, U.
+  - Bellazzini, M.
+  - Berihuete, A.
+  - Bernet, M.
+  - Bertone, S.
+  - Bianchi, L.
+  - Binnenfeld, A.
+  - Blanco-Cuaresma, S.
+  - Blazere, A.
+  - Boch, T.
+  - Bombrun, A.
+  - Bossini, D.
+  - Bouquillon, S.
+  - Bragaglia, A.
+  - Bramante, L.
+  - Breedt, E.
+  - Bressan, A.
+  - Brouillet, N.
+  - Brugaletta, E.
+  - Bucciarelli, B.
+  - Burlacu, A.
+  - Butkevich, A. G.
+  - Buzzi, R.
+  - Caffau, E.
+  - Cancelliere, R.
+  - Cantat-Gaudin, T.
+  - Carballo, R.
+  - Carlucci, T.
+  - Carnerero, M. I.
+  - Carrasco, J. M.
+  - Casamiquela, L.
+  - Castellani, M.
+  - Castro-Ginard, A.
+  - Chaoul, L.
+  - Charlot, P.
+  - Chemin, L.
+  - Chiaramida, V.
+  - Chiavassa, A.
+  - Chornay, N.
+  - Comoretto, G.
+  - Contursi, G.
+  - Cooper, W. J.
+  - Cornez, T.
+  - Cowell, S.
+  - Crifo, F.
+  - Cropper, M.
+  - Crosta, M.
+  - Crowley, C.
+  - Dafonte, C.
+  - Dapergolas, A.
+  - David, P.
+  - de Laverny, P.
+  - De Luise, F.
+  - De March, R.
+  - De Ridder, J.
+  - de Souza, R.
+  - de Torres, A.
+  - del Peloso, E. F.
+  - del Pozo, E.
+  - Delbo, M.
+  - Delgado, A.
+  - Delisle, J. -B.
+  - Demouchy, C.
+  - Dharmawardena, T. E.
+  - Diakite, S.
+  - Diener, C.
+  - Distefano, E.
+  - Dolding, C.
+  - Enke, H.
+  - Fabre, C.
+  - Fabrizio, M.
+  - Fedorets, G.
+  - Fernique, P.
+  - Figueras, F.
+  - Fournier, Y.
+  - Fouron, C.
+  - Fragkoudi, F.
+  - Gai, M.
+  - Garcia-Gutierrez, A.
+  - Garcia-Reinaldos, M.
+  - "Garc\xEDa-Torres, M."
+  - Garofalo, A.
+  - Gavel, A.
+  - Gerlach, E.
+  - Geyer, R.
+  - Gilmore, G.
+  - Girona, S.
+  - Giuffrida, G.
+  - Gomel, R.
+  - Gomez, A.
+  - "Gonz\xE1lez-N\xFA\xF1ez, J."
+  - "Gonz\xE1lez-Santamar\xEDa, I."
+  - "Gonz\xE1lez-Vidal, J. J."
+  - Granvik, M.
+  - Guillout, P.
+  - Guiraud, J.
+  - "Guti\xE9rrez-S\xE1nchez, R."
+  - Guy, L. P.
+  - Hatzidimitriou, D.
+  - Hauser, M.
+  - Haywood, M.
+  - Helmer, A.
+  - Helmi, A.
+  - Sarmiento, M. H.
+  - Hidalgo, S. L.
+  - Hilger, T.
+  - "H\u0142adczuk, N."
+  - Hobbs, D.
+  - Holland, G.
+  - Huckle, H. E.
+  - Jardine, K.
+  - Jasniewicz, G.
+  - Jean-Antoine Piccolo, A.
+  - "Jim\xE9nez-Arranz, \xD3."
+  - Juaristi Campillo, J.
+  - Julbe, F.
+  - Karbevska, L.
+  - Khanna, S.
+  - Kordopatis, G.
+  - Korn, A. J.
+  - "K\xF3sp\xE1l, \xC1."
+  - Kostrzewa-Rutkowska, Z.
+  - "Kruszy\u0144ska, K."
+  - Kun, M.
+  - Laizeau, P.
+  - Lambert, S.
+  - Lanza, A. F.
+  - Lasne, Y.
+  - Le Campion, J. -F.
+  - Lebreton, Y.
+  - Lebzelter, T.
+  - Leccia, S.
+  - Lecoeur-Taibi, I.
+  - Liao, S.
+  - Licata, E. L.
+  - "Lindstr\xF8m, H. E. P."
+  - Lister, T. A.
+  - Livanou, E.
+  - Lobel, A.
+  - Lorca, A.
+  - Loup, C.
+  - Madrero Pardo, P.
+  - Magdaleno Romeo, A.
+  - Managau, S.
+  - Mann, R. G.
+  - Manteiga, M.
+  - Marchant, J. M.
+  - Marconi, M.
+  - Marcos, J.
+  - Marcos Santos, M. M. S.
+  - "Mar\xEDn Pina, D."
+  - Marinoni, S.
+  - Marocco, F.
+  - Marshall, D. J.
+  - Martin Polo, L.
+  - "Mart\xEDn-Fleitas, J. M."
+  - Marton, G.
+  - Mary, N.
+  - Masip, A.
+  - Massari, D.
+  - Mastrobuono-Battisti, A.
+  - McMillan, P. J.
+  - Messina, S.
+  - Michalik, D.
+  - Millar, N. R.
+  - Mints, A.
+  - Molina, D.
+  - Molinaro, R.
+  - "Moln\xE1r, L."
+  - Monari, G.
+  - "Mongui\xF3, M."
+  - Montegriffo, P.
+  - Montero, A.
+  - Mor, R.
+  - Mora, A.
+  - Morbidelli, R.
+  - Morris, D.
+  - Muraveva, T.
+  - Murphy, C. P.
+  - Musella, I.
+  - Nagy, Z.
+  - Noval, L.
+  - "Oca\xF1a, F."
+  - Ogden, A.
+  - Ordenovic, C.
+  - Osinde, J. O.
+  - Pagani, C.
+  - Pagano, I.
+  - Palaversa, L.
+  - Palicio, P. A.
+  - Pallas-Quintela, L.
+  - Panahi, A.
+  - Payne-Wardenaar, S.
+  - "Pe\xF1alosa Esteller, X."
+  - "Penttil\xE4, A."
+  - Pichon, B.
+  - Piersimoni, A. M.
+  - Pineau, F. -X.
+  - Plachy, E.
+  - Plum, G.
+  - Poggio, E.
+  - "Pr\u0161a, A."
+  - Pulone, L.
+  - Racero, E.
+  - Ragaini, S.
+  - Rainer, M.
+  - Raiteri, C. M.
+  - Ramos, P.
+  - Ramos-Lerate, M.
+  - Regibo, S.
+  - Richards, P. J.
+  - Rios Diaz, C.
+  - Ripepi, V.
+  - Riva, A.
+  - Rix, H. -W.
+  - Rixon, G.
+  - Robichon, N.
+  - Robin, A. C.
+  - Robin, C.
+  - Roelens, M.
+  - Rogues, H. R. O.
+  - Rohrbasser, L.
+  - "Romero-G\xF3mez, M."
+  - Rowell, N.
+  - Royer, F.
+  - Ruz Mieres, D.
+  - Rybicki, K. A.
+  - "S\xE1ez N\xFA\xF1ez, A."
+  - "Sagrist\xE0 Sell\xE9s, A."
+  - Salguero, E.
+  - Samaras, N.
+  - Sanchez Gimenez, V.
+  - Sanna, N.
+  - "Santove\xF1a, R."
+  - Sarasso, M.
+  - Schultheis, M.
+  - Sciacca, E.
+  - Segol, M.
+  - Segovia, J. C.
+  - Semeux, D.
+  - Siddiqui, H. I.
+  - Siebert, A.
+  - Siltala, L.
+  - Silvelo, A.
+  - Slezak, E.
+  - Slezak, I.
+  - Smart, R. L.
+  - Snaith, O. N.
+  - Solano, E.
+  - Solitro, F.
+  - Souami, D.
+  - Souchay, J.
+  - Spagna, A.
+  - Spina, L.
+  - Spoto, F.
+  - Steele, I. A.
+  - "Steidelm\xFCller, H."
+  - Stephenson, C. A.
+  - "S\xFCveges, M."
+  - Surdej, J.
+  - Szabados, L.
+  - Szegedi-Elek, E.
+  - Taris, F.
+  - Taylor, M. B.
+  - Teixeira, R.
+  - Tolomei, L.
+  - Tonello, N.
+  - Torra, F.
+  - Torra, J.
+  - Torralba Elipe, G.
+  - Trabucchi, M.
+  - Tsounis, A. T.
+  - Turon, C.
+  - Ulla, A.
+  - Unger, N.
+  - Vaillant, M. V.
+  - van Dillen, E.
+  - van Reeven, W.
+  - Vanel, O.
+  - Vecchiato, A.
+  - Viala, Y.
+  - Vicente, D.
+  - Voutsinas, S.
+  - Weiler, M.
+  - Wevers, T.
+  - "Wyrzykowski, \u0141."
+  - Yoldas, A.
+  - Yvard, P.
+  - Zhao, H.
+  - Zorec, J.
+  - Zucker, S.
+  bibcode: 2023A&A...674A..34G
+  category: collaboration
+  citation_count: 236
+  doctype: article
+  identifier:
+  - arXiv:2206.05595
+  - 2023A&A...674A..34G
+  - 10.1051/0004-6361/202243782
+  - 2022arXiv220605595G
+  - 10.48550/arXiv.2206.05595
+  page: A34
+  pub: Astronomy and Astrophysics
+  title: Gaia Data Release 3. Stellar multiplicity, a teaser for the hidden treasure
+  url: null
+  volume: '674'
+  year: 2023
+- abstract: "Gaia Data Release 3 provides novel flux-calibrated low-resolution spectrophotometry\
+    \ for \u2243220 million sources in the wavelength range 330 nm \u2264 \u03BB \u2264\
+    \ 1050 nm (XP spectra). Synthetic photometry directly tied to a flux in physical\
+    \ units can be obtained from these spectra for any passband fully enclosed in\
+    \ this wavelength range. We describe how synthetic photometry can be obtained\
+    \ from XP spectra, illustrating the performance that can be achieved under a range\
+    \ of different conditions - for example passband width and wavelength range -\
+    \ as well as the limits and the problems affecting it. Existing top-quality photometry\
+    \ can be reproduced within a few per cent over a wide range of magnitudes and\
+    \ colour, for wide and medium bands, and with up to millimag accuracy when synthetic\
+    \ photometry is standardised with respect to these external sources. Some examples\
+    \ of potential scientific application are presented, including the detection of\
+    \ multiple populations in globular clusters, the estimation of metallicity extended\
+    \ to the very metal-poor regime, and the classification of white dwarfs. A catalogue\
+    \ providing standardised photometry for \u22432.2 \xD7 10<SUP>8</SUP> sources\
+    \ in several wide bands of widely used photometric systems is provided (Gaia Synthetic\
+    \ Photometry Catalogue; GSPC) as well as a catalogue of \u224310<SUP>5</SUP> white\
+    \ dwarfs with DA/non-DA classification obtained with a Random Forest algorithm\
+    \ (Gaia Synthetic Photometry Catalogue for White Dwarfs; GSPC-WD)."
+  author:
+  - Gaia Collaboration
+  - Montegriffo, P.
+  - Bellazzini, M.
+  - De Angeli, F.
+  - Andrae, R.
+  - Barstow, M. A.
+  - Bossini, D.
+  - Bragaglia, A.
+  - Burgess, P. W.
+  - Cacciari, C.
+  - Carrasco, J. M.
+  - Chornay, N.
+  - Delchambre, L.
+  - Evans, D. W.
+  - Fouesneau, M.
+  - "Fr\xE9mat, Y."
+  - Garabato, D.
+  - Jordi, C.
+  - Manteiga, M.
+  - Massari, D.
+  - Palaversa, L.
+  - Pancino, E.
+  - Riello, M.
+  - Ruz Mieres, D.
+  - Sanna, N.
+  - "Santove\xF1a, R."
+  - Sordo, R.
+  - Vallenari, A.
+  - Walton, N. A.
+  - Brown, A. G. A.
+  - Prusti, T.
+  - de Bruijne, J. H. J.
+  - Arenou, F.
+  - Babusiaux, C.
+  - Biermann, M.
+  - Creevey, O. L.
+  - Ducourant, C.
+  - Eyer, L.
+  - Guerra, R.
+  - Hutton, A.
+  - Klioner, S. A.
+  - Lammers, U. L.
+  - Lindegren, L.
+  - Luri, X.
+  - Mignard, F.
+  - Panem, C.
+  - Pourbaix, D.
+  - Randich, S.
+  - Sartoretti, P.
+  - Soubiran, C.
+  - Tanga, P.
+  - Bailer-Jones, C. A. L.
+  - Bastian, U.
+  - Drimmel, R.
+  - Jansen, F.
+  - Katz, D.
+  - Lattanzi, M. G.
+  - van Leeuwen, F.
+  - Bakker, J.
+  - "Casta\xF1eda, J."
+  - Fabricius, C.
+  - Galluccio, L.
+  - Guerrier, A.
+  - Heiter, U.
+  - Masana, E.
+  - Messineo, R.
+  - Mowlavi, N.
+  - Nicolas, C.
+  - Nienartowicz, K.
+  - Pailler, F.
+  - Panuzzo, P.
+  - Riclet, F.
+  - Roux, W.
+  - Seabroke, G. M.
+  - "Th\xE9venin, F."
+  - Gracia-Abril, G.
+  - Portell, J.
+  - Teyssier, D.
+  - Altmann, M.
+  - Audard, M.
+  - Bellas-Velidis, I.
+  - Benson, K.
+  - Berthier, J.
+  - Blomme, R.
+  - Busonero, D.
+  - Busso, G.
+  - "C\xE1novas, H."
+  - Carry, B.
+  - Cellino, A.
+  - Cheek, N.
+  - Clementini, G.
+  - Damerdji, Y.
+  - Davidson, M.
+  - de Teodoro, P.
+  - "Nu\xF1ez Campos, M."
+  - Dell'Oro, A.
+  - Esquej, P.
+  - "Fern\xE1ndez-Hern\xE1ndez, J."
+  - Fraile, E.
+  - "Garc\xEDa-Lario, P."
+  - Gosset, E.
+  - Haigron, R.
+  - Halbwachs, J. -L.
+  - Hambly, N. C.
+  - Harrison, D. L.
+  - "Hern\xE1ndez, J."
+  - Hestroffer, D.
+  - Hodgkin, S. T.
+  - Holl, B.
+  - "Jan\xDFen, K."
+  - Jevardat de Fombelle, G.
+  - Jordan, S.
+  - Krone-Martins, A.
+  - Lanzafame, A. C.
+  - "L\xF6ffler, W."
+  - Marchal, O.
+  - Marrese, P. M.
+  - Moitinho, A.
+  - Muinonen, K.
+  - Osborne, P.
+  - Pauwels, T.
+  - Recio-Blanco, A.
+  - "Reyl\xE9, C."
+  - Rimoldini, L.
+  - Roegiers, T.
+  - Rybizki, J.
+  - Sarro, L. M.
+  - Siopis, C.
+  - Smith, M.
+  - Sozzetti, A.
+  - Utrilla, E.
+  - van Leeuwen, M.
+  - Abbas, U.
+  - "\xC1brah\xE1m, P."
+  - Abreu Aramburu, A.
+  - Aerts, C.
+  - Aguado, J. J.
+  - Ajaj, M.
+  - Aldea-Montero, F.
+  - Altavilla, G.
+  - "\xC1lvarez, M. A."
+  - Alves, J.
+  - Anderson, R. I.
+  - Anglada Varela, E.
+  - Antoja, T.
+  - Baines, D.
+  - Baker, S. G.
+  - "Balaguer-N\xFA\xF1ez, L."
+  - Balbinot, E.
+  - Balog, Z.
+  - Barache, C.
+  - Barbato, D.
+  - Barros, M.
+  - "Bartolom\xE9, S."
+  - Bassilana, J. -L.
+  - Bauchet, N.
+  - Becciani, U.
+  - Berihuete, A.
+  - Bernet, M.
+  - Bertone, S.
+  - Bianchi, L.
+  - Binnenfeld, A.
+  - Blanco-Cuaresma, S.
+  - Boch, T.
+  - Bombrun, A.
+  - Bouquillon, S.
+  - Bramante, L.
+  - Breedt, E.
+  - Bressan, A.
+  - Brouillet, N.
+  - Brugaletta, E.
+  - Bucciarelli, B.
+  - Burlacu, A.
+  - Butkevich, A. G.
+  - Buzzi, R.
+  - Caffau, E.
+  - Cancelliere, R.
+  - Cantat-Gaudin, T.
+  - Carballo, R.
+  - Carlucci, T.
+  - Carnerero, M. I.
+  - Casamiquela, L.
+  - Castellani, M.
+  - Castro-Ginard, A.
+  - Chaoul, L.
+  - Charlot, P.
+  - Chemin, L.
+  - Chiaramida, V.
+  - Chiavassa, A.
+  - Comoretto, G.
+  - Contursi, G.
+  - Cooper, W. J.
+  - Cornez, T.
+  - Cowell, S.
+  - Crifo, F.
+  - Cropper, M.
+  - Crosta, M.
+  - Crowley, C.
+  - Dafonte, C.
+  - Dapergolas, A.
+  - David, P.
+  - de Laverny, P.
+  - De Luise, F.
+  - De March, R.
+  - De Ridder, J.
+  - de Souza, R.
+  - de Torres, A.
+  - del Peloso, E. F.
+  - del Pozo, E.
+  - Delbo, M.
+  - Delgado, A.
+  - Delisle, J. -B.
+  - Demouchy, C.
+  - Dharmawardena, T. E.
+  - Diakite, S.
+  - Diener, C.
+  - Distefano, E.
+  - Dolding, C.
+  - Enke, H.
+  - Fabre, C.
+  - Fabrizio, M.
+  - Faigler, S.
+  - Fedorets, G.
+  - Fernique, P.
+  - Figueras, F.
+  - Fournier, Y.
+  - Fouron, C.
+  - Fragkoudi, F.
+  - Gai, M.
+  - Garcia-Gutierrez, A.
+  - Garcia-Reinaldos, M.
+  - "Garc\xEDa-Torres, M."
+  - Garofalo, A.
+  - Gavel, A.
+  - Gavras, P.
+  - Gerlach, E.
+  - Geyer, R.
+  - Giacobbe, P.
+  - Gilmore, G.
+  - Girona, S.
+  - Giuffrida, G.
+  - Gomel, R.
+  - Gomez, A.
+  - "Gonz\xE1lez-N\xFA\xF1ez, J."
+  - "Gonz\xE1lez-Santamar\xEDa, I."
+  - "Gonz\xE1lez-Vidal, J. J."
+  - Granvik, M.
+  - Guillout, P.
+  - Guiraud, J.
+  - "Guti\xE9rrez-S\xE1nchez, R."
+  - Guy, L. P.
+  - Hatzidimitriou, D.
+  - Hauser, M.
+  - Haywood, M.
+  - Helmer, A.
+  - Helmi, A.
+  - Sarmiento, M. H.
+  - Hidalgo, S. L.
+  - "H\u0142adczuk, N."
+  - Hobbs, D.
+  - Holland, G.
+  - Huckle, H. E.
+  - Jardine, K.
+  - Jasniewicz, G.
+  - Jean-Antoine Piccolo, A.
+  - "Jim\xE9nez-Arranz, \xD3."
+  - Juaristi Campillo, J.
+  - Julbe, F.
+  - Karbevska, L.
+  - Kervella, P.
+  - Khanna, S.
+  - Kordopatis, G.
+  - Korn, A. J.
+  - "K\xF3sp\xE1l, \xC1."
+  - Kostrzewa-Rutkowska, Z.
+  - "Kruszy\u0144ska, K."
+  - Kun, M.
+  - Laizeau, P.
+  - Lambert, S.
+  - Lanza, A. F.
+  - Lasne, Y.
+  - Le Campion, J. -F.
+  - Lebreton, Y.
+  - Lebzelter, T.
+  - Leccia, S.
+  - Leclerc, N.
+  - Lecoeur-Taibi, I.
+  - Liao, S.
+  - Licata, E. L.
+  - "Lindstr\xF3m, H. E. P."
+  - Lister, T. A.
+  - Livanou, E.
+  - Lobel, A.
+  - Lorca, A.
+  - Loup, C.
+  - Madrero Pardo, P.
+  - Magdaleno Romeo, A.
+  - Managau, S.
+  - Mann, R. G.
+  - Marchant, J. M.
+  - Marconi, M.
+  - Marcos, J.
+  - Marcos Santos, M. M. S.
+  - "Mar\xEDn Pina, D."
+  - Marinoni, S.
+  - Marocco, F.
+  - Marshall, D. J.
+  - Martin Polo, L.
+  - "Mart\xEDn-Fleitas, J. M."
+  - Marton, G.
+  - Mary, N.
+  - Masip, A.
+  - Mastrobuono-Battisti, A.
+  - Mazeh, T.
+  - McMillan, P. J.
+  - Messina, S.
+  - Michalik, D.
+  - Millar, N. R.
+  - Mints, A.
+  - Molina, D.
+  - Molinaro, R.
+  - "Moln\xE1r, L."
+  - Monari, G.
+  - "Mongui\xF3, M."
+  - Montero, A.
+  - Mor, R.
+  - Mora, A.
+  - Morbidelli, R.
+  - Morel, T.
+  - Morris, D.
+  - Muraveva, T.
+  - Murphy, C. P.
+  - Musella, I.
+  - Nagy, Z.
+  - Noval, L.
+  - "Oca\xF1a, F."
+  - Ogden, A.
+  - Ordenovic, C.
+  - Osinde, J. O.
+  - Pagani, C.
+  - Pagano, I.
+  - Palicio, P. A.
+  - Pallas-Quintela, L.
+  - Panahi, A.
+  - Payne-Wardenaar, S.
+  - "Pe\xF1alosa Esteller, X."
+  - "Penttil\xE4, A."
+  - Pichon, B.
+  - Piersimoni, A. M.
+  - Pineau, F. -X.
+  - Plachy, E.
+  - Plum, G.
+  - Poggio, E.
+  - "Pr\u0161a, A."
+  - Pulone, L.
+  - Racero, E.
+  - Ragaini, S.
+  - Rainer, M.
+  - Raiteri, C. M.
+  - Ramos, P.
+  - Ramos-Lerate, M.
+  - Re Fiorentin, P.
+  - Regibo, S.
+  - Richards, P. J.
+  - Rios Diaz, C.
+  - Ripepi, V.
+  - Riva, A.
+  - Rix, H. -W.
+  - Rixon, G.
+  - Robichon, N.
+  - Robin, A. C.
+  - Robin, C.
+  - Roelens, M.
+  - Rogues, H. R. O.
+  - Rohrbasser, L.
+  - "Romero-G\xF3mez, M."
+  - Rowell, N.
+  - Royer, F.
+  - Rybicki, K. A.
+  - Sadowski, G.
+  - "S\xE1ez N\xFA\xF1ez, A."
+  - "Sagrist\xE0 Sell\xE9s, A."
+  - Sahlmann, J.
+  - Salguero, E.
+  - Samaras, N.
+  - Sanchez Gimenez, V.
+  - Sarasso, M.
+  - Schultheis, M. S.
+  - Sciacca, E.
+  - Segol, M.
+  - Segovia, J. C.
+  - "S\xE9gransan, D."
+  - Semeux, D.
+  - Shahaf, S.
+  - Siddiqui, H. I.
+  - Siebert, A.
+  - Siltala, L.
+  - Silvelo, A.
+  - Slezak, E.
+  - Slezak, I.
+  - Smart, R. L.
+  - Snaith, O. N.
+  - Solano, E.
+  - Solitro, F.
+  - Souami, D.
+  - Souchay, J.
+  - Spagna, A.
+  - Spina, L.
+  - Spoto, F.
+  - Steele, I. A.
+  - "Steidelm\xFCller, H."
+  - Stephenson, C. A.
+  - "S\xFCveges, M."
+  - Surdej, J.
+  - Szabados, L.
+  - Szegedi-Elek, E.
+  - Taris, F.
+  - Taylor, M. B.
+  - Teixeira, R.
+  - Tolomei, L.
+  - Tonello, N.
+  - Torra, F.
+  - Torra, J.
+  - Torralba Elipe, G.
+  - Trabucchi, M.
+  - Tsounis, A. T.
+  - Turon, C.
+  - Ulla, A.
+  - Unger, N.
+  - Vaillant, M. V.
+  - van Dillen, E.
+  - van Reeven, W.
+  - Vanel, O.
+  - Vecchiato, A.
+  - Viala, Y.
+  - Vicente, D.
+  - Voutsinas, S.
+  - Wevers, T.
+  - "Wyrzykowski, \u0141."
+  - Yoldas, A.
+  - Yvard, P.
+  - Zhao, H.
+  - Zorec, J.
+  - Zucker, S.
+  - Zwitter, T.
+  bibcode: 2023A&A...674A..33G
+  category: collaboration
+  citation_count: 103
+  doctype: article
+  identifier:
+  - 2023A&A...674A..33G
+  - 2022arXiv220606215G
+  - 10.48550/arXiv.2206.06215
+  - arXiv:2206.06215
+  - 10.1051/0004-6361/202243709
+  page: A33
+  pub: Astronomy and Astrophysics
+  title: 'Gaia Data Release 3. The Galaxy in your preferred colours: Synthetic photometry
+    from Gaia low-resolution spectra'
+  url: null
+  volume: '674'
+  year: 2023
+- abstract: 'Context. We present the third data release of the European Space Agency''s
+    Gaia mission, Gaia DR3. This release includes a large variety of new data products,
+    notably a much expanded radial velocity survey and a very extensive astrophysical
+    characterisation of Gaia sources. <BR /> Aims: We outline the content and the
+    properties of Gaia DR3, providing an overview of the main improvements in the
+    data processing in comparison with previous data releases (where applicable) and
+    a brief discussion of the limitations of the data in this release. <BR /> Methods:
+    The Gaia DR3 catalogue is the outcome of the processing of raw data collected
+    with the Gaia instruments during the first 34 months of the mission by the Gaia
+    Data Processing and Analysis Consortium. <BR /> Results: The Gaia DR3 catalogue
+    contains the same source list, celestial positions, proper motions, parallaxes,
+    and broad band photometry in the G, G<SUB>BP</SUB>, and G<SUB>RP</SUB> pass-bands
+    already present in the Early Third Data Release, Gaia EDR3. Gaia DR3 introduces
+    an impressive wealth of new data products. More than 33 million objects in the
+    ranges G<SUB>RVS</SUB> &lt; 14 and 3100 &lt; T<SUB>eff</SUB> &lt; 14 500, have
+    new determinations of their mean radial velocities based on data collected by
+    Gaia. We provide G<SUB>RVS</SUB> magnitudes for most sources with radial velocities,
+    and a line broadening parameter is listed for a subset of these. Mean Gaia spectra
+    are made available to the community. The Gaia DR3 catalogue includes about 1 million
+    mean spectra from the radial velocity spectrometer, and about 220 million low-resolution
+    blue and red prism photometer BP/RP mean spectra. The results of the analysis
+    of epoch photometry are provided for some 10 million sources across 24 variability
+    types. Gaia DR3 includes astrophysical parameters and source class probabilities
+    for about 470 million and 1500 million sources, respectively, including stars,
+    galaxies, and quasars. Orbital elements and trend parameters are provided for
+    some 800 000 astrometric, spectroscopic and eclipsing binaries. More than 150
+    000 Solar System objects, including new discoveries, with preliminary orbital
+    solutions and individual epoch observations are part of this release. Reflectance
+    spectra derived from the epoch BP/RP spectral data are published for about 60
+    000 asteroids. Finally, an additional data set is provided, namely the Gaia Andromeda
+    Photometric Survey, consisting of the photometric time series for all sources
+    located in a 5.5 degree radius field centred on the Andromeda galaxy. <BR /> Conclusions:
+    This data release represents a major advance with respect to Gaia DR2 and Gaia
+    EDR3 because of the unprecedented quantity, quality, and variety of source astrophysical
+    data. To date this is the largest collection of all-sky spectrophotometry, radial
+    velocities, variables, and astrophysical parameters derived from both low- and
+    high-resolution spectra and includes a spectrophotometric and dynamical survey
+    of SSOs of the highest accuracy. The non-single star content surpasses the existing
+    data by orders of magnitude. The quasar host and galaxy light profile collection
+    is the first such survey that is all sky and space based. The astrophysical information
+    provided in Gaia DR3 will unleash the full potential of Gaia''s exquisite astrometric,
+    photometric, and radial velocity surveys.'
+  author:
+  - Gaia Collaboration
+  - Vallenari, A.
+  - Brown, A. G. A.
+  - Prusti, T.
+  - de Bruijne, J. H. J.
+  - Arenou, F.
+  - Babusiaux, C.
+  - Biermann, M.
+  - Creevey, O. L.
+  - Ducourant, C.
+  - Evans, D. W.
+  - Eyer, L.
+  - Guerra, R.
+  - Hutton, A.
+  - Jordi, C.
+  - Klioner, S. A.
+  - Lammers, U. L.
+  - Lindegren, L.
+  - Luri, X.
+  - Mignard, F.
+  - Panem, C.
+  - Pourbaix, D.
+  - Randich, S.
+  - Sartoretti, P.
+  - Soubiran, C.
+  - Tanga, P.
+  - Walton, N. A.
+  - Bailer-Jones, C. A. L.
+  - Bastian, U.
+  - Drimmel, R.
+  - Jansen, F.
+  - Katz, D.
+  - Lattanzi, M. G.
+  - van Leeuwen, F.
+  - Bakker, J.
+  - Cacciari, C.
+  - "Casta\xF1eda, J."
+  - De Angeli, F.
+  - Fabricius, C.
+  - Fouesneau, M.
+  - "Fr\xE9mat, Y."
+  - Galluccio, L.
+  - Guerrier, A.
+  - Heiter, U.
+  - Masana, E.
+  - Messineo, R.
+  - Mowlavi, N.
+  - Nicolas, C.
+  - Nienartowicz, K.
+  - Pailler, F.
+  - Panuzzo, P.
+  - Riclet, F.
+  - Roux, W.
+  - Seabroke, G. M.
+  - Sordo, R.
+  - "Th\xE9venin, F."
+  - Gracia-Abril, G.
+  - Portell, J.
+  - Teyssier, D.
+  - Altmann, M.
+  - Andrae, R.
+  - Audard, M.
+  - Bellas-Velidis, I.
+  - Benson, K.
+  - Berthier, J.
+  - Blomme, R.
+  - Burgess, P. W.
+  - Busonero, D.
+  - Busso, G.
+  - "C\xE1novas, H."
+  - Carry, B.
+  - Cellino, A.
+  - Cheek, N.
+  - Clementini, G.
+  - Damerdji, Y.
+  - Davidson, M.
+  - de Teodoro, P.
+  - "Nu\xF1ez Campos, M."
+  - Delchambre, L.
+  - Dell'Oro, A.
+  - Esquej, P.
+  - "Fern\xE1ndez-Hern\xE1ndez, J."
+  - Fraile, E.
+  - Garabato, D.
+  - "Garc\xEDa-Lario, P."
+  - Gosset, E.
+  - Haigron, R.
+  - Halbwachs, J. -L.
+  - Hambly, N. C.
+  - Harrison, D. L.
+  - "Hern\xE1ndez, J."
+  - Hestroffer, D.
+  - Hodgkin, S. T.
+  - Holl, B.
+  - "Jan\xDFen, K."
+  - Jevardat de Fombelle, G.
+  - Jordan, S.
+  - Krone-Martins, A.
+  - Lanzafame, A. C.
+  - "L\xF6ffler, W."
+  - Marchal, O.
+  - Marrese, P. M.
+  - Moitinho, A.
+  - Muinonen, K.
+  - Osborne, P.
+  - Pancino, E.
+  - Pauwels, T.
+  - Recio-Blanco, A.
+  - "Reyl\xE9, C."
+  - Riello, M.
+  - Rimoldini, L.
+  - Roegiers, T.
+  - Rybizki, J.
+  - Sarro, L. M.
+  - Siopis, C.
+  - Smith, M.
+  - Sozzetti, A.
+  - Utrilla, E.
+  - van Leeuwen, M.
+  - Abbas, U.
+  - "\xC1brah\xE1m, P."
+  - Abreu Aramburu, A.
+  - Aerts, C.
+  - Aguado, J. J.
+  - Ajaj, M.
+  - Aldea-Montero, F.
+  - Altavilla, G.
+  - "\xC1lvarez, M. A."
+  - Alves, J.
+  - Anders, F.
+  - Anderson, R. I.
+  - Anglada Varela, E.
+  - Antoja, T.
+  - Baines, D.
+  - Baker, S. G.
+  - "Balaguer-N\xFA\xF1ez, L."
+  - Balbinot, E.
+  - Balog, Z.
+  - Barache, C.
+  - Barbato, D.
+  - Barros, M.
+  - Barstow, M. A.
+  - "Bartolom\xE9, S."
+  - Bassilana, J. -L.
+  - Bauchet, N.
+  - Becciani, U.
+  - Bellazzini, M.
+  - Berihuete, A.
+  - Bernet, M.
+  - Bertone, S.
+  - Bianchi, L.
+  - Binnenfeld, A.
+  - Blanco-Cuaresma, S.
+  - Blazere, A.
+  - Boch, T.
+  - Bombrun, A.
+  - Bossini, D.
+  - Bouquillon, S.
+  - Bragaglia, A.
+  - Bramante, L.
+  - Breedt, E.
+  - Bressan, A.
+  - Brouillet, N.
+  - Brugaletta, E.
+  - Bucciarelli, B.
+  - Burlacu, A.
+  - Butkevich, A. G.
+  - Buzzi, R.
+  - Caffau, E.
+  - Cancelliere, R.
+  - Cantat-Gaudin, T.
+  - Carballo, R.
+  - Carlucci, T.
+  - Carnerero, M. I.
+  - Carrasco, J. M.
+  - Casamiquela, L.
+  - Castellani, M.
+  - Castro-Ginard, A.
+  - Chaoul, L.
+  - Charlot, P.
+  - Chemin, L.
+  - Chiaramida, V.
+  - Chiavassa, A.
+  - Chornay, N.
+  - Comoretto, G.
+  - Contursi, G.
+  - Cooper, W. J.
+  - Cornez, T.
+  - Cowell, S.
+  - Crifo, F.
+  - Cropper, M.
+  - Crosta, M.
+  - Crowley, C.
+  - Dafonte, C.
+  - Dapergolas, A.
+  - David, M.
+  - David, P.
+  - de Laverny, P.
+  - De Luise, F.
+  - De March, R.
+  - De Ridder, J.
+  - de Souza, R.
+  - de Torres, A.
+  - del Peloso, E. F.
+  - del Pozo, E.
+  - Delbo, M.
+  - Delgado, A.
+  - Delisle, J. -B.
+  - Demouchy, C.
+  - Dharmawardena, T. E.
+  - Di Matteo, P.
+  - Diakite, S.
+  - Diener, C.
+  - Distefano, E.
+  - Dolding, C.
+  - Edvardsson, B.
+  - Enke, H.
+  - Fabre, C.
+  - Fabrizio, M.
+  - Faigler, S.
+  - Fedorets, G.
+  - Fernique, P.
+  - Fienga, A.
+  - Figueras, F.
+  - Fournier, Y.
+  - Fouron, C.
+  - Fragkoudi, F.
+  - Gai, M.
+  - Garcia-Gutierrez, A.
+  - Garcia-Reinaldos, M.
+  - "Garc\xEDa-Torres, M."
+  - Garofalo, A.
+  - Gavel, A.
+  - Gavras, P.
+  - Gerlach, E.
+  - Geyer, R.
+  - Giacobbe, P.
+  - Gilmore, G.
+  - Girona, S.
+  - Giuffrida, G.
+  - Gomel, R.
+  - Gomez, A.
+  - "Gonz\xE1lez-N\xFA\xF1ez, J."
+  - "Gonz\xE1lez-Santamar\xEDa, I."
+  - "Gonz\xE1lez-Vidal, J. J."
+  - Granvik, M.
+  - Guillout, P.
+  - Guiraud, J.
+  - "Guti\xE9rrez-S\xE1nchez, R."
+  - Guy, L. P.
+  - Hatzidimitriou, D.
+  - Hauser, M.
+  - Haywood, M.
+  - Helmer, A.
+  - Helmi, A.
+  - Sarmiento, M. H.
+  - Hidalgo, S. L.
+  - Hilger, T.
+  - "H\u0142adczuk, N."
+  - Hobbs, D.
+  - Holland, G.
+  - Huckle, H. E.
+  - Jardine, K.
+  - Jasniewicz, G.
+  - Jean-Antoine Piccolo, A.
+  - "Jim\xE9nez-Arranz, \xD3."
+  - Jorissen, A.
+  - Juaristi Campillo, J.
+  - Julbe, F.
+  - Karbevska, L.
+  - Kervella, P.
+  - Khanna, S.
+  - Kontizas, M.
+  - Kordopatis, G.
+  - Korn, A. J.
+  - "K\xF3sp\xE1l, \xC1."
+  - Kostrzewa-Rutkowska, Z.
+  - "Kruszy\u0144ska, K."
+  - Kun, M.
+  - Laizeau, P.
+  - Lambert, S.
+  - Lanza, A. F.
+  - Lasne, Y.
+  - Le Campion, J. -F.
+  - Lebreton, Y.
+  - Lebzelter, T.
+  - Leccia, S.
+  - Leclerc, N.
+  - Lecoeur-Taibi, I.
+  - Liao, S.
+  - Licata, E. L.
+  - "Lindstr\xF8m, H. E. P."
+  - Lister, T. A.
+  - Livanou, E.
+  - Lobel, A.
+  - Lorca, A.
+  - Loup, C.
+  - Madrero Pardo, P.
+  - Magdaleno Romeo, A.
+  - Managau, S.
+  - Mann, R. G.
+  - Manteiga, M.
+  - Marchant, J. M.
+  - Marconi, M.
+  - Marcos, J.
+  - Marcos Santos, M. M. S.
+  - "Mar\xEDn Pina, D."
+  - Marinoni, S.
+  - Marocco, F.
+  - Marshall, D. J.
+  - Martin Polo, L.
+  - "Mart\xEDn-Fleitas, J. M."
+  - Marton, G.
+  - Mary, N.
+  - Masip, A.
+  - Massari, D.
+  - Mastrobuono-Battisti, A.
+  - Mazeh, T.
+  - McMillan, P. J.
+  - Messina, S.
+  - Michalik, D.
+  - Millar, N. R.
+  - Mints, A.
+  - Molina, D.
+  - Molinaro, R.
+  - "Moln\xE1r, L."
+  - Monari, G.
+  - "Mongui\xF3, M."
+  - Montegriffo, P.
+  - Montero, A.
+  - Mor, R.
+  - Mora, A.
+  - Morbidelli, R.
+  - Morel, T.
+  - Morris, D.
+  - Muraveva, T.
+  - Murphy, C. P.
+  - Musella, I.
+  - Nagy, Z.
+  - Noval, L.
+  - "Oca\xF1a, F."
+  - Ogden, A.
+  - Ordenovic, C.
+  - Osinde, J. O.
+  - Pagani, C.
+  - Pagano, I.
+  - Palaversa, L.
+  - Palicio, P. A.
+  - Pallas-Quintela, L.
+  - Panahi, A.
+  - Payne-Wardenaar, S.
+  - "Pe\xF1alosa Esteller, X."
+  - "Penttil\xE4, A."
+  - Pichon, B.
+  - Piersimoni, A. M.
+  - Pineau, F. -X.
+  - Plachy, E.
+  - Plum, G.
+  - Poggio, E.
+  - "Pr\u0161a, A."
+  - Pulone, L.
+  - Racero, E.
+  - Ragaini, S.
+  - Rainer, M.
+  - Raiteri, C. M.
+  - Rambaux, N.
+  - Ramos, P.
+  - Ramos-Lerate, M.
+  - Re Fiorentin, P.
+  - Regibo, S.
+  - Richards, P. J.
+  - Rios Diaz, C.
+  - Ripepi, V.
+  - Riva, A.
+  - Rix, H. -W.
+  - Rixon, G.
+  - Robichon, N.
+  - Robin, A. C.
+  - Robin, C.
+  - Roelens, M.
+  - Rogues, H. R. O.
+  - Rohrbasser, L.
+  - "Romero-G\xF3mez, M."
+  - Rowell, N.
+  - Royer, F.
+  - Ruz Mieres, D.
+  - Rybicki, K. A.
+  - Sadowski, G.
+  - "S\xE1ez N\xFA\xF1ez, A."
+  - "Sagrist\xE0 Sell\xE9s, A."
+  - Sahlmann, J.
+  - Salguero, E.
+  - Samaras, N.
+  - Sanchez Gimenez, V.
+  - Sanna, N.
+  - "Santove\xF1a, R."
+  - Sarasso, M.
+  - Schultheis, M.
+  - Sciacca, E.
+  - Segol, M.
+  - Segovia, J. C.
+  - "S\xE9gransan, D."
+  - Semeux, D.
+  - Shahaf, S.
+  - Siddiqui, H. I.
+  - Siebert, A.
+  - Siltala, L.
+  - Silvelo, A.
+  - Slezak, E.
+  - Slezak, I.
+  - Smart, R. L.
+  - Snaith, O. N.
+  - Solano, E.
+  - Solitro, F.
+  - Souami, D.
+  - Souchay, J.
+  - Spagna, A.
+  - Spina, L.
+  - Spoto, F.
+  - Steele, I. A.
+  - "Steidelm\xFCller, H."
+  - Stephenson, C. A.
+  - "S\xFCveges, M."
+  - Surdej, J.
+  - Szabados, L.
+  - Szegedi-Elek, E.
+  - Taris, F.
+  - Taylor, M. B.
+  - Teixeira, R.
+  - Tolomei, L.
+  - Tonello, N.
+  - Torra, F.
+  - Torra, J.
+  - Torralba Elipe, G.
+  - Trabucchi, M.
+  - Tsounis, A. T.
+  - Turon, C.
+  - Ulla, A.
+  - Unger, N.
+  - Vaillant, M. V.
+  - van Dillen, E.
+  - van Reeven, W.
+  - Vanel, O.
+  - Vecchiato, A.
+  - Viala, Y.
+  - Vicente, D.
+  - Voutsinas, S.
+  - Weiler, M.
+  - Wevers, T.
+  - "Wyrzykowski, \u0141."
+  - Yoldas, A.
+  - Yvard, P.
+  - Zhao, H.
+  - Zorec, J.
+  - Zucker, S.
+  - Zwitter, T.
+  bibcode: 2023A&A...674A...1G
+  category: collaboration
+  citation_count: 2968
+  doctype: article
+  identifier:
+  - 2023A&A...674A...1G
+  - 2022arXiv220800211G
+  - 10.1051/0004-6361/202243940
+  - 10.48550/arXiv.2208.00211
+  - arXiv:2208.00211
+  page: A1
+  pub: Astronomy and Astrophysics
+  title: Gaia Data Release 3. Summary of the content and survey properties
+  url: null
+  volume: '674'
+  year: 2023
+- abstract: We have made the GSPC-WD synthetic photometry available as a stand-alone
+    catalogue, including SDSS, JKC and JPLUS XPSP and the DA classification probability.
+    The photometry of the individual J-PAS bands, used in the random forest analysis,
+    is not included due to their low signal-to-noise. For WDs classified in SDSS,
+    a subset of which were used in the training/validation of the random forest algorithm,
+    we also include the full SDSS classifications as a separate column in the GSPC-WD
+    catalogue table. When the synthetic spectral bands are very narrow a significant
+    number of sources will have low signal-to-noise. Furthermore, at the edges of
+    the Gaia spectral range, away from the peak of the effective area, this is also
+    true for some stars in the wider bands included in the catalogue. In some extreme
+    cases, there is no significant detection of the object. The random forest algorithm
+    is only able to classify a WD when valid flux measurements are available for every
+    photometric band we include in the analysis. Therefore, no classification is recorded
+    in the catalogue when data for one or more bands is "missing". In total 15,003
+    WDs from the total sample of 101,783 are not classified. For completeness, we
+    have made all the flux measurements and corresponding magnitudes available for
+    all objects in the GSPC-WD. Hence magnitude/fluxes with very large errors, up
+    to several times the flux itself, are included. However, where fluxes are negative,
+    the magnitudes are not defined. When using the catalogue, appropriate signal-to-noise
+    cuts are advisable for the specific work in-hand, to ensure data quality. <P />(1
+    data file).
+  author:
+  - Gaia Collaboration
+  - Montegriffo, P.
+  - Bellazzini, M.
+  - de Angeli, F.
+  - Andrae, R.
+  - Barstow, M. A.
+  - Bossini, D.
+  - Bragaglia, A.
+  - Burgess, P. W.
+  - Cacciari, C.
+  - Carrasco, J. M.
+  - Chornay, N.
+  - Delchambre, L.
+  - Evans, D. W.
+  - Fouesneau, M.
+  - Fremat, Y.
+  - Garabato, D.
+  - Jordi, C.
+  - Manteiga, M.
+  - Massari, D.
+  - Palaversa, L.
+  - Pancino, E.
+  - Riello, M.
+  - Ruz Mieres, D.
+  - Sanna, N.
+  - Santovena, R.
+  - Sordo, R.
+  - Vallenari, A.
+  - Walton, N. A.
+  - Brown, A. G. A.
+  - Prusti, T.
+  - de Bruijne, J. H. J.
+  - Arenou, F.
+  - Babusiaux, C.
+  - Biermann, M.
+  - Creevey, O. L.
+  - Ducourant, C.
+  - Eyer, L.
+  - Guerra, R.
+  - Hutton, A.
+  - Klioner, S. A.
+  - Lammers, U. L.
+  - Lindegren, L.
+  - Luri, X.
+  - Mignard, F.
+  - Panem, C.
+  - Pourbaixy, D.
+  - Randich, S.
+  - Sartoretti, P.
+  - Soubiran, C.
+  - Tanga, P.
+  - Bailer-Jones, C. A. L.
+  - Bastian, U.
+  - Drimmel, R.
+  - Jansen, F.
+  - Katz, D.
+  - Lattanzi, M. G.
+  - van Leeuwen, F.
+  - Bakker, J.
+  - Castaneda, J.
+  - Fabricius, C.
+  - Galluccio, L.
+  - Guerrier, A.
+  - Heiter, U.
+  - Masana, E.
+  - Messineo, R.
+  - Mowlavi, N.
+  - Nicolas, C.
+  - Nienartowicz, K.
+  - Pailler, F.
+  - Panuzzo, P.
+  - Riclet, F.
+  - Roux, W.
+  - Seabroke, G. M.
+  - Thevenin, F.
+  - Gracia-Abril, G.
+  - Portell, J.
+  - Teyssier, D.
+  - Altmann, M.
+  - Audard, M.
+  - Bellas-Velidis, I.
+  - Benson, K.
+  - Berthier, J.
+  - Blomme, R.
+  - Busonero, D.
+  - Busso, G.
+  - Canovas, H.
+  - Carry, B.
+  - Cellino, A.
+  - Cheek, N.
+  - Clementini, G.
+  - Damerdji, Y.
+  - Davidson, M.
+  - de Teodoro, P.
+  - Nunez Campos, M.
+  - Dell'Oro, A.
+  - Esquej, P.
+  - Fernandez-Hernandez, J.
+  - Fraile, E.
+  - Garcia-Lario, P.
+  - Gosset, E.
+  - Haigron, R.
+  - Halbwachs, J. -L.
+  - Hambly, N. C.
+  - Harrison, D. L.
+  - Hernandez, J.
+  - Hestroer, D.
+  - Hodgkin, S. T.
+  - Holl, B.
+  - Janssen, K.
+  - Jevardat de Fombelle, G.
+  - Jordan, S.
+  - Krone-Martins, A.
+  - Lanzafame, A. C.
+  - Loffleer, W.
+  - Marchal, O.
+  - Marrese, P. M.
+  - Moitinho, A.
+  - Muinonen, K.
+  - Osborne, P.
+  - Pauwels, T.
+  - Recio-Blanco, A.
+  - Reyle, C.
+  - Rimoldini, L.
+  - Roegiers, T.
+  - Rybizki, J.
+  - Sarro, L. M.
+  - Siopis, C.
+  - Smith, M.
+  - Sozzetti, A.
+  - Utrilla, E.
+  - van Leeuwen, M.
+  - Abbas, U.
+  - Abraham, P.
+  - Abreu Aramburu, A.
+  - Aerts, C.
+  - Aguado, J. J.
+  - Ajaj, M.
+  - Aldea-Montero, F.
+  - Altavilla, G.
+  - Alvarez, M. A.
+  - Alves, J.
+  - Anderson, R. I.
+  - Anglada Varela, E.
+  - Antoja, T.
+  - Baines, D.
+  - Baker, S. G.
+  - Balaguer-Nunez, L.
+  - Balbinot, E.
+  - Balog, Z.
+  - Barache, C.
+  - Barbat, O. D.
+  - Barros, M.
+  - Bartolome, S.
+  - Bassilana, J. -L.
+  - Bauchet, N.
+  - Becciani, U.
+  - Berihuete, A.
+  - Bernet, M.
+  - Bertone, S.
+  - Bianchi, L.
+  - Binnenfeld, A.
+  - Blanco-Cuaresma, S.
+  - Boch, T.
+  - Bombrun, A.
+  - Bouquillon, S.
+  - Bramante, L.
+  - Breedt, E.
+  - Bressan, A.
+  - Brouillet, N.
+  - Brugaletta, E.
+  - Bucciarelli, B.
+  - Burlacu, A.
+  - Butkevich, A. G.
+  - Buzzi, R.
+  - Caau, E.
+  - Cancelliere, R.
+  - Cantat-Gaudin, T.
+  - Carballo, R.
+  - Carlucci, T.
+  - Carnerero, M. I.
+  - Casamiquela, L.
+  - Castellani, M.
+  - Castro-Ginard, A.
+  - Chaoul, L.
+  - Charlot, P.
+  - Chemin, L.
+  - Chiaramida, V.
+  - Chiavassa, A.
+  - Comoretto, G.
+  - Contursi, G.
+  - Cooper, W. J.
+  - Cornez, T.
+  - Cowell, S.
+  - Crifo, F.
+  - Cropper, M.
+  - Crosta, M.
+  - Crowley, C.
+  - Dafonte, C.
+  - Dapergolas, A.
+  - David, P.
+  - de Laverny, P.
+  - de Luise, F.
+  - de March, R.
+  - De Ridder, J.
+  - de Souza, R.
+  - de Torres, A.
+  - Del Peloso, E. F.
+  - Del Pozo, E.
+  - Delbo, M.
+  - Delgado, A.
+  - Delisle, J. -B.
+  - Demouchy, C.
+  - Dharmawardena, T. E.
+  - Diakite, S.
+  - Diener, C.
+  - Distefano, E.
+  - Dolding, C.
+  - Enke, H.
+  - Fabre, C.
+  - Fabrizio, M.
+  - Faigler, S.
+  - Fedorets, G.
+  - Fernique, P.
+  - Figueras, F.
+  - Fournier, Y.
+  - Fouron, C.
+  - Fragkoudi, F.
+  - Gai, M.
+  - Garcia-Gutierrez, A.
+  - Garcia-Reinaldos, M.
+  - Garcia-Torres, M.
+  - Garofalo, A.
+  - Gavel, A.
+  - Gavras, P.
+  - Gerlach, E.
+  - Geyer, R.
+  - Giacobbe, P.
+  - Gilmore, G.
+  - Girona, S.
+  - Giurida, G.
+  - Gomel, R.
+  - Gomez, A.
+  - Gonzalez-Nunez, J.
+  - Gonzalez-Santamaria, I.
+  - Gonzalez-Vidal, J. J.
+  - Granvik, M.
+  - Guillout, P.
+  - Guiraud, J.
+  - Gutierrez-Sanchez, R.
+  - Guy, L. P.
+  - Hatzidimitriou, D.
+  - Hauser, M.
+  - Haywood, M.
+  - Helmer, A.
+  - Helmi, A.
+  - Sarmiento, M. H.
+  - Hidalgo, S. L.
+  - Hladczuk, N.
+  - Hobbs, D.
+  - Holland, G.
+  - Huckle, H. E.
+  - Jardine, K.
+  - Jasniewicz, G.
+  - Jean-Antoine Piccolo, A.
+  - Jimenez-Arranz, O.
+  - Juaristi Campillo, J.
+  - Julbe, F.
+  - Karbevska, L.
+  - Kervella, P.
+  - Khanna, S.
+  - Kordopatis, G.
+  - Korn, A. J.
+  - Kospal, A.
+  - Kostrzewa-Rutkowska, Z.
+  - Kruszynska, K.
+  - Kun, M.
+  - Laizeau, P.
+  - Lambert, S.
+  - Lanza, A. F.
+  - Lasne, Y.
+  - Le Campion, J. -F.
+  - Lebreton, Y.
+  - Lebzelter, T.
+  - Leccia, S.
+  - Leclerc, N.
+  - Lecoeur-Taibi, I.
+  - Liao, S.
+  - Licata, E. L.
+  - Lindstrom, H. E. P.
+  - Lister, T. A.
+  - Livanou, E.
+  - Lobel, A.
+  - Lorca, A.
+  - Loup, C.
+  - Madrero, P.
+  - Pardo
+  - Magdaleno Romeo, A.
+  - Managau, S.
+  - Mann, R. G.
+  - Marchant, J. M.
+  - Marconi, M.
+  - Marcos, J.
+  - Marcos Santos, M. M. S.
+  - Marin Pina, D.
+  - Marinoni, S.
+  - Marocco, F.
+  - Marshall, D. J.
+  - Martin Polo, L.
+  - Martin-Fleitas, J. M.
+  - Marton, G.
+  - Mary, N.
+  - Masip, A.
+  - Mastrobuono-Battisti, A.
+  - Mazeh, T.
+  - McMillan, P. J.
+  - Messina, S.
+  - Michalik, D.
+  - Millar, N. R.
+  - Mints, A.
+  - Molina, D.
+  - Molinaro, R.
+  - Molnar, L.
+  - Monari, G.
+  - Monguio, M.
+  - Montero, A.
+  - Mor, R.
+  - Mora, A.
+  - Morbidelli, R.
+  - Morel, T.
+  - Morris, D.
+  - Muraveva, T.
+  - Murphy, C. P.
+  - Musella, I.
+  - Nagy, Z.
+  - Noval, L.
+  - Ocana, F.
+  - Ogden, A.
+  - Ordenovic, C.
+  - Osinde, J. O.
+  - Pagani, C.
+  - Pagano, I.
+  - Palicio, P. A.
+  - Pallas-Quintela, L.
+  - Panahi, A.
+  - Payne-Wardenaar, S.
+  - Penalosa Esteller, X.
+  - Penttilae, A.
+  - Pichon, B.
+  - Piersimoni, A. M.
+  - Pineau, F. -X.
+  - Plachy, E.
+  - Plum, G.
+  - Poggio, E.
+  - Prsa, A.
+  - Pulone, L.
+  - Racero, E.
+  - Ragaini, S.
+  - Rainer, M.
+  - Raiteri, C. M.
+  - Ramos, P.
+  - Ramos-Lerate, M.
+  - Re Fiorentin, P.
+  - Regibo, S.
+  - Richards, P. J.
+  - Rios Diaz, C.
+  - Ripepi, V.
+  - Riva, A.
+  - Rix, H. -W.
+  - Rixon, G.
+  - Robichon, N.
+  - Robin, A. C.
+  - Robin, C.
+  - Roelens, M.
+  - Rogues, H. R. O.
+  - Rohrbasser, L.
+  - Romero-Gomez, M.
+  - Rowell, N.
+  - Royer, F.
+  - Rybicki, K. A.
+  - Sadowski, G.
+  - Saez Nunez, A.
+  - Sagrista Selles, A.
+  - Sahlmann, J.
+  - Salguero, E.
+  - Samaras, N.
+  - Sanchez Gimenez, V.
+  - Sarasso, M.
+  - Schultheis, M. S.
+  - Sciacca, E.
+  - Segol, M.
+  - Segovia, J. C.
+  - Segransan, D.
+  - Semeux, D.
+  - Shahaf, S.
+  - Siddiqui, H. I.
+  - Siebert, A.
+  - Siltala, L.
+  - Silvelo, A.
+  - Slezak, E.
+  - Slezak, I.
+  - Smart, R. L.
+  - Snaith, O. N.
+  - Solano, E.
+  - Solitro, F.
+  - Souami, D.
+  - Souchay, J.
+  - Spagna, A.
+  - Spina, L.
+  - Spoto, F.
+  - Steele, I. A.
+  - Steidelmueller, H.
+  - Stephenson, C. A.
+  - Sueveges, M.
+  - Surdej, J.
+  - Szabados, L.
+  - Szegedi-Elek, E.
+  - Taris, F.
+  - Taylor, M. B.
+  - Teixeira, R.
+  - Tolomei, L.
+  - Tonello, N.
+  - Torra, F.
+  - Torray, J.
+  - Torralba Elipe, G.
+  - Trabucchi, M.
+  - Tsounis, A. T.
+  - Turon, C.
+  - Ulla, A.
+  - Unger, N.
+  - Vaillant, M. V.
+  - van Dillen, E.
+  - van Reeven, W.
+  - Vanel, O.
+  - Vecchiato, A.
+  - Viala, Y.
+  - Vicente, D.
+  - Voutsinas, S.
+  - Wevers, T.
+  - Wyrzykowski, L.
+  - Yoldas, A.
+  - Yvard, P.
+  - Zhao, H.
+  - Zorec, J.
+  - Zucker, S.
+  - Zwitter, T.
+  bibcode: 2022yCat..36740033G
+  category: collaboration
+  citation_count: 0
+  doctype: dataset
+  identifier:
+  - 2022yCat..36740033G
+  page: J/A+A/674/A33
+  pub: VizieR Online Data Catalog
+  title: 'VizieR Online Data Catalog: Gaia synthetic phot. cat. of white dwarfs (Gaia
+    Coll., 2023)'
+  url: null
+  volume: '367'
+  year: 2022
+- abstract: 'Composite spectra of quasars constructed from the Gaia BP/RP spectra
+    of 42944 sources identified in the Gaia DR3 catalogue. These sources all have
+    classprob<SUB>dsc</SUB>combmod_quasar&gt;0.01 in Gaia DR3 and a spectroscopically
+    confirmed redshift in the Milliquas 7.2 quasar catalogue of Flesh et al. (2021yCat.7290....0F)
+    - corresponding to a TYPE=''Q'' in Milliquas. A search radius of 1" is used to
+    match the Gaia sources to their Milliquas counterparts, leading to a redshift
+    coverage of 0.052&lt;=z&lt;=4.358. Redshifts from Milliquas are used to shift
+    the observed BP/RP spectra into their restframes. Five composite spectra are also
+    constructed from this sample using narrower redshift ranges: 0.052&lt;=z&lt;0.5
+    (2571 sources), 0.5&lt;=z&lt;1 (8810 sources), 1&lt;=z&lt;2 (20 755 sources),
+    2&lt;=z&lt;3 (9870 sources), and 3&lt;=z&lt;4 (929 sources). We have also constructed
+    a "Gaia-only" composite spectrum based on a pure set of 111 563 BP/RP spectra
+    selected from the Gaia classification and redshift predictions (see the appendix
+    of the printed paper for details). The "Gaia-only" composite spectrum covers a
+    predicted redshift range of 0.087&lt;=z&lt;= 6.128. All composite spectra are
+    trimmed in order to remove wavelength regions whose signal-to-noise ratio is lower
+    than one. <P />(7 data files).'
+  author:
+  - Gaia Collaboration
+  - Bailer-Jones, C. A. L.
+  - Teyssier, D.
+  - Delchambre, L.
+  - Ducourant, C.
+  - Garabato, D.
+  - Hatzidimitriou, D.
+  - Klioner, S. A.
+  - Rimoldini, L.
+  - Bellas-Velidis, I.
+  - Carballo, R.
+  - Carnerero, M. I.
+  - Diener, C.
+  - Fouesneau, M.
+  - Galluccio, L.
+  - Gavras, P.
+  - Krone-Martins, A.
+  - Raiteri, C. M.
+  - Teixeira, R.
+  - Brown, A. G. A.
+  - Vallenari, A.
+  - Prusti, T.
+  - de Bruijne, J. H. J.
+  - Arenou, F.
+  - Babusiaux, C.
+  - Biermann, M.
+  - Creevey, O. L.
+  - Evans, D. W.
+  - Eyer, L.
+  - Guerra, R.
+  - Hutton, A.
+  - Jordi, C.
+  - Lammers, U. L.
+  - Lindegren, L.
+  - Luri, X.
+  - Mignard, F.
+  - Panem, C.
+  - Pourbaix, D.
+  - Randich, S.
+  - Sartoretti, P.
+  - Soubiran, C.
+  - Tanga, P.
+  - Walton, N. A.
+  - Bastian, U.
+  - Drimmel, R.
+  - Jansen, F.
+  - Katz, D.
+  - Lattanzi, M. G.
+  - van Leeuwen, F.
+  - Bakker, J.
+  - Cacciari, C.
+  - Castaneda, J.
+  - de Angeli, F.
+  - Fabricius, C.
+  - Fremat, Y.
+  - Guerrier, A.
+  - Heiter, U.
+  - Masana, E.
+  - Messineo, R.
+  - Mowlavi, N.
+  - Nicolas, C.
+  - Nienartowicz, K.
+  - Pailler, F.
+  - Panuzzo, P.
+  - Riclet, F.
+  - Roux, W.
+  - Seabroke, G. M.
+  - Sordo, R.
+  - Thevenin, F.
+  - Gracia-Abril, G.
+  - Portell, J.
+  - Altmann, M.
+  - Andrae, R.
+  - Audard, M.
+  - Benson, K.
+  - Berthier, J.
+  - Blomme, R.
+  - Burgess, P. W.
+  - Busonero, D.
+  - Busso, G.
+  - Canovas, H.
+  - Carry, B.
+  - Cellino, A.
+  - Cheek, N.
+  - Clementini, G.
+  - Damerdji, Y.
+  - Davidson, M.
+  - de Teodoro, P.
+  - Nunez Campos, M.
+  - Dell'Oro, A.
+  - Esquej, P.
+  - Fernandez-Hernandez, J.
+  - Fraile, E.
+  - Garcia-Lario, P.
+  - Gosset, E.
+  - Haigron, R.
+  - Halbwachs, J. -L.
+  - Hambly, N. C.
+  - Harrison, D. L.
+  - Hernandez, J.
+  - Hestroffer, D.
+  - Hodgkin, S. T.
+  - Holl, B.
+  - Janssen, K.
+  - Jevardat de Fombelle, G.
+  - Jordan, S.
+  - Lanzafame, A. C.
+  - Loffler, W.
+  - Marchal, O.
+  - Marrese, P. M.
+  - Moitinho, A.
+  - Muinonen, K.
+  - Osborne, P.
+  - Pancino, E.
+  - Pauwels, T.
+  - Recio-Blanco, A.
+  - Reyle, C.
+  - Riello, M.
+  - Roegiers, T.
+  - Rybizki, J.
+  - Sarro, L. M.
+  - Siopis, C.
+  - Smith, M.
+  - Sozzetti, A.
+  - Utrilla, E.
+  - van Leeuwen, M.
+  - Abbas, U.
+  - Abraham, P.
+  - Abreu Aramburu, A.
+  - Aerts, C.
+  - Aguado, J. J.
+  - Ajaj, M.
+  - Aldea-Montero, F.
+  - Altavilla, G.
+  - Alvarez, M. A.
+  - Alves, J.
+  - Anderson, R. I.
+  - Anglada Varela, E.
+  - Antoja, T.
+  - Baines, D.
+  - Baker, S. G.
+  - Balaguer-Nunez, L.
+  - Balbinot, E.
+  - Balog, Z.
+  - Barache, C.
+  - Barbato, D.
+  - Barros, M.
+  - Barstow, M. A.
+  - Bartolome, S.
+  - Bassilana, J. -L.
+  - Bauchet, N.
+  - Becci Ani, U.
+  - Bellazzini, M.
+  - Berihuete, A.
+  - Bernet, M.
+  - Bertone, S.
+  - Bianchi, L.
+  - Binnenfeld, A.
+  - Blanco-Cuaresma, S.
+  - Boch, T.
+  - Bombrun, A.
+  - Bossini, D.
+  - Bouquillon, S.
+  - Bragaglia, A.
+  - Bramante, L.
+  - Breedt, E.
+  - Bressan, A.
+  - Brouillet, N.
+  - Brugaletta, E.
+  - Bucciarelli, B.
+  - Burlacu, A.
+  - Butkevich, A. G.
+  - Buzzi, R.
+  - Caffau, E.
+  - Cancelliere, R.
+  - Cantat-Gaudin, T.
+  - Carlucci, T.
+  - Carrasco, J. M.
+  - Casamiquela, L.
+  - Castellani, M.
+  - Castro-Ginard, A.
+  - Chaoul, L.
+  - Charlot, P.
+  - Chemin, L.
+  - Chiaramida, V.
+  - Chiavassa, A.
+  - Chornay, N.
+  - Comoretto, G.
+  - Contursi, G.
+  - Cooper, W. J.
+  - Cornez, T.
+  - Cowell, S.
+  - Crifo, F.
+  - Cropper, M.
+  - Crosta, M.
+  - Crowley, C.
+  - Dafonte, C.
+  - Dapergolas, A.
+  - David, P.
+  - de Laverny, P.
+  - de Luise, F.
+  - de March, R.
+  - De Ridder, J.
+  - de Souza, R.
+  - de Torres, A.
+  - Del Peloso, E. F.
+  - Del Pozo, E.
+  - Delbo, M.
+  - Delgado, A.
+  - Delisle, J. -B.
+  - Demouchy, C.
+  - Dharmawardena, T. E.
+  - Diakite, S.
+  - Distefano, E.
+  - Dolding, C.
+  - Enke, H.
+  - Fabre, C.
+  - Fabrizio, M.
+  - Faigler, S.
+  - Fedorets, G.
+  - Fernique, P.
+  - Figueras, F.
+  - Fournier, Y.
+  - Fouron, C.
+  - Fragkoudi, F.
+  - Gai, M.
+  - Garcia-Gutierrez, A.
+  - Garcia-Reinaldos, M.
+  - Garcia-Torres, M.
+  - Garofalo, A.
+  - Gavel, A.
+  - Gerlach, E.
+  - Geyer, R.
+  - Giacobbe, P.
+  - Gilmore, G.
+  - Girona, S.
+  - Giuffrida, G.
+  - Gomel, R.
+  - Gomez, A.
+  - Gonzalez-Nunez, J.
+  - Gonzalez-Santamaria, I.
+  - Gonzalez-Vidal, J. J.
+  - Granvik, M.
+  - Guillout, P.
+  - Guiraud, J.
+  - Gutierrez-Sanchez, R.
+  - Guy, L. P.
+  - Hauser, M.
+  - Haywood, M.
+  - Helmer, A.
+  - Helmi, A.
+  - Sarmiento, M. H.
+  - Hidalgo, S. L.
+  - Hilger, T.
+  - Hladczuk, N.
+  - Hobbs, D.
+  - Holland, G.
+  - Huckle, H. E.
+  - Jardine, K.
+  - Jasniewicz, G.
+  - Jean-Antoine-Piccolo, A.
+  - Jimenez-Arranz, O.
+  - Juaristi Campillo, J.
+  - Julbe, F.
+  - Karbevska, L.
+  - Kervella, P.
+  - Khanna, S.
+  - Kontizas, M.
+  - Kordopatis, G.
+  - Korn, A. J.
+  - Kospal, A.
+  - Kostrzewa-Rutkowska, Z.
+  - Kruszynska, K.
+  - Kun, M.
+  - Laizeau, P.
+  - Lambert, S.
+  - Lanza, A. F.
+  - Lasne, Y.
+  - Le Campion, J. -F.
+  - Lebreton, Y.
+  - Lebzelter, T.
+  - Leccia, S.
+  - Leclerc, N.
+  - Lecoeur-Taibi, I.
+  - Liao, S.
+  - Licata, E. L.
+  - Lindstrom, H. E. P.
+  - Lister, T. A.
+  - Livanou, E.
+  - Lobel, A.
+  - Lorca, A.
+  - Loup, C.
+  - Madrero Pardo, P.
+  - Magdaleno Romeo, A.
+  - Managau, S.
+  - Mann, R. G.
+  - Manteiga, M.
+  - Marchant, J. M.
+  - Marconi, M.
+  - Marcos, J.
+  - Marcos Santos, M. M. S.
+  - Marin Pina, D.
+  - Marinoni, S.
+  - Marocco, F.
+  - Marshall, D. J.
+  - Martin Polo, L.
+  - Martin-Fleitas, J. M.
+  - Marton, G.
+  - Mary, N.
+  - Masip, A.
+  - Massari, D.
+  - Mastrobuono-Battisti, A.
+  - Mazeh, T.
+  - McMillan, P. J.
+  - Messina, S.
+  - Michalik, D.
+  - Millar, N. R.
+  - Mints, A.
+  - Molina, D.
+  - Molinaro, R.
+  - Molnar, L.
+  - Monari, G.
+  - Monguio, M.
+  - Montegriffo, P.
+  - Montero, A.
+  - Mor, R.
+  - Mora, A.
+  - Morbidelli, R.
+  - Morel, T.
+  - Morris, D.
+  - Muraveva, T.
+  - Murphy, C. P.
+  - Musella, I.
+  - Nagy, Z.
+  - Noval, L.
+  - Ocana, F.
+  - Ogden, A.
+  - Ordenovic, C.
+  - Osinde, J. O.
+  - Pagani, C.
+  - Pagano, I.
+  - Palaversa, L.
+  - Palicio, P. A.
+  - Pallas-Quintela, L.
+  - Panahi, A.
+  - Payne-Wardenaar, S.
+  - Penalosa Esteller, X.
+  - Penttila, A.
+  - Pichon, B.
+  - Piersimoni, A. M.
+  - Pineau, F. -X.
+  - Plachy, E.
+  - Plum, G.
+  - Poggio, E.
+  - Prsa, A.
+  - Pulone, L.
+  - Racero, E.
+  - Ragaini, S.
+  - Rainer, M.
+  - Ramos, P.
+  - Ramos-Lerate, M.
+  - Re Fiorentin, P.
+  - Regibo, S.
+  - Richards, P. J.
+  - Rios Diaz, C.
+  - Ripepi, V.
+  - Riva, A.
+  - Rix, H. -W.
+  - Rixon, G.
+  - Robichon, N.
+  - Robin, A. C.
+  - Robin, C.
+  - Roelens, M.
+  - Rogues, H. R. O.
+  - Rohrbasser, L.
+  - Romero-Gomez, M.
+  - Rowell, N.
+  - Royer, F.
+  - Ruz Mieres, D.
+  - Rybicki, K. A.
+  - Sadowski, G.
+  - Saez Nunez, A.
+  - Sagrista Selles, A.
+  - Sahlmann, J.
+  - Salguero, E.
+  - Samaras, N.
+  - Sanchez Gimenez, V.
+  - Sanna, N.
+  - Santovena, R.
+  - Sarasso, M.
+  - Schultheis, M.
+  - Sciacca, E.
+  - Segol, M.
+  - Segovia, J. C.
+  - Segransan, D.
+  - Semeux, D.
+  - Shahaf, S.
+  - Siddiqui, H. I.
+  - Siebert, A.
+  - Siltala, L.
+  - Silvelo, A.
+  - Slezak, E.
+  - Slezak, I.
+  - Smart, R. L.
+  - Snaith, O. N.
+  - Solano, E.
+  - Solitro, F.
+  - Souami, D.
+  - Souchay, J.
+  - Spagna, A.
+  - Spina, L.
+  - Spoto, F.
+  - Steele, I. A.
+  - Steidelmuller, H.
+  - Stephenson, C. A.
+  - Suveges, M.
+  - Surdej, J.
+  - Szabados, L.
+  - Szegedi-Elek, E.
+  - Taris, F.
+  - Taylor, M. B.
+  - Tolomei, L.
+  - Tonello, N.
+  - Torra, F.
+  - Torra, J.
+  - Torralba Elipe, G.
+  - Trabucchi, M.
+  - Tsounis, A. T.
+  - Turon, C.
+  - Ulla, A.
+  - Unger, N.
+  - Vaillant, M. V.
+  - van Dillen, E.
+  - van Reeven, W.
+  - Vanel, O.
+  - Vecchiato, A.
+  - Viala, Y.
+  - Vicente, D.
+  - Voutsinas, S.
+  - Weiler, M.
+  - Wevers, T.
+  - Wyrzykowski, L.
+  - Yoldas, A.
+  - Yvard, P.
+  - Zhao, H.
+  - Zorec, J.
+  - Zucker, S.
+  - Zwitter, T.
+  bibcode: 2022yCat..36740041G
+  category: collaboration
+  citation_count: 0
+  doctype: dataset
+  identifier:
+  - 2022yCat..36740041G
+  page: J/A+A/674/A41
+  pub: VizieR Online Data Catalog
+  title: 'VizieR Online Data Catalog: Composite quasar spectra from Gaia DR3 (Gaia
+    Coll., 2023)'
+  url: null
+  volume: '367'
+  year: 2022
+- abstract: "Context. Gaia-CRF3 is the celestial reference frame for positions and\
+    \ proper motions in the third release of data from the Gaia mission, Gaia DR3\
+    \ (and for the early third release, Gaia EDR3, which contains identical astrometric\
+    \ results). The reference frame is defined by the positions and proper motions\
+    \ at epoch 2016.0 for a specific set of extragalactic sources in the (E)DR3 catalogue.\
+    \ <BR /> Aims: We describe the construction of Gaia-CRF3 and its properties in\
+    \ terms of the distributions in magnitude, colour, and astrometric quality. <BR\
+    \ /> Methods: Compact extragalactic sources in Gaia DR3 were identified by positional\
+    \ cross-matching with 17 external catalogues of quasi-stellar objects (QSO) and\
+    \ active galactic nuclei (AGN), followed by astrometric filtering designed to\
+    \ remove stellar contaminants. Selecting a clean sample was favoured over including\
+    \ a higher number of extragalactic sources. For the final sample, the random and\
+    \ systematic errors in the proper motions are analysed, as well as the radio-optical\
+    \ offsets in position for sources in the third realisation of the International\
+    \ Celestial Reference Frame (ICRF3). <BR /> Results: Gaia-CRF3 comprises about\
+    \ 1.6 million QSO-like sources, of which 1.2 million have five-parameter astrometric\
+    \ solutions in Gaia DR3 and 0.4 million have six-parameter solutions. The sources\
+    \ span the magnitude range G = 13-21 with a peak density at 20.6 mag, at which\
+    \ the typical positional uncertainty is about 1 mas. The proper motions show systematic\
+    \ errors on the level of 12 \xB5as yr<SUP>-1</SUP> on angular scales greater than\
+    \ 15 deg. For the 3142 optical counterparts of ICRF3 sources in the S/X frequency\
+    \ bands, the median offset from the radio positions is about 0.5 mas, but it exceeds\
+    \ 4 mas in either coordinate for 127 sources. We outline the future of Gaia-CRF\
+    \ in the next Gaia data releases. Appendices give further details on the external\
+    \ catalogues used, how to extract information about the Gaia-CRF3 sources, potential\
+    \ (Galactic) confusion sources, and the estimation of the spin and orientation\
+    \ of an astrometric solution."
   author:
   - Gaia Collaboration
   - Klioner, S. A.
@@ -3488,7 +15857,7 @@ collaboration:
   - Khanna, S.
   - Kordopatis, G.
   - Korn, A. J.
-  - "K\xF3sp\xE1l, \xC1"
+  - "K\xF3sp\xE1l, \xC1."
   - Kostrzewa-Rutkowska, Z.
   - "Kruszy\u0144ska, K."
   - Kun, M.
@@ -3518,7 +15887,7 @@ collaboration:
   - Marchant, J. M.
   - Marconi, M.
   - Marcos, J.
-  - Marcos Santos, M. M. S.
+  - Santos, M. M. S. Marcos
   - "Mar\xEDn Pina, D."
   - Marinoni, S.
   - Marocco, F.
@@ -3581,7 +15950,7 @@ collaboration:
   - Re Fiorentin, P.
   - Regibo, S.
   - Richards, P. J.
-  - Rios Diaz, C.
+  - Diaz, C. Rios
   - Ripepi, V.
   - Riva, A.
   - Rix, H. -W.
@@ -3662,18 +16031,21 @@ collaboration:
   - Zorec, J.
   - Zucker, S.
   - Zwitter, T.
-  bibcode: 2022arXiv220412574G
+  bibcode: 2022A&A...667A.148G
   category: collaboration
-  citation_count: 1
-  doctype: eprint
+  citation_count: 87
+  doctype: article
   identifier:
   - 2022arXiv220412574G
+  - 10.48550/arXiv.2204.12574
   - arXiv:2204.12574
-  page: '-'
-  pub: arXiv e-prints
-  title: 'Gaia Early Data Release 3: The celestial reference frame (Gaia-CRF3)'
+  - 10.1051/0004-6361/202243483
+  - 2022A&A...667A.148G
+  page: A148
+  pub: Astronomy and Astrophysics
+  title: Gaia Early Data Release 3. The celestial reference frame (Gaia-CRF3)
   url: null
-  volume: null
+  volume: '667'
   year: 2022
 - abstract: null
   author:
@@ -4105,7 +16477,7 @@ collaboration:
   - Zwitter, T.
   bibcode: 2021A&A...650C...3G
   category: collaboration
-  citation_count: 29
+  citation_count: 116
   doctype: article
   identifier:
   - 10.1051/0004-6361/202039657e
@@ -4571,10 +16943,11 @@ collaboration:
   - Zwitter, T.
   bibcode: 2021A&A...649A...6G
   category: collaboration
-  citation_count: 93
+  citation_count: 285
   doctype: article
   identifier:
   - arXiv:2012.02061
+  - 10.48550/arXiv.2012.02061
   - 2021A&A...649A...6G
   - 10.1051/0004-6361/202039498
   - 2020arXiv201202061G
@@ -5046,12 +17419,13 @@ collaboration:
   - Zwitter, T.
   bibcode: 2021A&A...649A...1G
   category: collaboration
-  citation_count: 1302
+  citation_count: 3611
   doctype: article
   identifier:
   - 10.1051/0004-6361/202039657
   - arXiv:2012.01533
   - 2021A&A...649A...1G
+  - 10.48550/arXiv.2012.01533
   - 2020arXiv201201533G
   page: A1
   pub: Astronomy and Astrophysics
@@ -5502,11 +17876,12 @@ collaboration:
   - Zwitter, T.
   bibcode: 2021A&A...649A...9G
   category: collaboration
-  citation_count: 45
+  citation_count: 100
   doctype: article
   identifier:
   - 10.1051/0004-6361/202039734
   - 2021A&A...649A...9G
+  - 10.48550/arXiv.2012.02036
   - arXiv:2012.02036
   - 2020arXiv201202036G
   page: A9
@@ -5970,13 +18345,14 @@ collaboration:
   - Zwitter, T.
   bibcode: 2021A&A...649A...8G
   category: collaboration
-  citation_count: 36
+  citation_count: 85
   doctype: article
   identifier:
   - 2021arXiv210105811G
   - arXiv:2101.05811
   - 10.1051/0004-6361/202039714
   - 2021A&A...649A...8G
+  - 10.48550/arXiv.2101.05811
   page: A8
   pub: Astronomy and Astrophysics
   title: Gaia Early Data Release 3. The Galactic anticentre
@@ -6443,11 +18819,12 @@ collaboration:
   - Zwitter, T.
   bibcode: 2021A&A...649A...7G
   category: collaboration
-  citation_count: 47
+  citation_count: 123
   doctype: article
   identifier:
   - 2021A&A...649A...7G
   - arXiv:2012.01771
+  - 10.48550/arXiv.2012.01771
   - 10.1051/0004-6361/202039588
   - 2020arXiv201201771G
   page: A7
@@ -6886,15 +19263,16 @@ collaboration:
   bibcode: 2020yCat..36490007G
   category: collaboration
   citation_count: 0
-  doctype: catalog
+  doctype: dataset
   identifier:
+  - 10.26093/cds/vizier.36490007
   - 2020yCat..36490007G
   page: J/A+A/649/A7
   pub: VizieR Online Data Catalog
   title: 'VizieR Online Data Catalog: MC structure and properties (Gaia Collaboration+,
     2021)'
   url: null
-  volume: null
+  volume: '364'
   year: 2020
 - abstract: 'We produce a clean and well characterised catalogue of nearby objects
     within 100pc of the Sun from the Gaia early third data release. We characterise
@@ -7117,15 +19495,16 @@ collaboration:
   bibcode: 2020yCat..36490006G
   category: collaboration
   citation_count: 0
-  doctype: catalog
+  doctype: dataset
   identifier:
   - 2020yCat..36490006G
+  - 10.26093/cds/vizier.36490006
   page: J/A+A/649/A6
   pub: VizieR Online Data Catalog
   title: 'VizieR Online Data Catalog: Gaia Catalogue of Nearby Stars - GCNS (Gaia
     collaboration, 2021)'
   url: null
-  volume: null
+  volume: '364'
   year: 2020
 - abstract: null
   author:
@@ -7585,7 +19964,7 @@ collaboration:
   - Zwitter, T.
   bibcode: 2020A&A...642C...1G
   category: collaboration
-  citation_count: 3
+  citation_count: 5
   doctype: article
   identifier:
   - 2020A&A...642C...1G
@@ -8146,10 +20525,11 @@ collaboration:
   - Worley, C. C.
   bibcode: 2019Msngr.175...12W
   category: collaboration
-  citation_count: 11
+  citation_count: 15
   doctype: article
   identifier:
   - 2019arXiv190302465W
+  - 10.48550/arXiv.1903.02465
   - arXiv:1903.02465
   - 2019Msngr.175...12W
   - 10.18727/0722-6691/5118
@@ -8513,13 +20893,14 @@ collaboration:
   - Zucker, D.
   bibcode: 2019Msngr.175....3D
   category: collaboration
-  citation_count: 179
+  citation_count: 535
   doctype: article
   identifier:
   - 2019Msngr.175....3D
   - 10.18727/0722-6691/5117
   - arXiv:1903.02464
   - 2019arXiv190302464D
+  - 10.48550/arXiv.1903.02464
   page: '3'
   pub: The Messenger
   title: '4MOST: Project overview and information for the First Call for Proposals'
@@ -8577,10 +20958,11 @@ collaboration:
   - 4MIDABLE-Lr Team
   bibcode: 2019Msngr.175...30C
   category: collaboration
-  citation_count: 18
+  citation_count: 47
   doctype: article
   identifier:
   - 2019arXiv190302469C
+  - 10.48550/arXiv.1903.02469
   - 10.18727/0722-6691/5122
   - arXiv:1903.02469
   - 2019Msngr.175...30C
@@ -9055,15 +21437,16 @@ collaboration:
   bibcode: 2019yCat..36230110G
   category: collaboration
   citation_count: 0
-  doctype: catalog
+  doctype: dataset
   identifier:
+  - 10.26093/cds/vizier.36230110
   - 2019yCat..36230110G
   page: J/A+A/623/A110
   pub: VizieR Online Data Catalog
   title: 'VizieR Online Data Catalog: Gaia DR2. Variable stars in CMD (Gaia Collaboration+,
     2019)'
   url: null
-  volume: null
+  volume: '362'
   year: 2019
 - abstract: "Context. The ESA Gaia mission provides a unique time-domain survey for\
     \ more than 1.6 billion sources with G \u2272 21 mag. <BR /> Aims: We showcase\
@@ -9556,12 +21939,13 @@ collaboration:
   - Zwitter, T.
   bibcode: 2019A&A...623A.110G
   category: collaboration
-  citation_count: 101
+  citation_count: 149
   doctype: article
   identifier:
-  - 2018arXiv180409382G
+  - 10.48550/arXiv.1804.09382
   - 10.1051/0004-6361/201833304
   - 2019A&A...623A.110G
+  - 2018arXiv180409382G
   - arXiv:1804.09382
   page: A110
   pub: Astronomy and Astrophysics
@@ -10053,11 +22437,12 @@ collaboration:
   - Zwitter, T.
   bibcode: 2018A&A...616A..14G
   category: collaboration
-  citation_count: 131
+  citation_count: 178
   doctype: article
   identifier:
   - 10.1051/0004-6361/201832916
   - 2018A&A...616A..14G
+  - 10.48550/arXiv.1804.09377
   - 2018arXiv180409377M
   - arXiv:1804.09377
   page: A14
@@ -10533,16 +22918,17 @@ collaboration:
   - Zwitter, T.
   bibcode: 2018yCat..36160010G
   category: collaboration
-  citation_count: 0
-  doctype: catalog
+  citation_count: 1
+  doctype: dataset
   identifier:
   - 2018yCat..36160010G
+  - 10.26093/cds/vizier.36160010
   page: J/A+A/616/A10
   pub: VizieR Online Data Catalog
   title: 'VizieR Online Data Catalog: 46 open clusters GaiaDR2 HR diagrams (Gaia Collaboration,
     2018)'
   url: null
-  volume: null
+  volume: '361'
   year: 2018
 - abstract: The files contains lists of possible members of each of the objects (75
     globular clusters, 9 dwarf spheroidal galaxies, the Bootes I UFD, the LMC and
@@ -11003,15 +23389,16 @@ collaboration:
   bibcode: 2018yCat..36160012G
   category: collaboration
   citation_count: 0
-  doctype: catalog
+  doctype: dataset
   identifier:
+  - 10.26093/cds/vizier.36160012
   - 2018yCat..36160012G
   page: J/A+A/616/A12
   pub: VizieR Online Data Catalog
   title: 'VizieR Online Data Catalog: Gaia DR2 sources in GC and dSph (Gaia Collaboration+,
     2018)'
   url: null
-  volume: null
+  volume: '361'
   year: 2018
 - abstract: 'Context. The Gaia spacecraft of the European Space Agency (ESA) has been
     securing observations of solar system objects (SSOs) since the beginning of its
@@ -11495,12 +23882,13 @@ collaboration:
   - Zwitter, T.
   bibcode: 2018A&A...616A..13G
   category: collaboration
-  citation_count: 60
+  citation_count: 92
   doctype: article
   identifier:
   - arXiv:1804.09379
-  - 2018arXiv180409379G
+  - 10.48550/arXiv.1804.09379
   - 2018A&A...616A..13G
+  - 2018arXiv180409379G
   - 10.1051/0004-6361/201832900
   page: A13
   pub: Astronomy and Astrophysics
@@ -11993,10 +24381,11 @@ collaboration:
   - Zwitter, T.
   bibcode: 2018A&A...616A..10G
   category: collaboration
-  citation_count: 541
+  citation_count: 798
   doctype: article
   identifier:
   - arXiv:1804.09378
+  - 10.48550/arXiv.1804.09378
   - 2018arXiv180409378G
   - 2018A&A...616A..10G
   - 10.1051/0004-6361/201832843
@@ -12487,11 +24876,12 @@ collaboration:
   - Zwitter, T.
   bibcode: 2018A&A...616A..12G
   category: collaboration
-  citation_count: 444
+  citation_count: 586
   doctype: article
   identifier:
   - 2018A&A...616A..12G
   - 10.1051/0004-6361/201832698
+  - 10.48550/arXiv.1804.09381
   - arXiv:1804.09381
   - 2018arXiv180409381G
   page: A12
@@ -12994,11 +25384,12 @@ collaboration:
   - Zwitter, T.
   bibcode: 2018A&A...616A..11G
   category: collaboration
-  citation_count: 275
+  citation_count: 396
   doctype: article
   identifier:
-  - 2018A&A...616A..11G
   - 2018arXiv180409380G
+  - 2018A&A...616A..11G
+  - 10.48550/arXiv.1804.09380
   - 10.1051/0004-6361/201832865
   - arXiv:1804.09380
   page: A11
@@ -13497,9 +25888,10 @@ collaboration:
   - Zwitter, T.
   bibcode: 2018A&A...616A...1G
   category: collaboration
-  citation_count: 5838
+  citation_count: 7697
   doctype: article
   identifier:
+  - 10.48550/arXiv.1804.09365
   - 2018arXiv180409365G
   - arXiv:1804.09365
   - 2018A&A...616A...1G
@@ -14145,10 +26537,11 @@ collaboration:
   - Zschocke, S.
   bibcode: 2017A&A...605A..79G
   category: collaboration
-  citation_count: 83
+  citation_count: 103
   doctype: article
   identifier:
   - arXiv:1705.00688
+  - 10.48550/arXiv.1705.00688
   - 2017arXiv170500688G
   - 10.1051/0004-6361/201629925
   - 2017A&A...605A..79G
@@ -14761,15 +27154,16 @@ collaboration:
   bibcode: 2017yCat..36010019G
   category: collaboration
   citation_count: 0
-  doctype: catalog
+  doctype: dataset
   identifier:
+  - 10.26093/cds/vizier.36010019
   - 2017yCat..36010019G
   page: J/A+A/601/A19
   pub: VizieR Online Data Catalog
   title: 'VizieR Online Data Catalog: Gaia DR1 open cluster members (Gaia Collaboration+,
     2017)'
   url: null
-  volume: null
+  volume: '360'
   year: 2017
 - abstract: 'Context. The first Gaia Data Release contains the Tycho-Gaia Astrometric
     Solution (TGAS). This is a subset of about 2 million stars for which, besides
@@ -15391,12 +27785,13 @@ collaboration:
   - Zschocke, S.
   bibcode: 2017A&A...601A..19G
   category: collaboration
-  citation_count: 86
+  citation_count: 94
   doctype: article
   identifier:
   - 2017A&A...601A..19G
-  - 2017arXiv170301131G
+  - 10.48550/arXiv.1703.01131
   - arXiv:1703.01131
+  - 2017arXiv170301131G
   - 10.1051/0004-6361/201730552
   page: A19
   pub: Astronomy and Astrophysics
@@ -16053,9 +28448,10 @@ collaboration:
   - Zschocke, S.
   bibcode: 2016A&A...595A...1G
   category: collaboration
-  citation_count: 3513
+  citation_count: 6073
   doctype: article
   identifier:
+  - 10.48550/arXiv.1609.04153
   - 2016arXiv160904153G
   - 10.1051/0004-6361/201629272
   - 2016A&A...595A...1G
@@ -16692,13 +29088,14 @@ collaboration:
   - Zschocke, S.
   bibcode: 2016A&A...595A...2G
   category: collaboration
-  citation_count: 1622
+  citation_count: 1936
   doctype: article
   identifier:
   - arXiv:1609.04172
   - 2016arXiv160904172G
   - 10.1051/0004-6361/201629512
   - 2016A&A...595A...2G
+  - 10.48550/arXiv.1609.04172
   page: A2
   pub: Astronomy and Astrophysics
   title: Gaia Data Release 1. Summary of the astrometric, photometric, and survey
@@ -16707,124 +29104,845 @@ collaboration:
   volume: '595'
   year: 2016
 other:
-- abstract: 'In this catalogue we present the 3D dust density and extinction for the
-    star formation regions: Orion, Cygnus X, Perseus and Taurus. The data cubes are
-    in torch tensor format and can be accessed using scripts provided in https://github.com/Thavisha/Dustribution.
-    The data is also interactively available on www.mwdust.com. <P />(4 data files).'
+- abstract: 'What''s Changed    moving to pyproject.toml  upgraded documentation  67
+    upgrade packaging by @mfouesneau in https://github.com/mfouesneau/pyphot/pull/68   Full
+    Changelog: https://github.com/mfouesneau/pyphot/compare/pyphot_v1.5.0...pyphot_v1.6.0'
   author:
-  - Dharmawardena, T. E.
-  - Bailer-Jones, C. A. L.
+  - Fouesneau, Morgan
+  bibcode: 2025zndo..14712174F
+  category: other
+  citation_count: 2
+  doctype: software
+  identifier:
+  - 2025zndo..14712174F
+  - 10.5281/zenodo.14712174
+  page: '-'
+  pub: Zenodo
+  title: pyphot
+  url: null
+  volume: null
+  year: 2025
+- abstract: 'What''s Changed    moving to pyproject.toml  upgraded documentation  67
+    upgrade packaging by @mfouesneau in https://github.com/mfouesneau/pyphot/pull/68   Full
+    Changelog: https://github.com/mfouesneau/pyphot/compare/pyphot_v1.5.0...pyphot_v1.6.0'
+  author:
+  - Fouesneau, Morgan
+  bibcode: 2022zndo...7016774F
+  category: other
+  citation_count: 4
+  doctype: software
+  identifier:
+  - 2022zndo...7016774F
+  - 10.5281/zenodo.7016774
+  page: '-'
+  pub: Zenodo
+  title: pyphot
+  url: null
+  volume: null
+  year: 2025
+- abstract: This chapter of the Gaia FPR documentation describes the Gaia FPR data
+    model.
+  author:
+  - Hambly, N.
+  - De Angeli, F.
+  - Audard, M.
+  - Bastian, U.
+  - Brugaletta, E.
+  - de Bruijne, J.
+  - Creevey, O. L.
+  - Delchambre, L.
+  - Ducourant, C.
+  - Eyer, L.
   - Fouesneau, M.
-  - Foreman-Mackey, D.
-  bibcode: 2022yCat..36580166D
+  - Galluccio, L.
+  - "Garc\xEDa-Lario, P."
+  - Gracia-Abril, G.
+  - Heiter, U.
+  - "Hern\xE1ndez, J."
+  - Lanzafame, A.
+  - van Leeuwen, M.
+  - Mints, A.
+  - Mowlavi, N.
+  - Ordenovic, C.
+  - Portell, J.
+  - Roux, W.
+  - Sartoretti, P.
+  - Schultheis, M.
+  - Slezack, I.
+  - Spoto, F.
+  - Tanga, P.
+  - Teyssier, D.
+  - Utrilla, E.
+  - Weingrill, K.
+  bibcode: 2024gfpr.reptE...2H
   category: other
   citation_count: 0
-  doctype: catalog
+  doctype: techreport
   identifier:
-  - 2022yCat..36580166D
-  page: J/A+A/658/A166
-  pub: VizieR Online Data Catalog
-  title: 'VizieR Online Data Catalog: 4 star-forming regions 3D dust density (Dharmawardena+,
-    2022)'
+  - 2023gfpr.reptE...2H
+  - 2024gfpr.reptE...2H
+  page: '2'
+  pub: Gaia FPR documentation
+  title: 'Gaia FPR documentation Chapter 2: Datamodel description'
+  url: null
+  volume: null
+  year: 2024
+- abstract: The Gaia Focused Product Release presents five data products which showcase
+    a subset of the improvements and new data products expected for Gaia DR4. The
+    FPR data products are based on the Gaia observations collected over the same period
+    as used for Gaia DR3 (except for the astrometry and photometry for Omega Centauri
+    and the updated Solar System objects astrometry). These data are products based
+    on new observation modes (astrometry and photometry from full-frame CCD images
+    in selected crowded regions), new data processing pipelines (search for gravitationally
+    lensed quasars, DIBs from aggregated RVS spectra), and they offer a taste of the
+    epoch radial velocities to be publised as part of Gaia DR4. For Solar System objects
+    new astrometry and orbits are presented based on 5.5 years of observations (the
+    period covered by Gaia DR4) which leads to a very significant improvement in the
+    quality of the orbits.
+  author:
+  - van Leeuwen, F.
+  - "Garc\xEDa-Lario, P."
+  - Audard, M.
+  - Bastian, U.
+  - Brown, A. G. A.
+  - Brugaletta, E.
+  - de Bruijne, J.
+  - "Casta\xF1eda, J."
+  - Creevey, O. L.
+  - Davidson, M.
+  - De Angeli, F.
+  - Delchambre, L.
+  - Ducourant, C.
+  - Fabricius, C., Eyer, L.
+  - Fouesneau, M.
+  - Galluccio, L.
+  - Gracia-Abril, G.
+  - Hambly, N.
+  - Heiter, U.
+  - "Hern\xE1ndez, J."
+  - Kostrzewa-Rutkowska, Z.
+  - Krone-Martins, A.
+  - Lanzafame, A.
+  - Lebzelter, T.
+  - "Lecoeur-Ta\xEFbi, I."
+  - van Leeuwen, M.
+  - Luri, X.
+  - Mints, A.
+  - Mowlavi, N.
+  - Ordenovic, C.
+  - Portell, J.
+  - Roegiers, T.
+  - Roux, W.
+  - Sartoretti, P.
+  - Schultheis, M.
+  - Slezack, I.
+  - Spoto, F.
+  - Tanga, P.
+  - Teyssier, D.
+  - Trabucchi, M.
+  - Utrilla, E.
+  - Weingrill, K.
+  bibcode: 2024gfpr.reptE....V
+  category: other
+  citation_count: 0
+  doctype: techreport
+  identifier:
+  - 2023gfpr.reptE....V
+  - 2024gfpr.reptE....V
+  page: '1'
+  pub: Gaia FPR documentation
+  title: Gaia FPR documentation
+  url: null
+  volume: null
+  year: 2024
+- abstract: Color-magnitude diagram (CMD) fitting is a powerful tool to derive information
+    about resolved star systems, and is based on the comparison of an observed CMD
+    with a synthetic one, produced by a population synthesis model. In Mazzi et al.
+    (2024), we have used CMD fitting based on a Bayesian method and synthetic models
+    from the TRILEGAL code on a subset of the third data release (DR3) of the Gaia
+    mission comprising a cylinder of radius 200 pc centered on the Sun and spanning
+    1.4 kpc above and below the mid-plane of the Galaxy. We derived the star formation
+    history (SFH) in slices of the cylinder using 16 age bins and subsequently determined
+    the dependence on age of the vertical scale height of the Galactic disk. A further
+    improvement upon this result is expected from combining the photometric data from
+    Gaia DR3 with other survey data. In particular, asteroseismology offers the opportunity
+    to impose very strong constraints on the solution of the fit. In this presentation,
+    I will show how we are using masses extracted from asteroseismic surveys such
+    as Kepler and TESS as an additional constraint for the CMD fitting, with their
+    synthetic counterpart simulated with the TRILEGAL population synthesis model.
+  author:
+  - Mazzi, Alessandro
+  - "Girardi, L\xE9o"
+  - Trabucchi, Michele
+  - Dalcanton3, Julianne J.
+  - Luger, Rodrigo
+  - Marigo, Paola
+  - Miglio, Andrea
+  - Costa, Guglielmo
+  - Chen, Yang
+  - Pastorelli, Giada
+  - Fouesneau, Morgan
+  - Bressan, Alessandro
+  - Dal Tio, Piero
+  bibcode: 2024eas..conf.2030M
+  category: other
+  citation_count: 0
+  doctype: inproceedings
+  identifier:
+  - 2024eas..conf.2030M
+  page: '2030'
+  pub: EAS2024, European Astronomical Society Annual Meeting
+  title: Introducing asteroseismic constraints into CMD fitting to enhance the recovery
+    of star formation rates in the Solar Neighborhood
+  url: null
+  volume: null
+  year: 2024
+- abstract: To better disentangle the processes of Galactic star formation we require
+    3D information of molecular clouds and the Milky Way as a whole. Star formation
+    is driven by 3D processes, and hence to understand the underlying physics of e.g.
+    turbulence we need 3D information. In this work I will introduce our new fast
+    and scalable algorithm for 3D dust modeling. Using advanced ML methods such as
+    sparse Gaussian Processes and Variational Inference, our algorithm maps Star Formation
+    Regions (SFRs) with millions of input sources in parsec scales within an hour
+    on a single GPU. Our approach allows us to identify the large-scale structure
+    of star-formation regions while simultaneously peering into individual molecular
+    clouds, providing insights into multi-scale processes such as fragmentation in
+    molecular clouds. <P />In Dharmawardena et al., 2022 a and b., we model the 3D
+    dust density distribution of 15 SFRs, exploiting distances and extinctions derived
+    from Gaia DR2 and IR data (from Fouesneau et al., 2022). From these maps, we extract
+    3D boundaries, volumes, precise dust masses (12% statistical uncertainty) and
+    filling factors to study fragmentation within our regions. We recover a wider
+    range of substructures such as new interconnecting and free standing filaments
+    and star-formation feedback and supernovae cavities. We demonstrate an order of
+    magnitude variation in dust mass (and hence gas mass) when deriving dust masses
+    of these molecular clouds using their full 3D information when compared to deriving
+    their dust masses using only their projected 2D information and assuming a line-of-sight
+    column density. We show that the Larson relationship holds true in 3D both when
+    assuming a spherical shape and also the true x,y,z extents of the clouds. In ongoing
+    work we compare the cloud extents to the velocity dispersion to study the remaining
+    two Larson's relationships. In Dharmawardena et al., in prep we present a first
+    look at our new 3D dust density maps of the Milky Way out to 2 kpc from the sun
+    simultaneously showing both large scale structure at 100s of pc scale and smaller
+    scale structure at 10s of pc. The maps' comparison to the Gaia DR3 DIBs and YSOs
+    will shed light on processes taking place in the Milky Way in 3D. With this we
+    will have a local 3D baseline to then compare to external galaxies and decipher
+    the star formation process within them.
+  author:
+  - Dharmawardena, Thavisha
+  - Bailer-Jones, Coryn A. L.
+  - Fouesneau, Morgan
+  - "M\xFCller, Thomas"
+  - Foreman-Mackey, Dan
+  - Coronica, Piero
+  - Colnaghi, Timoteo
+  - Henshaw, Jonathan
+  bibcode: 2023eas..conf.1277D
+  category: other
+  citation_count: 0
+  doctype: inproceedings
+  identifier:
+  - 2023eas..conf.1277D
+  page: '1277'
+  pub: EAS2023, European Astronomical Society Annual Meeting
+  title: The interplay between the 3D structure of Galactic molecular clouds and star
+    formation
+  url: null
+  volume: null
+  year: 2023
+- abstract: The detailed 3D distributions of dust density and extinction in the Milky
+    Way have long been sought after. However, such 3D reconstruction from sparse data
+    is non-trivial, but is essential to understanding the properties of star-formation,
+    large-scale dynamics and structure of our Galaxy. In this work I will introduce
+    our new 3D dust density maps of the Milky Way out to 2 kpc from the sun built
+    using a combination of Gaia DR3 and infrared data. To model these 3D dust maps
+    we use a fast and scalable algorithm for 3D dust modeling which employs advanced
+    ML methods such as sparse Gaussian Processes and Variational Inference making
+    it capable of obtaining the large scale structure of the Milky Way at 100s of
+    pc while simultaneously peering into individual molecular clouds at pc scales.
+    I will compare and contrast our new map to 3D maps generated using DR2 data and
+    our novel models as well as maps derived using stand alone DR3 data showcasing
+    the power of Gaia DR3 and what future data releases hold. The maps' comparison
+    to the Gaia DR3 DIBs, YSO and evolved star samples will shed light on stellar
+    processes taking place in the Milky Way in 3D. I will then discuss plans to expand
+    the method to simultaneously derive distances and extinctions to the SMC thus
+    recovering the 3D structure of the SMC at 10s of pc scale resolution for the first
+    time. Finally I will demonstrate the power of augmented reality visualizations
+    of these 3D structures, developed in collaboration between the Gaia group at MPIA
+    and the Haus der Astronomie, Heidelberg. AR demonstrates the capabilities of Gaia
+    DR3 and future data releases effectively, and is a powerful tool to understand
+    structure in 3D data.
+  author:
+  - Dharmawardena, Thavisha
+  - Bailer-Jones, Coryn A. L.
+  - Fouesneau, Morgan
+  - Foreman-Mackey, Dan
+  - Coronica, Piero
+  - Colnaghi, Timoteo
+  - "M\xFCller, Thomas"
+  - Andrae, Rene
+  bibcode: 2023eas..conf.1276D
+  category: other
+  citation_count: 0
+  doctype: inproceedings
+  identifier:
+  - 2023eas..conf.1276D
+  page: '1276'
+  pub: EAS2023, European Astronomical Society Annual Meeting
+  title: A multi-scale multi-resolution view of the 3D structure of the Milky Way
+    out to 2 kpc in the era of Gaia DR3
+  url: null
+  volume: null
+  year: 2023
+- abstract: "In this talk we make use of Gaia DR3 mock catalogues with different bar\
+    \ orientation angles and bar pattern speeds - and thus, different positions of\
+    \ the bar corotation radius - to decode the radial and tangential velocity maps\
+    \ of the Red Giants sample selected in the Performance Verification paper \"Mapping\
+    \ the asymmetric disc of the Milky Way\" (Gaia Collaboration, Drimmel+2022). We\
+    \ constructed these catalogues from test particle simulations in a realistic Galactic\
+    \ potential adopting the Gaia DR3 astrometric and spectroscopic performances for\
+    \ giant star populations (Romero-G\xF3mez+2015). With more than 1.5 million sources\
+    \ in the inner R &lt; 5 kpc having accurate and homogeneous 6D data, so far unconceivable,\
+    \ the Gaia DR3 capabilities are revealed impressive to infer the detailed kinematic\
+    \ features key to infer the intricate dynamical behaviour of the inner Galactic\
+    \ disc."
+  author:
+  - "Romero-G\xF3mez, Merc\xE8"
+  - Drimmel, Ron
+  - Chemin, Laurent
+  - Ramos, Pau
+  - "P\xE9rez-Villegas, \xC1ngeles"
+  - Poggio, Eloisa
+  - Figueras, Francesca
+  - Aguilar, Luis A.
+  - Andrae, Rene
+  - Blomme, Ronny
+  - Cantat-Gaudin, Tristan
+  - Castro-Ginard, Alfred
+  - Clementini, Gisella
+  - Fouesneau, Morgan
+  - Fremat, Yves
+  - Lobel, Alex
+  - Mateu, Cecilia
+  - Muraveva, Tatiana
+  - Ripepi, Vicenzo
+  bibcode: 2022eas..conf.1896R
+  category: other
+  citation_count: 0
+  doctype: inproceedings
+  identifier:
+  - 2022eas..conf.1896R
+  page: '1896'
+  pub: EAS2022, European Astronomical Society Annual Meeting
+  title: Gaia DR3 capabilities to constrain the Galactic bar angle and corotation
+    radius
   url: null
   volume: null
   year: 2022
-- abstract: In this paper, we map the segments of the nearest spiral arms in the Milky
-    Way using young stellar populations. This catalog contains 1872 Open Clusters,
-    of which 1851 have Gaia EDR3 astrometry. <P />(1 data file).
+- abstract: Diffuse interstellar bands (DIBs) are common interstellar absorption features
+    in spectroscopic observations but their origins remain unclear. DIBs play an important
+    role in the life cycle of the interstellar medium and can also be used to trace
+    Galactic structure. Here, we discuss the capacity of the Gaia-Radial Velocity
+    Spectrometer (RVS) in Gaia DR3 to study the spatial distribution of the unknown
+    molecular species responsible for the most prominent DIB at 862 nm in the RVS
+    passband exploring the Galactic interstellar medium within a few kiloparsecs from
+    the Sun. We demonstrate the unique capacities of Gaia to trace the spatial structure
+    of the Galactic interstellar medium using the 862 nm DIB.
   author:
-  - Poggio, E.
-  - Drimmel, R.
-  - Cantat-Gaudin, T.
-  - Ramos, P.
-  - Ripepi, V.
-  - Zari, E.
-  - Andrae, R.
-  - Blomme, R.
-  - Chemin, L.
-  - Clementini, G.
-  - Figueras, F.
-  - Fouesneau, M.
-  - Fremat, Y.
-  - Lobel, A.
+  - Zwitter, Tomaz
+  - Schultheis, Mathias
+  - Zhao, He
   - Marshall, D. J.
-  - Muraveva, T.
-  - Romero-Gomez, M.
-  bibcode: 2021yCat..36510104P
-  category: other
-  citation_count: 0
-  doctype: catalog
-  identifier:
-  - 2021yCat..36510104P
-  page: J/A+A/651/A104
-  pub: VizieR Online Data Catalog
-  title: 'VizieR Online Data Catalog: Spiral arms Gaia EDR3 (Poggio+, 2021)'
-  url: null
-  volume: null
-  year: 2021
-- abstract: In this work, we select 9589 MS-WD and 307 WD-WD candidate binaries from
-    the catalog released by Tian+ (2020, J/ApJS/246/4), which is a catalog of 807611
-    binaries, by searching from Gaia DR2 in a range of distance &lt;4.0kpc and the
-    projected separation s&lt;1.0pc. According to the contamination rates, we selected
-    4050 MS-WD binaries with contamination rates &lt;20%. See Section 2. <P />We use
-    an open-source software suite, BASE-9 (von Hippel+ 2014arXiv1411.3786V), to constrain
-    the ages, ZAMS mass, A<SUB>V</SUB>, and distance modulus for the 4050 MS-WD candidate
-    binaries. See Section 3. <P />We build a catalog that includes the ages and other
-    parameters (see Table 2) of the 3551 field MS components. We also provide a catalog
-    that includes the ages and other parameters of the 3551 MS-WD and 236 WD-WD binaries
-    (see Table 4). <P />(2 data files).
-  author:
-  - Qiu, D.
-  - Tian, H. -J.
-  - Wang, X. -D.
-  - Nie, J. -L.
-  - von Hippel, T.
-  - Liu, G. -C.
-  - Fouesneau, M.
-  - Rix, H. -W.
-  bibcode: 2021yCat..22530058Q
-  category: other
-  citation_count: 0
-  doctype: catalog
-  identifier:
-  - 2021yCat..22530058Q
-  page: J/ApJS/253/58
-  pub: VizieR Online Data Catalog
-  title: 'VizieR Online Data Catalog: Ages of field stars from white dwarf comp. in
-    Gaia (Qiu+, 2021)'
-  url: null
-  volume: null
-  year: 2021
-- abstract: We have produced a catalogue of geometric distances for 1.47 billion stars
-    and photogeometric distances for 92% of these. These estimates, and their uncertainties,
-    can also be used as estimates of the distance modulus. Geometric distances use
-    only the EDR3 parallaxes. Photogeometric distances additionally use the G magnitude
-    and BP-RP colour from EDR3. Both types of estimate involve directiondependent
-    priors constructed from a sophisticated model of the 3D distribution, colours,
-    and magnitudes of stars in the Galaxy as seen by Gaia, i.e. accommodating both
-    interstellar extinction and a Gaia selection function. Tests on mock data, but
-    moreover validation against independent estimates and open clusters, suggest our
-    estimates are reliable out to several kpc. For faint or more distant stars the
-    prior will often dominate the estimates. <P />(1 data file).
-  author:
+  - Drimmel, R.
+  - Fremat, Y.
   - Bailer-Jones, C. A. L.
-  - Rybizki, J.
-  - Fouesneau, M.
-  - Demleitner, M.
+  - Recio-Blanco, A.
+  - Kordopatis, G.
+  - de Laverny, P.
   - Andrae, R.
-  bibcode: 2021yCat.1352....0B
+  - Dharmawardena, T. E.
+  - Fouesneau, M.
+  - Sordo, R.
+  bibcode: 2022eas..conf.1112Z
   category: other
-  citation_count: 16
-  doctype: catalog
+  citation_count: 0
+  doctype: inproceedings
   identifier:
-  - 2021yCat.1352....0B
-  page: I/352
-  pub: VizieR Online Data Catalog
-  title: 'VizieR Online Data Catalog: Distances to 1.47 billion stars in Gaia EDR3
-    (Bailer-Jones+, 2021)'
+  - 2022eas..conf.1112Z
+  page: '1112'
+  pub: EAS2022, European Astronomical Society Annual Meeting
+  title: 'Gaia Data Release 3: Exploring and mapping the diffuse interstellar band
+    at 862 nm'
   url: null
   volume: null
-  year: 2021
+  year: 2022
+- abstract: The detailed 3D distributions of dust density and extinction in the Milky
+    Way have long been sought after. However, such 3D reconstruction from sparse data
+    is non-trivial, but is essential to understanding the properties of star-formation,
+    large-scale dynamics and structure of our Galaxy. In this work I will introduce
+    our new fast and scalable algorithm for 3D dust modelling. Using advanced ML methods
+    such as sparse Gaussian Processes and Variational Inference, our algorithm maps
+    Star Formation Regions (SFRs) with millions of input sources in parsec scales
+    within an hour on a single GPU. Our approach allows us to identify large-scale
+    structures in star-formation regions while simultaneously peering into individual
+    molecular clouds, providing insights into multi-scale processes such as fragmentation
+    in molecular clouds. <P />In Dharmawardena et al., 2021b and in prep., we model
+    the 3D dust density distribution of 15 SFRs, exploiting distances and extinctions
+    derived from Gaia DR2 and IR data (from Fouesneau et al., 2022). From these maps,
+    we extract 3D boundaries, volumes, precise dust masses (12% statistical uncertainty)
+    and filling factors to study fragmentation within our regions. We recover a wider
+    range of substructures such as new interconnecting and free standing filaments
+    and star-formation feedback and supernovae cavities. In particular we explore
+    how individual substructures contribute to the overall dust density PDFs of these
+    SFRs and therefore affect star-formation in 3D for the first time. Our sample
+    spans a wide range of environments and masses, which we use to explore the dependence
+    of the dust density PDF on initial conditions. Comprehensively comparing to Planck
+    data, we demonstrate for the first time that the known relationships between density
+    and dust processing, where high-extinction lines-of-sight have the most processed
+    grains, hold up in resolved observations and continue on smaller scales than previously
+    suggested (Zelko et al., 2020). <P />Finally, I will showcase our methods with
+    Gaia DR3 and EDR3 extinctions (Gaia Collaboration, in prep.) and distances (Bailer-Jones
+    et al., 2021), demonstrating these datasets' potential for 3D dust mapping in
+    unprecedented detail.
+  author:
+  - Dharmawardena, Thavisha
+  - Bailer-Jones, Coryn
+  - Fouesneau, Morgan
+  - Foreman-Mackey, Dan
+  - Andrae, Rene
+  bibcode: 2022eas..conf.1528D
+  category: other
+  citation_count: 0
+  doctype: inproceedings
+  identifier:
+  - 2022eas..conf.1528D
+  page: '1528'
+  pub: EAS2022, European Astronomical Society Annual Meeting
+  title: The 3D structure of Star Formation Regions in the era of Gaia DR3
+  url: null
+  volume: null
+  year: 2022
+- abstract: 'What''s Changed Update pint.py by @mfouesneau in https://github.com/mfouesneau/pyphot/pull/48
+    New Contributors @mfouesneau made their first contribution in https://github.com/mfouesneau/pyphot/pull/48
+    Full Changelog: https://github.com/mfouesneau/pyphot/compare/pyphot_v1.4.3...pyphot_v1.4.5'
+  author:
+  - Fouesneau, Morgan
+  bibcode: 2022zndo...7016775F
+  category: other
+  citation_count: 11
+  doctype: software
+  identifier:
+  - 2022zndo...7016775F
+  - 10.5281/zenodo.7016775
+  page: '-'
+  pub: Zenodo
+  title: pyphot
+  url: null
+  volume: null
+  year: 2022
+- abstract: This chapter of the Gaia DR3 documentation describes the Gaia DR3 data
+    model.
+  author:
+  - Hambly, N.
+  - Andrae, R.
+  - De Angeli, F.
+  - Antonio, M.
+  - Arenou, F.
+  - Audard, M.
+  - Babusiaux, C.
+  - Bailer-Jones, C.
+  - Bakker, J.
+  - Bastian, U.
+  - Bauchet, N.
+  - Bellas-Velidis, I.
+  - Blomme, R.
+  - Bombrun, A.
+  - Brouillet, N.
+  - Brugaletta, E.
+  - de Bruijne, J.
+  - Busonero, D.
+  - Busso, G.
+  - Carballo, R.
+  - Carnerero, M. I.
+  - Clementini, G.
+  - Creevey, O. L.
+  - Damerdji, Y.
+  - Delchambre, L.
+  - Distefano, E.
+  - Drimmel, R.
+  - Ducourant, C.
+  - Duran, J.
+  - Fabricius, C.
+  - Eyer, L.
+  - Faigler, S.
+  - Findeisen, K.
+  - Jevardat de Fombelle, G.
+  - Fouesneau, M.
+  - "Fr\xE9mat, Y."
+  - Galluccio, L.
+  - Garabato, D.
+  - Gavras, P.
+  - Giuffrida, G.
+  - Gomel, R.
+  - "Gonz\xE1lez, \xC1."
+  - "Gonz\xE1lez-N\xFA\xF1ez, J."
+  - "Gosset, \xC9."
+  - Gracia-Abril, G.
+  - Halbwachs, J. -L.
+  - Harrison, D. L.
+  - Heiter, U.
+  - Hernandez, J.
+  - Hestroffer, D.
+  - Hobbs, D.
+  - Hodgkin, S.
+  - Holl, B.
+  - Hutton, A.
+  - Katz, D.
+  - Klioner, S.
+  - Leccia, S.
+  - Lebreton, Y.
+  - "Lecoeur-Ta\xEFbi, I."
+  - van Leeuwen, M.
+  - Lindegren, L.
+  - Lobel, A.
+  - Luri, X.
+  - Mantelet, G.
+  - Marrese, P. M.
+  - Marinoni, S.
+  - Marshall, D. J.
+  - Masana, E.
+  - Mazeh, T.
+  - Michalik, D.
+  - Molinaro, R.
+  - Mora, A.
+  - Mowlavi, N.
+  - Nienartowicz, K.
+  - Ordenovic, C.
+  - Panahi, A.
+  - Pancino, E.
+  - Pauwels, T.
+  - Pichon, B.
+  - Portell, J.
+  - Pourbaix, D.
+  - Raiteri, C. M.
+  - Recio-Blanco, A.
+  - De Ridder, J.
+  - Riello, M.
+  - Rimoldini, L.
+  - Ripepi, V.
+  - Rixon, G.
+  - Robin, A. C.
+  - Rybizki, J.
+  - Sartoretti, P.
+  - Sarro Baro, L. M.
+  - Seabroke, G.
+  - Segovia Serrato, J. C.
+  - Siopis, C.
+  - Smart, R.
+  - Soubiran, C.
+  - Sozzetti, A.
+  - Spoto, F.
+  - Tanga, P.
+  - Teyssier, D.
+  - Utrilla, E.
+  - Masip Vela, A.
+  - "Wyrzykowski, \u0141."
+  - Zucker, S.
+  bibcode: 2022gdr3.reptE..20H
+  category: other
+  citation_count: 0
+  doctype: techreport
+  identifier:
+  - 2022gdr3.reptE..20H
+  page: '20'
+  pub: Gaia DR3 documentation
+  title: 'Gaia DR3 documentation Chapter 20: Datamodel description'
+  url: null
+  volume: null
+  year: 2022
+- abstract: This chapter of the Gaia DR3 documentation describes the processing of
+    the source characterisation in Gaia DR3, based on mean BP/RP and RVS spectra,
+    astrometry, and photometry. Characterisation implies stellar and extragalactic
+    class probabilities, object-type labels, and parametrisations with associated
+    uncertainties (1D data products). Gaia DR3 also includes multi-dimensional data
+    products such as a 2D extinction map and a self-organising map of outliers.
+  author:
+  - Ulla, A.
+  - Creevey, O. L.
+  - "\xC1lvarez, M. A."
+  - Andrae, R.
+  - Bailer-Jones, C. A. L.
+  - Bellas-Velidis, I.
+  - Brugaletta, E.
+  - Carballo, R.
+  - Dafonte, C.
+  - Delchambre, L.
+  - Dharmawardena, T.
+  - Drimmel, R.
+  - Fouesneau, M.
+  - "Fr\xE9mat, Y."
+  - Garabato, D.
+  - Hatzidimitriou, D.
+  - Heiter, U.
+  - Kordopatis, G.
+  - Korn, A. J.
+  - Lanzafame, A.
+  - Lobel, A.
+  - Manteiga, M.
+  - Marshall, D. J.
+  - Pailler, F.
+  - Pallas-Quintela, L.
+  - Recio-Blanco, A.
+  - Rybizki, J.
+  - Sarro Baro, L. M.
+  - Schultheis, M.
+  - Sordo, R.
+  - Soubiran, C.
+  - "Th\xE9venin, F."
+  - Vallenari, A.
+  bibcode: 2022gdr3.reptE..11U
+  category: other
+  citation_count: 0
+  doctype: techreport
+  identifier:
+  - 2022gdr3.reptE..11U
+  page: '11'
+  pub: Gaia DR3 documentation
+  title: 'Gaia DR3 documentation Chapter 11: Astrophysical parameters'
+  url: null
+  volume: null
+  year: 2022
+- abstract: The data collected during the first 34 months of the Gaia mission have
+    been processed by the Gaia Data Processing and Analysis Consortium (DPAC), resulting
+    in Gaia's third data release, Gaia DR3. Gaia DR3 contains the astrometry and broad-band
+    photometry already published as part of Gaia EDR3 and introduces a large variety
+    of new data products. A summary of the release properties is provided in Gaia
+    Collaboration et al. (2022). The overall scientific validation of the data is
+    described in Babusiaux et al. (2022) and Fabricius et al. (2021) (astrometry and
+    broad-band photometry). Background information on the Gaia mission and the spacecraft
+    can be found in Gaia Collaboration et al. (2016). In addition, Gaia DR3 is accompanied
+    by dedicated processing papers, all part of a Special Issue of A&amp;A, that describe
+    the processing and validation of the various data products. The data release documentation
+    provides complementary information to the processing papers. Finally, nine performance
+    verification papers accompanying Gaia DR3 co-authored by the Gaia Collaboration
+    provide an impression on the immense scientific potential of this release.
+  author:
+  - van Leeuwen, F.
+  - de Bruijne, J.
+  - Babusiaux, C.
+  - Busso, G.
+  - "Casta\xF1eda, J."
+  - Ducourant, C.
+  - Fabricius, C.
+  - Hambly, N.
+  - Hobbs, D.
+  - Luri, X.
+  - Marrese, P. M.
+  - Mora, A.
+  - Muinonen, K.
+  - Pourbaix, D.
+  - Rimoldini, L.
+  - Roegiers, T.
+  - Sartoretti, P.
+  - Teyssier, D.
+  - Ulla, A.
+  - Utrilla, E.
+  - Vallenari, A.
+  - van Leeuwen, M.
+  - Altavilla, G.
+  - Altmann, M.
+  - "\xC1lvarez, M. A."
+  - Andrae, R.
+  - Antoja, T.
+  - Antonio, M.
+  - Arenou, F.
+  - Audard, M.
+  - Bailer-Jones, C. A. L.
+  - Bakker, J.
+  - Balbinot, E.
+  - Barache, C.
+  - Barblan, F.
+  - Bastian, U.
+  - Bauchet, N.
+  - Bellas-Velidis, I.
+  - Bellazzini, M.
+  - Berthier, J.
+  - Biermann, M.
+  - Blomme, R.
+  - Bombrun, A.
+  - Bossini, D.
+  - Brouillet, N.
+  - Brown, A.
+  - Brugaletta, E.
+  - Busonero, D.
+  - Butkevich, A.
+  - Cacciari, C.
+  - "C\xE1novas, H."
+  - Cantat-Gaudin, T.
+  - Carballo, R.
+  - Carnerero, M. I.
+  - Carrasco, J. M.
+  - Cellino, A.
+  - Cheek, N.
+  - Clementini, G.
+  - Clotet, M.
+  - Creevey, O. L.
+  - Crowley, C.
+  - Dafonte, C.
+  - Damerdji, Y.
+  - David, M.
+  - David, P.
+  - Davidson, M.
+  - De Angeli, F.
+  - De Ridder, J.
+  - De Teodoro, P.
+  - "Delb\xF3, M."
+  - Delchambre, L.
+  - Delisle, J. -B.
+  - Dell-Oro, A.
+  - Dharmawardena, T.
+  - "Diakit\xE9, S."
+  - Distefano, E.
+  - Drimmel, R.
+  - Duran, J.
+  - Evans, D. W.
+  - Eyer, L.
+  - Fabrizio, M.
+  - Faigler, S.
+  - "Fern\xE1ndez-Hern\xE1ndez, J."
+  - Figueras, F.
+  - Findeisen, K.
+  - Fouesneau, M.
+  - "Fr\xE9mat, Y."
+  - Galluccio, L.
+  - Garabato, D.
+  - Garcia-Gutierrez, A.
+  - Garofalo, A.
+  - Gavras, P.
+  - Giacobbe, P.
+  - Giuffrida, G.
+  - Gomel, R.
+  - "Gonz\xE1lez, \xC1."
+  - "Gonz\xE1lez-N\xFA\xF1ez, J."
+  - "Gosset, \xC9."
+  - Gracia-Abril, G.
+  - Guerra, R.
+  - Halbwachs, J. -L.
+  - Harrison, D. L.
+  - Hatzidimitriou, D.
+  - Heiter, U.
+  - Helmi, A.
+  - Henar Sarmiento, M.
+  - Hernandez, J.
+  - Hestroffer, D.
+  - Hodgkin, S.
+  - Holl, B.
+  - Hutton, A.
+  - Jevardat de Fombelle, G.
+  - Jordi, C.
+  - Jorissen, A.
+  - Katz, D.
+  - Khanna, S.
+  - Klioner, S.
+  - Kordopatis, G.
+  - Korn, A. J.
+  - Krone-Martins, A.
+  - "Kruszy\u0144ska, K."
+  - Lammers, U.
+  - Lanzafame, A.
+  - Lattanzi, M. G.
+  - Le Campion, J. -F.
+  - Lebreton, Y.
+  - Lebzelter, T.
+  - Leccia, S.
+  - Leclerc, N.
+  - "Lecoeur-Ta\xEFbi, I."
+  - Licata, E.
+  - Lindegren, L.
+  - Lobel, A.
+  - "L\xF6ffler, W."
+  - Manteiga, M.
+  - Mantelet, G.
+  - Marinoni, S.
+  - Marshall, D. J.
+  - "Mart\xEDn-Fleitas, J."
+  - Masana, E.
+  - Masip Vela, A.
+  - Mazeh, T.
+  - Messineo, R.
+  - Michalik, D.
+  - Mignard, F.
+  - Molinaro, R.
+  - "Mongui\xF3, M."
+  - Montegriffo, P.
+  - Morel, T.
+  - Mowlavi, N.
+  - Muraveva, T.
+  - Nicolas, C.
+  - Nienartowicz, K.
+  - Ordenovic, C.
+  - Osinde, J.
+  - Pailler, F.
+  - Pallas-Quintela, L.
+  - Panahi, A.
+  - Pancino, E.
+  - Panem, C.
+  - Pauwels, T.
+  - Pichon, B.
+  - Portell, J.
+  - Rainer, M.
+  - Raiteri, C. M.
+  - Ramos, P.
+  - Recio-Blanco, A.
+  - "Reyl\xE9, C."
+  - Riello, M.
+  - "R\xEDos Diaz, C."
+  - Ripepi, V.
+  - Riva, A.
+  - Rixon, G.
+  - Robin, A. C.
+  - "Romero-G\xF3mez, M."
+  - Rowell, N.
+  - Rybicki, K. A.
+  - Rybizki, J.
+  - Sadowski, G.
+  - "S\xE1ez-N\xFA\xF1ez, A."
+  - Sahlmann, J.
+  - Sanna, N.
+  - Sarro Baro, L. M.
+  - Schultheis, M.
+  - Seabroke, G.
+  - Segovia Serrato, J. C.
+  - Segransan, D.
+  - Siddiqui, H.
+  - Siopis, C.
+  - Smart, R.
+  - Sordo, R.
+  - Soubiran, C.
+  - Sozzetti, A.
+  - Spina, L.
+  - Spoto, F.
+  - Stephenson, C.
+  - Tanga. P.
+  - Teixeira, R.
+  - "Th\xE9venin, F."
+  - Torra, F.
+  - Trabucchi, M.
+  - Turon, C.
+  - Weiler, M.
+  - "Wyrzykowski, \u0141."
+  - Zucker, S.
+  bibcode: 2022gdr3.reptE....V
+  category: other
+  citation_count: 0
+  doctype: techreport
+  identifier:
+  - 2022gdr3.reptE....V
+  page: '1'
+  pub: Gaia DR3 documentation
+  title: Gaia DR3 documentation
+  url: null
+  volume: null
+  year: 2022
 - abstract: We employ Pan-STARRS photometry, Gaia trigonometric parallaxes, modern
     stellar evolution and atmosphere models, and our Bayesian fitting approach to
     determine cooling and total ages for 159,238 white dwarfs. In many cases we are
@@ -16847,117 +29965,17 @@ other:
   bibcode: 2020IAUS..357..188V
   category: other
   citation_count: 0
-  doctype: article
+  doctype: inproceedings
   identifier:
   - 10.1017/S1743921320000472
   - 2020IAUS..357..188V
   page: '188'
-  pub: IAU Symposium
+  pub: 'White Dwarfs as Probes of Fundamental Physics: Tracers of Planetary, Stellar
+    and Galactic Evolution'
   title: A catalog of 159,238 white dwarf ages
   url: null
   volume: '357'
   year: 2020
-- abstract: "Observational tests of stellar and Galactic chemical evolution call for\
-    \ the joint knowledge of a star's physical parameters, detailed element abundances,\
-    \ and precise age. For cool main-sequence (MS) stars the abundances of many elements\
-    \ can be measured from spectroscopy, but ages are very hard to determine. The\
-    \ situation is different if the MS star has a white dwarf (WD) companion and a\
-    \ known distance, as the age of such a binary system can then be determined precisely\
-    \ from the photometric properties of the cooling WD. As a pilot study for obtaining\
-    \ precise age determinations of field MS stars, we identify nearly 100 candidates\
-    \ for such wide binary systems: a faint WD whose Gaia-PS1-SDSS (GPS1) proper motion\
-    \ (Tian+ 2017, I/343) matches that of a brighter MS star in Gaia/TGAS (Gaia Collaboration\
-    \ 2016, I/337) with a good parallax (\u03C3<SUB>{rho}</SUB>/{rho}=&lt;0.05). We\
-    \ model the WD's multi-band photometry with the BASE-9 code using this precise\
-    \ distance (assumed to be common for the pair) and infer ages for each binary\
-    \ system. The resulting age estimates are precise to =&lt;10% (=&lt;20%) for 42\
-    \ (67) MS-WD systems. Our analysis more than doubles the number of MS-WD systems\
-    \ with precise distances known to date, and it boosts the number of such systems\
-    \ with precise age determination by an order of magnitude. With the advent of\
-    \ the Gaia DR2 (Gaia Collaboration, 2018, I/345) data, this approach will be applicable\
-    \ to a far larger sample, providing ages for many MS stars (that can yield detailed\
-    \ abundances for over 20 elements), especially in the age range of 2-8Gyr, where\
-    \ there are only few known star clusters. <P />(1 data file)."
-  author:
-  - Fouesneau, M.
-  - Rix, H. -W.
-  - von Hippel, T.
-  - Hogg, D. W.
-  - Tian, H.
-  bibcode: 2020yCat..18700009F
-  category: other
-  citation_count: 0
-  doctype: catalog
-  identifier:
-  - 2020yCat..18700009F
-  page: J/ApJ/870/9
-  pub: VizieR Online Data Catalog
-  title: 'VizieR Online Data Catalog: Ages &amp; masses for GPS1 WD-MS binary systems
-    (Fouesneau+, 2019)'
-  url: null
-  volume: null
-  year: 2020
-- abstract: In conjunction with the photometric component of Pristine, a spectroscopic
-    follow-up programme has been observing the most promising, bright (V&lt;18) metal-poor
-    candidates on 2-4m class telescopes with medium- and high-resolution spectrographs.
-    In this paper, we focus on the homogeneous follow-up sample of 205 candidate stars
-    observed with the Intermediate Dispersion Spectrograph (IDS) on the 2.5m Isaac
-    Newton Telescope (INT) over the period of 2016 March 18-27, May 15-23, July 20-24
-    and September 2-6, and with the Intermediate dispersion Spectrograph and Imaging
-    System (ISIS) on the 4.2m William Herschel Telescope (WHT) over the period of
-    2016 May 1-2 and July 29-31 (Programs C71 and N5). Both telescopes are located
-    at the Roque de Los Muchachos Observatory in La Palma, Canary Islands. <P />(2
-    data files).
-  author:
-  - Youakim, K.
-  - Starkenburg, E.
-  - Aguado, D. S.
-  - Martin, N. F.
-  - Fouesneau, M.
-  - Gonzalez Hernandez, J. I.
-  - Allende Prieto, C.
-  - Bonifacio, P.
-  - Gentile, M.
-  - Kielty, C.
-  - Cote, P.
-  - Jablonka, P.
-  - McConnachie, A.
-  - Sanchez Janssen, R.
-  - Tolstoy, E.
-  - Venn, K.
-  bibcode: 2020yCat..74722963Y
-  category: other
-  citation_count: 0
-  doctype: catalog
-  identifier:
-  - 2020yCat..74722963Y
-  page: J/MNRAS/472/2963
-  pub: VizieR Online Data Catalog
-  title: 'VizieR Online Data Catalog: Metallicities of Pristine stars (Youakim+, 2017)'
-  url: null
-  volume: null
-  year: 2020
-- abstract: The classes are defined by the supervised training sets used in the classifier.
-    Galaxies and quasars are identified for the training set by a cross-match to objects
-    with spectroscopic classifications from the Sloan Digital Sky Survey. Stars are
-    defined directly from Gaia-DR2. <P />(1 data file).
-  author:
-  - Bailer-Jones, C. A. L.
-  - Fouesneau, M.
-  - Andrae, R.
-  bibcode: 2019yCat.7285....0B
-  category: other
-  citation_count: 0
-  doctype: catalog
-  identifier:
-  - 2019yCat.7285....0B
-  page: VII/285
-  pub: VizieR Online Data Catalog
-  title: 'VizieR Online Data Catalog: Gaia DR2 quasar and galaxy classification (Bailer-Jones+,
-    2019)'
-  url: null
-  volume: null
-  year: 2019
 - abstract: ChempyMulti is an update to Chempy (ascl:1702.011) and provides yield
     table scoring and multi-star Bayesian inference. This replaces the ChempyScoring
     package in Chempy. Chempy is a flexible one-zone open-box chemical evolution model,
@@ -16966,7 +29984,7 @@ other:
     yield table scoring.
   author:
   - Rybizki, Jan
-  - Philcox, Oliver
+  - Philcox, Oliver H. E.
   - Rix, Hans-Walter
   - Just, Andreas
   - Fouesneau, Morgan
@@ -17086,62 +30104,6 @@ other:
   url: null
   volume: null
   year: 2019
-- abstract: 'The tables give the perihelion (closest approach) parameters of stars
-    in the Gaia-DR2 catalogue which are found by numerical integration through a Galactic
-    potential to approach within 10pc of the Sun. These parameters are the time (relative
-    to the Gaia measurement epoch), heliocentric distance, and heliocentric speed
-    of the star at perihelion. Uncertainties in these have been calculated by a Monte
-    Carlo sampling of the data to give the posterior probability density function
-    (PDF) over the parameters. For each parameter, three summary values of this PDF
-    are reported: the median, the 5% lower bound, the 95% upper bound. The latter
-    two give a 90% confidence interval. The table also reports the measured parallax,
-    proper motion, radial velocity (plus uncertainties), and mass of the stars. A
-    second table reports additional data, in particular astrometric quality metrics,
-    from the Gaia-DR2 catalogue. Tables 2 and 3 in the article list the first 31 lines
-    of these data tables (stars with median perihelion distances below 1pc). Stars
-    with problematic data have not been removed, so some encounters are not reliable.
-    <P />(2 data files).'
-  author:
-  - Bailer-Jones, C. A. L.
-  - Rybizki, J.
-  - Andrae, R.
-  - Fouesneau, M.
-  bibcode: 2018yCat..36160037B
-  category: other
-  citation_count: 0
-  doctype: catalog
-  identifier:
-  - 2018yCat..36160037B
-  page: J/A+A/616/A37
-  pub: VizieR Online Data Catalog
-  title: 'VizieR Online Data Catalog: Close encounters to the Sun in Gaia DR2 (Bailer-Jones+,
-    2018)'
-  url: null
-  volume: null
-  year: 2018
-- abstract: The catalog can be queried using ADQL at http://gaia.ari.uni-heidelberg.de/tap.html
-    (which also hosts the Gaia catalog) and downloaded from http://www.mpia.de/~calj/gdr2_distances.html.
-    Each file contains 200000 sources (except the last one) with a single header line.
-    Total size of all files is 114GB. <P />(1 data file).
-  author:
-  - Bailer-Jones, C. A. L.
-  - Rybizki, J.
-  - Fouesneau, M.
-  - Mantelet, G.
-  - Andrae, R.
-  bibcode: 2018yCat.1347....0B
-  category: other
-  citation_count: 6
-  doctype: catalog
-  identifier:
-  - 2018yCat.1347....0B
-  page: I/347
-  pub: VizieR Online Data Catalog
-  title: 'VizieR Online Data Catalog: Distances to 1.33 billion stars in Gaia DR2
-    (Bailer-Jones+, 2018)'
-  url: null
-  volume: null
-  year: 2018
 - abstract: We present a model to map the 3D distribution of dust in the Milky Way.
     Although dust is just a tiny fraction of what comprises the Galaxy, it plays an
     important role in various processes. In recent years various maps of dust extinction
@@ -17378,108 +30340,6 @@ other:
   url: null
   volume: null
   year: 2018
-- abstract: "First, we select SNRs from catalogs which overlap with HST fields in\
-    \ M31 and M33. We limited our search to fields observed with the ACS and WFPC-2\
-    \ instruments, as the optical CMDs tend to be deeper and offer the best SFH constraints.\
-    \ For M31, we combine three SNR catalogs to select targets from: Braun &amp; Walterbos\
-    \ (1993A&amp;AS...98..327B); Magnier et al. (1995, J/A+AS/114/215); Williams et\
-    \ al. (1995BAAS...27..883W). All three catalogs make use of [S II]-to-H\u03B1\
-    \ ratios to identify SNR. Our M33 SNR catalog comes from Long et al. (2010, J/ApJS/187/495),\
-    \ who selected SNRs using both [S II]-to-H\u03B1 ratios and X-ray observations.\
-    \ Long et al. (2010, J/ApJS/187/495) incorporated all previous SNR catalogs from\
-    \ the literature in their analysis. As mentioned in Section 1, all new M31 data\
-    \ analyzed in this work come from newly available PHAT data sets and therefore\
-    \ have uniform filters and exposure times, while the M33 data comes from various\
-    \ archival data sets coincident with SNR. <P />(1 data file)."
-  author:
-  - Jennings, Z. G.
-  - Williams, B. F.
-  - Murphy, J. W.
-  - Dalcanton, J. J.
-  - Gilbert, K. M.
-  - Dolphin, A. E.
-  - Weisz, D. R.
-  - Fouesneau, M.
-  bibcode: 2017yCat..17950170J
-  category: other
-  citation_count: 0
-  doctype: catalog
-  identifier:
-  - 2017yCat..17950170J
-  page: J/ApJ/795/170
-  pub: VizieR Online Data Catalog
-  title: 'VizieR Online Data Catalog: Sample SNRs for M31 and M33 (Jennings+, 2014)'
-  url: null
-  volume: null
-  year: 2017
-- abstract: The Panchromatic Hubble Andromeda Treasury (PHAT) is a Hubble Space Telescope
-    (HST) multi-cycle imaging survey covering roughly one-third of M31's star-forming
-    disk out to 20 kpc (Dalcanton et al. 2012ApJS..200...18D). Observations were made
-    with the HST using the Advanced Camera for Surveys (ACS) and Wide Field Camera
-    3 (WFC3), with six filters spanning the UV (WFC3/UVIS F275W and F336W), the optical
-    (ACS/WFC F475W and F814W), and the NIR (WFC3/IR F110W and F160W). <P />(3 data
-    files).
-  author:
-  - Veyette, M. J.
-  - Williams, B. F.
-  - Dalcanton, J. J.
-  - Balick, B.
-  - Caldwell, N.
-  - Fouesneau, M.
-  - Girardi, L.
-  - Gordon, K. D.
-  - Kalirai, J.
-  - Rosenfield, P.
-  - Seth, A. C.
-  bibcode: 2017yCat..17920121V
-  category: other
-  citation_count: 0
-  doctype: catalog
-  identifier:
-  - 2017yCat..17920121V
-  page: J/ApJ/792/121
-  pub: VizieR Online Data Catalog
-  title: 'VizieR Online Data Catalog: Photometric survey of planetary nebulae in M31
-    (Veyette+, 2014)'
-  url: null
-  volume: null
-  year: 2017
-- abstract: 'For this paper, we use the list of 601 high-probability cluster candidates
-    from the Johnson et al. (2012, J/ApJ/752/95) Year 1 catalog, which contains integrated
-    photometry through six broadband filters from the UV to the near-infrared: F275W
-    (UV), F336W (U), F475W (g), F814W (I), F110W (J), F160W (H). Clusters were detected
-    by eye, primarily based on the F475W images, and visually classified based on
-    their sizes, shapes, and concentrations as explained in Johnson et al. (2012,
-    J/ApJ/752/95). <P />(1 data file).'
-  author:
-  - Fouesneau, M.
-  - Johnson, L. C.
-  - Weisz, D. R.
-  - Dalcanton, J. J.
-  - Bell, E. F.
-  - Bianchi, L.
-  - Caldwell, N.
-  - Gouliermis, D. A.
-  - Guhathakurta, P.
-  - Kalirai, J.
-  - Larsen, S. S.
-  - Rix, H. -W.
-  - Seth, A. C.
-  - Skillman, E. D.
-  - Williams, B. F.
-  bibcode: 2017yCat..17860117F
-  category: other
-  citation_count: 0
-  doctype: catalog
-  identifier:
-  - 2017yCat..17860117F
-  page: J/ApJ/786/117
-  pub: VizieR Online Data Catalog
-  title: 'VizieR Online Data Catalog: M31 PHAT star clusters ages and masses (Fouesneau+,
-    2014)'
-  url: null
-  volume: null
-  year: 2017
 - abstract: 'Chempy models Galactic chemical evolution (GCE); it is a parametrized
     open one-zone model within a Bayesian framework. A Chempy model is specified by
     a set of 5-10 parameters that describe the effective galaxy evolution along with
@@ -17510,66 +30370,6 @@ other:
   url: null
   volume: null
   year: 2017
-- abstract: "To constrain the period-luminosity-metallicity (PLZ) relations for RR\
-    \ Lyrae stars in WISE W1 and W2 bands, we use TGAS trigonometric parallaxes (bar\u03C9\
-    ), spectroscopic metallicities ([Fe/H]; Fernley+ 1998, J/A+A/330/515), log-periods\
-    \ (logP, base 10), and apparent magnitudes (m; Klein+ 2014, J/MNRAS/440/L96) for\
-    \ 102 RRab stars within ~2.5kpc from the Sun. The E(B-V) reddening at a star's\
-    \ position is obtained from the Schlegel+ (1998ApJ...500..525S) dust map. <P />(1\
-    \ data file)."
-  author:
-  - Sesar, B.
-  - Fouesneau, M.
-  - Price-Whelan, A. M.
-  - Bailer-Jones, C. A. L.
-  - Gould, A.
-  - Rix, H. -W.
-  bibcode: 2017yCat..18380107S
-  category: other
-  citation_count: 0
-  doctype: catalog
-  identifier:
-  - 2017yCat..18380107S
-  page: J/ApJ/838/107
-  pub: VizieR Online Data Catalog
-  title: 'VizieR Online Data Catalog: Distances to RRab stars from WISE and Gaia (Sesar+,
-    2017)'
-  url: null
-  volume: null
-  year: 2017
-- abstract: The APOKASC project is the spectroscopic follow-up by APOGEE (Majewski
-    et al. 2015, in prep., as part of the third phase of the Sloan Digital Sky Survey,
-    SDSS-III; Eisenstein et al., 2011AJ....142...72E) of stars with asteroseismology
-    data from the Kepler Asteroseismic Science Consortium (KASC). The first version
-    of the APOKASC catalogue (Pinsonneault et al., 2014, Cat. J/ApJS/215/19) contains
-    seismic and spectroscopic measurements for 1989 giants, with the spectroscopic
-    information corresponding to APOGEE's Data Release 10 (DR10; Ahn et al., 2014ApJS..211...17A).
-    In this work, we keep the same original sample of 1989 stars and their seismic
-    parameters, but update their Teff and abundances to DR12 values (Alam et al.,
-    2015ApJS..219...12A; Holtzman et al., 2015AJ....150..148H). <P />(2 data files).
-  author:
-  - Martig, M.
-  - Fouesneau, M.
-  - Rix, H. -W.
-  - Ness, M.
-  - Meszaros, S.
-  - Garcia-Hernandez, D. A.
-  - Pinsonneault, M.
-  - Serenelli, A.
-  - Silva Aguirre, V.
-  - Zamora, O.
-  bibcode: 2016yCat..74563655M
-  category: other
-  citation_count: 0
-  doctype: catalog
-  identifier:
-  - 2016yCat..74563655M
-  page: J/MNRAS/456/3655
-  pub: VizieR Online Data Catalog
-  title: 'VizieR Online Data Catalog: Masses and ages of red giants (Martig+, 2016)'
-  url: null
-  volume: null
-  year: 2016
 - abstract: null
   author:
   - Martig, Marie
@@ -17608,97 +30408,10 @@ other:
   - 10.5281/zenodo.221367
   page: '-'
   pub: Zenodo
-  title: Annayqho/Thecannon
+  title: annayqho/TheCannon
   url: null
   volume: null
   year: 2016
-- abstract: "The Panchromatic Hubble Andromeda Treasury (PHAT) survey imaged 1/3 of\
-    \ the disk of M31 in six passbands spanning near-ultraviolet to near-infrared\
-    \ wavelengths. The survey provides resolved stellar photometry of 117 million\
-    \ sources that we use to determine the properties of both the cluster and field\
-    \ populations, with completeness limits that allow the detection of individual\
-    \ MS stars down to ~3M<SUB>\u022F</SUB>. Here we provide an overview of the crowded\
-    \ field stellar photometry derived for PHAT; full details are found in Dalcanton+\
-    \ (2012ApJS..200...18D) and Williams+ (2014, J/ApJS/215/9). <P />(1 data file)."
-  author:
-  - Johnson, L. C.
-  - Seth, A. C.
-  - Dalcanton, J. J.
-  - Beerman, L. C.
-  - Fouesneau, M.
-  - Lewis, A. R.
-  - Weisz, D. R.
-  - Williams, B. F.
-  - Bell, E. F.
-  - Dolphin, A. E.
-  - Larsen, S. S.
-  - Sandstrom, K.
-  - Skillman, E. D.
-  bibcode: 2016yCat..18270033J
-  category: other
-  citation_count: 0
-  doctype: catalog
-  identifier:
-  - 2016yCat..18270033J
-  page: J/ApJ/827/33
-  pub: VizieR Online Data Catalog
-  title: 'VizieR Online Data Catalog: PHAT. XVI. Star cluster masses and ages (Johnson+,
-    2016)'
-  url: null
-  volume: null
-  year: 2016
-- abstract: "We present a probabilistic approach for inferring the parameters of the\
-    \ present-day power-law stellar mass function (MF) of a resolved young star cluster.\
-    \ This technique (1) fully exploits the information content of a given data set;\
-    \ (2) can account for observational uncertainties in a straightforward way; (3)\
-    \ assigns meaningful uncertainties to the inferred parameters; (4) avoids the\
-    \ pitfalls associated with binning data; and (5) can be applied to virtually any\
-    \ resolved young cluster, laying the groundwork for a systematic study of the\
-    \ high-mass stellar MF (M&gt;~1M<SUB>\u022F</SUB>). Using simulated clusters and\
-    \ Markov Chain Monte Carlo sampling of the probability distribution functions,\
-    \ we show that estimates of the MF slope, \u03B1, are unbiased and that the uncertainty,\
-    \ \u0394\u03B1, depends primarily on the number of observed stars and on the range\
-    \ of stellar masses they span, assuming that the uncertainties on individual masses\
-    \ and the completeness are both well characterized. Using idealized mock data,\
-    \ we compute the theoretical precision, i.e., lower limits, on \u03B1, and provide\
-    \ an analytic approximation for \u0394\u03B1 as a function of the observed number\
-    \ of stars and mass range. Comparison with literature studies shows that ~3/4\
-    \ of quoted uncertainties are smaller than the theoretical lower limit. By correcting\
-    \ these uncertainties to the theoretical lower limits, we find that the literature\
-    \ studies yield &lt;\u03B1&gt;=2.46, with a 1\u03C3 dispersion of 0.35dex. The\
-    \ precision on MF slope recovery in this paper are lower limits, as we do not\
-    \ explicitly consider all possible sources of uncertainty, including dynamical\
-    \ effects (e.g., mass segregation), unresolved binaries, and non-coeval populations.\
-    \ <P />(1 data file)."
-  author:
-  - Weisz, D. R.
-  - Fouesneau, M.
-  - Hogg, D. W.
-  - Rix, H. -W.
-  - Dolphin, A. E.
-  - Dalcanton, J. J.
-  - Foreman-Mackey, D. T.
-  - Lang, D.
-  - Johnson, L. C.
-  - Beerman, L. C.
-  - Bell, E. F.
-  - Gordon, K. D.
-  - Gouliermis, D.
-  - Kalirai, J. S.
-  - Skillman, E. D.
-  - Williams, B. F.
-  bibcode: 2015yCat..17620123W
-  category: other
-  citation_count: 0
-  doctype: catalog
-  identifier:
-  - 2015yCat..17620123W
-  page: J/ApJ/762/123
-  pub: VizieR Online Data Catalog
-  title: 'VizieR Online Data Catalog: PHAT. IV. Initial Mass Function (Weisz+, 2013)'
-  url: null
-  volume: null
-  year: 2015
 - abstract: "Currently two contrasting models have been put forward to explain cluster\
     \ disruption. These models are known as Mass Independent Disruption (MID) and\
     \ Mass Dependent Disruption (MDD) models. Here we will shortly introduce the two\
@@ -17850,6 +30563,7 @@ other:
   doctype: inproceedings
   identifier:
   - arXiv:0903.4557
+  - 10.48550/arXiv.0903.4557
   - 2009arXiv0903.4557L
   - 2010ASPC..425...55L
   page: '55'
@@ -17880,8 +30594,9 @@ other:
   citation_count: 4
   doctype: inproceedings
   identifier:
-  - 2009arXiv0908.2742F
+  - 10.48550/arXiv.0908.2742
   - arXiv:0908.2742
+  - 2009arXiv0908.2742F
   - 2010ASPC..423..171F
   page: '171'
   pub: 'Galaxy Wars: Stellar Populations and Star Formation in Interacting Galaxies'
@@ -17922,20 +30637,522 @@ other:
 summary:
   articles:
     description: refereed publications
-    number: 66
+    number: 99
   collaboration:
     description: publications from large collaborations
-    number: 29
+    number: 50
   hindex:
     description: h-index
-    number: 40
+    number: 59
   ncite:
     description: number of citations (non-collaboration papers)
-    number: 4188
+    number: 8515
   other:
     description: other publications
-    number: 34
+    number: 32
 unknown:
+- abstract: We have taken advantage of the recently released Gaia DR3 (Cat. I/355)
+    spectrophotometric BP/RP information to build a catalogue of synthetic CaHKsyn
+    magnitudes mimicking the narrowband photometry of the Pristine survey that, centered
+    on the calcium H &amp; K lines, is sensitive to the metallicity of a star. We
+    seize this opportunity to reprocess the full ~11500 images of the Pristine survey
+    gathered since 2015 and present the current state of the survey that now covers
+    more than 6500 deg<SUP>2</SUP>. In particular, we use the Gaia-based synthetic
+    observations to refine the calibration of the Pristine photometry with a neural-net
+    based algorithm, PhotCalib. <P />(3 data files).
+  author:
+  - Martin, N. F.
+  - Starkenburg, E.
+  - Yuan, Z.
+  - Fouesneau, M.
+  - Ardern-Arentsen, A.
+  - de Angeli, F.
+  - Gran, F.
+  - Montelius, M.
+  - Rusterucci, S.
+  - Andrae, R.
+  - Bellazzini, M.
+  - Montegriffo, P.
+  - Esselink, A. F.
+  - Zhang, H.
+  - Venn, K. A.
+  - Viswanathan, A.
+  - Aguado, D. S.
+  - Battaglia, G.
+  - Bayer, M.
+  - Bonifacio, P.
+  - Caffau, E.
+  - Cote, P.
+  - Carlberg, R.
+  - Fabbro, S.
+  - Fernandez-Alvar, E.
+  - Gonzalez Hernandez, J. I.
+  - Gonzalez Rivera de La Vernhe, I.
+  - Hill, V.
+  - Ibata, R. A.
+  - Jablonka, P.
+  - Kordopatis, G.
+  - Lardo, C.
+  - McConnachie, A. W.
+  - Navarrete, C.
+  - Navarro, J.
+  - Recio-Blanco, A.
+  - Sanchez Janssen, R.
+  - Sestito, F.
+  - Thomas, G. F.
+  - Vitali, S.
+  - Youakim, K.
+  bibcode: 2024yCat..36920115M
+  category: unknown
+  citation_count: 0
+  doctype: dataset
+  identifier:
+  - 2024yCat..36920115M
+  page: J/A+A/692/A115
+  pub: VizieR Online Data Catalog
+  title: 'VizieR Online Data Catalog: Pristine survey DR1 (Martin+, 2024)'
+  url: null
+  volume: '369'
+  year: 2024
+- abstract: Cluster assignments using BANYAN SIGMA and the HMAC unsupervised classification
+    algorithm for the Gaia catalogue of ultracool dwarfs. <P />(1 data file).
+  author:
+  - Sarro, L. M.
+  - Berihuete, A.
+  - Smart, R. L.
+  - Reyle, C.
+  - Barrado, D.
+  - Garcia-Torres, M.
+  - Cooper, W. J.
+  - Jones, H. R. A.
+  - Marocco, F.
+  - Creevey, O. L.
+  - Sordo, R.
+  - Bailer-Jones, C. A. L.
+  - Montegriffo, P.
+  - Carballo, R.
+  - Andrae, R.
+  - Fouesneau, M.
+  - Lanzafame, A. C.
+  - Pailler, F.
+  - Thevenin, F.
+  - Lobel, A.
+  - Delchambre, L.
+  - Korn, A. J.
+  - Recio-Blanco, A.
+  - Schultheis, M. S.
+  - de Angeli, F.
+  - Brouillet, N.
+  - Casamiquela, L.
+  - Contursi, G.
+  - de Laverny, P.
+  - Garcia-Lario, P.
+  - Kordopatis, G.
+  - Lebreton, Y.
+  - Livanou, E.
+  - Lorca, A.
+  - Palicio, P. A.
+  - Slezak-Oreshina, I.
+  - Soubiran, C.
+  - Ulla, A.
+  - Zhao, H.
+  bibcode: 2023yCat..36690139S
+  category: unknown
+  citation_count: 0
+  doctype: dataset
+  identifier:
+  - 10.26093/cds/vizier.36690139
+  - 2023yCat..36690139S
+  page: J/A+A/669/A139
+  pub: VizieR Online Data Catalog
+  title: 'VizieR Online Data Catalog: Ultracool dwarfs in Gaia DR3 (Sarro+, 2023)'
+  url: null
+  volume: '366'
+  year: 2023
+- abstract: 'In this catalogue we present the 3D dust density and extinction for the
+    star formation regions: Orion, Cygnus X, Perseus and Taurus. The data cubes are
+    in torch tensor format and can be accessed using scripts provided in https://github.com/Thavisha/Dustribution.
+    The data is also interactively available on www.mwdust.com. <P />(4 data files).'
+  author:
+  - Dharmawardena, T. E.
+  - Bailer-Jones, C. A. L.
+  - Fouesneau, M.
+  - Foreman-Mackey, D.
+  bibcode: 2022yCat..36580166D
+  category: unknown
+  citation_count: 0
+  doctype: dataset
+  identifier:
+  - 2022yCat..36580166D
+  page: J/A+A/658/A166
+  pub: VizieR Online Data Catalog
+  title: 'VizieR Online Data Catalog: 4 star-forming regions 3D dust density (Dharmawardena+,
+    2022)'
+  url: null
+  volume: '365'
+  year: 2022
+- abstract: In this paper, we map the segments of the nearest spiral arms in the Milky
+    Way using young stellar populations. This catalog contains 1872 Open Clusters,
+    of which 1851 have Gaia EDR3 astrometry. <P />(1 data file).
+  author:
+  - Poggio, E.
+  - Drimmel, R.
+  - Cantat-Gaudin, T.
+  - Ramos, P.
+  - Ripepi, V.
+  - Zari, E.
+  - Andrae, R.
+  - Blomme, R.
+  - Chemin, L.
+  - Clementini, G.
+  - Figueras, F.
+  - Fouesneau, M.
+  - Fremat, Y.
+  - Lobel, A.
+  - Marshall, D. J.
+  - Muraveva, T.
+  - Romero-Gomez, M.
+  bibcode: 2021yCat..36510104P
+  category: unknown
+  citation_count: 0
+  doctype: dataset
+  identifier:
+  - 2021yCat..36510104P
+  - 10.26093/cds/vizier.36510104
+  page: J/A+A/651/A104
+  pub: VizieR Online Data Catalog
+  title: 'VizieR Online Data Catalog: Spiral arms Gaia EDR3 (Poggio+, 2021)'
+  url: null
+  volume: '365'
+  year: 2021
+- abstract: In this work, we select 9589 MS-WD and 307 WD-WD candidate binaries from
+    the catalog released by Tian+ (2020, J/ApJS/246/4), which is a catalog of 807611
+    binaries, by searching from Gaia DR2 in a range of distance &lt;4.0kpc and the
+    projected separation s&lt;1.0pc. According to the contamination rates, we selected
+    4050 MS-WD binaries with contamination rates &lt;20%. See Section 2. <P />We use
+    an open-source software suite, BASE-9 (von Hippel+ 2014arXiv1411.3786V), to constrain
+    the ages, ZAMS mass, A<SUB>V</SUB>, and distance modulus for the 4050 MS-WD candidate
+    binaries. See Section 3. <P />We build a catalog that includes the ages and other
+    parameters (see Table 2) of the 3551 field MS components. We also provide a catalog
+    that includes the ages and other parameters of the 3551 MS-WD and 236 WD-WD binaries
+    (see Table 4). <P />(2 data files).
+  author:
+  - Qiu, D.
+  - Tian, H. -J.
+  - Wang, X. -D.
+  - Nie, J. -L.
+  - von Hippel, T.
+  - Liu, G. -C.
+  - Fouesneau, M.
+  - Rix, H. -W.
+  bibcode: 2021yCat..22530058Q
+  category: unknown
+  citation_count: 0
+  doctype: dataset
+  identifier:
+  - 2021yCat..22530058Q
+  - 10.26093/cds/vizier.22530058
+  page: J/ApJS/253/58
+  pub: VizieR Online Data Catalog
+  title: 'VizieR Online Data Catalog: Ages of field stars from white dwarf comp. in
+    Gaia (Qiu+, 2021)'
+  url: null
+  volume: '225'
+  year: 2021
+- abstract: We have produced a catalogue of geometric distances for 1.47 billion stars
+    and photogeometric distances for 92% of these. These estimates, and their uncertainties,
+    can also be used as estimates of the distance modulus. Geometric distances use
+    only the EDR3 parallaxes. Photogeometric distances additionally use the G magnitude
+    and BP-RP colour from EDR3. Both types of estimate involve directiondependent
+    priors constructed from a sophisticated model of the 3D distribution, colours,
+    and magnitudes of stars in the Galaxy as seen by Gaia, i.e. accommodating both
+    interstellar extinction and a Gaia selection function. Tests on mock data, but
+    moreover validation against independent estimates and open clusters, suggest our
+    estimates are reliable out to several kpc. For faint or more distant stars the
+    prior will often dominate the estimates. <P />(1 data file).
+  author:
+  - Bailer-Jones, C. A. L.
+  - Rybizki, J.
+  - Fouesneau, M.
+  - Demleitner, M.
+  - Andrae, R.
+  bibcode: 2021yCat.1352....0B
+  category: unknown
+  citation_count: 55
+  doctype: dataset
+  identifier:
+  - 2021yCat.1352....0B
+  page: I/352
+  pub: VizieR Online Data Catalog
+  title: 'VizieR Online Data Catalog: Distances to 1.47 billion stars in Gaia EDR3
+    (Bailer-Jones+, 2021)'
+  url: null
+  volume: '1352'
+  year: 2021
+- abstract: "Observational tests of stellar and Galactic chemical evolution call for\
+    \ the joint knowledge of a star's physical parameters, detailed element abundances,\
+    \ and precise age. For cool main-sequence (MS) stars the abundances of many elements\
+    \ can be measured from spectroscopy, but ages are very hard to determine. The\
+    \ situation is different if the MS star has a white dwarf (WD) companion and a\
+    \ known distance, as the age of such a binary system can then be determined precisely\
+    \ from the photometric properties of the cooling WD. As a pilot study for obtaining\
+    \ precise age determinations of field MS stars, we identify nearly 100 candidates\
+    \ for such wide binary systems: a faint WD whose Gaia-PS1-SDSS (GPS1) proper motion\
+    \ (Tian+ 2017, I/343) matches that of a brighter MS star in Gaia/TGAS (Gaia Collaboration\
+    \ 2016, I/337) with a good parallax (\u03C3<SUB>{rho}</SUB>/{rho}=&lt;0.05). We\
+    \ model the WD's multi-band photometry with the BASE-9 code using this precise\
+    \ distance (assumed to be common for the pair) and infer ages for each binary\
+    \ system. The resulting age estimates are precise to =&lt;10% (=&lt;20%) for 42\
+    \ (67) MS-WD systems. Our analysis more than doubles the number of MS-WD systems\
+    \ with precise distances known to date, and it boosts the number of such systems\
+    \ with precise age determination by an order of magnitude. With the advent of\
+    \ the Gaia DR2 (Gaia Collaboration, 2018, I/345) data, this approach will be applicable\
+    \ to a far larger sample, providing ages for many MS stars (that can yield detailed\
+    \ abundances for over 20 elements), especially in the age range of 2-8Gyr, where\
+    \ there are only few known star clusters. <P />(1 data file)."
+  author:
+  - Fouesneau, M.
+  - Rix, H. -W.
+  - von Hippel, T.
+  - Hogg, D. W.
+  - Tian, H.
+  bibcode: 2020yCat..18700009F
+  category: unknown
+  citation_count: 0
+  doctype: dataset
+  identifier:
+  - 10.26093/cds/vizier.18700009
+  - 2020yCat..18700009F
+  page: J/ApJ/870/9
+  pub: VizieR Online Data Catalog
+  title: 'VizieR Online Data Catalog: Ages &amp; masses for GPS1 WD-MS binary systems
+    (Fouesneau+, 2019)'
+  url: null
+  volume: '187'
+  year: 2020
+- abstract: In conjunction with the photometric component of Pristine, a spectroscopic
+    follow-up programme has been observing the most promising, bright (V&lt;18) metal-poor
+    candidates on 2-4m class telescopes with medium- and high-resolution spectrographs.
+    In this paper, we focus on the homogeneous follow-up sample of 205 candidate stars
+    observed with the Intermediate Dispersion Spectrograph (IDS) on the 2.5m Isaac
+    Newton Telescope (INT) over the period of 2016 March 18-27, May 15-23, July 20-24
+    and September 2-6, and with the Intermediate dispersion Spectrograph and Imaging
+    System (ISIS) on the 4.2m William Herschel Telescope (WHT) over the period of
+    2016 May 1-2 and July 29-31 (Programs C71 and N5). Both telescopes are located
+    at the Roque de Los Muchachos Observatory in La Palma, Canary Islands. <P />(2
+    data files).
+  author:
+  - Youakim, K.
+  - Starkenburg, E.
+  - Aguado, D. S.
+  - Martin, N. F.
+  - Fouesneau, M.
+  - Gonzalez Hernandez, J. I.
+  - Allende Prieto, C.
+  - Bonifacio, P.
+  - Gentile, M.
+  - Kielty, C.
+  - Cote, P.
+  - Jablonka, P.
+  - McConnachie, A.
+  - Sanchez Janssen, R.
+  - Tolstoy, E.
+  - Venn, K.
+  bibcode: 2020yCat..74722963Y
+  category: unknown
+  citation_count: 0
+  doctype: dataset
+  identifier:
+  - 2020yCat..74722963Y
+  page: J/MNRAS/472/2963
+  pub: VizieR Online Data Catalog
+  title: 'VizieR Online Data Catalog: Metallicities of Pristine stars (Youakim+, 2017)'
+  url: null
+  volume: '747'
+  year: 2020
+- abstract: The classes are defined by the supervised training sets used in the classifier.
+    Galaxies and quasars are identified for the training set by a cross-match to objects
+    with spectroscopic classifications from the Sloan Digital Sky Survey. Stars are
+    defined directly from Gaia-DR2. <P />(1 data file).
+  author:
+  - Bailer-Jones, C. A. L.
+  - Fouesneau, M.
+  - Andrae, R.
+  bibcode: 2019yCat.7285....0B
+  category: unknown
+  citation_count: 0
+  doctype: dataset
+  identifier:
+  - 2019yCat.7285....0B
+  page: VII/285
+  pub: VizieR Online Data Catalog
+  title: 'VizieR Online Data Catalog: Gaia DR2 quasar and galaxy classification (Bailer-Jones+,
+    2019)'
+  url: null
+  volume: '7285'
+  year: 2019
+- abstract: 'The tables give the perihelion (closest approach) parameters of stars
+    in the Gaia-DR2 catalogue which are found by numerical integration through a Galactic
+    potential to approach within 10pc of the Sun. These parameters are the time (relative
+    to the Gaia measurement epoch), heliocentric distance, and heliocentric speed
+    of the star at perihelion. Uncertainties in these have been calculated by a Monte
+    Carlo sampling of the data to give the posterior probability density function
+    (PDF) over the parameters. For each parameter, three summary values of this PDF
+    are reported: the median, the 5% lower bound, the 95% upper bound. The latter
+    two give a 90% confidence interval. The table also reports the measured parallax,
+    proper motion, radial velocity (plus uncertainties), and mass of the stars. A
+    second table reports additional data, in particular astrometric quality metrics,
+    from the Gaia-DR2 catalogue. Tables 2 and 3 in the article list the first 31 lines
+    of these data tables (stars with median perihelion distances below 1pc). Stars
+    with problematic data have not been removed, so some encounters are not reliable.
+    <P />(2 data files).'
+  author:
+  - Bailer-Jones, C. A. L.
+  - Rybizki, J.
+  - Andrae, R.
+  - Fouesneau, M.
+  bibcode: 2018yCat..36160037B
+  category: unknown
+  citation_count: 0
+  doctype: dataset
+  identifier:
+  - 10.26093/cds/vizier.36160037
+  - 2018yCat..36160037B
+  page: J/A+A/616/A37
+  pub: VizieR Online Data Catalog
+  title: 'VizieR Online Data Catalog: Close encounters to the Sun in Gaia DR2 (Bailer-Jones+,
+    2018)'
+  url: null
+  volume: '361'
+  year: 2018
+- abstract: The catalog can be queried using ADQL at http://gaia.ari.uni-heidelberg.de/tap.html
+    (which also hosts the Gaia catalog) and downloaded from http://www.mpia.de/~calj/gdr2_distances.html.
+    Each file contains 200000 sources (except the last one) with a single header line.
+    Total size of all files is 114GB. <P />(1 data file).
+  author:
+  - Bailer-Jones, C. A. L.
+  - Rybizki, J.
+  - Fouesneau, M.
+  - Mantelet, G.
+  - Andrae, R.
+  bibcode: 2018yCat.1347....0B
+  category: unknown
+  citation_count: 8
+  doctype: dataset
+  identifier:
+  - 2018yCat.1347....0B
+  page: I/347
+  pub: VizieR Online Data Catalog
+  title: 'VizieR Online Data Catalog: Distances to 1.33 billion stars in Gaia DR2
+    (Bailer-Jones+, 2018)'
+  url: null
+  volume: '1347'
+  year: 2018
+- abstract: "First, we select SNRs from catalogs which overlap with HST fields in\
+    \ M31 and M33. We limited our search to fields observed with the ACS and WFPC-2\
+    \ instruments, as the optical CMDs tend to be deeper and offer the best SFH constraints.\
+    \ For M31, we combine three SNR catalogs to select targets from: Braun &amp; Walterbos\
+    \ (1993A&amp;AS...98..327B); Magnier et al. (1995, J/A+AS/114/215); Williams et\
+    \ al. (1995BAAS...27..883W). All three catalogs make use of [S II]-to-H\u03B1\
+    \ ratios to identify SNR. Our M33 SNR catalog comes from Long et al. (2010, J/ApJS/187/495),\
+    \ who selected SNRs using both [S II]-to-H\u03B1 ratios and X-ray observations.\
+    \ Long et al. (2010, J/ApJS/187/495) incorporated all previous SNR catalogs from\
+    \ the literature in their analysis. As mentioned in Section 1, all new M31 data\
+    \ analyzed in this work come from newly available PHAT data sets and therefore\
+    \ have uniform filters and exposure times, while the M33 data comes from various\
+    \ archival data sets coincident with SNR. <P />(1 data file)."
+  author:
+  - Jennings, Z. G.
+  - Williams, B. F.
+  - Murphy, J. W.
+  - Dalcanton, J. J.
+  - Gilbert, K. M.
+  - Dolphin, A. E.
+  - Weisz, D. R.
+  - Fouesneau, M.
+  bibcode: 2017yCat..17950170J
+  category: unknown
+  citation_count: 0
+  doctype: dataset
+  identifier:
+  - 2017yCat..17950170J
+  - 10.26093/cds/vizier.17950170
+  page: J/ApJ/795/170
+  pub: VizieR Online Data Catalog
+  title: 'VizieR Online Data Catalog: Sample SNRs for M31 and M33 (Jennings+, 2014)'
+  url: null
+  volume: '179'
+  year: 2017
+- abstract: The Panchromatic Hubble Andromeda Treasury (PHAT) is a Hubble Space Telescope
+    (HST) multi-cycle imaging survey covering roughly one-third of M31's star-forming
+    disk out to 20 kpc (Dalcanton et al. 2012ApJS..200...18D). Observations were made
+    with the HST using the Advanced Camera for Surveys (ACS) and Wide Field Camera
+    3 (WFC3), with six filters spanning the UV (WFC3/UVIS F275W and F336W), the optical
+    (ACS/WFC F475W and F814W), and the NIR (WFC3/IR F110W and F160W). <P />(3 data
+    files).
+  author:
+  - Veyette, M. J.
+  - Williams, B. F.
+  - Dalcanton, J. J.
+  - Balick, B.
+  - Caldwell, N.
+  - Fouesneau, M.
+  - Girardi, L.
+  - Gordon, K. D.
+  - Kalirai, J.
+  - Rosenfield, P.
+  - Seth, A. C.
+  bibcode: 2017yCat..17920121V
+  category: unknown
+  citation_count: 0
+  doctype: dataset
+  identifier:
+  - 10.26093/cds/vizier.17920121
+  - 2017yCat..17920121V
+  page: J/ApJ/792/121
+  pub: VizieR Online Data Catalog
+  title: 'VizieR Online Data Catalog: Photometric survey of planetary nebulae in M31
+    (Veyette+, 2014)'
+  url: null
+  volume: '179'
+  year: 2017
+- abstract: 'For this paper, we use the list of 601 high-probability cluster candidates
+    from the Johnson et al. (2012, J/ApJ/752/95) Year 1 catalog, which contains integrated
+    photometry through six broadband filters from the UV to the near-infrared: F275W
+    (UV), F336W (U), F475W (g), F814W (I), F110W (J), F160W (H). Clusters were detected
+    by eye, primarily based on the F475W images, and visually classified based on
+    their sizes, shapes, and concentrations as explained in Johnson et al. (2012,
+    J/ApJ/752/95). <P />(1 data file).'
+  author:
+  - Fouesneau, M.
+  - Johnson, L. C.
+  - Weisz, D. R.
+  - Dalcanton, J. J.
+  - Bell, E. F.
+  - Bianchi, L.
+  - Caldwell, N.
+  - Gouliermis, D. A.
+  - Guhathakurta, P.
+  - Kalirai, J.
+  - Larsen, S. S.
+  - Rix, H. -W.
+  - Seth, A. C.
+  - Skillman, E. D.
+  - Williams, B. F.
+  bibcode: 2017yCat..17860117F
+  category: unknown
+  citation_count: 0
+  doctype: dataset
+  identifier:
+  - 10.26093/cds/vizier.17860117
+  - 2017yCat..17860117F
+  page: J/ApJ/786/117
+  pub: VizieR Online Data Catalog
+  title: 'VizieR Online Data Catalog: M31 PHAT star clusters ages and masses (Fouesneau+,
+    2014)'
+  url: null
+  volume: '178'
+  year: 2017
 - abstract: Stellar evolution models are fundamental to nearly all studies in astrophysics.
     They are used to interpret spectral energy distributions of distant galaxies,
     to derive the star formation histories of nearby galaxies, and to understand fundamental
@@ -17966,6 +31183,103 @@ unknown:
   url: null
   volume: '229'
   year: 2017
+- abstract: "To constrain the period-luminosity-metallicity (PLZ) relations for RR\
+    \ Lyrae stars in WISE W1 and W2 bands, we use TGAS trigonometric parallaxes (bar\u03C9\
+    ), spectroscopic metallicities ([Fe/H]; Fernley+ 1998, J/A+A/330/515), log-periods\
+    \ (logP, base 10), and apparent magnitudes (m; Klein+ 2014, J/MNRAS/440/L96) for\
+    \ 102 RRab stars within ~2.5kpc from the Sun. The E(B-V) reddening at a star's\
+    \ position is obtained from the Schlegel+ (1998ApJ...500..525S) dust map. <P />(1\
+    \ data file)."
+  author:
+  - Sesar, B.
+  - Fouesneau, M.
+  - Price-Whelan, A. M.
+  - Bailer-Jones, C. A. L.
+  - Gould, A.
+  - Rix, H. -W.
+  bibcode: 2017yCat..18380107S
+  category: unknown
+  citation_count: 0
+  doctype: dataset
+  identifier:
+  - 10.26093/cds/vizier.18380107
+  - 2017yCat..18380107S
+  page: J/ApJ/838/107
+  pub: VizieR Online Data Catalog
+  title: 'VizieR Online Data Catalog: Distances to RRab stars from WISE and Gaia (Sesar+,
+    2017)'
+  url: null
+  volume: '183'
+  year: 2017
+- abstract: The APOKASC project is the spectroscopic follow-up by APOGEE (Majewski
+    et al. 2015, in prep., as part of the third phase of the Sloan Digital Sky Survey,
+    SDSS-III; Eisenstein et al., 2011AJ....142...72E) of stars with asteroseismology
+    data from the Kepler Asteroseismic Science Consortium (KASC). The first version
+    of the APOKASC catalogue (Pinsonneault et al., 2014, Cat. J/ApJS/215/19) contains
+    seismic and spectroscopic measurements for 1989 giants, with the spectroscopic
+    information corresponding to APOGEE's Data Release 10 (DR10; Ahn et al., 2014ApJS..211...17A).
+    In this work, we keep the same original sample of 1989 stars and their seismic
+    parameters, but update their Teff and abundances to DR12 values (Alam et al.,
+    2015ApJS..219...12A; Holtzman et al., 2015AJ....150..148H). <P />(2 data files).
+  author:
+  - Martig, M.
+  - Fouesneau, M.
+  - Rix, H. -W.
+  - Ness, M.
+  - Meszaros, S.
+  - Garcia-Hernandez, D. A.
+  - Pinsonneault, M.
+  - Serenelli, A.
+  - Silva Aguirre, V.
+  - Zamora, O.
+  bibcode: 2016yCat..74563655M
+  category: unknown
+  citation_count: 0
+  doctype: dataset
+  identifier:
+  - 2016yCat..74563655M
+  page: J/MNRAS/456/3655
+  pub: VizieR Online Data Catalog
+  title: 'VizieR Online Data Catalog: Masses and ages of red giants (Martig+, 2016)'
+  url: null
+  volume: '745'
+  year: 2016
+- abstract: "The Panchromatic Hubble Andromeda Treasury (PHAT) survey imaged 1/3 of\
+    \ the disk of M31 in six passbands spanning near-ultraviolet to near-infrared\
+    \ wavelengths. The survey provides resolved stellar photometry of 117 million\
+    \ sources that we use to determine the properties of both the cluster and field\
+    \ populations, with completeness limits that allow the detection of individual\
+    \ MS stars down to ~3M<SUB>\u022F</SUB>. Here we provide an overview of the crowded\
+    \ field stellar photometry derived for PHAT; full details are found in Dalcanton+\
+    \ (2012ApJS..200...18D) and Williams+ (2014, J/ApJS/215/9). <P />(1 data file)."
+  author:
+  - Johnson, L. C.
+  - Seth, A. C.
+  - Dalcanton, J. J.
+  - Beerman, L. C.
+  - Fouesneau, M.
+  - Lewis, A. R.
+  - Weisz, D. R.
+  - Williams, B. F.
+  - Bell, E. F.
+  - Dolphin, A. E.
+  - Larsen, S. S.
+  - Sandstrom, K.
+  - Skillman, E. D.
+  bibcode: 2016yCat..18270033J
+  category: unknown
+  citation_count: 0
+  doctype: dataset
+  identifier:
+  - 10.26093/cds/vizier.18270033
+  - 2016yCat..18270033J
+  page: J/ApJ/827/33
+  pub: VizieR Online Data Catalog
+  title: 'VizieR Online Data Catalog: PHAT. XVI. Star cluster masses and ages (Johnson+,
+    2016)'
+  url: null
+  volume: '182'
+  year: 2016
 - abstract: We propose a panoramic imaging survey of M33 to extend the M31 PHAT survey
     to regions with 10x higher star formation intensity and markedly lower metallicity.
     Deep six-filter UV/optical/IR stellar photometry will provide (1) precision measurement
@@ -18026,6 +31340,59 @@ unknown:
   url: null
   volume: null
   year: 2016
+- abstract: "We present a probabilistic approach for inferring the parameters of the\
+    \ present-day power-law stellar mass function (MF) of a resolved young star cluster.\
+    \ This technique (1) fully exploits the information content of a given data set;\
+    \ (2) can account for observational uncertainties in a straightforward way; (3)\
+    \ assigns meaningful uncertainties to the inferred parameters; (4) avoids the\
+    \ pitfalls associated with binning data; and (5) can be applied to virtually any\
+    \ resolved young cluster, laying the groundwork for a systematic study of the\
+    \ high-mass stellar MF (M&gt;~1M<SUB>\u022F</SUB>). Using simulated clusters and\
+    \ Markov Chain Monte Carlo sampling of the probability distribution functions,\
+    \ we show that estimates of the MF slope, \u03B1, are unbiased and that the uncertainty,\
+    \ \u0394\u03B1, depends primarily on the number of observed stars and on the range\
+    \ of stellar masses they span, assuming that the uncertainties on individual masses\
+    \ and the completeness are both well characterized. Using idealized mock data,\
+    \ we compute the theoretical precision, i.e., lower limits, on \u03B1, and provide\
+    \ an analytic approximation for \u0394\u03B1 as a function of the observed number\
+    \ of stars and mass range. Comparison with literature studies shows that ~3/4\
+    \ of quoted uncertainties are smaller than the theoretical lower limit. By correcting\
+    \ these uncertainties to the theoretical lower limits, we find that the literature\
+    \ studies yield &lt;\u03B1&gt;=2.46, with a 1\u03C3 dispersion of 0.35dex. The\
+    \ precision on MF slope recovery in this paper are lower limits, as we do not\
+    \ explicitly consider all possible sources of uncertainty, including dynamical\
+    \ effects (e.g., mass segregation), unresolved binaries, and non-coeval populations.\
+    \ <P />(1 data file)."
+  author:
+  - Weisz, D. R.
+  - Fouesneau, M.
+  - Hogg, D. W.
+  - Rix, H. -W.
+  - Dolphin, A. E.
+  - Dalcanton, J. J.
+  - Foreman-Mackey, D. T.
+  - Lang, D.
+  - Johnson, L. C.
+  - Beerman, L. C.
+  - Bell, E. F.
+  - Gordon, K. D.
+  - Gouliermis, D.
+  - Kalirai, J. S.
+  - Skillman, E. D.
+  - Williams, B. F.
+  bibcode: 2015yCat..17620123W
+  category: unknown
+  citation_count: 0
+  doctype: dataset
+  identifier:
+  - 2015yCat..17620123W
+  - 10.26093/cds/vizier.17620123
+  page: J/ApJ/762/123
+  pub: VizieR Online Data Catalog
+  title: 'VizieR Online Data Catalog: PHAT. IV. Initial Mass Function (Weisz+, 2013)'
+  url: null
+  volume: '176'
+  year: 2015
 - abstract: The Red Clump (RC) and lesser-known early-AGB bump (AGBb) are recognizable
     features on the stellar color-magnitude diagram (CMD). The timescale of evolution
     along the red giant branch (RGB) and horizontal branch (HB) dictates the relative
